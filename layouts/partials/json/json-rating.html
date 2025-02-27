@@ -1,0 +1,33 @@
+{{ if .IsHome }}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/", 
+          "@type": "Book", 
+          "name": "{{ .Site.Title }}",
+          "image": "{{ "img/donghuanime.webp" | absURL }}",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "4500"
+          }
+        }
+    </script>
+{{ else if eq .Layout "postingan-donghua" }}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/", 
+          "@type": "Book", 
+          "name": "{{ .Title }}",
+          "image": "{{ .Params.image | absURL }}",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "4500"
+          }
+        }
+    </script>
+{{ end }}

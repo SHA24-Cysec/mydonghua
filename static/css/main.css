@@ -743,17 +743,11 @@
   .-mt-2 {
     margin-top: calc(var(--spacing) * -2);
   }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
-  }
-  .mt-16 {
-    margin-top: calc(var(--spacing) * 16);
   }
   .mt-32 {
     margin-top: calc(var(--spacing) * 32);
@@ -923,9 +917,6 @@
   .w-auto {
     width: auto;
   }
-  .w-fit {
-    width: fit-content;
-  }
   .w-full {
     width: 100%;
   }
@@ -935,26 +926,14 @@
   .w-screen {
     width: 100vw;
   }
-  .max-w-7 {
-    max-width: calc(var(--spacing) * 7);
-  }
   .max-w-16 {
     max-width: calc(var(--spacing) * 16);
   }
   .max-w-30 {
     max-width: calc(var(--spacing) * 30);
   }
-  .max-w-40 {
-    max-width: calc(var(--spacing) * 40);
-  }
   .max-w-44 {
     max-width: calc(var(--spacing) * 44);
-  }
-  .max-w-50 {
-    max-width: calc(var(--spacing) * 50);
-  }
-  .max-w-60 {
-    max-width: calc(var(--spacing) * 60);
   }
   .max-w-72 {
     max-width: calc(var(--spacing) * 72);
@@ -1666,9 +1645,6 @@
   .bg-sky-300 {
     background-color: var(--color-sky-300);
   }
-  .bg-slate-50 {
-    background-color: var(--color-slate-50);
-  }
   .bg-slate-200 {
     background-color: var(--color-slate-200);
   }
@@ -1677,9 +1653,6 @@
   }
   .bg-slate-400 {
     background-color: var(--color-slate-400);
-  }
-  .bg-slate-500 {
-    background-color: var(--color-slate-500);
   }
   .bg-transparent {
     background-color: transparent;
@@ -2570,84 +2543,12 @@
       }
     }
   }
-  .focus\:translate-x-2 {
-    &:focus {
-      --tw-translate-x: calc(var(--spacing) * 2);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-  }
-  .focus\:translate-y-2 {
-    &:focus {
-      --tw-translate-y: calc(var(--spacing) * 2);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-  }
-  .focus\:scale-75 {
-    &:focus {
-      --tw-scale-x: 75%;
-      --tw-scale-y: 75%;
-      --tw-scale-z: 75%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-  .focus\:scale-100 {
-    &:focus {
-      --tw-scale-x: 100%;
-      --tw-scale-y: 100%;
-      --tw-scale-z: 100%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-  .focus\:scale-101 {
-    &:focus {
-      --tw-scale-x: 101%;
-      --tw-scale-y: 101%;
-      --tw-scale-z: 101%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
   .focus\:scale-103 {
     &:focus {
       --tw-scale-x: 103%;
       --tw-scale-y: 103%;
       --tw-scale-z: 103%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-  .focus\:scale-105 {
-    &:focus {
-      --tw-scale-x: 105%;
-      --tw-scale-y: 105%;
-      --tw-scale-z: 105%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-  .focus\:scale-110 {
-    &:focus {
-      --tw-scale-x: 110%;
-      --tw-scale-y: 110%;
-      --tw-scale-z: 110%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-  .focus\:scale-120 {
-    &:focus {
-      --tw-scale-x: 120%;
-      --tw-scale-y: 120%;
-      --tw-scale-z: 120%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-  .focus\:shadow {
-    &:focus {
-      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
-  .focus\:shadow-lg {
-    &:focus {
-      --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .focus\:shadow-md {
