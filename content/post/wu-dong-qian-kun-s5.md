@@ -23,7 +23,7 @@ release : 'Jan 01, 2025'
 thumbnail : /img/post/wu-dong-qian-kun-s5.webp
 image : /img/post/wu-dong-qian-kun-s5.webp
 
-alt : 'Wu Dong Qian Kun S5'
+alt : 'Wu Dong Qian Kun Season 5'
 url: 'wu-dong-qian-kun-s5'
 layout : postingan-donghua
 sinopsis : 'Wu Dong Qian Kun Season 5 melanjutkan petualangan Lin Dong, seorang pemuda berbakat yang bertekad untuk membalas dendam atas kehancuran keluarganya dan melindungi dunia dari ancaman kegelapan. Di musim ini, Lin Dong menghadapi tantangan yang semakin berat, termasuk konfrontasi dengan musuh-musuh kuat dan penemuan rahasia-rahasia kuno yang menguji kemampuan serta tekadnya. Dengan kekuatan dan sekutu baru, ia berusaha mengatasi rintangan demi mencapai puncak dunia seni bela diri dan menjaga keseimbangan antara kekuatan baik dan jahat.'
@@ -36,7 +36,7 @@ linkDownload360p : ''
 buttonDownload360p : 'Belum Tersedia'
 ukuran360p : ''
 
-linkDownload480p : ''
+linkDownload480p : 'https://drive.google.com/file/d/18az4tj9xjZNgIvJGjWyShoVmdLTWGUmV/view?usp=sharing'
 buttonDownload480p : 'Download'
 ukuran480p : '1.8 GB'
 

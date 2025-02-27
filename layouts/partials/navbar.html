@@ -28,6 +28,7 @@
             </script>
         </div>
         <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href="https://saweria.co/sha24"><ion-icon name="wallet"></ion-icon>Support</a>
+        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href='{{ relURL "kontak" }}'><ion-icon name="call"></ion-icon>Kontak</a>
         <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href='{{ relURL "search" }}'><ion-icon name="search"></ion-icon>Cari Donghua</a>
     </menu>
 </nav>
@@ -79,10 +80,14 @@
             <button class="text-xs opacity-50">Lainnya</button>
         </div>
         {{/*  DropUp Menu  */}}
-        <div id="daftar-menu" class="absolute rounded-lg hidden gap-2 w-30 bg-sky-300 px-4 bottom-14 right-0 left-auto py-2 shadow-md shadow-black">
-            <div class="flex gap-1 w-full rounded-full flex-col items-center flex-wrap">
+        <div id="daftar-menu" class="absolute rounded-lg hidden w-30 bg-sky-300 px-4 bottom-14 right-0 left-auto py-2 shadow-md shadow-black">
+            <div class="flex gap-1 w-full mb-4 rounded-full flex-col items-center flex-wrap">
                 <ion-icon size="large" class="w-7 h-7" name="wallet"></ion-icon>
                 <a class="text-xs opacity-50" href="https://saweria.co/sha24">Support</a>
+            </div>
+            <div class="flex gap-1 w-full mt-4 rounded-full flex-col items-center flex-wrap">
+                <ion-icon size="large" class="w-7 h-7" name="call"></ion-icon>
+                <a class="text-xs opacity-50" href='{{ relURL "kontak"}}'>Kontak</a>
             </div>
         </div>
     </div>

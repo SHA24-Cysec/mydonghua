@@ -5,14 +5,14 @@
             {{/*  Main Content  */}}
             <div class="bg-slate-300" style="flex-basis: 900px;">
                 <div class="flex flex-wrap flex-col">
-                    <div class="grid-cols-2 inline-grid p-4 justify-items-center grid-rows-4 md:grid-cols-4 gap-8 w-full">
+                    <div class="grid-cols-2 grid p-4 justify-items-center grid-rows-1 md:grid-cols-4 gap-2 w-full">
                         {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
-                        {{ $paginator := .Paginate $pages.ByTitle 16 }}
+                        {{ $paginator := .Paginate $pages.ByDate.Reverse 16 }}
                         {{ range $paginator.Pages }}
                         <div class="group bg-slate-400 p-2">
                             <a title="{{ .Title }}" href="{{ .Permalink }}" class="flex gap-1 rounded-lg h-full group-hover:bg-slate-300 flex-col w-full">
                                 <img class="group-hover:scale-101 h-[150px] w-full md:h-[300px] md:w-[200px] rounded-lg transition duration-300 object-cover" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
-                                <span class="w-full font-bold max-w-44 mx-auto text-center">{{ .Title }}</span>
+                                <span class="w-full font-bold max-w-44 mx-auto mt-4 text-center">{{ .Title }}</span>
                             </a>
                         </div>
                         {{ end }}

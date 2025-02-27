@@ -3,7 +3,7 @@
         {{/*  Elemen Genre  */}}
         <div class="bg-slate-300 p-4">
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Genre</span>
-            <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-1 grid-rows-6 overflow-y-auto h-80">
+            <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-1 grid-rows-6 hover:overflow-y-auto h-80">
                 {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
                 <a class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-500 rounded-lg py-1" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
@@ -13,7 +13,7 @@
         {{/*  Elemen Studio  */}}
         <div class="bg-slate-300 mt-4 p-4">
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Studio</span>
-            <div class="grid text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-1 grid-rows-6 overflow-y-auto h-80">
+            <div class="grid text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-1 grid-rows-6 hover:overflow-y-auto h-80">
                 {{ range $name, $taxonomy := .Site.Taxonomies.studio }}
                 <a class="bg-slate-400 h-full flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-500 rounded-lg py-1" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
@@ -23,7 +23,7 @@
         {{/*  Elemen Season  */}}
         <div class="bg-slate-300 mt-4 p-4">
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Season</span>
-            <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-1 grid-rows-6 overflow-y-auto h-80">
+            <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-1 grid-rows-6 hover:overflow-y-auto h-80">
                 {{ range $name, $taxonomy := .Site.Taxonomies.season }}
                 <a class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-500 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
