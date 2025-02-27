@@ -1,0 +1,21 @@
+<div class="md:py-4 py-2 mx-auto bg-slate-300 mt-4 p-4 max-w-screen-xl">
+    <span class="font-bold text-xl">Donghua Terbaru</span>
+    <div class="mt-4">
+        {{ range where .Site.RegularPages.ByDate.Reverse "Layout" "postingan-donghua" | first 5 }}
+            <div class="flex bg-slate-200 p-4 mt-4 gap-4 md:flex-row flex-col items-center">
+                <div class="p-2 w-max bg-slate-400">
+                    <img style="width: 200px !important;" class="rounded-lg h-[300px] object-cover" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.alt }}">
+                </div>
+                <div class="flex flex-col w-full max-w-xl">
+                    <a title="{{ .Title }}" class="font-bold hover:text-sky-300" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <span class="mt-4 flex flex-row flex-wrap items-center mb-2 gap-2">
+                        Genre:
+                        {{ range .Params.genre }}
+                        <a class="font-bold hover:bg-slate-500 bg-slate-400 rounded-lg px-4 w-max" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
+                        {{ end }}
+                    </span>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="loading-screen" class="fixed bottom-0 top-0 right-0 left-0 place-items-center place-content-center w-full h-screen z-[1000] bg-white">
+    <img width="75" height="75" class="bg-transparent bg" src='{{ relURL "img/loading-screen.svg" }}' alt="">
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var loadingScreen = document.getElementById("loading-screen");
+        
+        setTimeout(function () {
+            loadingScreen.style.transition = "opacity 1s ease-out";
+            loadingScreen.style.opacity = "0";
+            
+            setTimeout(function () {
+                loadingScreen.style.display = "none";
+            }, 1000);
+        }, 2000); 
+    });
+</script>

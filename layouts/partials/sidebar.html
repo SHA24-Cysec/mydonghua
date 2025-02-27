@@ -1,0 +1,58 @@
+<aside style="flex-basis: 380px;" class="w-full">
+    <div class="flex flex-col flex-wrap">
+        {{/*  Elemen Genre  */}}
+        <div class="bg-slate-300 p-4">
+            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Genre</span>
+            <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-1 grid-rows-6 overflow-y-auto h-80">
+                {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
+                <a class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-500 rounded-lg py-1" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                {{ end }}
+            </div>
+        </div>
+        {{/*  Akhir Elemen Genre  */}}
+        {{/*  Elemen Studio  */}}
+        <div class="bg-slate-300 mt-4 p-4">
+            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Studio</span>
+            <div class="grid text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-1 grid-rows-6 overflow-y-auto h-80">
+                {{ range $name, $taxonomy := .Site.Taxonomies.studio }}
+                <a class="bg-slate-400 h-full flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-500 rounded-lg py-1" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                {{ end }}
+            </div>
+        </div>
+        {{/*  Akhir Elemen Studio  */}}
+        {{/*  Elemen Season  */}}
+        <div class="bg-slate-300 mt-4 p-4">
+            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Season</span>
+            <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-1 grid-rows-6 overflow-y-auto h-80">
+                {{ range $name, $taxonomy := .Site.Taxonomies.season }}
+                <a class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-500 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                {{ end }}
+            </div>
+        </div>
+        {{/*  Akhir Elemen Season  */}}
+        {{/*  Elemen Support Kami  */}}
+        <div class="bg-slate-300 p-4 mt-4">
+            <span class="font-bold mb-4 select-none flex items-center gap-2 text-2xl"><ion-icon name="wallet"></ion-icon>Support Kami</span>
+            <div class="flex items-center gap-4 px-4 flex-wrap flex-row justify-evenly">
+                <a rel="nofollow noopener" target="_blank" href="https://paypal.me/syukra24">
+                    <img class="rounded-lg" width="150" src="/img/paypal.webp" alt="PayPal">
+                </a>
+                <a rel="nofollow noopener" target="_blank" href="https://saweria.co/sha24">
+                    <img class="rounded-lg" width="150" src="/img/saweria.webp" alt="PayPal">
+                </a>
+            </div>
+        </div>
+        {{/*  Akhir Elemen Support Kami  */}}
+        {{/*  Elemen Pasang Iklan  */}}
+        <div class="bg-slate-300 p-4 mt-4">
+            <span class="font-bold select-none flex items-center gap-2 text-2xl"><ion-icon name="rocket"></ion-icon>Pasang Iklan</span>
+            <div class="my-4 flex items-center justify-center flex-col">
+                <a target="_blank" rel="nofollow noopener" href="mailto:syukra108@gmail.com">
+                    <img class="rounded-lg" width="150" src="/img/gmail.webp" alt="">
+                </a>
+                <span class="font-bold opacity-50">syukra108@gmail.com</span>
+            </div>
+        </div>
+        {{/*  Akhir Elemen Pasang Iklan  */}}
+    </div>
+</aside>

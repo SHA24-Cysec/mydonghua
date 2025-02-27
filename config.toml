@@ -1,0 +1,30 @@
+baseURL = 'https://mydonghua.syukra.org/'
+title = 'MyDonghua - Download Batch Donghua Subtitle Indonesia'
+
+[services]
+    [services.googleAnalytics]
+        id = 'G-99GNVNF3VY'
+    [services.disqus]
+        shortname = 'mydonghua'
+    [services.rss]
+        limit = -1
+
+[taxonomies]
+    genres = 'genre'
+    studios = 'studio'
+    seasons = 'season'
+
+[markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+    deskripsi = 'Tempat Download Batch Donghua terlengkap subtitle Indonesia'
+    keywords = 'Donghua, Batch, Subtitle Indonesia'
+    author = 'Admin'
+
+[sitemap]
+    changeFreq = 'monthly'
+
+[outputs]
+    home = ['HTML', 'rss']
+    taxonomy = ['html']

@@ -1,0 +1,61 @@
+{{ define "main" }}
+    {{ partial "alert" . }}
+    <div class="my-4 mx-auto max-w-screen-xl">
+        <main class="flex gap-4 flex-col lg:flex-row">
+            {{/*  Main Content  */}}
+            <div style="flex-basis: 900px;">
+                <div class="w-full">
+                    <div class="bg-slate-300 p-4">
+                        <span class="flex items-center gap-1 text-sm"><ion-icon name="person"></ion-icon>Posted by <strong>{{ .Site.Params.author }}</strong><ion-icon class="text-green-500" name="checkmark-circle"></ion-icon></span>
+                        <hr class="mt-4">
+                        <h1 class="text-2xl mt-4"><strong>{{ .Title }}</strong></h1>
+                        <img class="mt-4 h-[300px] w-[200px] mx-auto" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
+                    </div>
+                    <div class="bg-slate-300 mt-4 p-4">
+                        <p><strong>Sinopsis:</strong> {{ .Params.sinopsis }}</p>
+                        <div class="mt-8 flex gap-2 flex-wrap flex-row">
+                            {{ range .Params.genre }}
+                                <a class="bg-slate-400 hover:bg-slate-500 font-bold w-max p-2 rounded-lg" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
+                            {{ end }}
+                        </div>
+                        <div class="overflow-x-auto w-full mx-auto max-w-max select-none">
+                            <table class="mt-8 p-4 mx-auto bg-blue-300">
+                                <thead>
+                                    <tr>
+                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="videocam"></ion-icon>Studio</span></th>
+                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="flag"></ion-icon>Season</span></th>
+                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="time"></ion-icon>Durasi</span></th>
+                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="film"></ion-icon>Episode</span></th>
+                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="flame"></ion-icon>Release</span></th>
+                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="bookmark"></ion-icon>Type</span></th>
+                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="code-download"></ion-icon>Status</span></th>
+                                        <th class="border p-4"><span class="flex w-max items-center justify-center gap-2"><ion-icon name="person"></ion-icon>Sub By</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr>
+                                        <td class="border p-2">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</td>
+                                        <td class="border p-2">{{ .Params.season }}</td>
+                                        <td class="border p-2">{{ .Params.durasi }}</td>
+                                        <td class="border p-2">{{ .Params.episode }}</td>
+                                        <td class="border p-2">{{ .Params.release }}</td>
+                                        <td class="border p-2">{{ .Params.type }}</td>
+                                        <td class="border p-2">{{ .Params.status }}</td>
+                                        <td class="border p-2">{{ .Params.sub }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        {{ partial "download-batch" . }}
+                    </div>
+                    {{ partial "share-donghua" . }}
+                    {{ partial "disqus" . }}
+                    {{ partial "donghua-terbaru" . }}
+                </div>
+            </div>
+            {{/*  Sidebar  */}}
+            {{ partial "sidebar" . }}
+            {{/*  Akhir Sidebar  */}}
+        </main>
+    </div>
+{{ end }}

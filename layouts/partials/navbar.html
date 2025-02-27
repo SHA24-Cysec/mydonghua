@@ -1,0 +1,103 @@
+{{/*  Navbar PC  */}}
+<nav class="bg-sky-300 shadow shadow-black sticky top-0 z-50 w-full font-bold md:flex hidden items-center flex-wrap justify-between mx-auto max-w-screen-xl">
+    <div class="text-2xl select-none p-4 items-center gap-2 flex">
+        <img width="32" height="32" src="/img/donghuanime.webp" alt="Donghuanime">
+        <span>MyDonghua</span>
+    </div>
+    <menu class="flex items-center px-4 w-auto">
+        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href="{{ .Site.BaseURL }}"><ion-icon name="home"></ion-icon>Beranda</a>
+        <div class="relative">
+            <button id="tombolGenre" class="hover:bg-sky-400 cursor-pointer flex items-center gap-1 text-md p-4">
+                <ion-icon name="folder"></ion-icon>
+                <span>Genre</span>
+                <ion-icon class="transition duration-300" id="arrowGenre" name="chevron-down"></ion-icon>
+                <div id="menuGenre" class="absolute hidden shadow p-4 shadow-black top-15 left-0 w-72 h-80 overflow-y-auto bg-sky-300">
+                    {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
+                        <a href='{{ "genre/" | relLangURL }}{{ $name | urlize }}' class="flex justify-start px-2 py-1 hover:bg-sky-400">{{ $name | title }}</a>
+                    {{ end }}
+                </div>
+            </button>
+            <script>
+                const tombolGenre = document.getElementById('tombolGenre');
+                const menuGenre = document.getElementById('menuGenre');
+                const arrowGenre = document.getElementById('arrowGenre');
+                tombolGenre.addEventListener('click', () => {
+                    menuGenre.classList.toggle('hidden');
+                    arrowGenre.classList.toggle('rotate-180');
+                    });
+            </script>
+        </div>
+        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href="https://saweria.co/sha24"><ion-icon name="wallet"></ion-icon>Support</a>
+        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href='{{ relURL "search" }}'><ion-icon name="search"></ion-icon>Cari Donghua</a>
+    </menu>
+</nav>
+
+{{/*  Navbar Mobile  */}}
+<nav class="bg-sky-300 z-50 px-4 shadow-black shadow-md rounded-full fixed max-w-72 w-full left-2 right-2 bottom-4 font-bold md:hidden flex-row flex gap-1 items-center flex-wrap justify-between mx-auto">
+    {{/*  Home Menu  */}}
+    <div class="flex gap-1 h-full w-10 rounded-full items-center flex-col">
+        <ion-icon class="w-7 h-7" size="large" name="home"></ion-icon>
+        <a class="text-xs opacity-50" href="{{ .Site.BaseURL }}">Beranda</a>
+    </div>
+    {{/*  Cari Menu  */}}
+    <div id="tombol-cari-mobile">
+    <div class="flex gap-1 h-full w-10 rounded-full items-center flex-col">
+        <ion-icon class="w-7 h-7" size="large" name="search"></ion-icon>
+        <a class="text-xs opacity-50" href='{{ relURL "search" }}'>Cari</a>
+    </div>
+    </div>
+    {{/*  Image Logo  */}}
+    <div class="text-2xl p-4 items-center flex">
+        <img width="40" height="40" src='{{ relURL "img/donghuanime.webp" }}' alt="Donghuanime">
+    </div>
+    {{/*  Genre Menu  */}}
+    <button id="tombolGenreMobile" class="flex relative gap-1 h-full w-10 rounded-full items-center flex-col">
+        <ion-icon class="w-7 h-7" size="large" name="folder"></ion-icon>
+        <span class="text-xs opacity-50">Genre</span>
+        {{/*  DropDown Menu Genre  */}}
+        <div id="menuGenreMobile" class="absolute overflow-y-auto hidden shadow-md shadow-black bg-sky-300 w-32 h-80 p-2 bottom-14 right-1 left-auto">
+            <div class="flex justify-start flex-col gap-2">
+            {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
+                <a class="font-bold p-2 text-start" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+            {{ end }}
+            </div>
+        </div>
+        <script>
+            const tombolGenreMobile = document.getElementById('tombolGenreMobile')
+            const menuGenreMobile = document.getElementById('menuGenreMobile')
+            if (tombolGenreMobile) {
+                tombolGenreMobile.addEventListener('click', () => {
+                    menuGenreMobile.classList.toggle('hidden')
+                    })
+                    }
+        </script>
+    </button>
+    {{/*  Lainnya Menu  */}}
+    <div class="relative">
+        <div id="tombol-menu" class="flex gap-1 rounded-full items-center flex-col">
+            <ion-icon id="logo-menu" class="w-7 h-7 transition duration-300 flex items-center" size="large" name="grid"></ion-icon>
+            <button class="text-xs opacity-50">Lainnya</button>
+        </div>
+        {{/*  DropUp Menu  */}}
+        <div id="daftar-menu" class="absolute rounded-lg hidden gap-2 w-30 bg-sky-300 px-4 bottom-14 right-0 left-auto py-2 shadow-md shadow-black">
+            <div class="flex gap-1 w-full rounded-full flex-col items-center flex-wrap">
+                <ion-icon size="large" class="w-7 h-7" name="wallet"></ion-icon>
+                <a class="text-xs opacity-50" href="https://saweria.co/sha24">Support</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{{/*  Script Mobile  */}}
+<script>
+    const tombolMenu = document.getElementById('tombol-menu')
+    const daftarMenu = document.getElementById('daftar-menu')
+    const logoMenu = document.getElementById('logo-menu')
+
+    if (tombolMenu) {
+        tombolMenu.addEventListener('click', () => {
+            daftarMenu.classList.toggle('hidden')
+            logoMenu.classList.toggle('rotate-90')
+        })
+    }
+</script>

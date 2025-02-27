@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    {{ partial "meta" . }}
+    {{ partial "link" . }}
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ if hugo.IsProduction }}
+        {{ template "_internal/google_analytics.html" . }}    
+    {{ end }}
+    {{ if eq .Kind "404" }}
+        <title>404 - Halaman Tidak Di Temukan</title>
+    {{ else if .IsHome }}
+        <title>{{ .Site.Title }}</title>
+    {{ else }}
+        <title>{{ .Title }} - MyDonghua</title>
+    {{ end }}
+</head>
+<body class="scroll-smooth box-border text-wrap mx-4 bg-slate-200">
+    {{ partial "navbar" . }}
+    {{ block "main" . }}
+        
+    {{ end }}
+    {{ partial "footer" . }}
+    {{ partial "js" . }}
+    {{ partial "loading-screen" . }}
+</body>
+</html>

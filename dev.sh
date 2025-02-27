@@ -1,0 +1,1 @@
+hugo server -D --ignoreCache --noBuildLock --cleanDestinationDir

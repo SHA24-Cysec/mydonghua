@@ -1,0 +1,13 @@
+<div class="mx-auto w-full select-none max-w-screen-xl p-4 bg-sky-300">
+    <div class="flex justify-center text-center items-center gap-2 flex-col">
+        <span>&copy;{{ time.Now.Year }} <span class="font-bold">MyDonghua</span> - All Rights Reserved</span>
+        <ion-icon class="w-5 h-5" name="git-commit-outline"></ion-icon>
+        <div class="text-sm flex text-center items-center gap-2 font-bold">
+            <a class="hover:underline" href='{{ relURL "about" }}'>About Web</a>
+            <ion-icon name="remove"></ion-icon>
+            <a class="hover:underline" href='{{ relURL "privacy-policy" }}'>Privacy Policy</a>
+            <ion-icon name="remove"></ion-icon>
+            <a class="hover:underline" href='{{ relURL "terms-of-conditions" }}'>Term of Conditions</a>
+        </div>
+    </div>
+</div>
