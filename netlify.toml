@@ -1,0 +1,7 @@
+[build]
+  publish = "public"
+
+[build.environment]
+  HUGO_ENV = "production"
+  HUGO_VERSION = "0.136.5"
+  HUGO_EXTENDED = "true"
