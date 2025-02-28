@@ -13,15 +13,30 @@
             </span>
         </button>
     </div>
-    <div id="disqus" class="hidden rounded-lg bg-slate-400 p-4 mt-4">
-        {{ template "_internal/disqus.html" . }}
-    </div>
+    <div class="hidden rounded-lg bg-slate-400 p-4 mt-4" id="disqus_thread"></div>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = window.location.pathname;
+            this.theme = 'light'; // Coba set 'dark' jika menggunakan tema gelap
+          };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mydonghua.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 
 <script>
     const bukaKomen = document.getElementById('buka-komen');
     const tutupKomen = document.getElementById('tutup-komen');
-    const disqus = document.getElementById('disqus');
+    const disqus = document.getElementById('disqus_thread');
     
     bukaKomen.addEventListener('click', () => {
         bukaKomen.classList.add('hidden');
@@ -29,7 +44,7 @@
         setTimeout(() => {
             tutupKomen.classList.remove('hidden');
             disqus.classList.remove('hidden');
-        }, 2000); // Menunggu 2 detik sebelum menampilkan elemen
+        }, 1000); // Menunggu 1 detik sebelum menampilkan elemen
     });
     
     tutupKomen.addEventListener('click', () => {
@@ -38,6 +53,6 @@
         
         setTimeout(() => {
             bukaKomen.classList.remove('hidden');
-        }, 2000); // Menunggu 2 detik sebelum menampilkan kembali tombol "bukaKomen"
+        }, 1000); // Menunggu 1 detik sebelum menampilkan kembali tombol "bukaKomen"
     });
 </script>
