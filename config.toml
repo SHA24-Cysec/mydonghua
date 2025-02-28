@@ -4,10 +4,10 @@ title = 'MyDonghua - Tempatnya Download Batch Donghua Subtitle Indonesia Terleng
 [services]
     [services.googleAnalytics]
         id = 'G-99GNVNF3VY'
-    [services.disqus]
-        shortname = 'mydonghua'
     [services.rss]
         limit = -1
+    [services.disqus]
+        shortname = 'mydonghua'
 
 [taxonomies]
     genres = 'genre'
