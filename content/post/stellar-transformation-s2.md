@@ -1,7 +1,7 @@
 ---
 date : '2025-02-28T14:30:31+07:00'
 draft : false
-title : 'Download Batch Stellar Transformation S2 Subtitle Indonesia'
+title : 'Download Batch Stellar Transformation Season 2 Subtitle Indonesia'
 studio :
     - Shanghai Foch Film Culture Investment
 season : ''
