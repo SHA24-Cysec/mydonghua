@@ -1,0 +1,51 @@
+---
+date : '2025-02-28T14:30:31+07:00'
+draft : false
+title : 'Download Batch Stellar Transformation S2 Subtitle Indonesia'
+studio :
+    - Shanghai Foch Film Culture Investment
+season : ''
+genre :
+    - Action
+    - Adventure
+    - Fantasy
+    - Historical
+    - 'Martial Arts'
+    - Romance
+type : 'Donghua'
+status : 'Completed'
+sub : 'Anichin'
+durasi : '24 Menit'
+episode : '12 Episode'
+# Penulisan tanggal 'bulan tanggal, tahun'
+release : 'May 03, 2020'
+
+# Gambar width: 200, height : 300
+thumbnail : /img/post/stellar-transformation-s2.webp
+image : /img/post/stellar-transformation-s2.webp
+
+alt : 'Stellar Transformation S2'
+url: 'stellar-transformation-s2'
+layout : postingan-donghua
+sinopsis : 'Setelah berhasil melewati berbagai rintangan di Lautan Biru, Qin Yu melanjutkan perjalanannya untuk menjadi lebih kuat di dunia kultivasi yang penuh dengan bahaya. Di musim kedua ini, Qin Yu semakin mendalami teknik kultivasinya dengan bimbingan dari gurunya, Lei Wei, serta bantuan dari para sahabatnya. Perjalanan Qin Yu membawanya ke dunia yang lebih luas, di mana ia menghadapi musuh-musuh yang semakin tangguh, termasuk para ahli dari klan kuat yang mengincar kekuatannya. Dengan tekad yang tak tergoyahkan dan tekhnik kultivasi uniknya yang berbeda dari para kultivator biasa, Qin Yu berusaha melampaui batasnya demi melindungi orang-orang yang ia sayangi dan mengungkap rahasia di balik warisan misterius yang ia miliki. Akankah Qin Yu mampu bertahan dan mencapai tingkat kekuatan yang lebih tinggi?'
+deskripsi : 'Download Batch Stellar Transformation S2 Subtitle Indonesia'
+keywords : 'Download Batch Stellar Transformation S2 Subtitle Indonesia'
+
+# Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
+
+linkDownload360p : 'https://drive.google.com/file/d/1jUDMT0_JhUGjvikNEbxEd4gP-Dtj-iDM/view?usp=sharing'
+buttonDownload360p : 'Download'
+ukuran360p : '832.2 MB'
+
+linkDownload480p : ''
+buttonDownload480p : 'Belum Tersedia'
+ukuran480p : ''
+
+linkDownload720p : ''
+buttonDownload720p : 'Belum Tersedia'
+ukuran720p : ''
+
+linkDownload1080p : ''
+buttonDownload1080p : 'Belum Tersedia'
+ukuran1080p : ''
+---
