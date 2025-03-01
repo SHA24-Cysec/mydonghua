@@ -36,9 +36,9 @@ linkDownload360p : ''
 buttonDownload360p : 'Belum Tersedia'
 ukuran360p : ''
 
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
+linkDownload480p : 'https://acefile.co/f/42839495'
+buttonDownload480p : 'Download'
+ukuran480p : '219.44 MB'
 
 linkDownload720p : 'https://www.mediafire.com/file/5a0xuptreqz6rhu/Battle_Through_the_Heavens_Special_720P.zip/file'
 buttonDownload720p : 'Download'

@@ -36,13 +36,13 @@ linkDownload360p : 'https://www.mediafire.com/file/jk2xrdg5oevag2y/BTTH_360p.zip
 buttonDownload360p : 'Download'
 ukuran360p : '536.87 MB'
 
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
+linkDownload480p : 'https://acefile.co/f/42839486'
+buttonDownload480p : 'Download'
+ukuran480p : '1.07 GB'
 
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
+linkDownload720p : 'https://acefile.co/f/42839490'
+buttonDownload720p : 'Download'
+ukuran720p : '1.97 GB'
 
 linkDownload1080p : ''
 buttonDownload1080p : 'Belum Tersedia'
