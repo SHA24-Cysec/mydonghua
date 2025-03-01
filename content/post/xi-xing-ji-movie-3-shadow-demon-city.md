@@ -1,0 +1,54 @@
+---
+date : '2025-03-01T10:03:34+07:00'
+draft : false
+title : 'Download Batch Xi Xing Ji Movie 3: Shadow Demon City Subtitle Indonesia'
+studio :
+    - Byment
+season : 'Winter 2023'
+genre :
+    - Action
+    - Adventure
+    - Fantasy
+    - Historical
+    - 'Martial Arts'
+type : 'Donghua Movie'
+status : 'Completed'
+sub : 'Anichin'
+durasi : '1 Jam 167 Menit'
+episode : '1 Episode'
+# Penulisan tanggal 'bulan tanggal, tahun'
+release : 'Jan 18, 2023'
+
+# Gambar width: 200, height : 300
+thumbnail : /img/post/xi-xing-ji-movie-3-shadow-demon-city.webp
+image : /img/post/xi-xing-ji-movie-3-shadow-demon-city.webp
+
+alt : 'Xi Xing Ji Movie 3 Shadow Demon City'
+url: 'xi-xing-ji-movie-3-shadow-demon-city'
+layout : postingan-donghua
+sinopsis : 'Mengisahkan perjalanan Tang Sanzang bersama murid-muridnya—Sun Wukong, Zhu Bajie, Sha Wujing, dan Ao Xue—menuju dunia lain untuk mencari Api Abadi. Dalam perjalanan, mereka menemukan kota misterius bernama "Kota Kebahagiaan Tertinggi". Di sana, Mo Ying, penguasa Kota Iblis Bayangan, berusaha mengendalikan Tang Sanzang dengan memanfaatkan kemampuan kota tersebut yang dapat memenuhi segala keinginan, guna membangkitkan sisi gelap dalam dirinya. Setelah melalui berbagai cobaan dan bantuan dari murid-muridnya, Tang Sanzang berhasil mengatasi iblis dalam dirinya. Bersama-sama, mereka mengalahkan Mo Ying, menghancurkan kota iblis, dan melanjutkan perjalanan untuk menyelamatkan umat manusia.'
+deskripsi : 'Download Batch Xi Xing Ji Movie 3 Shadow Demon City Subtitle Indonesia'
+keywords : 'Download Batch Xi Xing Ji Movie 3 Shadow Demon City Subtitle Indonesia'
+
+# Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
+
+linkDownload360p : 'https://www.mediafire.com/file/p694fjf32xo9eoo/Kuramanime-JRWEST_MOV3-360p-Anichin.mp4/file'
+buttonDownload360p : 'Download'
+ukuran360p : '253 MB'
+
+linkDownload480p : 'https://www.mediafire.com/file/d2ffxbz7yqll8aq/Kuramanime-JRWEST_MOV3-480p-Anichin.mp4/file'
+buttonDownload480p : 'Download'
+ukuran480p : '477 MB'
+
+linkDownload720p : 'https://www.mediafire.com/file/aqwr5u9sybwdk59/Kuramanime-JRWEST_MOV3-720p-Anichin.mp4/file'
+buttonDownload720p : 'Download'
+ukuran720p : '699 MB'
+
+linkDownload1080p : 'https://www.mediafire.com/file/j05m6so3qeni042/Kuramanime-JRWEST_MOV3-1080p-Anichin.mp4/file'
+buttonDownload1080p : 'Download'
+ukuran1080p : '1 GB'
+
+linkDownload4K : 'https://mega.nz/file/yEVHWDKB#MxldQ6WP_Zbi-80BTm6AVR8sDFTV6TluQymFNUQKBhE'
+buttonDownload4K : 'Download'
+ukuran4K : '1.71 GB'
+---

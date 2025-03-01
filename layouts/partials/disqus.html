@@ -13,7 +13,7 @@
             </span>
         </button>
     </div>
-    <div class="rounded-lg bg-slate-400 p-4 mt-4">
+    <div id="disqus-container" class="rounded-lg bg-slate-400 p-4 mt-4">
         {{ template "_internal/disqus.html" . }}
     </div>
 </div>
@@ -22,6 +22,10 @@
     const bukaKomen = document.getElementById('buka-komen');
     const tutupKomen = document.getElementById('tutup-komen');
     const disqus = document.getElementById('disqus_thread');
+    const disqusContainer = document.getElementById('disqus-container');
+
+    disqus.classList.add("hidden")
+    disqusContainer.classList.add("hidden")
     
     bukaKomen.addEventListener('click', () => {
         bukaKomen.classList.add('hidden');
@@ -29,12 +33,14 @@
         setTimeout(() => {
             tutupKomen.classList.remove('hidden');
             disqus.classList.remove('hidden');
+            disqusContainer.classList.remove('hidden');
         }, 1000); // Menunggu 1 detik sebelum menampilkan elemen
     });
     
     tutupKomen.addEventListener('click', () => {
         tutupKomen.classList.add('hidden');
         disqus.classList.add('hidden');
+        disqusContainer.classList.add('hidden');
         
         setTimeout(() => {
             bukaKomen.classList.remove('hidden');

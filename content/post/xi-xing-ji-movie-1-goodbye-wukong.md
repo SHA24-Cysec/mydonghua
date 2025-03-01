@@ -1,7 +1,7 @@
 ---
 date : '2025-03-01T08:27:51+07:00'
 draft : false
-title : 'Download Batch Xi Xing Ji Movie 1 Goodbye Wukong Subtitle Indonesia'
+title : 'Download Batch Xi Xing Ji Movie 1: Goodbye Wukong Subtitle Indonesia'
 studio :
     - Byment
 season : '2020'
