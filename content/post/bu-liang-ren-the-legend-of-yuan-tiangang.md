@@ -45,4 +45,8 @@ ukuran720p : '993 MB'
 linkDownload1080p : 'https://drive.google.com/file/d/15yTNJ2eJx1ss-JwWFviJRj2yfoenklIK/view?usp=sharing'
 buttonDownload1080p : 'Download'
 ukuran1080p : '1.8 GB'
+
+linkDownload4K : ''
+buttonDownload4K : 'Belum Tersedia'
+ukuran4K : ''
 ---
