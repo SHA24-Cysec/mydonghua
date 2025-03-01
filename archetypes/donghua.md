@@ -9,7 +9,7 @@ type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
 durasi : ''
-episode : ''
+episode : ' Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : ''
 
@@ -41,4 +41,8 @@ ukuran720p : ''
 linkDownload1080p : ''
 buttonDownload1080p : ''
 ukuran1080p : ''
+
+linkDownload4K : ''
+buttonDownload4K : ''
+ukuran4K : ''
 ---

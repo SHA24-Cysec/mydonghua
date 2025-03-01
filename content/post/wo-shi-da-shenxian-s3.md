@@ -41,4 +41,8 @@ ukuran720p : ''
 linkDownload1080p : 'https://www.mediafire.com/file/xt0oknxz36p15mg/Wo_Shi_Da_Shenxian_Season_3_%2528_1080p_%2529.zip/file'
 buttonDownload1080p : 'Download'
 ukuran1080p : '5.77 GB'
+
+linkDownload4K : ''
+buttonDownload4K : 'Belum Tersedia'
+ukuran4K : ''
 ---

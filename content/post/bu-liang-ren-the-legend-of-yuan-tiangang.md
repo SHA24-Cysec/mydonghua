@@ -1,7 +1,7 @@
 ---
 date : '2025-03-01T02:39:51+07:00'
 draft : false
-title : 'Download Batch Bu Liang Ren the Legend of Yuan Tiangang Subtitle Indonesia'
+title : 'Download Batch Bu Liang Ren: the Legend of Yuan Tiangang Subtitle Indonesia'
 studio :
     - Rocen
 season : 'Winter 2024'

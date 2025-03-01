@@ -47,4 +47,8 @@ ukuran720p : '363.90 MB'
 linkDownload1080p : ''
 buttonDownload1080p : 'Belum Tersedia'
 ukuran1080p : ''
+
+linkDownload4K : ''
+buttonDownload4K : 'Belum Tersedia'
+ukuran4K : ''
 ---

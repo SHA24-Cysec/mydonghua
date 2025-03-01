@@ -57,6 +57,20 @@
             {{/*  Akhir Elemen Ukuran Download  */}}
         </div>
         {{/*  Akhir Elemen Download  */}}
+        {{/*  Elemen Download  */}}
+        <div>
+            <div class="flex select-none flex-row items-center">
+                <span class="bg-blue-300 w-full max-w-16 text-center font-bold p-2">4K</span>
+                <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .Params.linkDownload1080p }}" class="bg-blue-200 w-full max-w-80 hover:text-sky-300 p-2"><span class="font-bold flex items-center gap-2"><ion-icon class="w-4 h-4" name="cloud-download-outline"></ion-icon>{{ .Params.buttonDownload4K }}</span></a>
+            </div>
+            {{/*  Elemen Ukuran Download  */}}
+            <div id="ukuran-download" class="w-full flex items-center gap-1 justify-center font-bold border-t-2 border-t-white max-w-96 bg-gradient-to-r from-blue-300 to-sky-200 p-2">
+                <ion-icon class="animate-bounce" name="download-outline"></ion-icon>
+                <span>{{ .Params.ukuran4K }}</span>
+            </div>
+            {{/*  Akhir Elemen Ukuran Download  */}}
+        </div>
+        {{/*  Akhir Elemen Download  */}}
         <a href="mailto:syukra108@gmail.com" class="mx-auto w-max mt-4 hover:bg-blue-400 p-2 rounded-lg bg-blue-300 font-bold">Laporkan Link Mati</a>
     </div>
 </div>
