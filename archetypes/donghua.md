@@ -24,7 +24,7 @@ sinopsis : ''
 deskripsi : 'Download Batch {{ replace .File.ContentBaseName "-" " " | title }} Subtitle Indonesia'
 keywords : 'Download Batch {{ replace .File.ContentBaseName "-" " " | title }} Subtitle Indonesia'
 
-# Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
+# Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
 linkDownload360p : ''
 buttonDownload360p : ''
