@@ -762,6 +762,10 @@ video {
   max-width: 4rem;
 }
 
+.max-w-32 {
+  max-width: 8rem;
+}
+
 .max-w-44 {
   max-width: 11rem;
 }
@@ -789,10 +793,6 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
-}
-
-.max-w-32 {
-  max-width: 8rem;
 }
 
 .rotate-180 {
