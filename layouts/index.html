@@ -11,8 +11,8 @@
                         {{ range $paginator.Pages }}
                         <div class="group bg-slate-400 p-2">
                             <a title="{{ .Title }}" href="{{ .Permalink }}" class="flex gap-1 rounded-lg h-full group-hover:bg-slate-300 flex-col w-full">
-                                <img class="group-hover:scale-101 h-[300px] w-[200px] rounded-lg transition duration-300 object-cover" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
-                                <span class="w-full font-bold max-w-44 mx-auto mt-4 text-center">{{ .Title }}</span>
+                                <img class="group-hover:scale-[1.01] h-[300px] w-[200px] rounded-lg transition duration-300 object-cover" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
+                                <span class="w-full font-bold max-w-44 mx-auto mt-2 text-center">{{ .Title }}</span>
                             </a>
                         </div>
                         {{ end }}
@@ -23,7 +23,7 @@
                     .pagination {
                         display: flex;
                         gap: 16px;
-                        background-color: var(--color-slate-400) /* oklch(0.704 0.04 256.788) = #90a1b9 */;
+                        background-color: #90a1b9;
                         padding: 16px;
                         width: 100%;
                         max-width: max-content;
@@ -35,7 +35,7 @@
                         flex-direction: row;
                     }
                     .page-item {
-                        background-color: var(--color-slate-300) /* oklch(0.869 0.022 252.894) = #cad5e2 */;
+                        background-color: #cad5e2;
                         padding: 8px;
                         width: 100%;
                         border-radius: 999px;

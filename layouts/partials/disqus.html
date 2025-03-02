@@ -13,37 +13,45 @@
             </span>
         </button>
     </div>
-    <div id="disqus-container" class="rounded-lg bg-slate-400 p-4 mt-4">
-        {{ template "_internal/disqus.html" . }}
-    </div>
+    <div class="rounded-lg p-4 mt-4 hidden" id="disqus_thread"></div>
 </div>
 
 <script>
     const bukaKomen = document.getElementById('buka-komen');
     const tutupKomen = document.getElementById('tutup-komen');
-    const disqus = document.getElementById('disqus_thread');
-    const disqusContainer = document.getElementById('disqus-container');
+    const disqusContainer = document.getElementById('disqus_thread');
 
-    disqus.classList.add("hidden")
-    disqusContainer.classList.add("hidden")
-    
+    let disqusLoaded = false;
+
     bukaKomen.addEventListener('click', () => {
         bukaKomen.classList.add('hidden');
-        
+
         setTimeout(() => {
             tutupKomen.classList.remove('hidden');
-            disqus.classList.remove('hidden');
             disqusContainer.classList.remove('hidden');
-        }, 1000); // Menunggu 1 detik sebelum menampilkan elemen
+
+            if (!disqusLoaded) {
+                disqusLoaded = true;
+            
+                var disqus_config = function () {
+                    this.page.url = window.location.href;
+                    this.page.identifier = window.location.pathname;
+                };                
+            
+                var d = document, s = d.createElement('script');
+                s.src = 'https://mydonghua.disqus.com/embed.js'; // Pastikan shortname benar
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            }            
+        }, 1000);
     });
-    
+
     tutupKomen.addEventListener('click', () => {
         tutupKomen.classList.add('hidden');
-        disqus.classList.add('hidden');
-        disqusContainer.classList.add('hidden');
+        disqusContainer.classList.add('hidden'); // Sembunyikan saja, jangan dihapus
         
         setTimeout(() => {
             bukaKomen.classList.remove('hidden');
-        }, 1000); // Menunggu 1 detik sebelum menampilkan kembali tombol "bukaKomen"
-    });
+        }, 1000);
+    });    
 </script>

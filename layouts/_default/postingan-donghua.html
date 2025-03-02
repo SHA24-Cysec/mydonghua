@@ -22,26 +22,26 @@
                             <table class="mt-8 p-4 mx-auto bg-blue-300">
                                 <thead>
                                     <tr>
-                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="videocam"></ion-icon>Studio</span></th>
-                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="flag"></ion-icon>Season</span></th>
-                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="time"></ion-icon>Durasi</span></th>
-                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="film"></ion-icon>Episode</span></th>
-                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="flame"></ion-icon>Release</span></th>
-                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="bookmark"></ion-icon>Type</span></th>
-                                        <th class="border p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="code-download"></ion-icon>Status</span></th>
-                                        <th class="border p-4"><span class="flex w-max items-center justify-center gap-2"><ion-icon name="person"></ion-icon>Sub By</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="videocam"></ion-icon>Studio</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="flag"></ion-icon>Season</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="time"></ion-icon>Durasi</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="film"></ion-icon>Episode</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="flame"></ion-icon>Release</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="bookmark"></ion-icon>Type</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="code-download"></ion-icon>Status</span></th>
+                                        <th class="border border-black p-4"><span class="flex w-max items-center justify-center gap-2"><ion-icon name="person"></ion-icon>Sub By</span></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
                                     <tr>
-                                        <td class="border p-2">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</td>
-                                        <td class="border p-2">{{ .Params.season }}</td>
-                                        <td class="border p-2">{{ .Params.durasi }}</td>
-                                        <td class="border p-2">{{ .Params.episode }}</td>
-                                        <td class="border p-2">{{ .Params.release }}</td>
-                                        <td class="border p-2">{{ .Params.type }}</td>
-                                        <td class="border p-2">{{ .Params.status }}</td>
-                                        <td class="border p-2">{{ .Params.sub }}</td>
+                                        <td class="border border-black p-2">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</td>
+                                        <td class="border border-black p-2">{{ .Params.season }}</td>
+                                        <td class="border border-black p-2">{{ .Params.durasi }}</td>
+                                        <td class="border border-black p-2">{{ .Params.episode }}</td>
+                                        <td class="border border-black p-2">{{ .Params.release }}</td>
+                                        <td class="border border-black p-2">{{ .Params.type }}</td>
+                                        <td class="border border-black p-2">{{ .Params.status }}</td>
+                                        <td class="border border-black p-2">{{ .Params.sub }}</td>
                                     </tr>
                                 </tbody>
                             </table>

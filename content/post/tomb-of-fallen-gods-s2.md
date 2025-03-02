@@ -48,7 +48,7 @@ linkDownload1080p : 'https://drive.google.com/file/d/17nbMVR3XI_i1B2wdtgfSjZ5KF8
 buttonDownload1080p : 'Download'
 ukuran1080p : '15 GB'
 
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+linkDownload4K : 'https://drive.google.com/file/d/1d3AJoC069pdGN4jIk3iQKu5IFw7bMC8a/view?usp=sharing'
+buttonDownload4K : 'Download (Episode 22-27[END])'
+ukuran4K : '5.95 GB'
 ---
