@@ -16,6 +16,8 @@ durasi : '1 Jam 40 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Dec 29, 2023'
+# Rating 1-10
+rating : 9.20
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/bu-liang-ren-the-legend-of-yuan-tiangang.webp

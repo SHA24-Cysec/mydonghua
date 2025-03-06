@@ -15,6 +15,8 @@ durasi : '1 Jam 38 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : '2019'
+# Rating 1-10
+rating : 8.29
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-gaoshou-movie-for-the-glory.webp

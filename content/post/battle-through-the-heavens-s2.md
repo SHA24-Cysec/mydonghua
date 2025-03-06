@@ -17,6 +17,8 @@ durasi : '20 Menit'
 episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'March 04, 2018'
+# Rating 1-10
+rating : 9.80
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-s2.webp

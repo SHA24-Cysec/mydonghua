@@ -18,6 +18,8 @@ durasi : '22 Menit'
 episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jan 01, 2025'
+# Rating 1-10
+rating : 9.20
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun-s5.webp

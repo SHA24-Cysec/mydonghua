@@ -18,6 +18,8 @@ durasi : '1 Jam 33 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Dec 07, 2024'
+# Rating 1-10
+rating : 9.20
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/swallowed-star-dark-blood-continent.webp

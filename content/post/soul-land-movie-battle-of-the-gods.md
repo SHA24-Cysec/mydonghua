@@ -19,6 +19,8 @@ durasi : '1 Jam 35 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jun 17, 2023'
+# Rating 1-10
+rating : 9.20
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/soul-land-movie.webp

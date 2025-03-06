@@ -18,6 +18,8 @@ durasi : '20 Menit'
 episode : '3 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jul 17, 2022'
+# Rating 1-10
+rating : 9.80
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-special-origin.webp

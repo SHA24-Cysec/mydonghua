@@ -18,6 +18,8 @@ durasi : '1 Jam 50 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Feb 12, 2021'
+# Rating 1-10
+rating : 9
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-rule-of-burning-sun-2.webp

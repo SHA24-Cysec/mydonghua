@@ -19,6 +19,8 @@ durasi : '24 Menit'
 episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'May 03, 2020'
+# Rating 1-10
+rating : 8
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/stellar-transformation-s2.webp

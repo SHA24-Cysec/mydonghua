@@ -16,6 +16,8 @@ durasi : '20 Menit'
 episode : '30 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Sep 23, 2023'
+# Rating 1-10
+rating : 8.83
 
 # Gambar width: 200, height :300
 thumbnail : /img/post/against-the-gods.webp

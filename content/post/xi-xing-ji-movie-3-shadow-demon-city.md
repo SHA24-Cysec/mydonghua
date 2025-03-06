@@ -18,6 +18,8 @@ durasi : '1 Jam 167 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jan 18, 2023'
+# Rating 1-10
+rating : 8.83
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-movie-3-shadow-demon-city.webp

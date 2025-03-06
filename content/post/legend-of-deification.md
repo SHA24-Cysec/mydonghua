@@ -16,6 +16,8 @@ durasi : '1 Jam 49 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Oct 01, 2020'
+# Rating 1-10
+rating : 8.60
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/legend-of-deification.webp

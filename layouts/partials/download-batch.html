@@ -71,7 +71,25 @@
             {{/*  Akhir Elemen Ukuran Download  */}}
         </div>
         {{/*  Akhir Elemen Download  */}}
-        <a href="mailto:syukra108@gmail.com" class="mx-auto w-max mt-4 hover:bg-blue-400 p-2 rounded-lg bg-blue-300 font-bold">Laporkan Link Mati</a>
+        <button id="reportButton" class="mx-auto w-max mt-4 cursor-pointer hover:bg-blue-400 p-2 rounded-lg bg-blue-300 font-bold">
+            Laporkan Link Mati
+        </button>
+        
+        <script>
+            document.getElementById("reportButton").addEventListener("click", function() {
+                let currentUrl = window.location.href; // Ambil URL halaman saat ini
+                let scriptUrl = "https://script.google.com/macros/s/AKfycbzUgz8gd9WRDuGmuPPs5WBHIgZ0L3T1tJLwdtL_RLQW7Rb5e7wu6mJZa9cP3w1mEKnbxw/exec"; // Ganti dengan URL Web App
+        
+                fetch(scriptUrl + "?url=" + encodeURIComponent(currentUrl), { 
+                    method: "GET",
+                    mode: "no-cors"
+                }).then(() => {
+                    alert("✅ Laporan berhasil dikirim untuk halaman: " + currentUrl);
+                }).catch(error => {
+                    alert("❌ Terjadi kesalahan: " + error);
+                });
+            });
+        </script>
     </div>
 </div>
 

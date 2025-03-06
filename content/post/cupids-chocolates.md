@@ -17,6 +17,8 @@ durasi : '13 Menit'
 episode : '15 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : '2015'
+# Rating 1-10
+rating : 7.09
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/cupids-chocolates.webp

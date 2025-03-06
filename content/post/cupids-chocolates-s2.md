@@ -17,6 +17,8 @@ durasi : '19 Menit'
 episode : '15 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : '2017'
+# Rating 1-10
+rating : 7.36
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/cupids-chocolates-s2.webp

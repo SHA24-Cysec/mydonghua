@@ -18,6 +18,8 @@ durasi : '20 Menit'
 episode : '2 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jan 07, 2017'
+# Rating 1-10
+rating : 9.80
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-special.webp

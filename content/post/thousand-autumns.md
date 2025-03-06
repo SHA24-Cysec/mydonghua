@@ -16,6 +16,8 @@ durasi : '25 Menit'
 episode : '16 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Feb 08, 2021'
+# Rating 1-10
+rating : 8
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/thousand-autumns.webp

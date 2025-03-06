@@ -15,6 +15,8 @@ durasi : '20 Menit'
 episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Oct 25, 2022'
+# Rating 1-10
+rating : 7.89
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/foreordination.webp

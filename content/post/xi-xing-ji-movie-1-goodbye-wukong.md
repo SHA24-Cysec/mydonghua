@@ -18,6 +18,8 @@ durasi : '1 Jam 5 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'May 04, 2020'
+# Rating 1-10
+rating : 8.60
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-movie-1-goodbye-wukong.webp

@@ -15,6 +15,8 @@ durasi : '1 jam 52 Menit'
 episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jan 22, 2023'
+# Rating 1-10
+rating : 8.83
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/deep-sea.webp

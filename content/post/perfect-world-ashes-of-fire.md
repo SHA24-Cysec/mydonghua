@@ -17,6 +17,8 @@ durasi : '35 Menit'
 episode : '3 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Sep 14, 2024'
+# Rating 1-10
+rating : 9.20
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/perfect-world-ashes-of-fire.webp

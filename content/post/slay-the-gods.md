@@ -16,6 +16,8 @@ durasi : '20 Menit'
 episode : '15 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jul 31, 2024'
+# Rating 1-10
+rating : 8
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/slay-the-gods.webp

@@ -15,6 +15,8 @@ durasi : '40 Menit'
 episode : '9 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Nov 07, 2021'
+# Rating 1-10
+rating : 8.60
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/arcane.webp

@@ -12,6 +12,8 @@ sub : 'Anichin'
 durasi : '20 Menit'
 episode : '16 Episode'
 release : 'Oct 28, 2024'
+# Rating 1-10
+rating : 8
 
 # Gambar width: 200, height :300
 thumbnail : /img/post/wo-shi-da-shenxian-s3.webp

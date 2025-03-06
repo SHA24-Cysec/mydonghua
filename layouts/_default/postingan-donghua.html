@@ -12,6 +12,21 @@
                         <img class="mt-4 h-[300px] w-[200px] mx-auto" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
                     </div>
                     <div class="bg-slate-300 mt-4 p-4">
+                        {{- $rating := .Params.rating | default 0 -}}
+                        {{- $stars := div (mul $rating 5) 10 -}}
+
+                        <div class="flex items-center mb-2 flex-wrap">
+                            <strong class="mr-2">Rating: {{ $rating }}</strong>
+                            <div class="bg-slate-400 p-1 rounded-lg flex-wrap flex items-center">
+                                {{ range seq 5 }}
+                                    {{ if le . $stars }}
+                                        <ion-icon class="text-yellow-500" name="star"></ion-icon>
+                                    {{ else }}
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    {{ end }}
+                                {{ end }}
+                            </div>
+                        </div>
                         <p><strong>Sinopsis:</strong> {{ .Params.sinopsis }}</p>
                         <div class="mt-8 flex gap-2 flex-wrap flex-row">
                             {{ range .Params.genre }}

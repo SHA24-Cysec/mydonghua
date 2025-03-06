@@ -16,6 +16,8 @@ durasi : '14 Menit'
 episode : '26 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Sep 30, 2022'
+# Rating 1-10
+rating : 8
 
 # Gambar width: 200, height :300
 thumbnail : /img/post/everlasting-god-of-sword.webp

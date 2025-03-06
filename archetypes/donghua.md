@@ -12,6 +12,8 @@ durasi : ''
 episode : ' Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : ''
+# Rating 1-10
+rating : 
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/

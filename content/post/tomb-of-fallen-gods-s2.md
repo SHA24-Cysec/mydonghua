@@ -18,6 +18,8 @@ durasi : '20 Menit'
 episode : '27 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Aug 10, 2024'
+# Rating 1-10
+rating : 8.83
 
 # Gambar width: 200, height :300
 thumbnail : /img/post/tomb-of-fallen-gods-s2.webp

@@ -19,6 +19,8 @@ durasi : '20 Menit'
 episode : '24 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'March 29, 2021'
+# Rating 1-10
+rating : 9.80
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-s4.webp

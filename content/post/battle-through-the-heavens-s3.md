@@ -20,6 +20,8 @@ durasi : '20 Menit'
 episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'July 22, 2019'
+# Rating 1-10
+rating : 9.80
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/battle-through-the-heavens-s3.webp
