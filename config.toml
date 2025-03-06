@@ -21,7 +21,7 @@ title = 'MyDonghua - Tempatnya Download Batch Donghua Subtitle Indonesia Terleng
     author = 'Admin'
 
 [sitemap]
-    changeFreq = 'monthly'
+    changeFreq = 'weekly'
 
 [outputs]
     home = ['HTML', 'rss']
