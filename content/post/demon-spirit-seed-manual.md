@@ -1,0 +1,57 @@
+---
+date : '2025-03-07T18:03:05+07:00'
+draft : false
+title : 'Download Batch Demon Spirit Seed Manual Subtitle Indonesia'
+studio :
+    - 'BigFireBird Animation'
+season : '2D Animation'
+genre :
+    - Action
+    - Comedy
+    - Drama
+    - Ecchi
+    - Fantasy
+    - 'Slice of Life'
+type : 'Donghua'
+status : 'Completed'
+sub : 'Anichin'
+durasi : '20 Menit'
+episode : '14 Episode'
+# Penulisan tanggal 'bulan tanggal, tahun'
+release : '2020'
+# Rating 1-10
+rating : 6.8
+
+# Gambar width: 200, height : 300
+thumbnail : /img/post/demon-spirit-seed-manual.webp
+image : /img/post/demon-spirit-seed-manual.webp
+
+alt : 'Demon Spirit Seed Manual'
+url: 'demon-spirit-seed-manual'
+layout : postingan-donghua
+sinopsis : 'Berkisah tentang Yuan Ding, seorang pemuda dari dunia modern yang secara misterius terlempar ke dunia fantasi di mana manusia bisa membentuk kontrak dengan roh iblis untuk meningkatkan kekuatan mereka. Tanpa kemampuan khusus pada awalnya, Yuan Ding menemukan sebuah buku kuno yang berisi rahasia tentang roh iblis dan cara membudidayakannya. Dengan kecerdasannya dan pengetahuan dari dunia lama, ia mulai menempuh jalan untuk menjadi ahli roh iblis, menghadapi berbagai tantangan, musuh kuat, serta mengungkap rahasia di balik dunia baru tempatnya berada.'
+deskripsi : 'Download Batch Demon Spirit Seed Manual Subtitle Indonesia'
+keywords : 'Download Batch Demon Spirit Seed Manual Subtitle Indonesia'
+
+# Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
+
+linkDownload360p : 'https://acefile.co/f/30891935'
+buttonDownload360p : 'Download'
+ukuran360p : '764.08 MB'
+
+linkDownload480p : ''
+buttonDownload480p : 'Belum Tersedia'
+ukuran480p : ''
+
+linkDownload720p : 'https://acefile.co/f/30891941'
+buttonDownload720p : 'Download'
+ukuran720p : '1.66 GB'
+
+linkDownload1080p : 'https://acefile.co/f/30891940'
+buttonDownload1080p : 'Download'
+ukuran1080p : '2.21 GB'
+
+linkDownload4K : ''
+buttonDownload4K : 'Belum Tersedia'
+ukuran4K : ''
+---
