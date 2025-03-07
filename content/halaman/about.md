@@ -22,7 +22,7 @@ Kami menghadirkan subtitle Indonesia yang diterjemahkan secara akurat dan jelas 
 
 - **Download Mudah dan Cepat**  
 
-Dengan antarmuka yang ramah pengguna, MyDonghua menawarkan pengalaman download yang cepat dan efisien. Tersedia berbagai pilihan resolusi sesuai dengan preferensi pengguna, mulai dari 360p hingga 1080p.
+Dengan antarmuka yang ramah pengguna, MyDonghua menawarkan pengalaman download yang cepat dan efisien. Tersedia berbagai pilihan resolusi sesuai dengan preferensi pengguna, mulai dari 360p hingga 4K.
 
 - **Update Rutin dan Cepat**  
 

@@ -3,7 +3,7 @@ date : '2025-03-06T05:17:09+07:00'
 draft : false
 title : 'Download Batch Sage Ancestor Subtitle Indonesia'
 studio :
-    - 'Transcendence Picture'
+    - 'Transcendence Pictures'
 season : '2024'
 genre :
     - Action

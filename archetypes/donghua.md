@@ -8,7 +8,7 @@ genre :
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
-durasi : ''
+durasi : ' Menit'
 episode : ' Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : ''
