@@ -1,5 +1,6 @@
 baseURL = 'https://mydonghua.syukra.org/'
 title = 'MyDonghua - Tempatnya Download Batch Donghua Subtitle Indonesia Terlengkap'
+defaultContentLanguage = 'id'
 
 [services]
     [services.googleAnalytics]
