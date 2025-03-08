@@ -14,7 +14,7 @@
             <description>{{ .Params.sinopsis }}</description>
             <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 MST" }}</pubDate>
             <guid>{{ .Permalink }}</guid>
-            <enclosure url='{{ absURL .Params.thumbnail }}' type="image/webp"></enclosure>
+            <enclosure url='{{ absURL .Params.thumbnail }}' type="image/webp" length="12345678"></enclosure>
         </item>
         {{ end }}
     </channel>
