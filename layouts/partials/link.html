@@ -1,4 +1,7 @@
-<link rel="stylesheet" href='{{ relURL "css/main.css" }}'>
+{{ with resources.Get "css/main.css" }}
+    {{ $minified := . | minify }}
+    <link rel="stylesheet" href="{{ $minified.RelPermalink }}">
+{{ end }}
 <link rel="shortcut icon" href='{{ relURL "img/donghuanime.webp"}}' type="image/x-icon">
 <link rel="canonical" href="{{ .Permalink }}">
 <link crossorigin="anonymous" rel="prefetch" href="https://unpkg.com">
