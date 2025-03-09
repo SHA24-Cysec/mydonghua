@@ -9,7 +9,7 @@
                         <span class="flex items-center gap-1 text-sm"><ion-icon name="person"></ion-icon>Posted by <strong>{{ .Site.Params.author }}</strong><ion-icon class="text-green-500" name="checkmark-circle"></ion-icon></span>
                         <hr class="mt-4">
                         <h1 class="text-2xl mt-4"><strong>{{ .Title }}</strong></h1>
-                        <img class="mt-4 h-[300px] w-[200px] mx-auto" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
+                        <img title="{{ .Title }}" class="mt-4 h-[300px] w-[200px] mx-auto" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
                     </div>
                     <div class="bg-slate-300 mt-4 p-4">
                         {{- $rating := .Params.rating | default 0 -}}
