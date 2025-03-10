@@ -4,20 +4,6 @@
 <script src="https://cdn.tailwindcss.com"></script>
 {{ end }}  */}}
 
-{{/*  Script anti klik kanan dan F-12  */}}
-{{ if hugo.IsProduction }}
-<script>
-    document.addEventListener("contextmenu", function(e) {
-        e.preventDefault();
-        });
-        document.addEventListener("keydown", function(e) {
-            if (e.key === "F12") {
-                e.preventDefault();
-                }
-    })
-</script>
-{{ end }}
-
 {{/*  Script Safelinku  */}}
 <script type="text/javascript">
     var go_url = 'https://sfl.gl/';
