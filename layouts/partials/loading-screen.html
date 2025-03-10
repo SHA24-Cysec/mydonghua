@@ -1,9 +1,9 @@
 <div id="loading-screen" class="fixed bottom-0 top-0 right-0 left-0 flex items-center justify-center flex-col w-full h-screen z-[1000] bg-white">
     <img width="75" height="75" class="bg-transparent bg" src='{{ relURL "img/loading-screen.svg" }}' alt="">
     <span class="animate-pulse">Loading...</span>
-    <span id="alert-loading" class="mt-4 hidden text-sm">Jika Halaman Tidak Muncul , Silakan Refresh Halaman</span>
+    <span id="alert-loading" class="mt-4 hidden text-sm">Jika Halaman Tidak Muncul, Silakan Refresh Halaman</span>
 </div>
-<script>
+<script defer>
     document.addEventListener("DOMContentLoaded", function () {
         var loadingScreen = document.getElementById("loading-screen");
         var alertLoading = document.getElementById("alert-loading");
