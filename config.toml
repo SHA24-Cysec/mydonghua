@@ -23,7 +23,7 @@ defaultContentLanguage = 'id'
 
 [sitemap]
     changeFreq = 'weekly'
+    priority = 0.8
 
 [outputs]
     home = ['HTML', 'rss']
-    taxonomy = ['html']
