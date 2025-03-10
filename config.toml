@@ -1,10 +1,10 @@
-baseURL = 'https://mydonghua.syukra.org/'
-title = 'MyDonghua - Download Batch Donghua Subtitle Indonesia Terlengkap'
+baseURL = 'https://donghuanime.syukra.org/'
+title = 'Donghuanime - Download Batch Donghua Subtitle Indonesia Terlengkap'
 defaultContentLanguage = 'id'
 
 [services]
     [services.googleAnalytics]
-        id = 'G-99GNVNF3VY'
+        id = 'G-7B40JB824Z'
     [services.rss]
         limit = -1
 
