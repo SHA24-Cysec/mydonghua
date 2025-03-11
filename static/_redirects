@@ -1,5 +1,6 @@
 # Redirect Netlify subdomain ke domain utama
 https://mydonghua.netlify.app/* https://mydonghua.syukra.org/:splat 301
 
-# Redirect langsung dari root domain ke subdomain alias
+# Redirect dari root domain dan semua path ke subdomain alias
 / https://donghuanime.syukra.org/ 301
+/* https://donghuanime.syukra.org/:splat 301
