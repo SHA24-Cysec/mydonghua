@@ -1,2 +1,0 @@
-# Redirect Netlify subdomain ke domain utama
-https://mydonghua.netlify.app/* https://donghuanime.syukra.org/:splat 301
