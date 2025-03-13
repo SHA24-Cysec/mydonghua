@@ -8,7 +8,7 @@ season : 'Winter 2024'
 genre :
     - Action
     - Mystery
-    - Supranatural
+    - Supernatural
 type : 'Donghua Movie'
 status : 'Completed'
 sub : 'Anichin'

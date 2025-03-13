@@ -11,7 +11,7 @@ genre :
     - Fantasy
     - Mystery
     - Romance
-    - Supranatural
+    - Supernatural
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'

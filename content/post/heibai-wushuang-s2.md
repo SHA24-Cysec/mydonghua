@@ -26,7 +26,7 @@ image : /img/post/heibai-wushuang-s2.webp
 alt : 'Heibai Wushuang S2'
 url: 'heibai-wushuang-s2'
 layout : postingan-donghua
-sinopsis : 'Musim kedua ini melanjutkan kisah para prajurit hitam dan putih yang bertugas menjaga keseimbangan antara dunia manusia dan alam baka. Mereka menghadapi berbagai tantangan baru, termasuk roh-roh nakal dan ancaman supranatural lainnya, sambil tetap menyisipkan humor dalam setiap petualangan mereka.'
+sinopsis : 'Musim kedua ini melanjutkan kisah para prajurit hitam dan putih yang bertugas menjaga keseimbangan antara dunia manusia dan alam baka. Mereka menghadapi berbagai tantangan baru, termasuk roh-roh nakal dan ancaman Supernatural lainnya, sambil tetap menyisipkan humor dalam setiap petualangan mereka.'
 deskripsi : 'Download Batch Heibai Wushuang S2 Subtitle Indonesia'
 keywords : 'Download Batch Heibai Wushuang S2 Subtitle Indonesia'
 

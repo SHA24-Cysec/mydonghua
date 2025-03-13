@@ -12,7 +12,7 @@ genre :
     - 'Martial Arts'
     - Mythology
     - Romance
-    - Supranatural
+    - Supernatural
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
