@@ -17,10 +17,21 @@
                 const tombolGenre = document.getElementById('tombolGenre');
                 const menuGenre = document.getElementById('menuGenre');
                 const arrowGenre = document.getElementById('arrowGenre');
-                tombolGenre.addEventListener('click', () => {
+
+                // Toggle menu saat tombol diklik
+                tombolGenre.addEventListener('click', (event) => {
                     menuGenre.classList.toggle('hidden');
                     arrowGenre.classList.toggle('rotate-180');
-                    });
+                    event.stopPropagation(); // Hindari trigger event dari document
+                });
+
+                // Sembunyikan menu saat klik di luar elemen
+                document.addEventListener('click', (event) => {
+                    if (!menuGenre.contains(event.target) && !tombolGenre.contains(event.target)) {
+                        menuGenre.classList.add('hidden');
+                        arrowGenre.classList.remove('rotate-180');
+                    }
+                });
             </script>
         </div>
         <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href="https://saweria.co/sha24"><ion-icon name="wallet"></ion-icon>Support</a>
@@ -60,13 +71,23 @@
             </div>
         </div>
         <script>
-            const tombolGenreMobile = document.getElementById('tombolGenreMobile')
-            const menuGenreMobile = document.getElementById('menuGenreMobile')
+            const tombolGenreMobile = document.getElementById('tombolGenreMobile');
+            const menuGenreMobile = document.getElementById('menuGenreMobile');
+
             if (tombolGenreMobile) {
-                tombolGenreMobile.addEventListener('click', () => {
-                    menuGenreMobile.classList.toggle('hidden')
-                    })
+                // Toggle menu saat tombol diklik
+                tombolGenreMobile.addEventListener('click', (event) => {
+                    menuGenreMobile.classList.toggle('hidden');
+                    event.stopPropagation(); // Hindari trigger event dari document
+                });
+            
+                // Sembunyikan menu saat klik di luar elemen
+                document.addEventListener('click', (event) => {
+                    if (!menuGenreMobile.contains(event.target) && !tombolGenreMobile.contains(event.target)) {
+                        menuGenreMobile.classList.add('hidden');
                     }
+                });
+            }
         </script>
     </button>
     {{/*  Lainnya Menu  */}}
@@ -91,14 +112,24 @@
 
 {{/*  Script Mobile  */}}
 <script>
-    const tombolMenu = document.getElementById('tombol-menu')
-    const daftarMenu = document.getElementById('daftar-menu')
-    const logoMenu = document.getElementById('logo-menu')
+    const tombolMenu = document.getElementById('tombol-menu');
+    const daftarMenu = document.getElementById('daftar-menu');
+    const logoMenu = document.getElementById('logo-menu');
 
     if (tombolMenu) {
-        tombolMenu.addEventListener('click', () => {
-            daftarMenu.classList.toggle('hidden')
-            logoMenu.classList.toggle('rotate-90')
-        })
+        // Toggle menu saat tombol diklik
+        tombolMenu.addEventListener('click', (event) => {
+            daftarMenu.classList.toggle('hidden');
+            logoMenu.classList.toggle('rotate-90');
+            event.stopPropagation(); // Hindari trigger event dari document
+        });
+    
+        // Sembunyikan menu saat klik di luar elemen
+        document.addEventListener('click', (event) => {
+            if (!daftarMenu.contains(event.target) && !tombolMenu.contains(event.target)) {
+                daftarMenu.classList.add('hidden');
+                logoMenu.classList.remove('rotate-90');
+            }
+        });
     }
 </script>
