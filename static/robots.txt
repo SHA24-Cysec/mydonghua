@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://donghuanime.syukra.org/sitemap.xml
+Sitemap: https://donghuabatch.syukra.org/sitemap.xml

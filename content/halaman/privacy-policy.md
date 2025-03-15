@@ -1,16 +1,16 @@
 ---
 date : '2025-02-22T21:01:56+07:00'
 draft : false
-title : 'Kebijakan Privasi Donghuanime'
+title : 'Kebijakan Privasi DonghuaBatch'
 layout : halaman
 url : privacy-policy
 ---
 
-Selamat datang di **Donghuanime**! Privasi pengguna adalah prioritas utama kami. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi yang diberikan oleh pengguna saat mengakses situs web **Donghuanime**, platform yang menyediakan tempat download batch donghua terlengkap dengan subtitle Indonesia.
+Selamat datang di **DonghuaBatch**! Privasi pengguna adalah prioritas utama kami. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi yang diberikan oleh pengguna saat mengakses situs web **DonghuaBatch**, platform yang menyediakan tempat download batch donghua terlengkap dengan subtitle Indonesia.
 
 ## 1. Informasi yang Kami Kumpulkan
 
-Ketika Anda mengunjungi **Donghuanime**, kami dapat mengumpulkan beberapa jenis informasi, termasuk:
+Ketika Anda mengunjungi **DonghuaBatch**, kami dapat mengumpulkan beberapa jenis informasi, termasuk:
 
 - **Informasi Non-Pribadi**: Seperti alamat IP, jenis browser, perangkat yang digunakan, halaman yang dikunjungi, serta waktu akses untuk keperluan analisis dan peningkatan layanan.
 - **Informasi Pribadi**: Kami hanya mengumpulkan informasi pribadi seperti alamat email jika Anda secara sukarela memberikannya, misalnya saat berlangganan buletin atau menghubungi kami melalui formulir kontak.
@@ -19,7 +19,7 @@ Ketika Anda mengunjungi **Donghuanime**, kami dapat mengumpulkan beberapa jenis 
 
 Kami menggunakan informasi yang dikumpulkan untuk berbagai tujuan, termasuk:
 
-- Meningkatkan kualitas layanan dan pengalaman pengguna di **Donghuanime**.
+- Meningkatkan kualitas layanan dan pengalaman pengguna di **DonghuaBatch**.
 - Menyediakan konten yang lebih relevan dan sesuai dengan preferensi pengguna.
 - Mengelola komunikasi dengan pengguna, termasuk menanggapi pertanyaan atau memberikan informasi terbaru seputar donghua.
 - Menganalisis pola penggunaan situs untuk memahami kebutuhan dan keinginan pengguna.
@@ -32,7 +32,7 @@ Kami tidak akan menjual, menyewakan, atau membagikan informasi pribadi pengguna 
 
 ## 4. Penggunaan Cookie
 
-**Donghuanime** menggunakan cookie untuk meningkatkan pengalaman pengguna dengan cara:
+**DonghuaBatch** menggunakan cookie untuk meningkatkan pengalaman pengguna dengan cara:
 
 - Menyimpan preferensi pengguna agar situs lebih mudah diakses di kunjungan berikutnya.
 - Menganalisis lalu lintas situs untuk memahami tren penggunaan.
@@ -52,12 +52,12 @@ Pengguna memiliki hak atas informasi mereka, termasuk:
 - Memperbarui atau menghapus informasi pribadi yang telah diberikan.
 - Menolak atau membatasi penggunaan data tertentu sesuai dengan peraturan yang berlaku.
 
-Untuk menggunakan hak ini, pengguna dapat menghubungi kami melalui halaman kontak di **Donghuanime**.
+Untuk menggunakan hak ini, pengguna dapat menghubungi kami melalui halaman kontak di **DonghuaBatch**.
 
 ## 7. Perubahan Kebijakan Privasi
 
 Kami dapat memperbarui Kebijakan Privasi ini sewaktu-waktu untuk mencerminkan perubahan dalam operasional situs atau peraturan yang berlaku. Pengguna disarankan untuk memeriksa halaman ini secara berkala untuk mengetahui pembaruan terbaru.
 
-Dengan mengakses **Donghuanime**, Anda dianggap telah menyetujui kebijakan privasi ini. Jika ada pertanyaan lebih lanjut, silakan hubungi kami melalui halaman kontak yang tersedia.
+Dengan mengakses **DonghuaBatch**, Anda dianggap telah menyetujui kebijakan privasi ini. Jika ada pertanyaan lebih lanjut, silakan hubungi kami melalui halaman kontak yang tersedia.
 
-Terima kasih telah mempercayai **Donghuanime** sebagai sumber download batch donghua terlengkap subtitle Indonesia!
+Terima kasih telah mempercayai **DonghuaBatch** sebagai sumber download batch donghua terlengkap subtitle Indonesia!

@@ -1,5 +1,5 @@
-baseURL = 'https://donghuanime.syukra.org/'
-title = 'Donghuanime - Download Batch Donghua Subtitle Indonesia Terlengkap'
+baseURL = 'https://donghuabatch.syukra.org/'
+title = 'DonghuaBatch - Tempatnya Download Batch Donghua Subtitle Indonesia Terlengkap'
 defaultContentLanguage = 'id'
 
 [services]
@@ -22,7 +22,7 @@ defaultContentLanguage = 'id'
     author = 'Admin'
 
 [sitemap]
-    changeFreq = 'weekly'
+    changeFreq = 'daily'
     priority = 0.8
 
 [outputs]

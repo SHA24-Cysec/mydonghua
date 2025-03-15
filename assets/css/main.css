@@ -570,6 +570,10 @@ video {
   position: sticky;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -610,12 +614,96 @@ video {
   top: 0px;
 }
 
+.right-5 {
+  right: 1.25rem;
+}
+
+.right-10 {
+  right: 2.5rem;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
+.right-1\/2 {
+  right: 50%;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.-left-1\/2 {
+  left: -50%;
+}
+
+.-left-10 {
+  left: -2.5rem;
+}
+
+.-left-3 {
+  left: -0.75rem;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.-left-12 {
+  left: -3rem;
+}
+
+.right-20 {
+  right: 5rem;
+}
+
+.-right-20 {
+  right: -5rem;
+}
+
+.-right-10 {
+  right: -2.5rem;
+}
+
+.-right-8 {
+  right: -2rem;
+}
+
+.-right-5 {
+  right: -1.25rem;
+}
+
+.-right-2 {
+  right: -0.5rem;
+}
+
+.-right-12 {
+  right: -3rem;
+}
+
+.-right-9 {
+  right: -2.25rem;
+}
+
+.-right-16 {
+  right: -4rem;
+}
+
 .z-50 {
   z-index: 50;
 }
 
 .z-\[1000\] {
   z-index: 1000;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .mx-4 {
@@ -721,10 +809,6 @@ video {
   height: 100vh;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -766,6 +850,26 @@ video {
   width: max-content;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.w-44 {
+  width: 11rem;
+}
+
+.w-52 {
+  width: 13rem;
+}
+
+.w-72 {
+  width: 18rem;
+}
+
 .max-w-16 {
   max-width: 4rem;
 }
@@ -803,6 +907,11 @@ video {
   max-width: 36rem;
 }
 
+.translate-x-1\/2 {
+  --tw-translate-x: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .rotate-180 {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -810,6 +919,10 @@ video {
 
 .rotate-90 {
   --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -998,25 +1111,9 @@ video {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-.bg-gradient-to-tl {
-  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
-}
-
 .from-blue-300 {
   --tw-gradient-from: #93c5fd var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(147 197 253 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-red-700 {
-  --tw-gradient-from: #b91c1c var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(185 28 28 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-black {
-  --tw-gradient-from: #000 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -1024,26 +1121,9 @@ video {
   --tw-gradient-to: #bae6fd var(--tw-gradient-to-position);
 }
 
-.to-red-300 {
-  --tw-gradient-to: #fca5a5 var(--tw-gradient-to-position);
-}
-
-.to-red-600 {
-  --tw-gradient-to: #dc2626 var(--tw-gradient-to-position);
-}
-
-.bg-repeat {
-  background-repeat: repeat;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.object-center {
-  -o-object-position: center;
-     object-position: center;
 }
 
 .p-1 {
@@ -1144,10 +1224,6 @@ video {
   opacity: 0.5;
 }
 
-.bg-blend-exclusion {
-  background-blend-mode: exclusion;
-}
-
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1244,14 +1320,6 @@ video {
 
   .md\:hidden {
     display: none;
-  }
-
-  .md\:h-96 {
-    height: 24rem;
-  }
-
-  .md\:w-\[1280px\] {
-    width: 1280px;
   }
 
   .md\:grid-cols-2 {

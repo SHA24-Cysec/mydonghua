@@ -56,15 +56,15 @@
     </div>
     {{/*  Image Logo  */}}
     <div class="text-2xl p-4 items-center flex">
-        <img width="40" height="40" src='{{ relURL "img/donghuanime.webp" }}' alt="Donghuanime">
+        <img width="40" height="40" src='{{ relURL "img/dongbatch.webp" }}' alt="DonghuaBatch">
     </div>
     {{/*  Genre Menu  */}}
     <button id="tombolGenreMobile" class="flex relative gap-1 h-full w-10 rounded-full items-center flex-col">
         <ion-icon class="w-7 h-7" size="large" name="folder"></ion-icon>
         <span class="text-xs opacity-50">Genre</span>
         {{/*  DropDown Menu Genre  */}}
-        <div id="menuGenreMobile" class="absolute overflow-y-auto hidden shadow-md shadow-black bg-sky-300 w-32 h-80 p-2 bottom-14 right-1 left-auto">
-            <div class="flex justify-start flex-col gap-2">
+        <div id="menuGenreMobile" class="absolute overflow-y-auto hidden shadow-md shadow-black bg-sky-300 w-72 h-80 p-2 bottom-14 -right-16">
+            <div class="grid grid-cols-2 gap-2">
             {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
                 <a class="font-bold p-2 text-start" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
             {{ end }}

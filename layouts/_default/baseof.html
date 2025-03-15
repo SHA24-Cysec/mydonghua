@@ -13,7 +13,7 @@
     {{ else if .IsHome }}
         <title>{{ .Site.Title }}</title>
     {{ else }}
-        <title>{{ .Title }} - MyDonghua</title>
+        <title>{{ .Title }} | DonghuaBatch</title>
     {{ end }}
 </head>
 <body class="scroll-smooth box-border text-wrap mx-4 bg-slate-200">
@@ -26,15 +26,15 @@
     {{ partial "loading-screen" . }}
     <style>
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 4px;
         }
         ::-webkit-scrollbar-track {
             background-color: #f0f0f0;
-            border-radius: 10px;
+            border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb {
             background-color: #ccc;
-            border-radius: 10px;
+            border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
             background-color: #666;
