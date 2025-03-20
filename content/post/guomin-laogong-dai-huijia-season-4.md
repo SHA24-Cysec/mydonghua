@@ -18,6 +18,10 @@ release : '2018'
 # Rating 1-10
 rating : 6
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/guomin-laogong-dai-huijia-s4.webp
 image : /img/post/guomin-laogong-dai-huijia-s4.webp

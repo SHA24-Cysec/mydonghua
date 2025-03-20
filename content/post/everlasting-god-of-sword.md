@@ -19,6 +19,10 @@ release : 'Sep 30, 2022'
 # Rating 1-10
 rating : 8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height :300
 thumbnail : /img/post/everlasting-god-of-sword.webp
 image : /img/post/everlasting-god-of-sword.webp

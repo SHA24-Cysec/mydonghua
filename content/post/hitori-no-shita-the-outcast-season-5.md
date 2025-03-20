@@ -22,6 +22,10 @@ release : 'Dec 09, 2022'
 # Rating 1-10
 rating : 8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/hitori-no-shita-the-outcast-s5.webp
 image : /img/post/hitori-no-shita-the-outcast-s5.webp

@@ -19,6 +19,10 @@ release : 'Oct 01, 2020'
 # Rating 1-10
 rating : 8.60
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/legend-of-deification.webp
 image : /img/post/legend-of-deification.webp

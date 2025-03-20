@@ -21,6 +21,10 @@ release : 'Jan 07, 2017'
 # Rating 1-10
 rating : 9.80
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth.webp
 image : /img/post/btth.webp

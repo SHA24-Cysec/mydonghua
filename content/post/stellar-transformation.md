@@ -22,6 +22,10 @@ release : '2018'
 # Rating 1-10
 rating : 7.55
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/stellar-transformation.webp
 image : /img/post/stellar-transformation.webp

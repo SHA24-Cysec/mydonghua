@@ -23,6 +23,10 @@ release : '2019'
 # Rating 1-10
 rating : 8.5
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/reversal-dimension-the-rise-of-ai.webp
 image : /img/post/reversal-dimension-the-rise-of-ai.webp

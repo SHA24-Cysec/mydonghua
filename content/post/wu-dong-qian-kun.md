@@ -22,6 +22,10 @@ release : '2019'
 # Rating 1-10
 rating : 7.5
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun.webp
 image : /img/post/wu-dong-qian-kun.webp

@@ -22,6 +22,10 @@ release : 'Dec 20, 2018'
 # Rating 1-10
 rating : 8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/lord-xue-ying.webp
 image : /img/post/lord-xue-ying.webp

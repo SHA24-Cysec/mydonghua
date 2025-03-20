@@ -19,6 +19,10 @@ release : 'Oct 06, 2022'
 # Rating 1-10
 rating : 8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-sword-of-dawn.webp
 image : /img/post/the-sword-of-dawn.webp

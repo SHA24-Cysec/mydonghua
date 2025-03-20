@@ -19,6 +19,10 @@ release : '2016'
 # Rating 1-10
 rating : 6.3
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/guomin-laogong-dai-huijia.webp
 image : /img/post/guomin-laogong-dai-huijia.webp

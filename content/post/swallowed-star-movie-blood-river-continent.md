@@ -21,6 +21,10 @@ release : 'Dec 07, 2024'
 # Rating 1-10
 rating : 9.20
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/swallowed-star-dark-blood-continent.webp
 image : /img/post/swallowed-star-dark-blood-continent.webp

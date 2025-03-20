@@ -23,6 +23,10 @@ release : 'Oct 24, 2019'
 # Rating 1-10
 rating : 8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/beyond-the-ocean-s2.webp
 image : /img/post/beyond-the-ocean-s2.webp

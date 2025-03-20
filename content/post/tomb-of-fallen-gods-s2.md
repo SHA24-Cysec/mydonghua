@@ -21,6 +21,10 @@ release : 'Aug 10, 2024'
 # Rating 1-10
 rating : 8.83
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height :300
 thumbnail : /img/post/tomb-of-fallen-gods-s2.webp
 image : /img/post/tomb-of-fallen-gods-s2.webp

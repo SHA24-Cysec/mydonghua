@@ -20,6 +20,10 @@ release : '2015'
 # Rating 1-10
 rating : 7.09
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/cupids-chocolates.webp
 image : /img/post/cupids-chocolates.webp

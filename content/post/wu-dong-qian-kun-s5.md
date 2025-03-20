@@ -3,13 +3,13 @@ date : '2025-02-27T08:28:14+07:00'
 draft : false
 title : 'Download Batch Wu Dong Qian Kun Season 5 Subtitle Indonesia'
 studio :
-    - Shanghai Motion Magic
+    - 'Shanghai Motion Magic'
 season : 'Winter 2024'
 genre :
     - Action
     - Adventure
     - Fantasy
-    - Martial Arts
+    - 'Martial Arts'
     - Romance
 type : 'Donghua'
 status : 'Completed'
@@ -20,6 +20,10 @@ episode : '12 Episode'
 release : 'Jan 01, 2025'
 # Rating 1-10
 rating : 9.20
+
+# Layanan Streaming
+Streaming : 'Wu Dong Qian Kun Season 5 Playlist [DailyMotion]'
+LinkStreaming : 'https://dailymotion.com/playlist/x9heh2'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun-s5.webp

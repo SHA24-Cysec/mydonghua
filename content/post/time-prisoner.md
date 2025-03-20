@@ -17,6 +17,10 @@ release : 'Oct 03, 2021'
 # Rating 1-10
 rating : 7
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/time-prisoner.webp
 image : /img/post/time-prisoner.webp

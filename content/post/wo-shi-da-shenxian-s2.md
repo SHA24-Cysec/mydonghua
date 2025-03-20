@@ -22,6 +22,10 @@ release : 'Nov 12, 2020'
 # Rating 1-10
 rating : 8.83
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wo-shi-da-shenxian-s2.webp
 image : /img/post/wo-shi-da-shenxian-s2.webp

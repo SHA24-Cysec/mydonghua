@@ -19,6 +19,10 @@ release : 'Nov 24, 2022'
 # Rating 1-10
 rating : 7.12
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/yuan-long-3.webp
 image : /img/post/yuan-long-3.webp

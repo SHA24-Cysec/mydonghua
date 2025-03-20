@@ -19,6 +19,10 @@ release : 'Jul 15, 2022'
 # Rating 1-10
 rating : 7
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/love-between-fairy-and-devil.webp
 image : /img/post/love-between-fairy-and-devil.webp

@@ -20,6 +20,10 @@ release : 'Sep 23, 2019'
 # Rating 1-10
 rating : 7
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wing-of-the-world.webp
 image : /img/post/wing-of-the-world.webp

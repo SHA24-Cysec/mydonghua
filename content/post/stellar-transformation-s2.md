@@ -22,6 +22,10 @@ release : 'May 03, 2020'
 # Rating 1-10
 rating : 8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/stellar-transformation-s2.webp
 image : /img/post/stellar-transformation-s2.webp

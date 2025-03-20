@@ -19,6 +19,10 @@ release : 'jan 24, 2024'
 # Rating 1-10
 rating : 8.4
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/otherworldly-evil-monarch.webp
 image : /img/post/otherworldly-evil-monarch.webp

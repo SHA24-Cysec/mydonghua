@@ -15,6 +15,11 @@ release : ''
 # Rating 1-10
 rating : 
 
+# Gunakan tag 'Belum tersedia jika layanan streaming belum ada'
+# Layanan Streaming
+Streaming : '{{ replace .File.ContentBaseName "-" " " | title }} Playlist [DailyMotion]'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/
 image : /img/post/

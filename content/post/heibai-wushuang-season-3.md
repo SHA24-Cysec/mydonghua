@@ -18,6 +18,10 @@ release : 'Jul 19, 2021'
 # Rating 1-10
 rating : 8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/heibai-wushuang-s3.webp
 image : /img/post/heibai-wushuang-s3.webp

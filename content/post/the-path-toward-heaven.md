@@ -21,6 +21,10 @@ release : 'Oct 12, 2024'
 # Rating 1-10
 rating : 9.6
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-path-toward-heaven.webp
 image : /img/post/the-path-toward-heaven.webp

@@ -22,6 +22,10 @@ release : '2018'
 # Rating 1-10
 rating : 7.8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/tales-of-demons-and-gods-s3.webp
 image : /img/post/tales-of-demons-and-gods-s3.webp

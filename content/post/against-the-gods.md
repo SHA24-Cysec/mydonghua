@@ -19,6 +19,10 @@ release : 'Sep 23, 2023'
 # Rating 1-10
 rating : 8.83
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height :300
 thumbnail : /img/post/against-the-gods.webp
 image : /img/post/against-the-gods.webp

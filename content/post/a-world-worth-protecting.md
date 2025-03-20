@@ -19,6 +19,10 @@ release : 'Aug 11, 2022'
 # Rating 1-10
 rating : 7.89
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/a-world-worth-protecting.webp
 image : /img/post/a-world-worth-protecting.webp

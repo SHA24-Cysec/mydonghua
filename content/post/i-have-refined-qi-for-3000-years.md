@@ -18,6 +18,10 @@ release : 'Oct 07, 2022'
 # Rating 1-10
 rating : 8
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/qi-refining-for-3000-years.webp
 image : /img/post/qi-refining-for-3000-years.webp

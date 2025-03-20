@@ -18,6 +18,10 @@ release : '2019'
 # Rating 1-10
 rating : 8.29
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-gaoshou-movie-for-the-glory.webp
 image : /img/post/quanzhi-gaoshou-movie-for-the-glory.webp

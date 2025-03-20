@@ -22,6 +22,10 @@ release : '2019'
 # Rating 1-10
 rating : 7.3
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spirit-cage-incarnation.webp
 image : /img/post/spirit-cage-incarnation.webp

@@ -19,6 +19,10 @@ release : 'Apr 28, 2022'
 # Rating 1-10
 rating : 9.20
 
+# Layanan Streaming
+Streaming : 'Belum Tersedia'
+LinkStreaming : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/face-on-lie.webp
 image : /img/post/face-on-lie.webp
