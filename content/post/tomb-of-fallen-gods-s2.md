@@ -22,8 +22,8 @@ release : 'Aug 10, 2024'
 rating : 8.83
 
 # Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
+Streaming : 'Tomb of Fallen Gods Season 2 Playlist [DailyMotion]'
+LinkStreaming : 'https://dailymotion.com/playlist/x9hh1i'
 
 # Gambar width: 200, height :300
 thumbnail : /img/post/tomb-of-fallen-gods-s2.webp
