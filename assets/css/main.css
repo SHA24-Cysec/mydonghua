@@ -1108,17 +1108,8 @@ video {
   color: rgb(14 165 233 / var(--tw-text-opacity, 1));
 }
 
-.text-slate-300 {
-  --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity, 1));
-}
-
 .opacity-50 {
   opacity: 0.5;
-}
-
-.opacity-10 {
-  opacity: 0.1;
 }
 
 .shadow {

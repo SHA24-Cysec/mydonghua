@@ -10,7 +10,7 @@ genre :
     - Adventure
     - Fantasy
     - Historical
-    - Martial Arts
+    - 'Martial Arts'
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
