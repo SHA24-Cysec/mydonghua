@@ -3,7 +3,7 @@ date : '2025-03-07T11:13:41+07:00'
 draft : false
 title : 'Download Batch Left Hand Layup Subtitle Indonesia'
 studio :
-    - 'Heart & Soul Animation'
+    - 'Heart Soul Animation'
 season : 'Winter 2023'
 genre :
     - Sports
