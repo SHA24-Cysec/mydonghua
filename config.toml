@@ -1,5 +1,5 @@
 baseURL = 'https://donghuabatch.web.id/'
-title = 'DonghuaBatch - Tempatnya Download Batch Donghua Subtitle Indonesia Terlengkap'
+title = 'DonghuaBatch - Tempatnya Download Batch Donghua Subtitle Indonesia'
 defaultContentLanguage = 'id'
 
 [services]
@@ -17,7 +17,7 @@ defaultContentLanguage = 'id'
     unsafe = true
 
 [params]
-    deskripsi = 'Tempat Download Batch Donghua terlengkap subtitle Indonesia'
+    deskripsi = 'Tempat Download Batch Donghua subtitle Indonesia'
     keywords = 'Donghua, Batch, Subtitle Indonesia'
     author = 'Admin'
 
