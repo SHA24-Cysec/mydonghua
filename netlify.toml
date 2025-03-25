@@ -5,6 +5,3 @@
   HUGO_ENV = "production"
   HUGO_VERSION = "0.136.5"
   HUGO_EXTENDED = "true"
-
-[[plugins]]
-package = "netlify-purge-cloudflare-on-deploy"
