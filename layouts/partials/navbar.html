@@ -1,12 +1,12 @@
 {{/*  Navbar PC  */}}
 <nav class="bg-sky-300 shadow shadow-black sticky top-0 z-50 w-full font-bold md:flex hidden items-center flex-wrap justify-between mx-auto max-w-screen-xl">
     <menu class="flex mx-auto items-center w-auto">
-        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href="{{ .Site.BaseURL }}"><ion-icon name="home"></ion-icon>Beranda</a>
+        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house"></i>Beranda</a>
         <div class="relative">
             <button id="tombolGenre" class="hover:bg-sky-400 cursor-pointer flex items-center gap-1 text-md p-4">
-                <ion-icon name="folder"></ion-icon>
+                <i id="folder" class="fa-solid fa-folder"></i>
                 <span>Genre</span>
-                <ion-icon class="transition duration-300" id="arrowGenre" name="chevron-down"></ion-icon>
+                <i class="transition duration-300 fa-solid fa-chevron-down" id="arrowGenre" name="chevron-down"></i>
                 <div id="menuGenre" style="top: 56px;right: 0;left: 0;" class="absolute hidden shadow p-4 shadow-black h-80 overflow-y-auto w-80 bg-sky-300">
                     {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
                         <a href='{{ "genre/" | relLangURL }}{{ $name | urlize }}' class="px-2 py-1 flex justify-start hover:bg-sky-400">{{ $name | title }}</a>
@@ -17,11 +17,13 @@
                 const tombolGenre = document.getElementById('tombolGenre');
                 const menuGenre = document.getElementById('menuGenre');
                 const arrowGenre = document.getElementById('arrowGenre');
+                const folder = document.getElementById('folder')
 
                 // Toggle menu saat tombol diklik
                 tombolGenre.addEventListener('click', (event) => {
                     menuGenre.classList.toggle('hidden');
                     arrowGenre.classList.toggle('rotate-180');
+                    folder.classList.toggle('fa-folder-open')
                     event.stopPropagation(); // Hindari trigger event dari document
                 });
 
@@ -30,29 +32,30 @@
                     if (!menuGenre.contains(event.target) && !tombolGenre.contains(event.target)) {
                         menuGenre.classList.add('hidden');
                         arrowGenre.classList.remove('rotate-180');
+                        folder.classList.remove('fa-folder-open')
                     }
                 });
             </script>
         </div>
-        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href="https://saweria.co/sha24"><ion-icon name="wallet"></ion-icon>Support</a>
-        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href='{{ relURL "kontak" }}'><ion-icon name="call"></ion-icon>Kontak</a>
-        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href='{{ relURL "search" }}'><ion-icon name="search"></ion-icon>Cari Donghua</a>
+        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href="https://saweria.co/sha24"><i class="fa-solid fa-leaf"></i>Support</a>
+        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href='{{ relURL "kontak" }}'><i class="fa-solid fa-phone"></i>Kontak</a>
+        <a class="hover:bg-sky-400 flex items-center gap-1 text-md p-4" href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass"></i>Cari Donghua</a>
     </menu>
 </nav>
 
 {{/*  Navbar Mobile  */}}
 <nav class="bg-sky-300 z-50 px-4 shadow-black shadow-md rounded-full fixed max-w-72 w-full left-2 right-2 bottom-4 font-bold md:hidden flex-row flex gap-1 items-center flex-wrap justify-between mx-auto">
     {{/*  Home Menu  */}}
-    <div class="flex gap-1 h-full w-10 rounded-full items-center flex-col">
-        <ion-icon class="w-7 h-7" size="large" name="home"></ion-icon>
-        <a class="text-xs opacity-50" href="{{ .Site.BaseURL }}">Beranda</a>
-    </div>
+    <a class="flex flex-col h-full w-10 items-center" href="{{ .Site.BaseURL }}">
+        <i class="fa-solid fa-house text-2xl"></i>
+        <span class="text-xs">Beranda</span>
+    </a>
     {{/*  Cari Menu  */}}
     <div id="tombol-cari-mobile">
-    <div class="flex gap-1 h-full w-10 rounded-full items-center flex-col">
-        <ion-icon class="w-7 h-7" size="large" name="search"></ion-icon>
-        <a class="text-xs opacity-50" href='{{ relURL "search" }}'>Cari</a>
-    </div>
+        <a class="flex items-center w-10 h-full flex-col" href='{{ relURL "search" }}'>
+            <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+            <span class="text-xs">Cari</span>
+        </a>
     </div>
     {{/*  Image Logo  */}}
     <div class="text-2xl p-4 items-center flex">
@@ -60,8 +63,8 @@
     </div>
     {{/*  Genre Menu  */}}
     <button id="tombolGenreMobile" class="flex relative gap-1 h-full w-10 rounded-full items-center flex-col">
-        <ion-icon class="w-7 h-7" size="large" name="folder"></ion-icon>
-        <span class="text-xs opacity-50">Genre</span>
+        <i id="folderMobile" class="fa-solid fa-folder text-2xl"></i>
+        <span class="text-xs">Genre</span>
         {{/*  DropDown Menu Genre  */}}
         <div id="menuGenreMobile" class="absolute overflow-y-auto hidden shadow-md shadow-black bg-sky-300 w-72 h-80 p-2 bottom-14 -right-16">
             <div class="grid grid-cols-2 gap-2">
@@ -73,11 +76,13 @@
         <script>
             const tombolGenreMobile = document.getElementById('tombolGenreMobile');
             const menuGenreMobile = document.getElementById('menuGenreMobile');
+            const folderMobile = document.getElementById('folderMobile');
 
             if (tombolGenreMobile) {
                 // Toggle menu saat tombol diklik
                 tombolGenreMobile.addEventListener('click', (event) => {
                     menuGenreMobile.classList.toggle('hidden');
+                    folderMobile.classList.toggle('fa-folder-open');
                     event.stopPropagation(); // Hindari trigger event dari document
                 });
             
@@ -85,6 +90,7 @@
                 document.addEventListener('click', (event) => {
                     if (!menuGenreMobile.contains(event.target) && !tombolGenreMobile.contains(event.target)) {
                         menuGenreMobile.classList.add('hidden');
+                        folderMobile.classList.remove('fa-folder-open');
                     }
                 });
             }
@@ -93,19 +99,19 @@
     {{/*  Lainnya Menu  */}}
     <div class="relative">
         <div id="tombol-menu" class="flex gap-1 rounded-full items-center flex-col">
-            <ion-icon id="logo-menu" class="w-7 h-7 transition duration-300 flex items-center" size="large" name="grid"></ion-icon>
-            <button class="text-xs opacity-50">Lainnya</button>
+            <i id="logo-menu" class="fa-solid transition duration-300 fa-grip-vertical text-2xl"></i>
+            <button class="text-xs">Lainnya</button>
         </div>
         {{/*  DropUp Menu  */}}
         <div id="daftar-menu" class="absolute rounded-lg hidden w-30 bg-sky-300 px-4 bottom-14 right-0 left-auto py-2 shadow-md shadow-black">
-            <div class="flex gap-1 w-full mb-4 rounded-full flex-col items-center flex-wrap">
-                <ion-icon size="large" class="w-7 h-7" name="wallet"></ion-icon>
-                <a class="text-xs opacity-50" href="https://saweria.co/sha24">Support</a>
-            </div>
-            <div class="flex gap-1 w-full mt-4 rounded-full flex-col items-center flex-wrap">
-                <ion-icon size="large" class="w-7 h-7" name="call"></ion-icon>
-                <a class="text-xs opacity-50" href='{{ relURL "kontak"}}'>Kontak</a>
-            </div>
+            <a class="flex items-center mb-2 flex-col" href="https://saweria.co/sha24">
+                <i class="fa-solid fa-leaf text-2xl"></i>
+                <span class="text-xs">Support</span>
+            </a>
+            <a class="flex items-center mt-2 flex-col" href='{{ absURL "kontak" }}'>
+                <i class="fa-solid fa-phone text-2xl"></i>
+                <span class="text-xs">Kontak</span>
+            </a>
         </div>
     </div>
 </nav>

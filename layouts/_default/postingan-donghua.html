@@ -6,7 +6,7 @@
             <div style="flex-basis: 900px;">
                 <div class="w-full">
                     <div class="bg-slate-300 p-4">
-                        <span class="flex items-center gap-1 text-sm"><ion-icon name="person"></ion-icon>Posted by <strong>{{ .Site.Params.author }}</strong><ion-icon class="text-green-500" name="checkmark-circle"></ion-icon></span>
+                        <span class="flex items-center gap-1 text-sm"><i class="fa-solid fa-user"></i>Posted by <strong>{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-500"></i></span>
                         <hr class="mt-4">
                         <h1 class="text-2xl mt-4"><strong>{{ .Title }}</strong></h1>
                         <img title="{{ .Title }}" class="mt-4 h-[300px] w-[200px] mx-auto" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
@@ -20,9 +20,9 @@
                             <div class="bg-slate-400 p-1 rounded-lg flex-wrap flex items-center">
                                 {{ range seq 5 }}
                                     {{ if le . $stars }}
-                                        <ion-icon style="color: gold;" name="star"></ion-icon>
+                                        <i class="fa-solid fa-star" style="color: gold;"></i>
                                     {{ else }}
-                                        <ion-icon name="star-outline"></ion-icon>
+                                        <i class="fa-regular fa-star"></i>
                                     {{ end }}
                                 {{ end }}
                             </div>
@@ -37,14 +37,14 @@
                             <table class="mt-8 p-4 mx-auto bg-blue-300">
                                 <thead>
                                     <tr>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="videocam"></ion-icon>Studio</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="flag"></ion-icon>Season</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="time"></ion-icon>Durasi</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="film"></ion-icon>Episode</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="flame"></ion-icon>Release</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="bookmark"></ion-icon>Type</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><ion-icon name="code-download"></ion-icon>Status</span></th>
-                                        <th class="border border-black p-4"><span class="flex w-max items-center justify-center gap-2"><ion-icon name="person"></ion-icon>Sub By</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-video"></i>Studio</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-flag"></i>Season</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-clock"></i>Durasi</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-film"></i>Episode</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-fire"></i>Release</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-bookmark"></i>Type</span></th>
+                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-chart-simple"></i>Status</span></th>
+                                        <th class="border border-black p-4"><span class="flex w-max items-center justify-center gap-2"><i class="fa-solid fa-user"></i>Sub By</span></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -61,7 +61,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p class="mt-4">Tidak ingin download Batch? Streaming Saja --> <strong><a href='{{ .Params.LinkStreaming | absURL }}' target="_blank" rel="noopener noreferrer"></a>{{ .Params.Streaming }}</strong></p>
+                        <p class="mt-4">Tidak ingin download Batch? Streaming Saja <i class="fa-solid fa-arrow-right fa-fade mx-2"></i> <strong><a href='{{ .Params.LinkStreaming | absURL }}' target="_blank" rel="noopener noreferrer"></a>{{ .Params.Streaming }}</strong></p>
                         {{ partial "download-batch" . }}
                     </div>
                     {{ partial "share-donghua" . }}

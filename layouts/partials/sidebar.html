@@ -3,10 +3,10 @@
         {{/*  Elemen Media Sosial  */}}
         <div class="bg-slate-300 mb-4 p-4">
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl">
-                <ion-icon name="earth"></ion-icon>Sosial Media Kami
+                <i class="fa-solid fa-heart"></i>Sosial Media Kami
             </span>
             <div class="flex items-center gap-4 flex-wrap justify-evenly">
-                <a title="Follow Facebook Page" class="flex gap-2 font-bold items-center bg-slate-400 p-2 rounded-lg hover:bg-slate-500" href="https://bit.ly/mydonghua" target="_blank" rel="nofollow noopener"><ion-icon size="large" name="logo-facebook"></ion-icon>Facebook</a>
+                <a title="Follow Facebook Page" class="flex gap-2 font-bold items-center bg-slate-400 p-2 rounded-lg hover:bg-slate-500" href="https://bit.ly/mydonghua" target="_blank" rel="nofollow noopener"><i class="fa-brands fa-facebook text-3xl"></i>Facebook</a>
                 <a title="Follow Dailymotion Channel" class="flex gap-2 font-bold items-center bg-slate-400 p-2 rounded-lg hover:bg-slate-500" href="https://dailymotion.com/donghuabatch.adm" target="_blank" rel="nofollow noopener">
                     <img loading="eager" width="32" height="32" src='{{ relURL "img/dailymotion-logo.svg" }}' alt="DailyMotion">
                     DonghuaBatch
@@ -20,7 +20,7 @@
         {{/*  Akhir Elemen Media Sosial  */}}
         {{/*  Elemen Genre  */}}
         <div class="bg-slate-300 p-4">
-            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Genre</span>
+            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Genre</span>
             <div class="text-center overflow-y-auto h-80 grid lg:grid-cols-2 gap-2 md:grid-cols-2 grid-cols-2">
                 {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
                 <a class="bg-slate-400 flex items-center text-wrap justify-center font-bold hover:bg-slate-500 rounded-lg p-2" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
@@ -30,7 +30,7 @@
         {{/*  Akhir Elemen Genre  */}}
         {{/*  Elemen Studio  */}}
         <div class="bg-slate-300 mt-4 p-4">
-            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Studio</span>
+            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Studio</span>
             <div class="text-center h-80 overflow-y-auto grid md:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-2">
                 {{ range $name, $taxonomy := .Site.Taxonomies.studio }}
                 <a class="bg-slate-400 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-500 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
@@ -40,7 +40,7 @@
         {{/*  Akhir Elemen Studio  */}}
         {{/*  Elemen Season  */}}
         <div class="bg-slate-300 mt-4 p-4">
-            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><ion-icon name="folder"></ion-icon>Season</span>
+            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Season</span>
             <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-2 overflow-y-auto h-80">
                 {{ range $name, $taxonomy := .Site.Taxonomies.season }}
                 <a class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-500 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
@@ -50,7 +50,7 @@
         {{/*  Akhir Elemen Season  */}}
         {{/*  Elemen Support Kami  */}}
         <div class="bg-slate-300 p-4 mt-4">
-            <span class="font-bold mb-4 select-none flex items-center gap-2 text-2xl"><ion-icon name="wallet"></ion-icon>Support Kami</span>
+            <span class="font-bold mb-4 select-none flex items-center gap-2 text-2xl"><i class="fa-solid fa-leaf"></i>Support Kami</span>
             <div class="flex items-center gap-4 px-4 flex-wrap flex-row justify-evenly">
                 <a rel="nofollow noopener" target="_blank" href="https://saweria.co/sha24">
                     <img class="rounded-lg" width="150" height="150" src="/img/saweria.webp" alt="PayPal">
@@ -60,7 +60,7 @@
         {{/*  Akhir Elemen Support Kami  */}}
         {{/*  Elemen Pasang Iklan  */}}
         <div class="bg-slate-300 p-4 mt-4">
-            <span class="font-bold select-none flex items-center gap-2 text-2xl"><ion-icon name="rocket"></ion-icon>Pasang Iklan</span>
+            <span class="font-bold select-none flex items-center gap-2 text-2xl"><i class="fa-solid fa-rocket"></i>Pasang Iklan</span>
             <div class="flex items-center justify-center mt-4 flex-col">
                 <a target="_blank" rel="nofollow noopener" href="mailto:donghuabatch.adm@gmail.com">
                     <img class="rounded-lg" width="150" src="/img/gmail.webp" alt="">
