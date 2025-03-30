@@ -1,5 +1,6 @@
 {{ define "main" }}
     {{ partial "alert" . }}
+    {{ partial "widget/ads-728x90" . }}
     <div class="my-4 mx-auto max-w-screen-xl">
         <main class="flex gap-4 flex-col lg:flex-row">
             {{/*  Main Content  */}}
@@ -65,6 +66,7 @@
                         {{ partial "download-batch" . }}
                     </div>
                     {{ partial "share-donghua" . }}
+                    {{ partial "widget/ads-native" . }}
                     {{ partial "disqus" . }}
                     {{ partial "donghua-terbaru" . }}
                 </div>
