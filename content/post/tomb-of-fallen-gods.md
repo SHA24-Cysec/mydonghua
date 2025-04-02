@@ -21,8 +21,8 @@ release : 'Jul 21, 2022'
 rating : 8
 
 # Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
+Streaming : 'Tomb of Fallen Gods Playlist (DailyMotion)'
+LinkStreaming : 'https://dailymotion.com/playlist/x9jayw'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/tomb-of-fallen-gods.webp
