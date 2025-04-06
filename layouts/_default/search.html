@@ -1,8 +1,11 @@
 {{ define "main" }}
 <div class="bg-slate-300 bgg5 flex flex-col w-full h-[750px] mx-auto max-w-screen-xl p-4 my-4">
     <h1 class="font-bold text-2xl text-center">{{ .Title }}</h1>
-    <div class="w-full max-w-2xl mx-auto my-auto">
-        <input class="w-full p-2 mb-4" type="text" id="search-input" placeholder="Cari..."/>
+    <div class="w-full max-w-lg mx-auto my-auto">
+        <div class="relative">
+            <input class="w-full p-2 px-4 mb-4 rounded-lg focus:outline-sky-300 focus:shadow-md focus:shadow-sky-300" type="text" id="search-input" placeholder="Cari..."/>
+            <i class="fa-solid fa-search absolute right-4 bottom-1/2"></i>
+        </div>
         <ul class="h-[400px] overflow-y-auto" id="search-results"></ul>
         <style>
             #search-results li a {
