@@ -26,4 +26,4 @@ defaultContentLanguage = 'id'
     priority = 0.8
 
 [outputs]
-    home = ['HTML', 'rss']
+    home = ['HTML', 'rss', 'json']

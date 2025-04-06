@@ -1,0 +1,23 @@
+{{- $index := slice -}}
+
+{{- range .Site.RegularPages }}
+  {{- $item := dict 
+      "title" .Title 
+      "content" .Plain 
+      "permalink" .Permalink 
+  -}}
+  {{- $index = $index | append $item -}}
+{{- end -}}
+
+{{- range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+  {{- range $term, $_ := $taxonomy }}
+    {{- $item := dict
+        "title" (title $term)
+        "content" (printf "Taksonomi %s: %s" $taxonomyName $term)
+        "permalink" (print $.Site.BaseURL $taxonomyName "/" (urlize $term))
+    -}}
+    {{- $index = $index | append $item -}}
+  {{- end }}
+{{- end }}
+
+{{- $index | jsonify -}}

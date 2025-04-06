@@ -1,14 +1,23 @@
 {{ define "main" }}
-<div class="bg-slate-300 flex flex-col items-center justify-center w-full h-[750px] mx-auto max-w-screen-xl p-4 my-4">
-    <div class="mx-auto w-full max-w-xl">
-        <h1 class="font-bold text-2xl mb-4 text-center">Cari Donghua</h1>
-        <script async src="https://cse.google.com/cse.js?cx=95f1ef71fe2f64ad9">
-        </script>
-        <div class="gcse-search"></div>
-        <img class="rounded-lg mt-4" src='{{ relURL "img/Huo-Linger.webp" }}' alt="DonghuaBatch">
-        <div class="mt-4">
-            <span class="opacity-50"><strong>Note:</strong> Jika Donghua yang kamu cari tidak muncul, maka belum terindeks google, silahkan melakukan request dengan menghubungi Admin, agar Admin memberikan linknya. Terima kasih...</span>
-        </div>
+<div class="bg-slate-300 bgg5 flex flex-col w-full h-[750px] mx-auto max-w-screen-xl p-4 my-4">
+    <h1 class="font-bold text-2xl text-center">{{ .Title }}</h1>
+    <div class="w-full max-w-2xl mx-auto my-auto">
+        <input class="w-full p-2 mb-4" type="text" id="search-input" placeholder="Cari..."/>
+        <ul class="h-[400px] overflow-y-auto" id="search-results"></ul>
+        <style>
+            #search-results li a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: #94a3b8;
+                padding: 8px;
+                margin: 5px 0;
+                border-radius: 8px;
+            }
+            #search-results li a:hover {
+                background-color: #6b7280;
+            }
+        </style>
     </div>
 </div>
 {{ end }}
