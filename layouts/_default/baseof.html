@@ -13,7 +13,7 @@
     {{ else if .IsHome }}
         <title>{{ .Site.Title }}</title>
     {{ else }}
-        <title>{{ .Title }} | DonghuaBatch</title>
+        <title>{{ .Title }}</title>
     {{ end }}
 </head>
 <body class="scroll-smooth box-border text-wrap mx-4 bg-slate-200">
@@ -24,7 +24,6 @@
     {{ partial "footer" . }}
     {{ partial "js" . }}
     {{ partial "loading-screen" . }}
-    {{ partial "notice-ads" . }}
     <style>
         ::-webkit-scrollbar {
             width: 4px;
