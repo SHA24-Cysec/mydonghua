@@ -1,69 +1,75 @@
 {{ define "main" }}
     <script>
-        window.onload = function() {
-        const params = new URLSearchParams(window.location.search);
-        const targetUrl = params.get('url');
-        const adsterraUrl = 'https://jomistress.com/x6pzqwp9?key=7ada2c216a7b91b372604511c1f6376f';
-        let adWindowBlocked = false;
-    
-        if (targetUrl) {
-            // Coba buka Adsterra di tab baru
-            let adWindow = window.open(adsterraUrl, '_blank');
-    
-            if (!adWindow) {
-                adWindowBlocked = true; // Kalau gagal buka
+        let adOpened = false;
+        let adWindow = null;
+        let countdownTimer = null;
+
+        function startDownloadProcess() {
+            if (adOpened) return; // Biar nggak double klik
+
+            adOpened = true;
+
+            const params = new URLSearchParams(window.location.search);
+            const targetUrl = params.get('url');
+            const adsterraUrl = 'https://jomistress.com/x6pzqwp9?key=7ada2c216a7b91b372604511c1f6376f';
+
+            if (!targetUrl) {
+                document.body.innerHTML = '<h2 class="text-lg font-bold">Link Tidak Ditemukan!</h2>';
+                return;
             }
-    
-            // Jalankan countdown + progress bar
-            let countdown = 5; 
+
+            // Buka Adsterra saat klik
+            adWindow = window.open(adsterraUrl, '_blank');
+
+            // Mulai Countdown + Progress Bar
+            let countdown = 5;
             const countdownElement = document.getElementById('countdown');
             const progressBar = document.getElementById('progress-bar');
-    
-            const timer = setInterval(() => {
+
+            countdownElement.textContent = countdown;
+
+            countdownTimer = setInterval(() => {
                 countdown--;
                 countdownElement.textContent = countdown;
-    
+
                 const progress = ((5 - countdown) / 5) * 100;
                 progressBar.style.width = progress + "%";
-    
+
                 if (countdown <= 0) {
-                    clearInterval(timer);
-                    // Tutup tab iklan kalau bisa
-                    if (adWindow && !adWindow.closed) {
-                        adWindow.close();
+                    clearInterval(countdownTimer);
+                    // Coba tutup tab iklan kalau belum ditutup
+                    try {
+                        if (adWindow && !adWindow.closed) {
+                            adWindow.close();
+                        }
+                    } catch (e) {
+                        console.log('Gagal menutup iklan:', e);
                     }
-                    // Redirect ke link download asli
+                    // Redirect ke target link download
                     window.location.href = targetUrl;
                 }
             }, 1000);
-    
-            // Kalau pop-up diblokir, kasih pesan kecil
-            if (adWindowBlocked) {
-                const warningDiv = document.createElement('div');
-                warningDiv.className = "text-red-600 text-sm mt-4";
-                warningDiv.innerHTML = "⚠️ Pop-up diblokir. Anda akan langsung dialihkan.";
-                document.getElementById('warning-area').appendChild(warningDiv);
-            }
-    
-        } else {
-            document.body.innerHTML = '<h2 class="text-lg font-bold">Link Tidak Ditemukan!</h2>';
-        }
         }
     </script>
     
-    <div class="bg-slate-300 p-4 my-4 h-full min-h-screen flex flex-col items-center justify-center gap-4">
-        <span class="text-lg font-bold">{{ .Title }}</span>
-        <span class="text-lg">Mohon Tunggu Sebentar...</span>
-        
-        <!-- Progress Bar -->
-        <div class="w-full max-w-md bg-gray-400 rounded-full h-4 overflow-hidden mt-4">
-            <div id="progress-bar" class="bg-blue-500 h-full transition-all duration-1000 ease-linear" style="width: 0%;"></div>
-        </div>
-    
-        <!-- Countdown Text -->
-        <div id="countdown" class="text-2xl font-bold text-blue-700">5</div>
-    
-        <!-- Warning Area -->
-        <div id="warning-area"></div>
-    </div>    
+    <div class="bg-slate-300 p-4 my-4 h-full min-h-screen w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-4">
+        <h1 class="text-2xl font-bold">{{ .Title }}</h1>
+    <p class="text-lg">Klik Tombol di Bawah Untuk Melanjutkan</p>
+
+    <!-- Tombol Mulai -->
+    <button onclick="startDownloadProcess()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full text-lg transition">
+        Download Sekarang
+    </button>
+
+    <!-- Progress Bar -->
+    <div class="w-full max-w-md bg-gray-400 rounded-full h-4 overflow-hidden mt-4">
+        <div id="progress-bar" class="bg-blue-500 h-full transition-all duration-1000 ease-linear" style="width: 0%;"></div>
+    </div>
+
+    <!-- Countdown -->
+    <div id="countdown" class="text-2xl font-bold text-blue-700 mt-2">5</div>
+
+    <!-- Warning Area (kalau mau kasih warning kalau popup diblokir) -->
+    <div id="warning-area" class="text-red-600 text-sm mt-2"></div>
+    </div>
 {{ end }}
