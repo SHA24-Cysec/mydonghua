@@ -2,14 +2,14 @@
     {{ $minified := . | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $minified.RelPermalink }}">
 {{ end }}
-{{ with resources.Get "favicon.ico" | fingerprint }}
+{{ with resources.Get "favicon.ico" }}
 <link rel="shortcut icon" href='{{ .RelPermalink }}' type="image/x-icon">
 {{ end }}
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="preload" as="script" href="//safelinku.com/js/web-script.js">
+<link rel="preload" as="image" fetchpriority="high" href='{{ "img/DonghuaBatch.webp" | relURL }}'>
 {{- with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}

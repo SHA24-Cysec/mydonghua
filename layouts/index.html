@@ -12,7 +12,7 @@
                         {{ range $paginator.Pages }}
                         <div class="group p-2">
                             <a title="{{ .Title }}" href="{{ .Permalink }}" class="flex gap-1 rounded-lg h-full group-hover:bg-slate-400 flex-col w-full">
-                                <img class="h-[300px] group-hover:scale-[1.01] w-[200px] rounded-t-lg transition duration-300 object-cover" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
+                                <img loading="lazy" class="h-[300px] group-hover:scale-[1.01] w-[200px] rounded-t-lg transition duration-300 object-cover" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
                                 <span class="w-full font-bold max-w-44 mx-auto mt-2 text-center">{{ .Title }}</span>
                             </a>
                         </div>
