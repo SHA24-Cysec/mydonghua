@@ -20,8 +20,8 @@ rating : 9.8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
 # Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : '#'
+Streaming : 'Nonton Throne of Seal Movie: Electrolux Sub Indo [DailyMotion]'
+LinkStreaming : 'https://dai.ly/x9jcs0e'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/throne-of-seal-movie-electrolux.webp
