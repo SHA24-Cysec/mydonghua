@@ -31,7 +31,7 @@
                         <p><strong>Sinopsis:</strong> {{ .Params.sinopsis }}</p>
                         <div class="mt-8 flex gap-2 flex-wrap flex-row">
                             {{ range .Params.genre }}
-                                <a class="bg-slate-400 hover:bg-slate-500 font-bold w-max p-2 rounded-lg" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
+                                <a class="bg-slate-400 hover:bg-slate-200 font-bold w-max p-2 rounded-lg" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
                             {{ end }}
                         </div>
                         <div class="overflow-x-auto w-full mx-auto max-w-max select-none">
