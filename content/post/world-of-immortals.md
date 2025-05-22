@@ -35,7 +35,7 @@ keywords : 'Download Batch World of Immortal Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.google.com/file/d/1GJGcOgxcTtxp2-hwI2kNDpYiFY1Abzq5/view?usp=sharing'
+linkDownload360p : 'https://drive.usercontent.google.com/download?id=1GJGcOgxcTtxp2-hwI2kNDpYiFY1Abzq5&export=download&authuser=0'
 buttonDownload360p : 'Download'
 ukuran360p : '3 GB'
 
