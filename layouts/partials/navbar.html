@@ -44,98 +44,85 @@
 </nav>
 
 {{/*  Navbar Mobile  */}}
-<nav class="bg-sky-300 z-50 px-4 shadow-black shadow-md rounded-full fixed max-w-72 w-full left-2 right-2 bottom-4 font-bold md:hidden flex-row flex gap-1 items-center flex-wrap justify-between mx-auto">
-    {{/*  Home Menu  */}}
-    <a class="flex flex-col h-full w-10 items-center" href="{{ .Site.BaseURL }}">
-        <i class="fa-solid fa-house text-2xl"></i>
-        <span class="text-xs">Beranda</span>
-    </a>
-    {{/*  Cari Menu  */}}
-    <div id="tombol-cari-mobile">
-        <a class="flex items-center w-10 h-full flex-col" href='{{ relURL "search" }}'>
-            <i class="fa-solid fa-magnifying-glass text-2xl"></i>
-            <span class="text-xs">Cari</span>
-        </a>
-    </div>
-    {{/*  Image Logo  */}}
-    <div class="text-2xl p-4 items-center flex">
-        <img class="rounded-full" width="40" height="40" src='{{ relURL "img/favicon.webp" }}' alt="DonghuaBatch">
-    </div>
-    {{/*  Genre Menu  */}}
-    <button id="tombolGenreMobile" class="flex relative gap-1 h-full w-10 rounded-full items-center flex-col">
-        <i id="folderMobile" class="fa-solid fa-folder text-2xl"></i>
-        <span class="text-xs">Genre</span>
-        {{/*  DropDown Menu Genre  */}}
-        <div id="menuGenreMobile" class="absolute overflow-y-auto hidden shadow-md shadow-black bg-sky-300 w-72 h-80 p-2 bottom-14 -right-16">
-            <div class="grid grid-cols-2 gap-2">
-            {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
-                <a class="font-bold p-2 text-start" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
-            {{ end }}
-            </div>
-        </div>
-        <script>
-            const tombolGenreMobile = document.getElementById('tombolGenreMobile');
-            const menuGenreMobile = document.getElementById('menuGenreMobile');
-            const folderMobile = document.getElementById('folderMobile');
+<nav class="bg-sky-300 z-50 fixed bottom-4 left-2 right-2 max-w-72 w-full mx-auto px-4 py-2 rounded-full shadow-md shadow-black flex items-center justify-between gap-2 font-bold md:hidden">
+  <!-- Home -->
+  <a href="{{ .Site.BaseURL }}" class="flex flex-col items-center w-10">
+    <i class="fa-solid fa-house text-2xl"></i>
+    <span class="text-xs">Beranda</span>
+  </a>
 
-            if (tombolGenreMobile) {
-                // Toggle menu saat tombol diklik
-                tombolGenreMobile.addEventListener('click', (event) => {
-                    menuGenreMobile.classList.toggle('hidden');
-                    folderMobile.classList.toggle('fa-folder-open');
-                    event.stopPropagation(); // Hindari trigger event dari document
-                });
-            
-                // Sembunyikan menu saat klik di luar elemen
-                document.addEventListener('click', (event) => {
-                    if (!menuGenreMobile.contains(event.target) && !tombolGenreMobile.contains(event.target)) {
-                        menuGenreMobile.classList.add('hidden');
-                        folderMobile.classList.remove('fa-folder-open');
-                    }
-                });
-            }
-        </script>
+  <!-- Cari -->
+  <a href='{{ relURL "search" }}' class="flex flex-col items-center w-10">
+    <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+    <span class="text-xs">Cari</span>
+  </a>
+
+  <!-- Logo -->
+  <div class="flex items-center p-2">
+    <img src='{{ relURL "img/favicon.webp" }}' alt="DonghuaBatch" class="rounded-full w-10 h-10 object-cover">
+  </div>
+
+  <!-- Genre -->
+  <div class="relative">
+    <button id="tombolGenreMobile" class="flex flex-col items-center w-10">
+      <i id="folderMobile" class="fa-solid fa-folder text-2xl transition"></i>
+      <span class="text-xs">Genre</span>
     </button>
-    {{/*  Lainnya Menu  */}}
-    <div class="relative">
-        <div id="tombol-menu" class="flex gap-1 rounded-full items-center flex-col">
-            <i id="logo-menu" class="fa-solid transition duration-300 fa-grip-vertical text-2xl"></i>
-            <button class="text-xs">Lainnya</button>
-        </div>
-        {{/*  DropUp Menu  */}}
-        <div id="daftar-menu" class="absolute rounded-lg hidden bg-sky-300 px-4 bottom-14 right-0 left-auto py-2 shadow-md shadow-black">
-            <a class="flex items-center mb-4 flex-col w-[150px]" href="https://saweria.co/sha24">
-                <i class="fa-solid fa-leaf text-2xl"></i>
-                <span class="text-xs">Support</span>
-            </a>
-            <a class="flex items-center mt-4 flex-col w-[150px]" href='{{ absURL "kontak" }}'>
-                <i class="fa-solid fa-phone text-2xl"></i>
-                <span class="text-xs">Kontak</span>
-            </a>
-        </div>
+    <div id="menuGenreMobile" class="hidden absolute bottom-14 -right-16 w-72 h-80 bg-sky-300 p-2 rounded-lg shadow-md shadow-black overflow-y-auto z-50">
+      <div class="grid grid-cols-2 gap-2">
+        {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
+          <a href='{{ "genre/" | relLangURL }}{{ $name | urlize }}' class="p-2 text-start hover:bg-sky-400 rounded">{{ $name | title }}</a>
+        {{ end }}
+      </div>
     </div>
+  </div>
+
+  <!-- Lainnya -->
+  <div class="relative">
+    <button id="tombol-menu" class="flex flex-col items-center w-10">
+      <i id="logo-menu" class="fa-solid fa-grip-vertical text-2xl transition"></i>
+      <span class="text-xs">Lainnya</span>
+    </button>
+    <div id="daftar-menu" class="hidden absolute bottom-14 right-0 w-40 bg-sky-300 rounded-lg shadow-md shadow-black p-2 z-50">
+      <a href="https://saweria.co/sha24" class="flex flex-col items-center w-full mb-2 hover:bg-sky-400 rounded">
+        <i class="fa-solid fa-leaf text-2xl"></i>
+        <span class="text-xs">Support</span>
+      </a>
+      <a href='{{ absURL "kontak" }}' class="flex flex-col items-center w-full mt-2 hover:bg-sky-400 rounded">
+        <i class="fa-solid fa-phone text-2xl"></i>
+        <span class="text-xs">Kontak</span>
+      </a>
+    </div>
+  </div>
 </nav>
 
-{{/*  Script Mobile  */}}
+<!-- Script: toggle dropdowns -->
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tombolGenre = document.getElementById('tombolGenreMobile');
+    const menuGenre = document.getElementById('menuGenreMobile');
+    const folderIcon = document.getElementById('folderMobile');
+
+    tombolGenre.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuGenre.classList.toggle('hidden');
+      folderIcon.classList.toggle('fa-folder-open');
+    });
+
     const tombolMenu = document.getElementById('tombol-menu');
     const daftarMenu = document.getElementById('daftar-menu');
-    const logoMenu = document.getElementById('logo-menu');
 
-    if (tombolMenu) {
-        // Toggle menu saat tombol diklik
-        tombolMenu.addEventListener('click', (event) => {
-            daftarMenu.classList.toggle('hidden');
-            logoMenu.classList.toggle('rotate-90');
-            event.stopPropagation(); // Hindari trigger event dari document
-        });
-    
-        // Sembunyikan menu saat klik di luar elemen
-        document.addEventListener('click', (event) => {
-            if (!daftarMenu.contains(event.target) && !tombolMenu.contains(event.target)) {
-                daftarMenu.classList.add('hidden');
-                logoMenu.classList.remove('rotate-90');
-            }
-        });
-    }
+    tombolMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+      daftarMenu.classList.toggle('hidden');
+      document.getElementById('logo-menu').classList.toggle('rotate-90');
+    });
+
+    document.addEventListener('click', () => {
+      menuGenre.classList.add('hidden');
+      folderIcon.classList.remove('fa-folder-open');
+      daftarMenu.classList.add('hidden');
+      document.getElementById('logo-menu').classList.remove('rotate-90');
+    });
+  });
 </script>
