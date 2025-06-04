@@ -39,15 +39,15 @@ keywords : 'Download Batch Revelation Online Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/39263165'
+linkDownload360p : 'https://drive.usercontent.google.com/download?id=1ivnIeX0OFa9oKaLEWT3WwNr5Kh5jGzFz&export=download&authuser=0'
 buttonDownload360p : 'Download'
 ukuran360p : '883 MB'
 
-linkDownload480p : 'https://acefile.co/f/39263168'
+linkDownload480p : 'https://drive.usercontent.google.com/download?id=1PYcDBZW8-GMcWGRLXu2nsrzbF6-OOEMu&export=download&authuser=0'
 buttonDownload480p : 'Download'
 ukuran480p : '1.77 GB'
 
-linkDownload720p : 'https://acefile.co/f/39263170'
+linkDownload720p : 'https://drive.usercontent.google.com/download?id=1fPKX4_Blip4uWsqRezELAOdNhKpvYeqG&export=download&authuser=0'
 buttonDownload720p : 'Download'
 ukuran720p : '3.86 GB'
 
