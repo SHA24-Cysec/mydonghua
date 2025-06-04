@@ -39,15 +39,15 @@ keywords : 'Download Batch Revelation Online Season 2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/39263172'
+linkDownload360p : 'https://drive.usercontent.google.com/download?id=1dVKcFnbErlhJBA0O8yF0h0VLMDhOI0Tg&export=download&authuser=0'
 buttonDownload360p : 'Download'
 ukuran360p : '770 MB'
 
-linkDownload480p : 'https://acefile.co/f/39263175'
+linkDownload480p : 'https://drive.usercontent.google.com/download?id=1-Bbtn7kdzMRgmb9tGF8kOH7BkhZxuthq&export=download&authuser=0'
 buttonDownload480p : 'Download'
 ukuran480p : '1.64 GB'
 
-linkDownload720p : 'https://acefile.co/f/39263179'
+linkDownload720p : 'https://drive.usercontent.google.com/download?id=1cD8kVydZURcSm0vhA59KdM7c1HRtungQ&export=download&authuser=0'
 buttonDownload720p : 'Download'
 ukuran720p : '2.86 GB'
 
