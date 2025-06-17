@@ -3,8 +3,10 @@ date : '{{ .Date }}'
 draft : false
 title : 'Download Batch {{ replace .File.ContentBaseName "-" " " | title }} Subtitle Indonesia'
 studio :
+    - ''
 season : ''
 genre :
+    - ''
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
