@@ -26,7 +26,7 @@
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Genre</span>
             <div class="text-center overflow-y-auto h-80 grid lg:grid-cols-2 gap-2 md:grid-cols-2 grid-cols-2">
                 {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
-                <a class="bg-slate-400 flex items-center text-wrap justify-center font-bold hover:bg-slate-200 rounded-lg p-2" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap justify-center font-bold hover:bg-slate-200 rounded-lg p-2" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
             </div>
         </div>
@@ -36,7 +36,7 @@
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Studio</span>
             <div class="text-center h-80 overflow-y-auto grid md:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-2">
                 {{ range $name, $taxonomy := .Site.Taxonomies.studio }}
-                <a class="bg-slate-400 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-200 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                <a title="{{ $name }}" class="bg-slate-400 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-200 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title | truncate 15 }}</a>
                 {{ end }}
             </div>
         </div>
@@ -46,7 +46,7 @@
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Season</span>
             <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-2 overflow-y-auto h-80">
                 {{ range $name, $taxonomy := .Site.Taxonomies.season }}
-                <a class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-200 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-200 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title | truncate 10 }}</a>
                 {{ end }}
             </div>
         </div>
