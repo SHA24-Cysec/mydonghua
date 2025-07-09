@@ -25,7 +25,7 @@
         <span>Genre</span>
         <i class="transition duration-300 fa-solid fa-chevron-down" id="arrowGenre" name="chevron-down"></i>
       </button>
-      <div id="menuGenre" class="absolute hidden shadow p-4 shadow-black h-80 overflow-y-auto w-fit bg-sky-300 md:w-80 md:left-0 md:top-full z-40">
+      <div id="menuGenre" class="absolute hidden shadow p-4 shadow-black h-80 overflow-y-auto w-full bg-sky-300 md:w-80 md:left-0 md:top-full z-40">
         {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
         <a href='{{ "genre/" | relLangURL }}{{ $name | urlize }}' class="block px-2 py-1 hover:bg-sky-400">{{ $name | title }}</a>
         {{ end }}
@@ -52,7 +52,6 @@
   const arrowGenre = document.getElementById('arrowGenre');
   const folder = document.getElementById('folder');
 
-  // Toggle menu utama di mobile
   hamburgerBtn.addEventListener('click', () => {
     mainMenu.classList.toggle('hidden');
   });
