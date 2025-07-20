@@ -38,23 +38,34 @@ keywords : 'Download Batch Hitori No Shita the Outcast Season 4 Subtitle Indones
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/YlVxzQgD#goyjM7T4H_C_dy2Bqh4TymEzq9Opc8BhqwcCejIl2KE'
-buttonDownload360p : 'Download'
-ukuran360p : '640.9 MB'
-
-linkDownload480p : 'https://mega.nz/file/8oVzRQKC#sio5rv1nNnXyQtto8OYp8frAOa0ZfMc5ZajKvw0txhk'
-buttonDownload480p : 'Download'
-ukuran480p : '1.10 GB'
-
-linkDownload720p : 'https://mega.nz/file/sgtiXYYS#oGpIPNK5MxVjqW_bpvQ_vbkir8GAgwlzDCsoZE8SwV0'
-buttonDownload720p : 'Download'
-ukuran720p : '1.76 GB'
-
-linkDownload1080p : 'https://mega.nz/file/dw8yjACJ#esrCjl1XzDMg_5Apqo8FZrdZPms9TobysZnFlahegoU'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.63 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Hitori No Shita the Outcast Season 4 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/YlVxzQgD#goyjM7T4H_C_dy2Bqh4TymEzq9Opc8BhqwcCejIl2KE'
+      button: 'Download'
+      size: '640.9 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/8oVzRQKC#sio5rv1nNnXyQtto8OYp8frAOa0ZfMc5ZajKvw0txhk'
+      button: 'Download'
+      size: '1.10 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/sgtiXYYS#oGpIPNK5MxVjqW_bpvQ_vbkir8GAgwlzDCsoZE8SwV0'
+      button: 'Download'
+      size: '1.76 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/dw8yjACJ#esrCjl1XzDMg_5Apqo8FZrdZPms9TobysZnFlahegoU'
+      button: 'Download'
+      size: '2.63 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

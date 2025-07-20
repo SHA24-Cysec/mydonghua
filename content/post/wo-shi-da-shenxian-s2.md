@@ -39,23 +39,54 @@ keywords : 'Download Batch Wo Shi Da Shenxian S2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
+downloadGroups:
+  
+  - title: 'Wo Shi Da Shenxian Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1eyLEfcnY7Ge4SZuYuPqrAZcKD1an7MAg&export=download&authuser=0'
+      button: 'Download'
+      size: '1.83 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1ycDOvaME8m8F09t3IvI3cARY8HPs7xe7&export=download&authuser=0'
+      button: 'Download'
+      size: '3.17 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1Qs2q6YGg6hr6qPCvh1xlSUsbwAaFmygD&export=download&authuser=0'
+      button: 'Download'
+      size: '5.23 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1vdbcKMp7oudPuU6pyB0yie5z3leJQ_3P&export=download&authuser=0'
+      button: 'Download'
+      size: '7.86 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
 linkDownload360p : 'https://acefile.co/f/47181536'
-buttonDownload360p : 'Download'
-ukuran360p : '1.83 GB'
+buttonDownload360p : ''
+ukuran360p : ''
 
 linkDownload480p : 'https://acefile.co/f/47181537'
 buttonDownload480p : 'Download'
-ukuran480p : '3.17 GB'
+ukuran480p : ''
 
 linkDownload720p : 'https://acefile.co/f/47181540'
 buttonDownload720p : 'Download'
-ukuran720p : '5.23 GB'
+ukuran720p : ''
 
 linkDownload1080p : 'https://acefile.co/f/47181545'
 buttonDownload1080p : 'Download'
-ukuran1080p : '7.86 GB'
+ukuran1080p : ''
 
 linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
+buttonDownload4K : ''
 ukuran4K : ''
 ---

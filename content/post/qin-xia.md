@@ -39,23 +39,34 @@ keywords : 'Download Batch Qin Xia Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1rD3GQK6mc7mW8dtozJjz9sncr96X0t33&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '1.31 GB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1aKvVA8O9EGYpBwYSSd6ugI6NFu60_Mys&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '1.57 GB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=19WIOphV5sWbSGlz8l3uGqvO1fzXpWq8T&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '2.59 GB'
-
-linkDownload1080p : 'https://drive.usercontent.google.com/download?id=12CReu2x7PD8_IQuhdsFMgW4-sJmuRCbz&export=download&authuser=0'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.42 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Qin Xia Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1rD3GQK6mc7mW8dtozJjz9sncr96X0t33&export=download&authuser=0'
+      button: 'Download'
+      size: '1.31 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1aKvVA8O9EGYpBwYSSd6ugI6NFu60_Mys&export=download&authuser=0'
+      button: 'Download'
+      size: '1.57 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=19WIOphV5sWbSGlz8l3uGqvO1fzXpWq8T&export=download&authuser=0'
+      button: 'Download'
+      size: '2.59 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=12CReu2x7PD8_IQuhdsFMgW4-sJmuRCbz&export=download&authuser=0'
+      button: 'Download'
+      size: '3.42 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

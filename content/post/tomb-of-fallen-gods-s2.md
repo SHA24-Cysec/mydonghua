@@ -38,23 +38,34 @@ keywords : 'Download Batch Tomb of Fallen Gods Season 2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : 'https://drive.google.com/file/d/17nbMVR3XI_i1B2wdtgfSjZ5KF8BhgA4A/view?usp=sharing'
-buttonDownload1080p : 'Download'
-ukuran1080p : '15 GB'
-
-linkDownload4K : 'https://drive.google.com/file/d/1d3AJoC069pdGN4jIk3iQKu5IFw7bMC8a/view?usp=sharing'
-buttonDownload4K : 'Download (Episode 22-27)'
-ukuran4K : '5.95 GB'
+downloadGroups:
+  
+  - title: 'Tomb of Fallen Gods Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=17nbMVR3XI_i1B2wdtgfSjZ5KF8BhgA4A&export=download&authuser=0'
+      button: 'Download'
+      size: '15 GB'
+    
+    - quality: '4K'
+      link: 'https://drive.usercontent.google.com/download?id=1d3AJoC069pdGN4jIk3iQKu5IFw7bMC8a&export=download&authuser=0'
+      button: 'Download (Episode 22-27)'
+      size: '5.95 GB'
 ---

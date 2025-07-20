@@ -35,23 +35,34 @@ keywords : 'Download Batch Arcane League of Legends Battle of the Two Cities Sub
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/789XmALQ#LU01idwTd2728h1sb9CVq61b6mg0ujYAv-jXiFzETfM'
-buttonDownload360p : 'Download'
-ukuran360p : '1.01 GB'
-
-linkDownload480p : 'https://mega.nz/file/6l11mCRI#FVCxGVKzdcZAR_UUtlRdKt14NLH_0x08hZTys9FIS9g'
-buttonDownload480p : 'Download'
-ukuran480p : '3.17 GB'
-
-linkDownload720p : 'https://mega.nz/file/f48T0QDC#XB87gGnFQD6g0VjehsCT1oMDiPWCPblx1vafhMFfWTw'
-buttonDownload720p : 'Download'
-ukuran720p : '3.17 GB'
-
-linkDownload1080p : 'https://mega.nz/file/6l11mCRI#FVCxGVKzdcZAR_UUtlRdKt14NLH_0x08hZTys9FIS9g'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.13 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Arcane League of Legends Battle of the Two Cities Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/789XmALQ#LU01idwTd2728h1sb9CVq61b6mg0ujYAv-jXiFzETfM'
+      button: 'Download'
+      size: '1.01 GB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/6l11mCRI#FVCxGVKzdcZAR_UUtlRdKt14NLH_0x08hZTys9FIS9g'
+      button: 'Download'
+      size: '3.17 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/f48T0QDC#XB87gGnFQD6g0VjehsCT1oMDiPWCPblx1vafhMFfWTw'
+      button: 'Download'
+      size: '3.17 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/6l11mCRI#FVCxGVKzdcZAR_UUtlRdKt14NLH_0x08hZTys9FIS9g'
+      button: 'Download'
+      size: '5.13 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

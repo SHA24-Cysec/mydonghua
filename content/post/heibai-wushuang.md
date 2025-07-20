@@ -36,23 +36,34 @@ keywords : 'Download Batch Heibai Wushuang Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://acefile.co/f/34550127'
-buttonDownload480p : 'Download'
-ukuran480p : '500.94 MB'
-
-linkDownload720p : 'https://acefile.co/f/34550125'
-buttonDownload720p : 'Download'
-ukuran720p : '720.26 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Heibai Wushuang Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1c1aeKYd4m4AlhreHoBo-0dFpy0_fQHdt&export=download'
+      button: 'Download'
+      size: '500.94 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1miOUgCliExWMoMBlNeu7IFNEOMcFjWUe&export=download'
+      button: 'Download'
+      size: '720.26 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

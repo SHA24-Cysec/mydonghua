@@ -41,23 +41,34 @@ keywords : 'Download Batch The Rule of Burning Sun Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/f8yqvx9bahzpsl7/%255BAnichinAsia%255D%255BThe_RuleSun%255D%255BMovie%255D%255B360p%255D.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '325 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/fdtybktjn2a08qg/%255BAnichinAsia%255D%255BThe_RuleSun%255D%255BMovie%255D%255B480p%255D.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '477 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/0stw32ivof0y2ig/%255BAnichinAsia%255D%255BThe_RuleSun%255D%255BMovie%255D%255B720p%255D.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '647 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Rule of Burning Sun Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/f8yqvx9bahzpsl7/%255BAnichinAsia%255D%255BThe_RuleSun%255D%255BMovie%255D%255B360p%255D.mp4/file'
+      button: 'Download'
+      size: '325 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/fdtybktjn2a08qg/%255BAnichinAsia%255D%255BThe_RuleSun%255D%255BMovie%255D%255B480p%255D.mp4/file'
+      button: 'Download'
+      size: '477 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/0stw32ivof0y2ig/%255BAnichinAsia%255D%255BThe_RuleSun%255D%255BMovie%255D%255B720p%255D.mp4/file'
+      button: 'Download'
+      size: '647 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

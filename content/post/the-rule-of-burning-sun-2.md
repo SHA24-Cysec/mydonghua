@@ -38,23 +38,34 @@ keywords : 'Download Batch The Rule of Burning Sun 2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/2okw6cuf6tg8bn6/%255BAnichinAsia%255D%255B360p%255D%255B%255BThe_Rule_%25E2%2585%25A1%255D%255BMovie%255D.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '188 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/kazx0p5eef84we3/%255BAnichinAsia%255D%255B480p%255D%255B%255BThe_Rule_%25E2%2585%25A1%255D%255BMovie%255D.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '320 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/00j8jy1wivr746z/%255BAnichinAsia%255D%255B720p%255D%255B%255BThe_Rule_%25E2%2585%25A1%255D%255BMovie%255D.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '567 MB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/91hlpmyho65tmwv/%255BAnichinAsia%255D%255B1080p%255D%255BThe_Rule_%25E2%2585%25A1%255D%255BMovie%255D.mp4/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '776 MB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Rule of Burning Sun 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/2okw6cuf6tg8bn6/%255BAnichinAsia%255D%255B360p%255D%255B%255BThe_Rule_%25E2%2585%25A1%255D%255BMovie%255D.mp4/file'
+      button: 'Download'
+      size: '188 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/kazx0p5eef84we3/%255BAnichinAsia%255D%255B480p%255D%255B%255BThe_Rule_%25E2%2585%25A1%255D%255BMovie%255D.mp4/file'
+      button: 'Download'
+      size: '320 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/00j8jy1wivr746z/%255BAnichinAsia%255D%255B720p%255D%255B%255BThe_Rule_%25E2%2585%25A1%255D%255BMovie%255D.mp4/file'
+      button: 'Download'
+      size: '567 MB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/91hlpmyho65tmwv/%255BAnichinAsia%255D%255B1080p%255D%255BThe_Rule_%25E2%2585%25A1%255D%255BMovie%255D.mp4/file'
+      button: 'Download'
+      size: '776 MB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

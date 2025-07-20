@@ -35,23 +35,34 @@ keywords : 'Download Batch Spirit Guardian Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/tpkRwTyJ#KhdEZKPCJijNTlpaw7pl2gYINQk_pvPag3N63pI2c_4'
-buttonDownload360p : 'Download'
-ukuran360p : '731.6 MB'
-
-linkDownload480p : 'https://mega.nz/file/YscVRRyK#Ma-OASKqUKYzY93Qj0wVSnglqBviXfyfKtcQkE4AW_A'
-buttonDownload480p : 'Download'
-ukuran480p : '1.46 GB'
-
-linkDownload720p : 'https://mega.nz/file/x1s21Kxa#yfgET8nrA227FuuSVDVHgze9xBA1qrExV3Tw9zT8y8M'
-buttonDownload720p : 'Download'
-ukuran720p : '2.58 GB'
-
-linkDownload1080p : 'https://mega.nz/file/FT0GwJ7C#eXqcmIDDzgfoxvAikEtOI5ZbnU1DuQFViMPgt5aUOAs'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.35 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spirit Guardian Season 5 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/tpkRwTyJ#KhdEZKPCJijNTlpaw7pl2gYINQk_pvPag3N63pI2c_4'
+      button: 'Download'
+      size: '731.6 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/YscVRRyK#Ma-OASKqUKYzY93Qj0wVSnglqBviXfyfKtcQkE4AW_A'
+      button: 'Download'
+      size: '1.46 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/x1s21Kxa#yfgET8nrA227FuuSVDVHgze9xBA1qrExV3Tw9zT8y8M'
+      button: 'Download'
+      size: '2.58 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/FT0GwJ7C#eXqcmIDDzgfoxvAikEtOI5ZbnU1DuQFViMPgt5aUOAs'
+      button: 'Download'
+      size: '4.35 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

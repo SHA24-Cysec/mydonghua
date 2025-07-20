@@ -35,23 +35,34 @@ keywords : 'Download Batch Spirit Guardian Season 4 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/68062227'
-buttonDownload360p : 'Download'
-ukuran360p : '699.82 MB'
-
-linkDownload480p : 'https://acefile.co/f/68062230'
-buttonDownload480p : 'Download'
-ukuran480p : '1.24 GB'
-
-linkDownload720p : 'https://acefile.co/f/68062233'
-buttonDownload720p : 'Download'
-ukuran720p : '2.40 GB'
-
-linkDownload1080p : 'https://acefile.co/f/68062237'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.30 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spirit Guardian Season 4 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=17HU9pCxOfCJNL76IdAZSLXOiJ6z5d97y&export=download&authuser=0'
+      button: 'Download'
+      size: '699.82 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1-UjEpkBwsBG-hP8ledO5qi8lkPt27J2c&export=download&authuser=0'
+      button: 'Download'
+      size: '1.24 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1SvDzTjB9OzsuhtQAUc0fjuMIhPNZDZro&export=download&authuser=0'
+      button: 'Download'
+      size: '2.40 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1SdUz5m_IPHXroIt4qQdOf2Es-wAgGU2u&export=download&authuser=0'
+      button: 'Download'
+      size: '4.30 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

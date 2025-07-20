@@ -34,23 +34,34 @@ keywords : 'Download Batch Left Hand Layup Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/oI1GDSib#a98rt9awCPzivsC2AEzZ20NHu_QDV_GC0mwu_L7vHEk'
-buttonDownload360p : 'Download'
-ukuran360p : '294.5 MB'
-
-linkDownload480p : 'https://mega.nz/file/6qwVFKTL#bt4nJorEAXK0qYyxLMfhXw8OG8GxTtXafdXz37Q0zMA'
-buttonDownload480p : 'Download'
-ukuran480p : '520.1 MB'
-
-linkDownload720p : 'https://lbx.to/f/1Q5u6D0'
-buttonDownload720p : 'Download'
-ukuran720p : '931.37 MB'
-
-linkDownload1080p : 'https://mega.nz/file/niYCWDbK#Up8SBESaj63JtNy2t0eT2jkajQMufbAt9Z-UnOOquTc'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.34 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Left Hand Layup Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/oI1GDSib#a98rt9awCPzivsC2AEzZ20NHu_QDV_GC0mwu_L7vHEk'
+      button: 'Download'
+      size: '294.5 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/6qwVFKTL#bt4nJorEAXK0qYyxLMfhXw8OG8GxTtXafdXz37Q0zMA'
+      button: 'Download'
+      size: '520.1 MB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/1Q5u6D0'
+      button: 'Download'
+      size: '931.37 MB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/niYCWDbK#Up8SBESaj63JtNy2t0eT2jkajQMufbAt9Z-UnOOquTc'
+      button: 'Download'
+      size: '1.34 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

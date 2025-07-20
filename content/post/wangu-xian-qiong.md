@@ -38,23 +38,34 @@ keywords : 'Download Batch Wangu Xian Qiong Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1aaaK_NKl1-A0wATkkaXGMsk8G4hRFrkk&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '279.76 MB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1zeT2nBki-qYZQhFpSlhUr2bjYYIYMwEu&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '561.16 MB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1NhlrAVlmh2-InrrJllvnQ5yOPOD8Un-h&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '857.51 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Wangu Xian Qiong Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1aaaK_NKl1-A0wATkkaXGMsk8G4hRFrkk&export=download&authuser=0'
+      button: 'Download'
+      size: '279.76 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1zeT2nBki-qYZQhFpSlhUr2bjYYIYMwEu&export=download&authuser=0'
+      button: 'Download'
+      size: '561.16 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1NhlrAVlmh2-InrrJllvnQ5yOPOD8Un-h&export=download&authuser=0'
+      button: 'Download'
+      size: '857.51 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

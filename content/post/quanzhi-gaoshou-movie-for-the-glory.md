@@ -35,23 +35,34 @@ keywords : 'Download Batch Quanzhi Gaoshou Movie for the Glory Subtitle Indonesi
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://acefile.co/f/34394829'
-buttonDownload360p : 'Download'
-ukuran360p : '187.64 MB'
-
-linkDownload480p : 'https://acefile.co/f/34394832'
-buttonDownload480p : 'Download'
-ukuran480p : '303.72 MB'
-
-linkDownload720p : 'https://acefile.co/f/34394833'
-buttonDownload720p : 'Download'
-ukuran720p : '723.10 MB'
-
-linkDownload1080p : 'https://acefile.co/f/34394836'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.30 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Quanzhi Gaoshou Movie for the Glory Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1VA-JJEaZ_XB7p87xHh_qvKAp-D98y1L5&export=download&authuser=0'
+      button: 'Download'
+      size: '187.64 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1GRY41gw1tiDJdvWAYAWsntpdZ2d9CTDd&export=download&authuser=0'
+      button: 'Download'
+      size: '303.72 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1JZi44ZDG_-U9NJfEGcD7oki68-Agi9vU&export=download&authuser=0'
+      button: 'Download'
+      size: '723.10 MB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1bGvJkASj0ZcfYbnEH2FH9wPk6S6VeDXZ&export=download&authuser=0'
+      button: 'Download'
+      size: '1.30 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

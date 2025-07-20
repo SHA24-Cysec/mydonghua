@@ -37,23 +37,34 @@ keywords : 'Download Batch Yuan Long Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/50204668'
-buttonDownload360p : 'Download'
-ukuran360p : '1.26 GB'
-
-linkDownload480p : 'https://acefile.co/f/50204672'
-buttonDownload480p : 'Download'
-ukuran480p : '2.09 GB'
-
-linkDownload720p : 'https://acefile.co/f/50204676'
-buttonDownload720p : 'Download'
-ukuran720p : '3.15 GB'
-
-linkDownload1080p : 'https://acefile.co/f/50204678'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.03 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Yuan Long Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1JCzPYIKTJcYVZ5SNXExb237sGc0ZyZXK&export=download&authuser=0'
+      button: 'Download'
+      size: '1.26 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1q7oXrIQwYaiM8pSzhyJbDYbn_tt-XVKa&export=download&authuser=0'
+      button: 'Download'
+      size: '2.09 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=16eRnclw-meCfWDV3DXW51jdRi5qofnD7&export=download&authuser=0'
+      button: 'Download'
+      size: '3.15 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1SEHCUNWk7h6o0WfmhfRSDFon2s4I--L7&export=download&authuser=0'
+      button: 'Download'
+      size: '4.03 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

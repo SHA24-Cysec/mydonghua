@@ -38,23 +38,34 @@ keywords : 'Download Batch Tong Ling Fei Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : 'https://pixeldrain.com/u/WLgkNCLW'
-buttonDownload720p : 'Download'
-ukuran720p : '1.84 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Tong Ling Fei Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/WLgkNCLW'
+      button: 'Download'
+      size: '1.84 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

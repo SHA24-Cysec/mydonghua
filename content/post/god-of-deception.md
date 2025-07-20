@@ -36,23 +36,34 @@ keywords : 'Download Batch God of Deception Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/49946704'
-buttonDownload360p : 'Download'
-ukuran360p : '437.49 MB'
-
-linkDownload480p : 'https://acefile.co/f/49946706'
-buttonDownload480p : 'Download'
-ukuran480p : '696.27 MB'
-
-linkDownload720p : 'https://acefile.co/f/49946707'
-buttonDownload720p : 'Download'
-ukuran720p : '1.08 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'God of Deception Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1Xk6YvTfNhNYmCl4crRQs3dKMUjyEWJW8&export=download'
+      button: 'Download'
+      size: '437.49 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1gKS1so_S3kkCaa1j0b2hdiCQ9UT_saZ4&export=download'
+      button: 'Download'
+      size: '696.27 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=13Ruqf3fCRi6tcJa5WFppaFn1Q59a93kv&export=download'
+      button: 'Download'
+      size: '1.08 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

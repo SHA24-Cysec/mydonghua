@@ -38,23 +38,34 @@ keywords : 'Download Batch Manual of Hundred Demons Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/70528523'
-buttonDownload360p : 'Download'
-ukuran360p : '648.69 MB'
-
-linkDownload480p : 'https://acefile.co/f/70528525'
-buttonDownload480p : 'Download'
-ukuran480p : '1.17 GB'
-
-linkDownload720p : 'https://acefile.co/f/70528526'
-buttonDownload720p : 'Download'
-ukuran720p : '2.61 GB'
-
-linkDownload1080p : 'https://acefile.co/f/70528529'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.08 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Manual of Hundred Demons Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1aoM7b83ERpnlQydCP-BzJ40uvGtyOnP1&export=download&authuser=0'
+      button: 'Download'
+      size: '648.69 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1nbDo4FMQx7OzW_SY9rv1Q_8Lc_1eg6RS&export=download&authuser=0'
+      button: 'Download'
+      size: '1.17 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1RK4RZzAaDoDL9OnaNdUqBKrDXq6UUSwr&export=download&authuser=0'
+      button: 'Download'
+      size: '2.61 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: ''
+      size: ''
 ---

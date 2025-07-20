@@ -38,23 +38,34 @@ keywords : 'Download Batch Manual of Hundred Demons Season 3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/qvWwUtt'
-buttonDownload360p : 'Download'
-ukuran360p : '618.16 MB'
-
-linkDownload480p : 'https://lbx.to/f/R1JaZ6M'
-buttonDownload480p : 'Download'
-ukuran480p : '1.02 GB'
-
-linkDownload720p : 'https://lbx.to/f/uq56SNg'
-buttonDownload720p : 'Download'
-ukuran720p : '1.73 GB'
-
-linkDownload1080p : 'https://lbx.to/f/H5Y3SJm'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.58 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Manual of Hundred Demons Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/qvWwUtt'
+      button: 'Download'
+      size: '618.16 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/R1JaZ6M'
+      button: 'Download'
+      size: '1.02 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/uq56SNg'
+      button: 'Download'
+      size: '1.73 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/H5Y3SJm'
+      button: 'Download'
+      size: '2.58 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -35,23 +35,34 @@ keywords : 'Download Batch Spiritual Domain Season 5 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1w5udu5Nqcz-q8F2rWq8-VsaMxPLUY93m&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '476.80 MB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1hP5YblMX6revAk4C2KJpKW2ib9NoIx39&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '714.47 MB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1TQiNpJzJ00W4QsW-gHsz75ZWAylqjvBB&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '989.80 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spiritual Domain Season 5 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1w5udu5Nqcz-q8F2rWq8-VsaMxPLUY93m&export=download&authuser=0'
+      button: 'Download'
+      size: '476.80 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1hP5YblMX6revAk4C2KJpKW2ib9NoIx39&export=download&authuser=0'
+      button: 'Download'
+      size: '714.47 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1TQiNpJzJ00W4QsW-gHsz75ZWAylqjvBB&export=download&authuser=0'
+      button: 'Download'
+      size: '989.80 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

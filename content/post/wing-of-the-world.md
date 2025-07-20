@@ -37,23 +37,34 @@ keywords : 'Download Batch Wing of the World Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/51765657'
-buttonDownload360p : 'Download'
-ukuran360p : '942.05 MB'
-
-linkDownload480p : 'https://acefile.co/f/51765659'
-buttonDownload480p : 'Download'
-ukuran480p : '1.50 GB'
-
-linkDownload720p : 'https://acefile.co/f/51765662'
-buttonDownload720p : 'Download'
-ukuran720p : '2.34 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Wing of the World Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1DdZBU19mA-4RUJFUoPwkgTQlhzhXVCkS&export=download&authuser=0'
+      button: 'Download'
+      size: '942.05 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1969z0jbO3QWABxYhsStwfjEomDYGOq63&export=download&authuser=0'
+      button: 'Download'
+      size: '1.50 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1oDaM897mn-NW66zhoQq7CK-1M6Jp9XgJ&export=download&authuser=0'
+      button: 'Download'
+      size: '2.34 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -1,76 +1,28 @@
 <div class="mt-4 bg-slate-400 p-4">
-    <span class="font-bold">Dowload Batch {{ .Title }} Subtitle Indonesia</span>
     <div class="flex flex-col mt-4 gap-2">
-        {{/*  Elemen Download  */}}
-        <div>
-            <div class="flex select-none flex-row items-center">
-                <span class="bg-blue-300 w-full max-w-16 flex items-center justify-center font-bold p-2">360p</span>
-                <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .Params.linkDownload360p }}" class="bg-blue-200 w-full max-w-80 hover:text-sky-300 p-2"><span class="font-bold flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-down"></i>{{ .Params.buttonDownload360p }}</span></a>
+        {{/*  Div Download Batch  */}}
+        <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-1">
+        {{ range .Params.downloadGroups }}
+            <div class="download-group mb-6">
+                <h3 class="bg-blue-300 select-none font-bold p-3 border-b-white border-b-2 w-full max-w-96"><i class="fa-solid fa-circle-info mr-2"></i>{{ .title }}</h3>
+                {{ range .downloads }}
+                  <div>
+                    <div class="flex select-none flex-row items-center border-b-2 w-full max-w-96">
+                      <span class="bg-blue-300 w-full max-w-16 flex items-center justify-center font-bold p-2">{{ .quality }}</span>
+                      <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .link }}" class="bg-blue-200 w-full max-w-80 hover:text-sky-300 p-2">
+                        <span class="font-bold flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-down"></i>{{ .button }}</span>
+                      </a>
+                    </div>
+                    <div id="ukuran-download" class="w-full border-b-2 flex items-center gap-1 justify-center font-bold max-w-96 bg-gradient-to-r from-blue-300 to-sky-200 p-2">
+                      <i class="fa-solid fa-file-zipper"></i>
+                      <span>{{ .size }}</span>
+                    </div>
+                  </div>
+                {{ end }} 
             </div>
-            {{/*  Elemen Ukuran Download  */}}
-            <div id="ukuran-download" class="w-full flex items-center gap-1 justify-center font-bold border-t-2 border-t-white max-w-96 bg-gradient-to-r from-blue-300 to-sky-200 p-2">
-                <i class="fa-solid fa-file-zipper"></i>
-                <span>{{ .Params.ukuran360p }}</span>
-            </div>
-            {{/*  Akhir Elemen Ukuran Download  */}}
+        {{ end }}
         </div>
-        {{/*  Akhir Elemen Download  */}}
-        {{/*  Elemen Download  */}}
-        <div>
-            <div class="flex select-none flex-row items-center">
-                <span class="bg-blue-300 w-full max-w-16 flex items-center justify-center font-bold p-2">480p</span>
-                <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .Params.linkDownload480p }}" class="bg-blue-200 w-full max-w-80 hover:text-sky-300 p-2"><span class="font-bold flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-down"></i>{{ .Params.buttonDownload480p }}</span></a>
-            </div>
-            {{/*  Elemen Ukuran Download  */}}
-            <div id="ukuran-download" class="w-full flex items-center gap-1 justify-center font-bold border-t-2 border-t-white max-w-96 bg-gradient-to-r from-blue-300 to-sky-200 p-2">
-                <i class="fa-solid fa-file-zipper"></i>
-                <span>{{ .Params.ukuran480p }}</span>
-            </div>
-            {{/*  Akhir Elemen Ukuran Download  */}}
-        </div>
-        {{/*  Akhir Elemen Download  */}}
-        {{/*  Elemen Download  */}}
-        <div class="">
-            <div class="flex select-none flex-row items-center">
-                <span class="bg-blue-300 w-full max-w-16 flex items-center justify-center font-bold p-2">720p</span>
-                <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .Params.linkDownload720p }}" class="bg-blue-200 w-full max-w-80 hover:text-sky-300 p-2"><span class="font-bold flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-down"></i>{{ .Params.buttonDownload720p }}</span></a>
-            </div>
-            {{/*  Elemen Ukuran Download  */}}
-            <div id="ukuran-download" class="w-full flex items-center gap-1 justify-center font-bold border-t-2 border-t-white max-w-96 bg-gradient-to-r from-blue-300 to-sky-200 p-2">
-                <i class="fa-solid fa-file-zipper"></i>
-                <span>{{ .Params.ukuran720p }}</span>
-            </div>
-            {{/*  Akhir Elemen Ukuran Download  */}}
-        </div>
-        {{/*  Akhir Elemen Download  */}}
-        {{/*  Elemen Download  */}}
-        <div>
-            <div class="flex select-none flex-row items-center">
-                <span class="bg-blue-300 w-full max-w-16 flex items-center justify-center font-bold p-2">1080p</span>
-                <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .Params.linkDownload1080p }}" class="bg-blue-200 w-full max-w-80 hover:text-sky-300 p-2"><span class="font-bold flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-down"></i>{{ .Params.buttonDownload1080p }}</span></a>
-            </div>
-            {{/*  Elemen Ukuran Download  */}}
-            <div id="ukuran-download" class="w-full flex items-center gap-1 justify-center font-bold border-t-2 border-t-white max-w-96 bg-gradient-to-r from-blue-300 to-sky-200 p-2">
-                <i class="fa-solid fa-file-zipper"></i>
-                <span>{{ .Params.ukuran1080p }}</span>
-            </div>
-            {{/*  Akhir Elemen Ukuran Download  */}}
-        </div>
-        {{/*  Akhir Elemen Download  */}}
-        {{/*  Elemen Download  */}}
-        <div>
-            <div class="flex select-none flex-row items-center">
-                <span class="bg-blue-300 w-full flex items-center justify-center max-w-16 font-bold p-2">4K</span>
-                <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .Params.linkDownload4K }}" class="bg-blue-200 w-full max-w-80 hover:text-sky-300 p-2"><span class="font-bold flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-down"></i>{{ .Params.buttonDownload4K }}</span></a>
-            </div>
-            {{/*  Elemen Ukuran Download  */}}
-            <div id="ukuran-download" class="w-full flex items-center gap-1 justify-center font-bold border-t-2 border-t-white max-w-96 bg-gradient-to-r from-blue-300 to-sky-200 p-2">
-                <i class="fa-solid fa-file-zipper"></i>
-                <span>{{ .Params.ukuran4K }}</span>
-            </div>
-            {{/*  Akhir Elemen Ukuran Download  */}}
-        </div>
-        {{/*  Akhir Elemen Download  */}}
+        {{/*  Button Download  */}}
         <button title="Laporkan Link Download Mati" id="reportButton" class="mx-auto w-max mt-4 cursor-pointer hover:bg-blue-400 p-2 rounded-lg bg-blue-300 font-bold">
             Laporkan Link Mati
         </button>

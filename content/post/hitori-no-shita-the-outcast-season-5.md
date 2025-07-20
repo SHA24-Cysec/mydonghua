@@ -39,23 +39,34 @@ keywords : 'Download Batch Hitori No Shita the Outcast Season 5 Subtitle Indones
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/91eA4eD'
-buttonDownload360p : 'Download'
-ukuran360p : '422.90 MB'
-
-linkDownload480p : 'https://lbx.to/f/0YBUs7J'
-buttonDownload480p : 'Download'
-ukuran480p : '710.94 MB'
-
-linkDownload720p : 'https://lbx.to/f/EelsHJD'
-buttonDownload720p : 'Download'
-ukuran720p : '1.20 GB'
-
-linkDownload1080p : 'https://lbx.to/f/1MDQZsJ'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.84 MB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Hitori No Shita the Outcast Season 5 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/91eA4eD'
+      button: 'Download'
+      size: '422.90 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/0YBUs7J'
+      button: 'Download'
+      size: '710.94 MB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/EelsHJD'
+      button: 'Download'
+      size: '1.20 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/1MDQZsJ'
+      button: 'Download'
+      size: '1.84 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

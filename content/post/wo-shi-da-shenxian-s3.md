@@ -32,23 +32,34 @@ keywords : 'Batch, Donghua, Wo Shi Da Shenxian, Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : '#'
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : '#'
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : '#'
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : 'https://www.mediafire.com/file/xt0oknxz36p15mg/Wo_Shi_Da_Shenxian_Season_3_%2528_1080p_%2529.zip/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.77 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Wo Shi Da Shenxian Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/xt0oknxz36p15mg/Wo_Shi_Da_Shenxian_Season_3_%2528_1080p_%2529.zip/file'
+      button: 'Download'
+      size: '5.77 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -39,23 +39,34 @@ keywords : 'Download Batch Lord Xue Ying Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://www.mediafire.com/file/7qto8mdug0u32zj/Anichin-LORDXY_S1_1-26_480p.zip/file'
-buttonDownload480p : 'Download'
-ukuran480p : '2 GB'
-
-linkDownload720p : 'https://www.mediafire.com/file/mw0q23cip9viofg/Anichin-LORDXY_S1_1-26_720p.zip/file'
-buttonDownload720p : 'Download'
-ukuran720p : '3 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Lord Xue Ying Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/7qto8mdug0u32zj/Anichin-LORDXY_S1_1-26_480p.zip/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/mw0q23cip9viofg/Anichin-LORDXY_S1_1-26_720p.zip/file'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

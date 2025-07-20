@@ -39,23 +39,34 @@ keywords : 'Download Batch Wonderland Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/42392114'
-buttonDownload360p : 'Download'
-ukuran360p : '559.74 MB'
-
-linkDownload480p : 'https://acefile.co/f/42392113'
-buttonDownload480p : 'Download'
-ukuran480p : '1.01 GB'
-
-linkDownload720p : 'https://acefile.co/f/42392106'
-buttonDownload720p : 'Download'
-ukuran720p : '1.97 GB'
-
-linkDownload1080p : 'https://acefile.co/f/42392122'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.27 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Wonderland Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1YokiOhXD2FEc39lkpA_sc9xHpUWFH0nM&export=download&authuser=0'
+      button: 'Download'
+      size: '559.74 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1PfNd65V83CtRivTyEIKqTE1dw4LgxCiR&export=download&authuser=0'
+      button: 'Download'
+      size: '1.01 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1EGJjTxY4OxrE1Qjj1p87a7AZ-8uDwudD&export=download&authuser=0'
+      button: 'Download'
+      size: '1.97 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1Yl468ra49wifkLLkoNaTTaBrpk1--5xV&export=download&authuser=0'
+      button: 'Download'
+      size: '2.27 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

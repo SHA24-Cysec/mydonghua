@@ -36,23 +36,34 @@ keywords : 'Download Batch Swarm Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/0KZj2ch'
-buttonDownload360p : 'Download'
-ukuran360p : '724.99 MB'
-
-linkDownload480p : 'https://lbx.to/f/r3vfhC3'
-buttonDownload480p : 'Download'
-ukuran480p : '1.30 GB'
-
-linkDownload720p : 'https://lbx.to/f/ztkhkue'
-buttonDownload720p : 'Download'
-ukuran720p : '2.42 GB'
-
-linkDownload1080p : 'https://lbx.to/f/SRNZFGQ'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.94 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Swarm Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/0KZj2ch'
+      button: 'Download'
+      size: '724.99 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/r3vfhC3'
+      button: 'Download'
+      size: '1.30 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/ztkhkue'
+      button: 'Download'
+      size: '2.42 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/SRNZFGQ'
+      button: 'Download'
+      size: '3.94 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

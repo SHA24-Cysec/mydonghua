@@ -38,23 +38,34 @@ keywords : 'Download Batch Quanzhi Fashi Season 2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/6hQAVbSR#-fmoKk6jxWvZb9iBj1hRZIhwHdi5_EmPhyCPXry_f6Q'
-buttonDownload360p : 'Download'
-ukuran360p : '597 MB'
-
-linkDownload480p : 'https://mega.nz/file/z9JW2BDB#Q3eio4TZxqepe1zIA2f7dct0BfDTbBbUCTa3uRyBQpU'
-buttonDownload480p : 'Download'
-ukuran480p : '784 MB'
-
-linkDownload720p : 'https://mega.nz/file/noRQDJBb#nax2BMiyoHYga26hg63jYpuc1-6kTmsgrp6rKy5OIiM'
-buttonDownload720p : 'Download'
-ukuran720p : '1.25 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Quanzhi Fashi Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/6hQAVbSR#-fmoKk6jxWvZb9iBj1hRZIhwHdi5_EmPhyCPXry_f6Q'
+      button: 'Download'
+      size: '597 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/z9JW2BDB#Q3eio4TZxqepe1zIA2f7dct0BfDTbBbUCTa3uRyBQpU'
+      button: 'Download'
+      size: '784 MB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/noRQDJBb#nax2BMiyoHYga26hg63jYpuc1-6kTmsgrp6rKy5OIiM'
+      button: 'Download'
+      size: '1.25 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

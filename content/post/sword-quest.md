@@ -35,23 +35,34 @@ keywords : 'Download Batch Sword Quest Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/ZDE0EarJ#JTfmM-xgsXTkoPQ7ThBiw8eCBCC7WZz_Na7Rg38Q_7c'
-buttonDownload360p : 'Download'
-ukuran360p : '544.8 MB'
-
-linkDownload480p : 'https://mega.nz/file/9eNRWaZQ#-CijbVtNw2szQKHk_c8ZghGRZHBuOp812U-x8a08lMQ'
-buttonDownload480p : 'Download'
-ukuran480p : '1.07 GB'
-
-linkDownload720p : 'https://mega.nz/file/JCsRHAhb#qg7MMZfiWLl-uXvyF_pF2FvRICCRanw_u1Mwl3Uw5LI'
-buttonDownload720p : 'Download'
-ukuran720p : '2 GB'
-
-linkDownload1080p : 'https://mega.nz/file/AXsXCLBQ#7-gLzBJM6pM11r6qrgrngJG7DEeoxcyrqd4KEWd5678'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.19 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Sword Quest Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/ZDE0EarJ#JTfmM-xgsXTkoPQ7ThBiw8eCBCC7WZz_Na7Rg38Q_7c'
+      button: 'Download'
+      size: '544.8 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/9eNRWaZQ#-CijbVtNw2szQKHk_c8ZghGRZHBuOp812U-x8a08lMQ'
+      button: 'Download'
+      size: '1.07 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/JCsRHAhb#qg7MMZfiWLl-uXvyF_pF2FvRICCRanw_u1Mwl3Uw5LI'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/AXsXCLBQ#7-gLzBJM6pM11r6qrgrngJG7DEeoxcyrqd4KEWd5678'
+      button: 'Download'
+      size: '3.19 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -36,23 +36,34 @@ keywords : 'Download Batch Throne of Seal Movie Electrolux Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/x8qlmv9uyfg9pri/%255BANICHIN.CAFE%255D%255BELECTROLUX_-_CROWNLESS_GOD%255D%255BMOVIE%255D.%255B360p%255D.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '426 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/v012yoyz0hoop9v/%255BANICHIN.CAFE%255D%255BELECTROLUX_-_CROWNLESS_GOD%255D%255BMOVIE%255D.%255B480p%255D.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '876 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/ggzljqspxa8blwg/%255BANICHIN.CAFE%255D%255BELECTROLUX_-_CROWNLESS_GOD%255D%255BMOVIE%255D.%255B720p%255D.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '1.4 GB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/r03uo5mutcw8h1r/%255BANICHIN.CAFE%255D%255BELECTROLUX_-_CROWNLESS_GOD%255D%255BMOVIE%255D.%255B1080p%255D.mp4/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.11 GB'
-
-linkDownload4K : 'https://acefile.co/f/109150899'
-buttonDownload4K : 'Download'
-ukuran4K : '3.36 GB'
+downloadGroups:
+  
+  - title: 'Throne of Seal Movie: Electrolux Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/x8qlmv9uyfg9pri/%255BANICHIN.CAFE%255D%255BELECTROLUX_-_CROWNLESS_GOD%255D%255BMOVIE%255D.%255B360p%255D.mp4/file'
+      button: 'Download'
+      size: '426 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/v012yoyz0hoop9v/%255BANICHIN.CAFE%255D%255BELECTROLUX_-_CROWNLESS_GOD%255D%255BMOVIE%255D.%255B480p%255D.mp4/file'
+      button: 'Download'
+      size: '876 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/ggzljqspxa8blwg/%255BANICHIN.CAFE%255D%255BELECTROLUX_-_CROWNLESS_GOD%255D%255BMOVIE%255D.%255B720p%255D.mp4/file'
+      button: 'Download'
+      size: '1.4 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/r03uo5mutcw8h1r/%255BANICHIN.CAFE%255D%255BELECTROLUX_-_CROWNLESS_GOD%255D%255BMOVIE%255D.%255B1080p%255D.mp4/file'
+      button: 'Download'
+      size: '2.11 GB'
+    
+    - quality: '4K'
+      link: 'https://drive.usercontent.google.com/download?id=1jSPNx9PcaoivE_foEwvwW1IrzHIYnWkd&export=download&authuser=0'
+      button: 'Download'
+      size: '3.36 GB'
 ---

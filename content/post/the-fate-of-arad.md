@@ -37,23 +37,34 @@ keywords : 'Download Batch The Fate of Arad Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/34549652'
-buttonDownload360p : 'Download'
-ukuran360p : '541.46 MB'
-
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : 'https://acefile.co/f/34549650'
-buttonDownload720p : 'Download'
-ukuran720p : '1.01 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Fate of Arad Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1qpiHsH90ylNhVcfRPYUIQyR16N8kgBnc&export=download&authuser=0'
+      button: 'Download'
+      size: '541.46 MB'
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1km_DyHktCBJJLX02ed1_V3UDzFE6yk64&export=download&authuser=0'
+      button: 'Download'
+      size: '1.01 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

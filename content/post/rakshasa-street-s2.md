@@ -35,23 +35,34 @@ keywords : 'Download Batch Rakshasa Street S2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/66368726'
-buttonDownload360p : 'Download'
-ukuran360p : '504.32 MB'
-
-linkDownload480p : 'https://acefile.co/f/66368729'
-buttonDownload480p : 'Download'
-ukuran480p : '924.46 MB'
-
-linkDownload720p : 'https://acefile.co/f/66368730'
-buttonDownload720p : 'Download'
-ukuran720p : '1.90 GB'
-
-linkDownload1080p : 'https://acefile.co/f/66368731'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.31 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Rakshasa Street Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1Q5FHphm5LqYJAOGhd-JnUzHawcmItd1e&export=download&authuser=0'
+      button: 'Download'
+      size: '504.32 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1YbBUFqViyBMAMFazeuwVKLPBclqBQxnA&export=download&authuser=0'
+      button: 'Download'
+      size: '924.46 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1iDpAAMAoT33gJYLUeXcFNNNS_BuJXS9h&export=download&authuser=0'
+      button: 'Download'
+      size: '1.90 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1DaQEPf3rMzYOf65XNaHmwUk_qkAD5jC5&export=download&authuser=0'
+      button: 'Download'
+      size: '3.31 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

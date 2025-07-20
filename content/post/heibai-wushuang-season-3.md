@@ -35,23 +35,34 @@ keywords : 'Download Batch Heibai Wushuang Season 3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/69714678'
-buttonDownload360p : 'Download'
-ukuran360p : '514.37 MB'
-
-linkDownload480p : 'https://acefile.co/f/69714683'
-buttonDownload480p : 'Download'
-ukuran480p : '931.44 MB'
-
-linkDownload720p : 'https://acefile.co/f/69714685'
-buttonDownload720p : 'Download'
-ukuran720p : '1.73 GB'
-
-linkDownload1080p : 'https://acefile.co/f/69714686'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.22 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Heibai Wushuang Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1YTWUjBRDnFBieTVIGSSHKincDO97XDOl&export=download'
+      button: 'Download'
+      size: '514.37 MB'
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1_paDHiH-8QzEJqylfSLUsNcChK0ZiaM_&export=download'
+      button: 'Download'
+      size: '1.73 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

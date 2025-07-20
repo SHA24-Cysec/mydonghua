@@ -38,23 +38,34 @@ keywords : 'Download Batch Hero Return Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/43479399'
-buttonDownload360p : 'Download'
-ukuran360p : '806 MB'
-
-linkDownload480p : 'https://acefile.co/f/43479406'
-buttonDownload480p : 'Download'
-ukuran480p : '1.23 GB'
-
-linkDownload720p : 'https://acefile.co/f/43479413'
-buttonDownload720p : 'Download'
-ukuran720p : '1.68 GB'
-
-linkDownload1080p : 'https://acefile.co/f/43479416'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.20 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Hero Return Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1FgimNSx3gVX7yW3LtjLJqav8WcMajBTa&export=download'
+      button: 'Download'
+      size: '806 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1n6GIr6g_EbLGhWMr5iXEdbQOOaLdUTuy&export=download'
+      button: 'Download'
+      size: '1.23 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=156IUt-P8xpYaRSHnNmyZY4wznK2uVMmM&export=download'
+      button: 'Download'
+      size: '1.68 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1iHCAB9seu5OLRyQVHVAPC0klqqgLDqI9&export=download'
+      button: 'Download'
+      size: '2.20 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

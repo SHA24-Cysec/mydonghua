@@ -35,23 +35,34 @@ keywords : 'Download Batch The Defective Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://mega.nz/file/kh9UES6a#OJ56qkiECvNIuVhR97yYzNBgJOkbix5MsGiN63mjdKQ'
-buttonDownload480p : 'Download'
-ukuran480p : '2.28 GB'
-
-linkDownload720p : 'https://mega.nz/file/15tATYAB#al4CkbGZZK-M8iXWpo1v4JhEC68RvajDzPPVs_IBfZ8'
-buttonDownload720p : 'Download'
-ukuran720p : '4.55 GB'
-
-linkDownload1080p : 'https://mega.nz/file/x1lSxaIS#jZCa45KRg0Lmb2_Kw0FBEm0Xs_3y-ZiaT1-dlW92yDY'
-buttonDownload1080p : 'Download'
-ukuran1080p : '6.54 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Defective Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/kh9UES6a#OJ56qkiECvNIuVhR97yYzNBgJOkbix5MsGiN63mjdKQ'
+      button: 'Download'
+      size: '2.28 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/15tATYAB#al4CkbGZZK-M8iXWpo1v4JhEC68RvajDzPPVs_IBfZ8'
+      button: 'Download'
+      size: '4.55 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/x1lSxaIS#jZCa45KRg0Lmb2_Kw0FBEm0Xs_3y-ZiaT1-dlW92yDY'
+      button: 'Download'
+      size: '6.54 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

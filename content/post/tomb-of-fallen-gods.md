@@ -37,23 +37,34 @@ keywords : 'Download Batch Tomb of Fallen Gods Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : 'https://drive.google.com/file/d/1mmD5He5eO-fvreoBea9eFeEWJ6PP3XhS/view?usp=sharing'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.18 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Tomb of Fallen Gods Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1mmD5He5eO-fvreoBea9eFeEWJ6PP3XhS&export=download&authuser=0'
+      button: 'Download'
+      size: '5.18 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

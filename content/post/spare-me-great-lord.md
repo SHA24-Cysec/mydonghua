@@ -37,23 +37,34 @@ keywords : 'Download Batch Spare Me Great Lord Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/67711441'
-buttonDownload360p : 'Download'
-ukuran360p : '657.82 MB'
-
-linkDownload480p : 'https://acefile.co/f/67711444'
-buttonDownload480p : 'Download'
-ukuran480p : '1.19 GB'
-
-linkDownload720p : 'https://acefile.co/f/67711446'
-buttonDownload720p : 'Download'
-ukuran720p : '2 GB'
-
-linkDownload1080p : 'https://acefile.co/f/67711451'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.14 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spare Me Great Lord Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=13QCSU3hClYzgqjwiq2Iq0peYiHlpJSkG&export=download&authuser=0'
+      button: 'Download'
+      size: '657.82 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1R8ciO284Uo__vlc0xMCH5WohJ55Zrjxi&export=download&authuser=0'
+      button: 'Download'
+      size: '1.19 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=16mQy0i9PH4bOlubds8EkjFac01tIO-D5&export=download&authuser=0'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1JQTb3QvvZH8hnV3R5JF73Vj6xWDhTVFA&export=download&authuser=0'
+      button: 'Download'
+      size: '3.14 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -37,23 +37,34 @@ keywords : 'Download Batch Battle Through the Heavens S2 Special Subtitle Indone
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/42839513'
-buttonDownload360p : 'Download'
-ukuran360p : '138.03 MB'
-
-linkDownload480p : 'https://acefile.co/f/42839517'
-buttonDownload480p : 'Download'
-ukuran480p : '248.15 MB'
-
-linkDownload720p : 'https://acefile.co/f/42839518'
-buttonDownload720p : 'Download'
-ukuran720p : '454.57 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Battle Through the Heavens Season 2 Special Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1SMvCkvvzlUkdb7u-eBHEoTZ0ng5sB_nl&export=download&authuser=0'
+      button: 'Download'
+      size: '138.03 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1rwj2mmYGKxwLC50qPuzJyMjsri4OvmOt&export=download&authuser=0'
+      button: 'Download'
+      size: '248.15 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1av3612kFlV_V5sJ9s0M18lyQl4wGCnlX&export=download&authuser=0'
+      button: 'Download'
+      size: '454.57 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

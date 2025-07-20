@@ -38,23 +38,34 @@ keywords : 'Download Batch Swallowed Star Movie Blood River Continent Subtitle I
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://www.mediafire.com/file/57rxnfpa0r600b1/%255BANICHIN.Baby%255D%255BSwallowed_Star_-_Blood_River_Continent%255D.%255B360p%255D.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '530 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/1824sicg6r7s1cj/%255BANICHIN.Baby%255D%255BSwallowed_Star_-_Blood_River_Continent%255D.%255B480p%255D.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '731 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/rknyauzgvz2l4tx/%255BANICHIN.Baby%255D%255BSwallowed_Star_-_Blood_River_Continent%255D.%255B720p%255D.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '977 MB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/eao9e9uwt9kgci4/%255BANICHIN.Baby%255D%255BSwallowed_Star_-_Blood_River_Continent%255D.%255B1080p%255D.mp4/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Swallowed Star Movie Blood River Continent Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/57rxnfpa0r600b1/%255BANICHIN.Baby%255D%255BSwallowed_Star_-_Blood_River_Continent%255D.%255B360p%255D.mp4/file'
+      button: 'Download'
+      size: '530 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/1824sicg6r7s1cj/%255BANICHIN.Baby%255D%255BSwallowed_Star_-_Blood_River_Continent%255D.%255B480p%255D.mp4/file'
+      button: 'Download'
+      size: '731 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/rknyauzgvz2l4tx/%255BANICHIN.Baby%255D%255BSwallowed_Star_-_Blood_River_Continent%255D.%255B720p%255D.mp4/file'
+      button: 'Download'
+      size: '977 MB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/eao9e9uwt9kgci4/%255BANICHIN.Baby%255D%255BSwallowed_Star_-_Blood_River_Continent%255D.%255B1080p%255D.mp4/file'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

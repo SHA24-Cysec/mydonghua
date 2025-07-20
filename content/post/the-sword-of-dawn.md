@@ -36,23 +36,34 @@ keywords : 'Download Batch The Sword of Dawn Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/vyYhiBLI#gPhrIZjbTUK299HU9JbF0nyU7btpL8c5e65WTLl1ekU'
-buttonDownload360p : 'Download'
-ukuran360p : '1.08 GB'
-
-linkDownload480p : 'https://mega.nz/file/oBwzjYYZ#8P6tig2wC-OHLJyzSatqlXoXcsoqhIMyJB4xQwS9_J0'
-buttonDownload480p : 'Download'
-ukuran480p : '2.14 GB'
-
-linkDownload720p : 'https://lbx.to/f/jCQUpxV'
-buttonDownload720p : 'Download'
-ukuran720p : '5.01 GB'
-
-linkDownload1080p : 'https://lbx.to/f/SkUT4oo'
-buttonDownload1080p : 'Download'
-ukuran1080p : '7.38 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Sword of Dawn Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/vyYhiBLI#gPhrIZjbTUK299HU9JbF0nyU7btpL8c5e65WTLl1ekU'
+      button: 'Download'
+      size: '1.08 GB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/oBwzjYYZ#8P6tig2wC-OHLJyzSatqlXoXcsoqhIMyJB4xQwS9_J0'
+      button: 'Download'
+      size: '2.14 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/jCQUpxV'
+      button: 'Download'
+      size: '5.01 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/SkUT4oo'
+      button: 'Download'
+      size: '7.38 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

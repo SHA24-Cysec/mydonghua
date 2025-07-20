@@ -39,23 +39,34 @@ keywords : 'Download Batch Tales of Demons and Gods Season 3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/34394088'
-buttonDownload360p : 'Download'
-ukuran360p : '614.84 MB'
-
-linkDownload480p : 'https://acefile.co/f/34394087'
-buttonDownload480p : 'Download'
-ukuran480p : '1.07 GB'
-
-linkDownload720p : 'https://acefile.co/f/34394082'
-buttonDownload720p : 'Download'
-ukuran720p : '1.94 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Tales of Demons and Gods Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1EBpSHHQBJRFDbs60TgC9THmovmpEk40x&export=download&authuser=0'
+      button: 'Download'
+      size: '614.84 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1JB5mIBuB8ZBFwID-vxum6L3i107MHmAI&export=download&authuser=0'
+      button: 'Download'
+      size: '1.07 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=11akzHqvQxa2SAyTV-oesUHLZXcI1SGKQ&export=download&authuser=0'
+      button: 'Download'
+      size: '1.94 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

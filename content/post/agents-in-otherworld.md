@@ -35,23 +35,34 @@ keywords : 'Download Batch Agents in Otherworld Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/45904589'
-buttonDownload360p : 'Download'
-ukuran360p : '1.43 GB'
-
-linkDownload480p : 'https://acefile.co/f/45904591'
-buttonDownload480p : 'Download'
-ukuran480p : '2.37 GB'
-
-linkDownload720p : 'https://acefile.co/f/45904594'
-buttonDownload720p : 'Download'
-ukuran720p : '4.27 GB'
-
-linkDownload1080p : 'https://acefile.co/f/45904598'
-buttonDownload1080p : 'Download'
-ukuran1080p : '6.43 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Agents in Otherworld Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1eC1qd7AzyQbv-PAHVraLMq1etTrnGDIU&export=download&authuser=0'
+      button: 'Download'
+      size: '1.43 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1B2OydjFDdyKShta-ir_kGoTQA5itNFnO&export=download&authuser=0'
+      button: 'Download'
+      size: '2.37 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1ei6JbjO-TjBVzmR-9TMuKfutsUkIhQob&export=download&authuser=0'
+      button: 'Download'
+      size: '4.27 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=18DCoS46H2lnuE6MuZf-gs6LlEvdGrPXP&export=download&authuser=0'
+      button: 'Download'
+      size: '6.43 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -37,23 +37,34 @@ keywords : 'Download Batch Xi Zitang Seizes the Whole Country Power Subtitle Ind
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/DdaimKZ'
-buttonDownload360p : 'Download'
-ukuran360p : '563.31 MB'
-
-linkDownload480p : 'https://lbx.to/f/DTSSIai'
-buttonDownload480p : 'Download'
-ukuran480p : '1.06 GB'
-
-linkDownload720p : 'https://lbx.to/f/UDMXibO'
-buttonDownload720p : 'Download'
-ukuran720p : '1.99 GB'
-
-linkDownload1080p : 'https://lbx.to/f/9ZQPCP2'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.93 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Xi Zitang Seizes the Whole Country Power Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/DdaimKZ'
+      button: 'Download'
+      size: '563.31 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/DTSSIai'
+      button: 'Download'
+      size: '1.06 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/UDMXibO'
+      button: 'Download'
+      size: '1.99 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/9ZQPCP2'
+      button: 'Download'
+      size: '2.93 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

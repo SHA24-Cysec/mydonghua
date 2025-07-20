@@ -36,23 +36,34 @@ keywords : 'Download Batch Bu Liang Ren the Legend of Yuan Tiangang Subtitle Ind
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://drive.google.com/file/d/15JljEn-tpVQ0ndpphvyVpL7BuVq3hDtH/view?usp=sharing'
-buttonDownload360p : 'Download'
-ukuran360p : '264 MB'
-
-linkDownload480p : 'https://drive.google.com/file/d/1OhSo8GVJD1R87vz92X2y3aI5GZBpo_ye/view?usp=sharing'
-buttonDownload480p : 'Download'
-ukuran480p : '598.7 MB'
-
-linkDownload720p : 'https://drive.google.com/file/d/1IT_CuuPf0hMWtH0oZq3q4hmeeKGDUAxR/view?usp=sharing'
-buttonDownload720p : 'Download'
-ukuran720p : '993 MB'
-
-linkDownload1080p : 'https://drive.google.com/file/d/15yTNJ2eJx1ss-JwWFviJRj2yfoenklIK/view?usp=sharing'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.8 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Bu Liang Ren the Legend of Yuan Tiangang Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://send.now/ockd8p3mwze2'
+      button: 'Download'
+      size: '264 MB'
+    
+    - quality: '480p'
+      link: 'https://send.now/jvk8svtpgnqw'
+      button: 'Download'
+      size: '598.7 MB'
+    
+    - quality: '720p'
+      link: 'https://send.now/8k0y2hf44cr7'
+      button: 'Download'
+      size: '993.1 MB'
+    
+    - quality: '1080p'
+      link: 'https://send.now/6g03tgfn2435'
+      button: 'Download'
+      size: '1.77 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

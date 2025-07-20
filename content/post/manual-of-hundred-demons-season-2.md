@@ -38,23 +38,34 @@ keywords : 'Download Batch Manual of Hundred Demons Season 2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://mega.nz/file/FjY2kChI#ZuhWPZL-u78vjjjpt395PZ9ByJKuQuvagm89OdcqMeo'
-buttonDownload480p : 'Download'
-ukuran480p : '1.03 GB'
-
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Manual of Hundred Demons Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/FjY2kChI#ZuhWPZL-u78vjjjpt395PZ9ByJKuQuvagm89OdcqMeo'
+      button: 'Download'
+      size: '1.03 GB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

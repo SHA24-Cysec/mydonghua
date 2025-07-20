@@ -39,23 +39,34 @@ keywords : 'Download Batch The Young Imperial Guards Season 2 Subtitle Indonesia
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1yvqQ42YXX-u4_Z5wU8C-HF9-TWiTA8dU&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '1.06 GB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1zYu-zpB5WOoAA3aA6ZwPTYX-_8lQsD0P&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '1.64 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Young Imperial Guards Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1yvqQ42YXX-u4_Z5wU8C-HF9-TWiTA8dU&export=download&authuser=0'
+      button: 'Download'
+      size: '1.06 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1zYu-zpB5WOoAA3aA6ZwPTYX-_8lQsD0P&export=download&authuser=0'
+      button: 'Download'
+      size: '1.64 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

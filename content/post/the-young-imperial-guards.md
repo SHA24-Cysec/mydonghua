@@ -40,23 +40,34 @@ keywords : 'Download Batch The Young Imperial Guards Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://www.mediafire.com/file/d1bv8c5n5dwgpvs/Anichin.best_The.You.Impe.Gua.S1.Ep1-13_480p.zip/file'
-buttonDownload480p : 'Download'
-ukuran480p : '926 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/l0bahrvbpoqult8/Anichin.best_The.You.Impe.Gua.S1.Ep1-13_720p.zip/file'
-buttonDownload720p : 'Download'
-ukuran720p : '3 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Young Imperial Guards Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/d1bv8c5n5dwgpvs/Anichin.best_The.You.Impe.Gua.S1.Ep1-13_480p.zip/file'
+      button: 'Download'
+      size: '926 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/l0bahrvbpoqult8/Anichin.best_The.You.Impe.Gua.S1.Ep1-13_720p.zip/file'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

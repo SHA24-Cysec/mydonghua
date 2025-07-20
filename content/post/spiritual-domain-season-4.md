@@ -35,23 +35,34 @@ keywords : 'Download Batch Spiritual Domain Season 4 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1BjJDEVZVXgOKtYhHwo7JGE0omRafd5Ua&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '694.20 MB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1CBw9zGPVhYj-DHXDzo-Xtn-bhFEfpSAZ&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '944.88 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spiritual Domain Season 4 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1BjJDEVZVXgOKtYhHwo7JGE0omRafd5Ua&export=download&authuser=0'
+      button: 'Download'
+      size: '694.20 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1CBw9zGPVhYj-DHXDzo-Xtn-bhFEfpSAZ&export=download&authuser=0'
+      button: 'Download'
+      size: '944.88 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

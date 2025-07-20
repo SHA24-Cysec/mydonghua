@@ -36,23 +36,34 @@ keywords : 'Download Batch Yuan Long S3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/3IJThALJ#OKTGcCFIDGnNHJeIF77-kff8wuscICP_5hJ75H_45DU'
-buttonDownload360p : 'Download'
-ukuran360p : '230.2 MB'
-
-linkDownload480p : 'https://mega.nz/file/5OZx1RYR#Y9pdK7mVG60AObuEMvyeXSXp_kYKYnG7FQE2GK8Bzlk'
-buttonDownload480p : 'Download'
-ukuran480p : '1.71 GB'
-
-linkDownload720p : 'https://mega.nz/file/kDwX2DaK#Sp9L6Ib6o2P4d_K3MqYSoZXZgjYYfZ4RN5l2K-DUA_w'
-buttonDownload720p : 'Download'
-ukuran720p : '3.91 GB'
-
-linkDownload1080p : 'https://mega.nz/file/x3BkRALJ#QeOuHO8NWD5lnp2VQfSIto4fr3_EmAFNe-fmT9rF2Do'
-buttonDownload1080p : 'Download'
-ukuran1080p : '6.17 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Yuan Long Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/3IJThALJ#OKTGcCFIDGnNHJeIF77-kff8wuscICP_5hJ75H_45DU'
+      button: 'Download'
+      size: '230.2 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/5OZx1RYR#Y9pdK7mVG60AObuEMvyeXSXp_kYKYnG7FQE2GK8Bzlk'
+      button: 'Download'
+      size: '1.71 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/kDwX2DaK#Sp9L6Ib6o2P4d_K3MqYSoZXZgjYYfZ4RN5l2K-DUA_w'
+      button: 'Download'
+      size: '3.91 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/x3BkRALJ#QeOuHO8NWD5lnp2VQfSIto4fr3_EmAFNe-fmT9rF2Do'
+      button: 'Download'
+      size: '6.17 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

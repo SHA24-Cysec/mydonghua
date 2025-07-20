@@ -37,23 +37,34 @@ keywords : 'Download Batch Fox Spirit Matchmaker S5 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/31437339'
-buttonDownload360p : 'Download'
-ukuran360p : '588.54 MB'
-
-linkDownload480p : 'https://acefile.co/f/31437343'
-buttonDownload480p : 'Download'
-ukuran480p : '880.37 MB'
-
-linkDownload720p : 'https://acefile.co/f/31437346'
-buttonDownload720p : 'Download'
-ukuran720p : '1.19 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Fox Spirit Matchmaker Season 5 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1Zif51S-m1sFVXcKPr7-adHr0r4cGN-gX&export=download'
+      button: 'Download'
+      size: '588.54 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1bj9F7jVdCpA_6WWQ2R4R0tDbmxxtFjVH&export=download'
+      button: 'Download'
+      size: '880.37 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=18xmWy4RzCGuibFmn1gQo_FPFxAn_0VPD&export=download'
+      button: 'Download'
+      size: '1.19 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

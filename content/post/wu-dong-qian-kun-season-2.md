@@ -39,23 +39,34 @@ keywords : 'Download Batch Wu Dong Qian Kun Season 2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/42862283'
-buttonDownload360p : 'Download'
-ukuran360p : '1.06 GB'
-
-linkDownload480p : 'https://acefile.co/f/42862286'
-buttonDownload480p : 'Download'
-ukuran480p : '1.77 GB'
-
-linkDownload720p : 'https://acefile.co/f/42862291'
-buttonDownload720p : 'Download'
-ukuran720p : '2.56 GB'
-
-linkDownload1080p : 'https://acefile.co/f/42862294'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.94 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Wu Dong Qian Kun Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1q5nXwi-BY3BIWxqRO_OqDqKEuoSFD28k&export=download&authuser=0'
+      button: 'Download'
+      size: '1.06 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1cGs53V2rxoO2fgaEfWXpmXoV_MlgG1e8&export=download&authuser=0'
+      button: 'Download'
+      size: '1.77 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1rUXg16EeWA972b_B1VIdEQgbGx6Z5Vjb&export=download&authuser=0'
+      button: 'Download'
+      size: '2.56 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1IZIlV3IvxAr1aBiQ-VsPCwjQFxKXhu02&export=download&authuser=0'
+      button: 'Download'
+      size: '3.94 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

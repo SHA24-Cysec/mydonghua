@@ -41,23 +41,34 @@ keywords : 'Download Batch Killer Seven Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/42678129'
-buttonDownload360p : 'Download'
-ukuran360p : '227 MB'
-
-linkDownload480p : 'https://acefile.co/f/42678133'
-buttonDownload480p : 'Download'
-ukuran480p : '409 MB'
-
-linkDownload720p : 'https://acefile.co/f/42678139'
-buttonDownload720p : 'Download'
-ukuran720p : '807 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Killer Seven Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=16C6wDWxK05DWdhSNB4BRydY9COqp4LSo&export=download'
+      button: 'Download'
+      size: '227 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=14RMyTaSMOTLzxgPbZdjCduDeJJZIb_Mu&export=download'
+      button: 'Download'
+      size: '409 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1_k_aMRU3kY0A6giigowu7XmkMUdOuKxA&export=download'
+      button: 'Download'
+      size: '807 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

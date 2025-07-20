@@ -39,23 +39,34 @@ keywords : 'Download Batch Heaven Official Blessing Special Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/945ok5lqledoi7h/Heaven_Officials_Blessing_Specials_-_01_360p.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '80 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/dq6cy02s029zfp3/Heaven_Officials_Blessing_Specials_-_01_720p.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '89 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/mstzbuvnk4clzpt/Heaven_Officials_Blessing_Specials_-_01_480p.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '143 MB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/3u2k2js9cyoyl2e/Heaven_Officials_Blessing_Specials_-_01_1080p.mp4/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '152 MB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Heaven Official Blessing Special Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/945ok5lqledoi7h/Heaven_Officials_Blessing_Specials_-_01_360p.mp4/file'
+      button: 'Download'
+      size: '80 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/dq6cy02s029zfp3/Heaven_Officials_Blessing_Specials_-_01_720p.mp4/file'
+      button: 'Download'
+      size: '89 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/mstzbuvnk4clzpt/Heaven_Officials_Blessing_Specials_-_01_480p.mp4/file'
+      button: 'Download'
+      size: '143 MB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/3u2k2js9cyoyl2e/Heaven_Officials_Blessing_Specials_-_01_1080p.mp4/file'
+      button: 'Download'
+      size: '152 MB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

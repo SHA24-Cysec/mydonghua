@@ -41,23 +41,34 @@ keywords : 'Download Batch Mo Dao Zu Shi Final Chapter Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/nxUUlT7Y#cuWQOMZJLMn_RCbbsd2vwMhJf_PsBsSxHDB2yWrv41Y'
-buttonDownload360p : 'Download'
-ukuran360p : '763.6 MB'
-
-linkDownload480p : 'https://mega.nz/file/fkMmUJJa#Ijk5NOn1m0mnhgJRDuUBWvdDnL0p7KanZs1vFBp2JgM'
-buttonDownload480p : 'Download'
-ukuran480p : '1.34 GB'
-
-linkDownload720p : 'https://mega.nz/file/u0kWjB7R#0E86rD2mB6mR5zQeIZqd5EQMPhPLsbknWHijtPO4pj8'
-buttonDownload720p : 'Download'
-ukuran720p : '2.26 GB'
-
-linkDownload1080p : 'https://mega.nz/file/nskmQZxY#f6n47vpAEW0lFqkhiTSY1WJHhLlnaXGK-s8wnqn0EUM'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.42 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Mo Dao Zu Shi Final Chapter Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/nxUUlT7Y#cuWQOMZJLMn_RCbbsd2vwMhJf_PsBsSxHDB2yWrv41Y'
+      button: 'Download'
+      size: '763.6 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/fkMmUJJa#Ijk5NOn1m0mnhgJRDuUBWvdDnL0p7KanZs1vFBp2JgM'
+      button: 'Download'
+      size: '1.34 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/u0kWjB7R#0E86rD2mB6mR5zQeIZqd5EQMPhPLsbknWHijtPO4pj8'
+      button: 'Download'
+      size: '2.26 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/nskmQZxY#f6n47vpAEW0lFqkhiTSY1WJHhLlnaXGK-s8wnqn0EUM'
+      button: 'Download'
+      size: '3.42 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

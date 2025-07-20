@@ -37,23 +37,34 @@ keywords : 'Download Batch Cupids Chocolates S2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://acefile.co/f/34369272'
-buttonDownload480p : 'Download'
-ukuran480p : '1.10 GB'
-
-linkDownload720p : 'https://acefile.co/f/34369268'
-buttonDownload720p : 'Download'
-ukuran720p : '1.53 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Cupids Chocolates Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1PriY3eLn-U08XVjC8b4TmC84h3BIgP1Y&export=download&authuser=0'
+      button: 'Download'
+      size: '1.10 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=19Zpi7020kYSQ54fqk0VF_GgbxCArvfNk&export=download&authuser=0'
+      button: 'Download'
+      size: '1.53 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

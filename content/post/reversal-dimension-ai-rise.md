@@ -40,23 +40,34 @@ keywords : 'Download Batch Reversal Dimension Ai Rise Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/44813713'
-buttonDownload360p : 'Download'
-ukuran360p : '643.27 MB'
-
-linkDownload480p : 'https://acefile.co/f/44813714'
-buttonDownload480p : 'Download'
-ukuran480p : '919.67 MB'
-
-linkDownload720p : 'https://acefile.co/f/44813716'
-buttonDownload720p : 'Download'
-ukuran720p : '1.41 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Reversal Dimension Ai Rise Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1U1LzwwI2y0ow8Gcao7nDA3HAkljgK3GL&export=download&authuser=0'
+      button: 'Download'
+      size: '643.27 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1z1yngvtXTvzDUrVGcvmubThEK1w0smwQ&export=download&authuser=0'
+      button: 'Download'
+      size: '919.67 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1CXLOE_-Ra-W23-o8Es-yy9z5dPgOX4RO&export=download&authuser=0'
+      button: 'Download'
+      size: '1.41 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

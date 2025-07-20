@@ -36,23 +36,34 @@ keywords : 'Download Batch Slay the Gods Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://drive.google.com/file/d/1KvH6TRAD9FvviEydPw6RzaAiSDDdQTQN/view?usp=sharing'
-buttonDownload360p : 'Download'
-ukuran360p : '1.17 GB'
-
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Slay The Gods Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1KvH6TRAD9FvviEydPw6RzaAiSDDdQTQN&export=download&authuser=0'
+      button: 'Download'
+      size: '1.17 GB'
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

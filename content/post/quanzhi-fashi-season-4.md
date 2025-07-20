@@ -38,23 +38,34 @@ keywords : 'Download Batch Quanzhi Fashi Season 4 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://mega.nz/file/2sRkBLbb#Vbu0nRydFoaOPE3yyQc21-_XoFP9GSyroaIwnIkkFOs'
-buttonDownload480p : 'Download'
-ukuran480p : '1.07 GB'
-
-linkDownload720p : 'https://mega.nz/file/qgJCEbKB#Tnu9E4mjueuLSP5tmnpk1BXgytlDTIY_h_FvqTaCuKE'
-buttonDownload720p : 'Download'
-ukuran720p : '1.89 GB'
-
-linkDownload1080p : 'https://mega.nz/file/zxICkTxZ#odc2eTWOfpBig51lVxBgFCnJAdpE1Ap4Cs1DX2dualY'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.55 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Quanzhi Fashi Season 4 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/2sRkBLbb#Vbu0nRydFoaOPE3yyQc21-_XoFP9GSyroaIwnIkkFOs'
+      button: 'Download'
+      size: '1.07 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/qgJCEbKB#Tnu9E4mjueuLSP5tmnpk1BXgytlDTIY_h_FvqTaCuKE'
+      button: 'Download'
+      size: '1.89 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/zxICkTxZ#odc2eTWOfpBig51lVxBgFCnJAdpE1Ap4Cs1DX2dualY'
+      button: 'Download'
+      size: '2.55 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

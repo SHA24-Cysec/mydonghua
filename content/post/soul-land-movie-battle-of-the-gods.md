@@ -39,23 +39,34 @@ keywords : 'Download Batch Soul Land Movie Battle of the Gods Subtitle Indonesia
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/z4nsq3975nqif60/%255BAnichin.top%255D%255BSoul_Land_Movie_-_Battle_of_The_Gods%255D.%255B360p%255D.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '519 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/5lmau9sgskc0td4/%255BAnichin.top%255D%255BSoul_Land_Movie_-_Battle_of_The_Gods%255D.%255B480p%255D.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '1 GB'
-
-linkDownload720p : 'https://www.mediafire.com/file/m2ldqm9wyciww1e/%255BAnichin.top%255D%255BSoul_Land_Movie_-_Battle_of_The_Gods%255D.%255B720p%255D.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '2 GB'
-
-linkDownload1080p : 'https://mega.nz/file/hEkQzKZL#NwTLOVpMTwAz0NKsT12ruKzxIFFlIl0d4jly8rkdi1k'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.19 GB'
-
-linkDownload4K : 'https://www.4funbox.com/indonesian/sharing/link?surl=fsVTd_KAcfOnU7WiLxW81g'
-buttonDownload4K : 'Download'
-ukuran4K : '2.6 GB'
+downloadGroups:
+  
+  - title: 'Soul Land Movie Battle of the Gods Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/z4nsq3975nqif60/%255BAnichin.top%255D%255BSoul_Land_Movie_-_Battle_of_The_Gods%255D.%255B360p%255D.mp4/file'
+      button: 'Download'
+      size: '519 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/5lmau9sgskc0td4/%255BAnichin.top%255D%255BSoul_Land_Movie_-_Battle_of_The_Gods%255D.%255B480p%255D.mp4/file'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/m2ldqm9wyciww1e/%255BAnichin.top%255D%255BSoul_Land_Movie_-_Battle_of_The_Gods%255D.%255B720p%255D.mp4/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/hEkQzKZL#NwTLOVpMTwAz0NKsT12ruKzxIFFlIl0d4jly8rkdi1k'
+      button: 'Download'
+      size: '2.19 GB'
+    
+    - quality: '4K'
+      link: 'https://www.4funbox.com/indonesian/sharing/link?surl=fsVTd_KAcfOnU7WiLxW81g'
+      button: 'Download'
+      size: '2.6 GB'
 ---

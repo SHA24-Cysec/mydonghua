@@ -36,23 +36,34 @@ keywords : 'Download Batch Love Between Fairy and Devil Subtitle Indonesia, Love
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/CPqOhdl'
-buttonDownload360p : 'Download'
-ukuran360p : '884.93 MB'
-
-linkDownload480p : 'https://lbx.to/f/IN7qV6M'
-buttonDownload480p : 'Download'
-ukuran480p : '1.58 GB'
-
-linkDownload720p : 'https://lbx.to/f/p7291k7'
-buttonDownload720p : 'Download'
-ukuran720p : '3.04 GB'
-
-linkDownload1080p : 'https://lbx.to/f/Tkxyj3s'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.12 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Love Between Fairy and Devil Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/CPqOhdl'
+      button: 'Download'
+      size: '884.93 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/IN7qV6M'
+      button: 'Download'
+      size: '1.58 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/p7291k7'
+      button: 'Download'
+      size: '3.04 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/Tkxyj3s'
+      button: 'Download'
+      size: '5.12 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

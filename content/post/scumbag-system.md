@@ -37,23 +37,34 @@ keywords : 'Download Batch Scumbag System Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/31355307'
-buttonDownload360p : 'Download'
-ukuran360p : '1.03 GB'
-
-linkDownload480p : 'https://acefile.co/f/31355298'
-buttonDownload480p : 'Download'
-ukuran480p : '1.73 GB'
-
-linkDownload720p : 'https://acefile.co/f/31355300'
-buttonDownload720p : 'Download'
-ukuran720p : '2.56 GB'
-
-linkDownload1080p : 'https://acefile.co/f/31355303'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.41 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Scumbag System Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1IyhjeQ_7fTvz2M4XTLQEZHbD6nKXmDS2&export=download&authuser=0'
+      button: 'Download'
+      size: '1.03 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1h5ePPLbtAD-vrxp3vSBXG4yLmxbCFT5e&export=download&authuser=0'
+      button: 'Download'
+      size: '1.73 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1GQ9y22HAiJCBW6XepMBgjMcPYQRmBwe1&export=download&authuser=0'
+      button: 'Download'
+      size: '2.56 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1LwbG3mnvECOjqQStRPC-yg-D18aMHR-9&export=download&authuser=0'
+      button: 'Download'
+      size: '3.41 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

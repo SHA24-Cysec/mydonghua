@@ -38,23 +38,34 @@ keywords : 'Download Batch Xi Xing Ji Movie 3 Shadow Demon City Subtitle Indones
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://www.mediafire.com/file/p694fjf32xo9eoo/Kuramanime-JRWEST_MOV3-360p-Anichin.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '253 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/d2ffxbz7yqll8aq/Kuramanime-JRWEST_MOV3-480p-Anichin.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '477 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/aqwr5u9sybwdk59/Kuramanime-JRWEST_MOV3-720p-Anichin.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '699 MB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/j05m6so3qeni042/Kuramanime-JRWEST_MOV3-1080p-Anichin.mp4/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1 GB'
-
-linkDownload4K : 'https://mega.nz/file/yEVHWDKB#MxldQ6WP_Zbi-80BTm6AVR8sDFTV6TluQymFNUQKBhE'
-buttonDownload4K : 'Download'
-ukuran4K : '1.71 GB'
+downloadGroups:
+  
+  - title: 'Xi Xing Ji Movie 3 Shadow Demon City Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/p694fjf32xo9eoo/Kuramanime-JRWEST_MOV3-360p-Anichin.mp4/file'
+      button: 'Download'
+      size: '253 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/d2ffxbz7yqll8aq/Kuramanime-JRWEST_MOV3-480p-Anichin.mp4/file'
+      button: 'Download'
+      size: '477 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/aqwr5u9sybwdk59/Kuramanime-JRWEST_MOV3-720p-Anichin.mp4/file'
+      button: 'Download'
+      size: '699 MB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/j05m6so3qeni042/Kuramanime-JRWEST_MOV3-1080p-Anichin.mp4/file'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '4K'
+      link: 'https://mega.nz/file/yEVHWDKB#MxldQ6WP_Zbi-80BTm6AVR8sDFTV6TluQymFNUQKBhE'
+      button: 'Download'
+      size: '1.71 GB'
 ---

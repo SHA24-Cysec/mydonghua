@@ -37,23 +37,34 @@ keywords : 'Download Batch Lord Xue Ying S2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/zfiu9x0vdm0ics8/Anichin-LORDXY_S2_360p.zip/file'
-buttonDownload360p : 'Download'
-ukuran360p : '3 GB'
-
-linkDownload480p : 'https://www.mediafire.com/file/6kmfbkyynv5bbuz/Anichin-LORDXY_S2_480p.zip/file'
-buttonDownload480p : 'Download'
-ukuran480p : '4 GB'
-
-linkDownload720p : 'https://www.mediafire.com/file/5bkbpce66gq2vff/Anichin-LORDXY_S2_720p.zip/file'
-buttonDownload720p : 'Download'
-ukuran720p : '6 GB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/paiv6rmial492hu/Anichin-LORDXY_S2_1080p.zip/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '8 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Lord Xue Ying Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/zfiu9x0vdm0ics8/Anichin-LORDXY_S2_360p.zip/file'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/6kmfbkyynv5bbuz/Anichin-LORDXY_S2_480p.zip/file'
+      button: 'Download'
+      size: '4 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/5bkbpce66gq2vff/Anichin-LORDXY_S2_720p.zip/file'
+      button: 'Download'
+      size: '6 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/paiv6rmial492hu/Anichin-LORDXY_S2_1080p.zip/file'
+      button: 'Download'
+      size: '8 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -39,23 +39,34 @@ keywords : 'Download Batch Killer Seven Season 3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/Ws00DLgR#kAO44mf1WXX6Mv0TkMAOXnww3ok0KqNOpZYwfxOyUXA'
-buttonDownload360p : 'Download'
-ukuran360p : '527.7 MB'
-
-linkDownload480p : 'https://mega.nz/file/Gp0SjDoL#lUYvF5J4drBXRd3ogU-DOwRkCkGxWBJO1bZDUw90wIc'
-buttonDownload480p : 'Download'
-ukuran480p : '1.96 GB'
-
-linkDownload720p : 'https://mega.nz/file/W592ybyT#Zw2OgsYFKph4KqKuz1d1dLrOkwh1NNkWhorGXEhFiNg'
-buttonDownload720p : 'Download'
-ukuran720p : '1.91 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Killer Seven Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/Ws00DLgR#kAO44mf1WXX6Mv0TkMAOXnww3ok0KqNOpZYwfxOyUXA'
+      button: 'Download'
+      size: '527.7 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/Gp0SjDoL#lUYvF5J4drBXRd3ogU-DOwRkCkGxWBJO1bZDUw90wIc'
+      button: 'Download'
+      size: '1.96 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/W592ybyT#Zw2OgsYFKph4KqKuz1d1dLrOkwh1NNkWhorGXEhFiNg'
+      button: 'Download'
+      size: '1.91 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

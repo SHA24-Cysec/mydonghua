@@ -35,23 +35,34 @@ keywords : 'Download Batch Link Click Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/66368695'
-buttonDownload360p : 'Download'
-ukuran360p : '650.13 MB'
-
-linkDownload480p : 'https://acefile.co/f/66368697'
-buttonDownload480p : 'Download'
-ukuran480p : '1.34 GB'
-
-linkDownload720p : 'https://acefile.co/f/66368701'
-buttonDownload720p : 'Download'
-ukuran720p : '2.59 GB'
-
-linkDownload1080p : 'https://acefile.co/f/66368704'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.23 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Link Click Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=15vTJCmKnFBL75PzRIx3eSs5BFEVnhk5X&export=download&authuser=0'
+      button: 'Download'
+      size: '650.13 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1YQnCIkIyILqfA__nc6z4IUuNzwmr9hLK&export=download&authuser=0'
+      button: 'Download'
+      size: '1.34 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1bUxvBqW_DLQs5Lme6lGZS_aM_C6K8bu1&export=download&authuser=0'
+      button: 'Download'
+      size: '2.59 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1jMwX6Ntfz1tZi8bHLEXTndmeJOMorp2p&export=download&authuser=0'
+      button: 'Download'
+      size: '4.23 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

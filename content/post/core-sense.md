@@ -36,23 +36,34 @@ keywords : 'Download Batch Core Sense Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/48594422'
-buttonDownload360p : 'Download'
-ukuran360p : '1.68 GB'
-
-linkDownload480p : 'https://acefile.co/f/48594423'
-buttonDownload480p : 'Download'
-ukuran480p : '2.66 GB'
-
-linkDownload720p : 'https://acefile.co/f/48594426'
-buttonDownload720p : 'Download'
-ukuran720p : '3.57 GB'
-
-linkDownload1080p : 'https://acefile.co/f/48594431'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.63 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Core Sense Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1qW5LJBspRwdxfGTqKNpB2ag3k5RT-rNe&export=download&authuser=0'
+      button: 'Download'
+      size: '1.68 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1w1pu25O1uE9kGslumG4IcTWTVJZ8ha7F&export=download&authuser=0'
+      button: 'Download'
+      size: '2.66 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=15oJCFMcR80YqQmrfI1fP-6jlQ0Zhm01F&export=download&authuser=0'
+      button: 'Download'
+      size: '3.57 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1RRbljdunbp84lwGHFjOEFoUTrIiCfUXm&export=download&authuser=0'
+      button: 'Download'
+      size: '4.63 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

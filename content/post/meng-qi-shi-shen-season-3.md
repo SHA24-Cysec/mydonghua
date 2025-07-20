@@ -39,23 +39,34 @@ keywords : 'Download Batch Meng Qi Shi Shen Season 3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/eOEc977'
-buttonDownload360p : 'Download'
-ukuran360p : '506.49 MB'
-
-linkDownload480p : 'https://lbx.to/f/6853f1D'
-buttonDownload480p : 'Download'
-ukuran480p : '993.42 MB'
-
-linkDownload720p : 'https://lbx.to/f/I5dYfjw'
-buttonDownload720p : 'Download'
-ukuran720p : '1.83 GB'
-
-linkDownload1080p : 'https://lbx.to/f/ZHoz5a4'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.03 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Meng Qi Shi Shen Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/eOEc977'
+      button: 'Download'
+      size: '506.49 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/6853f1D'
+      button: 'Download'
+      size: '993.42 MB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/I5dYfjw'
+      button: 'Download'
+      size: '1.83 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/ZHoz5a4'
+      button: 'Download'
+      size: '3.03 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -34,23 +34,34 @@ keywords : 'Download Batch The Island of Siliang Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/54854413'
-buttonDownload360p : 'Download'
-ukuran360p : '1.84 GB'
-
-linkDownload480p : 'https://acefile.co/f/54854528'
-buttonDownload480p : 'Download'
-ukuran480p : '3.16 GB'
-
-linkDownload720p : 'https://acefile.co/f/54854415'
-buttonDownload720p : 'Download'
-ukuran720p : '5.44 GB'
-
-linkDownload1080p : 'https://acefile.co/f/54854416'
-buttonDownload1080p : 'Download'
-ukuran1080p : '8.32 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Island of Siliang Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1oLziefB95gTGKC3kIUUsI858MqJkLcOr&export=download&authuser=0'
+      button: 'Download'
+      size: '1.84 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1NEJoSFw7t5DHRv9H2AdQ3_2NabwmNqz-&export=download&authuser=0'
+      button: 'Download'
+      size: '3.16 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=184cdx7BzRFyYlPkHNz9X2ZZmQCPhLlRv&export=download&authuser=0'
+      button: 'Download'
+      size: '5.44 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1ptgHJOTMCv5gs0TUsXIuS8e8U6XRr2Zm&export=download&authuser=0'
+      button: 'Download'
+      size: '8.32 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

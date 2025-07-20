@@ -40,23 +40,34 @@ keywords : 'Download Batch Fox Spirit Matchmaker Season 9 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1oA3_t65cRbEu2CbAlbuHGcUvcN-_OEia&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '423.15 MB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1rgcbEUc50eDU4EQHwpuW2wSh7pCcVBFf&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '853.83 MB'
-
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Fox Spirit Matchmaker Season 9 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1oA3_t65cRbEu2CbAlbuHGcUvcN-_OEia&export=download&authuser=0'
+      button: 'Download'
+      size: '423.15 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1rgcbEUc50eDU4EQHwpuW2wSh7pCcVBFf&export=download&authuser=0'
+      button: 'Download'
+      size: '853.83 MB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

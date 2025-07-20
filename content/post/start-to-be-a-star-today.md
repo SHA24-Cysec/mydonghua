@@ -35,23 +35,34 @@ keywords : 'Download Batch Start to Be a Star Today Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/87868098'
-buttonDownload360p : 'Download'
-ukuran360p : '777.98 MB'
-
-linkDownload480p : 'https://acefile.co/f/30926409'
-buttonDownload480p : 'Download'
-ukuran480p : '1.23 GB'
-
-linkDownload720p : 'https://acefile.co/f/87868104'
-buttonDownload720p : 'Download'
-ukuran720p : '1.79 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Start to Be a Star Today Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1o2r9c_1VtPX9_pmyhu6dpaispM9zTGVw&export=download&authuser=0'
+      button: 'Download'
+      size: '777.98 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1b0mDp-I8Sri0feMAHvPaMLBZ2BMfKEW1&export=download&authuser=0'
+      button: 'Download'
+      size: '1.23 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1R6nfMK0cldbEFgvViLd4wabqpo7m4lFx&export=download&authuser=0'
+      button: 'Download'
+      size: '1.79 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

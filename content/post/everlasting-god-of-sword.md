@@ -36,23 +36,95 @@ keywords : 'Download Batch Everlasting God of Sword Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://drive.google.com/file/d/1qc19SylHxJYQa8vgaQu542ZiWtk_DMS2/view?usp=sharing'
-buttonDownload360p : 'Download'
-ukuran360p : '1.1 GB'
+downloadGroups:
+  
+#   Batch 1
+  - title: 'Everlasting God of Sword Batch Subtitle Indonesia Episode 1-10'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://dm.terabox.com/indonesian/sharing/link?surl=QJpbl56v_SOULnHlZ46twA&clearCache=1'
+      button: 'Download'
+      size: '484.2 MB'
+    
+    - quality: '480p'
+      link: 'https://dm.terabox.com/indonesian/sharing/link?surl=QJpbl56v_SOULnHlZ46twA&clearCache=1'
+      button: 'Download'
+      size: '895.5 MB'
+    
+    - quality: '720p'
+      link: 'https://dm.terabox.com/indonesian/sharing/link?surl=QJpbl56v_SOULnHlZ46twA&clearCache=1'
+      button: 'Download'
+      size: '1.65 GB'
+    
+    - quality: '1080p'
+      link: 'https://dm.terabox.com/indonesian/sharing/link?surl=QJpbl56v_SOULnHlZ46twA&clearCache=1'
+      button: 'Download'
+      size: '2.6 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
+#   Batch 2
+  - title: 'Everlasting God of Sword Batch Subtitle Indonesia Episode 11-20'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=HC-oP9BsTWiFqqr22cHjxA'
+      button: 'Download'
+      size: '467.9 MB'
+    
+    - quality: '480p'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=HC-oP9BsTWiFqqr22cHjxA'
+      button: 'Download'
+      size: '901.8 MB'
+    
+    - quality: '720p'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=HC-oP9BsTWiFqqr22cHjxA'
+      button: 'Download'
+      size: '1.8 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=HC-oP9BsTWiFqqr22cHjxA'
+      button: 'Download'
+      size: '2.8 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+#   Batch 3
+  - title: 'Everlasting God of Sword Batch Subtitle Indonesia Episode 21-26'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=W8wSb__SjhJ1I49L3BalHw'
+      button: 'Download'
+      size: '185.5 MB'
+    
+    - quality: '480p'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=W8wSb__SjhJ1I49L3BalHw'
+      button: 'Download'
+      size: '340.4 MB'
+    
+    - quality: '720p'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=W8wSb__SjhJ1I49L3BalHw'
+      button: 'Download'
+      size: '801.6 MB'
+    
+    - quality: '1080p'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=W8wSb__SjhJ1I49L3BalHw'
+      button: 'Download'
+      size: '1.3 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

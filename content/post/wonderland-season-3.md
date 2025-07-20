@@ -39,23 +39,34 @@ keywords : 'Download Batch Wonderland Season 3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/42392095'
-buttonDownload360p : 'Download'
-ukuran360p : '1.14 GB'
-
-linkDownload480p : 'https://acefile.co/f/42392091'
-buttonDownload480p : 'Download'
-ukuran480p : '1.61 GB'
-
-linkDownload720p : 'https://acefile.co/f/42392086'
-buttonDownload720p : 'Download'
-ukuran720p : '2.64 GB'
-
-linkDownload1080p : 'https://acefile.co/f/42392099'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.11 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Wonderland Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1Eo7MiB1fB5OERXYLViz-MrqYfOMbF5Uy&export=download&authuser=0'
+      button: 'Download'
+      size: '1.14 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1D-_KyiUcw1WDFcPWq84rZSP5T9WfJLG2&export=download&authuser=0'
+      button: 'Download'
+      size: '1.61 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1l37hfxub_JEDmAm1WkVPNHysbHocXJq9&export=download&authuser=0'
+      button: 'Download'
+      size: '2.64 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1fBTLeMDyvbLn2Wq6Lr0QqWqsMhMW0iCT&export=download&authuser=0'
+      button: 'Download'
+      size: '4.11 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

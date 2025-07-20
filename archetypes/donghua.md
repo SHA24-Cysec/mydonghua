@@ -35,23 +35,35 @@ keywords : 'Download Batch {{ replace .File.ContentBaseName "-" " " | title }} S
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : ''
-ukuran360p : ''
-
-linkDownload480p : ''
-buttonDownload480p : ''
-ukuran480p : ''
-
-linkDownload720p : ''
-buttonDownload720p : ''
-ukuran720p : ''
-
-linkDownload1080p : ''
-buttonDownload1080p : ''
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : ''
-ukuran4K : ''
+downloadGroups:
+  
+  # Batch 1
+  - title: '{{ replace .File.ContentBaseName "-" " " | title }} Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: ''
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: ''
+      size: ''
+    
+    - quality: '720p'
+      link: ''
+      button: ''
+      size: ''
+    
+    - quality: '1080p'
+      link: ''
+      button: ''
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: ''
+      size: ''
 ---

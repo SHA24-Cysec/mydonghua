@@ -37,23 +37,34 @@ keywords : 'Download Batch Perfect World Ashes of Fire Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://www.mediafire.com/file/yv7ns701usxq1hs/Anichin.best_Per.Wor.Movi.Ep1-3_480p.zip/file'
-buttonDownload480p : 'Download'
-ukuran480p : '1 GB'
-
-linkDownload720p : 'https://www.mediafire.com/file/4ds1oifr6ynnpc2/Anichin.best_Per.Wor.Movi.Ep1-3_720p.zip/file'
-buttonDownload720p : 'Download'
-ukuran720p : '2 GB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/97kh4et72s43cua/Anichin.best_Per.Wor.Movi.Ep1-3_1080p.zip/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3 GB'
-
-linkDownload4K : 'https://www.mediafire.com/file/7syxu0uamq3fj2c/Anichin.best_Per.Wor.Movi.Ep1-3_4K.zip/file'
-buttonDownload4K : 'Download'
-ukuran4K : '6 GB'
+downloadGroups:
+  
+  - title: 'Perfect World: Ashes of Fire Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/yv7ns701usxq1hs/Anichin.best_Per.Wor.Movi.Ep1-3_480p.zip/file'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/4ds1oifr6ynnpc2/Anichin.best_Per.Wor.Movi.Ep1-3_720p.zip/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/97kh4et72s43cua/Anichin.best_Per.Wor.Movi.Ep1-3_1080p.zip/file'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '4K'
+      link: 'https://www.mediafire.com/file/7syxu0uamq3fj2c/Anichin.best_Per.Wor.Movi.Ep1-3_4K.zip/file'
+      button: 'Download'
+      size: '6 GB'
 ---

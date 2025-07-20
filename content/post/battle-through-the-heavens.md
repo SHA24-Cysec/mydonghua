@@ -38,23 +38,34 @@ keywords : 'Download Batch Battle Through the Heavens Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://www.mediafire.com/file/jk2xrdg5oevag2y/BTTH_360p.zip/file'
-buttonDownload360p : 'Download'
-ukuran360p : '536.87 MB'
-
-linkDownload480p : 'https://acefile.co/f/42839486'
-buttonDownload480p : 'Download'
-ukuran480p : '1.07 GB'
-
-linkDownload720p : 'https://acefile.co/f/42839490'
-buttonDownload720p : 'Download'
-ukuran720p : '1.97 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Battle Through the Heavens Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/jk2xrdg5oevag2y/BTTH_360p.zip/file'
+      button: 'Download'
+      size: '536.87 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1ffKdr2BEX4JR9nyxOzjiLkDABdQweNBw&export=download&authuser=0'
+      button: 'Download'
+      size: '1.07 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1ZLGveXziEh2SgcsaeeBGlqFD_we0lvb1&export=download&authuser=0'
+      button: 'Download'
+      size: '1.97 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

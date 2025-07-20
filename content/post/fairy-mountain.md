@@ -35,23 +35,34 @@ keywords : 'Download Batch Fairy Mountain Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/KbUshxL'
-buttonDownload360p : 'Download'
-ukuran360p : '781.79 MB'
-
-linkDownload480p : 'https://lbx.to/f/gL08xjh'
-buttonDownload480p : 'Download'
-ukuran480p : '1.38 GB'
-
-linkDownload720p : 'https://lbx.to/f/zpWH1XT'
-buttonDownload720p : 'Download'
-ukuran720p : '3.24 GB'
-
-linkDownload1080p : 'https://lbx.to/f/Ha8bXJu'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.14 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Fairy Mountain Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/KbUshxL'
+      button: 'Download'
+      size: '781.79 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/gL08xjh'
+      button: 'Download'
+      size: '1.38 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/zpWH1XT'
+      button: 'Download'
+      size: '3.24 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/Ha8bXJu'
+      button: 'Download'
+      size: '5.14 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

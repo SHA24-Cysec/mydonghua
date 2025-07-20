@@ -35,23 +35,34 @@ keywords : 'Download Batch The Soul of Soldier Master Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/70471021'
-buttonDownload360p : 'Download'
-ukuran360p : '921.55 MB'
-
-linkDownload480p : 'https://acefile.co/f/70471023'
-buttonDownload480p : 'Download'
-ukuran480p : '1.74 GB'
-
-linkDownload720p : 'https://acefile.co/f/70471030'
-buttonDownload720p : 'Download'
-ukuran720p : '3.32 GB'
-
-linkDownload1080p : 'https://acefile.co/f/70471031'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.50 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Soul of Soldier Master Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1kKMVyiGFZDMbYazVI0AI8qf5uRQL8KmS&export=download&authuser=0'
+      button: 'Download'
+      size: '921.55 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1MZjFU7gkpJ1s1x0q_J-AvChrjklwNZQH&export=download&authuser=0'
+      button: 'Download'
+      size: '1.74 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1T4e_cesNRUZikzDaEZ50OskewCyZCpdP&export=download&authuser=0'
+      button: 'Download'
+      size: '3.32 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1Uz0Rb-FiUB_xrJ1Z_fT5oWe7OHmnvvcF&export=download&authuser=0'
+      button: 'Download'
+      size: '5.50 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

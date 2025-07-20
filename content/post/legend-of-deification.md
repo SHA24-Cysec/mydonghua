@@ -36,23 +36,34 @@ keywords : 'Download Batch Legend of Deification Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://www.mediafire.com/file/epq138g07riej2n/%255BAnichinAsia%255D%255BLegend_of_Deification%255D%255B2020%255D%255BMovie%255D.360p.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '304 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/7zrejgvc32z2kwa/%255BAnichinAsia%255D%255BLegend_of_Deification%255D%255B2020%255D%255BMovie%255D.%255B480p%255D.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '513 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/7p782jjuca5jsnd/%255BAnichinAsia%255D%255BLegend_of_Deification%255D%255B2020%255D%255BMovie%255D.%255B720p%255D.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '716 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Legend of Deification Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/epq138g07riej2n/%255BAnichinAsia%255D%255BLegend_of_Deification%255D%255B2020%255D%255BMovie%255D.360p.mp4/file'
+      button: 'Download'
+      size: '304 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/7zrejgvc32z2kwa/%255BAnichinAsia%255D%255BLegend_of_Deification%255D%255B2020%255D%255BMovie%255D.%255B480p%255D.mp4/file'
+      button: 'Download'
+      size: '513 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/7p782jjuca5jsnd/%255BAnichinAsia%255D%255BLegend_of_Deification%255D%255B2020%255D%255BMovie%255D.%255B720p%255D.mp4/file'
+      button: 'Download'
+      size: '716 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

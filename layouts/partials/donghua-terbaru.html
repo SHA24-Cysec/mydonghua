@@ -11,7 +11,7 @@
                     <span class="mt-4 flex flex-row flex-wrap items-center mb-2 gap-2">
                         Genre:
                         {{ range .Params.genre }}
-                        <a class="font-bold hover:bg-slate-500 bg-slate-400 rounded-lg px-4 w-max" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
+                        <a class="font-bold hover:bg-slate-300 bg-slate-400 rounded-lg px-4 w-max" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
                         {{ end }}
                     </span>
                 </div>

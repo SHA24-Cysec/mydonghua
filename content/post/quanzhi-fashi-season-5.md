@@ -38,23 +38,34 @@ keywords : 'Download Batch Quanzhi Fashi Season 5 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/53880283'
-buttonDownload360p : 'Download'
-ukuran360p : '668.77 MB'
-
-linkDownload480p : 'https://acefile.co/f/53880285'
-buttonDownload480p : 'Download'
-ukuran480p : '1.13 GB'
-
-linkDownload720p : 'https://acefile.co/f/53880286'
-buttonDownload720p : 'Download'
-ukuran720p : '1.77 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Quanzhi Fashi Season 5 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1XnWlYcMjKP5UUAI6Te7s5WxC-bL6QdJl&export=download&authuser=0'
+      button: 'Download'
+      size: '668.77 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1DDlobgRd6SZ30ByshZxWfxBhlDCa1D29&export=download&authuser=0'
+      button: 'Download'
+      size: '1.13 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1PP43DEO-6wR5zPAmFKpzImrWeGTOVAmr&export=download&authuser=0'
+      button: 'Download'
+      size: '1.77 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

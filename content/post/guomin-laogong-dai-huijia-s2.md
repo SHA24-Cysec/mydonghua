@@ -37,23 +37,34 @@ keywords : 'Download Batch Guomin Laogong Dai Huijia S2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://sharer.pw/file/R-jRm28NRTb'
-buttonDownload480p : 'Download'
-ukuran480p : '400.64 MB'
-
-linkDownload720p : 'https://acefile.co/f/30902349'
-buttonDownload720p : 'Download'
-ukuran720p : '631.97 MB'
-
-linkDownload1080p : 'https://acefile.co/f/30902346'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.70 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Guomin Laogong Dai Huijia Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://sharer.pw/file/R-jRm28NRTb'
+      button: 'Download'
+      size: '400.64 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1qqLmFz-dQ_KLDWhNy7xSvrHZh5J-M-sc&export=download'
+      button: 'Download'
+      size: '631.97 MB'
+    
+    - quality: '1080p'
+      link: 'https://sharer.pw/file/Ym9s-WSaa9z'
+      button: 'Download'
+      size: '1.70 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

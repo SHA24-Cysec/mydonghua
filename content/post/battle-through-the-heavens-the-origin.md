@@ -38,23 +38,34 @@ keywords : 'Download Batch Battle Through the Heavens the Origin Subtitle Indone
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/80482660'
-buttonDownload360p : 'Download'
-ukuran360p : '167.44 MB'
-
-linkDownload480p : 'https://acefile.co/f/80482663'
-buttonDownload480p : 'Download'
-ukuran480p : '369.18 MB'
-
-linkDownload720p : 'https://acefile.co/f/80482661'
-buttonDownload720p : 'Download'
-ukuran720p : '792.36 MB'
-
-linkDownload1080p : 'https://acefile.co/f/80482671'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.34 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: '{{ replace .File.ContentBaseName "-" " " | title }} Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1Qe1AHs3C01X6KNO2ajS9JmUkBlKxiMYp&export=download&authuser=0'
+      button: 'Download'
+      size: '167.44 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1hXhZGRUEfHMaA465j0bqPLbEpJXfjw7J&export=download&authuser=0'
+      button: 'Download'
+      size: '369.18 MB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=14JHjfeCgMt5kj5pla8g7zfwd4sZmHLuB&export=download&authuser=0'
+      button: 'Download'
+      size: '1.34 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -38,23 +38,34 @@ keywords : 'Download Batch Immemorial Love for You Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1bgnvnsBr6vSYH-POVpShNRlHLA7S91nX&export=download&authuser=0'
-buttonDownload360p : 'Download [Mix]'
-ukuran360p : '892.42 MB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1bgnvnsBr6vSYH-POVpShNRlHLA7S91nX&export=download&authuser=0'
-buttonDownload480p : 'Download [Mix]'
-ukuran480p : '892.42 MB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1bgnvnsBr6vSYH-POVpShNRlHLA7S91nX&export=download&authuser=0'
-buttonDownload720p : 'Download [Mix]'
-ukuran720p : '892.42 MB'
-
-linkDownload1080p : 'https://drive.usercontent.google.com/download?id=1bgnvnsBr6vSYH-POVpShNRlHLA7S91nX&export=download&authuser=0'
-buttonDownload1080p : 'Download [Mix]'
-ukuran1080p : '892.42 MB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Immemorial Love for You Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1bgnvnsBr6vSYH-POVpShNRlHLA7S91nX&export=download&authuser=0'
+      button: 'Download [Mix]'
+      size: '892.42 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1bgnvnsBr6vSYH-POVpShNRlHLA7S91nX&export=download&authuser=0'
+      button: 'Download [Mix]'
+      size: '892.42 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1bgnvnsBr6vSYH-POVpShNRlHLA7S91nX&export=download&authuser=0'
+      button: 'Download [Mix]'
+      size: '892.42 MB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1bgnvnsBr6vSYH-POVpShNRlHLA7S91nX&export=download&authuser=0'
+      button: 'Download [Mix]'
+      size: '892.42 MB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

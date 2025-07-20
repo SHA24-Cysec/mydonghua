@@ -34,23 +34,34 @@ keywords : 'Download Batch Time Prisoner Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://pixeldrain.com/u/k7TvXgFi'
-buttonDownload360p : 'Download'
-ukuran360p : '615 MB'
-
-linkDownload480p : 'https://pixeldrain.com/u/brx5ZFYk'
-buttonDownload480p : 'Download'
-ukuran480p : '983 MB'
-
-linkDownload720p : 'https://pixeldrain.com/u/RWJJmQsS'
-buttonDownload720p : 'Download'
-ukuran720p : '1.43 GB'
-
-linkDownload1080p : 'https://pixeldrain.com/u/izEY3Ecf'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.05 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Time Prisoner Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://pixeldrain.com/u/k7TvXgFi'
+      button: 'Download'
+      size: '615 MB'
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/brx5ZFYk'
+      button: 'Download'
+      size: '983 MB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/RWJJmQsS'
+      button: 'Download'
+      size: '1.43 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/izEY3Ecf'
+      button: 'Download'
+      size: '2.05 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -39,23 +39,34 @@ keywords : 'Download Batch Tales of Demons and Gods S2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/50279742'
-buttonDownload360p : 'Download'
-ukuran360p : '736.59 MB'
-
-linkDownload480p : 'https://acefile.co/f/50279744'
-buttonDownload480p : 'Download'
-ukuran480p : '1.3 GB'
-
-linkDownload720p : 'https://acefile.co/f/50279749'
-buttonDownload720p : 'Download'
-ukuran720p : '2 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Tales of Demons and Gods Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1NtVVgdy4NB4pFmSuTY7pyG0JHYop48SD&export=download&authuser=0'
+      button: 'Download'
+      size: '736.59 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1cSIVK13hoalmWE1GxRDMuThy71OMseOQ&export=download&authuser=0'
+      button: 'Download'
+      size: '1.3 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1X6hroPKkFnX9G7z0PxM6j7mJBubQNaxG&export=download&authuser=0'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

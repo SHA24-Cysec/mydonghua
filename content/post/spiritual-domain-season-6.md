@@ -35,23 +35,34 @@ keywords : 'Download Batch Spiritual Domain Season 6 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1-PP7u1rs4siql0k6bwgzoAR1GUIytCz-&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '306.51 MB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1jRDz_HP8O0l5Nr1C1lhn17ZOTESNs2Mx&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '951.38 MB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=19q-wYA0roV2KPLeUAVQ1IrhxnVS7i5zN&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '1.36 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spiritual Domain Season 6 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1-PP7u1rs4siql0k6bwgzoAR1GUIytCz-&export=download&authuser=0'
+      button: 'Download'
+      size: '306.51 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1jRDz_HP8O0l5Nr1C1lhn17ZOTESNs2Mx&export=download&authuser=0'
+      button: 'Download'
+      size: '951.38 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=19q-wYA0roV2KPLeUAVQ1IrhxnVS7i5zN&export=download&authuser=0'
+      button: 'Download'
+      size: '1.36 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

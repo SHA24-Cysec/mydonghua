@@ -36,23 +36,34 @@ keywords : 'Download Batch Otherworldly Evil Monarch Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/j00nlqdtrtqxhds/Anichin.Other.Evil.Mon.Ep.1-12_360p.zip/file'
-buttonDownload360p : 'Download'
-ukuran360p : '964 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/n1hgmp3tgeyp9j5/Anichin.Other.Evil.Mon.Ep.1-12_480p.zip/file'
-buttonDownload480p : 'Download'
-ukuran480p : '2 GB'
-
-linkDownload720p : 'https://www.mediafire.com/file/bm1ue4gc0ncbbd1/Anichin.Other.Evil.Mon.Ep.1-12_720p.zip/file'
-buttonDownload720p : 'Download'
-ukuran720p : '4 GB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/d3mkxzamu5pe3rl/Anichin.Other.Evil.Mon.Ep.1-12_1080p.zip/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '7 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Otherworldly Evil Monarch Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/j00nlqdtrtqxhds/Anichin.Other.Evil.Mon.Ep.1-12_360p.zip/file'
+      button: 'Download'
+      size: '964 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/n1hgmp3tgeyp9j5/Anichin.Other.Evil.Mon.Ep.1-12_480p.zip/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/bm1ue4gc0ncbbd1/Anichin.Other.Evil.Mon.Ep.1-12_720p.zip/file'
+      button: 'Download'
+      size: '4 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/d3mkxzamu5pe3rl/Anichin.Other.Evil.Mon.Ep.1-12_1080p.zip/file'
+      button: 'Download'
+      size: '7 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

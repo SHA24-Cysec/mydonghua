@@ -39,23 +39,34 @@ keywords : 'Download Batch Spirit Cage Incarnation Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/48745049'
-buttonDownload360p : 'Download'
-ukuran360p : '1.76 GB'
-
-linkDownload480p : 'https://acefile.co/f/48745053'
-buttonDownload480p : 'Download'
-ukuran480p : '3.78 GB'
-
-linkDownload720p : 'https://acefile.co/f/48745056'
-buttonDownload720p : 'Download'
-ukuran720p : '5.60 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spirit Cage Incarnation Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1KdU-G63hIn1f9vjUfIWTejjSCu64yFEF&export=download&authuser=0'
+      button: 'Download'
+      size: '1.76 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1tBUXlFHBwFqk-8xonXsiPcFi4sfxwII4&export=download&authuser=0'
+      button: 'Download'
+      size: '3.78 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1QIH__dlhO5_Q98_0CBFtUdRW1cxs4vJz&export=download&authuser=0'
+      button: 'Download'
+      size: '5.60 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

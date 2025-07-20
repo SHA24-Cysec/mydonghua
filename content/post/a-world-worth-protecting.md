@@ -36,23 +36,34 @@ keywords : 'Download Batch A World Worth Protecting Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
-buttonDownload360p : 'Download'
-ukuran360p : '776.1 MB'
-
-linkDownload480p : 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
-buttonDownload480p : 'Download'
-ukuran480p : '1.4 GB'
-
-linkDownload720p : 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
-buttonDownload720p : 'Download'
-ukuran720p : '3 GB'
-
-linkDownload1080p : 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3 GB++'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'A World Worth Protecting Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
+      button: 'Download'
+      size: '776.1 MB'
+    
+    - quality: '480p'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
+      button: 'Download'
+      size: '1.4 GB'
+    
+    - quality: '720p'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
+      button: 'Download'
+      size: '3 GB++'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -38,23 +38,34 @@ keywords : 'Download Batch Xi Xing Ji Movie 1 Goodbye Wukong Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://www.mediafire.com/file/wi6d1uq0f7t14p5/Kuramanime-JRWEST_ZW-360p-Anixlife.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '307 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/7vqo5dk2dxawo3p/Kuramanime-JRWEST_ZW-480p-Anixlife.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '583 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/peg2y57p4qo1im2/Kuramanime-JRWEST_ZW-720p-Anixlife.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '1 GB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/w912356pycu02sq/Kuramanime-JRWEST_ZW-1080p-Anixlife.mp4/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Xi Xing Ji Movie 1 Goodbye Wukong Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/wi6d1uq0f7t14p5/Kuramanime-JRWEST_ZW-360p-Anixlife.mp4/file'
+      button: 'Download'
+      size: '307 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/7vqo5dk2dxawo3p/Kuramanime-JRWEST_ZW-480p-Anixlife.mp4/file'
+      button: 'Download'
+      size: '583 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/peg2y57p4qo1im2/Kuramanime-JRWEST_ZW-720p-Anixlife.mp4/file'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/w912356pycu02sq/Kuramanime-JRWEST_ZW-1080p-Anixlife.mp4/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

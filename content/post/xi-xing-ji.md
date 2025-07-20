@@ -38,23 +38,34 @@ keywords : 'Download Batch Xi Xing Ji Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/42395841'
-buttonDownload360p : 'Download'
-ukuran360p : '746.90 MB'
-
-linkDownload480p : 'https://acefile.co/f/42395844'
-buttonDownload480p : 'Download'
-ukuran480p : '1.06 GB'
-
-linkDownload720p : 'https://acefile.co/f/42395850'
-buttonDownload720p : 'Download'
-ukuran720p : '1.73 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Xi Xing Ji Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=15A9i5qLQfKaQPgxE1XVdKK_KA57uEJji&export=download&authuser=0'
+      button: 'Download'
+      size: '746.90 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1Hdh1pc9Wz7Y4__1KbR8yabQFM6-M64f7&export=download&authuser=0'
+      button: 'Download'
+      size: '1.06 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1ucQ0Mn2djw8o6XcXq_YNWETB19A_479h&export=download&authuser=0'
+      button: 'Download'
+      size: '1.73 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

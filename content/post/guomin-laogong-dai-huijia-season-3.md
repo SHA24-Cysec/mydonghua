@@ -36,23 +36,34 @@ keywords : 'Download Batch Guomin Laogong Dai Huijia Season 3 Subtitle Indonesia
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/41903696'
-buttonDownload360p : 'Download'
-ukuran360p : '500 MB'
-
-linkDownload480p : 'https://acefile.co/f/41903701'
-buttonDownload480p : 'Download'
-ukuran480p : '773 MB'
-
-linkDownload720p : 'https://acefile.co/f/41903707'
-buttonDownload720p : 'Download'
-ukuran720p : '991 MB'
-
-linkDownload1080p : 'https://acefile.co/f/41903713'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.27 MB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Guomin Laogong Dai Huijia Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1OwVhrSrtsgihGIR7lF-HSEp6pTGzOxL4&export=download'
+      button: 'Download'
+      size: '500 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1GbDE6zs9oC3FCxBKIW0N2KNP-j_SMFKo&export=download'
+      button: 'Download'
+      size: '773 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1l67P2RA3UJjbwP2MtvJXwIHnf2ddOvzu&export=download'
+      button: 'Download'
+      size: '991 MB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1qg6-t5BzW5285J_GiFulUZbEDNw4fDT1&export=download'
+      button: 'Download'
+      size: '1.27 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

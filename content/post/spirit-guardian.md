@@ -35,23 +35,34 @@ keywords : 'Download Batch Spirit Guardian Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/67554625'
-buttonDownload360p : 'Download'
-ukuran360p : '631.41 MB'
-
-linkDownload480p : 'https://acefile.co/f/67554629'
-buttonDownload480p : 'Download'
-ukuran480p : '915.51 MB'
-
-linkDownload720p : 'https://acefile.co/f/67554631'
-buttonDownload720p : 'Download'
-ukuran720p : '1.46 GB'
-
-linkDownload1080p : 'https://acefile.co/f/67554633'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.31 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spirit Guardian Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1x_KQz6i2L3N_ubOS04KLn07Wa93whnvs&export=download&authuser=0'
+      button: 'Download'
+      size: '631.41 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=15i1gnfHkAdjDUdlsrauTQxyuOB2VsxOr&export=download&authuser=0'
+      button: 'Download'
+      size: '915.51 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1SPw36che8Opcx5kU3mf7pc5vDFIK61ZO&export=download&authuser=0'
+      button: 'Download'
+      size: '1.46 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1VJLi6UUHPPWAeW41DvYZkNZeDmIH5yjR&export=download&authuser=0'
+      button: 'Download'
+      size: '2.31 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -37,23 +37,34 @@ keywords : 'Download Batch Yuan Long S2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/6LwW1BbC#ZSWJdotsCRzskqZQTwdUqiMaF8e0bWBBxanp-TyMfsA'
-buttonDownload360p : 'Download'
-ukuran360p : '1.47 GB'
-
-linkDownload480p : 'https://mega.nz/file/yXwgyRRQ#QiFMmVwDzdMn4NUurEUMVN5QvLWPXkqYpwbDGk6fQKU'
-buttonDownload480p : 'Download'
-ukuran480p : '2.76 GB'
-
-linkDownload720p : 'https://mega.nz/file/mCIDkATZ#JGV9BdEdNIgQoMQ_7O8v1FLD5YkXQugadx3qkOLlg6g'
-buttonDownload720p : 'Download'
-ukuran720p : '5.18 GB'
-
-linkDownload1080p : 'https://mega.nz/file/aeYRFKSb#MR6BmGT7nSbSAlLlQkWDEmvBe7yfBCNMF626fVjumQo'
-buttonDownload1080p : 'Download'
-ukuran1080p : '7.87 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Yuan Long Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/6LwW1BbC#ZSWJdotsCRzskqZQTwdUqiMaF8e0bWBBxanp-TyMfsA'
+      button: 'Download'
+      size: '1.47 GB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/yXwgyRRQ#QiFMmVwDzdMn4NUurEUMVN5QvLWPXkqYpwbDGk6fQKU'
+      button: 'Download'
+      size: '2.76 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/mCIDkATZ#JGV9BdEdNIgQoMQ_7O8v1FLD5YkXQugadx3qkOLlg6g'
+      button: 'Download'
+      size: '5.18 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/aeYRFKSb#MR6BmGT7nSbSAlLlQkWDEmvBe7yfBCNMF626fVjumQo'
+      button: 'Download'
+      size: '7.87 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

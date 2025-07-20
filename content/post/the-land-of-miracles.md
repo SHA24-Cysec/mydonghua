@@ -35,23 +35,34 @@ keywords : 'Download Batch The Land of Miracles Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/0WUwWkO'
-buttonDownload360p : 'Download'
-ukuran360p : '1.01 GB'
-
-linkDownload480p : 'https://lbx.to/f/QB3FBBv'
-buttonDownload480p : 'Download'
-ukuran480p : '1.96 GB'
-
-linkDownload720p : 'https://lbx.to/f/GsvqRUy'
-buttonDownload720p : 'Download'
-ukuran720p : '3.74 GB'
-
-linkDownload1080p : 'https://lbx.to/f/18tSE7e'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.84 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Land of Miracles Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/0WUwWkO'
+      button: 'Download'
+      size: '1.01 GB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/QB3FBBv'
+      button: 'Download'
+      size: '1.96 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/GsvqRUy'
+      button: 'Download'
+      size: '3.74 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/18tSE7e'
+      button: 'Download'
+      size: '5.84 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

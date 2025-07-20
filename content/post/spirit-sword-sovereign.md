@@ -38,23 +38,34 @@ keywords : 'Download Batch Spirit Sword Sovereign Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/44706691'
-buttonDownload360p : 'Download'
-ukuran360p : '889.45 MB'
-
-linkDownload480p : 'https://acefile.co/f/44706693'
-buttonDownload480p : 'Download'
-ukuran480p : '1.26 GB'
-
-linkDownload720p : 'https://acefile.co/f/44706695'
-buttonDownload720p : 'Download'
-ukuran720p : '2 GB'
-
-linkDownload1080p : 'https://acefile.co/f/44706700'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.11 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spirit Sword Sovereign Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1E0o_L4Mcq4VOAMoUefdJyhTpBHS08cWO&export=download&authuser=0'
+      button: 'Download'
+      size: '889.45 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=106p-jftsHDP7wW7RRMX6Q3D1E2xVAi66&export=download&authuser=0'
+      button: 'Download'
+      size: '1.26 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1WQoKHTCvaBdOOy4pVsHj9awz8Yd1XniS&export=download&authuser=0'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1p39LDwjBb7n5MBZXLRVxj01QvDomK_Ps&export=download&authuser=0'
+      button: 'Download'
+      size: '3.11 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

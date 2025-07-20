@@ -35,23 +35,34 @@ keywords : 'Download Batch Long Sword Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/42687496'
-buttonDownload360p : 'Download'
-ukuran360p : '716.57 MB'
-
-linkDownload480p : 'https://acefile.co/f/42687500'
-buttonDownload480p : 'Download'
-ukuran480p : '1.37 GB'
-
-linkDownload720p : 'https://acefile.co/f/42687506'
-buttonDownload720p : 'Download'
-ukuran720p : '1.90 GB'
-
-linkDownload1080p : 'https://acefile.co/f/42687508'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.78 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Long Sword Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1ADACHSk0e-UXWgmK1kSSlI3MJiRabfQ7&export=download&authuser=0'
+      button: 'Download'
+      size: '716.57 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1mElPnBqzbUvkkuViX8QzWUhNcEEbEx7u&export=download&authuser=0'
+      button: 'Download'
+      size: '1.37 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1-rfPXs4Bn4Iq5IHGsL1dbKjLsdyYtnJ8&export=download&authuser=0'
+      button: 'Download'
+      size: '1.90 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=12wa3LzwY6utDEEloDeNke4ioimsGeNLm&export=download&authuser=0'
+      button: 'Download'
+      size: '2.78 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

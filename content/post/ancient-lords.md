@@ -35,23 +35,34 @@ keywords : 'Download Batch Ancient Lords Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://www.mediafire.com/file/f8nqspmhinl6ywx/Anichin.best_Anci.Lords.Ep1-16_480p.zip/file'
-buttonDownload480p : 'Download'
-ukuran480p : '2 GB'
-
-linkDownload720p : 'https://www.mediafire.com/file/mr3y6xdv317ajnd/Anichin.best_Anci.Lords.Ep1-16_720p.zip/file'
-buttonDownload720p : 'Download'
-ukuran720p : '3 GB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/p7s7l4eo3ymbqmt/Anichin.best_Anci.Lords.Ep1-16_1080p.zip/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '6 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Ancient Lords Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/f8nqspmhinl6ywx/Anichin.best_Anci.Lords.Ep1-16_480p.zip/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/mr3y6xdv317ajnd/Anichin.best_Anci.Lords.Ep1-16_720p.zip/file'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/p7s7l4eo3ymbqmt/Anichin.best_Anci.Lords.Ep1-16_1080p.zip/file'
+      button: 'Download'
+      size: '6 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -40,23 +40,34 @@ keywords : 'Download Batch Renegade Immortal Movie Battle of the Gods Subtitle I
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/download/u5bkv3258v4o9tz/[ANICHIN.CAFE][RI_Movie_-_Battle_of_The_Gods][2025].[360p].mp4'
-buttonDownload360p : 'Download'
-ukuran360p : '435 MB'
-
-linkDownload480p : 'https://www.mediafire.com/download/s3y33807frd7y3k/[ANICHIN.CAFE][RI_Movie_-_Battle_of_The_Gods][2025].[480p].mp4'
-buttonDownload480p : 'Download'
-ukuran480p : '717 MB'
-
-linkDownload720p : 'https://www.mediafire.com/download/9l94r2m6n1cd9zn/[ANICHIN.CAFE][RI_Movie_-_Battle_of_The_Gods][2025].[720p].mp4'
-buttonDownload720p : 'Download'
-ukuran720p : '1.29 GB'
-
-linkDownload1080p : 'https://www.mediafire.com/download/pl4sn3un8g4mqz6/[ANICHIN.CAFE][RI_Movie_-_Battle_of_The_Gods][2025].[1080p].mp4'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.13 GB'
-
-linkDownload4K : 'https://pixeldrain.com/u/mMHnXatN'
-buttonDownload4K : 'Download'
-ukuran4K : '3.95 GB'
+downloadGroups:
+  
+  - title: 'Renegade Immortal Movie Battle of the Gods Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/download/u5bkv3258v4o9tz/[ANICHIN.CAFE][RI_Movie_-_Battle_of_The_Gods][2025].[360p].mp4'
+      button: 'Download'
+      size: '435 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/download/s3y33807frd7y3k/[ANICHIN.CAFE][RI_Movie_-_Battle_of_The_Gods][2025].[480p].mp4'
+      button: 'Download'
+      size: '717 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/download/9l94r2m6n1cd9zn/[ANICHIN.CAFE][RI_Movie_-_Battle_of_The_Gods][2025].[720p].mp4'
+      button: 'Download'
+      size: '1.29 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/download/pl4sn3un8g4mqz6/[ANICHIN.CAFE][RI_Movie_-_Battle_of_The_Gods][2025].[1080p].mp4'
+      button: 'Download'
+      size: '2.13 GB'
+    
+    - quality: '4K'
+      link: 'https://pixeldrain.com/u/mMHnXatN'
+      button: 'Download'
+      size: '3.95 GB'
 ---

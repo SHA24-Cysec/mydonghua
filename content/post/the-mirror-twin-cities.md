@@ -37,23 +37,34 @@ keywords : 'Download Batch The Mirror: Twin Cities Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/68001317'
-buttonDownload360p : 'Download'
-ukuran360p : '1.05 GB'
-
-linkDownload480p : 'https://acefile.co/f/68001318'
-buttonDownload480p : 'Download'
-ukuran480p : '2.10 GB'
-
-linkDownload720p : 'https://acefile.co/f/68001321'
-buttonDownload720p : 'Download'
-ukuran720p : '3.84 GB'
-
-linkDownload1080p : 'https://acefile.co/f/68001322'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.85 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Mirror: Twin Cities Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1GvfqkBSY3N7q5WjsuzuZzk9S865fxqdt&export=download&authuser=0'
+      button: 'Download'
+      size: '1.05 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1ABSa-CTglLF7buDsJYA_S_2lnFoZgE9b&export=download&authuser=0'
+      button: 'Download'
+      size: '2.10 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1pwqzXyKgVRBnmMLBTLXPZqxPoopvpUl3&export=download&authuser=0'
+      button: 'Download'
+      size: '3.84 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: ''
+      size: ''
 ---

@@ -39,23 +39,34 @@ keywords : 'Download Batch Meng Qi Shi Shen Season 2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/67879722'
-buttonDownload360p : 'Download'
-ukuran360p : '566.24 MB'
-
-linkDownload480p : 'https://acefile.co/f/67879724'
-buttonDownload480p : 'Download'
-ukuran480p : '1.91 GB'
-
-linkDownload720p : 'https://acefile.co/f/67879727'
-buttonDownload720p : 'Download'
-ukuran720p : '2.07 GB'
-
-linkDownload1080p : 'https://acefile.co/f/67879730'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.50 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Meng Qi Shi Shen Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1TpGaByacdNtryL4k_AI0mooKQuRQIVJb&export=download&authuser=0'
+      button: 'Download'
+      size: '566.24 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1OthlwdYZ8j7mhkvDhcuzlE3c_tMTJJXn&export=download&authuser=0'
+      button: 'Download'
+      size: '1.91 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1bhmitRO_h_ha_rIxzJ0qU5nNqRcM4OvL&export=download&authuser=0'
+      button: 'Download'
+      size: '2.07 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1jCIPrSFDaQwSDPS_cN9bKUMMWgFETa4Z&export=download&authuser=0'
+      button: 'Download'
+      size: '3.50 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -36,23 +36,34 @@ keywords : 'Download Batch Spirit of the Book Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://mega.nz/file/GDwSlByC#Zk3DGBBGm5ERj7O-_RILOYRTyr-y-Mr_yJzCBSN6Ss0'
-buttonDownload480p : 'Download'
-ukuran480p : '2.11 GB'
-
-linkDownload720p : 'https://mega.nz/file/6OpQkThB#5kZXIJvD2oAgeTSQSWqa_j44AZ2epFJLD_SewWhJGCU'
-buttonDownload720p : 'Download'
-ukuran720p : '3.46 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spirit of the Book Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/GDwSlByC#Zk3DGBBGm5ERj7O-_RILOYRTyr-y-Mr_yJzCBSN6Ss0'
+      button: 'Download'
+      size: '2.11 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/6OpQkThB#5kZXIJvD2oAgeTSQSWqa_j44AZ2epFJLD_SewWhJGCU'
+      button: 'Download'
+      size: '3.46 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -37,23 +37,34 @@ keywords : 'Download Batch The Daily Life of the Immortal King Season 2 Subtitle
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/8tsg3TAL#KMOC5M4wNwkN5JyQUcObplalc6BJuYL2XNFzuvE05v4'
-buttonDownload360p : 'Download'
-ukuran360p : '793 MB'
-
-linkDownload480p : 'https://mega.nz/file/dw0SDTSD#2x7h6rQwDhN3SGE-3M06Db6UtHf4EJ0-jiH8tBB-a1w'
-buttonDownload480p : 'Download'
-ukuran480p : '1.44 GB'
-
-linkDownload720p : 'https://mega.nz/file/Q0tiwLZR#vQXqbrjBeQNhBLlItzlaBhj19VuyFeduJmt9Bma9WLA'
-buttonDownload720p : 'Download'
-ukuran720p : '2.56 GB'
-
-linkDownload1080p : 'https://mega.nz/file/JglRgSKR#8DSmh9WWr4xO5hPEz7ebfgSDfAFsL5rB4YUOcyhAVUo'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.10 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Daily Life of the Immortal King Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/8tsg3TAL#KMOC5M4wNwkN5JyQUcObplalc6BJuYL2XNFzuvE05v4'
+      button: 'Download'
+      size: '793 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/dw0SDTSD#2x7h6rQwDhN3SGE-3M06Db6UtHf4EJ0-jiH8tBB-a1w'
+      button: 'Download'
+      size: '1.44 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/Q0tiwLZR#vQXqbrjBeQNhBLlItzlaBhj19VuyFeduJmt9Bma9WLA'
+      button: 'Download'
+      size: '2.56 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/JglRgSKR#8DSmh9WWr4xO5hPEz7ebfgSDfAFsL5rB4YUOcyhAVUo'
+      button: 'Download'
+      size: '4.10 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -36,23 +36,34 @@ keywords : 'Download Batch Guomin Laogong Dai Huijia Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://acefile.co/f/34370901'
-buttonDownload480p : 'Download'
-ukuran480p : '611.15 MB'
-
-linkDownload720p : 'https://acefile.co/f/34370899'
-buttonDownload720p : 'Download'
-ukuran720p : '1.19 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Guomin Laogong Dai Huijia Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1-_Zy-ICWNJ5gSmC2zOHNzJZCd1Ovk9_A&export=download'
+      button: 'Download'
+      size: '611.15 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1422AGvj63Eafn-Zt3oHRb-DVjICYmSJ9&export=download'
+      button: 'Download'
+      size: '1.19 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

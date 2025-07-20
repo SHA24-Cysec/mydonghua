@@ -35,23 +35,34 @@ keywords : 'Download Batch Deep Sea Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/88b0wtexv1f9u3t/%255BAnichin%255D%255BDeep_Sea%255D%255B2023%255D.%255B360p%255D.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '443 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/zhakmci3gqcamwc/%255BAnichin%255D%255BDeep_Sea%255D%255B2023%255D.%255B480p%255D.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '841 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/trgwqcc15uwhi1s/%255BAnichin%255D%255BDeep_Sea%255D%255B2023%255D.%255B720p%255D.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '2 GB'
-
-linkDownload1080p : 'https://mega.nz/file/wO9k0BQQ#0K_Y5lubr8Dul2ubAv8kBjNr_nJR-BUO9LJmTx4rJQc'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.34 GB'
-
-linkDownload4K : 'https://mega.nz/file/96UB0ZCC#DVd3zSdvrBfjnPKNVRArrgt5OpWS_hN4GLfNPDhgg4Y'
-buttonDownload4K : 'Download'
-ukuran4K : '3.19 GB'
+downloadGroups:
+  
+  - title: 'Deep Sea Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/88b0wtexv1f9u3t/%255BAnichin%255D%255BDeep_Sea%255D%255B2023%255D.%255B360p%255D.mp4/file'
+      button: 'Download'
+      size: '443 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/zhakmci3gqcamwc/%255BAnichin%255D%255BDeep_Sea%255D%255B2023%255D.%255B480p%255D.mp4/file'
+      button: 'Download'
+      size: '841 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/trgwqcc15uwhi1s/%255BAnichin%255D%255BDeep_Sea%255D%255B2023%255D.%255B720p%255D.mp4/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/wO9k0BQQ#0K_Y5lubr8Dul2ubAv8kBjNr_nJR-BUO9LJmTx4rJQc'
+      button: 'Download'
+      size: '2.34 GB'
+    
+    - quality: '4K'
+      link: 'https://mega.nz/file/96UB0ZCC#DVd3zSdvrBfjnPKNVRArrgt5OpWS_hN4GLfNPDhgg4Y'
+      button: 'Download'
+      size: '3.19 GB'
 ---

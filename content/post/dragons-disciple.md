@@ -36,23 +36,65 @@ keywords : 'Download Batch Dragons Disciple Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://drive.google.com/file/d/1IEYaXMQVQc1sNv-H7BFuxQModQS3BBwJ/view?usp=sharing'
-buttonDownload360p : 'Download'
-ukuran360p : '1.17 GB'
+downloadGroups:
+  
+#   Batch 1
+  - title: 'Dragons Disciple Batch Subtitle Indonesia Episode 1-10'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1JFIg8b2RSpfcqnoUx6cNxkj-GIw7rzNc&export=download&authuser=0'
+      button: 'Download'
+      size: '764.51 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=150ygKiZBhU31t1fjPeqnNj3XntTvuR2R&export=download&authuser=0'
+      button: 'Download'
+      size: '1.41 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1HIMjR2QrnAej14HumLDDFaNQ0XIVCmXz&export=download&authuser=0'
+      button: 'Download'
+      size: '2.75 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1GwqpHCKCzYIrG6FpGC_ZrZNVkv59gTkV&export=download&authuser=0'
+      button: 'Download'
+      size: '4.50 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+#   Batch 2
+  - title: 'Dragons Disciple Batch Subtitle Indonesia Episode 11-16'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1pnW36w4maHBiOBffr8GinEX69qaTxSLW&export=download&authuser=0'
+      button: 'Download'
+      size: '432.39 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1uwTX66HDSr0fpX2zNkFvYccTGG8AaQt2&export=download&authuser=0'
+      button: 'Download'
+      size: '858.13 MB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1hvxV11OqFk7ibx4Zt7Txn-R0oCKvqImy&export=download&authuser=0'
+      button: 'Download'
+      size: '2.70 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

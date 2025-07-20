@@ -35,23 +35,34 @@ keywords : 'Download Batch Spirit Guardian Season 3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/68062215'
-buttonDownload360p : 'Download'
-ukuran360p : '710.66 MB'
-
-linkDownload480p : 'https://acefile.co/f/68062219'
-buttonDownload480p : 'Download'
-ukuran480p : '1.26 GB'
-
-linkDownload720p : 'https://acefile.co/f/68062223'
-buttonDownload720p : 'Download'
-ukuran720p : '2.43 GB'
-
-linkDownload1080p : 'https://acefile.co/f/68062226'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.98 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Spirit Guardian Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1sXnpQF5Cn8qKtgN_TaMKU7abAGWcOMuJ&export=download&authuser=0'
+      button: 'Download'
+      size: '710.66 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=18JrJ9kzwjoA6ldT3JZtw7VRdHuJUYwl4&export=download&authuser=0'
+      button: 'Download'
+      size: '1.26 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1kIgZC4aDbGPM-gCeKZV35AsrXPLDi633&export=download&authuser=0'
+      button: 'Download'
+      size: '2.43 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1He540XvYlb-nHBt0qCdyM7ijefX-rJ6y&export=download&authuser=0'
+      button: 'Download'
+      size: '3.98 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

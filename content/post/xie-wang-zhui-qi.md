@@ -40,23 +40,34 @@ keywords : 'Download Batch Xie Wang Zhui Qi Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1eVTwcon6ekdL99zVZu57IGmVausV_nuk&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '305.87 MB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1qGxlcGL-SExi5ZjgIsQwsko6T_X5T-n3&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '548.84 MB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1XHhs7KlCQMmj5C98HUPOFz-LxMG1nTli&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '987.40 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Xie Wang Zhui Qi Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1eVTwcon6ekdL99zVZu57IGmVausV_nuk&export=download&authuser=0'
+      button: 'Download'
+      size: '305.87 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1qGxlcGL-SExi5ZjgIsQwsko6T_X5T-n3&export=download&authuser=0'
+      button: 'Download'
+      size: '548.84 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1XHhs7KlCQMmj5C98HUPOFz-LxMG1nTli&export=download&authuser=0'
+      button: 'Download'
+      size: '987.40 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -35,23 +35,34 @@ keywords : 'Download Batch Knight on Debris Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.mediafire.com/file/vma3b0iqp59rkz0/%255BAnichin%255D%255BKnights_on_Debris%255D%255B360p%255D.zip/file'
-buttonDownload360p : 'Download'
-ukuran360p : '1 GB'
-
-linkDownload480p : 'https://www.mediafire.com/file/3iv0p39ncmwo376/%255BAnichin%255D%255BKnights_on_Debris%255D%255B480p%255D.zip/file'
-buttonDownload480p : 'Download'
-ukuran480p : '3 GB'
-
-linkDownload720p : 'https://www.mediafire.com/file/ul1uctuwii8g5ni/%255BAnichin%255D%255BKnights_on_Debris%255D%255B720p%255D.zip/file'
-buttonDownload720p : 'Download'
-ukuran720p : '4 GB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/9jeo93ty24anlvq/%255BAnichin%255D%255BKnights_on_Debris%255D%255B1080p%255D.zip/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '6 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Knight on Debris Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/vma3b0iqp59rkz0/%255BAnichin%255D%255BKnights_on_Debris%255D%255B360p%255D.zip/file'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/3iv0p39ncmwo376/%255BAnichin%255D%255BKnights_on_Debris%255D%255B480p%255D.zip/file'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/ul1uctuwii8g5ni/%255BAnichin%255D%255BKnights_on_Debris%255D%255B720p%255D.zip/file'
+      button: 'Download'
+      size: '4 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/9jeo93ty24anlvq/%255BAnichin%255D%255BKnights_on_Debris%255D%255B1080p%255D.zip/file'
+      button: 'Download'
+      size: '6 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

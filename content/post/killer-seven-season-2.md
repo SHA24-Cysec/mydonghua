@@ -39,23 +39,34 @@ keywords : 'Download Batch Killer Seven Season 2 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/hJBxxAib#EcxQg39A-Hjwqib3SC-TEMABpt-cGJginzbTIQnDVZQ'
-buttonDownload360p : 'Download'
-ukuran360p : '549 MB'
-
-linkDownload480p : 'https://mega.nz/file/oBJ1US6L#2hcpIaR7b72t8OVyc40lF7UOpzuE5NofKvY3mMACZUQ'
-buttonDownload480p : 'Download'
-ukuran480p : '985.2 MB'
-
-linkDownload720p : 'https://mega.nz/file/dEJlwKBJ#A_xdzqfgpKeNZONoEcYTDz-AvEz0YxumpBPgsgu3lOQ'
-buttonDownload720p : 'Download'
-ukuran720p : '1.51 GB'
-
-linkDownload1080p : 'https://mega.nz/file/9QIzAKhJ#QgCSns-YUZqKIu_sTSi9P1Qm827GD_UZDhh36TaXDz0'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.26 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Killer Seven Season 2 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/hJBxxAib#EcxQg39A-Hjwqib3SC-TEMABpt-cGJginzbTIQnDVZQ'
+      button: 'Download'
+      size: '549 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/oBJ1US6L#2hcpIaR7b72t8OVyc40lF7UOpzuE5NofKvY3mMACZUQ'
+      button: 'Download'
+      size: '985.2 MB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/dEJlwKBJ#A_xdzqfgpKeNZONoEcYTDz-AvEz0YxumpBPgsgu3lOQ'
+      button: 'Download'
+      size: '1.51 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/9QIzAKhJ#QgCSns-YUZqKIu_sTSi9P1Qm827GD_UZDhh36TaXDz0'
+      button: 'Download'
+      size: '2.26 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

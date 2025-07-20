@@ -41,23 +41,34 @@ keywords : 'Download Batch The Great Ruler Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1h3jBmmPYwrgVXas2sWtHPCn7zlD9GZYV&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '652.65 MB'
-
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1KlQ60yVSlvilx3PMk49uHLlzzfCvMBX9&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '1.83 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Great Ruler Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1h3jBmmPYwrgVXas2sWtHPCn7zlD9GZYV&export=download&authuser=0'
+      button: 'Download'
+      size: '652.65 MB'
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1KlQ60yVSlvilx3PMk49uHLlzzfCvMBX9&export=download&authuser=0'
+      button: 'Download'
+      size: '1.83 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

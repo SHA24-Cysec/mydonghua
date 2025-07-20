@@ -35,23 +35,34 @@ keywords : 'Download Batch Guomin Laogong Dai Huijia Season 4 Subtitle Indonesia
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : 'https://mega.nz/file/R5k2ECIS#V9qLF_g2dqWZajtW8EBQ9vT6HA00-7XYmR6ynLTKRr0'
-buttonDownload720p : 'Download'
-ukuran720p : '815.8 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Guomin Laogong Dai Huijia Season 4 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/R5k2ECIS#V9qLF_g2dqWZajtW8EBQ9vT6HA00-7XYmR6ynLTKRr0'
+      button: 'Download'
+      size: '815.8 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

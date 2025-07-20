@@ -40,23 +40,34 @@ keywords : 'Download Batch Beyond the Ocean Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://www.terabox.com/indonesian/sharing/link?surl=nvJETSJSIqe29_KDvDiEwg'
-buttonDownload360p : 'Download'
-ukuran360p : '505 MB'
-
-linkDownload480p : 'https://www.terabox.com/indonesian/sharing/link?surl=nvJETSJSIqe29_KDvDiEwg'
-buttonDownload480p : 'Download'
-ukuran480p : '1 GB'
-
-linkDownload720p : 'https://www.terabox.com/indonesian/sharing/link?surl=nvJETSJSIqe29_KDvDiEwg'
-buttonDownload720p : 'Download'
-ukuran720p : '2.2 GB'
-
-linkDownload1080p : 'https://www.terabox.com/indonesian/sharing/link?surl=nvJETSJSIqe29_KDvDiEwg'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.7 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Beyond the Ocean Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=nvJETSJSIqe29_KDvDiEwg'
+      button: 'Download'
+      size: '505 MB'
+    
+    - quality: '480p'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=nvJETSJSIqe29_KDvDiEwg'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '720p'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=nvJETSJSIqe29_KDvDiEwg'
+      button: 'Download'
+      size: '2.2 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=nvJETSJSIqe29_KDvDiEwg'
+      button: 'Download'
+      size: '3.7 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

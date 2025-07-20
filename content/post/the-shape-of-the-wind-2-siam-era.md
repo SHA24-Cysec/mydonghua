@@ -36,23 +36,34 @@ keywords : 'Download Batch The Shape of the Wind 2 Siam Era Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/UFa9jTA'
-buttonDownload360p : 'Download'
-ukuran360p : '898.47 MB'
-
-linkDownload480p : 'https://lbx.to/f/8AdPpY0'
-buttonDownload480p : 'Download'
-ukuran480p : '1.59 GB'
-
-linkDownload720p : 'https://lbx.to/f/2z3KLau'
-buttonDownload720p : 'Download'
-ukuran720p : '3.38 GB'
-
-linkDownload1080p : 'https://lbx.to/f/rT9usNa'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.57 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Shape of the Wind 2 Siam Era Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/UFa9jTA'
+      button: 'Download'
+      size: '898.47 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/8AdPpY0'
+      button: 'Download'
+      size: '1.59 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/2z3KLau'
+      button: 'Download'
+      size: '3.38 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/rT9usNa'
+      button: 'Download'
+      size: '5.57 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -39,23 +39,34 @@ keywords : 'Download Batch Revelation Online Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1ivnIeX0OFa9oKaLEWT3WwNr5Kh5jGzFz&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '883 MB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1PYcDBZW8-GMcWGRLXu2nsrzbF6-OOEMu&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '1.77 GB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1fPKX4_Blip4uWsqRezELAOdNhKpvYeqG&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '3.86 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Revelation Online Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1ivnIeX0OFa9oKaLEWT3WwNr5Kh5jGzFz&export=download&authuser=0'
+      button: 'Download'
+      size: '883 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1PYcDBZW8-GMcWGRLXu2nsrzbF6-OOEMu&export=download&authuser=0'
+      button: 'Download'
+      size: '1.77 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1fPKX4_Blip4uWsqRezELAOdNhKpvYeqG&export=download&authuser=0'
+      button: 'Download'
+      size: '3.86 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

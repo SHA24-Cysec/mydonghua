@@ -36,23 +36,34 @@ keywords : 'Download Batch Legend of Sho Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/67711430'
-buttonDownload360p : 'Download'
-ukuran360p : '414.48 MB'
-
-linkDownload480p : 'https://acefile.co/f/67711433'
-buttonDownload480p : 'Download'
-ukuran480p : '827.86 MB'
-
-linkDownload720p : 'https://acefile.co/f/67711436'
-buttonDownload720p : 'Download'
-ukuran720p : '1.46 GB'
-
-linkDownload1080p : 'https://acefile.co/f/67711438'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.40 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Legend of Sho Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1VPq3hqLc2OIX3rpwqcFGJxLyFb9Qgqdz&export=download&authuser=0'
+      button: 'Download'
+      size: '414.48 MB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1yXEIlH-p3tRIdxJ9KJvNOpS8KQ5HGAVj&export=download&authuser=0'
+      button: 'Download'
+      size: '827.86 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1o1UYnVnRSrbZldKfCNKMBUx95jTSTYsQ&export=download&authuser=0'
+      button: 'Download'
+      size: '1.46 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1_M4hEf9DTVVcPM--PtoTM78m2JPqiPF4&export=download&authuser=0'
+      button: 'Download'
+      size: '2.40 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -36,23 +36,34 @@ keywords : 'Download Batch Heaven Official Blessing Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://drive.usercontent.google.com/download?id=1Yo7Pl3t1HVuM_f3bjYvhcDo5xsYY6Cqr&export=download&authuser=0'
-buttonDownload360p : 'Download'
-ukuran360p : '1.10 GB'
-
-linkDownload480p : 'https://drive.usercontent.google.com/download?id=1kts5JsZRTevrvjOkvx62pF2NgsubvuzB&export=download&authuser=0'
-buttonDownload480p : 'Download'
-ukuran480p : '1.88 GB'
-
-linkDownload720p : 'https://drive.usercontent.google.com/download?id=1ZXq6ig7miemVu0MaZKXPKIjXpvHMPWbl&export=download&authuser=0'
-buttonDownload720p : 'Download'
-ukuran720p : '3.03 GB'
-
-linkDownload1080p : 'https://drive.usercontent.google.com/download?id=1cTEe1HeahqmleJqlsNm-ech0lDn-mqBv&export=download&authuser=0'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.25 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Heaven Official Blessing Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1Yo7Pl3t1HVuM_f3bjYvhcDo5xsYY6Cqr&export=download&authuser=0'
+      button: 'Download'
+      size: '1.10 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1kts5JsZRTevrvjOkvx62pF2NgsubvuzB&export=download&authuser=0'
+      button: 'Download'
+      size: '1.88 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1ZXq6ig7miemVu0MaZKXPKIjXpvHMPWbl&export=download&authuser=0'
+      button: 'Download'
+      size: '3.03 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1cTEe1HeahqmleJqlsNm-ech0lDn-mqBv&export=download&authuser=0'
+      button: 'Download'
+      size: '4.25 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

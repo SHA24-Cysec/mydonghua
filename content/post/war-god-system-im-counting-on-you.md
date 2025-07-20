@@ -35,23 +35,34 @@ keywords : 'Download Batch War God System Im Counting on You Subtitle Indonesia,
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/OGPbIpY'
-buttonDownload360p : 'Download'
-ukuran360p : '681,40 MB'
-
-linkDownload480p : 'https://lbx.to/f/QaUEWRx'
-buttonDownload480p : 'Download'
-ukuran480p : '1.22 GB'
-
-linkDownload720p : 'https://lbx.to/f/kO9SnvA'
-buttonDownload720p : 'Download'
-ukuran720p : '2.29 GB'
-
-linkDownload1080p : 'https://lbx.to/f/aTBYaED'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.74 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: "War God System: I'm Counting on You Batch Subtitle Indonesia"
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/OGPbIpY'
+      button: 'Download'
+      size: '681,40 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/QaUEWRx'
+      button: 'Download'
+      size: '1.22 GB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Download'
+      size: '2.29 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/aTBYaED'
+      button: 'Download'
+      size: '3.74 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

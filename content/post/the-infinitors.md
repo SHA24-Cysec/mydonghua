@@ -37,23 +37,34 @@ keywords : 'Download Batch The Infinitors Subtitle Indonesia, The Infinitors Bat
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/J4jt5ic'
-buttonDownload360p : 'Download'
-ukuran360p : '607.91 MB'
-
-linkDownload480p : 'https://lbx.to/f/75BIqig'
-buttonDownload480p : 'Download'
-ukuran480p : '1.02 GB'
-
-linkDownload720p : 'https://mega.nz/file/E6JAURTB#DIuWk_O1RD0mOuwRXDEWyEYXnQwCkIT1EF0G1q6ltmk'
-buttonDownload720p : 'Download'
-ukuran720p : '2.26 GB'
-
-linkDownload1080p : 'https://lbx.to/f/dXF39Vk'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3.77 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Infinitors Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/J4jt5ic'
+      button: 'Download'
+      size: '607.91 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/75BIqig'
+      button: 'Download'
+      size: '1.02 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/E6JAURTB#DIuWk_O1RD0mOuwRXDEWyEYXnQwCkIT1EF0G1q6ltmk'
+      button: 'Download'
+      size: '2.26 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/dXF39Vk'
+      button: 'Download'
+      size: '3.77 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

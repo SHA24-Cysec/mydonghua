@@ -36,23 +36,34 @@ keywords : 'Download Batch The Mirror: Twin Cities Prologue Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/M1sW3SwK#OP2oeKHMCsDwU3Y0bOZuz8UEOtTrCyjeJX5DgJWjBQg'
-buttonDownload360p : 'Download'
-ukuran360p : '336.09 MB'
-
-linkDownload480p : 'https://mega.nz/file/0s8QiYDL#PVDUnBH-CWXWOVFAxtOeHZ3HOP7TbovY15UfDK2cPAg'
-buttonDownload480p : 'Download'
-ukuran480p : '651.07 MB'
-
-linkDownload720p : 'https://mega.nz/file/s49QyKCR#3ifyw9YojD-_KAEmGcFvMRzA3u4KcibxDk4CnO72i24'
-buttonDownload720p : 'Download'
-ukuran720p : '964.08 MB'
-
-linkDownload1080p : 'https://mega.nz/file/Z48UCYBJ#idlxvbZJGFZQ6vNt8s8DeOpXhfEvLMxS109AW_m2L2I'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.26 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Mirror: Twin Cities Prologue Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/M1sW3SwK#OP2oeKHMCsDwU3Y0bOZuz8UEOtTrCyjeJX5DgJWjBQg'
+      button: 'Download'
+      size: '336.09 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/0s8QiYDL#PVDUnBH-CWXWOVFAxtOeHZ3HOP7TbovY15UfDK2cPAg'
+      button: 'Download'
+      size: '651.07 MB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/s49QyKCR#3ifyw9YojD-_KAEmGcFvMRzA3u4KcibxDk4CnO72i24'
+      button: 'Download'
+      size: '964.08 MB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/Z48UCYBJ#idlxvbZJGFZQ6vNt8s8DeOpXhfEvLMxS109AW_m2L2I'
+      button: 'Download'
+      size: '1.26 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

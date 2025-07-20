@@ -38,23 +38,34 @@ keywords : 'Download Batch The Path Toward Heaven Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/108729008'
-buttonDownload360p : 'Download'
-ukuran360p : '977.50 MB'
-
-linkDownload480p : 'https://acefile.co/f/108729007'
-buttonDownload480p : 'Download'
-ukuran480p : '1.80 GB'
-
-linkDownload720p : 'https://acefile.co/f/108729005'
-buttonDownload720p : 'Download'
-ukuran720p : '4.06 GB'
-
-linkDownload1080p : 'https://acefile.co/f/108729004'
-buttonDownload1080p : 'Download'
-ukuran1080p : '8.40 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Path Toward Heaven Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1t3YsbxuvSPFHlzG-AmKxFz-Ro5eyEpAC&export=download&authuser=0'
+      button: 'Download'
+      size: '8.40 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

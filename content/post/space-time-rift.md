@@ -35,20 +35,51 @@ keywords : 'Download Batch Space Time Rift Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/BGNGTAwA#ix9Z3UVpgpfuQVoaWBPlmKwVu1Yn7LhQ0mRjR31F89g'
-buttonDownload360p : 'Download'
-ukuran360p : '715.5 MB'
+downloadGroups:
+  
+  - title: 'Space Time Rift Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/BGNGTAwA#ix9Z3UVpgpfuQVoaWBPlmKwVu1Yn7LhQ0mRjR31F89g'
+      button: 'Download'
+      size: '715.5 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/cp5VkYwY#qxP5OKpnxp12sqpHMoRGFrdrP-lrykqkTCOrOcRtrx8'
+      button: 'Download'
+      size: '1.35 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/dsgWAAoY#pTKQdijxLvROHX-dltfdFKBGVUJ-rqUQ1_g-GXYt9tg'
+      button: 'Download'
+      size: '2.63 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 
-linkDownload480p : 'https://mega.nz/file/cp5VkYwY#qxP5OKpnxp12sqpHMoRGFrdrP-lrykqkTCOrOcRtrx8'
+linkDownload360p : ''
+buttonDownload360p : ''
+ukuran360p : ''
+
+linkDownload480p : ''
 buttonDownload480p : 'Download'
-ukuran480p : '1.35 GB'
+ukuran480p : ''
 
-linkDownload720p : 'https://mega.nz/file/dsgWAAoY#pTKQdijxLvROHX-dltfdFKBGVUJ-rqUQ1_g-GXYt9tg'
+linkDownload720p : ''
 buttonDownload720p : 'Download'
-ukuran720p : '2.63 GB'
+ukuran720p : ''
 
 linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
+buttonDownload1080p : ''
 ukuran1080p : ''
 
 linkDownload4K : ''

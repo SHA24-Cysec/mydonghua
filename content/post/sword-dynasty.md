@@ -35,23 +35,34 @@ keywords : 'Download Batch Sword Dynasty Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://acefile.co/f/39453303'
-buttonDownload480p : 'Download'
-ukuran480p : '744 MB'
-
-linkDownload720p : 'https://acefile.co/f/39453306'
-buttonDownload720p : 'Download'
-ukuran720p : '1.04 GB'
-
-linkDownload1080p : 'https://acefile.co/f/39453312'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1.49 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Sword Dynasty Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1a1WQEyD8samzj9ScUBsm6PrOp6hZ7eWh&export=download&authuser=0'
+      button: 'Download'
+      size: '744 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1gF0cMS-tmOECfGiTMB_nlbAR2JDQd9IE&export=download&authuser=0'
+      button: 'Download'
+      size: '1.04 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1wEbfTasLAgp7a08BqQDrJ26uKF2vIs-V&export=download&authuser=0'
+      button: 'Download'
+      size: '1.49 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

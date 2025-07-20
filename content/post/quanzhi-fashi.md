@@ -38,23 +38,34 @@ keywords : 'Download Batch Quanzhi Fashi Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/OpAkGTiQ#pbKclQybNm93scs5ABNbimbCJjq099t1gsU-7N2_hkU'
-buttonDownload360p : 'Download'
-ukuran360p : '603 MB'
-
-linkDownload480p : 'https://mega.nz/file/60YgFDST#MFmagFr9XDxmB9YWC-gCp3UxV3yohjalJJJ_TQsOopI'
-buttonDownload480p : 'Download'
-ukuran480p : '860 MB'
-
-linkDownload720p : 'https://mega.nz/file/75Jk0bIA#Cb2S0VcKo2CYn6LNx6yk15dO77GoazWvzwT8jY5jh1o'
-buttonDownload720p : 'Download'
-ukuran720p : '1.58 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Quanzhi Fashi Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/OpAkGTiQ#pbKclQybNm93scs5ABNbimbCJjq099t1gsU-7N2_hkU'
+      button: 'Download'
+      size: '603 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/60YgFDST#MFmagFr9XDxmB9YWC-gCp3UxV3yohjalJJJ_TQsOopI'
+      button: 'Download'
+      size: '860 MB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/75Jk0bIA#Cb2S0VcKo2CYn6LNx6yk15dO77GoazWvzwT8jY5jh1o'
+      button: 'Download'
+      size: '1.58 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

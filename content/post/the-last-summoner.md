@@ -36,23 +36,34 @@ keywords : 'Download Batch The Last Summoner Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/dbVCWCzD#Fjh_oxmDdSmcWPWBD47h8VTu0SUJi7NNPJz-neGvtZY'
-buttonDownload360p : 'Download'
-ukuran360p : '623.8 MB'
-
-linkDownload480p : 'https://mega.nz/file/JbF2VKyJ#ap82CgOvxgQtKZqsgiXxp3ems8_ftQa18xLD5qbAXTo'
-buttonDownload480p : 'Download'
-ukuran480p : '1.18 GB'
-
-linkDownload720p : 'https://mega.nz/file/AC8mFYBa#1Sq-Oz5FtjhbM67NjLIGm6OGH4dFiRRKuGc-blPkD2A'
-buttonDownload720p : 'Download'
-ukuran720p : '2.35 GB'
-
-linkDownload1080p : 'https://mega.nz/file/ZKFwTbhL#5KchT4QYhvJwXNNljVGBOqAtLmddeetLYVu0t6fJO24'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.06 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'The Last Summoner Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/dbVCWCzD#Fjh_oxmDdSmcWPWBD47h8VTu0SUJi7NNPJz-neGvtZY'
+      button: 'Download'
+      size: '623.8 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/JbF2VKyJ#ap82CgOvxgQtKZqsgiXxp3ems8_ftQa18xLD5qbAXTo'
+      button: 'Download'
+      size: '1.18 GB'
+    
+    - quality: '720p'
+      link: 'https://mega.nz/file/AC8mFYBa#1Sq-Oz5FtjhbM67NjLIGm6OGH4dFiRRKuGc-blPkD2A'
+      button: 'Download'
+      size: '2.35 GB'
+    
+    - quality: '1080p'
+      link: 'https://mega.nz/file/ZKFwTbhL#5KchT4QYhvJwXNNljVGBOqAtLmddeetLYVu0t6fJO24'
+      button: 'Download'
+      size: '4.06 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

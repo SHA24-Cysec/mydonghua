@@ -38,23 +38,34 @@ keywords : 'Download Batch Quanzhi Fashi Season 3 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://mega.nz/file/foYm2LBD#0fnHN9VxOtori9vAVkEsZNxsDQoxlafx40PDZZtde14'
-buttonDownload360p : 'Download'
-ukuran360p : '617 MB'
-
-linkDownload480p : 'https://mega.nz/file/OlR0QLxI#ptVsqvCe6MCYj2i3TQbB3qMkU8csjzAI6K9rOnZcF2w'
-buttonDownload480p : 'Download'
-ukuran480p : '736 MB'
-
-linkDownload720p : ''
-buttonDownload720p : 'Belum Tersedia'
-ukuran720p : ''
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Quanzhi Fashi Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://mega.nz/file/foYm2LBD#0fnHN9VxOtori9vAVkEsZNxsDQoxlafx40PDZZtde14'
+      button: 'Download'
+      size: '617 MB'
+    
+    - quality: '480p'
+      link: 'https://mega.nz/file/OlR0QLxI#ptVsqvCe6MCYj2i3TQbB3qMkU8csjzAI6K9rOnZcF2w'
+      button: 'Download'
+      size: '736 MB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

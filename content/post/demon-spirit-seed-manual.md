@@ -39,23 +39,34 @@ keywords : 'Download Batch Demon Spirit Seed Manual Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/30891935'
-buttonDownload360p : 'Download'
-ukuran360p : '764.08 MB'
-
-linkDownload480p : ''
-buttonDownload480p : 'Belum Tersedia'
-ukuran480p : ''
-
-linkDownload720p : 'https://acefile.co/f/30891941'
-buttonDownload720p : 'Download'
-ukuran720p : '1.66 GB'
-
-linkDownload1080p : 'https://acefile.co/f/30891940'
-buttonDownload1080p : 'Download'
-ukuran1080p : '2.21 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Demon Spirit Seed Manual Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1LRm0fAUvSpf1zw3622v3-qKC3JqxaT3b&export=download&authuser=0'
+      button: 'Download'
+      size: '764.08 MB'
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1Wqx6sK_DIXuW3oqm28StJb3qiGcR_MnU&export=download&authuser=0'
+      button: 'Download'
+      size: '1.66 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1w4UuWF1CvNjQ38tZpUhBSuNL2wp1VO8c&export=download&authuser=0'
+      button: 'Download'
+      size: '2.21 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

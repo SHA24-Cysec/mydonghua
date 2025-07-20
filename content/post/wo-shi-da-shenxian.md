@@ -39,23 +39,34 @@ keywords : 'Download Batch Wo Shi Da Shenxian Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/42289915'
-buttonDownload360p : 'Download'
-ukuran360p : '2.03 GB'
-
-linkDownload480p : 'https://acefile.co/f/42289920'
-buttonDownload480p : 'Download'
-ukuran480p : '3.06 GB'
-
-linkDownload720p : 'https://acefile.co/f/42289926'
-buttonDownload720p : 'Download'
-ukuran720p : '4.51 GB'
-
-linkDownload1080p : 'https://acefile.co/f/42289930'
-buttonDownload1080p : 'Download'
-ukuran1080p : '5.90 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Wo Shi Da Shenxian Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=1o6qJ2QoEkqjggxA5yhP5BteRM9-1EbV_&export=download&authuser=0'
+      button: 'Download'
+      size: '2.03 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=11poaPjYUyztd00FnQr54MDCA8mdfzTl0&export=download&authuser=0'
+      button: 'Download'
+      size: '3.06 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1-iMGfy-8yWyCTbl-GgqXURiXXvHoUwgN&export=download&authuser=0'
+      button: 'Download'
+      size: '4.51 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1UdFwcyNFrqYSGgFvLEFUrFW6NnDGePxO&export=download&authuser=0'
+      button: 'Download'
+      size: '5.90 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

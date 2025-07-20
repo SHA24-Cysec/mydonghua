@@ -35,23 +35,34 @@ keywords : 'Download Batch Legend of Exorcism Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://acefile.co/f/48051771'
-buttonDownload360p : 'Download'
-ukuran360p : '1.09 GB'
-
-linkDownload480p : 'https://acefile.co/f/48051772'
-buttonDownload480p : 'Download'
-ukuran480p : '1.81 GB'
-
-linkDownload720p : 'https://acefile.co/f/48051774'
-buttonDownload720p : 'Download'
-ukuran720p : '2.77 GB'
-
-linkDownload1080p : 'https://acefile.co/f/48051934'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.02 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Legend of Exorcism Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://drive.usercontent.google.com/download?id=14XzJy7cpxZCNrMKp6ZbdqrAgnufdbCxr&export=download&authuser=0'
+      button: 'Download'
+      size: '1.09 GB'
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1StyZDQUwcXYHUVcqnm2oUxm4g9IcaoL7&export=download&authuser=0'
+      button: 'Download'
+      size: '1.81 GB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=13j1Fj_3KQHNxOTbA6HCazlwbcJVFBzgk&export=download&authuser=0'
+      button: 'Download'
+      size: '2.77 GB'
+    
+    - quality: '1080p'
+      link: 'https://drive.usercontent.google.com/download?id=1lrkMNEgLgZSrZolKvYByW1vZB_prehda&export=download&authuser=0'
+      button: 'Download'
+      size: '4.02 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: ''
+      size: 'Belum Tersedia'
 ---

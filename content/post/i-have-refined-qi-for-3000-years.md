@@ -35,23 +35,34 @@ keywords : 'Download Batch I Have Refined Qi for 3000 Years Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://lbx.to/f/oxN9QV2'
-buttonDownload360p : 'Download'
-ukuran360p : '705.35 MB'
-
-linkDownload480p : 'https://lbx.to/f/g6zQWVW'
-buttonDownload480p : 'Download'
-ukuran480p : '1.26 GB'
-
-linkDownload720p : 'https://lbx.to/f/afND4dQ'
-buttonDownload720p : 'Download'
-ukuran720p : '2.67 GB'
-
-linkDownload1080p : 'https://lbx.to/f/6AuFe5M'
-buttonDownload1080p : 'Download'
-ukuran1080p : '4.46 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'I Have Refined Qi for 3000 Years Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/oxN9QV2'
+      button: 'Download'
+      size: '705.35 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/g6zQWVW'
+      button: 'Download'
+      size: '1.26 GB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/afND4dQ'
+      button: 'Download'
+      size: '2.67 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/6AuFe5M'
+      button: 'Download'
+      size: '4.46 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

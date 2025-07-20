@@ -35,23 +35,34 @@ keywords : 'Download Batch Foreordination Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : 'https://1024terabox.com/s/1QJ16XHLPAxQfLBiWZImcAg'
-buttonDownload360p : 'Download'
-ukuran360p : '539.1 MB'
-
-linkDownload480p : 'https://1024terabox.com/s/1szwZ3BGrgoOc0JSueSsRtw'
-buttonDownload480p : 'Download'
-ukuran480p : '962.3 MB'
-
-linkDownload720p : 'https://1024terabox.com/s/1bLfTXILxiSlOx_UxZK4Avg'
-buttonDownload720p : 'Download'
-ukuran720p : '1.9 GB'
-
-linkDownload1080p : 'https://1024terabox.com/s/1uD47p_qtfb3sTjHkQcdAbQ'
-buttonDownload1080p : 'Download'
-ukuran1080p : '3 GB'
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Foreordination Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://1024terabox.com/s/1QJ16XHLPAxQfLBiWZImcAg'
+      button: 'Download'
+      size: '539.1 MB'
+    
+    - quality: '480p'
+      link: 'https://1024terabox.com/s/1szwZ3BGrgoOc0JSueSsRtw'
+      button: 'Download'
+      size: '962.3 MB'
+    
+    - quality: '720p'
+      link: 'https://1024terabox.com/s/1bLfTXILxiSlOx_UxZK4Avg'
+      button: 'Download'
+      size: '1.9 GB'
+    
+    - quality: '1080p'
+      link: 'https://1024terabox.com/s/1uD47p_qtfb3sTjHkQcdAbQ'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

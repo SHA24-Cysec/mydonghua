@@ -35,23 +35,34 @@ keywords : 'Download Batch Age of Gunslingers Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://acefile.co/f/38565216'
-buttonDownload480p : 'Download'
-ukuran480p : '964.85 MB'
-
-linkDownload720p : 'https://acefile.co/f/38565221'
-buttonDownload720p : 'Download'
-ukuran720p : '1.54 GB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Age of Gunslingers Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1W2gi_LBOKh96bkzyzvNRU6H2RoBXqQar&export=download&authuser=0'
+      button: 'Download'
+      size: '964.85 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1e6PlqfrSpGD0SdhKxdwshK8gpah1wPdB&export=download&authuser=0'
+      button: 'Download'
+      size: '1.54 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

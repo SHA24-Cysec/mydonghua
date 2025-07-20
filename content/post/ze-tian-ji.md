@@ -37,23 +37,34 @@ keywords : 'Download Batch Ze Tian Ji Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
-linkDownload360p : ''
-buttonDownload360p : 'Belum Tersedia'
-ukuran360p : ''
-
-linkDownload480p : 'https://acefile.co/f/25945124'
-buttonDownload480p : 'Download'
-ukuran480p : '629 MB'
-
-linkDownload720p : 'https://acefile.co/f/25945127'
-buttonDownload720p : 'Download'
-ukuran720p : '975 MB'
-
-linkDownload1080p : ''
-buttonDownload1080p : 'Belum Tersedia'
-ukuran1080p : ''
-
-linkDownload4K : ''
-buttonDownload4K : 'Belum Tersedia'
-ukuran4K : ''
+downloadGroups:
+  
+  - title: 'Ze Tian Ji Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1vBcRDrE2BJ4CeQ9kuFOZ9tgEH84wNWqP&export=download&authuser=0'
+      button: 'Download'
+      size: '629 MB'
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1wEuf8yJBBMxeURWdl5cs3-jv-VwcfN6I&export=download&authuser=0'
+      button: 'Download'
+      size: '975 MB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

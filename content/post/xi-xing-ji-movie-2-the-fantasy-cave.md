@@ -36,23 +36,34 @@ keywords : 'Download Batch Xi Xing Ji Movie 2 the Fantasy Cave Subtitle Indonesi
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
-linkDownload360p : 'https://www.mediafire.com/file/izm9vvjg86ithv9/Kuramanime-JRWEST_QQD-360p-Anichin.mp4/file'
-buttonDownload360p : 'Download'
-ukuran360p : '234 MB'
-
-linkDownload480p : 'https://www.mediafire.com/file/ch5wwwsj0bbozpm/Kuramanime-JRWEST_QQD-480p-Anichin.mp4/file'
-buttonDownload480p : 'Download'
-ukuran480p : '429 MB'
-
-linkDownload720p : 'https://www.mediafire.com/file/5nnjw94a0fjk8r0/Kuramanime-JRWEST_QQD-720p-Anichin.mp4/file'
-buttonDownload720p : 'Download'
-ukuran720p : '716 MB'
-
-linkDownload1080p : 'https://www.mediafire.com/file/up9g5v3rei4yfuc/Kuramanime-JRWEST_QQD-1080p-Anichin.mp4/file'
-buttonDownload1080p : 'Download'
-ukuran1080p : '1 GB'
-
-linkDownload4K : 'https://1024terabox.com/s/1bMBy67ejIN2oeI8vKlSzeg'
-buttonDownload4K : 'Download'
-ukuran4K : '3 GB'
+downloadGroups:
+  
+  - title: 'Xi Xing Ji Movie 2 the Fantasy Cave Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://www.mediafire.com/file/izm9vvjg86ithv9/Kuramanime-JRWEST_QQD-360p-Anichin.mp4/file'
+      button: 'Download'
+      size: '234 MB'
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/ch5wwwsj0bbozpm/Kuramanime-JRWEST_QQD-480p-Anichin.mp4/file'
+      button: 'Download'
+      size: '429 MB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/5nnjw94a0fjk8r0/Kuramanime-JRWEST_QQD-720p-Anichin.mp4/file'
+      button: 'Download'
+      size: '716 MB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/up9g5v3rei4yfuc/Kuramanime-JRWEST_QQD-1080p-Anichin.mp4/file'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '4K'
+      link: 'https://1024terabox.com/s/1bMBy67ejIN2oeI8vKlSzeg'
+      button: 'Download'
+      size: '3 GB'
 ---
