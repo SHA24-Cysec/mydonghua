@@ -6,9 +6,6 @@
   HUGO_VERSION = "0.136.5"
   HUGO_EXTENDED = "true"
 
-[build]
-  publish = "public"
-
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
