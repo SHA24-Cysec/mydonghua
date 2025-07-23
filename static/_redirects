@@ -4,4 +4,4 @@ https://donghuabatch.syukra.org/* https://donghuabatch.web.id/:splat 301!
 
 /* /404.html 404
 
-/prince,dont-do-this/ prince-dont-do-this/ 301!
+/prince,dont-do-this/ /prince-dont-do-this/ 301!
