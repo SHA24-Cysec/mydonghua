@@ -24,7 +24,7 @@
         {{/*  Elemen Genre  */}}
         <div class="bg-slate-300 p-4">
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Genre</span>
-            <div class="text-center overflow-y-auto h-80 grid lg:grid-cols-2 gap-2 md:grid-cols-2 grid-cols-2">
+            <div class="text-center overflow-y-auto h-80 grid lg:grid-cols-3 gap-2 md:grid-cols-6 grid-cols-2">
                 {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
                 <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap justify-center font-bold hover:bg-slate-200 rounded-lg p-2" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
