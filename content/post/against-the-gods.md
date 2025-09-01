@@ -38,7 +38,8 @@ keywords : 'Download Batch Against the Gods Subtitle Indonesia'
 
 downloadGroups:
   
-  - title: 'Against the Gods Batch Subtitle Indonesia'
+  # Batch 1
+  - title: 'Against the Gods Batch Subtitle Indonesia Episode 1-20'
     
     downloads:
     
@@ -48,19 +49,49 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://www.mediafire.com/file/3724gnn5ywlaamq/Against_the_Gods_%2528480p%2529.zip/file'
+      link: 'https://pixeldrain.com/u/bw59ubDc'
       button: 'Download'
-      size: '3.14 GB'
+      size: '2.20 GB'
     
     - quality: '720p'
+      link: 'https://pixeldrain.com/u/rTYcaA5B'
+      button: 'Download'
+      size: '4.97 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/ZhtJf7bi'
+      button: 'Download'
+      size: '8.36 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 2
+  - title: 'Against the Gods Batch Subtitle Indonesia Episode 21-30'
+    
+    downloads:
+    
+    - quality: '360p'
       link: ''
       button: 'Belum Tersedia'
       size: ''
     
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/ArJGECSm'
+      button: 'Download'
+      size: '1.18 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/QpJXbCzP'
+      button: 'Download'
+      size: '2.79 GB'
+    
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/jFTfUA4L'
+      button: 'Download'
+      size: '4.67 GB'
     
     - quality: '4K'
       link: ''

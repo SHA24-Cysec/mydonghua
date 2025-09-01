@@ -44,24 +44,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/6LwW1BbC#ZSWJdotsCRzskqZQTwdUqiMaF8e0bWBBxanp-TyMfsA'
+      link: 'https://pixeldrain.com/u/o4WExU9b'
       button: 'Download'
-      size: '1.47 GB'
+      size: '1.57 GB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/yXwgyRRQ#QiFMmVwDzdMn4NUurEUMVN5QvLWPXkqYpwbDGk6fQKU'
+      link: 'https://pixeldrain.com/u/o6tCe3oF'
       button: 'Download'
-      size: '2.76 GB'
+      size: '2.95 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/mCIDkATZ#JGV9BdEdNIgQoMQ_7O8v1FLD5YkXQugadx3qkOLlg6g'
+      link: 'https://pixeldrain.com/u/4HoZ8Mhq'
       button: 'Download'
-      size: '5.18 GB'
+      size: '5.56 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/aeYRFKSb#MR6BmGT7nSbSAlLlQkWDEmvBe7yfBCNMF626fVjumQo'
+      link: 'https://pixeldrain.com/u/WAmPwwqW'
       button: 'Download'
-      size: '7.87 GB'
+      size: '8.44 GB'
     
     - quality: '4K'
       link: ''
