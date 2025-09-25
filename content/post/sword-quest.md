@@ -42,22 +42,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/ZDE0EarJ#JTfmM-xgsXTkoPQ7ThBiw8eCBCC7WZz_Na7Rg38Q_7c'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=G6gxcles2yy6vJ3jGzPVag'
       button: 'Download'
       size: '544.8 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/9eNRWaZQ#-CijbVtNw2szQKHk_c8ZghGRZHBuOp812U-x8a08lMQ'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=G6gxcles2yy6vJ3jGzPVag'
       button: 'Download'
       size: '1.07 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/JCsRHAhb#qg7MMZfiWLl-uXvyF_pF2FvRICCRanw_u1Mwl3Uw5LI'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=G6gxcles2yy6vJ3jGzPVag'
       button: 'Download'
       size: '2 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/AXsXCLBQ#7-gLzBJM6pM11r6qrgrngJG7DEeoxcyrqd4KEWd5678'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=G6gxcles2yy6vJ3jGzPVag'
       button: 'Download'
       size: '3.19 GB'
     
