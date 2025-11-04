@@ -328,9 +328,9 @@ downloadGroups:
       size: '5.50 GB'
     
     - quality: '720p'
-      link: '8.46 GB'
+      link: 'https://mega.nz/file/xptETZhI#7pBMuKF8VN8BSUuORaCld_PQkkckvN5SP-SQDAsJMck'
       button: 'Download'
-      size: 'https://mega.nz/file/xptETZhI#7pBMuKF8VN8BSUuORaCld_PQkkckvN5SP-SQDAsJMck'
+      size: '8.46 GB'
     
     - quality: '1080p'
       link: 'https://mega.nz/file/hwsljQDC#ejQJWvJiWWJc-1PZvKUJmwt9jmf7TgFaAoCZ58knOco'
