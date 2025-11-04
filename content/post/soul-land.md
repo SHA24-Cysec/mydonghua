@@ -148,9 +148,9 @@ downloadGroups:
       size: ''
     
     - quality: '720p'
-      link: '1.49 GB'
+      link: 'https://drive.usercontent.google.com/download?id=1gXwJVUMNiWaqmstR-zSIHgx8quZzeAog&export=download&authuser=0'
       button: 'Download'
-      size: 'https://drive.usercontent.google.com/download?id=1gXwJVUMNiWaqmstR-zSIHgx8quZzeAog&export=download&authuser=0'
+      size: '1.49 GB'
     
     - quality: '1080p'
       link: 'https://drive.usercontent.google.com/download?id=1pXy7BR01HaY9JSUuiXXWgx0Mbn_czLe1&export=download&authuser=0'
@@ -168,9 +168,9 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: '631.20 MB'
+      link: 'https://drive.usercontent.google.com/download?id=1b6kaQ3N9dk_WkE1qc1tvInZENFEBl2Ac&export=download&authuser=0'
       button: 'Download'
-      size: 'https://drive.usercontent.google.com/download?id=1b6kaQ3N9dk_WkE1qc1tvInZENFEBl2Ac&export=download&authuser=0'
+      size: '631.20 MB'
     
     - quality: '480p'
       link: ''
@@ -268,9 +268,9 @@ downloadGroups:
       size: '2.51 GB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1K4Z8Spm3w3sV1q4xVWhGrh3HCsc0OmFt&export=download&authuser=0'
+      link: 'https://pixeldrain.com/u/fVnUiYQU'
       button: 'Download'
-      size: '3.45 GB'
+      size: '3.71 GB'
     
     - quality: '1080p'
       link: 'https://drive.usercontent.google.com/download?id=1JPiCoh-8Usw3AQC8n8DVFmXZ8NbZVHOk&export=download&authuser=0'
@@ -318,14 +318,14 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: '3.06 GB'
+      link: 'https://mega.nz/file/xh9BkawD#lmBvUoJHxewf2l_kGEdTAcTjJqOz1we2ARoDMNQZbLc'
       button: 'Download'
-      size: 'https://mega.nz/file/xh9BkawD#lmBvUoJHxewf2l_kGEdTAcTjJqOz1we2ARoDMNQZbLc'
+      size: '3.06 GB'
     
     - quality: '480p'
-      link: '5.50 GB'
+      link: 'https://mega.nz/file/t1sU2BAQ#-IoH7MJeoh6mmbL0_23HXGz1EK6b6ZDbBunb9kFxlW0'
       button: 'Download'
-      size: 'https://mega.nz/file/t1sU2BAQ#-IoH7MJeoh6mmbL0_23HXGz1EK6b6ZDbBunb9kFxlW0'
+      size: '5.50 GB'
     
     - quality: '720p'
       link: '8.46 GB'

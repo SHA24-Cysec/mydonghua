@@ -40,12 +40,12 @@ keywords : 'Download Batch Battle Through the Heavens the Origin Subtitle Indone
 
 downloadGroups:
   
-  - title: '{{ replace .File.ContentBaseName "-" " " | title }} Batch Subtitle Indonesia'
+  - title: 'Battle Through the Heavens: the Origin Batch Subtitle Indonesia'
     
     downloads:
     
     - quality: '360p'
-      link: 'https://drive.usercontent.google.com/download?id=1Qe1AHs3C01X6KNO2ajS9JmUkBlKxiMYp&export=download&authuser=0'
+      link: 'https://drive.usercontent.google.com/download?id=1kF45TbPBZp7AI_OASseWdVeHPs67ugm9&export=download&authuser=0'
       button: 'Download'
       size: '167.44 MB'
     

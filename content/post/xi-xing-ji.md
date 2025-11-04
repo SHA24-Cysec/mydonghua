@@ -55,7 +55,7 @@ downloadGroups:
       size: '1.06 GB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1ucQ0Mn2djw8o6XcXq_YNWETB19A_479h&export=download&authuser=0'
+      link: 'https://www.mediafire.com/file/3qvkq0e5ym40aho/%255BAnichin%255D%255BXi_Xing_Ji%255D%255B720p%255D.zip/file'
       button: 'Download'
       size: '1.73 GB'
     

@@ -47,12 +47,12 @@ downloadGroups:
       size: '921.55 MB'
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=1MZjFU7gkpJ1s1x0q_J-AvChrjklwNZQH&export=download&authuser=0'
+      link: 'https://drive.usercontent.google.com/download?id=15l1KvM40GnHbCkgUcLz_hL0DFOx84zUg&export=download&authuser=0'
       button: 'Download'
       size: '1.74 GB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1T4e_cesNRUZikzDaEZ50OskewCyZCpdP&export=download&authuser=0'
+      link: 'https://drive.usercontent.google.com/download?id=1i5eQER04L9j8tiLEwm3cZRDurCz-KMAa&export=download&authuser=0'
       button: 'Download'
       size: '3.32 GB'
     

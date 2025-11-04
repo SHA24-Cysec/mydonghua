@@ -65,7 +65,7 @@ downloadGroups:
       size: '15 GB'
     
     - quality: '4K'
-      link: 'https://drive.usercontent.google.com/download?id=1d3AJoC069pdGN4jIk3iQKu5IFw7bMC8a&export=download&authuser=0'
-      button: 'Download (Episode 22-27)'
-      size: '5.95 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

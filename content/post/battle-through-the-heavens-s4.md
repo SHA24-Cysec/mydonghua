@@ -41,29 +41,60 @@ keywords : 'Download Batch Battle Through the Heavens S4 Subtitle Indonesia'
 
 downloadGroups:
   
-  - title: 'Battle Through the Heavens Season 4 Batch Subtitle Indonesia'
+  # Batch 1
+  - title: 'Battle Through the Heavens Season 4 Batch Subtitle Indonesia Episode 1-12'
     
     downloads:
     
     - quality: '360p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/PcoGQUmZ'
+      button: 'Download'
+      size: '1.23 GB'
     
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/kXgrCQ2L'
+      button: 'Download'
+      size: '2.37 GB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1R14FH_OWcYLl0mHfp3g74FaDEQk5t6Y0&export=download&authuser=0'
+      link: 'https://pixeldrain.com/u/tnM8v3DL'
       button: 'Download'
-      size: '8.50 GB'
+      size: '4.12 GB'
     
     - quality: '1080p'
+      link: 'https://pixeldrain.com/u/BMqTp4pW'
+      button: 'Download'
+      size: '5.51 GB'
+    
+    - quality: '4K'
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 2
+  - title: 'Battle Through the Heavens Season 4 Batch Subtitle Indonesia Episode 13-24'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://pixeldrain.com/u/Wgzm1uzn'
+      button: 'Download'
+      size: '1.78 GB'
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/qKDxSmAU'
+      button: 'Download'
+      size: '2.97 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/2iyMR92q'
+      button: 'Download'
+      size: '5.01 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/V1zeyw2U'
+      button: 'Download'
+      size: '7.35 GB'
     
     - quality: '4K'
       link: ''

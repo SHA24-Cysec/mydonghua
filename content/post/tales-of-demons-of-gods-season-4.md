@@ -63,7 +63,7 @@ downloadGroups:
       size: '1.69 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1QXfARX-Fs4_p_zVqIlhoqJR1GpPq5HP0&export=download&authuser=0'
+      link: 'https://drive.usercontent.google.com/download?id=1ztJ86CX_L0y7Tqk5NJfyOyBFK8OFWZ3K&export=download&authuser=0'
       button: 'Download'
       size: '2.00 GB'
     

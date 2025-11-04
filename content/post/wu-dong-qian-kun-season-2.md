@@ -46,9 +46,9 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://drive.usercontent.google.com/download?id=1q5nXwi-BY3BIWxqRO_OqDqKEuoSFD28k&export=download&authuser=0'
+      link: 'https://www.mediafire.com/file/dfeayt2f813bhrd/Anichin-WUDONGS2_1-12_360p.zip/file'
       button: 'Download'
-      size: '1.06 GB'
+      size: '1.05 GB'
     
     - quality: '480p'
       link: 'https://drive.usercontent.google.com/download?id=1cGs53V2rxoO2fgaEfWXpmXoV_MlgG1e8&export=download&authuser=0'

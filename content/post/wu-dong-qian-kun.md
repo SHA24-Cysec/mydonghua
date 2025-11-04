@@ -46,9 +46,9 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://drive.usercontent.google.com/download?id=1W8NGCmC9m3wm26G417zqAXgLywC7Q-XH&export=download&authuser=0'
+      link: 'https://www.mediafire.com/file/d24sagbnqxnscdv/Anichin-WUDONGS1_1-12_360p_Kazefuri.zip/file'
       button: 'Download'
-      size: '524.18 MB'
+      size: '525.99 MB'
     
     - quality: '480p'
       link: 'https://drive.usercontent.google.com/download?id=1cTyoCUuMTVoMyqvCQWiO_JvqPDrqMQXf&export=download&authuser=0'

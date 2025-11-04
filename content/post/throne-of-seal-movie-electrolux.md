@@ -63,7 +63,7 @@ downloadGroups:
       size: '2.11 GB'
     
     - quality: '4K'
-      link: 'https://drive.usercontent.google.com/download?id=1jSPNx9PcaoivE_foEwvwW1IrzHIYnWkd&export=download&authuser=0'
+      link: 'https://drive.usercontent.google.com/download?id=1pnYlwn-KIX78cr14cCY3HX2wbA0OVvyN&export=download&authuser=0'
       button: 'Download'
       size: '3.36 GB'
 ---

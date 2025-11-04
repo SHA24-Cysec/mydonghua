@@ -60,9 +60,9 @@ downloadGroups:
       size: '1.68 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1iHCAB9seu5OLRyQVHVAPC0klqqgLDqI9&export=download'
+      link: 'https://pixeldrain.com/u/2wv6B6Cx'
       button: 'Download'
-      size: '2.20 GB'
+      size: '2.37 GB'
     
     - quality: '4K'
       link: ''
