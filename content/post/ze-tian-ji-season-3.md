@@ -54,9 +54,9 @@ downloadGroups:
       size: ''
     
     - quality: '720p'
-      link: 'https://mega.nz/file/6tQRUaaQ#C_1MPCMtR11WYIXv2H34VpFLD3DY6OWHJUDqZceKA64'
+      link: 'https://pixeldrain.com/u/swCmkU8R'
       button: 'Download'
-      size: '1.21 GB'
+      size: '1.30 GB'
     
     - quality: '1080p'
       link: ''

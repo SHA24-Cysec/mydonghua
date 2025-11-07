@@ -49,9 +49,9 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1ldxC3lYfFNMgWIyZZQu3YPAR5AlLCZRd&export=download&authuser=0'
+      button: 'Download'
+      size: '1.10 GB'
     
     - quality: '720p'
       link: ''
@@ -59,9 +59,9 @@ downloadGroups:
       size: ''
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/GkA3Ha4L#jd2GcgU_HpE1gPwjNUD58ZzM79XC2XYVblbduY1W0qg'
-      button: 'Download'
-      size: '2.26 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''
