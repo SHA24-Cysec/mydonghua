@@ -22,10 +22,6 @@ release : 'Mar 01, 2019'
 rating : 8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/fox-spirit-matchmaker-season-7.webp
 image : /img/post/fox-spirit-matchmaker-season-7.webp

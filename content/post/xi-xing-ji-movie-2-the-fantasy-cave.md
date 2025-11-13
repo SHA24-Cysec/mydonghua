@@ -19,10 +19,6 @@ release : 'Aug 19, 2022'
 # Rating 1-10
 rating : 9.20
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-movie-2-the-fantasy-cave.webp
 image : /img/post/xi-xing-ji-movie-2-the-fantasy-cave.webp

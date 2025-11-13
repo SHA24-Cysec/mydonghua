@@ -18,10 +18,6 @@ release : 'Jan 04, 2022'
 # Rating 1-10
 rating : 8
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-soul-of-soldier-master.webp
 image : /img/post/the-soul-of-soldier-master.webp

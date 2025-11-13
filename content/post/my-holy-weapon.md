@@ -24,10 +24,6 @@ release : '2018'
 rating : 6.7
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/my-holy-weapon.webp
 image : /img/post/my-holy-weapon.webp

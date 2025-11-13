@@ -23,10 +23,6 @@ release : 'July 22, 2019'
 # Rating 1-10
 rating : 9.80
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/battle-through-the-heavens-s3.webp
 image : /img/post/battle-through-the-heavens-s3.webp

@@ -23,10 +23,6 @@ release : 'May 30, 2025'
 rating : 9.8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/renegade-immortal-movie-battle-of-the-gods.webp
 image : /img/post/renegade-immortal-movie-battle-of-the-gods.webp

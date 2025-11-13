@@ -20,10 +20,6 @@ release : 'Sep 10, 2020'
 # Rating 1-10
 rating : 8
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/scumbag-system.webp
 image : /img/post/scumbag-system.webp

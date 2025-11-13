@@ -21,10 +21,6 @@ release : 'Jan 14, 2023'
 rating : 8.8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/tales-of-demons-of-gods-season-7.webp
 image : /img/post/tales-of-demons-of-gods-season-7.webp

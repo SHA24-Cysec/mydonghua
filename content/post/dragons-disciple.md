@@ -19,10 +19,6 @@ release : 'Jan 28, 2022'
 # Rating 1-10
 rating : 8
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/dragon-disciple.webp
 image : /img/post/dragon-disciple.webp

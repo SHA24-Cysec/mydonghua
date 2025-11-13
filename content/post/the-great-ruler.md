@@ -24,10 +24,6 @@ release : 'Aug 7, 2019'
 rating : 7
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-great-ruler.webp
 image : /img/post/the-great-ruler.webp

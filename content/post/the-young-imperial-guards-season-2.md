@@ -22,10 +22,6 @@ release : '2017'
 rating : 8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-young-imperial-guards-season-2.webp
 image : /img/post/the-young-imperial-guards-season-2.webp

@@ -20,10 +20,6 @@ release : 'March 04, 2018'
 # Rating 1-10
 rating : 9.80
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-s2-special.webp
 image : /img/post/btth-s2-special.webp

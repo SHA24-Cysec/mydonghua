@@ -19,10 +19,6 @@ release : '2015'
 # Rating 1-10
 rating : 6.5
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/heibai-wushuang.webp
 image : /img/post/heibai-wushuang.webp

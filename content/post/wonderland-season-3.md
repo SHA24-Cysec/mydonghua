@@ -22,10 +22,6 @@ release : '2019'
 # Rating 1-10
 rating : 7
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wonderland-season-3.webp
 image : /img/post/wonderland-season-3.webp

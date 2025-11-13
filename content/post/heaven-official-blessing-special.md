@@ -22,10 +22,6 @@ release : 'Feb 16, 2021'
 rating : 9
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/heaven-official-blessing-special.webp
 image : /img/post/heaven-official-blessing-special.webp

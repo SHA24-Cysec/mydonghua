@@ -18,10 +18,6 @@ release : '2016'
 rating : 6.8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spiritual-domain-season-3.webp
 image : /img/post/spiritual-domain-season-3.webp

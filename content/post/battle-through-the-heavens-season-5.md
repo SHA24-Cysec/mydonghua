@@ -22,10 +22,6 @@ release : 'Jul 16, 2023'
 rating : 9.2
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/battle-through-the-heavens-season-5.webp
 image : /img/post/battle-through-the-heavens-season-5.webp

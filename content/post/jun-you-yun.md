@@ -20,10 +20,6 @@ release : 'Apr 21, 2022'
 rating : 7.8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/jun-you-yun.webp
 image : /img/post/jun-you-yun.webp

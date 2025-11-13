@@ -21,10 +21,6 @@ release : 'May 04, 2020'
 # Rating 1-10
 rating : 8.60
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-movie-1-goodbye-wukong.webp
 image : /img/post/xi-xing-ji-movie-1-goodbye-wukong.webp

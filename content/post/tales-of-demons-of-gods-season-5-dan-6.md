@@ -21,10 +21,6 @@ release : 'Oct 30, 2021'
 rating : 8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/tales-of-demons-of-gods-season-5-dan-6.webp
 image : /img/post/tales-of-demons-of-gods-season-5-dan-6.webp

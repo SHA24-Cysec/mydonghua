@@ -21,10 +21,6 @@ release : 'Jan 01, 2025'
 # Rating 1-10
 rating : 9.20
 
-# Layanan Streaming
-Streaming : 'Wu Dong Qian Kun Season 5 Playlist [DailyMotion]'
-LinkStreaming : 'https://dailymotion.com/playlist/x9heh2'
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun-s5.webp
 image : /img/post/wu-dong-qian-kun-s5.webp

@@ -18,10 +18,6 @@ release : '2021'
 # Rating 1-10
 rating : 8.83
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/link-click.webp
 image : /img/post/link-click.webp

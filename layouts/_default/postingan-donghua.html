@@ -62,13 +62,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p class="mt-4">
-                            Tidak ingin download Batch? Streaming Saja 
-                            <i class="fa-solid fa-arrow-right fa-fade mx-2"></i> 
-                            <a class="font-bold hover:text-sky-300" href="{{ .Params.LinkStreaming }}" target="_blank" rel="noopener noreferrer">
-                                {{ .Params.Streaming }}
-                            </a>
-                        </p>                        
                         {{ partial "download-batch" . }}
                     </div>
                     {{ partial "share-donghua" . }}
@@ -78,7 +71,7 @@
                 </div>
             </div>
             {{/*  Sidebar  */}}
-            {{ partial "sidebar" . }}
+                {{ partial "sidebar" . }}
             {{/*  Akhir Sidebar  */}}
         </main>
     </div>

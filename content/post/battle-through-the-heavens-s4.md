@@ -22,10 +22,6 @@ release : 'March 29, 2021'
 # Rating 1-10
 rating : 9.80
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-s4.webp
 image : /img/post/btth-s4.webp

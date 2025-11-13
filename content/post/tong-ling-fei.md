@@ -21,10 +21,6 @@ release : '2018'
 rating : 8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/tong-ling-fei.webp
 image : /img/post/tong-ling-fei.webp

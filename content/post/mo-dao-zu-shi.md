@@ -22,11 +22,6 @@ release : '2018'
 # Rating 1-10
 rating : 8.5
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : '#'
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/mo-dao-zu-shi.webp
 image : /img/post/mo-dao-zu-shi.webp

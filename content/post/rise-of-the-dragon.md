@@ -20,10 +20,6 @@ release : 'Jul 02, 2022'
 rating : 8.4
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/rise-of-the-dragon.webp
 image : /img/post/rise-of-the-dragon.webp

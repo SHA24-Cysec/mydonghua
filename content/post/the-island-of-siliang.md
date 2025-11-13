@@ -17,10 +17,6 @@ release : 'Jun 14, 2021'
 # Rating 1-10
 rating : 8
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-island-of-siliang.webp
 image : /img/post/the-island-of-siliang.webp

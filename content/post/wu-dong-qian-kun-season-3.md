@@ -20,10 +20,6 @@ release : 'May 01, 2022'
 rating : 8
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun-season-3.webp
 image : /img/post/wu-dong-qian-kun-season-3.webp

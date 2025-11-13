@@ -19,10 +19,6 @@ release : 'Dec 29, 2023'
 # Rating 1-10
 rating : 9.20
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/bu-liang-ren-the-legend-of-yuan-tiangang.webp
 image : /img/post/bu-liang-ren-the-legend-of-yuan-tiangang.webp

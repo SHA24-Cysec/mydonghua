@@ -21,10 +21,6 @@ release : '2017'
 rating : 6.7
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-fashi-s2.webp
 image : /img/post/quanzhi-fashi-s2.webp

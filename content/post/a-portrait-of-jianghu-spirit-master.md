@@ -21,10 +21,6 @@ release : '2015'
 # Rating 1-10
 rating : 7
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/a-portrait-of-jianghu-spirit-master.webp
 image : /img/post/a-portrait-of-jianghu-spirit-master.webp

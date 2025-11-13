@@ -19,10 +19,6 @@ release : 'Dec 08, 2021'
 # Rating 1-10
 rating : 8
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/legend-of-sho.webp
 image : /img/post/legend-of-sho.webp

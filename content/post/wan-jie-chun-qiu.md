@@ -22,10 +22,6 @@ release : 'Apr 13, 2020'
 rating : 7.7
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wan-jie-chun-qiu.webp
 image : /img/post/wan-jie-chun-qiu.webp

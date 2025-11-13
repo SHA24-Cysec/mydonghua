@@ -21,10 +21,6 @@ release : 'Jul 28, 2021'
 rating : 8.6
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-fashi-s5.webp
 image : /img/post/quanzhi-fashi-s5.webp

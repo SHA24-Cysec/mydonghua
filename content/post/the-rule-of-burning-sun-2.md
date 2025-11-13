@@ -21,10 +21,6 @@ release : 'Feb 12, 2021'
 # Rating 1-10
 rating : 9
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-rule-of-burning-sun-2.webp
 image : /img/post/the-rule-of-burning-sun-2.webp

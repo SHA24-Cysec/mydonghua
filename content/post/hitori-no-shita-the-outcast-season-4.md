@@ -21,10 +21,6 @@ release : 'Sep 24, 2021'
 # Rating 1-10
 rating : 7
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/hitori-no-shita-the-outcast-s4.webp
 image : /img/post/hitori-no-shita-the-outcast-s4.webp

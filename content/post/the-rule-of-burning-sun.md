@@ -24,10 +24,6 @@ release : 'Aug 06, 2020'
 # Rating 1-10
 rating : 8.60
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-rule-of-burning-sun.webp
 image : /img/post/the-rule-of-burning-sun.webp

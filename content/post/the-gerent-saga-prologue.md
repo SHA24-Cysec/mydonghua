@@ -19,10 +19,6 @@ release : 'Jul 06, 2021'
 rating : 8
 
 # Gunakan tag 'Belum tersedia jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-gerent-saga-prologue.webp
 image : /img/post/the-gerent-saga-prologue.webp

@@ -19,11 +19,6 @@ release : 'Jul 15, 2021'
 # Rating 1-10
 rating : 6.9
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : '#'
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/ze-tian-ji.webp
 image : /img/post/ze-tian-ji.webp

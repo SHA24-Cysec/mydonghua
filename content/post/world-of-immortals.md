@@ -18,10 +18,6 @@ release : 'Oct 29, 2024'
 # Rating 1-10
 rating : 8
 
-# Layanan Streaming
-Streaming : 'World of Immortals Playlist [DailyMotion]'
-LinkStreaming : 'https://dailymotion.com/playlist/x9t6e0'
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/world-of-immortals.webp
 image : /img/post/world-of-immortals.webp

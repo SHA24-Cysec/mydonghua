@@ -21,10 +21,6 @@ release : 'Jul 17, 2022'
 # Rating 1-10
 rating : 9.80
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-special-origin.webp
 image : /img/post/btth-special-origin.webp

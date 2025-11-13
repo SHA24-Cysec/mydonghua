@@ -22,10 +22,6 @@ release : 'Jan 18, 2021'
 # Rating 1-10
 rating : 7.3
 
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/daily-life-of-the-immortal-king.webp
 image : /img/post/daily-life-of-the-immortal-king.webp

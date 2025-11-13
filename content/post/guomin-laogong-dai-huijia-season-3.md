@@ -19,10 +19,6 @@ release : '2017'
 rating : 6
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/guomin-laogong-dai-huijia-s3.webp
 image : /img/post/guomin-laogong-dai-huijia-s3.webp

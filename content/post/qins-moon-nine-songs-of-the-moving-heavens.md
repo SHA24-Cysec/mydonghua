@@ -21,10 +21,6 @@ release : '2016'
 rating : 7.15
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/qins-moon-nine-songs-of-the-moving-heavens.webp
 image : /img/post/qins-moon-nine-songs-of-the-moving-heavens.webp

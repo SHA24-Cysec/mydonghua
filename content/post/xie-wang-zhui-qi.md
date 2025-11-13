@@ -23,10 +23,6 @@ release : '2019'
 rating : 6.7
 
 # Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
-# Layanan Streaming
-Streaming : 'Belum Tersedia'
-LinkStreaming : ''
-
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xie-wang-zhui-qi.webp
 image : /img/post/xie-wang-zhui-qi.webp
