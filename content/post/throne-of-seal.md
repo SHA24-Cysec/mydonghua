@@ -334,4 +334,64 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 11
+  - title: 'Throne of Seal Batch Subtitle Indonesia Episode 156-168'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/GoAat6B4'
+      button: 'Download'
+      size: '3.30 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/NL3cjyBa'
+      button: 'Download'
+      size: '6.07 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/9vithxnA'
+      button: 'Download'
+      size: '10 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 12
+  - title: 'Throne of Seal Batch Subtitle Indonesia Episode 169-180'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/g7pT7aW3'
+      button: 'Download'
+      size: '3.11 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/3vmZjzaM'
+      button: 'Download'
+      size: '5.69 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/BTRJDWdC'
+      button: 'Download'
+      size: '9.42 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
