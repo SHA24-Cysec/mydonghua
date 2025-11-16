@@ -3,24 +3,6 @@
         {{/*  Elemen Iklan  */}}
         {{ partial "widget/ads-300x250" . }}
         {{/*  Akhir Elemen Iklan  */}}
-        {{/*  Elemen Media Sosial  */}}
-        <div class="bg-slate-300 mb-4 p-4">
-            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl">
-                <i class="fa-solid fa-heart"></i>Sosial Media Kami
-            </span>
-            <div class="flex items-center gap-4 flex-wrap justify-evenly">
-                <a title="Follow Facebook Page" class="flex gap-2 font-bold items-center bg-slate-400 p-2 rounded-lg hover:bg-slate-200" href="https://bit.ly/mydonghua" target="_blank" rel="nofollow noopener"><i class="fa-brands fa-facebook text-3xl"></i>Facebook</a>
-                <a title="Follow Dailymotion Channel" class="flex gap-2 font-bold items-center bg-slate-400 p-2 rounded-lg hover:bg-slate-200" href="https://dailymotion.com/donghuabatch.adm" target="_blank" rel="nofollow noopener">
-                    <img loading="eager" width="32" height="32" src='{{ relURL "img/dailymotion-logo.svg" }}' alt="DailyMotion">
-                    DonghuaBatch
-                </a>
-                <a title="Follow BiliBili Channel" class="flex gap-2 font-bold items-center bg-slate-400 p-2 rounded-lg hover:bg-slate-200" href="https://bit.ly/DonghuaBatch" target="_blank" rel="nofollow noopener">
-                    <img loading="eager" width="32" height="32" src='{{ relURL "img/bilibili-logo.svg" }}' alt="BiliBili">
-                    DonghuaBatch
-                </a>
-            </div>
-        </div>
-        {{/*  Akhir Elemen Media Sosial  */}}
         {{/*  Elemen Genre  */}}
         <div class="bg-slate-300 p-4">
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Genre</span>
@@ -36,7 +18,7 @@
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Studio</span>
             <div class="text-center h-80 overflow-y-auto grid md:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-2">
                 {{ range $name, $taxonomy := .Site.Taxonomies.studio }}
-                <a title="{{ $name }}" class="bg-slate-400 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-200 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title | truncate 15 }}</a>
+                <a title="{{ $name }}" class="bg-slate-400 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-200 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
             </div>
         </div>
@@ -46,7 +28,7 @@
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Season</span>
             <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-2 overflow-y-auto h-80">
                 {{ range $name, $taxonomy := .Site.Taxonomies.season }}
-                <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-200 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title | truncate 10 }}</a>
+                <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-200 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
             </div>
         </div>

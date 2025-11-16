@@ -39,22 +39,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/M1sW3SwK#OP2oeKHMCsDwU3Y0bOZuz8UEOtTrCyjeJX5DgJWjBQg'
+      link: 'https://pixeldrain.com/u/QTTwqryS'
       button: 'Download'
-      size: '336.09 MB'
+      size: '353 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/0s8QiYDL#PVDUnBH-CWXWOVFAxtOeHZ3HOP7TbovY15UfDK2cPAg'
+      link: 'https://pixeldrain.com/u/oM4pcGrQ'
       button: 'Download'
-      size: '651.07 MB'
+      size: '683 MB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/s49QyKCR#3ifyw9YojD-_KAEmGcFvMRzA3u4KcibxDk4CnO72i24'
+      link: 'https://www.mediafire.com/file/pn123x6u4xhqspg/%255BAnichinAsia%255D%255BThe_Mirror%25EF%25BC%259ATwin_Cities_Prologue%255D%255B01-04%255D%255B720p%255D.zip/file'
       button: 'Download'
-      size: '964.08 MB'
+      size: '964.77 MB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/Z48UCYBJ#idlxvbZJGFZQ6vNt8s8DeOpXhfEvLMxS109AW_m2L2I'
+      link: 'https://www.mediafire.com/file/775svfoqetem2lj/%255BAnichinAsia%255D%255BThe_Mirror%25EF%25BC%259ATwin_Cities_Prologue%255D%255B01-04%255D%255B1080p%255D.zip/file'
       button: 'Download'
       size: '1.26 GB'
     

@@ -1,7 +1,7 @@
 ---
 date : '2025-09-26T00:54:37+07:00'
 draft : false
-title : 'Download Batch Hitori No Shita the Return of Tetsumaru Movie Subtitle Indonesia'
+title : 'Download Batch Hitori No Shita: the Return of Tetsumaru Movie Subtitle Indonesia'
 studio :
     - 'Qiyuan Yinghua'
 season : 'Winter 2024'
@@ -26,19 +26,19 @@ rating : 8
 thumbnail : /img/post/hitori-no-shita-the-return-of-tetsumaru-movie.webp
 image : /img/post/hitori-no-shita-the-return-of-tetsumaru-movie.webp
 
-alt : 'Hitori No Shita the Return of Tetsumaru Movie'
+alt : 'Hitori No Shita: the Return of Tetsumaru Movie'
 url: 'hitori-no-shita-the-return-of-tetsumaru-movie'
 layout : postingan-donghua
 sinopsis : 'Zhang Chulan dan Feng Baobao kembali terjebak dalam pusaran konflik dunia pengguna qi ketika sosok legendaris bernama Tetsumaru bangkit dari bayangan masa lalu. Kehadiran Tetsumaru mengguncang keseimbangan kekuatan antar organisasi, membuka rahasia kelam yang selama ini tersembunyi. Saat berbagai pihak berusaha merebut kendali, Chulan harus mengandalkan kecerdasannya, sementara Baobao dengan kekuatan uniknya menjadi penopang utama. Bersama, keduanya menghadapi pertarungan sengit yang bukan hanya menguji kemampuan, tetapi juga kepercayaan satu sama lain.'
-deskripsi : 'Download Batch Hitori No Shita the Return of Tetsumaru Movie Subtitle Indonesia'
-keywords : 'Download Batch Hitori No Shita the Return of Tetsumaru Movie Subtitle Indonesia'
+deskripsi : 'Download Batch Hitori No Shita: the Return of Tetsumaru Movie Subtitle Indonesia'
+keywords : 'Download Batch Hitori No Shita: the Return of Tetsumaru Movie Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
 downloadGroups:
   
   # Batch 1
-  - title: 'Hitori No Shita the Return of Tetsumaru Movie Batch Subtitle Indonesia'
+  - title: 'Hitori No Shita: the Return of Tetsumaru Movie Batch Subtitle Indonesia'
     
     downloads:
     

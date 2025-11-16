@@ -1,7 +1,7 @@
 ---
 date : '2025-03-14T00:37:26+07:00'
 draft : false
-title : 'Download Batch Spare Me Great Lord Subtitle Indonesia'
+title : 'Download Batch Spare Me, Great Lord! Subtitle Indonesia'
 studio :
     - 'BigFireBird Animation'
 season : 'Fall 2021'
