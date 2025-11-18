@@ -276,4 +276,154 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 9
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 86-105'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/rsi8BJpy'
+      button: 'Download'
+      size: '2.63 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/pYWXGTze'
+      button: 'Download'
+      size: '5.81 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/VcEzqCy7'
+      button: 'Download'
+      size: '9.37 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 10
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 106-125'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/d4dSNBja'
+      button: 'Download'
+      size: '2.69 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/EUFFxiyy'
+      button: 'Download'
+      size: '5.92 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/Wy3yzGk9'
+      button: 'Download'
+      size: '10.50 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 11
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 126-145'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/DUia8CTu'
+      button: 'Download'
+      size: '2.50 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/7vTBsbPH'
+      button: 'Download'
+      size: '2.60 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/zvofBjUM'
+      button: 'Download'
+      size: '10.40 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 12
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 146-165'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/VFLFykde'
+      button: 'Download'
+      size: '2.46 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/Ldz81ubo'
+      button: 'Download'
+      size: '5.37 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/W2UvmaCw'
+      button: 'Download'
+      size: '10.20 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 13
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 166-180'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/yAVqR8ds'
+      button: 'Download'
+      size: '2.83 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/VTVaYTUF'
+      button: 'Download'
+      size: '5.53 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/9UH6xdGW'
+      button: 'Download'
+      size: '9.84 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
