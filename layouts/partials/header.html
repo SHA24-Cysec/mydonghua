@@ -1,3 +1,23 @@
-<header class="mt-4 w-full max-w-screen-xl bg-slate-300 mx-auto">
-    <img title="{{ .Title }}" class="mx-auto object-cover" width="768" height="384" fetchpriority="high" src='{{ relURL "img/DonghuaBatch.webp"}}' alt="{{ .Title }}">
+<header class="mt-4 w-full max-w-screen-xl mx-auto">
+    <img title="{{ .Title }}" class="mx-auto object-cover" width="720" height="384" fetchpriority="high" src='{{ relURL "img/DonghuaBatch.webp"}}' alt="{{ .Title }}">
 </header>
+
+<style>
+    header {
+    background: linear-gradient(260deg, #3e323b, #872e2e, #d1652d);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+</style>
