@@ -16,7 +16,7 @@
         <title>{{ .Title }}</title>
     {{ end }}
 </head>
-<body class="scroll-smooth overflow-x-hidden text-wrap bg-slate-200">
+<body class="scroll-smooth overflow-x-hidden text-wrap bg-slate-200 z-50">
     {{ partial "navbar" . }}
     {{ block "main" . }}
         
@@ -25,5 +25,6 @@
     {{ partial "js" . }}
     {{ partial "loading-screen" . }}
     {{ partial "safelinku" . }}
+    {{ partial "background-pic" . }}
 </body>
 </html>
