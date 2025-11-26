@@ -33,3 +33,42 @@
 {{ if hugo.IsProduction }}
   <script type='text/javascript' src='//jomistress.com/de/e5/92/dee592a4d17c214ff33421ca6b1e7ba6.js'></script>  
 {{ end }}
+
+{{ if hugo.IsProduction }}
+  {{/*  Script Anti Klik Kanan dan F12  */}}
+  <script>
+  // Blok klik kanan
+  document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+  });
+
+  // Blok F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U, Ctrl+Shift+J
+  document.addEventListener("keydown", function(e) {
+
+      // F12
+      if (e.key === "F12") {
+          e.preventDefault();
+      }
+
+      // Ctrl+Shift+I
+      if (e.ctrlKey && e.shiftKey && e.key === "I") {
+          e.preventDefault();
+      }
+
+      // Ctrl+Shift+C
+      if (e.ctrlKey && e.shiftKey && e.key === "C") {
+          e.preventDefault();
+      }
+
+      // Ctrl+Shift+J
+      if (e.ctrlKey && e.shiftKey && e.key === "J") {
+          e.preventDefault();
+      }
+
+      // Ctrl+U (view source)
+      if (e.ctrlKey && e.key === "U") {
+          e.preventDefault();
+      }
+  });
+  </script>
+{{ end }}

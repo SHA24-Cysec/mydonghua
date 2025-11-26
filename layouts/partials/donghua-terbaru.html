@@ -1,5 +1,6 @@
 <div class="md:py-4 py-2 mx-auto bg-slate-300 mt-4 p-4 max-w-screen-xl">
-    <span class="font-bold text-xl">Donghua Terbaru</span>
+    <span class="font-bold text-xl"><i class="fa fa-info-circle mr-2"></i>Donghua Terbaru</span>
+    <hr class="mt-4">
     <div class="mt-4">
         {{ range where .Site.RegularPages.ByDate.Reverse "Layout" "postingan-donghua" | first 5 }}
             <div class="flex bg-slate-200 p-4 mt-4 gap-4 md:flex-row flex-col items-center">

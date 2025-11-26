@@ -10,7 +10,7 @@
                         <span class="flex items-center gap-1 text-sm"><i class="fa-solid fa-user"></i>Posted by <strong>{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-500"></i></span>
                         <hr class="mt-4">
                         <h1 class="text-2xl mt-4"><strong>{{ .Title }}</strong></h1>
-                        <img title="{{ .Title }}" class="mt-4 h-[300px] w-[200px] mx-auto" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
+                        <img style="width: 200px !important;" title="{{ .Title }}" class="mt-4 h-[300px] mx-auto object-cover" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
                     </div>
                     <div class="bg-slate-300 mt-4 p-4">
                         {{- $rating := .Params.rating | default 0 -}}
