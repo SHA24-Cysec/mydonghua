@@ -17,8 +17,21 @@
         <div class="bg-slate-300 mt-4 p-4">
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Studio</span>
             <div class="text-center h-80 overflow-y-auto grid md:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-2">
-                {{ range $name, $taxonomy := .Site.Taxonomies.studio }}
-                <a title="{{ $name }}" class="bg-slate-400 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-200 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                {{ $names := dict }}
+                {{ range .Site.RegularPages }}
+                  {{ with .Params.studio }}
+                    {{ range . }}
+                      {{ $names = merge $names (dict . true) }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+
+                {{ range $name, $_ := $names }}
+                    {{ if not (in $name "-") }}
+                        <a title="{{ $name }}" class="bg-slate-400 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-200 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>
+                            {{ $name }}
+                        </a>
+                    {{ end }}
                 {{ end }}
             </div>
         </div>
@@ -28,7 +41,7 @@
             <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Season</span>
             <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-2 overflow-y-auto h-80">
                 {{ range $name, $taxonomy := .Site.Taxonomies.season }}
-                <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-200 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                    <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-200 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
             </div>
         </div>
