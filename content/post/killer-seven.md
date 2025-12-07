@@ -44,7 +44,7 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://drive.usercontent.google.com/download?id=16C6wDWxK05DWdhSNB4BRydY9COqp4LSo&export=download'
+      link: 'https://drive.usercontent.google.com/download?id=1DepLgdpRsWVCEgSro6sBkLVJuT0OrmiA&export=download&authuser=0'
       button: 'Download'
       size: '227 MB'
     

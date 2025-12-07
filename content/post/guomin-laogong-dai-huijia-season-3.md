@@ -49,7 +49,7 @@ downloadGroups:
       size: '773 MB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1l67P2RA3UJjbwP2MtvJXwIHnf2ddOvzu&export=download'
+      link: 'https://drive.usercontent.google.com/download?id=1vU8Qx-AjBTEP0iqgiT5-SxUj3pNmPots&export=download&authuser=0'
       button: 'Download'
       size: '991 MB'
     

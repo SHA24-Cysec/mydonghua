@@ -100,17 +100,17 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mitedrive.my.id/view/9755e723f119b01'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=DpxL4h9hO4PeEik6EFv-tg'
       button: 'Download'
       size: '665 MB'
     
     - quality: '480p'
-      link: 'https://mitedrive.my.id/view/53526fba62'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=UN3wVH6DhEN20jWoiUaEjg'
       button: 'Download'
       size: '1 GB'
     
     - quality: '720p'
-      link: 'https://mitedrive.my.id/view/600ac81e8199'
+      link: 'https://mega.nz/file/p8RzkCiB#7SlZoS5b5sFYsf90d8ruhMQTBD1NuGe7fJUPTAZ9OGA'
       button: 'Download'
       size: '2 GB'
     

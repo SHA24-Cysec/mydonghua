@@ -71,7 +71,7 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mitedrive.com/view/tO5bwP'
+      link: 'https://www.terabox.app/sharing/link?surl=JCXNRgcNagePWQJxOWEVww'
       button: 'Download'
       size: '830 MB'
     
@@ -81,7 +81,7 @@ downloadGroups:
       size: '1.65 GB'
     
     - quality: '720p'
-      link: 'https://mitedrive.com/view/PM6Hx3'
+      link: 'https://www.terabox.app/sharing/link?surl=JCXNRgcNagePWQJxOWEVww'
       button: 'Download'
       size: '3 GB'
     
