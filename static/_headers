@@ -5,4 +5,4 @@
   X-Content-Type-Options: nosniff
 
   # Cache Control untuk semua konten
-  Cache-Control: public, no-cache, no-store, max-age=0, must-revalidate
+  Cache-Control: public, max-age=600, must-revalidate

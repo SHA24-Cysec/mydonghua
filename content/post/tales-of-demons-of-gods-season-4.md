@@ -89,7 +89,7 @@ downloadGroups:
       size: '1.84 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1vWMa_27goW3O8cFSy3WJTI6FGtE6Z-0L&export=download&authuser=0'
+      link: 'https://acefile.co/f/30381592/kusonime-tales-of-demons-and-gods-s4-026-052-1080p-rar'
       button: 'Download'
       size: '3.39 GB'
     

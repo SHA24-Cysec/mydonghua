@@ -38,7 +38,7 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://drive.usercontent.google.com/download?id=14XzJy7cpxZCNrMKp6ZbdqrAgnufdbCxr&export=download&authuser=0'
+      link: 'https://acefile.co/f/48051771/anichinlegend-of-exorcism01-13360p-zip'
       button: 'Download'
       size: '1.09 GB'
     

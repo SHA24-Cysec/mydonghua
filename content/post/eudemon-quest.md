@@ -48,7 +48,7 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=12gsmEvlXy4UeYvP0Ue2F5YbTBSm9rqWd&export=download&authuser=0'
+      link: 'https://acefile.co/f/30883692/huan-jie-wang-480p-rar'
       button: 'Download'
       size: '1 GB'
     
