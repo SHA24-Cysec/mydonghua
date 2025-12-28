@@ -42,12 +42,12 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://acefile.co/f/55621149/you-are-my-glory202101-10360p-zip'
+      link: 'https://acefile.co/f/55621149'
       button: 'Download'
       size: '845.33 MB'
     
     - quality: '480p'
-      link: 'https://acefile.co/f/55621151/you-are-my-glory202101-10480p-zip'
+      link: 'https://acefile.co/f/55621151'
       button: 'Download'
       size: '1.28 GB'
     
@@ -57,7 +57,7 @@ downloadGroups:
       size: ''
     
     - quality: '1080p'
-      link: 'https://acefile.co/f/55621153/you-are-my-glory202101-101080p-zip'
+      link: 'https://acefile.co/f/55621153'
       button: 'Download'
       size: '2.80 GB'
     
@@ -72,22 +72,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://acefile.co/f/55621409/you-are-my-glory202111-20360p-zip'
+      link: 'https://acefile.co/f/55621409'
       button: 'Download'
       size: '816.34 MB'
     
     - quality: '480p'
-      link: 'https://acefile.co/f/55621412/you-are-my-glory202111-20480p-zip'
+      link: 'https://acefile.co/f/55621412'
       button: 'Download'
       size: '1.23 GB'
     
     - quality: '720p'
-      link: 'https://acefile.co/f/55621414/you-are-my-glory202111-20720p-zip'
+      link: 'https://acefile.co/f/55621414'
       button: 'Download'
       size: '1.92 GB'
     
     - quality: '1080p'
-      link: 'https://acefile.co/f/55621417/you-are-my-glory202111-201080p-zip'
+      link: 'https://acefile.co/f/55621417'
       button: 'Download'
       size: '2.88 GB'
     
@@ -102,22 +102,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://acefile.co/f/55621422/you-are-my-glory202121-32360p-zip'
+      link: 'https://acefile.co/f/55621422'
       button: 'Download'
       size: '1 GB'
     
     - quality: '480p'
-      link: 'https://acefile.co/f/55621425/you-are-my-glory202121-32480p-zip'
+      link: 'https://acefile.co/f/55621425'
       button: 'Download'
       size: '1.62 GB'
     
     - quality: '720p'
-      link: 'https://acefile.co/f/55621427/you-are-my-glory202121-32720p-zip'
+      link: 'https://acefile.co/f/55621427'
       button: 'Download'
       size: '1.92 GB'
     
     - quality: '1080p'
-      link: 'https://acefile.co/f/55621433/you-are-my-glory202121-321080p-zip'
+      link: 'https://acefile.co/f/55621433'
       button: 'Download'
       size: '3.86 GB'
     
