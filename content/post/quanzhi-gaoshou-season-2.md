@@ -40,7 +40,7 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://acefile.co/f/32848712/anichinquan-zhi-gao-shou-2360p-zip'
+      link: 'https://drive.usercontent.google.com/download?id=15566vn7l1Ik3dENeYPVuhBIxbl5PTyRY&export=download&authuser=0'
       button: 'Download'
       size: '1.10 GB'
     
