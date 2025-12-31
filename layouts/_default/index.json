@@ -1,6 +1,6 @@
 {{- $index := slice -}}
 
-{{- range .Site.RegularPages }}
+{{- range where .Site.RegularPages "Layout" "postingan-donghua" -}}
   {{- $item := dict 
       "title" .Title 
       "content" .Plain 
@@ -9,15 +9,15 @@
   {{- $index = $index | append $item -}}
 {{- end -}}
 
-{{- range $taxonomyName, $taxonomy := .Site.Taxonomies }}
-  {{- range $term, $_ := $taxonomy }}
+{{- range $taxonomyName, $taxonomy := .Site.Taxonomies -}}
+  {{- range $term, $_ := $taxonomy -}}
     {{- $item := dict
         "title" (title $term)
         "content" (printf "Taksonomi %s: %s" $taxonomyName $term)
         "permalink" (print $.Site.BaseURL $taxonomyName "/" (urlize $term))
     -}}
     {{- $index = $index | append $item -}}
-  {{- end }}
-{{- end }}
+  {{- end -}}
+{{- end -}}
 
 {{- $index | jsonify -}}
