@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<div class="bg-gray-800" id="particles-js"></div>
+<style>
+    #particles-js {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        z-index: -60;
+    }
+</style>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#00eaff" },
+    shape: { type: "circle" },
+    opacity: { value: 0.15 },
+    size: { value: 3 },
+    move: {
+      enable: true,
+      speed: 1
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "repulse" }
+    }
+  }
+});
+</script>
