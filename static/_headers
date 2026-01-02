@@ -6,3 +6,8 @@
 
   # Cache Control untuk semua konten
   Cache-Control: public, max-age=600, must-revalidate
+
+/img/*,
+/favicon.ico
+  # Cache Asset Image
+  Cache-Control: public, max-age=31536000, immutable
