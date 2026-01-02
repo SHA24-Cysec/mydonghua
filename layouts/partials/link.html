@@ -1,5 +1,5 @@
 {{ with resources.Get "main.css" }}
-    {{ $minified := . | minify | fingerprint }}
+    {{ $minified := . | minify }}
     <link rel="stylesheet" href="{{ $minified.RelPermalink }}">
 {{ end }}
 {{ with resources.Get "favicon.ico" }}
