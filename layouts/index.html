@@ -4,16 +4,19 @@
     <div class="my-4 mx-auto max-w-screen-xl">
         <main class="flex gap-4 flex-col lg:flex-row">
             {{/*  Main Content  */}}
-            <div class="bg-slate-300" style="flex-basis: 900px;">
+            <div class="bg-slate-300 bg-opacity-50" style="flex-basis: 900px;">
                 <div class="flex flex-wrap flex-col">
-                    <div class="grid-cols-2 grid p-4 justify-items-center grid-rows-1 md:grid-cols-4 gap-2 w-full">
+                    <div class="grid-cols-2 grid p-4 justify-items-center grid-rows-1 md:grid-cols-4 gap-4 w-full">
                         {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
                         {{ $paginator := .Paginate $pages.ByDate.Reverse 16 }}
                         {{ range $paginator.Pages }}
-                        <div class="group p-2">
-                            <a title="{{ .Title }}" href="{{ .Permalink }}" class="flex gap-1 rounded-lg h-full group-hover:bg-slate-200 flex-col w-full">
-                                <img loading="lazy" class="h-[300px] group-hover:scale-[1.01] w-[200px] rounded-t-lg transition duration-300 object-cover" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
-                                <span class="w-full font-bold max-w-44 mx-auto mt-2 text-center">{{ .Title }}</span>
+                        <div class="group w-full h-full rounded-lg">
+                            <a title="{{ .Title }}" href="{{ .Permalink }}" class="block relative rounded-lg bg-slate-200 w-full h-auto overflow-hidden">
+                                <img loading="lazy" class="h-[175px] md:h-[300px] group-hover:scale-110 rounded-lg rounded-t-lg transition duration-300 object-cover w-full" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
+                                <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">{{ .Params.type }}</span>
+                            </a>
+                            <a class="w-full h-auto block text-center p-2 text-wrap" href="{{ .Permalink }}">
+                                <span class="font-bold text-white group-hover:text-sky-300">{{ .Title }}</span>
                             </a>
                         </div>
                         {{ end }}
@@ -44,6 +47,7 @@
                     }
                     .page-item a:hover {
                         background-color:  aliceblue;
+                        color: #7dd3fc;
                     }
                     .page-item.active a {
                         background-color: aliceblue;

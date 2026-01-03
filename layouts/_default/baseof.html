@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" dir="ltr">
+<html lang="id" dir="ltr" class="scroll-smooth box-border overflow-x-hidden">
 <head>
     {{ partial "meta" . }}
     {{ partial "link" . }}
@@ -16,7 +16,7 @@
         <title>{{ .Title }}</title>
     {{ end }}
 </head>
-<body class="scroll-smooth overflow-x-hidden text-wrap bg-slate-200 z-50">
+<body class="text-wrap bg-slate-200 z-50">
     {{ partial "navbar" . }}
     {{ block "main" . }}
         

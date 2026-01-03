@@ -1,21 +1,31 @@
-<aside style="flex-basis: 380px;" class="w-full">
+<aside style="flex-basis: 380px;" class="w-full text-white">
     <div class="flex flex-col flex-wrap">
         {{/*  Elemen Iklan  */}}
         {{ partial "widget/ads-300x250" . }}
         {{/*  Akhir Elemen Iklan  */}}
         {{/*  Elemen Genre  */}}
-        <div class="bg-slate-300 p-4">
-            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Genre</span>
-            <div class="text-center overflow-y-auto h-80 grid lg:grid-cols-3 gap-2 md:grid-cols-6 grid-cols-2">
+        <div class="bg-slate-300 bg-opacity-50 p-4">
+            <div class="flex justify-center items-center relative mb-4">
+                <span class="font-bold border-white z-50 bg-sky-300 border p-2 pl-4 w-fit absolute top-1.5 mx-auto rounded-full select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Genre</span>
+                <div class="w-full py-8">
+                    <hr>
+                </div>
+            </div>
+            <div class="text-center  overflow-y-auto h-80 grid lg:grid-cols-3 gap-2 md:grid-cols-6 grid-cols-2">
                 {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
-                <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap justify-center font-bold hover:bg-slate-200 rounded-lg p-2" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                <a title="{{ $name }}" class="bg-slate-400 hover:text-sky-300 bg-opacity-50 flex items-center text-wrap justify-center font-bold hover:bg-slate-200 rounded-lg p-2" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
             </div>
         </div>
         {{/*  Akhir Elemen Genre  */}}
         {{/*  Elemen Studio  */}}
-        <div class="bg-slate-300 mt-4 p-4">
-            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Studio</span>
+        <div class="bg-slate-300 bg-opacity-50 mt-4 p-4">
+            <div class="flex justify-center items-center relative mb-4">
+                <span class="font-bold border-white z-50 bg-sky-300 border p-2 pl-4 w-fit absolute top-1.5 mx-auto rounded-full select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Studio</span>
+                <div class="w-full py-8">
+                    <hr>
+                </div>
+            </div>
             <div class="text-center h-80 overflow-y-auto grid md:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-2">
                 {{ $names := dict }}
                 {{ range .Site.RegularPages }}
@@ -28,7 +38,7 @@
 
                 {{ range $name, $_ := $names }}
                     {{ if not (in $name "-") }}
-                        <a title="{{ $name }}" class="bg-slate-400 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-200 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>
+                        <a title="{{ $name }}" class="bg-slate-400 hover:text-sky-300 bg-opacity-50 h-full p-2 w-full flex items-center justify-center font-bold hover:bg-slate-200 rounded-lg" href='{{ "studio/" | relLangURL }}{{ $name | urlize }}'>
                             {{ $name }}
                         </a>
                     {{ end }}
@@ -37,33 +47,48 @@
         </div>
         {{/*  Akhir Elemen Studio  */}}
         {{/*  Elemen Season  */}}
-        <div class="bg-slate-300 mt-4 p-4">
-            <span class="font-bold select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Season</span>
+        <div class="bg-slate-300 bg-opacity-50 mt-4 p-4">
+            <div class="flex justify-center items-center relative mb-4">
+                <span class="font-bold border-white z-50 bg-sky-300 border p-2 pl-4 w-fit absolute top-1.5 mx-auto rounded-full select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Season</span>
+                <div class="w-full py-8">
+                    <hr>
+                </div>
+            </div>
             <div class="grid text-center grid-cols-2 md:grid-cols-8 lg:grid-cols-2 gap-2 overflow-y-auto h-80">
                 {{ range $name, $taxonomy := .Site.Taxonomies.season }}
-                    <a title="{{ $name }}" class="bg-slate-400 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-200 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
+                    <a title="{{ $name }}" class="bg-slate-400 hover:text-sky-300 bg-opacity-50 flex items-center text-wrap p-2 justify-center font-bold hover:bg-slate-200 rounded-lg py-1" href='{{ "season/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
                 {{ end }}
             </div>
         </div>
         {{/*  Akhir Elemen Season  */}}
         {{/*  Elemen Support Kami  */}}
-        <div class="bg-slate-300 p-4 mt-4">
-            <span class="font-bold mb-4 select-none flex items-center gap-2 text-2xl"><i class="fa-solid fa-leaf"></i>Support Kami</span>
+        <div class="bg-slate-300 bg-opacity-50 p-4 mt-4">
+            <div class="flex justify-center items-center relative mb-4">
+                <span class="font-bold border-white z-50 bg-sky-300 border p-2 pl-4 w-fit absolute top-1.5 mx-auto rounded-full select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-leaf"></i>Support Kami</span>
+                <div class="w-full py-8">
+                    <hr>
+                </div>
+            </div>
             <div class="flex items-center gap-4 px-4 flex-wrap flex-row justify-evenly">
-                <a rel="nofollow noopener" target="_blank" href="https://saweria.co/sha24">
+                <a rel="nofollow noopener" target="_blank" href="https://saweria.co/DonghuaBatch">
                     <img class="rounded-lg" width="150" height="150" src="/img/saweria.webp" alt="PayPal">
                 </a>
             </div>
         </div>
         {{/*  Akhir Elemen Support Kami  */}}
         {{/*  Elemen Pasang Iklan  */}}
-        <div class="bg-slate-300 p-4 mt-4">
-            <span class="font-bold select-none flex items-center gap-2 text-2xl"><i class="fa-solid fa-rocket"></i>Pasang Iklan</span>
+        <div class="bg-slate-300 bg-opacity-50 p-4 mt-4">
+            <div class="flex justify-center items-center relative mb-4">
+                <span class="font-bold border-white z-50 bg-sky-300 border p-2 pl-4 w-fit absolute top-1.5 mx-auto rounded-full select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-rocket"></i>Pasang Iklan</span>
+                <div class="w-full py-8">
+                    <hr>
+                </div>
+            </div>
             <div class="flex items-center justify-center mt-4 flex-col">
-                <a target="_blank" rel="nofollow noopener" href="mailto:donghuabatch.adm@gmail.com">
-                    <img class="rounded-lg" width="150" src="/img/gmail.webp" alt="">
+                <a class="group" target="_blank" rel="nofollow noopener" href="mailto:donghuabatch.adm@gmail.com">
+                    <img class="rounded-lg mx-auto" width="150" src="/img/gmail.webp" alt="">
+                    <span class="font-bold text-white group-hover:text-sky-300">donghuabatch.adm@gmail.com</span>
                 </a>
-                <span class="font-bold opacity-50">donghuabatch.adm@gmail.com</span>
             </div>
         </div>
         {{/*  Akhir Elemen Pasang Iklan  */}}

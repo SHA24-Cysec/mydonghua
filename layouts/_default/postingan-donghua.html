@@ -6,18 +6,18 @@
             {{/*  Main Content  */}}
             <div style="flex-basis: 900px;">
                 <div class="w-full">
-                    <div class="bg-slate-300 p-4">
-                        <span class="flex items-center gap-1 text-sm"><i class="fa-solid fa-user"></i>Posted by <strong>{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-500"></i></span>
+                    <div class="bg-slate-300 bg-opacity-50 p-4">
+                        <span class="flex items-center gap-1 text-sm text-white"><i class="fa-solid fa-user"></i>Posted by <strong>{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-500"></i></span>
                         <hr class="mt-4">
-                        <h1 class="text-2xl mt-4"><strong>{{ .Title }}</strong></h1>
+                        <h1 class="text-2xl mt-4 text-white"><strong>{{ .Title }}</strong></h1>
                         <img style="width: 200px !important;" title="{{ .Title }}" class="mt-4 h-[300px] mx-auto object-cover" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
                     </div>
-                    <div class="bg-slate-300 mt-4 p-4">
+                    <div class="bg-slate-300 bg-opacity-50 mt-4 p-4">
                         {{- $rating := .Params.rating | default 0 -}}
                         {{- $stars := div (mul $rating 5) 10 -}}
 
                         <div class="flex items-center mb-2 flex-wrap">
-                            <strong class="mr-2">Rating: {{ $rating }}</strong>
+                            <strong class="mr-2 text-white">Rating: {{ $rating }}</strong>
                             <div class="bg-slate-400 p-1 rounded-lg flex-wrap flex items-center">
                                 {{ range seq 5 }}
                                     {{ if le . $stars }}
@@ -28,10 +28,10 @@
                                 {{ end }}
                             </div>
                         </div>
-                        <p><strong>Sinopsis:</strong> {{ .Params.sinopsis }}</p>
+                        <p class="text-white"><strong>Sinopsis:</strong> {{ .Params.sinopsis }}</p>
                         <div class="mt-8 flex gap-2 flex-wrap flex-row">
                             {{ range .Params.genre }}
-                                <a class="bg-slate-400 hover:bg-slate-200 font-bold w-max p-2 rounded-lg" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
+                                <a class="bg-slate-400 hover:bg-slate-200 hover:text-sky-300 text-white font-bold w-max p-2 rounded-lg" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
                             {{ end }}
                         </div>
                         <div class="overflow-x-auto w-full mx-auto max-w-max select-none">
