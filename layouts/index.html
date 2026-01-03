@@ -10,9 +10,9 @@
                         {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
                         {{ $paginator := .Paginate $pages.ByDate.Reverse 16 }}
                         {{ range $paginator.Pages }}
-                        <div class="group w-full h-full rounded-lg">
+                        <div class="group w-full h-auto rounded-lg">
                             <a title="{{ .Title }}" href="{{ .Permalink }}" class="block relative rounded-lg bg-slate-200 h-auto mx-auto overflow-hidden">
-                                <img loading="lazy" class="group-hover:scale-110 w-full h-[204px] md:h-[300px] rounded-lg rounded-t-lg transition duration-300 object-cover mx-auto" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
+                                <img loading="lazy" class="group-hover:scale-110 w-full h-[250px] md:h-[300px] rounded-lg rounded-t-lg transition duration-300 object-cover mx-auto" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
                                 <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">{{ .Params.type }}</span>
                             </a>
                             <a class="w-full h-auto block text-center py-2 text-wrap" href="{{ .Permalink }}">
