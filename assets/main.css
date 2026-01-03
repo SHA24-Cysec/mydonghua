@@ -630,6 +630,10 @@ video {
   z-index: 9999;
 }
 
+.z-\[50\] {
+  z-index: 50;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -740,10 +744,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.w-\[136px\] {
-  width: 136px;
 }
 
 .w-\[250px\] {
@@ -1377,10 +1377,6 @@ video {
 
   .md\:w-auto {
     width: auto;
-  }
-
-  .md\:w-full {
-    width: 100%;
   }
 
   .md\:max-w-7xl {
