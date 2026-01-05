@@ -40,24 +40,29 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mitedrive.com/view/SP1oQPEQTb'
+      link: 'https://lbx.to/f/ajXS5pU'
       button: 'Download'
-      size: '699 MB'
+      size: '698.63 MB'
     
     - quality: '480p'
-      link: 'https://mitedrive.com/view/XPY3uAOJAU'
+      link: 'https://lbx.to/f/IltmDEo'
       button: 'Download'
-      size: '1 GB'
+      size: '1.19 GB'
     
     - quality: '720p'
-      link: 'https://mitedrive.com/view/9BqcUDLv3k'
+      link: 'https://lbx.to/f/inMxPPB'
       button: 'Download'
-      size: '2 GB'
+      size: '1.79 GB'
     
     - quality: '1080p'
-      link: 'https://mitedrive.com/view/XbTBAqPnHf'
+      link: 'https://lbx.to/f/yML59iu'
       button: 'Download'
-      size: '2 GB'
+      size: '1.86 GB'
+
+    - quality: '1080p (Episode 00, 3, 5, 8)'
+      link: 'https://lbx.to/f/Ep2XqG2'
+      button: 'Download'
+      size: '711.81 MB'
     
     - quality: '4K'
       link: ''

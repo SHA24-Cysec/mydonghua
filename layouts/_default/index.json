@@ -1,22 +1,29 @@
 {{- $index := slice -}}
+{{- $counter := 1 -}}
 
+{{- /* Loop postingan */ -}}
 {{- range where .Site.RegularPages "Layout" "postingan-donghua" -}}
   {{- $item := dict 
+      "id" $counter
       "title" .Title 
       "content" .Plain 
       "permalink" .Permalink 
   -}}
   {{- $index = $index | append $item -}}
+  {{- $counter = add $counter 1 -}}
 {{- end -}}
 
+{{- /* Loop taksonomi */ -}}
 {{- range $taxonomyName, $taxonomy := .Site.Taxonomies -}}
   {{- range $term, $_ := $taxonomy -}}
     {{- $item := dict
+        "id" $counter
         "title" (title $term)
         "content" (printf "Taksonomi %s: %s" $taxonomyName $term)
         "permalink" (print $.Site.BaseURL $taxonomyName "/" (urlize $term))
     -}}
     {{- $index = $index | append $item -}}
+    {{- $counter = add $counter 1 -}}
   {{- end -}}
 {{- end -}}
 
