@@ -18,20 +18,9 @@
     <a class="hover:bg-sky-400 hover:text-white hover:rounded-full flex items-center gap-1 text-md p-2 w-full md:w-auto" href="{{ .Site.BaseURL }}">
       <i class="fa-solid fa-house"></i> Beranda
     </a>
-
-    <div class="relative w-full md:w-auto">
-      <button id="tombolGenre" class="hover:bg-sky-400 hover:rounded-full hover:text-white w-full md:w-auto cursor-pointer flex items-center gap-1 text-md p-2">
-        <i id="folder" class="fa-solid fa-folder"></i>
-        <span>Genre</span>
-        <i class="transition duration-300 fa-solid fa-chevron-down" id="arrowGenre" name="chevron-down"></i>
-      </button>
-      <div id="menuGenre" class="absolute hidden shadow p-4 shadow-black h-80 overflow-y-auto w-full bg-sky-300 md:w-80 md:left-0 md:top-full z-40">
-        {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
-        <a href='{{ "genre/" | relLangURL }}{{ $name | urlize }}' class="block px-2 py-1 hover:bg-sky-400 hover:text-white">{{ $name | title }}</a>
-        {{ end }}
-      </div>
-    </div>
-
+    <a class="hover:bg-sky-400 hover:rounded-full hover:text-white flex items-center gap-1 text-md p-2 w-full md:w-auto" href="#genre">
+      <i class="fa-solid fa-folder"></i> Genre
+    </a>
     <a target="_blank" class="hover:bg-sky-400 hover:rounded-full hover:text-white flex items-center gap-1 text-md p-2 w-full md:w-auto" href="https://saweria.co/DonghuaBatch">
       <i class="fa-solid fa-leaf"></i> Support
     </a>
@@ -47,29 +36,9 @@
 <script>
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mainMenu = document.getElementById('mainMenu');
-  const tombolGenre = document.getElementById('tombolGenre');
-  const menuGenre = document.getElementById('menuGenre');
-  const arrowGenre = document.getElementById('arrowGenre');
-  const folder = document.getElementById('folder');
 
   hamburgerBtn.addEventListener('click', () => {
     mainMenu.classList.toggle('hidden');
-  });
-
-  // Toggle dropdown genre
-  tombolGenre.addEventListener('click', (event) => {
-    menuGenre.classList.toggle('hidden');
-    arrowGenre.classList.toggle('rotate-180');
-    folder.classList.toggle('fa-folder-open');
-    event.stopPropagation();
-  });
-
-  document.addEventListener('click', (event) => {
-    if (!menuGenre.contains(event.target) && !tombolGenre.contains(event.target)) {
-      menuGenre.classList.add('hidden');
-      arrowGenre.classList.remove('rotate-180');
-      folder.classList.remove('fa-folder-open');
-    }
   });
 </script>
 

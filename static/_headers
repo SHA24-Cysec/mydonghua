@@ -4,15 +4,5 @@
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
 
-  # Cache HTML
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
-
-/img/*
-  # Cache image
-  Cache-Control: public, max-age=31536000, immutable
-
-/favicon.ico
-  Cache-Control: public, max-age=31536000, immutable
-
-/main.min.css
-  Cache-Control: public, max-age=31536000, immutable
+  # Cache Control
+  Cache-Control: public, max-age 86400, must-revalidate

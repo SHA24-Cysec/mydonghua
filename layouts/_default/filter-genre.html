@@ -1,0 +1,37 @@
+{{ define "main" }}
+    <div class="md:py-4 py-2 mx-auto max-w-screen-xl">
+        <main class="w-full">
+            {{/*  Main Content  */}}
+            <div class="bg-slate-300 text-white bg-opacity-50 mb-4 p-4">
+                {{ if eq .Layout "filter-genre" }}
+                    <h1 class="text-2xl font-bold">Daftar Donghua Berdasarkan Genre Yang Di Pilih</h1>
+                {{ end }}
+            </div>
+            <div class="bg-slate-300 bg-opacity-50 h-full min-h-screen">
+                <div class="flex flex-wrap flex-col">
+                    <div class="p-4">
+                        <div id="genre-alert" class="hidden text-center bg-red-300 bg-opacity-50 text-white p-4 rounded-lg gap-4">
+                            <span>Tidak ada donghua yang cocok dengan genre yang dipilih 😢</span>
+                        </div>
+                        <ul class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="genre-results">
+                        </ul>
+                    </div>
+                {{/*  Pagination  */}}
+                <div id="genre-pagination" class="justify-center items-center gap-4 py-4 hidden mx-auto">
+                  <button id="genre-prev"
+                          class="px-4 py-2 bg-slate-200 rounded-lg disabled:opacity-40">
+                    Prev
+                  </button>
+              
+                  <span id="genre-page-info" class="text-white"></span>
+              
+                  <button id="genre-next"
+                          class="px-4 py-2 bg-slate-200 rounded-lg disabled:opacity-40">
+                    Next
+                  </button>
+                </div>
+                </div>
+            </div>
+        </main>
+    </div>
+{{ end }}

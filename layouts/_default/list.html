@@ -4,11 +4,11 @@
             {{/*  Main Content  */}}
             <div class="bg-slate-300 text-white bg-opacity-50 mb-4 p-4">
                 {{ if eq .Type "genre" }}
-                    <h1 class="text-2xl font-bold">Ini Daftar Donghua Berdasarkan Genre {{ .Title }}</h1>
+                    <h1 class="text-2xl font-bold">Daftar Donghua Berdasarkan Genre {{ .Title }}</h1>
                 {{ else if eq .Type "studio" }}
-                    <h1 class="text-2xl font-bold">Ini Daftar Donghua Berdasarkan Studio {{ .Title }}</h1>
+                    <h1 class="text-2xl font-bold">Daftar Donghua Berdasarkan Studio {{ .Title }}</h1>
                 {{ else if eq .Type "season" }}
-                    <h1 class="text-2xl font-bold">Ini Daftar Donghua Berdasarkan Season {{ .Title }}</h1>
+                    <h1 class="text-2xl font-bold">Daftar Donghua Berdasarkan Season {{ .Title }}</h1>
                 {{ end }}
             </div>
             <div class="bg-slate-300 bg-opacity-50">

@@ -4,18 +4,34 @@
         {{ partial "widget/ads-300x250" . }}
         {{/*  Akhir Elemen Iklan  */}}
         {{/*  Elemen Genre  */}}
-        <div class="bg-slate-300 bg-opacity-50 p-4">
+        <div id="genre" class="bg-slate-300 bg-opacity-50 p-4 scroll-mt-[300px]">
             <div class="flex justify-center items-center relative mb-4">
                 <span class="font-bold border-white z-50 bg-sky-300 border p-2 pl-4 w-fit absolute top-1.5 mx-auto rounded-full select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-folder"></i>Genre</span>
                 <div class="w-full py-8">
                     <hr>
                 </div>
             </div>
-            <div class="text-center  overflow-y-auto h-80 grid lg:grid-cols-3 gap-2 md:grid-cols-6 grid-cols-2">
-                {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
-                <a title="{{ $name }}" class="bg-slate-400 hover:text-sky-300 bg-opacity-50 flex items-center text-wrap justify-center font-bold hover:bg-slate-200 rounded-lg p-2" href='{{ "genre/" | relLangURL }}{{ $name | urlize }}'>{{ $name | title }}</a>
-                {{ end }}
+            <form id="genre-filter-form">
+            <div class="text-center overflow-y-auto h-80 grid lg:grid-cols-3 gap-2 md:grid-cols-6 grid-cols-2">
+              {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
+                <label class="bg-slate-400 hover:text-sky-300 bg-opacity-50 flex items-center justify-center flex-wrap font-bold rounded-lg p-2 px-4 cursor-pointer hover:bg-slate-200">
+                  <input
+                    type="checkbox"
+                    name="genre"
+                    value="{{ $name | urlize }}"
+                    class="peer mr-2"
+                  >
+                  <span class="peer-checked:underline">
+                    {{ $name | title }}
+                  </span>
+                </label>
+              {{ end }}
             </div>
+          
+           <div id="button-search" class="mt-6 bg-sky-300 w-fit mx-auto p-2 font-bold rounded-lg">
+              <button type="submit">Terapkan Filter</button>
+            </div>
+</form>
         </div>
         {{/*  Akhir Elemen Genre  */}}
         {{/*  Elemen Studio  */}}
