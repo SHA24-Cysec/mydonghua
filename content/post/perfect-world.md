@@ -424,4 +424,94 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 14
+  - title: 'Perfect World Batch Subtitle Indonesia Episode 211-220'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/N8qeATqN'
+      button: 'Download'
+      size: '1.98 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/Z23SvAWe'
+      button: 'Download'
+      size: '3.85 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/u46963h7'
+      button: 'Download'
+      size: '6.87 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 15
+  - title: 'Perfect World Batch Subtitle Indonesia Episode 221-230'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/bc7pAWpw'
+      button: 'Download'
+      size: '2.07 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/PE3o8EVq'
+      button: 'Download'
+      size: '3.92 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/oRfts7R1'
+      button: 'Download'
+      size: '7.16 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 16
+  - title: 'Perfect World Batch Subtitle Indonesia Episode 231-240'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/tCvakCHv'
+      button: 'Download'
+      size: '2.02 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/9eJCUxhi'
+      button: 'Download'
+      size: '3.87 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/EXEmq97s'
+      button: 'Download'
+      size: '6.88 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

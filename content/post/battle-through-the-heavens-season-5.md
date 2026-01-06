@@ -306,4 +306,94 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 10
+  - title: 'Battle Through the Heavens Season 5 Batch Subtitle Indonesia Episode 141-150'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/LBGXQM42'
+      button: 'Download'
+      size: '1.91 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/UGK2tYij'
+      button: 'Download'
+      size: '3.73 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/heYZNSNm'
+      button: 'Download'
+      size: '6.49 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 11
+  - title: 'Battle Through the Heavens Season 5 Batch Subtitle Indonesia Episode 151-160'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/CK19HwjS'
+      button: 'Download'
+      size: '1.99 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/95AovvFS'
+      button: 'Download'
+      size: '3.72 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/Xfgj7XwF'
+      button: 'Download'
+      size: '6.42 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 12
+  - title: 'Battle Through the Heavens Season 5 Batch Subtitle Indonesia Episode 161-170'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/FBey7uNK'
+      button: 'Download'
+      size: '1.92 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/d5QJTQKF'
+      button: 'Download'
+      size: '3.70 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/wkVJAPBS'
+      button: 'Download'
+      size: '6.58 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

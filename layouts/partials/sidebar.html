@@ -1,7 +1,7 @@
 <aside style="flex-basis: 380px;" class="w-full text-white">
-    <div class="flex flex-col flex-wrap">
+    <div>
         {{/*  Elemen Iklan  */}}
-        {{ partial "widget/ads-300x250" . }}
+            {{ partial "widget/ads-300x250" . }}
         {{/*  Akhir Elemen Iklan  */}}
         {{/*  Elemen Genre  */}}
         <div id="genre" class="bg-slate-300 bg-opacity-50 p-4 scroll-mt-[300px]">
@@ -12,26 +12,26 @@
                 </div>
             </div>
             <form id="genre-filter-form">
-            <div class="text-center overflow-y-auto h-80 grid lg:grid-cols-3 gap-2 md:grid-cols-6 grid-cols-2">
-              {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
-                <label class="bg-slate-400 hover:text-sky-300 bg-opacity-50 flex items-center justify-center flex-wrap font-bold rounded-lg p-2 px-4 cursor-pointer hover:bg-slate-200">
-                  <input
-                    type="checkbox"
-                    name="genre"
-                    value="{{ $name | urlize }}"
-                    class="peer mr-2"
-                  >
-                  <span class="peer-checked:underline">
-                    {{ $name | title }}
-                  </span>
-                </label>
-              {{ end }}
-            </div>
-          
-           <div id="button-search" class="mt-6 bg-sky-300 w-fit mx-auto p-2 font-bold rounded-lg">
-              <button type="submit">Terapkan Filter</button>
-            </div>
-</form>
+                <div class="text-center overflow-y-auto h-80 grid lg:grid-cols-3 gap-2 md:grid-cols-6 grid-cols-2">
+                  {{ range $name, $taxonomy := .Site.Taxonomies.genre }}
+                    <label class="bg-slate-400 hover:text-sky-300 bg-opacity-50 flex items-center justify-center flex-wrap font-bold rounded-lg p-2 px-4 cursor-pointer hover:bg-slate-200">
+                      <input
+                        type="checkbox"
+                        name="genre"
+                        value="{{ $name | urlize }}"
+                        class="peer mr-2"
+                      >
+                      <span class="peer-checked:underline">
+                        {{ $name | title }}
+                      </span>
+                    </label>
+                  {{ end }}
+                </div>
+
+                <div id="button-search" class="mt-6 bg-sky-300 w-fit mx-auto p-2 font-bold rounded-lg">
+                  <button type="submit">Terapkan Filter</button>
+                </div>
+            </form>
         </div>
         {{/*  Akhir Elemen Genre  */}}
         {{/*  Elemen Studio  */}}
