@@ -5,4 +5,4 @@
   X-XSS-Protection: 1; mode=block
 
   # Cache Control
-  Cache-Control: public, max-age 86400, must-revalidate
+  Cache-Control: public, max-age=86400, must-revalidate
