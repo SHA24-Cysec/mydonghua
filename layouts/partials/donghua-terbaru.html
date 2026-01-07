@@ -10,14 +10,6 @@
                         <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">{{ .Params.type }}</span>
                         <span class="absolute bottom-0 right-0 bg-yellow-500 px-2 rounded-tl-lg">Sub</span>
                     </a>
-                    {{/*  Comments  */}}
-                        {{ if hugo.IsProduction }}
-                            <div class="mt-2 flex items-center flex-wrap gap-1 bg-slate-300 px-2 rounded-lg w-fit text-sm">
-                                <i class="fa-regular fa-comments"></i>
-                                <a href="{{ .Permalink }}#disqus_thread"></a>
-                            </div>
-                        {{ end }}
-                    {{/*  Akhir Comments  */}}
                     <a class="w-full h-auto block text-center pt-2 text-wrap" href="{{ .Permalink }}">
                         <span class="font-bold text-white group-hover:text-sky-300">{{ .Title }}</span>
                     </a>
