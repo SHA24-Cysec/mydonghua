@@ -73,8 +73,9 @@
         li.innerHTML = `
           <div class="group w-full h-auto rounded-lg">
             <a title="{{ .Title }}" href="${item.permalink}" class="block relative rounded-lg bg-slate-200 h-auto mx-auto overflow-hidden">
-                <img loading="lazy" class="group-hover:scale-110 w-full h-[250px] md:h-[300px] rounded-lg rounded-t-lg transition duration-300 object-cover mx-auto" src='${item.thumbnail}' alt="${item.title}">
+                <img loading="lazy" class="group-hover:scale-110 group-hover:opacity-75 w-full h-[250px] md:h-[300px] rounded-lg rounded-t-lg transition duration-300 object-cover mx-auto" src='${item.thumbnail}' alt="${item.title}">
                 <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">Donghua</span>
+                <span class="absolute bottom-0 right-0 bg-yellow-500 px-2 rounded-tl-lg">Sub</span>
             </a>
             <a class="w-full h-auto block text-center py-2 text-wrap" href="${item.permalink}">
                 <strong class="text-white group-hover:text-sky-300">${title}</strong>
@@ -300,18 +301,12 @@ function renderGenreResults() {
 
     div.innerHTML = `
       <a href="${item.permalink}" class="block relative rounded-lg mx-auto overflow-hidden">
-        <img loading="lazy"
-             class="group-hover:scale-110 w-full h-[250px] md:h-[300px] rounded-lg transition duration-300 object-cover mx-auto"
-             src="${item.thumbnail}"
-             alt="${item.title}">
-        <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">
-          ${item.type || "Donghua"}
-        </span>
+        <img loading="lazy" class="group-hover:scale-110 group-hover:opacity-75 w-full h-[250px] md:h-[300px] rounded-lg transition duration-300 object-cover mx-auto" src="${item.thumbnail}" alt="${item.title}">
+        <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">${item.type || "Donghua"}</span>
+        <span class="absolute bottom-0 right-0 bg-yellow-500 px-2 rounded-tl-lg">Sub</span>
       </a>
       <a class="w-full block text-center py-2" href="${item.permalink}">
-        <span class="font-bold text-white group-hover:text-sky-300">
-          ${item.title}
-        </span>
+        <span class="font-bold text-white group-hover:text-sky-300">${item.title}</span>
       </a>
     `;
 
