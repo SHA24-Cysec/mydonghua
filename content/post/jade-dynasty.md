@@ -156,7 +156,7 @@ downloadGroups:
       size: ''
 
   # Batch 5
-  - title: 'Jade Dynasty Batch Subtitle Indonesia Episode 71-78 [Season 3]'
+  - title: 'Jade Dynasty Batch Subtitle Indonesia Episode 71-78 [Season 3] (END)'
     
     downloads:
     

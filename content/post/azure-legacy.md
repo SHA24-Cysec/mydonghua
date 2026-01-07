@@ -64,7 +64,7 @@ downloadGroups:
       size: ''
 
   # Batch 2
-  - title: 'Azure Legacy Batch Subtitle Indonesia Episode 27-46 [Spesial + Season 2]'
+  - title: 'Azure Legacy Batch Subtitle Indonesia Episode 27-45 [Season 2]'
     
     downloads:
     
@@ -74,19 +74,19 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=1lQf6ugLHhpzstkH1tkSJK8w0-z3S07WQ&export=download&authuser=0'
+      link: 'https://pixeldrain.com/u/QDPnijkb'
       button: 'Download'
-      size: '3 GB'
+      size: '3.09 GB'
     
     - quality: '720p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/MPqaJv9S'
+      button: 'Download'
+      size: '5.89 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/81389eUY'
+      button: 'Download'
+      size: '10.4 GB'
     
     - quality: '4K'
       link: ''
@@ -94,7 +94,7 @@ downloadGroups:
       size: ''
 
   # Batch 3
-  - title: 'Azure Legacy Batch Subtitle Indonesia Episode 47-66 [Season 2 END]'
+  - title: 'Azure Legacy Batch Subtitle Indonesia Episode 46-60'
     
     downloads:
     
@@ -104,19 +104,49 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=1rWRVGP6cXsPNaJe6X_01cblNvYbzzX37&export=download&authuser=0'
+      link: 'https://pixeldrain.com/u/3FVqDmvt'
       button: 'Download'
-      size: '3.80 GB'
+      size: '2.94 GB'
     
     - quality: '720p'
+      link: 'https://pixeldrain.com/u/qTGPpvUq'
+      button: 'Download'
+      size: '5.68 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/LwiBvghE'
+      button: 'Download'
+      size: '10.1 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 4
+  - title: 'Azure Legacy Batch Subtitle Indonesia Episode 61-66 [Season 2 END]'
+    
+    downloads:
+    
+    - quality: '360p'
       link: ''
       button: 'Belum Tersedia'
       size: ''
     
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/tsQqNqMZ'
+      button: 'Download'
+      size: '1.31 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/rEhw1PaH'
+      button: 'Download'
+      size: '2.51 GB'
+    
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/hnNXvzVm'
+      button: 'Download'
+      size: '4.21 GB'
     
     - quality: '4K'
       link: ''

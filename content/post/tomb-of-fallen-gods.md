@@ -35,29 +35,60 @@ keywords : 'Download Batch Tomb of Fallen Gods Subtitle Indonesia'
 
 downloadGroups:
   
-  - title: 'Tomb of Fallen Gods Batch Subtitle Indonesia'
+  # Batch 1
+  - title: 'Tomb of Fallen Gods Batch Subtitle Indonesia Episode 1-10'
     
     downloads:
     
     - quality: '360p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://www.linkbox.to/a/f/Cszu5U6'
+      button: 'Download'
+      size: '547.44 MB'
     
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://www.linkbox.to/a/f/wLRDUmX'
+      button: 'Download'
+      size: '1.03 GB'
     
     - quality: '720p'
+      link: 'https://www.linkbox.to/a/f/vay5ArU'
+      button: 'Download'
+      size: '1.84 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.linkbox.to/a/f/YErUxLr'
+      button: 'Download'
+      size: '2.81 GB'
+    
+    - quality: '4K'
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 2
+  - title: 'Tomb of Fallen Gods Batch Subtitle Indonesia Episode 11-16 [END]'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/spvXQ9C'
+      button: 'Download'
+      size: '454.39 MB'
+    
+    - quality: '480p'
+      link: 'https://www.linkbox.to/a/f/ZNLJwYG'
+      button: 'Download'
+      size: '861.79 MB'
+    
+    - quality: '720p'
+      link: 'https://www.linkbox.to/a/f/WtBAkzl'
+      button: 'Download'
+      size: '1.66 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1mmD5He5eO-fvreoBea9eFeEWJ6PP3XhS&export=download&authuser=0'
+      link: 'https://www.linkbox.to/a/f/KlIm86g'
       button: 'Download'
-      size: '5.18 GB'
+      size: '2.38 GB'
     
     - quality: '4K'
       link: ''

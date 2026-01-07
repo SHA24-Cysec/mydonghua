@@ -27,7 +27,7 @@ thumbnail : /img/post/to-be-hero-x.webp
 image : /img/post/to-be-hero-x.webp
 
 alt : 'To Be Hero X'
-url: 'to-be-hero-x'
+url: 'tbh-x-sub-indo'
 layout : postingan-donghua
 sinopsis : 'Di sebuah kota modern yang tampak biasa, tersembunyi berbagai konflik antara manusia dengan kekuatan misterius yang tak kasat mata. Seorang pria misterius bernama Hero X muncul sebagai sosok penyelamat, namun identitas dan masa lalunya tetap diliputi rahasia. Di balik sikapnya yang dingin dan penuh teka-teki, ia membawa beban besar yang berhubungan dengan masa lalu kelam serta misi yang lebih besar daripada sekadar melawan kejahatan sehari-hari.'
 deskripsi : 'Download Batch To Be Hero X Subtitle Indonesia'

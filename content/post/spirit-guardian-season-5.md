@@ -25,7 +25,7 @@ image : /img/post/spirit-guardian-s5.webp
 alt : 'Spirit Guardian'
 url: 'spirit-guardian-season-5'
 layout : postingan-donghua
-sinopsis : 'Kelanjutan dari seri Spirit Guardian'
+sinopsis : 'Season kelima Spirit Guardian membawa konflik ke level yang lebih gelap dan berbahaya. Sang protagonis kini harus menghadapi ancaman besar yang bukan hanya menguji kekuatannya, tetapi juga keyakinan dan loyalitasnya sebagai penjaga roh. Rahasia lama tentang dunia roh mulai terungkap, membuka kebenaran pahit yang selama ini tersembunyi di balik keseimbangan semu. Pertarungan tidak lagi sekadar melawan musuh luar, karena konflik batin, pengkhianatan, dan pilihan sulit menjadi bagian dari perjalanan. Dengan kekuatan baru yang belum sepenuhnya terkendali, sang Spirit Guardian harus menentukan apakah ia akan mempertahankan tatanan lama, atau menciptakan jalan baru yang berisiko menghancurkan segalanya.'
 deskripsi : 'Download Batch Spirit Guardian Subtitle Indonesia'
 keywords : 'Download Batch Spirit Guardian Subtitle Indonesia'
 
