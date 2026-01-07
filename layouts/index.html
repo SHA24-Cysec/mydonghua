@@ -16,7 +16,10 @@
                                 <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">{{ .Params.type }}</span>
                                 <span class="absolute bottom-0 right-0 bg-yellow-500 px-2 rounded-tl-lg">Sub</span>
                             </a>
-                            <a class="w-full h-auto block text-center py-2 text-wrap" href="{{ .Permalink }}">
+                            {{/*  Comments  */}}
+                            <a class="pt-2 block w-full h-auto rounded-lg" href="{{ .Permalink }}#disqus_thread"><small class="p-1 bg-gray-300 rounded-lg"><i class="fa-regular fa-comments mr-1"></i><span class="ml-1">Comments</span></small></a>
+                            {{/*  Akhir Comments  */}}
+                            <a class="w-full h-auto block text-center pt-2 text-wrap" href="{{ .Permalink }}">
                                 <span class="font-bold text-white group-hover:text-sky-300">{{ .Title }}</span>
                             </a>
                         </div>

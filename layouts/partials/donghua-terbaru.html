@@ -1,16 +1,19 @@
-<div class="md:py-4 py-2 mx-auto bg-slate-300 bg-opacity-50 text-white mt-4 p-4 max-w-screen-xl">
-    <span class="font-bold text-xl"><i class="fa fa-info-circle mr-2"></i>Donghua Terbaru</span>
+<div class="md:py-4 py-2 mx-auto bg-slate-300 bg-opacity-50 mt-4 p-4 max-w-screen-xl">
+    <span class="font-bold text-xl text-white"><i class="fa fa-info-circle mr-2"></i>Donghua Terbaru</span>
     <hr class="mt-4">
     <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px] md:h-fit overflow-y-auto md:overflow-y-hidden">
         {{ range where .Site.RegularPages.ByDate.Reverse "Layout" "postingan-donghua" | first 8 }}
-            <div class="bg-opacity-50 mt-4">
+            <div class="bg-opacity-50">
                 <div class="group w-full h-auto">
                     <a title="{{ .Title }}" href="{{ .Permalink }}" class="block relative rounded-lg bg-slate-200 h-auto mx-auto overflow-hidden">
                         <img loading="lazy" class="group-hover:scale-110 group-hover:opacity-75 w-full h-[250px] md:h-[300px] rounded-lg rounded-t-lg transition duration-300 object-cover mx-auto" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt }}">
                         <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">{{ .Params.type }}</span>
                         <span class="absolute bottom-0 right-0 bg-yellow-500 px-2 rounded-tl-lg">Sub</span>
                     </a>
-                    <a class="w-full h-auto block text-center py-2 text-wrap" href="{{ .Permalink }}">
+                    {{/*  Comments  */}}
+                    <a class="pt-2 block w-full h-auto rounded-lg" href="{{ .Permalink }}#disqus_thread"><small class="p-1 bg-gray-300 rounded-lg"><i class="fa-regular fa-comments mr-1"></i><span class="ml-1">Comments</span></small></a>
+                    {{/*  Akhir Comments  */}}
+                    <a class="w-full h-auto block text-center pt-2 text-wrap" href="{{ .Permalink }}">
                         <span class="font-bold text-white group-hover:text-sky-300">{{ .Title }}</span>
                     </a>
                 </div>
