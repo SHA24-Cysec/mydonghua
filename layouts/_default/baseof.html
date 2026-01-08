@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" dir="ltr" class="scroll-smooth box-border overflow-x-hidden">
+<html lang="id-ID" dir="ltr" class="scroll-smooth box-border overflow-x-hidden">
 <head>
     {{ partial "meta" . }}
     {{ partial "link" . }}
@@ -30,6 +30,11 @@
     {{ if hugo.IsProduction }}
         {{/*  Anti Klik Kanan dan F12  */}}
         <div id="notifBlock" class="fixed bottom-6 left-1/2 bg-gray-900 text-white text-sm px-5 py-3 rounded-xl shadow-lg opacity-0 transition-opacity duration-300 z-[9999]"></div>
+    {{ end }}
+
+    {{ if hugo.IsProduction }}
+      {{/*  Iklan Social Bar Adsterra  */}}
+      <script src="https://contentblanksupersede.com/ac/c8/ec/acc8ecf445c142c2f16e5d0ab706e492.js"></script>
     {{ end }}
 
     <style>
