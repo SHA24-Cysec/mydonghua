@@ -44,7 +44,7 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://mega.nz/file/GDwSlByC#Zk3DGBBGm5ERj7O-_RILOYRTyr-y-Mr_yJzCBSN6Ss0'
+      link: 'https://teraboxapp.com/s/1DRrGqYpSRQHOQS2_d7KWtg'
       button: 'Download'
       size: '2.11 GB'
     
