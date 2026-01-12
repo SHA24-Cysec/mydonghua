@@ -377,46 +377,7 @@ function filterByGenres(data, selectedGenres) {
 }
 </script>
 
-{{/*  {{ if hugo.IsProduction }}  */}}
-  {{/*  Social Bar Script  */}}
-  {{/*  <script src="https://contentblanksupersede.com/ac/c8/ec/acc8ecf445c142c2f16e5d0ab706e492.js"></script>  */}}
-{{/*  {{ end }}  */}}
-
 {{ if hugo.IsProduction }}
-  {{/*  Script Anti Klik Kanan dan F12  */}}
-  <script>
-  // Blok klik kanan
-  document.addEventListener("contextmenu", function(e) {
-      e.preventDefault();
-  });
-
-  // Blok F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U, Ctrl+Shift+J
-  document.addEventListener("keydown", function(e) {
-
-      // F12
-      if (e.key === "F12") {
-          e.preventDefault();
-      }
-
-      // Ctrl+Shift+I
-      if (e.ctrlKey && e.shiftKey && e.key === "I") {
-          e.preventDefault();
-      }
-
-      // Ctrl+Shift+C
-      if (e.ctrlKey && e.shiftKey && e.key === "C") {
-          e.preventDefault();
-      }
-
-      // Ctrl+Shift+J
-      if (e.ctrlKey && e.shiftKey && e.key === "J") {
-          e.preventDefault();
-      }
-
-      // Ctrl+U (view source)
-      if (e.ctrlKey && e.key === "U") {
-          e.preventDefault();
-      }
-  });
-  </script>
+  {{/*  Iklan Social Bar Adsterra  */}}
+  <script src="https://contentblanksupersede.com/ac/c8/ec/acc8ecf445c142c2f16e5d0ab706e492.js"></script>
 {{ end }}
