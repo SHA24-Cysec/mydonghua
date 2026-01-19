@@ -1,6 +1,7 @@
 {{/*  Navbar PC  */}}
-<nav class="bg-sky-300 shadow shadow-sky-300 sticky top-0 z-[999] w-full max-w-7xl mx-auto font-bold md:flex items-center justify-between">
-  <div class="flex justify-between items-center px-2 py-3 md:max-w-7xl">
+<nav class="bg-sky-300 fixed top-0 z-[999] shadow-md shadow-black w-full">
+  <div class="font-bold md:flex items-center justify-between w-full max-w-7xl mx-auto px-2 lg:px-0">
+      <div class="flex justify-between items-center py-3 w-full">
     <!-- Logo / Brand -->
     <a href="{{ .Site.BaseURL }}" class="text-lg flex items-center gap-1">
       <img class="rounded-full" width="32" height="32" src="/img/favicon.webp" alt="Logo">
@@ -8,13 +9,18 @@
     </a>
 
     <!-- Hamburger Menu -->
-    <button id="hamburgerBtn" class="md:hidden text-2xl px-2 active:bg-sky-400 rounded-lg">
-      <i class="fa-solid fa-bars"></i>
+    <button class="md:hidden text-2xl px-2 active:bg-sky-400 rounded-lg transition-transform duration-300 flex items-center justify-center">
+      <div id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div id="closeBtn" class="hidden">
+        <i class="fa-solid fa-close"></i>
+      </div>
     </button>
   </div>
 
   <!-- Menu Utama -->
-  <menu id="mainMenu" class="hidden md:flex flex-col md:flex-row items-start md:items-center md:justify-between md:flex-wrap px-2 gap-4">
+  <menu id="mainMenu" class="hidden md:flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4 transition-transform">
     <a class="hover:bg-sky-400 hover:text-white hover:rounded-full flex items-center gap-1 text-md p-2 w-full md:w-auto" href="{{ .Site.BaseURL }}">
       <i class="fa-solid fa-house"></i> Beranda
     </a>
@@ -31,13 +37,23 @@
       <i class="fa-solid fa-magnifying-glass"></i> Cari
     </a>
   </menu>
+  </div>
 </nav>
 
 <script>
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const menuBtn = document.getElementById('menuBtn');
   const mainMenu = document.getElementById('mainMenu');
+  const closeBtn = document.getElementById('closeBtn');
 
-  hamburgerBtn.addEventListener('click', () => {
-    mainMenu.classList.toggle('hidden');
-  });
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.add("hidden");
+    closeBtn.classList.remove("hidden");
+    mainMenu.classList.remove("hidden");
+  })
+
+  closeBtn.addEventListener("click", () => {
+    menuBtn.classList.remove("hidden");
+    closeBtn.classList.add("hidden");
+    mainMenu.classList.add("hidden");
+  })
 </script>

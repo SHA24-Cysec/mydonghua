@@ -38,17 +38,17 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://drive.usercontent.google.com/download?id=1YTWUjBRDnFBieTVIGSSHKincDO97XDOl&export=download'
+      link: 'https://drive.usercontent.google.com/download?id=1YTWUjBRDnFBieTVIGSSHKincDO97XDOl&export=download&authuser=0'
       button: 'Download'
       size: '514.37 MB'
     
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://acefile.co/f/69714683'
+      button: 'Download'
+      size: '931.44 MB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1_paDHiH-8QzEJqylfSLUsNcChK0ZiaM_&export=download'
+      link: 'https://drive.usercontent.google.com/download?id=1x9m9alOqSJBW2GTlQza_O6h0jnFR5m_r&export=download&authuser=0'
       button: 'Download'
       size: '1.73 GB'
     

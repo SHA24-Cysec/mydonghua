@@ -50,8 +50,8 @@ downloadGroups:
       size: '1.11 GB'
     
     - quality: '720p'
-      link: 'Belum Tersedia'
-      button: 'Download'
+      link: ''
+      button: 'Belum Tersedia'
       size: ''
     
     - quality: '1080p'

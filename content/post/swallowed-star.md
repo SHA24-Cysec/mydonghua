@@ -68,7 +68,7 @@ downloadGroups:
       size: ''
 
   # Batch 2
-  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 14-26'
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 14-26 [Season 1 END]'
     
     downloads:
     
@@ -98,7 +98,7 @@ downloadGroups:
       size: ''
 
   # Batch 3
-  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 27-36'
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 27-36 [Season 2]'
     
     downloads:
     
@@ -113,7 +113,7 @@ downloadGroups:
       size: '1.70 GB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1sJOFWoNBwsrcrSiMmMRRw6gQhVw_8Ucl&export=download&authuser=0'
+      link: 'https://acefile.co/f/70479114'
       button: 'Download'
       size: '3.07 GB'
     
@@ -248,7 +248,7 @@ downloadGroups:
       size: ''
 
   # Batch 8
-  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 77-85'
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 77-85 [Season 2 END]'
     
     downloads:
     
@@ -278,7 +278,7 @@ downloadGroups:
       size: ''
 
   # Batch 9
-  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 86-105'
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 86-105 [Season 3]'
     
     downloads:
     
@@ -338,7 +338,7 @@ downloadGroups:
       size: ''
 
   # Batch 11
-  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 126-145'
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 126-145 [Season 3 END]'
     
     downloads:
     
@@ -368,7 +368,7 @@ downloadGroups:
       size: ''
 
   # Batch 12
-  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 146-165'
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 146-165 [Season 4]'
     
     downloads:
     
