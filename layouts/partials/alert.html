@@ -1,16 +1,35 @@
-<div class="mx-4">
-    <div class="p-4 bg-blue-300 shadow-md shadow-blue-300 bg-opacity-50 text-white select-none rounded-lg w-full max-w-screen-xl mx-auto mt-4">
-        <div class="w-full max-w-xl mx-auto text-center flex flex-col gap-2 font-serif font-bold">
-            <span>Support kami dengan share website kami ke teman-teman kalian agar website kami berkembang menyajikan batch donghua terlengkap untukmu, terima kasih.</span>
-            <hr>
-            <span>Bagi kamu yang ingin memberikan masukan atau saran, bisa hubungi kami atau komentar di bawah.</span>
-            {{ if eq .Layout "postingan-donghua" }}
+{{ if .IsHome }}
+    <div class="mx-4">
+        <div class="p-4 bg-blue-300 shadow-md shadow-blue-300 bg-opacity-50 text-white select-none rounded-lg w-full max-w-screen-xl mx-auto mt-4">
+            <div class="w-full max-w-xl mx-auto text-center flex flex-col gap-2 font-serif font-bold">
+                <span>Support kami dengan share website kami ke teman-teman kalian agar website kami berkembang menyajikan batch donghua terlengkap untukmu, terima kasih.</span>
                 <hr>
-                <span>Cara melewati Shortlink? <a class="text-red-500 hover:text-red-600" href="https://pastebin.com/XMGvKgyQ" rel="nofollow noopener" target="_blank">Cek Disini</a></span>
-                <hr>
-                <p>Untuk link download <span class="rounded-lg underline text-yellow-300">acefile.co</span>, jika tidak ada tombol <span class="rounded-lg underline text-yellow-300">Fast Download</span> silahkan di refresh dulu halamannya beberapa kali atau login menggunakan akun google kalian, jika tidak muncul silahkan <a class="transition active:scale-95 active:opacity-70 text-red-500 hover:text-red-600" href="#reportButton">Laporkan Link</a></p>
-            {{ end }}
-            <img width="150" height="300" class="mx-auto object-cover" src="/img/support-me.gif" alt="Support Me">
+                <span>Bagi kamu yang ingin memberikan masukan atau saran, bisa hubungi kami atau komentar di bawah.</span>
+                {{ if eq .Layout "postingan-donghua" }}
+                    <hr>
+                    <span>Cara melewati Shortlink? <a class="text-red-500 hover:text-red-600" href="https://pastebin.com/XMGvKgyQ" rel="nofollow noopener" target="_blank">Cek Disini</a></span>
+                    <hr>
+                    <p>Untuk link download <span class="rounded-lg underline text-yellow-300">acefile.co</span>, jika tidak ada tombol <span class="rounded-lg underline text-yellow-300">Fast Download</span> silahkan di refresh dulu halamannya beberapa kali atau login menggunakan akun google kalian, jika tidak muncul silahkan <a class="transition active:scale-95 active:opacity-70 text-red-500 hover:text-red-600" href="#reportButton">Laporkan Link</a></p>
+                {{ end }}
+                <img width="150" height="300" class="mx-auto object-cover" src="/img/support-me.gif" alt="Support Me">
+            </div>
         </div>
     </div>
-</div>
+{{ else }}
+    <div class="mx-4">
+        <div class="p-4 bg-blue-300 shadow-md shadow-blue-300 bg-opacity-50 text-white select-none rounded-lg w-full max-w-screen-xl mx-auto mt-16">
+            <div class="w-full max-w-xl mx-auto text-center flex flex-col gap-2 font-serif font-bold">
+                <span>Support kami dengan share website kami ke teman-teman kalian agar website kami berkembang menyajikan batch donghua terlengkap untukmu, terima kasih.</span>
+                <hr>
+                <span>Bagi kamu yang ingin memberikan masukan atau saran, bisa hubungi kami atau komentar di bawah.</span>
+                {{ if eq .Layout "postingan-donghua" }}
+                    <hr>
+                    <span>Cara melewati Shortlink? <a class="text-red-500 hover:text-red-600" href="https://pastebin.com/XMGvKgyQ" rel="nofollow noopener" target="_blank">Cek Disini</a></span>
+                    <hr>
+                    <p>Untuk link download <span class="rounded-lg underline text-yellow-300">acefile.co</span>, jika tidak ada tombol <span class="rounded-lg underline text-yellow-300">Fast Download</span> silahkan di refresh dulu halamannya beberapa kali atau login menggunakan akun google kalian, jika tidak muncul silahkan <a class="transition active:scale-95 active:opacity-70 text-red-500 hover:text-red-600" href="#reportButton">Laporkan Link</a></p>
+                {{ end }}
+                <img width="150" height="300" class="mx-auto object-cover" src="/img/support-me.gif" alt="Support Me">
+            </div>
+        </div>
+    </div>
+{{ end }}
