@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="id-ID" dir="ltr" class="scroll-smooth box-border overflow-x-hidden">
+<html lang="id" dir="ltr" class="scroll-smooth box-border overflow-x-hidden">
 <head>
     {{ partial "meta" . }}
     {{ partial "link" . }}
     {{ template "_internal/schema.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
     {{ if hugo.IsProduction }}
         {{ template "_internal/google_analytics.html" . }}    
     {{ end }}
