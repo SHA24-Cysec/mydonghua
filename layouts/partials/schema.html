@@ -1,0 +1,30 @@
+{{- with or .Title site.Title | plainify }}
+    <meta itemprop="name" content="{{ . }}">
+{{- end }}
+
+{{- with or site.Params.deskripsi .Params.deskripsi | plainify | htmlUnescape }}
+  <meta itemprop="description" content="{{ trim . "\n\r\t " }}">
+{{- end }}
+
+{{ if eq .Layout "postingan-donghua" }}
+    {{- $ISO8601 := "2006-01-02T15:04:05-07:00" }}
+    {{- with .PublishDate }}
+        <meta itemprop="datePublished" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
+    {{- end }}
+
+    {{- with .Lastmod }}
+        <meta itemprop="dateModified" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
+    {{- end }}
+{{ end }}
+
+{{ if .IsHome }}
+    <meta itemprop="image" content="{{ site.Params.img | absURL }}">
+{{ else if eq .Layout "postingan-donghua" }}
+    <meta itemprop="image" content="{{ .Params.thumbnail | absURL }}">
+{{ end }}
+
+{{ if .IsHome }}
+    <meta itemprop="keywords" content="{{ site.Params.keywords }}">
+{{ else if eq .Layout "postingan-donghua" }}
+    <meta itemprop="keywords" content="{{ .Params.keywords }}">
+{{ end }}

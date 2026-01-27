@@ -3,9 +3,9 @@
 <head>
     {{ partial "meta" . }}
     {{ partial "link" . }}
-    {{ template "_internal/schema.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-    {{ template "_internal/opengraph.html" . }}
+    {{ partial "schema" . }}
+    {{ partial "twitter_cards" . }}
+    {{ partial "opengraph" . }}
     {{ if hugo.IsProduction }}
         {{ template "_internal/google_analytics.html" . }}    
     {{ end }}
