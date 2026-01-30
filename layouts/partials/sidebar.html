@@ -1,5 +1,5 @@
 <aside style="flex-basis: 380px;" class="w-full text-white">
-    <div>
+    <div class="h-full">
         {{/*  Elemen Iklan  */}}
             {{ partial "widget/ads-300x250" . }}
         {{/*  Akhir Elemen Iklan  */}}
@@ -28,7 +28,7 @@
                   {{ end }}
                 </div>
 
-                <div id="button-search" class="mt-6 bg-sky-300 w-fit mx-auto p-2 font-bold rounded-lg">
+                <div id="button-search" class="mt-6 bg-sky-300 hover:bg-sky-400 w-fit mx-auto p-2 font-bold rounded-lg">
                   <button type="submit">Terapkan Filter</button>
                 </div>
             </form>
@@ -77,21 +77,6 @@
             </div>
         </div>
         {{/*  Akhir Elemen Season  */}}
-        {{/*  Elemen Support Kami  */}}
-        <div class="bg-slate-300 bg-opacity-50 p-4 mt-4">
-            <div class="flex justify-center items-center relative mb-4">
-                <span class="font-bold border-white z-50 bg-sky-300 border p-2 pl-4 w-fit absolute top-1.5 mx-auto rounded-full select-none mb-4 flex items-center gap-2 text-2xl"><i class="fa-solid fa-leaf"></i>Support Kami</span>
-                <div class="w-full py-8">
-                    <hr>
-                </div>
-            </div>
-            <div class="flex items-center gap-4 px-4 flex-wrap flex-row justify-evenly">
-                <a rel="nofollow noopener" target="_blank" href="https://saweria.co/DonghuaBatch">
-                    <img class="rounded-lg" width="150" height="150" src="/img/saweria.webp" alt="PayPal">
-                </a>
-            </div>
-        </div>
-        {{/*  Akhir Elemen Support Kami  */}}
         {{/*  Elemen Pasang Iklan  */}}
         <div class="bg-slate-300 bg-opacity-50 p-4 mt-4">
             <div class="flex justify-center items-center relative mb-4">
@@ -108,5 +93,22 @@
             </div>
         </div>
         {{/*  Akhir Elemen Pasang Iklan  */}}
+        {{/*  Iklan  */}}
+        {{ if hugo.IsProduction }}
+            <div class="w-full mt-4 p-4 bg-slate-300 bg-opacity-50 sticky top-20">
+                {{/*  Elemen Iklan  */}}
+                <script>
+                    atOptions = {
+                        'key' : 'f7995a6dce010095a1c087975e306a0a',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                      };
+                </script>
+                <script src="https://contentblanksupersede.com/f7995a6dce010095a1c087975e306a0a/invoke.js"></script>
+                {{/*  Akhir Elemen Iklan  */}}
+            </div>
+        {{ end }}
     </div>
 </aside>

@@ -1,9 +1,9 @@
 <div class="mt-4 bg-slate-400 bg-opacity-50 p-4">
-    <div class="flex flex-col mt-4 gap-2">
+    <div class="flex flex-col mt-2">
         {{/*  Div Download Batch  */}}
-        <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-4 mx-auto">
         {{ range .Params.downloadGroups }}
-            <div class="download-group mb-6">
+            <div class="download-group">
                 <h3 class="bg-blue-300 select-none font-bold p-3 border-b-white border-b-2 w-full max-w-96"><i class="fa-solid fa-circle-info mr-2"></i>{{ .title }}</h3>
                 {{ range .downloads }}
                   <div>
@@ -23,7 +23,7 @@
         {{ end }}
         </div>
         {{/*  Button Download  */}}
-        <button title="Laporkan Link Download Mati" id="reportButton" class="mx-auto w-fit mt-4 cursor-pointer hover:bg-blue-400 hover:text-white p-2 rounded-lg bg-blue-300 font-bold scroll-mt-[300px]">
+        <button title="Laporkan Link Download Mati" id="reportButton" class="mx-auto w-fit mt-6 cursor-pointer hover:bg-blue-400 hover:text-white p-2 rounded-lg bg-blue-300 font-bold scroll-mt-[300px]">
             Laporkan Link Mati
         </button>
         

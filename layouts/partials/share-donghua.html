@@ -1,20 +1,20 @@
 <div class="bg-slate-300 bg-opacity-50 mt-4 p-4">
     <span class="text-xl flex justify-center items-center text-white"><strong>Share Donghua</strong></span>
-    <div class="share-buttons flex gap-2 justify-center items-center mt-8 bg-white w-fit mx-auto rounded-lg">
-        <a title="Share on WhatsApp" href="https://api.whatsapp.com/send?text={{ .Title }}%20{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-shake text-green-600 text-3xl fa-brands fa-whatsapp p-2 hover:bg-sky-300 rounded-lg"></i>
+    <div class="share-buttons flex gap-2 justify-center items-center mt-4 bg-white w-fit mx-auto rounded-lg p-1 px-2">
+        <a class="hover:shadow hover:shadow-black rounded-lg" title="Share on WhatsApp" href="https://api.whatsapp.com/send?text={{ .Title }}%20{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-shake text-green-600 text-3xl fa-brands fa-whatsapp p-2"></i>
         </a>
-        <a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-shake text-blue-400 text-3xl fa-brands fa-facebook p-2 hover:bg-sky-300 rounded-lg"></i>
+        <a class="hover:shadow hover:shadow-black rounded-lg" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-shake text-blue-400 text-3xl fa-brands fa-facebook p-2"></i>
         </a>
-        <a title="Share on Twitter" href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-shake text-blue-500 text-3xl p-2 fa-brands fa-twitter hover:bg-sky-300 rounded-lg"></i>
+        <a class="hover:shadow hover:shadow-black rounded-lg" title="Share on Twitter" href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-shake text-blue-500 text-3xl p-2 fa-brands fa-twitter"></i>
         </a>
-        <a title="Share on Telegram" href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-shake text-sky-600 text-3xl p-2 fa-brands fa-telegram hover:bg-sky-300 rounded-lg"></i>
+        <a class="hover:shadow hover:shadow-black rounded-lg" title="Share on Telegram" href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-shake text-sky-600 text-3xl p-2 fa-brands fa-telegram"></i>
         </a>
-        <a title="Share on Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-shake text-purple-800 text-3xl p-2 fa-brands fa-instagram hover:bg-sky-300 rounded-lg"></i>
+        <a class="hover:shadow hover:shadow-black rounded-lg" title="Share on Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-shake text-purple-800 text-3xl p-2 fa-brands fa-instagram"></i>
         </a>
     </div>
 </div>
