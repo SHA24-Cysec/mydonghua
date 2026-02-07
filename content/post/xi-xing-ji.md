@@ -21,6 +21,14 @@ release : '2018'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/xi-xing-ji-s2'
+judulSeasonSelanjutnya : 'Xi Xing Ji Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji.webp
 image : /img/post/xi-xing-ji.webp

@@ -21,6 +21,14 @@ release : '2019'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/xi-xing-ji-season-3'
+judulSeasonSelanjutnya : 'Xi Xing Ji Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/xi-xing-ji'
+judulSeasonSebelumnya : 'Xi Xing Ji Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-s2.webp
 image : /img/post/xi-xing-ji-s2.webp

@@ -21,7 +21,15 @@ episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'July 22, 2019'
 # Rating 1-10
-rating : 9.80
+rating : 9.8
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/battle-through-the-heavens-three-year-agreement'
+judulSeasonSelanjutnya : 'Battle Through the Heavens: Three Year Agreement Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/battle-through-the-heavens-the-origin'
+judulSeasonSebelumnya : 'Battle Through the Heavens: the Origin Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/battle-through-the-heavens-s3.webp

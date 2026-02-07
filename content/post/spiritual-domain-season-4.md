@@ -17,7 +17,14 @@ release : 'Dec 8, 2016'
 # Rating 1-10
 rating : 6.8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/spiritual-domain-season-5'
+judulSeasonSelanjutnya : 'Spiritual Domain Season 5 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/spiritual-domain-season-3'
+judulSeasonSebelumnya : 'Spiritual Domain Season 3 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spiritual-domain-season-4.webp
 image : /img/post/spiritual-domain-season-4.webp

@@ -19,7 +19,14 @@ release : 'Apr 28,2022'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/throne-of-seal-movie-electrolux'
+judulSeasonSelanjutnya : 'Throne of Seal Movie: Electrolux Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/throne-of-seal.webp
 image : /img/post/throne-of-seal.webp

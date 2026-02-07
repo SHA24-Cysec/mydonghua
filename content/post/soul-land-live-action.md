@@ -22,7 +22,7 @@ release : 'Feb 05, 2021'
 # Rating 1-10
 rating : 8.9
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/soul-land-live-action.webp
 image : /img/post/soul-land-live-action.webp

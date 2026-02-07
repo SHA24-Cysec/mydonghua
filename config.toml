@@ -25,7 +25,7 @@ preserveTaxonomyNames = true
     img = '/img/favicon.webp'
 
 [sitemap]
-    changeFreq = 'daily'
+    changeFreq = 'weekly'
     priority = 0.8
 
 [outputs]

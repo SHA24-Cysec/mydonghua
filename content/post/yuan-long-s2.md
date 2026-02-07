@@ -6,10 +6,10 @@ studio :
     - 'CG Year'
 season : 'Summer 2021'
 genre :
-    - Action
-    - Adventure
-    - Fantasy
-    - Isekai
+    - 'Action'
+    - 'Adventure'
+    - 'Fantasy'
+    - 'Isekai'
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
@@ -18,7 +18,15 @@ episode : '16 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jul 03, 2021'
 # Rating 1-10
-rating : 8.60
+rating : 8.6
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/yuan-long-s3'
+judulSeasonSelanjutnya : 'Yuan Long Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/yuan-long'
+judulSeasonSebelumnya : 'Yuan Long Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/yuan-long.s2.webp

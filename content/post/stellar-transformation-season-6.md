@@ -21,6 +21,14 @@ release : 'Jan 30, 2025'
 # Rating 1-10
 rating : 9.2
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/stellar-transformation-season-5'
+judulSeasonSebelumnya : 'Stellar Transformation Season 5 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/stellar-transformation-season-6.webp
 image : /img/post/stellar-transformation-season-6.webp

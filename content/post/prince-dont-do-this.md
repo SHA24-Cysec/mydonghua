@@ -19,7 +19,6 @@ release : 'Oct 28, 2020'
 # Rating 1-10
 rating : 7.52
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
 # Gambar width: 200, height : 300
 thumbnail : /img/post/prince-dont-do-this.webp
 image : /img/post/prince-dont-do-this.webp

@@ -19,6 +19,14 @@ release : 'Aug 15, 2020'
 # Rating 1-10
 rating : 8.3
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/the-mirror-twin-cities'
+judulSeasonSelanjutnya : 'The Mirror: Twin Cities Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-mirror-twin-cities-prologue.webp
 image : /img/post/the-mirror-twin-cities-prologue.webp

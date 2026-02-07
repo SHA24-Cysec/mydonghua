@@ -19,6 +19,14 @@ release : 'Oct 03, 2022'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/legendary-twin-beyond-the-sky-movie'
+judulSeasonSelanjutnya : 'Legendary Twins: Beyond the Sky Movie Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/legendary-twins.webp
 image : /img/post/legendary-twins.webp

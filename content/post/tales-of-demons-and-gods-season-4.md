@@ -1,7 +1,7 @@
 ---
 date : '2025-08-17T18:29:05+07:00'
 draft : false
-title : 'Download Batch Tales of Demons of Gods Season 4 Subtitle Indonesia'
+title : 'Download Batch Tales of Demons and Gods Season 4 Subtitle Indonesia'
 studio :
     - 'Ruo Hong Culture'
 season : '2020'
@@ -22,24 +22,31 @@ release : 'Apr 08, 2020'
 # Rating 1-10
 rating : 9
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : 'content/post/tales-of-demons-and-gods-season-5-dan-6.md'
+judulSeasonSelanjutnya : 'Tales of Demons and Gods Season 5 Dan 6 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/tales-of-demons-and-gods-s3'
+judulSeasonSebelumnya : 'Tales of Demons and Gods Season 3 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/tales-of-demons-of-gods-season-4.webp
 image : /img/post/tales-of-demons-of-gods-season-4.webp
 
-alt : 'Tales of Demons of Gods Season 4'
-url: 'tales-of-demons-of-gods-season-4'
+alt : 'Tales of Demons and Gods Season 4'
+url: 'tales-of-demons-and-gods-season-4'
 layout : postingan-donghua
 sinopsis : 'Di musim keempat ini, perjalanan Nie Li semakin menegangkan setelah kembali ke masa mudanya dengan ingatan kehidupan sebelumnya. Dengan pengetahuan yang ia bawa, Nie Li berusaha memperkuat dirinya sekaligus melindungi Glory City dari ancaman para iblis dan sekte-sekte kuat. Musim ini menyoroti pertarungan sengit Nie Li dalam menghadapi berbagai kompetisi antar sekte, di mana ia harus menunjukkan kecerdasannya dalam strategi dan kekuatan kultivasinya yang terus berkembang. Selain itu, hubungan Nie Li dengan teman-temannya, termasuk Xiao Ning’er dan Ye Ziyun, semakin diuji oleh intrik politik dan persaingan kekuatan. Setiap langkah yang ia ambil tidak hanya demi keselamatannya sendiri, tetapi juga untuk mengubah takdir kota dan orang-orang yang ia cintai. Dengan musuh yang semakin kuat, Season 4 menjadi titik penting dalam perjalanan Nie Li untuk membangun kekuatan yang mampu melawan kegelapan besar yang akan datang.'
-deskripsi : 'Download Batch Tales of Demons of Gods Season 4 Subtitle Indonesia'
-keywords : 'Download Batch Tales of Demons of Gods Season 4 Subtitle Indonesia'
+deskripsi : 'Download Batch Tales of Demons and Gods Season 4 Subtitle Indonesia'
+keywords : 'Download Batch Tales of Demons and Gods Season 4 Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
 downloadGroups:
   
   # Batch 1
-  - title: 'Tales of Demons of Gods Season 4 Batch Subtitle Indonesia Episode 1-20'
+  - title: 'Tales of Demons and Gods Season 4 Batch Subtitle Indonesia Episode 1-20'
     
     downloads:
     
@@ -69,7 +76,7 @@ downloadGroups:
       size: ''
 
   # Batch 2
-  - title: 'Tales of Demons of Gods Season 4 Batch Subtitle Indonesia Episode 21-40'
+  - title: 'Tales of Demons and Gods Season 4 Batch Subtitle Indonesia Episode 21-40'
     
     downloads:
     
@@ -99,7 +106,7 @@ downloadGroups:
       size: ''
 
   # Batch 3
-  - title: 'Tales of Demons of Gods Season 4 Batch Subtitle Indonesia Episode 41-52 [END]'
+  - title: 'Tales of Demons and Gods Season 4 Batch Subtitle Indonesia Episode 41-52 [END]'
     
     downloads:
     

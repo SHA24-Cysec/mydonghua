@@ -18,6 +18,14 @@ release : 'Fen 06, 2019'
 # Rating 1-10
 rating : 7.8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/lord-of-universe-season-2'
+judulSeasonSelanjutnya : 'Lord of Universe Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/lord-of-the-universe.webp
 image : /img/post/lord-of-the-universe.webp

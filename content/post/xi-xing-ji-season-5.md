@@ -19,7 +19,14 @@ release : 'Aug 02, 2023'
 # Rating 1-10
 rating : 9.2
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/xi-xing-ji-movie-1-goodbye-wukong'
+judulSeasonSelanjutnya : 'Xi Xing Ji Movie 1: Goodbye Wukong Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/xi-xing-ji-season-4/'
+judulSeasonSebelumnya : 'Xi Xing Ji Season 4 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-season-5.webp
 image : /img/post/xi-xing-ji-season-5.webp

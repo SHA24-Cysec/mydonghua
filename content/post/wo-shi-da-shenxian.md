@@ -22,6 +22,14 @@ release : 'Nov 12, 2020'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/wo-shi-da-shenxian-s2'
+judulSeasonSelanjutnya : 'Wo Shi Da Shenxian Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wo-shi-da-shenxian.webp
 image : /img/post/wo-shi-da-shenxian.webp

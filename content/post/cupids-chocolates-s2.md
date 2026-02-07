@@ -1,7 +1,7 @@
 ---
 date : '2025-03-02T19:36:09+07:00'
 draft : false
-title : 'Download Batch Cupids Chocolates Season 2 Subtitle Indonesia'
+title : "Download Batch Cupid's Chocolates Season 2 Subtitle Indonesia"
 studio :
     - 'B.Cmay Pictures'
 season : '2017'
@@ -19,6 +19,14 @@ episode : '15 Episode'
 release : '2017'
 # Rating 1-10
 rating : 7.36
+
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/cupids-chocolates'
+judulSeasonSebelumnya : "Cupid's Chocolates Subtitle Indonesia"
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/cupids-chocolates-s2.webp

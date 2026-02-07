@@ -20,7 +20,14 @@ release : '2016'
 # Rating 1-10
 rating : 7.4
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/quanzhi-fashi-season-2'
+judulSeasonSelanjutnya : 'Quanzhi Fashi Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-fashi.webp
 image : /img/post/quanzhi-fashi.webp

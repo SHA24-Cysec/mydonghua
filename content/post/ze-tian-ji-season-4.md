@@ -19,7 +19,14 @@ release : 'Aug 22, 2018'
 # Rating 1-10
 rating : 7
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/ze-tian-ji-season-5'
+judulSeasonSelanjutnya : 'Ze Tian Ji Season 5 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/ze-tian-ji-season-3'
+judulSeasonSebelumnya : 'Ze Tian Ji Season 3 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/ze-tian-ji-s4.webp
 image : /img/post/ze-tian-ji-s4.webp

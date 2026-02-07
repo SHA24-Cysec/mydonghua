@@ -20,7 +20,7 @@ release : 'Feb 28, 2014'
 # Rating 1-10
 rating : 7
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/chinesse-mystery-man.webp
 image : /img/post/chinesse-mystery-man.webp

@@ -19,6 +19,14 @@ release : 'Jul 15, 2021'
 # Rating 1-10
 rating : 6.9
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/ze-tian-ji-season-2'
+judulSeasonSelanjutnya : 'Ze Tian Ji Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/ze-tian-ji.webp
 image : /img/post/ze-tian-ji.webp

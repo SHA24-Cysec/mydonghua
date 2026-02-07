@@ -20,6 +20,14 @@ release : '2017'
 # Rating 1-10
 rating : 6.7
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/guomin-laogong-dai-huijia-season-3'
+judulSeasonSelanjutnya : 'Guomin Laogong Dai Huijia Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/guomin-laogong-dai-huijia'
+judulSeasonSebelumnya : 'Guomin Laogong Dai Huijia Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/guomin-laogong-dai-huijia-s2.webp
 image : /img/post/guomin-laogong-dai-huijia-s2.webp

@@ -20,6 +20,14 @@ release : '2017'
 # Rating 1-10
 rating : 7.5
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/fox-spirit-matchmaker-season-6'
+judulSeasonSelanjutnya : 'Fox Spirit Matchmaker Season 6 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/fox-spirit-matchmaker-season-1-4'
+judulSeasonSebelumnya : 'Fox Spirit Matchmaker Season 1-4 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/fox-spirit-matchmaker-s5.webp
 image : /img/post/fox-spirit-matchmaker-s5.webp

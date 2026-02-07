@@ -23,7 +23,7 @@ release : 'Aug 07, 2021'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/mo-dao-zu-shi-final-chapter.webp
 image : /img/post/mo-dao-zu-shi-final-chapter.webp

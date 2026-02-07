@@ -22,6 +22,14 @@ release : '2019'
 # Rating 1-10
 rating : 7
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/wonderland-season-2'
+judulSeasonSelanjutnya : 'Wonderland Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wonderland.webp
 image : /img/post/wonderland.webp

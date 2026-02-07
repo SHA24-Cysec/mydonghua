@@ -19,6 +19,14 @@ release : 'Aug 19, 2022'
 # Rating 1-10
 rating : 9.20
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/xi-xing-ji-movie-3-shadow-demon-city'
+judulSeasonSelanjutnya : 'Xi Xing Ji Movie 3: Shadow Demon City Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/xi-xing-ji-movie-1-goodbye-wukong'
+judulSeasonSebelumnya : 'Xi Xing Ji Movie 1: Goodbye Wukong Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-movie-2-the-fantasy-cave.webp
 image : /img/post/xi-xing-ji-movie-2-the-fantasy-cave.webp

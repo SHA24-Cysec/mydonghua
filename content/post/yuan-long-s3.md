@@ -6,9 +6,9 @@ studio :
     - 'CG Year'
 season : 'Fall 2022'
 genre :
-    - Action
-    - Adventure
-    - Fantasy
+    - 'Action'
+    - 'Adventure'
+    - 'Fantasy'
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
@@ -18,6 +18,14 @@ episode : '16 Episode'
 release : 'Nov 24, 2022'
 # Rating 1-10
 rating : 7.12
+
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/yuan-long-s2'
+judulSeasonSebelumnya : 'Yuan Long Season 2 Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/yuan-long-3.webp

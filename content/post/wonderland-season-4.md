@@ -23,6 +23,14 @@ release : 'Sep 14, 2020'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/wonderland-season-3'
+judulSeasonSebelumnya : 'Wonderland Season 3 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wonderland-season-4.webp
 image : /img/post/wonderland-season-4.webp

@@ -21,7 +21,7 @@ release : 'Feb 15, 2024'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/hitori-no-shita-the-return-of-tetsumaru-movie.webp
 image : /img/post/hitori-no-shita-the-return-of-tetsumaru-movie.webp

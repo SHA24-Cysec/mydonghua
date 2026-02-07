@@ -20,7 +20,15 @@ episode : '24 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'March 29, 2021'
 # Rating 1-10
-rating : 9.80
+rating : 9.8
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/battle-through-the-heavens-season-5'
+judulSeasonSelanjutnya : 'Battle Through the Heavens Season 5 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/battle-through-the-heavens-three-year-agreement'
+judulSeasonSebelumnya : 'Battle Through the Heavens: Three Year Agreement Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-s4.webp

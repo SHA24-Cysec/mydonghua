@@ -21,6 +21,14 @@ release : 'Jul 25, 2022'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/manual-of-hundred-demons-season-2'
+judulSeasonSebelumnya : 'Manual of Hundred Demons Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/manual-of-hundred-demons-s3.webp
 image : /img/post/manual-of-hundred-demons-s3.webp

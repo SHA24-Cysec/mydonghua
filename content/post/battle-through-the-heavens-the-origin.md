@@ -19,7 +19,15 @@ episode : '3 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jul 17, 2022'
 # Rating 1-10
-rating : 9.80
+rating : 9.8
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/battle-through-the-heavens-s3'
+judulSeasonSelanjutnya : 'Battle Through the Heavens Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/battle-through-the-heavens-s2-special'
+judulSeasonSebelumnya : 'Battle Through the Heavens Season 2 Special Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-special-origin.webp

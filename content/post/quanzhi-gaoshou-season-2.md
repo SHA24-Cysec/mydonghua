@@ -19,6 +19,14 @@ release : 'Sep 25, 2020'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/quanzhi-gaoshou-season-3'
+judulSeasonSelanjutnya : 'Quanzhi Gaoshou Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/quanzhi-gaoshou'
+judulSeasonSebelumnya : 'Quanzhi Gaoshou Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-gaoshou-season-2.webp
 image : /img/post/quanzhi-gaoshou-season-2.webp

@@ -18,7 +18,7 @@ release : 'Oct 31, 2020'
 # Rating 1-10
 rating : 7.5
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/heaven-official-blessing.webp
 image : /img/post/heaven-official-blessing.webp

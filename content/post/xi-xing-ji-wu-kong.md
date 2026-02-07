@@ -19,7 +19,14 @@ release : 'Aug 21, 2024'
 # Rating 1-10
 rating : 8.4
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/xi-xing-ji-movie-3-shadow-demon-city'
+judulSeasonSebelumnya : 'Xi Xing Ji Movie 3: Shadow Demon City Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-wu-kong.webp
 image : /img/post/xi-xing-ji-wu-kong.webp

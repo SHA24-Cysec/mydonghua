@@ -22,7 +22,14 @@ release : '2017'
 # Rating 1-10
 rating : 7
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/the-young-imperial-guards-season-2'
+judulSeasonSelanjutnya : 'The Young Imperial Guards Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-young-imperial-guards.webp
 image : /img/post/the-young-imperial-guards.webp

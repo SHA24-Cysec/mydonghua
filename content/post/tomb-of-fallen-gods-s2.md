@@ -21,6 +21,14 @@ release : 'Aug 10, 2024'
 # Rating 1-10
 rating : 8.83
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/tomb-of-fallen-gods'
+judulSeasonSebelumnya : 'Tomb of Fallen Gods Subtitle Indonesia'
+
 # Gambar width: 200, height :300
 thumbnail : /img/post/tomb-of-fallen-gods-s2.webp
 image : /img/post/tomb-of-fallen-gods-s2.webp

@@ -20,7 +20,14 @@ release : 'Jul 12, 2025'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/soul-land-movie-battle-of-the-gods'
+judulSeasonSebelumnya : 'Soul Land Movie: Battle of the Gods Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/soul-land-movie-sword-dao-chen-xin.webp
 image : /img/post/soul-land-movie-sword-dao-chen-xin.webp

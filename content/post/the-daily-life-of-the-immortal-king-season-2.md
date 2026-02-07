@@ -20,6 +20,14 @@ release : 'Oct 30, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/the-daily-life-of-the-immortal-king'
+judulSeasonSebelumnya : 'The Daily Life of the Immortal King Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/The-Daily-Life-of-the-Immortal-King-Season-2.webp
 image : /img/post/The-Daily-Life-of-the-Immortal-King-Season-2.webp

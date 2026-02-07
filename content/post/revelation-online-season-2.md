@@ -21,7 +21,14 @@ release : '2018'
 # Rating 1-10
 rating : 7
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/revelation-online'
+judulSeasonSebelumnya : 'Revelation Online Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/revelation-online-s2.webp
 image : /img/post/revelation-online-s2.webp

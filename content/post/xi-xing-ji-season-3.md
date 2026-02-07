@@ -21,6 +21,14 @@ release : 'Jun 02, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/xi-xing-ji-season-4'
+judulSeasonSelanjutnya : 'Xi Xing Ji Season 4 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/xi-xing-ji-s2'
+judulSeasonSebelumnya : 'Xi Xing Ji Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-season-3.webp
 image : /img/post/xi-xing-ji-season-3.webp

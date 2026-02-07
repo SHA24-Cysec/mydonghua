@@ -17,7 +17,14 @@ release : '2018'
 # Rating 1-10
 rating : 6
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/spiritual-domain-live-action'
+judulSeasonSelanjutnya : 'Spiritual Domain Live Action Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/spiritual-domain-season-5'
+judulSeasonSebelumnya : 'Spiritual Domain Season 5 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spiritual-domain-season-6.webp
 image : /img/post/spiritual-domain-season-6.webp

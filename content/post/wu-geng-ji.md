@@ -6,11 +6,11 @@ studio :
     - 'Sparkly Key Animation Studio'
 season : '2016'
 genre :
-    - Action
-    - Fantasy
-    - Historical
+    - 'Action'
+    - 'Fantasy'
+    - 'Historical'
     - 'Martial Arts'
-    - Supernatural
+    - 'Supernatural'
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
@@ -20,6 +20,14 @@ episode : '30 Episode'
 release : '2016'
 # Rating 1-10
 rating : 7.52
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/wu-geng-ji-season-2'
+judulSeasonSelanjutnya : 'Wu Geng Ji Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-geng-ji.webp

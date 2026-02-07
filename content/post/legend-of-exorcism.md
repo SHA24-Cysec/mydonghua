@@ -18,6 +18,14 @@ release : 'Jul 05, 2020'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/legend-of-exorcism-season-2'
+judulSeasonSelanjutnya : 'Legend of Exorcism Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/legend-of-exorcism.webp
 image : /img/post/legend-of-exorcism.webp

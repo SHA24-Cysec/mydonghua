@@ -21,7 +21,15 @@ release : '2019'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/fox-spirit-matchmaker-season-9'
+judulSeasonSelanjutnya : 'Fox Spirit Matchmaker Season 9 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/fox-spirit-matchmaker-season-7'
+judulSeasonSebelumnya : 'Fox Spirit Matchmaker Season 7 Subtitle Indonesia'
+
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/fox-spirit-matchmaker-season-8.webp
 image : /img/post/fox-spirit-matchmaker-season-8.webp

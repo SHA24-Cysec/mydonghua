@@ -15,6 +15,14 @@ release : 'Oct 28, 2024'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/wo-shi-da-shenxian-s2'
+judulSeasonSebelumnya : 'Wo Shi Da Shenxian Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height :300
 thumbnail : /img/post/wo-shi-da-shenxian-s3.webp
 image : /img/post/wo-shi-da-shenxian-s3.webp

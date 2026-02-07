@@ -18,6 +18,14 @@ release : 'Apr 30, 2025'
 # Rating 1-10
 rating : 9.8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/throne-of-seal'
+judulSeasonSebelumnya : 'Throne of Seal Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/throne-of-seal-movie-electrolux.webp
 image : /img/post/throne-of-seal-movie-electrolux.webp

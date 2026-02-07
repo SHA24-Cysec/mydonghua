@@ -19,7 +19,14 @@ release : 'Mar 16, 2020'
 # Rating 1-10
 rating : 7.5
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/ze-tian-ji-season-4'
+judulSeasonSebelumnya : 'Ze Tian Ji Season 4 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/ze-tian-ji-s5.webp
 image : /img/post/ze-tian-ji-s5.webp

@@ -20,6 +20,14 @@ release : 'Dec 26, 2022'
 # Rating 1-10
 rating : 8.4
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/stellar-transformation-season-6'
+judulSeasonSelanjutnya : 'Stellar Transformation Season 6 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/stellar-transformation-season-4'
+judulSeasonSebelumnya : 'Stellar Transformation Season 4 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/stellar-transformation-season-5.webp
 image : /img/post/stellar-transformation-season-5.webp

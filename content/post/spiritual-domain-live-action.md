@@ -22,6 +22,14 @@ release : 'Jan 09, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/spiritual-domain-season-6'
+judulSeasonSebelumnya : 'Spiritual Domain Season 6 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spiritual-domain-live-action.webp
 image : /img/post/spiritual-domain-live-action.webp

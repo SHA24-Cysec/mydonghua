@@ -20,6 +20,14 @@ release : 'Sep 14, 2024'
 # Rating 1-10
 rating : 9.20
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/perfect-world'
+judulSeasonSebelumnya : 'Perfect World Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/perfect-world-ashes-of-fire.webp
 image : /img/post/perfect-world-ashes-of-fire.webp

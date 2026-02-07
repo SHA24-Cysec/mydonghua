@@ -1,7 +1,7 @@
 ---
 date : '2025-06-30T18:58:03+07:00'
 draft : false
-title : 'Download Batch Renegade Immortal Movie Battle of the Gods Subtitle Indonesia'
+title : 'Download Batch Renegade Immortal Movie: Battle of the Gods Subtitle Indonesia'
 studio :
     - 'BUILD DREAM'
 season : '2025'
@@ -22,23 +22,30 @@ release : 'May 30, 2025'
 # Rating 1-10
 rating : 9.8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/renegade-immortal'
+judulSeasonSebelumnya : 'Renegade Immortal Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/renegade-immortal-movie-battle-of-the-gods.webp
 image : /img/post/renegade-immortal-movie-battle-of-the-gods.webp
 
-alt : 'Renegade Immortal Movie Battle of the Gods'
+alt : 'Renegade Immortal Movie: Battle of the Gods'
 url: 'renegade-immortal-movie-battle-of-the-gods'
 layout : postingan-donghua
 sinopsis : 'Wang Lin, sang protagonis berkepala dingin dan bertulang tebal, kembali menyelam ke perjalanan kultivasi yang penuh bahaya. Di tengah ancaman dari Senat Kota Setan kuno yang tiba‑tiba mengamuk, Li Muwan, orang yang paling berharga baginya, diracun dan berada di ambang kematian. Tanpa ragu, Wang Lin menembus “Laut Budaya Iblis”—wilayah penuh monster dan kultivator kuat—untuk berburu penawar. Dalam petualangan ini ia bertarung menghadapi empat Penguasa Kota sekaligus menjelajahi tujuh wilayah berbeda, menunjukkan peningkatan kekuatan dan kematangan dalam strategi, sambil dihadapkan pada konflik batin dan konteks konspirasi kuno. Puncaknya adalah saat “Pertempuran Para Dewa” dimulai: konfrontasi epik melawan entitas iblis purba. Di sini, Wang Lin tidak hanya mengandalkan teknik kultivasinya, tetapi juga ikatan emosional dan kepercayaannya kepada Li Muwan. Peristiwa ini bukan hanya ujian kekuatan, tetapi juga momen transenden yang memuat perubahan nasib keduanya.'
-deskripsi : 'Download Batch Renegade Immortal Movie Battle of the Gods Subtitle Indonesia'
-keywords : 'Download Batch Renegade Immortal Movie Battle of the Gods Subtitle Indonesia'
+deskripsi : 'Download Batch Renegade Immortal Movie: Battle of the Gods Subtitle Indonesia'
+keywords : 'Download Batch Renegade Immortal Movie: Battle of the Gods Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
 downloadGroups:
   
-  - title: 'Renegade Immortal Movie Battle of the Gods Batch Subtitle Indonesia'
+  - title: 'Renegade Immortal Movie: Battle of the Gods Batch Subtitle Indonesia'
     
     downloads:
     

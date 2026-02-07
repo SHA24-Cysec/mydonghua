@@ -18,6 +18,14 @@ release : 'Dec 28, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/spirit-guardian-season-4'
+judulSeasonSebelumnya : 'Spirit Guardian Season 4 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spirit-guardian-s5.webp
 image : /img/post/spirit-guardian-s5.webp

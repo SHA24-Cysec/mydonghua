@@ -21,7 +21,7 @@ release : 'Jul 26, 2019'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/ne-zha-mo-tong-jiang-shi.webp
 image : /img/post/ne-zha-mo-tong-jiang-shi.webp

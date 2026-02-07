@@ -18,6 +18,14 @@ release : 'Apr 07, 2017'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/quanzhi-gaoshou-season-2'
+judulSeasonSelanjutnya : 'Quanzhi Gaoshou Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/quanzhi-gaoshou-movie-for-the-glory'
+judulSeasonSebelumnya : 'Quanzhi Gaoshou Movie: for the Glory Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-gaoshou.webp
 image : /img/post/quanzhi-gaoshou.webp

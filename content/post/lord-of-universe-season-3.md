@@ -18,6 +18,14 @@ release : 'Mar 17, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/lord-of-universe-season-2'
+judulSeasonSebelumnya : 'Lord of Universe Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/lord-of-universe-season-3.webp
 image : /img/post/lord-of-universe-season-3.webp

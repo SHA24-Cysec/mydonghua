@@ -19,7 +19,14 @@ release : 'Jul 26, 2021'
 # Rating 1-10
 rating : 6.9
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/ze-tian-ji-season-4'
+judulSeasonSelanjutnya : 'Ze Tian Ji Season 4 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/ze-tian-ji-season-2'
+judulSeasonSebelumnya : 'Ze Tian Ji Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/ze-tian-ji-s3.webp
 image : /img/post/ze-tian-ji-s3.webp

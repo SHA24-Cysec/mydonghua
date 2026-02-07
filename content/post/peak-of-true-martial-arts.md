@@ -19,7 +19,7 @@ release : 'Dec 24, 2021'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/peak-of-true-martial-arts.webp
 image : /img/post/peak-of-true-martial-arts.webp

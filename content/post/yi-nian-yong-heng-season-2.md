@@ -21,7 +21,14 @@ release : '2022'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/yi-nian-yong-heng'
+judulSeasonSebelumnya : 'Yi Nian Yong Heng Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/yi-nian-yong-heng-season-2.webp
 image : /img/post/yi-nian-yong-heng-season-2.webp

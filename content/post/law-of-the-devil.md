@@ -17,7 +17,7 @@ release : ''
 # Rating 1-10
 rating : 
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/law-of-the-devil.webp
 image : /img/post/law-of-the-devil.webp

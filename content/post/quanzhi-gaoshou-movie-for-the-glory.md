@@ -3,8 +3,8 @@ date : '2025-03-01T16:37:32+07:00'
 draft : false
 title : 'Download Batch Quanzhi Gaoshou Movie: for the Glory Subtitle Indonesia'
 studio :
-    - B.cmay Pictures
-season : ''
+    - 'B.CMAY PICTURES'
+season : '2019'
 genre :
     - Action
     - Game
@@ -17,6 +17,14 @@ episode : '1 Episode'
 release : '2019'
 # Rating 1-10
 rating : 8.29
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/quanzhi-gaoshou'
+judulSeasonSelanjutnya : 'Quanzhi Gaoshou Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-gaoshou-movie-for-the-glory.webp

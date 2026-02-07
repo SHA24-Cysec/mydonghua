@@ -1,0 +1,16 @@
+<div class="{{ if (or .Params.linkSeasonSebelumnya .Params.linkSeasonSelanjutnya) }} mt-4 {{ end }} flex flex-col flex-wrap gap-4">
+    {{/*  Season Sebelumnya  */}}
+    {{ if .Params.linkSeasonSebelumnya }}
+        <div class="flex gap-2 flex-row flex-wrap items-center font-bold">
+            <span class="p-2 bg-blue-300 w-fit rounded outline-white outline-2">Season Sebelumnya</span>
+            <a class="p-2 bg-blue-300 w-fit rounded hover:bg-blue-400 hover:text-white" href="{{ .Params.linkSeasonSebelumnya | relURL }}">{{ .Params.judulSeasonSebelumnya }}</a>
+        </div>
+    {{ end }}
+    {{/*  Season Selanjutnya  */}}
+    {{ if .Params.linkSeasonSelanjutnya }}
+        <div class="flex gap-2 flex-row flex-wrap items-center font-bold">
+            <span class="p-2 bg-blue-300 w-fit rounded">Season Selanjutnya</span>
+            <a class="p-2 bg-blue-300 w-fit rounded hover:bg-blue-400 hover:text-white" href="{{ .Params.linkSeasonSelanjutnya | relURL }}">{{ .Params.judulSeasonSelanjutnya }}</a>
+        </div>
+    {{ end }}
+</div>

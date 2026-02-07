@@ -20,6 +20,14 @@ release : 'Jun 10, 2023'
 # Rating 1-10
 rating : 9
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/soul-land-movie-battle-of-the-gods'
+judulSeasonSelanjutnya : 'Soul Land Movie: Battle of the Gods Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/soul-land'
+judulSeasonSebelumnya : 'Soul Land Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/soul-land-2-the-unrivaled-tang-sect.webp
 image : /img/post/soul-land-2-the-unrivaled-tang-sect.webp

@@ -18,6 +18,14 @@ release : 'Jul 19, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/heibai-wushuang-s2'
+judulSeasonSebelumnya : 'Heibai Wushuang Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/heibai-wushuang-s3.webp
 image : /img/post/heibai-wushuang-s3.webp

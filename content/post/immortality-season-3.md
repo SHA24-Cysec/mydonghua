@@ -20,7 +20,15 @@ release : 'Apr 19, 2024'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/immortality-season-2'
+judulSeasonSebelumnya : 'Immortality Season 2'
+
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/immortality-season-3.webp
 image : /img/post/immortality-season-3.webp

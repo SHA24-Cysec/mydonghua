@@ -6,20 +6,28 @@ studio :
     - 'CG Year'
 season : 'Winter 2018'
 genre :
-    - Action
-    - Adventure
-    - Historical
+    - 'Action'
+    - 'Adventure'
+    - 'Historical'
     - 'Martial Arts'
-    - Mystery
+    - 'Mystery'
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
 durasi : '20 Menit'
-episode : ' Episode'
+episode : '26 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Dec 26, 2018'
 # Rating 1-10
 rating : 7
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/shao-nian-ge-xing-season-2'
+judulSeasonSelanjutnya : 'Shao Nian Ge Xing Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/shao-nian-ge-xing.webp

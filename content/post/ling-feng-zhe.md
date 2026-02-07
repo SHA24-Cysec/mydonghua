@@ -20,7 +20,7 @@ release : 'Jan 28, 2019'
 # Rating 1-10
 rating : 6
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/ling-feng-zhe.webp
 image : /img/post/ling-feng-zhe.webp

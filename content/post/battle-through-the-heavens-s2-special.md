@@ -1,7 +1,7 @@
 ---
 date : '2025-03-01T19:34:24+07:00'
 draft : false
-title : 'Download Batch Battle Through the Heavens S2 Special Subtitle Indonesia'
+title : 'Download Batch Battle Through the Heavens Season 2 Special Subtitle Indonesia'
 studio :
     - 'Shanghai Motion Magic'
 season : '2018'
@@ -18,7 +18,15 @@ episode : '3 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'March 04, 2018'
 # Rating 1-10
-rating : 9.80
+rating : 9.8
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/battle-through-the-heavens-the-origin'
+judulSeasonSelanjutnya : 'Battle Through the Heavens: the Origin Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/battle-through-the-heavens-s2'
+judulSeasonSebelumnya : 'Battle Through the Heavens Season 2 Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-s2-special.webp

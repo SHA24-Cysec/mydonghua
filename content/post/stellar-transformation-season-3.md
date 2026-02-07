@@ -20,6 +20,14 @@ release : 'Sep 05, 2021'
 # Rating 1-10
 rating : 8.8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/stellar-transformation-season-4'
+judulSeasonSelanjutnya : 'Stellar Transformation Season 4 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/stellar-transformation-s2'
+judulSeasonSebelumnya : 'Stellar Transformation Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/stellar-transformation-season-3.webp
 image : /img/post/stellar-transformation-season-3.webp

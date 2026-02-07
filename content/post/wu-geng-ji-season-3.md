@@ -21,6 +21,14 @@ release : 'Dec 20, 2019'
 # Rating 1-10
 rating : 9.2
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/wu-geng-ji-season-2'
+judulSeasonSebelumnya : 'Wu Geng Ji Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-geng-ji-season-3.webp
 image : /img/post/wu-geng-ji-season-3.webp

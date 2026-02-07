@@ -19,7 +19,14 @@ release : 'May 01, 2022'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/wu-dong-qian-kun-season-4'
+judulSeasonSelanjutnya : 'Wu Dong Qian Kun Season 4 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/wu-dong-qian-kun-season-2'
+judulSeasonSebelumnya : 'Wu Dong Qian Kun Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun-season-3.webp
 image : /img/post/wu-dong-qian-kun-season-3.webp

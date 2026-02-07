@@ -21,6 +21,14 @@ release : 'Apr 25, 2020'
 # Rating 1-10
 rating : 7
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/manual-of-hundred-demons-season-2'
+judulSeasonSelanjutnya : 'Manual of Hundred Demons Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/manual-of-hundred-demons.webp
 image : /img/post/manual-of-hundred-demons.webp

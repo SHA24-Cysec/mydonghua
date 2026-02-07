@@ -22,7 +22,14 @@ release : '2018'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/soul-land-2-the-unrivaled-tang-sect'
+judulSeasonSelanjutnya : 'Soul Land 2: The Unrivaled Tang Sect Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/soul-land.webp
 image : /img/post/soul-land.webp

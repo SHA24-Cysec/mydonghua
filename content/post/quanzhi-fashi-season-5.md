@@ -20,7 +20,14 @@ release : 'Jul 28, 2021'
 # Rating 1-10
 rating : 8.6
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/quanzhi-fashi-season-4'
+judulSeasonSebelumnya : 'Quanzhi Fashi Season 4 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-fashi-s5.webp
 image : /img/post/quanzhi-fashi-s5.webp

@@ -18,7 +18,7 @@ release : 'Apr 01,2020'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/god-of-deception.webp
 image : /img/post/god-of-deception.webp

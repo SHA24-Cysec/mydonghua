@@ -22,6 +22,14 @@ release : '2018'
 # Rating 1-10
 rating : 7.8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/tales-of-demons-and-gods-season-4'
+judulSeasonSelanjutnya : 'Tales of Demons and Gods Season 4 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/tales-of-demons-and-gods-s2'
+judulSeasonSebelumnya : 'Tales of Demons and Gods Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/tales-of-demons-and-gods-s3.webp
 image : /img/post/tales-of-demons-and-gods-s3.webp

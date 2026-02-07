@@ -21,7 +21,14 @@ release : 'Nov 29, 2020'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/swallowed-star-movie-blood-river-continent'
+judulSeasonSelanjutnya : 'Swallowed Star Movie: Blood River Continent Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/swallowed-star.webp
 image : /img/post/swallowed-star.webp

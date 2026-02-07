@@ -19,7 +19,7 @@ release : 'Spe 26, 2023'
 # Rating 1-10
 rating : 8.8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/martial-god-asura.webp
 image : /img/post/martial-god-asura.webp

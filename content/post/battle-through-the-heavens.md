@@ -19,7 +19,15 @@ episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jan 07, 2017'
 # Rating 1-10
-rating : 9.80
+rating : 9.8
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/battle-through-the-heavens-special'
+judulSeasonSelanjutnya : 'Battle Through the Heavens Special Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth.webp

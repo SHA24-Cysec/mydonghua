@@ -19,7 +19,7 @@ release : 'May 19, 2017'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/kai-feng-qitan-zhege-baogong-bu-taixing.webp
 image : /img/post/kai-feng-qitan-zhege-baogong-bu-taixing.webp

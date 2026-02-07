@@ -20,7 +20,7 @@ release : 'Apr 23, 2023'
 # Rating 1-10
 rating : 7.8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/my-heroic-husband.webp
 image : /img/post/my-heroic-husband.webp

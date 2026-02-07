@@ -20,6 +20,14 @@ release : 'Jul 21, 2022'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/tomb-of-fallen-gods-s2'
+judulSeasonSelanjutnya : 'Tomb of Fallen Gods Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/tomb-of-fallen-gods.webp
 image : /img/post/tomb-of-fallen-gods.webp

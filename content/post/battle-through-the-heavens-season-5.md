@@ -21,7 +21,15 @@ release : 'Jul 16, 2023'
 # Rating 1-10
 rating : 9.2
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/battle-through-the-heavens-s4'
+judulSeasonSebelumnya : 'Battle Through the Heavens Season 4 Subtitle Indonesia'
+
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/battle-through-the-heavens-season-5.webp
 image : /img/post/battle-through-the-heavens-season-5.webp

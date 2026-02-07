@@ -21,7 +21,7 @@ release : 'May 30, 2018'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/eudemon-quest.webp
 image : /img/post/eudemon-quest.webp

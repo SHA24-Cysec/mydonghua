@@ -19,7 +19,15 @@ episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'May 04, 2020'
 # Rating 1-10
-rating : 8.60
+rating : 8.6
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/xi-xing-ji-movie-2-the-fantasy-cave'
+judulSeasonSelanjutnya : 'Xi Xing Ji Movie 2: the Fantasy Cave Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/xi-xing-ji-season-5'
+judulSeasonSebelumnya : 'Xi Xing Ji Season 5 Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/xi-xing-ji-movie-1-goodbye-wukong.webp

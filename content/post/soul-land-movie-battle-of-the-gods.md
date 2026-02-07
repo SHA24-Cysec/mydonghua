@@ -22,6 +22,14 @@ release : 'Jun 17, 2023'
 # Rating 1-10
 rating : 9.20
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/soul-land-movie-sword-dao-chen-xin'
+judulSeasonSelanjutnya : 'Soul Land Movie Sword Dao Chen Xin Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/soul-land-2-the-unrivaled-tang-sect'
+judulSeasonSebelumnya : 'Soul Land 2: The Unrivaled Tang Sect Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/soul-land-movie.webp
 image : /img/post/soul-land-movie.webp

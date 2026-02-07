@@ -18,6 +18,14 @@ release : '2019'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/rakshasa-street'
+judulSeasonSebelumnya : 'Rakshasa Street Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/rakshasa-street-s2.webp
 image : /img/post/rakshasa-street-s2.webp

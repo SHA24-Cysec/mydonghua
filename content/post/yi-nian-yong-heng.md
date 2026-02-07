@@ -21,7 +21,14 @@ release : 'Aug 12, 2020'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/yi-nian-yong-heng-season-2'
+judulSeasonSelanjutnya : 'Yi Nian Yong Heng Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/yi-nian-yong-heng.webp
 image : /img/post/yi-nian-yong-heng.webp

@@ -20,6 +20,14 @@ release : 'Sep 25, 2023'
 # Rating 1-10
 rating : 9
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/renegade-immortal-movie-battle-of-the-gods'
+judulSeasonSelanjutnya : 'Renegade Immortal Movie: Battle of the Gods Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/renegade-immortal.webp
 image : /img/post/renegade-immortal.webp

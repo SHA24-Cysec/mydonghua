@@ -22,6 +22,14 @@ release : 'Jul 12, 2020'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/wu-dong-qian-kun-season-3'
+judulSeasonSelanjutnya : 'Wu Dong Qian Kun Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/wu-dong-qian-kun'
+judulSeasonSebelumnya : 'Wu Dong Qian Kun Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun-s2.webp
 image : /img/post/wu-dong-qian-kun-s2.webp

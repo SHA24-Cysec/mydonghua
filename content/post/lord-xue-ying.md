@@ -22,6 +22,14 @@ release : 'Dec 20, 2018'
 # Rating 1-10
 rating : 6.94
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/lord-xue-ying-special'
+judulSeasonSelanjutnya : 'Lord Xue Ying Special Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/lord-xue-ying.webp
 image : /img/post/lord-xue-ying.webp

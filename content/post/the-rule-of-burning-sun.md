@@ -22,7 +22,15 @@ episode : '1 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Aug 06, 2020'
 # Rating 1-10
-rating : 8.60
+rating : 8.6
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/the-rule-of-burning-sun-2'
+judulSeasonSelanjutnya : 'The Rule of Burning Sun 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-rule-of-burning-sun.webp

@@ -21,6 +21,14 @@ release : 'Feb 12, 2021'
 # Rating 1-10
 rating : 9
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/the-rule-of-burning-sun'
+judulSeasonSebelumnya : 'The Rule of Burning Sun Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-rule-of-burning-sun-2.webp
 image : /img/post/the-rule-of-burning-sun-2.webp

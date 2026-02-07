@@ -22,6 +22,14 @@ release : '2019'
 # Rating 1-10
 rating : 7.5
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/wu-dong-qian-kun-season-2'
+judulSeasonSelanjutnya : 'Wu Dong Qian Kun Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun.webp
 image : /img/post/wu-dong-qian-kun.webp

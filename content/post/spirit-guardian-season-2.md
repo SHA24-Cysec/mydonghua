@@ -18,6 +18,14 @@ release : '2018'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/spirit-guardian-season-3/'
+judulSeasonSelanjutnya : 'Spirit Guardian Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/spirit-guardian'
+judulSeasonSebelumnya : 'Spirit Guardian Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/Spirit-Guardians-Season-2.webp
 image : /img/post/Spirit-Guardians-Season-2.webp

@@ -20,7 +20,14 @@ release : '2018'
 # Rating 1-10
 rating : 7.5
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/quanzhi-fashi-season-4'
+judulSeasonSelanjutnya : 'Quanzhi Fashi Season 4 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/quanzhi-fashi-season-2'
+judulSeasonSebelumnya : 'Quanzhi Fashi Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/quanzhi-fashi-s3.webp
 image : /img/post/quanzhi-fashi-s3.webp

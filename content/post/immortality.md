@@ -19,7 +19,15 @@ release : 'jan 29, 2022'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/immortality-season-2'
+judulSeasonSelanjutnya : 'Immortality Season 2'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/immortality.webp
 image : /img/post/immortality.webp

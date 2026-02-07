@@ -21,6 +21,14 @@ release : 'Nov 20, 2025'
 # Rating 1-10
 rating : 9
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/wu-dong-qian-kun-s5'
+judulSeasonSebelumnya : 'Wu Dong Qian Kun Season 5 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-dong-qian-kun-season-6.webp
 image : /img/post/wu-dong-qian-kun-season-6.webp

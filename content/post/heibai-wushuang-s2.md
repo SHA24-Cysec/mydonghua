@@ -19,6 +19,14 @@ release : '2015'
 # Rating 1-10
 rating : 6.4
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/heibai-wushuang-season-3'
+judulSeasonSelanjutnya : 'Heibai Wushuang Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/heibai-wushuang'
+judulSeasonSebelumnya : 'Heibai Wushuang Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/heibai-wushuang-s2.webp
 image : /img/post/heibai-wushuang-s2.webp

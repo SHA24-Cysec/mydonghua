@@ -18,6 +18,14 @@ release : 'Jan 14, 2023'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/the-land-of-miracles'
+judulSeasonSebelumnya : 'The Land of Miracles Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-land-of-miracles-season-2.webp
 image : /img/post/the-land-of-miracles-season-2.webp

@@ -21,6 +21,14 @@ release : 'Jan 07, 2017'
 # Rating 1-10
 rating : 9.80
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/battle-through-the-heavens-s2'
+judulSeasonSelanjutnya : 'Battle Through the Heavens Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/battle-through-the-heavens'
+judulSeasonSebelumnya : 'Battle Through the Heavens Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/btth-special.webp
 image : /img/post/btth-special.webp
@@ -28,7 +36,7 @@ image : /img/post/btth-special.webp
 alt : 'Battle Through the Heavens Special'
 url: 'battle-through-the-heavens-special'
 layout : postingan-donghua
-sinopsis : 'Ini adalah episode Special dari Battle Through the Heavens'
+sinopsis : 'Battle Through the Heavens Special menceritakan fase penting perjalanan Xiao Yan di luar cerita utama. Kisah ini fokus pada konflik besar yang membentuk kekuatannya, termasuk pertarungan hidup mati dan keputusan berisiko tinggi. Xiao Yan menghadapi musuh yang jauh lebih kuat, sambil belajar mengendalikan teknik dan api legendaris. Hubungannya dengan sekutu dan gurunya diuji dalam tekanan nyata. Special ini menonjolkan proses pendewasaan Xiao Yan sebelum ia melangkah ke level pertarungan yang lebih brutal.'
 deskripsi : 'Download Batch Battle Through the Heavens Special Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens Special Subtitle Indonesia'
 

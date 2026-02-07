@@ -20,7 +20,15 @@ release : 'Jun 26, 2015'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/fox-spirit-matchmaker-s5'
+judulSeasonSelanjutnya : 'Fox Spirit Matchmaker Season 5 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/fox-spirit-matchmaker-season-1-4.webp
 image : /img/post/fox-spirit-matchmaker-season-1-4.webp

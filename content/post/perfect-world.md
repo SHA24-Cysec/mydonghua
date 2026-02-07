@@ -19,7 +19,14 @@ release : 'Apr 23, 2021'
 # Rating 1-10
 rating : 8
 
-# Gunakan tag 'Belum Tersedia' jika layanan streaming belum ada'
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/perfect-world-ashes-of-fire'
+judulSeasonSelanjutnya : 'Perfect World: Ashes of Fire Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/perfect-world.webp
 image : /img/post/perfect-world.webp
