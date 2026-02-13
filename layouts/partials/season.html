@@ -1,16 +1,34 @@
 <div class="{{ if (or .Params.linkSeasonSebelumnya .Params.linkSeasonSelanjutnya) }} mt-4 {{ end }} flex flex-col flex-wrap gap-4">
-    {{/*  Season Sebelumnya  */}}
-    {{ if .Params.linkSeasonSebelumnya }}
-        <div class="flex gap-2 flex-row flex-wrap items-center font-bold">
-            <span class="p-2 bg-blue-300 w-fit rounded outline-white outline-2">Season Sebelumnya</span>
-            <a class="p-2 bg-blue-300 w-fit rounded hover:bg-blue-400 hover:text-white" href="{{ .Params.linkSeasonSebelumnya | relURL }}">{{ .Params.judulSeasonSebelumnya }}</a>
-        </div>
-    {{ end }}
-    {{/*  Season Selanjutnya  */}}
-    {{ if .Params.linkSeasonSelanjutnya }}
-        <div class="flex gap-2 flex-row flex-wrap items-center font-bold">
-            <span class="p-2 bg-blue-300 w-fit rounded">Season Selanjutnya</span>
-            <a class="p-2 bg-blue-300 w-fit rounded hover:bg-blue-400 hover:text-white" href="{{ .Params.linkSeasonSelanjutnya | relURL }}">{{ .Params.judulSeasonSelanjutnya }}</a>
-        </div>
-    {{ end }}
+    <table class="w-auto mx-auto table table-fixed bg-blue-300">
+        <thead>
+            <tr>
+                {{ if .Params.linkSeasonSebelumnya }}
+                    <th class="border border-black p-2">
+                        <div class="flex flex-col gap-2 items-center">
+                            <span>Season Sebelumnya</span>
+                            <i class="fa-solid fa-circle-left"></i>
+                        </div>
+                    </th>
+                {{ end}}
+                {{ if .Params.linkSeasonSelanjutnya }}
+                    <th class="border border-black p-2">
+                        <div class="flex flex-col gap-2 items-center">
+                            <span>Season Selanjutnya</span>
+                            <i class="fa-solid fa-circle-right"></i>
+                        </div>
+                    </th>
+                {{ end }}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {{ if .Params.linkSeasonSebelumnya }}
+                    <td class="border border-black p-2"><a class="text-blue-600 hover:text-blue-800" href="{{ .Params.linkSeasonSebelumnya | relURL }}">{{ .Params.judulSeasonSebelumnya }}</a></td>
+                {{ end }}
+                {{ if .Params.linkSeasonSelanjutnya }}
+                    <td class="border border-black p-2"><a class="text-blue-600 hover:text-blue-800" href="{{ .Params.linkSeasonSelanjutnya | relURL }}">{{ .Params.judulSeasonSelanjutnya }}</a></td>
+                {{ end }}
+            </tr>
+        </tbody>
+    </table>
 </div>
