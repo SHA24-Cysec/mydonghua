@@ -176,9 +176,9 @@ downloadGroups:
       size: '6.57 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/a4Ch5iY2'
+      link: 'https://www.mediafire.com/file/mw2cbi1e17pi08v/Anichin.best_Peak.Tru.Martial.Ep141-196_1080p.zip/file'
       button: 'Download'
-      size: '9.86 GB'
+      size: '9.18 GB'
     
     - quality: '4K'
       link: ''

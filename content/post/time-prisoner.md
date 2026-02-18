@@ -37,12 +37,12 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://pixeldrain.com/u/k7TvXgFi'
+      link: 'https://teraboxapp.com/s/1bNyQOfdNOz-LIEsbLXmX9A'
       button: 'Download'
-      size: '615 MB'
+      size: '587 MB'
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/brx5ZFYk'
+      link: 'https://teraboxapp.com/s/1bNyQOfdNOz-LIEsbLXmX9A'
       button: 'Download'
       size: '983 MB'
     
