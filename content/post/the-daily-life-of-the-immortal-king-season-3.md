@@ -35,7 +35,7 @@ image : /img/post/the-daily-life-of-the-immortal-king-season-3.webp
 alt : 'The Daily Life of the Immortal King Season 3'
 url: 'the-daily-life-of-the-immortal-king-season-3'
 layout : postingan-donghua
-sinopsis : ''
+sinopsis : 'The Daily Life of the Immortal King Season 3 melanjutkan kehidupan Wang Ling, seorang siswa SMA yang memiliki kekuatan spiritual sangat besar. Ia tetap berusaha hidup normal dan menyembunyikan kekuatannya dari orang lain. Di musim ini, berbagai ancaman baru mulai muncul. Organisasi misterius, konflik antar kultivator, dan masalah di dunia spiritual semakin sering terjadi. Wang Ling terpaksa terlibat untuk melindungi teman temannya dan menjaga keseimbangan dunia kultivasi. Di sisi lain, hubungan Wang Ling dengan teman sekelasnya juga berkembang. Mereka mulai menghadapi tantangan bersama. Banyak situasi berbahaya muncul, tetapi juga diselingi momen komedi khas kehidupan sekolah.'
 deskripsi : 'Download Batch The Daily Life of the Immortal King Season 3 Subtitle Indonesia'
 keywords : 'Download Batch The Daily Life of the Immortal King Season 3 Subtitle Indonesia'
 
