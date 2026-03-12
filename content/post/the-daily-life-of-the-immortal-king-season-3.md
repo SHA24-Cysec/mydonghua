@@ -1,0 +1,75 @@
+---
+date : '2026-03-12T19:30:19+07:00'
+draft : false
+title : 'Download Batch The Daily Life of the Immortal King Season 3 Subtitle Indonesia'
+studio :
+    - 'PB Animation Co. Ltd'
+season : 'Summer 2022'
+genre :
+    - 'Comedy'
+    - 'Romance'
+    - 'School'
+    - 'Slice of Life'
+type : 'Donghua'
+status : 'Completed'
+sub : 'Anichin'
+durasi : '20 Menit'
+episode : '12 Episode'
+# Penulisan tanggal 'bulan tanggal, tahun'
+release : 'Oct 10, 2022'
+# Rating 1-10
+rating : 8
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/the-daily-life-of-the-immortal-king-season-4'
+judulSeasonSelanjutnya : 'The Daily Life of the Immortal King Season 4'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/the-daily-life-of-the-immortal-king-season-2'
+judulSeasonSebelumnya : 'The Daily Life of the Immortal King Season 2'
+
+# Gambar width: 200, height : 300
+thumbnail : /img/post/the-daily-life-of-the-immortal-king-season-3.webp
+image : /img/post/the-daily-life-of-the-immortal-king-season-3.webp
+
+alt : 'The Daily Life of the Immortal King Season 3'
+url: 'the-daily-life-of-the-immortal-king-season-3'
+layout : postingan-donghua
+sinopsis : ''
+deskripsi : 'Download Batch The Daily Life of the Immortal King Season 3 Subtitle Indonesia'
+keywords : 'Download Batch The Daily Life of the Immortal King Season 3 Subtitle Indonesia'
+
+# Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
+
+downloadGroups:
+  
+  # Batch 1
+  - title: 'The Daily Life of the Immortal King Season 3 Batch Subtitle Indonesia'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://acefile.co/f/90136097'
+      button: 'Download'
+      size: '394.25 MB'
+    
+    - quality: '480p'
+      link: 'https://acefile.co/f/90136100'
+      button: 'Download'
+      size: '1.06 GB'
+    
+    - quality: '720p'
+      link: 'https://acefile.co/f/90136101'
+      button: 'Download'
+      size: '2.34 GB'
+    
+    - quality: '1080p'
+      link: 'https://acefile.co/f/90136104'
+      button: 'Download'
+      size: '4 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+---

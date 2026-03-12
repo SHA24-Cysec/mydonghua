@@ -19,6 +19,14 @@ release : 'Jul 15, 2022'
 # Rating 1-10
 rating : 7
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/love-between-fairy-and-devil-season-2'
+judulSeasonSelanjutnya : 'Love Between Fairy and Devil Season 2'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/love-between-fairy-and-devil.webp
 image : /img/post/love-between-fairy-and-devil.webp
