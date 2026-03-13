@@ -50,14 +50,14 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://teraboxapp.com/s/1JZZXVzXBcfErO64qjSKeTw'
+      link: 'https://pixeldrain.com/u/JLXE8KcE'
       button: 'Download'
-      size: '804.8 MB'
+      size: '844 MB'
     
     - quality: '480p'
-      link: 'https://teraboxapp.com/s/1JZZXVzXBcfErO64qjSKeTw'
+      link: 'https://pixeldrain.com/u/2wqVPCwj'
       button: 'Download'
-      size: '1.2 GB'
+      size: '1.3 GB'
     
     - quality: '720p'
       link: 'https://teraboxapp.com/s/1JZZXVzXBcfErO64qjSKeTw'
@@ -65,9 +65,9 @@ downloadGroups:
       size: '2 GB'
     
     - quality: '1080p'
-      link: 'https://teraboxapp.com/s/1JZZXVzXBcfErO64qjSKeTw'
+      link: 'https://pixeldrain.com/u/41U5HxBJ'
       button: 'Download'
-      size: '2.8 GB'
+      size: '3.05 GB'
     
     - quality: '4K'
       link: ''
