@@ -60,7 +60,7 @@ downloadGroups:
       size: '949.84 MB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1zkXK8h7p1pq0G1Sc3akn2ILJdfGQo_jF&export=download&authuser=0'
+      link: 'https://acefile.co/f/42862276'
       button: 'Download'
       size: '1.72 GB'
     
