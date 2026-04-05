@@ -20,6 +20,10 @@ release : 'May 03, 2023'
 # Rating 1-10
 rating : 8.8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/shrouding-the-heavens-the-imperial-path/'
+judulSeasonSelanjutnya : 'Shrouding the Heavens: the Imperial Path Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/shrouding-the-heavens.webp
 image : /img/post/shrouding-the-heavens.webp
