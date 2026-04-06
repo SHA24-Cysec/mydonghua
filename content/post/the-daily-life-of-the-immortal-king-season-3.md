@@ -49,7 +49,7 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://acefile.co/f/90136097'
+      link: 'https://drive.usercontent.google.com/download?id=1LGU1OtEI0y95VNWq7xqa1wiZcjlpkG4g&export=download&authuser=0'
       button: 'Download'
       size: '394.25 MB'
     
