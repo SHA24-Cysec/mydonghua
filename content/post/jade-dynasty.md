@@ -51,9 +51,9 @@ downloadGroups:
       size: '3.71 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/zMPYMFqq'
+      link: 'https://drive.usercontent.google.com/download?id=18175AOzzBIqsvg9HpmdjVO8su9C1Q0ho&export=download&authuser=0'
       button: 'Download'
-      size: '7.00 GB'
+      size: '6.52 GB'
     
     - quality: '1080p'
       link: 'https://pixeldrain.com/u/9FDLBmrW'

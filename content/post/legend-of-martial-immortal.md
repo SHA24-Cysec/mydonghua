@@ -56,9 +56,9 @@ downloadGroups:
       size: '3 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/zzDCMia1'
+      link: 'https://www.mediafire.com/file/zux93d2p87ld8oi/Anichin.best_Legend.of.Mar.Im.Ep1-20_1080p.zip/file'
       button: 'Download'
-      size: '5.78 GB'
+      size: '5.38 GB'
     
     - quality: '4K'
       link: ''
@@ -76,14 +76,14 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/SW61VGA4'
+      link: 'https://www.mediafire.com/file/88n6y7t0vggvhl7/Anichin.best_Legend.of.Mar.Im.Ep21-40_480p.zip/file'
       button: 'Download'
-      size: '1.56 GB'
+      size: '1 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/Lmcb4NiD'
+      link: 'https://www.mediafire.com/file/phx221s5l0iw25d/Anichin.best_Legend.of.Mar.Im.Ep21-40_720p.zip/file'
       button: 'Download'
-      size: '3.50 GB'
+      size: '3.26 GB'
     
     - quality: '1080p'
       link: 'https://pixeldrain.com/u/Jm76JQEx'
@@ -116,9 +116,9 @@ downloadGroups:
       size: '4.02 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/dNoscXLP'
+      link: 'https://www.mediafire.com/file/zb9mwtve8vbddlj/Anichin.best_Legend.of.Mar.Im.Ep41-60_1080p.zip/file'
       button: 'Download'
-      size: '6.76 GB'
+      size: '6.3 GB'
     
     - quality: '4K'
       link: ''
@@ -136,19 +136,139 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/MDK7tvEv'
+      link: 'https://www.mediafire.com/file/cid1mdm9ulybli0/Anichin.team_Legend.of.Mar.Im.Ep61-80_480p.zip/file'
       button: 'Download'
-      size: '2.01 GB'
+      size: '1.87 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/xQib26zc'
+      link: 'https://www.mediafire.com/file/1jl2wp3a1ganly5/Anichin.team_Legend.of.Mar.Im.Ep61-80_720p.zip/file'
       button: 'Download'
-      size: '4.26 GB'
+      size: '3.97 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/5dV7y1YS'
+      link: 'https://www.mediafire.com/file/hdo541lykb1blga/Anichin.team_Legend.of.Mar.Im.Ep61-80_1080p.zip/file'
       button: 'Download'
-      size: '7.76 GB'
+      size: '7 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 5
+  - title: 'Legend of Martial Immortal Batch Subtitle Indonesia Episode 81-100'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/bXdEqVYp'
+      button: 'Download'
+      size: '2.36 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/zAE9e7YY'
+      button: 'Download'
+      size: '5.05 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/9iXjoXtT'
+      button: 'Download'
+      size: '9.75 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 6
+  - title: 'Legend of Martial Immortal Batch Subtitle Indonesia Episode 101-118'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/LRpTX6Wz'
+      button: 'Download'
+      size: '2.54 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/FWsB9q97'
+      button: 'Download'
+      size: '5.10 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/9xVZXA9u'
+      button: 'Download'
+      size: '9.95 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 7
+  - title: 'Legend of Martial Immortal Batch Subtitle Indonesia Episode 119-134'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/otFaphRu'
+      button: 'Download'
+      size: '2.94 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/2N4NvaLM'
+      button: 'Download'
+      size: '5.88 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/7qke5SGt'
+      button: 'Download'
+      size: '9.67 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 8
+  - title: 'Legend of Martial Immortal Batch Subtitle Indonesia Episode 135-150'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/DgqGUhTu'
+      button: 'Download'
+      size: '2.5 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/XQg6mvVT'
+      button: 'Download'
+      size: '4.94 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/AJWgyvJ5'
+      button: 'Download'
+      size: '9.78 GB'
     
     - quality: '4K'
       link: ''

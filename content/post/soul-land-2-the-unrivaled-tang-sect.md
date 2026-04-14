@@ -114,12 +114,12 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/GCSkkied'
+      link: 'https://www.mediafire.com/file/d84nbis6hz5k4fi/Anichin.best_SL2.The.Unri.Tan.Sect.Ep21-30_480p.zip/file'
       button: 'Download'
       size: '3.43 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/7Hj6ftpV'
+      link: 'https://www.mediafire.com/file/j0krvwqo1vvx7iy/Anichin.best_SL2.The.Unri.Tan.Sect.Ep21-30_720p.zip/file'
       button: 'Download'
       size: '5.16 GB'
     

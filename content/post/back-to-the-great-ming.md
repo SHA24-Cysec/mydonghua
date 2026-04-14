@@ -47,12 +47,12 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/dapLsjL2'
+      link: 'https://www.mediafire.com/file/gqsblsubfonq4eh/Anichin.best_Back.Gre.Min.Ep1-16_480p.END.zip/file'
       button: 'Download'
       size: '1.88 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/uQ7mqTUr'
+      link: 'https://www.mediafire.com/file/c5s1wgp88ou6jar/Anichin.best_Back.Gre.Min.Ep1-16_720p.END.zip/file'
       button: 'Download'
       size: '3.01 GB'
     
