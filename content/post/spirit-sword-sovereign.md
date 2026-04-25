@@ -21,6 +21,14 @@ release : '2019'
 # Rating 1-10
 rating : 7
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/spirit-sword-sovereign-season-2'
+judulSeasonSelanjutnya : 'Spirit Sword Sovereign Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spirit-sword-sovereign.webp
 image : /img/post/spirit-sword-sovereign.webp

@@ -23,6 +23,14 @@ release : 'Jan 11, 2019'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/white-snake-2-the-tribulation-of-the-green-snake'
+judulSeasonSelanjutnya : 'White Snake 2: The Tribulation of the Green Snake Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/white-snake-the-origin.webp
 image : /img/post/white-snake-the-origin.webp

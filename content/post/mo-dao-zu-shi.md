@@ -22,6 +22,14 @@ release : '2018'
 # Rating 1-10
 rating : 8.5
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/mo-dao-zu-shi-season-2'
+judulSeasonSelanjutnya : 'Mo Dao Zu Shi Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/mo-dao-zu-shi.webp
 image : /img/post/mo-dao-zu-shi.webp

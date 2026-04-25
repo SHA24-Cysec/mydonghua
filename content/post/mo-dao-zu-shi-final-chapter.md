@@ -23,6 +23,13 @@ release : 'Aug 07, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/mo-dao-zu-shi-season-2'
+judulSeasonSebelumnya : 'Mo Dao Zu Shi Season 2 Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/mo-dao-zu-shi-final-chapter.webp

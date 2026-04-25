@@ -1,7 +1,7 @@
 ---
 date : '2025-08-17T17:33:17+07:00'
 draft : false
-title : 'Download Batch Hitori No Shita the Outcast Subtitle Indonesia'
+title : 'Download Batch Hitori No Shita: the Outcast Subtitle Indonesia'
 studio :
     - 'Namu Animation'
 season : '2016'
@@ -19,12 +19,19 @@ release : 'Jul 09, 2016'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/hitori-no-shita-the-outcast-season-2'
+judulSeasonSelanjutnya : 'Hitori No Shita the Outcast Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/hitori-no-shita-the-outcast.webp
 image : /img/post/hitori-no-shita-the-outcast.webp
 
-alt : 'Hitori No Shita the Outcast'
+alt : 'Hitori No Shita: the Outcast'
 url: 'hitori-no-shita-the-outcast'
 layout : postingan-donghua
 sinopsis : 'Hitori no Shita: The Outcast menceritakan tentang Zhang Chulan, seorang pemuda biasa yang hidupnya berubah drastis setelah insiden aneh di sebuah pemakaman. Saat berkunjung ke makam kakeknya, ia diserang oleh sekumpulan zombie dan tanpa sengaja terlibat dengan seorang gadis misterius bernama Feng Baobao. Pertemuan itu membawanya masuk ke dunia tersembunyi para “Outcast”, individu dengan kekuatan khusus yang berasal dari berbagai teknik dan warisan unik. Di balik kehidupannya yang tampak normal, Zhang Chulan mulai menemukan rahasia besar tentang keluarganya, terutama warisan kekuatan dari kakeknya yang ternyata memiliki peran penting dalam dunia para Outcast. Perjalanannya penuh dengan pertarungan, intrik antar-kelompok, serta pencarian jati diri yang menyingkap kebenaran tentang siapa dirinya sebenarnya dan apa takdir yang harus ia jalani.'
@@ -36,7 +43,7 @@ keywords : 'Download Batch Hitori No Shita the Outcast Subtitle Indonesia'
 downloadGroups:
   
   # Batch 1
-  - title: 'Hitori No Shita the Outcast Batch Subtitle Indonesia'
+  - title: 'Hitori No Shita: the Outcast Batch Subtitle Indonesia'
     
     downloads:
     

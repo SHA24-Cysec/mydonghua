@@ -19,6 +19,13 @@ release : 'Oct 27, 2017'
 # Rating 1-10
 rating : 7.8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/hitori-no-shita-the-outcast-season-3'
+judulSeasonSelanjutnya : 'Hitori no Shita: The Outcast Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/hitori-no-shita-the-outcast'
+judulSeasonSebelumnya : 'Hitori No Shita: the Outcast Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/hitori-no-shita-the-outcast-season-2.webp

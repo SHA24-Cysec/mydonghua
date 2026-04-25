@@ -21,6 +21,14 @@ release : 'Sep 24, 2021'
 # Rating 1-10
 rating : 7
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/hitori-no-shita-the-outcast-season-5'
+judulSeasonSelanjutnya : 'Hitori no Shita: The Outcast Season 5 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/hitori-no-shita-the-outcast-season-3'
+judulSeasonSebelumnya : 'Hitori no Shita: The Outcast Season 3 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/hitori-no-shita-the-outcast-s4.webp
 image : /img/post/hitori-no-shita-the-outcast-s4.webp
