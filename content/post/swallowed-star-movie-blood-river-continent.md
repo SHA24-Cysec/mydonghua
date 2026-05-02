@@ -26,8 +26,8 @@ rating : 9.20
 # judulSeasonSelanjutnya : ''
 
 # Jika ada Season sebelumnya, hilangkan komentar
-linkSeasonSebelumnya : '/swallowed-star'
-judulSeasonSebelumnya : 'Swallowed Star Subtitle Indonesia'
+linkSeasonSebelumnya : '/swallowed-star-battle-of-the-primordial-star'
+judulSeasonSebelumnya : 'Swallowed Star: Battle of the Primordial Star Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/swallowed-star-dark-blood-continent.webp
