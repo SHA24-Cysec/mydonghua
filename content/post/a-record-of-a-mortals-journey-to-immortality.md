@@ -305,4 +305,94 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 10
+  - title: 'A Record of A Mortal’s Journey to Immortality Batch Subtitle Indonesia Episode 151-160'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/TSPcRkWn'
+      button: 'Download'
+      size: '2.38 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/xksm6YSi'
+      button: 'Download'
+      size: '4.5 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/M21vXzE5'
+      button: 'Download'
+      size: '7.68 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 11
+  - title: 'A Record of A Mortal’s Journey to Immortality Batch Subtitle Indonesia Episode 161-170'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/5YN6YWaf'
+      button: 'Download'
+      size: '2.47 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/hybfxqj2tr53hp2/Anichin.best_RMJto.Immor.tality.Ep161-170_720p.zip/file'
+      button: 'Download'
+      size: '4 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/cc8c1p9pn9im9ad/Anichin.best_RMJto.Immor.tality.Ep161-170_1080p.zip/file'
+      button: 'Download'
+      size: '7 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 12
+  - title: 'A Record of A Mortal’s Journey to Immortality Batch Subtitle Indonesia Episode 171-176 [END]'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/3s632snd9iaq1r4/Anichin.best_RMJto.Immor.tality.Ep171-176End_480p.zip/file'
+      button: 'Download'
+      size: '1 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/u9z6qvzmrvn0f3m/Anichin.best_RMJto.Immor.tality.Ep171-176End_720p.zip/file'
+      button: 'Download'
+      size: '3 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/33kTuNu6'
+      button: 'Download'
+      size: '4.85 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

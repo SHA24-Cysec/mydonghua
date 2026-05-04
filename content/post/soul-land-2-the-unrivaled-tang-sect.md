@@ -342,4 +342,94 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 11
+  - title: 'Soul Land 2: The Unrivaled Tang Sect Batch Subtitle Indonesia Episode 121-130'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/3pbsipWs'
+      button: 'Download'
+      size: '2.49 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/7nXossTc'
+      button: 'Download'
+      size: '4.62 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/VQt7MSUc'
+      button: 'Download'
+      size: '7.78 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 12
+  - title: 'Soul Land 2: The Unrivaled Tang Sect Batch Subtitle Indonesia Episode 131-140'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/S6L32U1Z'
+      button: 'Download'
+      size: '2.47 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/YSWKkuUh'
+      button: 'Download'
+      size: '4.56 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/rDKrTrbW'
+      button: 'Download'
+      size: '7.68 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 13
+  - title: 'Soul Land 2: The Unrivaled Tang Sect Batch Subtitle Indonesia Episode 141-150'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/qnyFfJ5y'
+      button: 'Download'
+      size: '2.41 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/VTNhvELd'
+      button: 'Download'
+      size: '4.52 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/QBaq9mEo'
+      button: 'Download'
+      size: '7.7 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
