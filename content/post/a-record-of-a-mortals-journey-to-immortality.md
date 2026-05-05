@@ -12,7 +12,7 @@ genre :
     - 'Historical'
     - 'Martial Arts'
 type : 'Donghua'
-status : 'Ongoing'
+status : 'Completed'
 sub : 'Anichin'
 durasi : '20 Menit'
 episode : '176 Episode'
