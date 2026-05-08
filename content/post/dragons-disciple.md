@@ -23,19 +23,19 @@ rating : 8
 thumbnail : /img/post/dragon-disciple.webp
 image : /img/post/dragon-disciple.webp
 
-alt : 'Dragons Disciple'
+alt : "Dragon's Disciple"
 url: 'dragons-disciple'
 layout : postingan-donghua
 sinopsis : "Kisah ini berpusat pada seorang pemuda lemah namun memiliki rasa keadilan yang kuat. Di bawah bimbingan Tang Zichen, seorang master seni bela diri Tiongkok, ia memulai perjalanan untuk mempelajari seni bela diri tradisional. Melalui pelatihan ini, ia belajar untuk mengatasi keterbatasan dirinya dan memahami esensi sejati dari seni bela diri, termasuk prinsip menggunakan kekuatan untuk mencegah konflik dan meyakinkan orang lain melalui moralitas. Serial ini menonjolkan semangat para praktisi seni bela diri yang berusaha mewariskan tradisi dan mempromosikan kebenaran."
-deskripsi : 'Download Batch Dragons Disciple Subtitle Indonesia'
-keywords : 'Download Batch Dragons Disciple Subtitle Indonesia'
+deskripsi : "Download Batch Dragon's Disciple Subtitle Indonesia"
+keywords : "Download Batch Dragon's Disciple Subtitle Indonesia"
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia"
 
 downloadGroups:
   
 #   Batch 1
-  - title: 'Dragons Disciple Batch Subtitle Indonesia Episode 1-10'
+  - title: "Dragon's Disciple Batch Subtitle Indonesia Episode 1-10"
     
     downloads:
     
@@ -45,7 +45,7 @@ downloadGroups:
       size: '764.51 MB'
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=150ygKiZBhU31t1fjPeqnNj3XntTvuR2R&export=download&authuser=0'
+      link: 'https://acefile.co/f/71810136'
       button: 'Download'
       size: '1.41 GB'
     
@@ -65,7 +65,7 @@ downloadGroups:
       size: ''
 
 #   Batch 2
-  - title: 'Dragons Disciple Batch Subtitle Indonesia Episode 11-16'
+  - title: "Dragon's Disciple Batch Subtitle Indonesia Episode 11-16"
     
     downloads:
     

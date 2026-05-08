@@ -47,7 +47,7 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://pixeldrain.com/u/oVLLMb5p'
+      link: 'https://acefile.co/f/35289382'
       button: 'Download'
       size: '1.79 GB'
     

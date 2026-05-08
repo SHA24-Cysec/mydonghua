@@ -82,7 +82,7 @@ downloadGroups:
       size: '1.06 GB'
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=14oDZ-wN0yJKuvqKhSIp19PH8Ov-_Olb0&export=download&authuser=0'
+      link: 'https://acefile.co/f/44777889'
       button: 'Download'
       size: '1.56 GB'
     
