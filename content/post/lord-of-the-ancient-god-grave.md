@@ -107,17 +107,17 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://lbx.to/f/CRL5RwT'
+      link: 'https://mega.nz/file/81EiXBQT#NWXZAi90lwZou5IvSXtH-BITURJoQO1O35-mMrTskjU'
       button: 'Download'
       size: '622.44 MB'
     
     - quality: '480p'
-      link: 'https://lbx.to/f/mBIjes3'
+      link: 'https://mega.nz/file/gklAGQJY#KnoYaPpmU1siyUDRstDuUNJkz1STAkIMcf-yrtdQg8I'
       button: 'Download'
       size: '1.16 GB'
     
     - quality: '720p'
-      link: 'https://lbx.to/f/6nJ9r0X'
+      link: 'https://mega.nz/file/Z8M3zRxL#HTD72SbBHAAQNT3DfnMmRnsVgcKj7lFA_d00hGFOeRs'
       button: 'Download'
       size: '2.22 GB'
     
@@ -137,22 +137,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://lbx.to/f/MLQUS1s'
+      link: 'https://mega.nz/file/okcEDDiI#1iPxjehZTfEDv2mwoYcTOzPn0ua8VpasIBFrLTmTpWg'
       button: 'Download'
       size: '623.99 MB'
     
     - quality: '480p'
-      link: 'https://lbx.to/f/gGnHIch'
+      link: 'https://mega.nz/file/QklCVS4K#90G0RCV7MSRyDGAuN9uTmF83D38V9S5KVi2bezSOT7g'
       button: 'Download'
       size: '1.15 GB'
     
     - quality: '720p'
-      link: 'https://lbx.to/f/PquSrwi'
+      link: 'https://mega.nz/file/4wNwxKYB#F36XobEBsI78bo4tA-XAysGhkOQ_em_Q4lV2U9w4BSo'
       button: 'Download'
       size: '2.13 GB'
     
     - quality: '1080p'
-      link: 'https://lbx.to/f/YwXmiIX'
+      link: 'https://mega.nz/file/MpEDRbKA#iNmeuW7dgnOSkml2AFRIUfdQvNKnM9t7GD43d5HFC3E'
       button: 'Download'
       size: '3.25 GB'
     
@@ -167,22 +167,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://lbx.to/f/dSdTpNW'
+      link: 'https://mega.nz/file/CiZyABBJ#4vsZLBZRwj8znmkOwZEhLAn_8grfprbcxi-g5RUxRUw'
       button: 'Download'
       size: '490.10 MB'
     
     - quality: '480p'
-      link: 'https://lbx.to/f/SFVYCBD'
+      link: 'https://mega.nz/file/zqYT0ZTK#wydkJND8vg99M0ThgtDSC3FTim96NSVnBZep9iyoa2E'
       button: 'Download'
       size: '888.03 MB'
     
     - quality: '720p'
-      link: 'https://lbx.to/f/IS90mEQ'
+      link: 'https://mega.nz/file/Gv5yhKaa#3cSa1PUUllIFXZG9pIWHKNj0Y7qmACUM73DQboCQJmA'
       button: 'Download'
       size: '2.03 GB'
     
     - quality: '1080p'
-      link: 'https://lbx.to/f/jqflNMK'
+      link: 'https://mega.nz/file/qqZnwQKL#lvo8f5NbMQhQEzpLk_FPyDjoLQciUMO3JvUq-0Dp8wE'
       button: 'Download'
       size: '3.5 GB'
     

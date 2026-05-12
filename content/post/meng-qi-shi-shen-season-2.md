@@ -22,6 +22,14 @@ release : '2021'
 # Rating 1-10
 rating : 7
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/meng-qi-shi-shen-season-3'
+judulSeasonSelanjutnya : 'Meng Qi Shi Shen Season 3 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+linkSeasonSebelumnya : '/meng-qi-shi-shen'
+judulSeasonSebelumnya : 'Meng Qi Shi Shen Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/meng-qi-shi-shen-s2.webp
 image : /img/post/meng-qi-shi-shen-s2.webp
