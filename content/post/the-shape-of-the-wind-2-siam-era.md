@@ -19,6 +19,14 @@ release : '2022'
 # Rating 1-10
 rating : 7
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : '/the-shape-of-the-wind-1-galaxy-arc'
+# judulSeasonSebelumnya : 'The Shape of the Wind 1 Galaxy Arc Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/the-shape-of-the-wind-2-siam-era.webp
 image : /img/post/the-shape-of-the-wind-2-siam-era.webp
