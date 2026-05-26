@@ -1,7 +1,7 @@
 ---
 date : '2026-05-26T11:52:04+07:00'
 draft : false
-title : 'Download Batch 100.000 Years of Refining Qi Subtitle Indonesia'
+title : 'Download Batch 100000 Years of Refining Qi Subtitle Indonesia'
 studio :
     - 'Soyep'
 season : 'Winter 2023'
@@ -27,22 +27,22 @@ rating : 8
 # judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
-thumbnail : /img/post/100.000-years-of-refining-qi.webp
-image : /img/post/100.000-years-of-refining-qi.webp
+thumbnail : /img/post/100000-years-of-refining-qi.webp
+image : /img/post/100000-years-of-refining-qi.webp
 
-alt : '100.000 Years of Refining Qi'
-url: '100.000-years-of-refining-qi'
+alt : '100000 Years of Refining Qi'
+url: '100000-years-of-refining-qi'
 layout : postingan-donghua
 sinopsis : '100,000 Years of Refining Qi mengisahkan perjalanan Xu Yang, seorang kultivator legendaris yang telah berlatih selama seratus ribu tahun namun tetap berada di tahap Refining Qi, level paling dasar dalam dunia kultivasi. Saat sekte tempatnya berasal mulai mengalami kemunduran dan ancaman dari berbagai kekuatan lain bermunculan, Xu Yang kembali untuk membimbing generasi baru murid-muridnya. Di balik penampilannya yang tenang dan sederhana, Xu Yang sebenarnya memiliki kekuatan yang jauh melampaui para kultivator biasa. Dengan pengalaman ribuan tahun, ia menghadapi berbagai pertarungan, intrik antar sekte, hingga rahasia kuno dunia kultivasi. Donghua ini memadukan aksi, fantasi, dan humor ringan, dengan fokus pada karakter utama yang sangat overpower namun tetap bijaksana dalam menghadapi setiap konflik.'
-deskripsi : 'Download Batch 100.000 Years of Refining Qi Subtitle Indonesia'
-keywords : 'Download Batch 100.000 Years of Refining Qi Subtitle Indonesia'
+deskripsi : 'Download Batch 100000 Years of Refining Qi Subtitle Indonesia'
+keywords : 'Download Batch 100000 Years of Refining Qi Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
 downloadGroups:
   
   # Batch 1
-  - title: '100.000 Years of Refining Qi Batch Subtitle Indonesia Episode 1-20'
+  - title: '100000 Years of Refining Qi Batch Subtitle Indonesia Episode 1-20'
     
     downloads:
     
