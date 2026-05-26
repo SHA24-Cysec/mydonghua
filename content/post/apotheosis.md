@@ -12,7 +12,7 @@ genre :
     - 'Historical'
     - 'Martial Arts'
 type : 'Donghua'
-status : 'Completed'
+status : 'Ongoing'
 sub : 'Anichin'
 durasi : '20 Menit'
 episode : '104 Episode'
@@ -188,7 +188,7 @@ downloadGroups:
       size: ''
 
   # Batch 6
-  - title: 'Apotheosis Batch Subtitle Indonesia Episode 86-104 END'
+  - title: 'Apotheosis Batch Subtitle Indonesia Episode 86-104'
     
     downloads:
     

@@ -141,7 +141,7 @@ downloadGroups:
       size: '2.70 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/u2yUK4so'
+      link: 'https://www.mediafire.com/file/9m4pdddg6gskmkx/Anichin.best_Peak.Tru.Martial.Ep91-140_720p.zip/file'
       button: 'Download'
       size: '6.23 GB'
     
@@ -171,7 +171,7 @@ downloadGroups:
       size: '3.00 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/3PiGhVce'
+      link: 'https://www.mediafire.com/file/coot3hl28cnncyd/Anichin.best_Peak.Tru.Martial.Ep141-196_720p.zip/file'
       button: 'Download'
       size: '6.57 GB'
     

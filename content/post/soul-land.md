@@ -236,7 +236,7 @@ downloadGroups:
       size: '2.88 GB'
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=13d_Y1kR6b3xuFCf0N7vP1kOh9HeVLF4I&export=download&authuser=0'
+      link: 'https://www.mediafire.com/file/oetk6zaned2s0h3/AnichinAsia-SL_S2_91-110_480p.zip/file'
       button: 'Download'
       size: '4.25 GB'
     

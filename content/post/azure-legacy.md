@@ -9,7 +9,7 @@ genre :
     - 'Action'
     - 'Fantasy'
 type : 'Donghua'
-status : 'Completed'
+status : 'Ongoing'
 sub : 'Anichin'
 durasi : '20 Menit'
 episode : '66 Episode'
