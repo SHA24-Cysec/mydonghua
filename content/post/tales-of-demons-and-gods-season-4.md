@@ -51,9 +51,9 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://pixeldrain.com/u/hK7kLCLt'
+      link: 'https://drive.usercontent.google.com/download?id=1dtzbDJ4loDCfS_DogoCS4BX2-ae-8Qu2&export=download&authuser=0'
       button: 'Download'
-      size: '726 MB'
+      size: '864.57 MB'
     
     - quality: '480p'
       link: 'https://drive.usercontent.google.com/download?id=1q2FNOWaz2zpUQrkZwIYufl-2o2Flq9M8&export=download&authuser=0'

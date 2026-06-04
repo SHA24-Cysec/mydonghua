@@ -18,6 +18,13 @@ release : 'Aug 15, 2024'
 # Rating 1-10
 rating : 8.8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/sword-of-coming-season-2'
+judulSeasonSelanjutnya : 'Sword of Coming Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/sword-of-coming.webp
