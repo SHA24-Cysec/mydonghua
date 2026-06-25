@@ -156,7 +156,7 @@ downloadGroups:
       size: ''
 
   # Batch 5
-  - title: 'Peak of True Martial Arts Batch Subtitle Indonesia Episode 141-196'
+  - title: 'Peak of True Martial Arts Batch Subtitle Indonesia Episode 141-196 [END]'
     
     downloads:
     

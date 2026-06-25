@@ -246,4 +246,64 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 8
+  - title: 'My Senior Brother Is Too Steady Batch Subtitle Indonesia Episode 106-115'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/awd8b5vmfph4ogx/Anichin.best_My.Seni.Bro.Stea.Ep106-115_480p.zip/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/baughke6yv92mnc/Anichin.best_My.Seni.Bro.Stea.Ep106-115_720p.zip/file'
+      button: 'Download'
+      size: '4 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/lrcpzveeq5lwki1/Anichin.best_My.Seni.Bro.Stea.Ep106-115_1080p.zip/file'
+      button: 'Download'
+      size: '7 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 9
+  - title: 'My Senior Brother Is Too Steady Batch Subtitle Indonesia Episode 116-125'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/3go6wruycw86rkw/Anichin.best_My.Seni.Bro.Stea.Ep116-125_480p.zip/file'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/kencygxi2h5lwc7/Anichin.best_My.Seni.Bro.Stea.Ep116-125_720p.zip/file'
+      button: 'Download'
+      size: '4 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/ho9ih9xjizsff80/Anichin.best_My.Seni.Bro.Stea.Ep116-125_1080p.zip/file'
+      button: 'Download'
+      size: '7 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

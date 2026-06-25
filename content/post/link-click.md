@@ -3,7 +3,7 @@ date : '2025-03-14T09:10:55+07:00'
 draft : false
 title : 'Download Batch Link Click Subtitle Indonesia'
 studio :
-    - 'Studio LAN'
+    - 'LAN Studio'
 season : 'Spring 2021'
 genre :
     - Drama
@@ -17,6 +17,14 @@ episode : '11 Episode + 4 Spesial'
 release : '2021'
 # Rating 1-10
 rating : 8.83
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/link-click-season-2'
+judulSeasonSelanjutnya : 'Link Click Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/link-click.webp
