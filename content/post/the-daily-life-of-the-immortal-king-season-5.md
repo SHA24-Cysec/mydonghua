@@ -23,7 +23,7 @@ rating : 9.2
 # judulSeasonSelanjutnya : ''
 
 # Jika ada Season sebelumnya, hilangkan komentar
-linkSeasonSebelumnya : 'content/post/the-daily-life-of-the-immortal-king-season-4.md'
+linkSeasonSebelumnya : '/the-daily-life-of-the-immortal-king-season-4'
 judulSeasonSebelumnya : 'The Daily Life of the Immortal King Season 4'
 
 # Gambar width: 200, height : 300

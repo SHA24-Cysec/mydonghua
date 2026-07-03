@@ -1,0 +1,12 @@
+# Node
+node_modules/
+
+# Hugo
+public/
+resources/
+.hugo_build.lock
+
+# Editor & OS
+.vscode/
+.idea/
+.DS_Store

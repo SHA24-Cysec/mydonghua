@@ -38,5 +38,5 @@
 {{ if .IsHome }}
     <meta property="og:image" content="{{ site.Params.img | absURL }}">
 {{ else if eq .Layout "postingan-donghua" }}
-    <meta property="og:image" content="{{ .Params.tuhumbnail | absURL }}">
+    <meta property="og:image" content="{{ .Params.thumbnail | absURL }}">
 {{ end }}

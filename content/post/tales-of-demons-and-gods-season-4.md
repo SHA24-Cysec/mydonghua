@@ -23,7 +23,7 @@ release : 'Apr 08, 2020'
 rating : 9
 
 # Jika ada Season selanjutnya, hilangkan komentar
-linkSeasonSelanjutnya : 'content/post/tales-of-demons-and-gods-season-5-dan-6.md'
+linkSeasonSelanjutnya : '/tales-of-demons-and-gods-season-5-dan-6'
 judulSeasonSelanjutnya : 'Tales of Demons and Gods Season 5 Dan 6 Subtitle Indonesia'
 
 # Jika ada Season sebelumnya, hilangkan komentar
