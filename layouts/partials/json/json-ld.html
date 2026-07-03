@@ -4,14 +4,7 @@
           "@context": "https://schema.org/", 
           "@type": "Book", 
           "name": "{{ .Site.Title }}",
-          "image": "{{ "img/DonghuaBatch.webp" | absURL }}",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.5",
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": "4500"
-          }
+          "image": "{{ "img/DonghuaBatch.webp" | absURL }}"
         }
     </script>
 {{ else if eq .Layout "postingan-donghua" }}
@@ -21,14 +14,7 @@
           "@context": "https://schema.org/", 
           "@type": "Book", 
           "name": "{{ .Title }}",
-          "image": "{{ .Params.image | absURL }}",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.5",
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": "4500"
-          }
+          "image": "{{ .Params.image | absURL }}"
         }
     </script>
     {{/*  Article  */}}

@@ -156,73 +156,80 @@
       window.history.replaceState({}, "", newUrl);
     }
 
-    searchInput.addEventListener("input", () => {
-      const query = searchInput.value.trim();
+    {{/*  Bug fix: elemen search-input, search-results, prev-page, dan next-page
+          cuma ada di halaman /search/. Semua kode di bawah ini dibungkus
+          "if (searchInput && resultsList)" supaya tidak melempar TypeError
+          di halaman lain (home, post, filter-genre, dll) yang ikut memuat
+          script global ini.  */}}
+    if (searchInput && resultsList) {
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.trim();
 
-      resultsList.innerHTML = "";
-      currentResults = [];
-      document.getElementById("search-pagination").style.display = "none";
+        resultsList.innerHTML = "";
+        currentResults = [];
+        document.getElementById("search-pagination").style.display = "none";
 
-      if (!fuse || query.length < 2) {
-        updateURL("");
-        return;
-      }
-    
-      const keywords = parseKeywords(query);
-    
-      currentResults = fuse.search({
-        $and: keywords.map(k => ({
-          $or: [
-            { title: `'${k}` },
-            { studio: `'${k}` },
-            { season: `'${k}` },
-            { genre: `'${k}` }
-          ]
-        }))
+        if (!fuse || query.length < 2) {
+          updateURL("");
+          return;
+        }
+      
+        const keywords = parseKeywords(query);
+      
+        currentResults = fuse.search({
+          $and: keywords.map(k => ({
+            $or: [
+              { title: `'${k}` },
+              { studio: `'${k}` },
+              { season: `'${k}` },
+              { genre: `'${k}` }
+            ]
+          }))
+        });
+      
+        currentPage = 1;
+        updateURL(query, currentPage);
+        renderResults();
       });
-    
-      currentPage = 1;
-      updateURL(query, currentPage);
-      renderResults();
-    });
 
-    {{/*  Pagination  */}}
+      {{/*  Pagination  */}}
 
-    document.getElementById("prev-page").addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        updateURL(searchInput.value.trim(), currentPage);
-        renderResults();
-      }
-    });
+      document.getElementById("prev-page").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          updateURL(searchInput.value.trim(), currentPage);
+          renderResults();
+        }
+      });
 
-    document.getElementById("next-page").addEventListener("click", () => {
-      const totalPages = Math.ceil(currentResults.length / perPage);
-      if (currentPage < totalPages) {
-        currentPage++;
-        updateURL(searchInput.value.trim(), currentPage);
-        renderResults();
-      }
-    });
+      document.getElementById("next-page").addEventListener("click", () => {
+        const totalPages = Math.ceil(currentResults.length / perPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          updateURL(searchInput.value.trim(), currentPage);
+          renderResults();
+        }
+      });
 
-    window.addEventListener("DOMContentLoaded", () => {
-      const { q, page } = getQueryFromURL();
+      window.addEventListener("DOMContentLoaded", () => {
+        const { q, page } = getQueryFromURL();
 
-      if (!q) return;
+        if (!q) return;
 
-      searchInput.value = q;
+        searchInput.value = q;
 
-      if (!fuse) {
-        const waitFuse = setInterval(() => {
-          if (fuse) {
-            clearInterval(waitFuse);
-            triggerSearchFromURL(q, page);
-          }
-        }, 50);
-      } else {
-        triggerSearchFromURL(q, page);
-      }
-    });
+        if (!fuse) {
+          const waitFuse = setInterval(() => {
+            if (fuse) {
+              clearInterval(waitFuse);
+              triggerSearchFromURL(q, page);
+            }
+          }, 50);
+        } else {
+          triggerSearchFromURL(q, page);
+        }
+      });
+    }
 
     function triggerSearchFromURL(query, page) {
       const keywords = parseKeywords(query);
@@ -296,10 +303,14 @@ function renderGenreResults() {
   const end = start + genrePerPage;
 
   genreResults.slice(start, end).forEach(item => {
-    const div = document.createElement("div");
-    div.className = "group w-full h-full rounded-lg cursor-pointer";
+    {{/*  Bug fix: resultsContainer adalah elemen <ul>, jadi child-nya
+          harus <li>, bukan <div>. Kalau pakai <div> di dalam <ul>, browser
+          akan otomatis memindahkan elemen itu keluar dari <ul> saat parsing
+          HTML dan itu bisa merusak layout grid.  */}}
+    const li = document.createElement("li");
+    li.className = "group w-full h-full rounded-lg cursor-pointer";
 
-    div.innerHTML = `
+    li.innerHTML = `
       <a href="${item.permalink}" class="block relative rounded-lg mx-auto overflow-hidden">
         <img loading="lazy" class="group-hover:scale-110 group-hover:opacity-75 w-full h-[250px] md:h-[300px] rounded-lg transition duration-300 object-cover mx-auto" src="${item.thumbnail}" alt="${item.title}">
         <span class="absolute top-0 right-0 bg-sky-300 p-1 rounded-bl-lg">${item.type || "Donghua"}</span>
@@ -310,7 +321,7 @@ function renderGenreResults() {
       </a>
     `;
 
-    resultsContainer.appendChild(div);
+    resultsContainer.appendChild(li);
   });
 
   // Pagination UI
@@ -322,24 +333,36 @@ function renderGenreResults() {
   document.getElementById("genre-next").disabled = genrePage === totalPages;
 }
 
-document.getElementById("genre-prev").addEventListener("click", () => {
-  if (genrePage > 1) {
-    genrePage--;
-    renderGenreResults();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-});
+{{/*  Bug fix: elemen genre-prev dan genre-next cuma ada di halaman
+      /filter-genre/. Dibungkus pengecekan supaya tidak error di halaman
+      lain (home, post) yang juga memuat script global ini.  */}}
+const genrePrevBtn = document.getElementById("genre-prev");
+const genreNextBtn = document.getElementById("genre-next");
 
-document.getElementById("genre-next").addEventListener("click", () => {
-  const totalPages = Math.ceil(genreResults.length / genrePerPage);
-  if (genrePage < totalPages) {
-    genrePage++;
-    renderGenreResults();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-});
+if (genrePrevBtn && genreNextBtn) {
+  genrePrevBtn.addEventListener("click", () => {
+    if (genrePage > 1) {
+      genrePage--;
+      renderGenreResults();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+
+  genreNextBtn.addEventListener("click", () => {
+    const totalPages = Math.ceil(genreResults.length / genrePerPage);
+    if (genrePage < totalPages) {
+      genrePage++;
+      renderGenreResults();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+}
 
 window.addEventListener("DOMContentLoaded", () => {
+  {{/*  Bug fix: resultsContainer (#genre-results) cuma ada di halaman
+        /filter-genre/. Kalau tidak ada, jangan lanjut fetch/render.  */}}
+  if (!resultsContainer) return;
+
   const selectedGenres = getGenresFromHash();
   if (!selectedGenres.length) return;
 
@@ -348,18 +371,28 @@ window.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       genreResults = filterByGenres(data, selectedGenres);
       genrePage = 1;
+      {{/*  Bug fix: sebelumnya ada pemanggilan ganda renderGenreResults(filtered)
+            dengan variabel "filtered" yang tidak pernah dideklarasikan
+            (ReferenceError). renderGenreResults() cukup dipanggil sekali,
+            tanpa parameter, karena datanya diambil dari variabel global
+            genreResults.  */}}
       renderGenreResults();
-      renderGenreResults(filtered);
     });
 });
 
 function normalizeGenres(input) {
   if (!input) return [];
 
+  {{/*  Bug fix: sebelumnya split juga berdasarkan spasi, jadi genre dua
+        kata seperti "Martial Arts" pecah jadi "martial" dan "arts" dan
+        tidak pernah cocok dengan value checkbox yang di-urlize Hugo jadi
+        "martial-arts". Sekarang hanya split berdasarkan koma/pipe, lalu
+        spasi di dalam nama genre diubah jadi tanda "-" supaya formatnya
+        sama persis dengan hasil "urlize" di sidebar.html.  */}}
   return input
     .toLowerCase()
-    .split(/[,| ]+/)   // koma, |, atau spasi
-    .map(g => g.trim())
+    .split(/[,|]+/)
+    .map(g => g.trim().replace(/\s+/g, "-"))
     .filter(Boolean);
 }
 

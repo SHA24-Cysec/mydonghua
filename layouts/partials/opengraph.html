@@ -8,11 +8,11 @@
     <meta property="og:title" content="{{ . }}">
 {{- end }}
 
-{{- with or site.Params.deskripsi .Params.deskripsi | plainify | htmlUnescape }}
+{{- with or .Params.deskripsi site.Params.deskripsi | plainify | htmlUnescape }}
     <meta property="og:description" content="{{ trim . "\n\r\t " }}">
 {{- end }}
 
-{{- with or .Params.locale site.Language.LanguageCode }}
+{{- with or .Params.locale site.Language.Locale | plainify }}
     <meta property="og:locale" content="{{ replace . `-` `_` }}">
 {{- end }}
 

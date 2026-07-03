@@ -48,7 +48,7 @@ downloadGroups:
       size: '1.22 GB'
     
     - quality: '720p'
-      link: ''
+      link: 'https://lbx.to/f/kO9SnvA'
       button: 'Download'
       size: '2.29 GB'
     

@@ -2,7 +2,7 @@
     <meta itemprop="name" content="{{ . }}">
 {{- end }}
 
-{{- with or site.Params.deskripsi .Params.deskripsi | plainify | htmlUnescape }}
+{{- with or .Params.deskripsi site.Params.deskripsi | plainify | htmlUnescape }}
   <meta itemprop="description" content="{{ trim . "\n\r\t " }}">
 {{- end }}
 
