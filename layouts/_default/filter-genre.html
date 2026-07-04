@@ -1,37 +1,40 @@
 {{ define "main" }}
-    <div class="md:py-4 py-2 mx-auto max-w-screen-xl mt-14">
+    <div class="md:py-6 py-4 mx-auto max-w-screen-xl mt-12 px-4">
         <main class="w-full">
             {{/*  Main Content  */}}
-            <div class="bg-slate-300 text-white bg-opacity-50 mb-4 p-4">
+            <div class="bg-[#0F172A]/90 border border-cyan-500/40 rounded-2xl mb-6 p-6 shadow-[0_0_25px_rgba(34,211,238,0.2)] backdrop-blur-md">
                 {{ if eq .Layout "filter-genre" }}
-                    <h1 class="text-2xl font-bold">Daftar Donghua Berdasarkan Genre Yang Di Pilih</h1>
+                    <h1 class="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.4)] flex items-center gap-3"><i class="fa-solid fa-filter text-cyan-400"></i>Daftar Donghua Berdasarkan Genre Yang Dipilih</h1>
                 {{ end }}
             </div>
-            <div class="bg-slate-300 bg-opacity-50 h-full min-h-screen">
+            <div class="bg-[#0F172A]/80 border border-cyan-500/30 rounded-2xl p-4 shadow-[0_0_25px_rgba(34,211,238,0.15)] min-h-screen backdrop-blur-md">
                 <div class="flex flex-wrap flex-col">
-                    <div class="p-4">
-                        <div id="genre-alert" class="hidden text-center bg-red-300 bg-opacity-50 text-white p-4 rounded-lg gap-4">
+                    <div class="p-2 md:p-4">
+                        <div id="genre-alert" class="hidden text-center bg-red-900/80 border border-red-500/50 text-white p-4 rounded-xl gap-4 shadow-[0_0_15px_rgba(239,68,68,0.4)] font-semibold my-4">
                             <span>Tidak ada donghua yang cocok dengan genre yang dipilih 😢</span>
                         </div>
                         <ul class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="genre-results">
                         </ul>
                     </div>
                 {{/*  Pagination  */}}
-                <div id="genre-pagination" class="justify-center items-center gap-4 py-4 hidden mx-auto">
-                  <button id="genre-prev"
-                          class="px-4 py-2 bg-slate-200 rounded-lg disabled:opacity-40">
-                    Prev
+                <div id="genre-pagination" class="justify-center items-center gap-3 py-6 hidden mx-auto text-slate-200">
+                  <button id="genre-prev" class="cyber-pill-nav">
+                    <i class="fa-solid fa-chevron-left"></i> Prev
                   </button>
               
-                  <span id="genre-page-info" class="text-white"></span>
+                  <span id="genre-page-info" class="px-4 py-2.5 bg-[#0F172A] border border-cyan-500/30 rounded-xl font-bold text-cyan-300 shadow-sm"></span>
               
-                  <button id="genre-next"
-                          class="px-4 py-2 bg-slate-200 rounded-lg disabled:opacity-40">
-                    Next
+                  <button id="genre-next" class="cyber-pill-nav">
+                    Next <i class="fa-solid fa-chevron-right"></i>
                   </button>
                 </div>
                 </div>
             </div>
         </main>
     </div>
+    <style>
+        #genre-results li {
+            list-style: none;
+        }
+    </style>
 {{ end }}

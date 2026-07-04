@@ -1,8 +1,12 @@
 {{ define "main" }}
-<div id="redirect404" class="my-4 h-[768px] flex items-center flex-col gap-2 justify-center w-full bg-slate-300 p-4 mx-auto max-w-screen-xl mt-[72px]">
-    <h1 class="text-xl text-center font-bold">Halaman Yang Kamu Cari Tidak Ditemukan</h1>
-    <a class="bg-blue-300 hover:bg-blue-400 p-2 rounded-lg" href="{{ .Site.BaseURL }}">Kembali Ke Beranda</a>
-    <p>Redirect otomatis ke halaman beranda setelah <span id="detik"></span> detik...</p>
+<div class="w-full max-w-screen-xl mx-auto px-2 lg:px-0 mt-[90px] my-6">
+<div id="redirect404" class="h-[700px] flex items-center flex-col gap-6 justify-center w-full bg-[#0F172A]/90 border border-cyan-500/40 rounded-2xl p-6 shadow-[0_0_30px_rgba(34,211,238,0.25)] backdrop-blur-md">
+    <div class="w-24 h-24 rounded-full bg-cyan-500/10 border border-cyan-500/50 flex items-center justify-center shadow-[0_0_20px_rgba(34,211,238,0.4)] animate-pulse">
+        <i class="fa-solid fa-triangle-exclamation text-5xl text-cyan-400"></i>
+    </div>
+    <h1 class="text-2xl md:text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">404 - Halaman Yang Kamu Cari Tidak Ditemukan</h1>
+    <a class="bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-extrabold px-8 py-3 rounded-xl shadow-[0_0_20px_rgba(34,211,238,0.4)] transition duration-300 flex items-center gap-2" href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house"></i> Kembali Ke Beranda</a>
+    <p class="text-slate-300 font-medium">Redirect otomatis ke halaman beranda setelah <span id="detik" class="text-cyan-400 font-bold text-lg">5</span> detik...</p>
 </div>
 <script>
     // Redirect otomatis
@@ -19,4 +23,5 @@
             }
             }, 1000);
 </script>
+</div>
 {{ end }}

@@ -1,7 +1,11 @@
-<div id="loading-screen" class="fixed bottom-0 top-0 right-0 left-0 flex items-center justify-center flex-col w-full h-screen z-[1000] bg-white">
-    <img width="75" height="75" class="bg-transparent" src='{{ relURL "img/loading-screen.svg" }}' alt="">
-    <span class="animate-pulse">Loading...</span>
-    <span id="alert-loading" class="mt-4 hidden text-sm">Jika Halaman Tidak Muncul, Silakan Refresh Halaman</span>
+<div id="loading-screen" class="fixed inset-0 flex items-center justify-center flex-col w-full h-screen z-[1000] bg-[#060816]">
+    <div class="relative w-24 h-24 flex items-center justify-center">
+        <div class="absolute inset-0 border-[3px] border-transparent border-t-cyan-400 border-b-cyan-400 rounded-full animate-[spin_1.2s_linear_infinite] shadow-[0_0_15px_rgba(34,211,238,0.6)]"></div>
+        <div class="absolute inset-3 border-[3px] border-transparent border-l-purple-500 border-r-pink-500 rounded-full animate-[spin_0.9s_linear_infinite_reverse] shadow-[0_0_15px_rgba(236,72,153,0.6)]"></div>
+        <div class="text-2xl text-white animate-[pulse_1.5s_infinite] drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"><i class="fa-solid fa-bolt text-cyan-400"></i></div>
+    </div>
+    <span class="mt-6 text-sm md:text-base font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-purple-400 animate-pulse">MEMUAT DONGHUA...</span>
+    <span id="alert-loading" class="mt-4 hidden text-xs md:text-sm text-pink-400 font-semibold bg-[#0F172A] border border-pink-500/50 px-4 py-2 rounded-xl shadow-[0_0_15px_rgba(236,72,153,0.4)]">Jika Halaman Tidak Muncul, Silakan Refresh Halaman</span>
 </div>
 <script defer>
     document.addEventListener("DOMContentLoaded", function () {
@@ -10,12 +14,12 @@
     
         // Sembunyikan loading-screen setelah 1 detik
         setTimeout(function () {
-            loadingScreen.style.transition = "opacity 1s ease-out";
+            loadingScreen.style.transition = "opacity 0.8s ease-out";
             loadingScreen.style.opacity = "0";
     
             setTimeout(function () {
                 loadingScreen.style.display = "none";
-            }, 1000);
+            }, 800);
         }, 1000);
     
         // Periksa setelah 5 detik apakah loading-screen masih terlihat

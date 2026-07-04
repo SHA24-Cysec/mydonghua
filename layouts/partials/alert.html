@@ -1,38 +1,38 @@
 {{ if .IsHome }}
-    <div class="mx-4">
-        <div class="p-4 bg-blue-300 shadow-md shadow-blue-300 bg-opacity-50 text-white select-none rounded-lg w-full max-w-screen-xl mx-auto mt-4">
-            <div class="w-full max-w-xl mx-auto text-center flex flex-col gap-2 font-serif font-bold">
-                <span>Support kami dengan share website kami ke teman-teman kalian agar website kami berkembang menyajikan batch donghua terlengkap untukmu, terima kasih.</span>
-                <hr>
-                <span>Bagi kamu yang ingin memberikan masukan atau saran, bisa hubungi kami atau komentar di bawah.</span>
-                <hr>
-                <span>Mohon maaf jika ada Donghua atau resolusi yang belum tersedia. Kami akan menambahkannya secara bertahap sesuai ketersediaan sumber daya.</span>
+    <div class="w-full max-w-screen-xl mx-auto px-2 lg:px-0">
+        <div class="p-5 bg-[#0F172A]/90 border border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.2)] text-slate-200 select-none rounded-2xl w-full mt-3 backdrop-blur-md">
+            <div class="w-full max-w-xl mx-auto text-center flex flex-col gap-3 font-sans font-medium text-sm md:text-base">
+                <span class="text-cyan-300 drop-shadow-[0_0_5px_rgba(34,211,238,0.4)]">Support kami dengan share website kami ke teman-teman kalian agar website kami berkembang menyajikan batch donghua terlengkap untukmu, terima kasih.</span>
+                <hr class="border-cyan-500/30">
+                <span class="text-slate-300">Bagi kamu yang ingin memberikan masukan atau saran, bisa hubungi kami atau komentar di bawah.</span>
+                <hr class="border-cyan-500/30">
+                <span class="text-purple-300">Mohon maaf jika ada Donghua atau resolusi yang belum tersedia. Kami akan menambahkannya secara bertahap sesuai ketersediaan sumber daya.</span>
                 {{ if eq .Layout "postingan-donghua" }}
-                    <hr>
-                    <span>Cara melewati Shortlink? <a class="text-red-500 hover:text-red-600" href="https://pastebin.com/XMGvKgyQ" rel="nofollow noopener" target="_blank">Cek Disini</a></span>
-                    <hr>
-                    <p>Untuk link download <span class="rounded-lg underline text-yellow-300">acefile.co</span>, jika tidak ada tombol <span class="rounded-lg underline text-yellow-300">Fast Download</span> silahkan di refresh dulu halamannya beberapa kali atau login menggunakan akun google kalian, jika tidak muncul silahkan <a class="transition active:scale-95 active:opacity-70 text-red-500 hover:text-red-600" href="#reportButton">Laporkan Link</a></p>
+                    <hr class="border-cyan-500/30">
+                    <span>Cara melewati Shortlink? <a class="text-pink-400 hover:text-pink-300 underline font-bold drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" href="https://pastebin.com/XMGvKgyQ" rel="nofollow noopener" target="_blank">Cek Disini</a></span>
+                    <hr class="border-cyan-500/30">
+                    <p>Untuk link download <span class="rounded-lg underline font-bold text-cyan-300">acefile.co</span>, jika tidak ada tombol <span class="rounded-lg underline font-bold text-cyan-300">Fast Download</span> silahkan di refresh dulu halamannya beberapa kali atau login menggunakan akun google kalian, jika tidak muncul silahkan <a class="transition active:scale-95 active:opacity-70 text-pink-400 hover:text-pink-300 font-bold underline" href="#reportButton">Laporkan Link</a></p>
                 {{ end }}
-                <img width="150" height="300" class="mx-auto object-cover" src="/img/support-me.gif" alt="Support Me">
+                <img width="150" height="300" class="mx-auto object-cover rounded-xl mt-2 drop-shadow-[0_0_15px_rgba(34,211,238,0.4)]" src="/img/support-me.gif" alt="Support Me">
             </div>
         </div>
     </div>
 {{ else }}
-    <div class="mx-4">
-        <div class="p-4 bg-blue-300 shadow-md shadow-blue-300 bg-opacity-50 text-white select-none rounded-lg w-full max-w-screen-xl mx-auto mt-16">
-            <div class="w-full max-w-xl mx-auto text-center flex flex-col gap-2 font-serif font-bold">
-                <span>Support kami dengan share website kami ke teman-teman kalian agar website kami berkembang menyajikan batch donghua terlengkap untukmu, terima kasih.</span>
-                <hr>
-                <span>Bagi kamu yang ingin memberikan masukan atau saran, bisa hubungi kami atau komentar di bawah.</span>
-                <hr>
-                <span>Mohon maaf jika ada Donghua atau resolusi yang belum tersedia. Kami akan menambahkannya secara bertahap sesuai ketersediaan sumber daya.</span>
+    <div class="w-full max-w-screen-xl mx-auto px-2 lg:px-0">
+        <div class="p-5 bg-[#0F172A]/90 border border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.2)] text-slate-200 select-none rounded-2xl w-full mt-20 backdrop-blur-md">
+            <div class="w-full max-w-xl mx-auto text-center flex flex-col gap-3 font-sans font-medium text-sm md:text-base">
+                <span class="text-cyan-300 drop-shadow-[0_0_5px_rgba(34,211,238,0.4)]">Support kami dengan share website kami ke teman-teman kalian agar website kami berkembang menyajikan batch donghua terlengkap untukmu, terima kasih.</span>
+                <hr class="border-cyan-500/30">
+                <span class="text-slate-300">Bagi kamu yang ingin memberikan masukan atau saran, bisa hubungi kami atau komentar di bawah.</span>
+                <hr class="border-cyan-500/30">
+                <span class="text-purple-300">Mohon maaf jika ada Donghua atau resolusi yang belum tersedia. Kami akan menambahkannya secara bertahap sesuai ketersediaan sumber daya.</span>
                 {{ if eq .Layout "postingan-donghua" }}
-                    <hr>
-                    <span>Cara melewati Shortlink? <a class="text-red-500 hover:text-red-600" href="https://pastebin.com/XMGvKgyQ" rel="nofollow noopener" target="_blank">Cek Disini</a></span>
-                    <hr>
-                    <p>Untuk link download <span class="rounded-lg underline text-yellow-300">acefile.co</span>, jika tidak ada tombol <span class="rounded-lg underline text-yellow-300">Fast Download</span> silahkan di refresh dulu halamannya beberapa kali atau login menggunakan akun google kalian, jika tidak muncul silahkan <a class="transition active:scale-95 active:opacity-70 text-red-500 hover:text-red-600" href="#reportButton">Laporkan Link</a></p>
+                    <hr class="border-cyan-500/30">
+                    <span>Cara melewati Shortlink? <a class="text-pink-400 hover:text-pink-300 underline font-bold drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" href="https://pastebin.com/XMGvKgyQ" rel="nofollow noopener" target="_blank">Cek Disini</a></span>
+                    <hr class="border-cyan-500/30">
+                    <p>Untuk link download <span class="rounded-lg underline font-bold text-cyan-300">acefile.co</span>, jika tidak ada tombol <span class="rounded-lg underline font-bold text-cyan-300">Fast Download</span> silahkan di refresh dulu halamannya beberapa kali atau login menggunakan akun google kalian, jika tidak muncul silahkan <a class="transition active:scale-95 active:opacity-70 text-pink-400 hover:text-pink-300 font-bold underline" href="#reportButton">Laporkan Link</a></p>
                 {{ end }}
-                <img width="150" height="300" class="mx-auto object-cover" src="/img/support-me.gif" alt="Support Me">
+                <img width="150" height="300" class="mx-auto object-cover rounded-xl mt-2 drop-shadow-[0_0_15px_rgba(34,211,238,0.4)]" src="/img/support-me.gif" alt="Support Me">
             </div>
         </div>
     </div>

@@ -1,68 +1,68 @@
 {{ define "main" }}
     {{ partial "alert" . }}
     {{ partial "widget/ads-728x90" . }}
-    <div class="my-4 mx-auto max-w-screen-xl">
-        <main class="flex gap-4 flex-col lg:flex-row">
+    <div class="mt-3 mb-3 mx-auto w-full max-w-screen-xl px-2 lg:px-0">
+        <main class="flex gap-6 flex-col lg:flex-row">
             {{/*  Main Content  */}}
             <div style="flex-basis: 900px;">
                 <div class="w-full">
-                    <div class="bg-slate-300 bg-opacity-50 p-4">
-                        <span class="flex items-center gap-1 text-sm text-white"><i class="fa-solid fa-user"></i>Posted by <strong>{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-500"></i></span>
-                        <hr class="mt-4">
-                        <h1 class="text-2xl mt-4 text-white"><strong>{{ .Title }}</strong></h1>
-                        <div class="flex flex-col md:flex-row gap-4 mt-4">
-                            <div class="w-full h-full block">
-                                <div class="w-[200px] h-[300px] mb-2 mx-auto">
-                                    <img style="width: 200px !important;" title="{{ .Title }}" class="h-[300px] object-cover" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
+                    <div class="bg-[#0F172A]/80 border border-cyan-500/30 rounded-2xl p-6 shadow-[0_0_30px_rgba(34,211,238,0.15)] backdrop-blur-md">
+                        <span class="flex items-center gap-2 text-sm text-slate-300 bg-[#060816]/80 px-3.5 py-1.5 rounded-full w-fit border border-cyan-500/30 shadow-inner"><i class="fa-solid fa-user text-cyan-400"></i>Posted by <strong class="text-cyan-300">{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-400 drop-shadow-[0_0_5px_rgba(74,222,128,0.8)]"></i></span>
+                        <hr class="mt-4 border-cyan-500/30">
+                        <h1 class="text-2xl md:text-3xl mt-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]"><strong>{{ .Title }}</strong></h1>
+                        <div class="flex flex-col md:flex-row gap-6 mt-6">
+                            <div class="w-full h-full block md:w-[220px] shrink-0">
+                                <div class="w-[200px] h-[300px] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+                                    <img style="width: 200px !important;" title="{{ .Title }}" class="h-[300px] object-cover hover:scale-105 transition duration-500" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
                                 </div>
                                 {{- $rating := .Params.rating | default 0 -}}
                                 {{- $stars := div (mul $rating 5) 10 -}}
-                                <div class="flex flex-col items-center flex-wrap justify-center">
-                                    <strong class="mr-2 text-white">Rating: {{ $rating }}</strong>
-                                    <div class="bg-slate-400 p-1 rounded-lg flex-wrap flex items-center">
+                                <div class="flex flex-col items-center flex-wrap justify-center gap-1.5 bg-[#060816]/80 p-2.5 rounded-xl border border-slate-800">
+                                    <strong class="text-cyan-300 text-sm">Rating: {{ $rating }} / 10</strong>
+                                    <div class="bg-[#0F172A] px-2.5 py-1 rounded-lg flex-wrap flex items-center gap-1 border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
                                         {{ range seq 5 }}
                                             {{ if le . $stars }}
-                                                <i class="fa-solid fa-star" style="color: gold;"></i>
+                                                <i class="fa-solid fa-star drop-shadow-[0_0_6px_rgba(250,204,21,0.9)]" style="color: #FACC15;"></i>
                                             {{ else }}
-                                                <i class="fa-regular fa-star"></i>
+                                                <i class="fa-regular fa-star text-slate-600"></i>
                                             {{ end }}
                                         {{ end }}
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex flex-col gap-4">
-                                <p class="text-white">{{ .Params.sinopsis }}</p>
+                            <div class="flex flex-col gap-5 flex-1">
+                                <p class="text-slate-200 leading-relaxed font-sans text-sm md:text-base bg-[#060816]/50 p-4 rounded-xl border border-slate-800/80">{{ .Params.sinopsis }}</p>
                                 <div class="flex gap-2 flex-wrap flex-row">
                                     {{ range .Params.genre }}
-                                        <a class="bg-slate-400 hover:bg-slate-200 hover:text-sky-300 text-white font-bold w-max p-2 rounded-lg" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
+                                        <a class="bg-[#060816] border border-cyan-500/40 hover:border-cyan-300 hover:bg-cyan-500/20 text-cyan-300 hover:text-white font-semibold text-xs md:text-sm px-3.5 py-1.5 rounded-xl transition-all duration-300 shadow-sm hover:shadow-[0_0_12px_rgba(34,211,238,0.4)]" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
                                     {{ end }}
                                 </div>
                             </div>
                         </div>
-                        <div class="overflow-x-auto w-full mx-auto max-w-max select-none">
-                            <table class="mt-8 p-4 mx-auto bg-blue-300">
+                        <div class="overflow-x-auto w-full mx-auto max-w-full select-none mt-8 rounded-2xl border border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.15)] bg-[#060816]/80">
+                            <table class="w-full mx-auto text-sm md:text-base">
                                 <thead>
-                                    <tr>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-video"></i>Studio</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-flag"></i>Season</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-clock"></i>Durasi</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-film"></i>Episode</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-fire"></i>Release</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-bookmark"></i>Type</span></th>
-                                        <th class="border border-black p-4"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-chart-simple"></i>Status</span></th>
-                                        <th class="border border-black p-4"><span class="flex w-max items-center justify-center gap-2"><i class="fa-solid fa-user"></i>Sub By</span></th>
+                                    <tr class="bg-gradient-to-r from-cyan-600/30 via-blue-600/30 to-purple-600/30 text-cyan-300 font-extrabold border-b border-cyan-500/40">
+                                        <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-video text-cyan-400"></i>Studio</span></th>
+                                        <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-flag text-pink-400"></i>Season</span></th>
+                                        <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-clock text-amber-400"></i>Durasi</span></th>
+                                        <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-film text-purple-400"></i>Episode</span></th>
+                                        <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-fire text-red-400"></i>Release</span></th>
+                                        <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-bookmark text-emerald-400"></i>Type</span></th>
+                                        <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-chart-simple text-sky-400"></i>Status</span></th>
+                                        <th class="p-3.5"><span class="flex w-max items-center justify-center gap-2"><i class="fa-solid fa-user text-indigo-400"></i>Sub By</span></th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-center">
-                                    <tr>
-                                        <td class="border border-black p-2">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</td>
-                                        <td class="border border-black p-2">{{ .Params.season }}</td>
-                                        <td class="border border-black p-2">{{ .Params.durasi }}</td>
-                                        <td class="border border-black p-2">{{ .Params.episode }}</td>
-                                        <td class="border border-black p-2">{{ .Params.release }}</td>
-                                        <td class="border border-black p-2">{{ .Params.type }}</td>
-                                        <td class="border border-black p-2">{{ .Params.status }}</td>
-                                        <td class="border border-black p-2">{{ .Params.sub }}</td>
+                                <tbody class="text-center font-medium text-slate-200">
+                                    <tr class="hover:bg-cyan-500/10 transition-colors">
+                                        <td class="p-3.5 border-r border-slate-800">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</td>
+                                        <td class="p-3.5 border-r border-slate-800">{{ .Params.season }}</td>
+                                        <td class="p-3.5 border-r border-slate-800">{{ .Params.durasi }}</td>
+                                        <td class="p-3.5 border-r border-slate-800 text-cyan-400 font-bold">{{ .Params.episode }}</td>
+                                        <td class="p-3.5 border-r border-slate-800">{{ .Params.release }}</td>
+                                        <td class="p-3.5 border-r border-slate-800"><span class="bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-md border border-purple-500/30 text-xs font-bold">{{ .Params.type }}</span></td>
+                                        <td class="p-3.5 border-r border-slate-800"><span class="bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md border border-emerald-500/30 text-xs font-bold">{{ .Params.status }}</span></td>
+                                        <td class="p-3.5">{{ .Params.sub }}</td>
                                     </tr>
                                 </tbody>
                             </table>

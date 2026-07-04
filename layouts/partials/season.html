@@ -1,32 +1,32 @@
-<div class="{{ if (or .Params.linkSeasonSebelumnya .Params.linkSeasonSelanjutnya) }} mt-4 {{ end }} flex flex-col flex-wrap gap-4">
-    <table class="w-auto mx-auto table table-fixed bg-blue-300">
+<div class="{{ if (or .Params.linkSeasonSebelumnya .Params.linkSeasonSelanjutnya) }} mt-6 {{ end }} flex flex-col flex-wrap gap-4">
+    <table class="w-full max-w-xl mx-auto table table-fixed rounded-2xl overflow-hidden border border-cyan-500/40 bg-[#0F172A]/90 shadow-[0_0_20px_rgba(34,211,238,0.2)] backdrop-blur-md">
         <thead>
-            <tr>
+            <tr class="bg-gradient-to-r from-cyan-600/30 via-purple-600/30 to-pink-600/30 text-cyan-300 font-extrabold border-b border-cyan-500/40">
                 {{ if .Params.linkSeasonSebelumnya }}
-                    <th class="border border-black p-2">
-                        <div class="flex flex-col gap-2 items-center">
+                    <th class="p-3.5 border-r border-cyan-500/30">
+                        <div class="flex flex-col gap-1.5 items-center">
                             <span>Season Sebelumnya</span>
-                            <i class="fa-solid fa-circle-left"></i>
+                            <i class="fa-solid fa-circle-left text-cyan-400 text-lg"></i>
                         </div>
                     </th>
                 {{ end}}
                 {{ if .Params.linkSeasonSelanjutnya }}
-                    <th class="border border-black p-2">
-                        <div class="flex flex-col gap-2 items-center">
+                    <th class="p-3.5">
+                        <div class="flex flex-col gap-1.5 items-center">
                             <span>Season Selanjutnya</span>
-                            <i class="fa-solid fa-circle-right"></i>
+                            <i class="fa-solid fa-circle-right text-pink-400 text-lg"></i>
                         </div>
                     </th>
                 {{ end }}
             </tr>
         </thead>
-        <tbody>
+        <tbody class="text-center font-medium">
             <tr>
                 {{ if .Params.linkSeasonSebelumnya }}
-                    <td class="border border-black p-2"><a class="text-blue-600 hover:text-blue-800" href="{{ .Params.linkSeasonSebelumnya | relURL }}">{{ .Params.judulSeasonSebelumnya }}</a></td>
+                    <td class="p-4 border-r border-cyan-500/30 bg-[#060816]/60"><a class="text-cyan-400 hover:text-cyan-300 hover:underline font-bold transition duration-300 drop-shadow-[0_0_5px_rgba(34,211,238,0.4)] block" href="{{ .Params.linkSeasonSebelumnya | relURL }}">{{ .Params.judulSeasonSebelumnya }}</a></td>
                 {{ end }}
                 {{ if .Params.linkSeasonSelanjutnya }}
-                    <td class="border border-black p-2"><a class="text-blue-600 hover:text-blue-800" href="{{ .Params.linkSeasonSelanjutnya | relURL }}">{{ .Params.judulSeasonSelanjutnya }}</a></td>
+                    <td class="p-4 bg-[#060816]/60"><a class="text-pink-400 hover:text-pink-300 hover:underline font-bold transition duration-300 drop-shadow-[0_0_5px_rgba(236,72,153,0.4)] block" href="{{ .Params.linkSeasonSelanjutnya | relURL }}">{{ .Params.judulSeasonSelanjutnya }}</a></td>
                 {{ end }}
             </tr>
         </tbody>

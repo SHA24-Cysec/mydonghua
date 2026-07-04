@@ -147,14 +147,14 @@ downloadGroups:
       size: '1.14 GB'
     
     - quality: '720p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://www.mediafire.com/file/i8ycry2khmtlsns/Anichin.best_Jade.Dy.Ep71-78_720p.zip/file'
+      button: 'Download'
+      size: '2.03 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://www.mediafire.com/file/8gp4qavaidk5x7b/Anichin.best_Jade.Dy.Ep71-78_1080p.zip/file'
+      button: 'Download'
+      size: '3.79 GB'
     
     - quality: '4K'
       link: ''

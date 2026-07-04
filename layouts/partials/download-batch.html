@@ -1,30 +1,33 @@
-<div class="mt-4 bg-slate-400 bg-opacity-50 p-4">
+<div class="mt-6 bg-[#0F172A]/90 border border-cyan-500/40 rounded-2xl p-6 shadow-[0_0_30px_rgba(34,211,238,0.2)] backdrop-blur-md">
     <div class="flex flex-col mt-2">
         {{/*  Div Download Batch  */}}
-        <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-4 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-6 mx-auto w-full">
         {{ range .Params.downloadGroups }}
-            <div class="download-group">
-                <h3 class="bg-blue-300 select-none font-bold p-3 border-b-white border-b-2 w-full max-w-96"><i class="fa-solid fa-circle-info mr-2"></i>{{ .title }}</h3>
+            <div class="download-group bg-[#060816]/90 border border-slate-700/80 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(34,211,238,0.15)] flex flex-col">
+                <h3 class="bg-gradient-to-r from-cyan-600 via-blue-700 to-purple-700 text-white select-none font-extrabold p-3.5 border-b border-cyan-400/50 w-full max-w-full flex items-center shadow-md tracking-wide"><i class="fa-solid fa-circle-info mr-2 text-cyan-300 animate-pulse"></i>{{ .title }}</h3>
+                <div class="p-2 flex flex-col gap-2.5">
                 {{ range .downloads }}
-                  <div>
-                    <div class="flex select-none flex-row items-center border-b-2 w-full max-w-96">
-                      <span class="bg-blue-300 w-full max-w-16 flex items-center justify-center font-bold p-2">{{ .quality }}</span>
-                      <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .link }}" class="bg-blue-200 w-full max-w-80 hover:text-sky-300 p-2">
-                        <span class="font-bold flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-down"></i>{{ .button }}</span>
+                  <div class="border border-slate-800 rounded-lg overflow-hidden bg-[#0F172A]/60">
+                    <div class="flex select-none flex-row items-center border-b border-slate-800 w-full max-w-full">
+                      <span class="bg-cyan-500/20 text-cyan-300 border-r border-slate-800 w-16 md:w-20 shrink-0 flex items-center justify-center font-extrabold p-2.5 text-sm uppercase shadow-inner">{{ .quality }}</span>
+                      <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .link }}" class="bg-gradient-to-r from-[#1E293B] to-[#0F172A] w-full text-slate-200 hover:text-cyan-300 hover:bg-cyan-500/10 p-2.5 transition-all duration-300 flex items-center justify-between group">
+                        <span class="font-bold flex items-center gap-2.5 text-sm md:text-base group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-cloud-arrow-down text-cyan-400 text-lg group-hover:scale-110 transition-transform"></i>{{ .button }}</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400 mr-2"></i>
                       </a>
                     </div>
-                    <div id="ukuran-download" class="w-full border-b-2 flex items-center gap-1 justify-center font-bold max-w-96 bg-gradient-to-r from-blue-300 to-sky-200 p-2">
-                      <i class="fa-solid fa-file-zipper"></i>
+                    <div id="ukuran-download" class="w-full flex items-center gap-2 justify-center font-bold max-w-full bg-gradient-to-r from-purple-900/40 via-blue-900/40 to-cyan-900/40 text-cyan-300 p-2 text-xs md:text-sm border-t border-cyan-500/20">
+                      <i class="fa-solid fa-file-zipper text-purple-400"></i>
                       <span>{{ .size }}</span>
                     </div>
                   </div>
                 {{ end }} 
+                </div>
             </div>
         {{ end }}
         </div>
         {{/*  Button Download  */}}
-        <button title="Laporkan Link Download Mati" id="reportButton" class="mx-auto w-fit mt-6 cursor-pointer hover:bg-blue-400 hover:text-white p-2 rounded-lg bg-blue-300 font-bold scroll-mt-[300px]">
-            Laporkan Link Mati
+        <button title="Laporkan Link Download Mati" id="reportButton" class="mx-auto w-fit mt-8 cursor-pointer bg-gradient-to-r from-red-500 via-pink-600 to-purple-600 hover:from-red-600 hover:to-pink-500 text-white px-6 py-3 rounded-xl font-bold scroll-mt-[300px] shadow-[0_0_20px_rgba(236,72,153,0.5)] transition duration-300 flex items-center gap-2">
+            <i class="fa-solid fa-triangle-exclamation animate-bounce"></i> Laporkan Link Mati
         </button>
         
         <script>
@@ -65,4 +68,4 @@
         }
     });
 });
-</script>    
+</script>

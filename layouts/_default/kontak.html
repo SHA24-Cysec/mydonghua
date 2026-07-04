@@ -1,17 +1,19 @@
 {{ define "main" }}
-    <div class="bg-slate-300 bg-opacity-50 my-4 p-4 mx-auto w-full h-[750px] max-w-screen-xl mt-[72px]">
-        <h1 class="font-bold text-2xl text-center text-white">{{ .Title }}</h1>
-        <form class="flex mt-32 justify-center items-center flex-col gap-4" action="https://formspree.io/f/xregejlg" method="POST" netlify>
-            <label class="flex flex-col gap-2 text-center w-full max-w-96">
-              <span class="text-white">Email</span>
-              <input required placeholder="xiaoxiao@email.com" class="bg-white p-4 focus:shadow-md focus:shadow-black focus:scale-103 transition duration-300" type="email" name="email">
+    <div class="w-full max-w-screen-xl mx-auto px-2 lg:px-0 mt-[85px]">
+    <div class="bg-[#0F172A]/80 border border-cyan-500/40 rounded-2xl p-6 w-full min-h-[650px] shadow-[0_0_30px_rgba(34,211,238,0.2)] backdrop-blur-md flex flex-col items-center justify-center">
+        <h1 class="font-extrabold text-3xl text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 mb-8 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]"><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i>{{ .Title }}</h1>
+        <form class="flex justify-center items-center flex-col gap-6 w-full max-w-md bg-[#060816]/90 p-8 rounded-2xl border border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.15)]" action="https://formspree.io/f/xregejlg" method="POST" netlify>
+            <label class="flex flex-col gap-2 text-left w-full">
+              <span class="text-cyan-300 font-bold text-sm uppercase tracking-wider">Alamat Email</span>
+              <input required placeholder="xiaoxiao@email.com" class="bg-[#0F172A] border border-slate-700 text-slate-100 placeholder-slate-500 rounded-xl p-3.5 focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition duration-300 font-medium" type="email" name="email">
             </label>
-            <label class="flex flex-col gap-2 text-center w-full max-w-96">
-              <span class="text-white">Pesan</span>
-              <textarea required placeholder="Pesan..." class="bg-white p-4 focus:shadow-md focus:shadow-black focus:scale-103 transition duration-300" name="message"></textarea>
+            <label class="flex flex-col gap-2 text-left w-full">
+              <span class="text-purple-300 font-bold text-sm uppercase tracking-wider">Pesan Anda</span>
+              <textarea required rows="4" placeholder="Tulis pesan atau saran Anda di sini..." class="bg-[#0F172A] border border-slate-700 text-slate-100 placeholder-slate-500 rounded-xl p-3.5 focus:outline-none focus:border-purple-400 focus:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition duration-300 font-medium" name="message"></textarea>
             </label>
             <!-- your other form fields go here -->
-            <button class="bg-slate-400 hover:text-sky-300 cursor-pointer w-full max-w-32 rounded-lg p-2 hover:bg-slate-200" type="submit">Send</button>
+            <button class="bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-extrabold cursor-pointer w-full rounded-xl p-3.5 shadow-[0_0_15px_rgba(34,211,238,0.4)] transition duration-300 hover:scale-[1.02] uppercase tracking-wider" type="submit"><i class="fa-solid fa-paper-plane mr-2"></i>Kirim Pesan</button>
         </form>
+    </div>
     </div>
 {{ end }}

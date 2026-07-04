@@ -1,3 +1,255 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #060816;
+    color: #f1f5f9;
+  }
+}
+
+/* Custom Neon Effects & Overrides */
+@layer components {
+  .cyber-card {
+    background-color: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+    backdrop-filter: blur(12px);
+  }
+  
+  .cyber-card-purple {
+    background-color: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+    backdrop-filter: blur(12px);
+  }
+
+  .cyber-button {
+    background: linear-gradient(135deg, #22D3EE, #8B5CF6);
+    color: #060816;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+  }
+  
+  .cyber-button:hover {
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.8);
+    transform: translateY(-2px);
+  }
+
+  /* Model 2: Neon Holo-Overlay Title & Interactive Hover Button */
+  .card-holo-title {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-right: 36px;
+  }
+
+  .card-holo-title::after {
+    content: '\f0ed'; /* FontAwesome download icon */
+    font-family: 'Font Awesome 6 Free', 'FontAwesome';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #22D3EE, #38BDF8);
+    color: #060816;
+    font-size: 13px;
+    opacity: 0;
+    transform: translateY(-50%) scale(0.6);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.9);
+    pointer-events: none;
+  }
+
+  .group:hover .card-holo-title::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* ==========================================================
+   GLOBAL PAGINATION CSS (OUTSIDE @layer TO GUARANTEE 100% PRESERVATION)
+   MODEL 6: GLOW-WIRE HOLOGRAM STRIP PAGINATION
+   Electric Cyan-Blue • Uniform Mecha rounded-md (~6px)
+   ========================================================== */
+.pagination,
+.pagination-default {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px !important;
+  background: rgba(6, 8, 22, 0.95) !important;
+  border: 1px solid rgba(30, 41, 59, 0.9) !important;
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.15) !important;
+  padding: 12px 16px !important;
+  border-radius: 16px !important;
+  width: 100% !important;
+  max-width: max-content !important;
+  margin: 24px auto !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  list-style: none !important;
+}
+
+.page-item {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Universal Square Mecha HUD styling for all items */
+.page-item a,
+.page-item .page-link,
+.page-item span {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  padding: 0 14px !important;
+  background: #0F172A !important;
+  border: 1px solid #334155 !important;
+  border-radius: 6px !important; /* EXACT UNIFORM rounded-md (~6px) for numbers and arrows */
+  color: #94a3b8 !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+}
+
+/* Glow-Wire Strip at bottom of button (Applied ONLY to numbered items) */
+.page-item a::after,
+.page-item .page-link::after,
+.page-item span::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: #334155 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hover state for all buttons */
+.page-item a:hover,
+.page-item .page-link:hover,
+.page-item span:hover {
+  color: #ffffff !important;
+  background: rgba(34, 211, 238, 0.15) !important;
+  border-color: #22D3EE !important;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.35) !important;
+}
+
+.page-item a:hover::after,
+.page-item .page-link:hover::after,
+.page-item span:hover::after {
+  background: #22D3EE !important;
+  height: 4px !important;
+  box-shadow: 0 0 12px #22D3EE !important;
+}
+
+/* Active Numbered State (Electric Cyan-Blue) */
+.page-item.active a,
+.page-item.active .page-link,
+.page-item.active span {
+  background: rgba(34, 211, 238, 0.2) !important;
+  border-color: #22D3EE !important;
+  color: #22D3EE !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4) !important;
+  cursor: default !important;
+}
+
+.page-item.active a::after,
+.page-item.active .page-link::after,
+.page-item.active span::after {
+  background: linear-gradient(90deg, #22D3EE, #3B82F6) !important;
+  height: 5px !important;
+  box-shadow: 0 0 15px #22D3EE !important;
+}
+
+/* Navigation Arrow Items (««, «, », »») - Remove Glow-Wire Strip, Keep Square Mecha HUD */
+.page-item.page-item-first a::after,
+.page-item.page-item-first .page-link::after,
+.page-item.page-item-first span::after,
+.page-item.page-item-last a::after,
+.page-item.page-item-last .page-link::after,
+.page-item.page-item-last span::after,
+.page-item.page-item-previous a::after,
+.page-item.page-item-previous .page-link::after,
+.page-item.page-item-previous span::after,
+.page-item.page-item-next a::after,
+.page-item.page-item-next .page-link::after,
+.page-item.page-item-next span::after {
+  display: none !important;
+}
+
+/* Ensure Arrow Items stay exactly uniform square shape (~6px) */
+.page-item.page-item-first a,
+.page-item.page-item-first .page-link,
+.page-item.page-item-first span,
+.page-item.page-item-last a,
+.page-item.page-item-last .page-link,
+.page-item.page-item-last span,
+.page-item.page-item-previous a,
+.page-item.page-item-previous .page-link,
+.page-item.page-item-previous span,
+.page-item.page-item-next a,
+.page-item.page-item-next .page-link,
+.page-item.page-item-next span {
+  border-radius: 6px !important; /* EXACT UNIFORM SQUARE MECHA */
+}
+
+/* Disabled state */
+.page-item.disabled a,
+.page-item.disabled .page-link,
+.page-item.disabled span {
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+}
+
+/* Uniform Square Nav buttons for Search & Filter pages */
+.cyber-pill-nav {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  height: 44px !important;
+  padding: 0 20px !important;
+  background: #0F172A !important;
+  border: 1px solid #334155 !important;
+  border-radius: 6px !important; /* EXACT UNIFORM SQUARE MECHA (~6px) */
+  color: #94a3b8 !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+}
+
+.cyber-pill-nav:hover:not(:disabled) {
+  background: rgba(34, 211, 238, 0.15) !important;
+  border-color: #22D3EE !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.35) !important;
+}
+
+.cyber-pill-nav:disabled {
+  opacity: 0.35 !important;
+  border-color: #334155 !important;
+  color: #64748b !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
