@@ -1,8 +1,8 @@
 {{ define "main" }}
     {{ partial "alert" . }}
     {{ partial "widget/ads-728x90" . }}
-    <div class="mt-4 mb-6 mx-auto w-full max-w-screen-xl px-4 lg:px-0">
-        <main class="flex gap-6 flex-col lg:flex-row">
+    <div class="mt-3 mb-3 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
+        <main class="flex gap-3 flex-col lg:flex-row">
             {{/*  Main Content  */}}
             <div style="flex-basis: 900px;">
                 <div class="w-full">
@@ -10,7 +10,7 @@
                         <span class="flex items-center gap-2 text-sm text-slate-300 bg-[#060816]/80 px-3.5 py-1.5 rounded-full w-fit border border-cyan-500/30 shadow-inner"><i class="fa-solid fa-user text-cyan-400"></i>Posted by <strong class="text-cyan-300">{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-400 drop-shadow-[0_0_5px_rgba(74,222,128,0.8)]"></i></span>
                         <hr class="mt-4 border-cyan-500/30">
                         <h1 class="text-2xl md:text-3xl mt-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]"><strong>{{ .Title }}</strong></h1>
-                        <div class="flex flex-col md:flex-row gap-6 mt-6">
+                        <div class="flex flex-col md:flex-row gap-4 mt-4">
                             <div class="w-full h-full block md:w-[220px] shrink-0">
                                 <div class="w-[200px] h-[300px] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
                                     <img style="width: 200px !important;" title="{{ .Title }}" class="h-[300px] object-cover hover:scale-105 transition duration-500" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex flex-col gap-5 flex-1">
+                            <div class="flex flex-col gap-4 flex-1">
                                 <p class="text-slate-200 leading-relaxed font-sans text-sm md:text-base bg-[#060816]/50 p-4 rounded-xl border border-slate-800/80">{{ .Params.sinopsis }}</p>
                                 <div class="flex gap-2 flex-wrap flex-row">
                                     {{ range .Params.genre }}

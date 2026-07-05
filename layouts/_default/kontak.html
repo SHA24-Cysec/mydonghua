@@ -1,8 +1,8 @@
 {{ define "main" }}
-    <div class="w-full max-w-screen-xl mx-auto px-4 lg:px-0 mt-20 mb-6">
-    <div class="bg-[#0F172A]/80 border border-cyan-500/40 rounded-2xl p-6 w-full min-h-[650px] shadow-[0_0_30px_rgba(34,211,238,0.2)] backdrop-blur-md flex flex-col items-center justify-center">
+    <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-3 mb-3">
+    <div class="bg-[#0F172A]/80 border border-cyan-500/40 rounded-2xl p-6 w-full min-h-screen shadow-[0_0_30px_rgba(34,211,238,0.2)] backdrop-blur-md flex flex-col items-center justify-center">
         <h1 class="font-extrabold text-3xl text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 mb-8 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]"><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i>{{ .Title }}</h1>
-        <form class="flex justify-center items-center flex-col gap-6 w-full max-w-md bg-[#060816]/90 p-8 rounded-2xl border border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.15)]" action="https://formspree.io/f/xregejlg" method="POST" netlify>
+        <form class="flex justify-center items-center flex-col gap-4 w-full max-w-md bg-[#060816]/90 p-8 rounded-2xl border border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.15)]" action="https://formspree.io/f/xregejlg" method="POST" netlify>
             <label class="flex flex-col gap-2 text-left w-full">
               <span class="text-cyan-300 font-bold text-sm uppercase tracking-wider">Alamat Email</span>
               <input required placeholder="xiaoxiao@email.com" class="bg-[#0F172A] border border-slate-700 text-slate-100 placeholder-slate-500 rounded-xl p-3.5 focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition duration-300 font-medium" type="email" name="email">

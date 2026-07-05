@@ -1,7 +1,7 @@
-<div class="md:py-6 py-4 mx-auto w-full bg-[#0F172A]/80 border border-cyan-500/30 rounded-2xl mt-4 p-6 shadow-[0_0_25px_rgba(34,211,238,0.15)] backdrop-blur-md">
+<div class="md:py-4 py-3 mx-auto w-full bg-[#0F172A]/80 border border-cyan-500/30 rounded-2xl mt-3 p-6 shadow-[0_0_25px_rgba(34,211,238,0.15)] backdrop-blur-md">
     <span class="font-extrabold text-xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 flex items-center gap-2 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]"><i class="fa fa-fire text-cyan-400 animate-pulse"></i>Donghua Terbaru</span>
-    <hr class="mt-4 border-cyan-500/30">
-    <div class="mt-5 donghua-card-grid donghua-card-grid-latest">
+    <hr class="mt-3 border-cyan-500/30">
+    <div class="mt-4 donghua-card-grid donghua-card-grid-latest">
         {{ range where .Site.RegularPages.ByDate.Reverse "Layout" "postingan-donghua" | first 8 }}
             {{ partial "donghua-card" . }}
         {{ end }}
