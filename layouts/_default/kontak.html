@@ -1,8 +1,8 @@
 {{ define "main" }}
     <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-3 mb-3">
-    <div class="bg-[#0F172A]/80 border border-cyan-500/40 rounded-2xl p-6 w-full min-h-screen shadow-[0_0_30px_rgba(34,211,238,0.2)] backdrop-blur-md flex flex-col items-center justify-center">
-        <h1 class="font-extrabold text-3xl text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 mb-8 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]"><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i>{{ .Title }}</h1>
-        <form class="flex justify-center items-center flex-col gap-4 w-full max-w-md bg-[#060816]/90 p-8 rounded-2xl border border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.15)]" action="https://formspree.io/f/xregejlg" method="POST" netlify>
+    <div class="panel-neon p-6 w-full min-h-screen flex flex-col items-center justify-center">
+        <h1 class="heading-neon text-3xl text-center mb-8"><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i>{{ .Title }}</h1>
+        <form class="panel-neon-inset flex justify-center items-center flex-col gap-4 w-full max-w-md p-8 shadow-[0_0_20px_rgba(34,211,238,0.15)]" action="https://formspree.io/f/xregejlg" method="POST" netlify>
             <label class="flex flex-col gap-2 text-left w-full">
               <span class="text-cyan-300 font-bold text-sm uppercase tracking-wider">Alamat Email</span>
               <input required placeholder="xiaoxiao@email.com" class="cyber-input-search" type="email" name="email">
@@ -12,34 +12,8 @@
               <textarea required rows="4" placeholder="Tulis pesan atau saran Anda di sini..." class="cyber-textarea-message" name="message"></textarea>
             </label>
             <!-- your other form fields go here -->
-            <button class="bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-extrabold cursor-pointer w-full rounded-xl p-3.5 shadow-[0_0_15px_rgba(34,211,238,0.4)] transition duration-300 hover:scale-[1.02] uppercase tracking-wider" type="submit"><i class="fa-solid fa-paper-plane mr-2"></i>Kirim Pesan</button>
+            <button class="cyber-button cursor-pointer w-full rounded-xl p-3.5 transition duration-300 hover:scale-[1.02] uppercase tracking-wider" type="submit"><i class="fa-solid fa-paper-plane mr-2"></i>Kirim Pesan</button>
         </form>
     </div>
     </div>
-
-    <style>
-        /* FORCE OVERRIDE FOR CONTACT FORM TEXTAREA */
-        textarea.cyber-textarea-message {
-            background-color: rgba(15, 23, 42, 0.85) !important;
-            color: #f1f5f9 !important;
-            border: 1px solid rgba(30, 41, 59, 1) !important;
-            border-radius: 1rem !important;
-            padding: 0.75rem 1.25rem !important;
-            outline: none !important;
-            appearance: none !important;
-            -webkit-appearance: none !important;
-            -moz-appearance: none !important;
-            resize: none !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-        }
-        textarea.cyber-textarea-message:focus {
-            border-color: #A855F7 !important;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4) !important;
-        }
-        textarea.cyber-textarea-message::placeholder {
-            color: #64748b !important;
-            opacity: 1 !important;
-        }
-    </style>
 {{ end }}

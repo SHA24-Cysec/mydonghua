@@ -11,17 +11,19 @@
     document.addEventListener("DOMContentLoaded", function () {
         var loadingScreen = document.getElementById("loading-screen");
         var alertLoading = document.getElementById("alert-loading");
-    
-        // Sembunyikan loading-screen setelah 1 detik
+
+        {{/*  Dulu ada delay buatan 1 detik sebelum loading screen disembunyikan,
+              padahal konten sudah siap saat DOMContentLoaded. Delay itu cuma
+              menahan tampilan halaman tanpa alasan dan merugikan skor
+              performa (Speed Index). Sekarang langsung disembunyikan dengan
+              transisi singkat saja.  */}}
+        loadingScreen.style.transition = "opacity 0.25s ease-out";
+        loadingScreen.style.opacity = "0";
+
         setTimeout(function () {
-            loadingScreen.style.transition = "opacity 0.8s ease-out";
-            loadingScreen.style.opacity = "0";
-    
-            setTimeout(function () {
-                loadingScreen.style.display = "none";
-            }, 800);
-        }, 1000);
-    
+            loadingScreen.style.display = "none";
+        }, 250);
+
         // Periksa setelah 5 detik apakah loading-screen masih terlihat
         setTimeout(function () {
             if (window.getComputedStyle(loadingScreen).display !== "none") {

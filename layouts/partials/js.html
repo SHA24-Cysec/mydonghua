@@ -1,12 +1,21 @@
 {{ partial "json/json-ld" . }}
-{{/*  Fuse.js  */}}
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0"></script>
-<script>
+{{/*  Fuse.js hanya dimuat di halaman yang benar-benar butuh pencarian,
+      supaya halaman lain (beranda, post) tidak ikut download index.json
+      dan menjalankan Fuse.js secara percuma  */}}
+{{ $butuhPencarian := or (eq .Layout "search") (eq .Layout "filter-genre") }}
+{{ if $butuhPencarian }}
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0" defer></script>
+{{ end }}
+<script defer>
     const searchInput = document.getElementById("search-input");
     const resultsList = document.getElementById("search-results");
+    const resultsContainerAwal = document.getElementById("genre-results");
 
     let fuse = null;
 
+    {{/*  Fetch index.json cuma jalan kalau elemen search atau genre-filter
+          memang ada di halaman ini  */}}
+    if (searchInput || resultsContainerAwal) {
     fetch("/index.json")
       .then(res => res.json())
       .then(data => {
@@ -23,6 +32,7 @@
         includeMatches: true
       });
       });
+    }
     
     {{/*  Pagination  */}}
     
@@ -284,7 +294,7 @@
 
 {{/*  Script Filter-Genre  */}}
 
-<script>
+<script defer>
 const genreForm = document.getElementById("genre-filter-form");
 
 if (genreForm) {
@@ -433,6 +443,14 @@ function filterByGenres(data, selectedGenres) {
 </script>
 
 {{ if hugo.IsProduction }}
-  {{/*  Iklan Social Bar Adsterra  */}}
-  <script src="https://contentblanksupersede.com/ac/c8/ec/acc8ecf445c142c2f16e5d0ab706e492.js"></script>
+  {{/*  Iklan Social Bar Adsterra ditunda sampai window "load" supaya tidak
+        ikut menghabiskan waktu di jalur render kritis (Total Blocking Time)  */}}
+  <script>
+    window.addEventListener("load", function () {
+      var s = document.createElement("script");
+      s.src = "https://contentblanksupersede.com/ac/c8/ec/acc8ecf445c142c2f16e5d0ab706e492.js";
+      s.async = true;
+      document.body.appendChild(s);
+    });
+  </script>
 {{ end }}

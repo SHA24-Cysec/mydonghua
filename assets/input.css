@@ -48,6 +48,95 @@
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.4) !important;
   }
 
+  /* ==========================================================
+     UNIFIED PANEL & TYPOGRAPHY SYSTEM
+     Acuan: gaya panel halaman utama (index.html)
+     Dipakai di semua halaman agar tampilan seragam.
+     ========================================================== */
+  .panel-neon {
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    border-radius: 1rem;
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.15);
+    backdrop-filter: blur(12px);
+  }
+
+  .panel-neon-inset {
+    background-color: rgba(6, 8, 22, 0.8);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    border-radius: 1rem;
+  }
+
+  .heading-neon {
+    font-weight: 800;
+    background-image: linear-gradient(to right, #22D3EE, #7DD3FC, #C084FC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.4));
+  }
+
+  .badge-neon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(6, 8, 22, 0.8);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    border-radius: 9999px;
+    padding: 0.375rem 0.875rem;
+    font-size: 0.875rem;
+    color: #cbd5e1;
+  }
+
+  /* Tipografi konten post/halaman statis (dulu tersebar sebagai <style> per-halaman) */
+  .prose-neon {
+    color: #e2e8f0;
+    line-height: 1.8;
+    font-family: inherit;
+  }
+  .prose-neon h2 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    color: #22D3EE;
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+  }
+  .prose-neon h3 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 14px;
+    color: #8B5CF6;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+  }
+  .prose-neon p {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-weight: normal;
+  }
+  .prose-neon ul {
+    margin-left: 24px;
+    font-weight: normal;
+    list-style: square;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .prose-neon ol {
+    margin-left: 32px;
+    list-style: decimal;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .prose-neon a {
+    color: #22D3EE;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  .prose-neon a:hover {
+    color: #EC4899;
+  }
+
   .cyber-card {
     background-color: rgba(15, 23, 42, 0.85);
     border: 1px solid rgba(34, 211, 238, 0.3);
