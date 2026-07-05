@@ -1,24 +1,27 @@
-<nav class="site-navbar" data-site-navbar>
-  <div class="site-navbar-inner">
-    <a href="{{ .Site.BaseURL }}" class="site-navbar-brand" aria-label="DonghuaBatch Beranda">
-      <img class="site-navbar-logo" width="36" height="36" src="/img/favicon.webp" alt="Logo DonghuaBatch">
-      <span>DonghuaBatch</span>
-    </a>
+<div class="site-nav-container" data-site-nav-container>
+  <nav class="site-navbar" data-site-navbar>
+    <div class="site-navbar-inner">
+      <a href="{{ .Site.BaseURL }}" class="site-navbar-brand" aria-label="DonghuaBatch Beranda">
+        <img class="site-navbar-logo" width="36" height="36" src="/img/favicon.webp" alt="Logo DonghuaBatch">
+        <span>DonghuaBatch</span>
+      </a>
 
-    <div class="site-navbar-menu" aria-label="Navigasi utama">
-      <a href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house" aria-hidden="true"></i> Beranda</a>
-      <a href="/#genre"><i class="fa-solid fa-folder" aria-hidden="true"></i> Genre</a>
-      <a href="/#studio-season"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Studio/Season</a>
-      <a href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari</a>
-      <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Support</a>
-      <a href='{{ relURL "kontak" }}'><i class="fa-solid fa-phone" aria-hidden="true"></i> Kontak</a>
+      <div class="site-navbar-menu" aria-label="Navigasi utama">
+        <a href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house" aria-hidden="true"></i> Beranda</a>
+        <a href="/#genre"><i class="fa-solid fa-folder" aria-hidden="true"></i> Genre</a>
+        <a href="/#studio-season"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Studio/Season</a>
+        <a href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari</a>
+        <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Support</a>
+        <a href='{{ relURL "kontak" }}'><i class="fa-solid fa-phone" aria-hidden="true"></i> Kontak</a>
+      </div>
+
+      <button class="site-navbar-toggle" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNavSheet" aria-expanded="false" data-nav-open>
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
     </div>
+  </nav>
 
-    <button class="site-navbar-toggle" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNavSheet" aria-expanded="false" data-nav-open>
-      <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
-  </div>
-
+  <!-- Moved OUTSIDE the nav to avoid backdrop-filter stacking context issues -->
   <div class="site-nav-backdrop" data-nav-close aria-hidden="true"></div>
 
   <div id="mobileNavSheet" class="site-nav-sheet" aria-label="Menu navigasi mobile">
@@ -35,10 +38,12 @@
       </button>
     </div>
 
-    <form class="site-nav-search" action='{{ relURL "search" }}' method="get">
-      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-      <input type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
-      <button type="submit">Cari</button>
+    <form class="site-nav-search-aurora" action='{{ relURL "search" }}' method="get">
+      <div class="aurora-container">
+        <input type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off" class="aurora-input">
+        <i class="fa-solid fa-magnifying-glass aurora-icon" aria-hidden="true"></i>
+      </div>
+      <button type="submit" class="site-nav-search-btn">Cari</button>
     </form>
 
     <div class="site-nav-grid">
@@ -50,11 +55,16 @@
       <a href='{{ relURL "kontak" }}' data-nav-link><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Kontak</span></a>
     </div>
   </div>
-</nav>
+</div>
 
 <style>
-  .site-navbar,
-  .site-navbar * {
+  /* Add spacing to body so content doesn't hide under the fixed navbar */
+  body {
+    padding-top: 72px !important;
+  }
+
+  .site-nav-container,
+  .site-nav-container * {
     box-sizing: border-box;
   }
 
@@ -63,63 +73,12 @@
     touch-action: none;
   }
 
-  .site-navbar.is-open {
-    position: fixed;
-    inset: 0;
-    z-index: 2147483000;
-    width: 100%;
-    height: 100dvh;
-    border-bottom: 0;
-    background: transparent;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    pointer-events: none;
-  }
-
-  .site-navbar.is-open .site-navbar-inner {
-    pointer-events: auto;
-    border-bottom: 1px solid rgba(34, 211, 238, 0.24);
-    border-radius: 0 0 1.25rem 1.25rem;
-    background:
-      radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
-      linear-gradient(135deg, rgba(6, 8, 22, 0.96), rgba(2, 6, 23, 0.94));
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32), 0 0 26px rgba(34, 211, 238, 0.12);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-
-  @media (min-width: 768px) {
-    .site-navbar.is-open {
-      position: sticky;
-      inset: auto;
-      top: 0;
-      z-index: 999;
-      height: auto;
-      border-bottom: 1px solid rgba(34, 211, 238, 0.24);
-      background:
-        radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
-        linear-gradient(135deg, rgba(6, 8, 22, 0.94), rgba(2, 6, 23, 0.90));
-      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32), 0 0 26px rgba(34, 211, 238, 0.12);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      pointer-events: auto;
-    }
-
-    .site-navbar.is-open .site-navbar-inner {
-      border-bottom: 0;
-      border-radius: 0;
-      background: transparent;
-      box-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-    }
-  }
-
   .site-navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 999;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     width: 100%;
     border-bottom: 1px solid rgba(34, 211, 238, 0.24);
     background:
@@ -213,7 +172,7 @@
   .site-nav-backdrop {
     position: fixed;
     inset: 0;
-    z-index: 9998;
+    z-index: 2000;
     pointer-events: none;
     background: rgba(2, 6, 23, 0.78);
     opacity: 0;
@@ -227,10 +186,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 9999;
+    z-index: 2001;
     width: 100%;
     max-height: min(86dvh, 42rem);
-    overflow: hidden;
+    overflow-y: auto;
     padding: 0.82rem 0.82rem 1rem;
     border: 1px solid rgba(125, 211, 252, 0.26);
     border-bottom: 0;
@@ -244,14 +203,16 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease;
+    will-change: transform, opacity;
   }
 
-  .site-navbar.is-open .site-nav-backdrop {
+  /* Open State Triggered by Parent Container */
+  .site-nav-container.is-open .site-nav-backdrop {
     opacity: 1;
     pointer-events: auto;
   }
 
-  .site-navbar.is-open .site-nav-sheet {
+  .site-nav-container.is-open .site-nav-sheet {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
@@ -311,35 +272,17 @@
     line-height: 1.45;
   }
 
-  .site-nav-search {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+  .site-nav-search-aurora {
+    display: flex;
     align-items: center;
-    gap: 0.55rem;
-    min-height: 2.85rem;
+    gap: 0.6rem;
     margin-bottom: 0.78rem;
-    padding: 0 0.62rem 0 0.78rem;
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    border-radius: 1rem;
-    background: rgba(2, 6, 23, 0.50);
-    color: #9fb1c9;
-  }
-
-  .site-nav-search input {
-    min-width: 0;
-    width: 100%;
-    border: 0;
-    outline: none;
-    background: transparent;
-    color: #eef7ff;
-    font: inherit;
-    font-size: 0.86rem;
-    font-weight: 750;
-  }
-
-  .site-nav-search button {
-    min-height: 2rem;
     padding: 0 0.62rem;
+  }
+
+  .site-nav-search-btn {
+    min-height: 2.6rem;
+    padding: 0 1rem;
     border: 0;
     border-radius: 0.72rem;
     background: linear-gradient(135deg, #22d3ee, #38bdf8, #2563eb);
@@ -348,6 +291,12 @@
     font: inherit;
     font-size: 0.76rem;
     font-weight: 950;
+    transition: all 0.2s ease;
+  }
+
+  .site-nav-search-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
   }
 
   .site-nav-grid {
@@ -456,15 +405,15 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const navbar = document.querySelector('[data-site-navbar]');
-    if (!navbar) return;
+    const container = document.querySelector('[data-site-nav-container]');
+    if (!container) return;
 
-    const toggleButton = navbar.querySelector('[data-nav-open]');
+    const toggleButton = container.querySelector('[data-nav-open]');
     const toggleIcon = toggleButton ? toggleButton.querySelector('i') : null;
     const desktopQuery = window.matchMedia('(min-width: 768px)');
 
     function isOpen() {
-      return navbar.classList.contains('is-open');
+      return container.classList.contains('is-open');
     }
 
     function syncToggleButton(open) {
@@ -478,13 +427,13 @@
     }
 
     function openNav() {
-      navbar.classList.add('is-open');
+      container.classList.add('is-open');
       document.body.classList.add('site-nav-lock');
       syncToggleButton(true);
     }
 
     function closeNav() {
-      navbar.classList.remove('is-open');
+      container.classList.remove('is-open');
       document.body.classList.remove('site-nav-lock');
       syncToggleButton(false);
     }
@@ -500,10 +449,13 @@
       });
     }
 
-    navbar.addEventListener('click', function (event) {
-      const closeTarget = event.target.closest('[data-nav-close], [data-nav-link]');
-      if (!closeTarget || !navbar.contains(closeTarget)) return;
-      closeNav();
+    container.addEventListener('click', function (event) {
+      const isBackdrop = event.target.closest('[data-nav-close]');
+      const isNavLink = event.target.closest('[data-nav-link]');
+      
+      if (isBackdrop || isNavLink) {
+        closeNav();
+      }
     });
 
     document.addEventListener('keydown', function (event) {
@@ -514,7 +466,7 @@
       if (event.matches) closeNav();
     });
 
-    window.addEventListener('pagehide', closeNav);
+    window.addEventListener('beforeunload', closeNav);
     syncToggleButton(false);
   });
 </script>

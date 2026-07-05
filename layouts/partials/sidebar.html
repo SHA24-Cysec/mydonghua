@@ -1,4 +1,4 @@
-<aside style="flex-basis: 380px;" class="w-full text-slate-200">
+<aside class="w-full lg:w-[380px] shrink-0 text-slate-200">
     <div class="h-full flex flex-col gap-3">
         {{/*  Elemen Iklan  */}}
             {{ partial "widget/ads-300x250" . }}
@@ -739,11 +739,13 @@
                 </button>
             </div>
 
-            <label class="taxonomy-tabs-search">
-                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input type="search" data-taxonomy-search placeholder="Cari studio..." autocomplete="off">
-                <button type="button" data-taxonomy-clear aria-label="Hapus pencarian"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-            </label>
+            <div class="taxonomy-tabs-search-aurora">
+                <div class="aurora-container">
+                    <input type="search" data-taxonomy-search placeholder="Cari studio..." autocomplete="off" class="aurora-input">
+                    <i class="fa-solid fa-magnifying-glass aurora-icon" aria-hidden="true"></i>
+                </div>
+                <button type="button" data-taxonomy-clear aria-label="Hapus pencarian" class="taxonomy-tabs-clear-btn"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            </div>
 
             <div class="taxonomy-tabs-content">
                 <div class="taxonomy-panel is-active" data-taxonomy-panel="studio" role="tabpanel">
@@ -939,37 +941,15 @@
                 box-shadow: 0 0 22px rgba(34, 211, 238, 0.18);
             }
 
-            .taxonomy-tabs-search {
-                display: grid;
-                grid-template-columns: auto 1fr auto;
+            .taxonomy-tabs-search-aurora {
+                display: flex;
                 align-items: center;
-                gap: 0.55rem;
-                min-height: 2.72rem;
+                gap: 0.6rem;
                 margin-bottom: 0.78rem;
                 padding: 0 0.72rem;
-                border: 1px solid rgba(255, 255, 255, 0.10);
-                border-radius: 1rem;
-                background: rgba(2, 6, 23, 0.50);
-                color: #9fb1c9;
             }
 
-            .taxonomy-tabs-search input {
-                width: 100%;
-                min-width: 0;
-                border: 0;
-                outline: none;
-                background: transparent;
-                color: #eef7ff;
-                font: inherit;
-                font-size: 0.86rem;
-                font-weight: 700;
-            }
-
-            .taxonomy-tabs-search input::placeholder {
-                color: #64748b;
-            }
-
-            .taxonomy-tabs-search button {
+            .taxonomy-tabs-clear-btn {
                 display: inline-grid;
                 place-items: center;
                 width: 1.8rem;
@@ -980,7 +960,21 @@
                 background: rgba(255,255,255,0.045);
                 color: #cbd5e1;
                 cursor: pointer;
+                transition: all 0.2s ease;
             }
+
+            .taxonomy-tabs-clear-btn:hover {
+                filter: brightness(1.2);
+                background: rgba(255,255,255,0.1);
+            }
+
+
+
+            .taxonomy-tabs-search input::placeholder {
+                color: #64748b;
+            }
+
+
 
             .taxonomy-panel[hidden] {
                 display: none !important;
