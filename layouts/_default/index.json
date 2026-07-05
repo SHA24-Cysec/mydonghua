@@ -11,6 +11,11 @@
       "content" .Plain
       "permalink" .Permalink
       "thumbnail" .Params.thumbnail
+      "type" (.Params.type | default "Donghua")
+      "sub" (.Params.sub | default "Sub")
+      "episode" (.Params.episode | default "")
+      "status" (.Params.status | default "")
+      "rating" (.Params.rating | default "")
   -}}
   {{- $index = $index | append $item -}}
   {{- $counter = add $counter 1 -}}

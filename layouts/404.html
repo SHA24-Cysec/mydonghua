@@ -1,27 +1,358 @@
 {{ define "main" }}
-<div class="w-full max-w-screen-xl mx-auto px-4 lg:px-0 mt-20 mb-6">
-<div id="redirect404" class="h-[700px] flex items-center flex-col gap-6 justify-center w-full bg-[#0F172A]/90 border border-cyan-500/40 rounded-2xl p-6 shadow-[0_0_30px_rgba(34,211,238,0.25)] backdrop-blur-md">
-    <div class="w-24 h-24 rounded-full bg-cyan-500/10 border border-cyan-500/50 flex items-center justify-center shadow-[0_0_20px_rgba(34,211,238,0.4)] animate-pulse">
-        <i class="fa-solid fa-triangle-exclamation text-5xl text-cyan-400"></i>
-    </div>
-    <h1 class="text-2xl md:text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">404 - Halaman Yang Kamu Cari Tidak Ditemukan</h1>
-    <a class="bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-extrabold px-8 py-3 rounded-xl shadow-[0_0_20px_rgba(34,211,238,0.4)] transition duration-300 flex items-center gap-2" href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house"></i> Kembali Ke Beranda</a>
-    <p class="text-slate-300 font-medium">Redirect otomatis ke halaman beranda setelah <span id="detik" class="text-cyan-400 font-bold text-lg">5</span> detik...</p>
+<div class="notfound-dock-page">
+    <section class="notfound-dock-shell" aria-labelledby="notfound-title">
+        <div class="notfound-dock-hero" aria-hidden="true">
+            <span class="notfound-dock-grid"></span>
+            <span class="notfound-dock-orbit orbit-one"></span>
+            <span class="notfound-dock-orbit orbit-two"></span>
+            <span class="notfound-dock-code">404</span>
+        </div>
+
+        <div class="notfound-dock-panel">
+            <div class="notfound-dock-handle" aria-hidden="true"></div>
+
+            <div class="notfound-dock-content">
+                <span class="notfound-dock-kicker">
+                    <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                    Error 404
+                </span>
+
+                <h1 id="notfound-title">Halaman tidak ditemukan</h1>
+                <p>Halaman yang Anda buka tidak tersedia, telah dipindahkan, atau alamat URL yang dimasukkan kurang tepat.</p>
+
+                <div class="notfound-dock-actions" aria-label="Navigasi halaman 404">
+                    <a class="notfound-dock-btn primary" href='{{ "/" | relURL }}'>
+                        <i class="fa-solid fa-house" aria-hidden="true"></i>
+                        Beranda
+                    </a>
+                    <a class="notfound-dock-btn ghost" href='{{ "search/" | relURL }}'>
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        Search
+                    </a>
+                    <a class="notfound-dock-btn ghost" href='{{ "/#genre" | relURL }}'>
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        Genre
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-<script>
-    // Redirect otomatis
-    setTimeout(() => {
-        window.location.href = "{{ .Site.BaseURL }}";
-        }, 5000);
-    //Tampilan detik
-    let detik = 5;
-    const interval = setInterval(() => {
-        document.getElementById('detik').textContent = detik;
-        detik--;
-        if (detik === 0) {
-            clearInterval(interval);
-            }
-            }, 1000);
-</script>
-</div>
+
+<style>
+    .notfound-dock-page,
+    .notfound-dock-page * {
+        box-sizing: border-box;
+    }
+
+    .notfound-dock-page {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: clamp(5rem, 10vw, 6.5rem) 1rem 1.5rem;
+        color: #eef7ff;
+    }
+
+    .notfound-dock-shell {
+        position: relative;
+        isolation: isolate;
+        display: grid;
+        align-items: end;
+        min-height: min(760px, calc(100vh - 7rem));
+        overflow: hidden;
+        border: 1px solid rgba(34, 211, 238, 0.28);
+        border-radius: clamp(1.35rem, 4vw, 2rem);
+        background:
+            radial-gradient(circle at 18% 8%, rgba(34, 211, 238, 0.24), transparent 34%),
+            radial-gradient(circle at 88% 16%, rgba(56, 189, 248, 0.18), transparent 34%),
+            linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.91));
+        box-shadow:
+            0 26px 80px rgba(0, 0, 0, 0.40),
+            0 0 42px rgba(34, 211, 238, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+
+    .notfound-dock-shell::before {
+        content: "";
+        position: absolute;
+        inset: -52% -28%;
+        z-index: -2;
+        pointer-events: none;
+        background: conic-gradient(from 180deg, rgba(34,211,238,0.02), rgba(34,211,238,0.20), rgba(56,189,248,0.16), rgba(37,99,235,0.12), rgba(34,211,238,0.02));
+        filter: blur(26px);
+        opacity: 0.78;
+        animation: notfoundAuroraFlow 14s ease-in-out infinite alternate;
+    }
+
+    .notfound-dock-hero {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+    }
+
+    .notfound-dock-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.28;
+        background:
+            linear-gradient(rgba(255,255,255,0.038) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.030) 1px, transparent 1px);
+        background-size: 34px 34px;
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent 84%);
+    }
+
+    .notfound-dock-orbit {
+        position: absolute;
+        width: min(72vw, 28rem);
+        aspect-ratio: 1;
+        border-radius: 999px;
+        border: 1px solid rgba(34, 211, 238, 0.23);
+        box-shadow: 0 0 42px rgba(34, 211, 238, 0.12), inset 0 0 32px rgba(34, 211, 238, 0.06);
+    }
+
+    .notfound-dock-orbit::before {
+        content: "";
+        position: absolute;
+        top: 13%;
+        left: 50%;
+        width: 0.72rem;
+        height: 0.72rem;
+        border-radius: 999px;
+        background: #22d3ee;
+        box-shadow: 0 0 18px rgba(34, 211, 238, 0.9);
+    }
+
+    .orbit-one {
+        top: 10%;
+        transform: rotate(16deg);
+        animation: notfoundSpin 18s linear infinite;
+    }
+
+    .orbit-two {
+        top: 14%;
+        width: min(58vw, 22rem);
+        border-color: rgba(56, 189, 248, 0.18);
+        transform: rotate(-18deg);
+        animation: notfoundSpinReverse 22s linear infinite;
+    }
+
+    .notfound-dock-code {
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.09);
+        font-size: clamp(6rem, 30vw, 18rem);
+        font-weight: 1000;
+        letter-spacing: -0.09em;
+        line-height: 0.8;
+        text-shadow: 0 0 44px rgba(34, 211, 238, 0.18);
+        user-select: none;
+    }
+
+    .notfound-dock-panel {
+        position: relative;
+        width: min(760px, calc(100% - 1.5rem));
+        margin: 0 auto 0.75rem;
+        padding: clamp(0.9rem, 3vw, 1.2rem);
+        border: 1px solid rgba(125, 211, 252, 0.24);
+        border-radius: 1.55rem;
+        background: rgba(15, 23, 42, 0.92);
+        box-shadow:
+            0 -18px 48px rgba(0, 0, 0, 0.30),
+            0 0 30px rgba(34, 211, 238, 0.13),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        animation: notfoundPanelIn 0.42s ease both;
+    }
+
+    .notfound-dock-handle {
+        width: 3.6rem;
+        height: 0.34rem;
+        margin: 0 auto 1rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #22d3ee, #38bdf8, #2563eb);
+        box-shadow: 0 0 16px rgba(34, 211, 238, 0.32);
+    }
+
+    .notfound-dock-content {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .notfound-dock-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        width: fit-content;
+        padding: 0.4rem 0.66rem;
+        border: 1px solid rgba(34, 211, 238, 0.26);
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.09);
+        color: #a5f3fc;
+        font-size: 0.70rem;
+        font-weight: 950;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    .notfound-dock-content h1 {
+        max-width: 44rem;
+        margin: 0.85rem 0 0.48rem;
+        color: transparent;
+        background: linear-gradient(90deg, #e0f2fe, #67e8f9 42%, #38bdf8 78%, #93c5fd);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: clamp(1.55rem, 5vw, 2.75rem);
+        font-weight: 1000;
+        letter-spacing: -0.05em;
+        line-height: 1.05;
+        filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.14));
+    }
+
+    .notfound-dock-content p {
+        max-width: 42rem;
+        margin: 0;
+        color: #a8bbd3;
+        font-size: clamp(0.88rem, 2.5vw, 1rem);
+        line-height: 1.65;
+    }
+
+    .notfound-dock-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+        width: 100%;
+        margin-top: 1.1rem;
+    }
+
+    .notfound-dock-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        min-height: 2.95rem;
+        padding: 0.82rem 1rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 950;
+        line-height: 1;
+        transition: transform 0.22s ease, filter 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .notfound-dock-btn.primary {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(135deg, #22d3ee, #38bdf8, #2563eb);
+        color: #06111f;
+        box-shadow: 0 0 24px rgba(34, 211, 238, 0.24);
+    }
+
+    .notfound-dock-btn.ghost {
+        border: 1px solid rgba(125, 211, 252, 0.20);
+        background: rgba(255, 255, 255, 0.045);
+        color: #d9fbff;
+    }
+
+    .notfound-dock-note {
+        margin-top: 0.85rem !important;
+        color: #7dd3fc !important;
+        font-size: 0.78rem !important;
+        font-weight: 850;
+    }
+
+    .notfound-dock-btn:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.56);
+        outline-offset: 3px;
+    }
+
+    @media (hover: hover) {
+        .notfound-dock-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.06);
+        }
+
+        .notfound-dock-btn.ghost:hover {
+            border-color: rgba(34, 211, 238, 0.42);
+            box-shadow: 0 0 18px rgba(34, 211, 238, 0.13);
+        }
+    }
+
+    @media (min-width: 640px) {
+        .notfound-dock-actions {
+            grid-template-columns: 1.2fr 1fr 1fr;
+        }
+
+        .notfound-dock-panel {
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    @media (min-width: 920px) {
+        .notfound-dock-shell {
+            min-height: min(760px, calc(100vh - 8rem));
+        }
+
+        .notfound-dock-code {
+            top: 13%;
+        }
+
+        .notfound-dock-panel {
+            margin-bottom: 2rem;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .notfound-dock-page {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+
+        .notfound-dock-panel {
+            width: calc(100% - 0.75rem);
+            border-radius: 1.28rem;
+        }
+
+        .notfound-dock-shell {
+            border-radius: 1.35rem;
+        }
+    }
+
+    @keyframes notfoundAuroraFlow {
+        0% { transform: rotate(0deg) scale(1); }
+        100% { transform: rotate(8deg) scale(1.08); }
+    }
+
+    @keyframes notfoundSpin {
+        to { transform: rotate(376deg); }
+    }
+
+    @keyframes notfoundSpinReverse {
+        to { transform: rotate(-378deg); }
+    }
+
+    @keyframes notfoundPanelIn {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .notfound-dock-shell::before,
+        .notfound-dock-orbit,
+        .notfound-dock-panel,
+        .notfound-dock-btn {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+</style>
 {{ end }}

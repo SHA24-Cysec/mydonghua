@@ -55,6 +55,47 @@
       return highlighted;
     }
 
+
+
+    function donghuaCardTemplate(item, titleHTML, extraMetaHTML) {
+      const type = item.type || "Donghua";
+      const episode = item.episode && item.episode !== "-" ? item.episode : "";
+      const status = item.status && item.status !== "-" ? item.status : "";
+      const rating = item.rating && item.rating !== "-" ? item.rating : "";
+      const metaChips = [episode, status]
+        .filter(Boolean)
+        .map(value => `<span class="donghua-card-chip">${value}</span>`)
+        .join("");
+      const ratingHTML = rating
+        ? `<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ${rating}/10</span>`
+        : `<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>`;
+      const extraMeta = extraMetaHTML ? `<div class="donghua-card-search-meta">${extraMetaHTML}</div>` : "";
+
+      return `
+        <article class="donghua-card">
+          <a class="donghua-card-link" title="${item.title}" href="${item.permalink}">
+            <div class="donghua-card-poster">
+              <img loading="lazy" src="${item.thumbnail}" alt="${item.title}">
+            </div>
+            <div class="donghua-card-frame" aria-hidden="true"></div>
+            <div class="donghua-card-badges">
+              <span class="donghua-card-badge">${type}</span>
+              <span class="donghua-card-badge sub">Sub</span>
+            </div>
+            <div class="donghua-card-body">
+              <h3 class="donghua-card-title">${titleHTML || item.title}</h3>
+              ${extraMeta}
+              <div class="donghua-card-meta">${metaChips}</div>
+              <div class="donghua-card-footer">
+                ${ratingHTML}
+                <span class="donghua-card-cta">Detail</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      `;
+    }
+
     function renderResults() {
       resultsList.innerHTML = "";
         
@@ -75,19 +116,8 @@
         const genre  = rawGenre ? highlightText(rawGenre, matches, "genre") : "";
         const metaStr = [studio, season, genre].filter(Boolean).join(" • ");
 
-        li.innerHTML = `
-          <div class="group relative w-full h-[240px] md:h-[340px] rounded-2xl overflow-hidden bg-[#0F172A] border border-slate-800 hover:border-pink-500/80 transition-all duration-500 hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] cursor-pointer">
-            <a title="${item.title}" href="${item.permalink}" class="absolute inset-0 z-0 block w-full h-full overflow-hidden">
-                <img loading="lazy" class="group-hover:scale-110 w-full h-full object-cover transition-transform duration-700 ease-out" src='${item.thumbnail}' alt="${item.title}">
-                <span class="absolute top-3 left-3 z-20 bg-[#060816]/85 backdrop-blur-md border border-cyan-400 text-cyan-300 text-[10px] md:text-xs font-extrabold px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(34,211,238,0.5)] uppercase tracking-wider">${item.type || "Donghua"}</span>
-                <span class="absolute top-3 right-3 z-20 bg-gradient-to-r from-pink-500 to-purple-600 text-white text-[10px] md:text-xs font-extrabold px-2.5 py-1 rounded-full border border-pink-300/50 shadow-[0_0_12px_rgba(236,72,153,0.6)]">Sub</span>
-            </a>
-            <a class="absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end pt-12 pb-3.5 px-3.5 bg-gradient-to-t from-[#060816] via-[#060816]/90 to-transparent" href="${item.permalink}">
-                <span class="card-holo-title font-extrabold text-white text-xs md:text-sm line-clamp-2 leading-snug group-hover:text-pink-400 transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">${title}</span>
-                ${metaStr ? `<small class="text-slate-300 group-hover:text-cyan-300 text-[11px] block mt-1 line-clamp-1 font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">${metaStr}</small>` : ''}
-            </a>
-          </div>
-        `;
+        li.className = "donghua-card-item";
+        li.innerHTML = donghuaCardTemplate(item, title, metaStr);
         
         resultsList.appendChild(li);
       });
@@ -310,18 +340,8 @@ function renderGenreResults() {
           akan otomatis memindahkan elemen itu keluar dari <ul> saat parsing
           HTML dan itu bisa merusak layout grid.  */}}
     const li = document.createElement("li");
-    li.className = "group relative w-full h-[240px] md:h-[340px] rounded-2xl overflow-hidden bg-[#0F172A] border border-slate-800 hover:border-pink-500/80 transition-all duration-500 hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] cursor-pointer";
-
-    li.innerHTML = `
-      <a title="${item.title}" href="${item.permalink}" class="absolute inset-0 z-0 block w-full h-full overflow-hidden">
-        <img loading="lazy" class="group-hover:scale-110 w-full h-full object-cover transition-transform duration-700 ease-out" src="${item.thumbnail}" alt="${item.title}">
-        <span class="absolute top-3 left-3 z-20 bg-[#060816]/85 backdrop-blur-md border border-cyan-400 text-cyan-300 text-[10px] md:text-xs font-extrabold px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(34,211,238,0.5)] uppercase tracking-wider">${item.type || "Donghua"}</span>
-        <span class="absolute top-3 right-3 z-20 bg-gradient-to-r from-pink-500 to-purple-600 text-white text-[10px] md:text-xs font-extrabold px-2.5 py-1 rounded-full border border-pink-300/50 shadow-[0_0_12px_rgba(236,72,153,0.6)]">Sub</span>
-      </a>
-      <a class="absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end pt-12 pb-3.5 px-3.5 bg-gradient-to-t from-[#060816] via-[#060816]/90 to-transparent" href="${item.permalink}">
-        <span class="card-holo-title font-extrabold text-white text-xs md:text-sm line-clamp-2 leading-snug group-hover:text-pink-400 transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">${item.title}</span>
-      </a>
-    `;
+    li.className = "donghua-card-item";
+    li.innerHTML = donghuaCardTemplate(item, item.title, "");
 
     resultsContainer.appendChild(li);
   });

@@ -1,13 +1,16 @@
-{{ if hugo.IsProduction }}
-<div class="bg-slate-300 bg-opacity-50 mt-4 p-4">
-    <div class="flex items-center justify-center gap-2 flex-row">
-        <i style="font-size: 10px;" class="fa-solid fa-circle text-green-500 animate-pulse"></i>
-        <span class="font-bold text-white">Iklan</span>
-        <i style="font-size: 10px;" class="fa-solid fa-circle text-green-500 animate-pulse"></i>
-    </div>
-    <div class="w-full max-w-max mx-auto mt-4">
-        <script async="async" data-cfasync="false" src="https://contentblanksupersede.com/4aab23755134ef6ae6e4d517e0c554dc/invoke.js"></script>
-        <div id="container-4aab23755134ef6ae6e4d517e0c554dc"></div>
+{{ partial "widget/ad-shell-styles" . }}
+<div class="ad-neon-shell ad-native" aria-label="Native Advertisement">
+    <div class="ad-neon-head">Advertisement</div>
+    <div class="ad-neon-body ad-size-native">
+        {{ if hugo.IsProduction }}
+            <div class="ad-neon-scroll">
+                <script async="async" data-cfasync="false" src="https://contentblanksupersede.com/4aab23755134ef6ae6e4d517e0c554dc/invoke.js"></script>
+                <div id="container-4aab23755134ef6ae6e4d517e0c554dc"></div>
+            </div>
+        {{ else }}
+            <div class="ad-neon-placeholder">
+                <span><strong>Native Advertisement</strong>Preview wrapper aktif, script iklan hanya production.</span>
+            </div>
+        {{ end }}
     </div>
 </div>
-{{ end }}

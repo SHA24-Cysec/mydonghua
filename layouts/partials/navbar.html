@@ -1,59 +1,520 @@
-{{/*  Navbar PC  */}}
-<nav class="bg-[#060816]/90 backdrop-blur-md fixed top-0 z-[999] border-b border-cyan-500/40 shadow-[0_4px_20px_rgba(34,211,238,0.25)] w-full transition-all duration-300">
-  <div class="font-bold md:flex items-center justify-between w-full max-w-screen-xl mx-auto px-4 lg:px-0">
-      <div class="flex justify-between items-center py-3 w-full">
-    <!-- Logo / Brand -->
-    <a href="{{ .Site.BaseURL }}" class="text-xl font-extrabold tracking-wider flex items-center gap-2.5 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.6)] group">
-      <img class="rounded-full ring-2 ring-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] transition duration-300" width="32" height="32" src="/img/favicon.webp" alt="Logo">
+<nav class="site-navbar" data-site-navbar>
+  <div class="site-navbar-inner">
+    <a href="{{ .Site.BaseURL }}" class="site-navbar-brand" aria-label="DonghuaBatch Beranda">
+      <img class="site-navbar-logo" width="36" height="36" src="/img/favicon.webp" alt="Logo DonghuaBatch">
       <span>DonghuaBatch</span>
     </a>
 
-    <!-- Hamburger Menu -->
-    <button class="md:hidden text-2xl px-3 py-1.5 text-cyan-400 border border-cyan-500/50 active:bg-cyan-500/20 rounded-xl shadow-[0_0_12px_rgba(34,211,238,0.3)] transition-all duration-300 flex items-center justify-center">
-      <div id="menuBtn">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      <div id="closeBtn" class="hidden">
-        <i class="fa-solid fa-close"></i>
-      </div>
+    <div class="site-navbar-menu" aria-label="Navigasi utama">
+      <a href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house" aria-hidden="true"></i> Beranda</a>
+      <a href="/#genre"><i class="fa-solid fa-folder" aria-hidden="true"></i> Genre</a>
+      <a href="/#studio-season"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Studio/Season</a>
+      <a href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari</a>
+      <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Support</a>
+      <a href='{{ relURL "kontak" }}'><i class="fa-solid fa-phone" aria-hidden="true"></i> Kontak</a>
+    </div>
+
+    <button class="site-navbar-toggle" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNavSheet" aria-expanded="false" data-nav-open>
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
     </button>
   </div>
 
-  <!-- Menu Utama -->
-  <menu id="mainMenu" class="hidden md:flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2 md:gap-4 pb-4 md:pb-0 transition-all duration-300 w-full md:w-auto">
-    <a class="text-slate-200 hover:text-cyan-300 hover:bg-cyan-500/15 hover:border-cyan-500/50 border border-transparent rounded-full transition-all duration-300 flex items-center gap-2 text-md px-4 py-2 w-full md:w-auto font-medium shadow-sm hover:shadow-[0_0_15px_rgba(34,211,238,0.35)]" href="{{ .Site.BaseURL }}">
-      <i class="fa-solid fa-house text-cyan-400"></i> Beranda
-    </a>
-    <a class="text-slate-200 hover:text-cyan-300 hover:bg-cyan-500/15 hover:border-cyan-500/50 border border-transparent rounded-full transition-all duration-300 flex items-center gap-2 text-md px-4 py-2 w-full md:w-auto font-medium shadow-sm hover:shadow-[0_0_15px_rgba(34,211,238,0.35)]" href="/#genre">
-      <i class="fa-solid fa-folder text-cyan-400"></i> Genre
-    </a>
-    <a rel="noopener noreferrer" target="_blank" class="text-slate-200 hover:text-cyan-300 hover:bg-cyan-500/15 hover:border-cyan-500/50 border border-transparent rounded-full transition-all duration-300 flex items-center gap-2 text-md px-4 py-2 w-full md:w-auto font-medium shadow-sm hover:shadow-[0_0_15px_rgba(34,211,238,0.35)]" href="https://saweria.co/DonghuaBatch">
-      <i class="fa-solid fa-leaf text-green-400"></i> Support
-    </a>
-    <a class="text-slate-200 hover:text-cyan-300 hover:bg-cyan-500/15 hover:border-cyan-500/50 border border-transparent rounded-full transition-all duration-300 flex items-center gap-2 text-md px-4 py-2 w-full md:w-auto font-medium shadow-sm hover:shadow-[0_0_15px_rgba(34,211,238,0.35)]" href='{{ relURL "kontak" }}'>
-      <i class="fa-solid fa-phone text-purple-400"></i> Kontak
-    </a>
-    <a class="text-slate-200 hover:text-cyan-300 hover:bg-cyan-500/15 hover:border-cyan-500/50 border border-transparent rounded-full transition-all duration-300 flex items-center gap-2 text-md px-4 py-2 w-full md:w-auto font-medium shadow-sm hover:shadow-[0_0_15px_rgba(34,211,238,0.35)]" href='{{ relURL "search" }}'>
-      <i class="fa-solid fa-magnifying-glass text-pink-400"></i> Cari
-    </a>
-  </menu>
+  <div class="site-nav-backdrop" data-nav-close aria-hidden="true"></div>
+
+  <div id="mobileNavSheet" class="site-nav-sheet" aria-label="Menu navigasi mobile">
+    <div class="site-nav-handle" aria-hidden="true"></div>
+
+    <div class="site-nav-sheet-head">
+      <div>
+        <span class="site-nav-kicker"><i class="fa-solid fa-compass" aria-hidden="true"></i> Navigation</span>
+        <strong>Jelajahi DonghuaBatch</strong>
+        <p>Akses cepat ke halaman utama, genre, studio, season, dan pencarian.</p>
+      </div>
+      <button class="site-nav-close" type="button" data-nav-close aria-label="Tutup menu navigasi">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <form class="site-nav-search" action='{{ relURL "search" }}' method="get">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <input type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
+      <button type="submit">Cari</button>
+    </form>
+
+    <div class="site-nav-grid">
+      <a href="{{ .Site.BaseURL }}" data-nav-link><i class="fa-solid fa-house" aria-hidden="true"></i><span>Beranda</span></a>
+      <a href="/#genre" data-nav-link><i class="fa-solid fa-folder" aria-hidden="true"></i><span>Genre</span></a>
+      <a href='{{ relURL "search" }}' data-nav-link><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Cari</span></a>
+      <a href="/#studio-season" data-nav-link><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Studio/Season</span></a>
+      <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch" data-nav-link><i class="fa-solid fa-leaf" aria-hidden="true"></i><span>Support</span></a>
+      <a href='{{ relURL "kontak" }}' data-nav-link><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Kontak</span></a>
+    </div>
   </div>
 </nav>
 
+<style>
+  .site-navbar,
+  .site-navbar * {
+    box-sizing: border-box;
+  }
+
+  body.site-nav-lock {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .site-navbar.is-open {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    width: 100%;
+    height: 100dvh;
+    border-bottom: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    pointer-events: none;
+  }
+
+  .site-navbar.is-open .site-navbar-inner {
+    pointer-events: auto;
+    border-bottom: 1px solid rgba(34, 211, 238, 0.24);
+    border-radius: 0 0 1.25rem 1.25rem;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
+      linear-gradient(135deg, rgba(6, 8, 22, 0.96), rgba(2, 6, 23, 0.94));
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32), 0 0 26px rgba(34, 211, 238, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  @media (min-width: 768px) {
+    .site-navbar.is-open {
+      position: sticky;
+      inset: auto;
+      top: 0;
+      z-index: 999;
+      height: auto;
+      border-bottom: 1px solid rgba(34, 211, 238, 0.24);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
+        linear-gradient(135deg, rgba(6, 8, 22, 0.94), rgba(2, 6, 23, 0.90));
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32), 0 0 26px rgba(34, 211, 238, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      pointer-events: auto;
+    }
+
+    .site-navbar.is-open .site-navbar-inner {
+      border-bottom: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+  }
+
+  .site-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    border-bottom: 1px solid rgba(34, 211, 238, 0.24);
+    background:
+      radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
+      linear-gradient(135deg, rgba(6, 8, 22, 0.94), rgba(2, 6, 23, 0.90));
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32), 0 0 26px rgba(34, 211, 238, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .site-navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.68rem 1rem;
+  }
+
+  .site-navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    color: transparent;
+    background: linear-gradient(90deg, #e0f2fe, #67e8f9 45%, #38bdf8 82%, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 1000;
+    letter-spacing: -0.035em;
+    text-decoration: none;
+    filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.18));
+  }
+
+  .site-navbar-logo {
+    flex: 0 0 auto;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 2px solid rgba(34, 211, 238, 0.48);
+    border-radius: 999px;
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.36);
+  }
+
+  .site-navbar-menu {
+    display: none;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .site-navbar-menu a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.42rem;
+    padding: 0.62rem 0.78rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: #d8e9ff;
+    font-size: 0.84rem;
+    font-weight: 850;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform 0.20s ease, background 0.20s ease, border-color 0.20s ease, color 0.20s ease, box-shadow 0.20s ease;
+  }
+
+  .site-navbar-menu a i {
+    color: #67e8f9;
+  }
+
+  .site-navbar-toggle,
+  .site-nav-close {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    border-radius: 0.95rem;
+    outline: none;
+    background: rgba(34, 211, 238, 0.08);
+    color: #a5f3fc;
+    cursor: pointer;
+    font: inherit;
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.12);
+    transition: transform 0.20s ease, filter 0.20s ease, background 0.20s ease;
+  }
+
+  .site-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    background: rgba(2, 6, 23, 0.78);
+    opacity: 0;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    transition: opacity 0.24s ease;
+  }
+
+  .site-nav-sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    max-height: min(86dvh, 42rem);
+    overflow: hidden;
+    padding: 0.82rem 0.82rem 1rem;
+    border: 1px solid rgba(125, 211, 252, 0.26);
+    border-bottom: 0;
+    border-radius: 1.75rem 1.75rem 0 0;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.18), transparent 34%),
+      radial-gradient(circle at 92% 12%, rgba(56, 189, 248, 0.15), transparent 36%),
+      linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+    box-shadow: 0 -24px 70px rgba(0, 0, 0, 0.44), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(calc(100% + 1rem));
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease;
+  }
+
+  .site-navbar.is-open .site-nav-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-navbar.is-open .site-nav-sheet {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-nav-handle {
+    width: 3.5rem;
+    height: 0.34rem;
+    margin: 0 auto 0.9rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #22d3ee, #38bdf8, #2563eb);
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.30);
+  }
+
+  .site-nav-sheet-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .site-nav-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    width: fit-content;
+    padding: 0.36rem 0.62rem;
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.09);
+    color: #a5f3fc;
+    font-size: 0.68rem;
+    font-weight: 950;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .site-nav-sheet-head strong {
+    display: block;
+    margin-top: 0.48rem;
+    color: transparent;
+    background: linear-gradient(90deg, #e0f2fe, #67e8f9 42%, #38bdf8 78%, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 1.2rem;
+    font-weight: 1000;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+  }
+
+  .site-nav-sheet-head p {
+    margin: 0.32rem 0 0;
+    color: #9fb1c9;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .site-nav-search {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 2.85rem;
+    margin-bottom: 0.78rem;
+    padding: 0 0.62rem 0 0.78rem;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 1rem;
+    background: rgba(2, 6, 23, 0.50);
+    color: #9fb1c9;
+  }
+
+  .site-nav-search input {
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #eef7ff;
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 750;
+  }
+
+  .site-nav-search button {
+    min-height: 2rem;
+    padding: 0 0.62rem;
+    border: 0;
+    border-radius: 0.72rem;
+    background: linear-gradient(135deg, #22d3ee, #38bdf8, #2563eb);
+    color: #06111f;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.76rem;
+    font-weight: 950;
+  }
+
+  .site-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.62rem;
+  }
+
+  .site-nav-grid a {
+    display: grid;
+    place-items: center;
+    gap: 0.42rem;
+    min-height: 4.35rem;
+    padding: 0.72rem;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 1.08rem;
+    background:
+      radial-gradient(circle at 82% 0%, rgba(34, 211, 238, 0.15), transparent 44%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025));
+    color: #d9fbff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 900;
+    transition: transform 0.20s ease, border-color 0.20s ease, box-shadow 0.20s ease, background 0.20s ease;
+  }
+
+  .site-nav-grid a i {
+    display: grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 0.82rem;
+    background: rgba(34, 211, 238, 0.10);
+    color: #67e8f9;
+  }
+
+  .site-navbar-toggle:focus-visible,
+  .site-nav-close:focus-visible,
+  .site-nav-search input:focus-visible,
+  .site-nav-search button:focus-visible,
+  .site-nav-grid a:focus-visible,
+  .site-navbar-menu a:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.56);
+    outline-offset: 3px;
+  }
+
+  @media (hover: hover) {
+    .site-navbar-menu a:hover {
+      border-color: rgba(34, 211, 238, 0.28);
+      background: rgba(34, 211, 238, 0.10);
+      color: #a5f3fc;
+      box-shadow: 0 0 16px rgba(34, 211, 238, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .site-navbar-toggle:hover,
+    .site-nav-close:hover,
+    .site-nav-grid a:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+
+    .site-nav-grid a:hover {
+      border-color: rgba(34, 211, 238, 0.36);
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.14);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .site-navbar-menu {
+      display: flex;
+    }
+
+    .site-navbar-toggle,
+    .site-nav-backdrop,
+    .site-nav-sheet {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .site-navbar-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .site-nav-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-navbar-menu a,
+    .site-navbar-toggle,
+    .site-nav-close,
+    .site-nav-backdrop,
+    .site-nav-sheet,
+    .site-nav-grid a {
+      transition: none !important;
+    }
+  }
+</style>
+
 <script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mainMenu = document.getElementById('mainMenu');
-  const closeBtn = document.getElementById('closeBtn');
+  document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.querySelector('[data-site-navbar]');
+    if (!navbar) return;
 
-  menuBtn.addEventListener("click", () => {
-    menuBtn.classList.add("hidden");
-    closeBtn.classList.remove("hidden");
-    mainMenu.classList.remove("hidden");
-  })
+    const toggleButton = navbar.querySelector('[data-nav-open]');
+    const toggleIcon = toggleButton ? toggleButton.querySelector('i') : null;
+    const desktopQuery = window.matchMedia('(min-width: 768px)');
 
-  closeBtn.addEventListener("click", () => {
-    menuBtn.classList.remove("hidden");
-    closeBtn.classList.add("hidden");
-    mainMenu.classList.add("hidden");
-  })
+    function isOpen() {
+      return navbar.classList.contains('is-open');
+    }
+
+    function syncToggleButton(open) {
+      if (!toggleButton) return;
+      toggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggleButton.setAttribute('aria-label', open ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+
+      if (toggleIcon) {
+        toggleIcon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      }
+    }
+
+    function openNav() {
+      navbar.classList.add('is-open');
+      document.body.classList.add('site-nav-lock');
+      syncToggleButton(true);
+    }
+
+    function closeNav() {
+      navbar.classList.remove('is-open');
+      document.body.classList.remove('site-nav-lock');
+      syncToggleButton(false);
+    }
+
+    function toggleNav() {
+      isOpen() ? closeNav() : openNav();
+    }
+
+    if (toggleButton) {
+      toggleButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        toggleNav();
+      });
+    }
+
+    navbar.addEventListener('click', function (event) {
+      const closeTarget = event.target.closest('[data-nav-close], [data-nav-link]');
+      if (!closeTarget || !navbar.contains(closeTarget)) return;
+      closeNav();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && isOpen()) closeNav();
+    });
+
+    desktopQuery.addEventListener('change', function (event) {
+      if (event.matches) closeNav();
+    });
+
+    window.addEventListener('pagehide', closeNav);
+    syncToggleButton(false);
+  });
 </script>

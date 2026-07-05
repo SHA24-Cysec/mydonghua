@@ -1,14 +1,24 @@
-{{ if hugo.IsProduction }}
-<div class="bg-slate-300 bg-opacity-50 flex justify-center w-full mb-4 p-4">
-    <script>
-        atOptions = {
-            'key' : 'f7995a6dce010095a1c087975e306a0a',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-    </script>
-    <script src="https://contentblanksupersede.com/f7995a6dce010095a1c087975e306a0a/invoke.js"></script>
+{{ partial "widget/ad-shell-styles" . }}
+<div class="ad-neon-shell ad-300x250" aria-label="Sponsor 300x250">
+    <div class="ad-neon-head">Sponsor</div>
+    <div class="ad-neon-body ad-size-300">
+        {{ if hugo.IsProduction }}
+            <div class="ad-neon-scroll">
+                <script>
+                    atOptions = {
+                        'key' : 'f7995a6dce010095a1c087975e306a0a',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://contentblanksupersede.com/f7995a6dce010095a1c087975e306a0a/invoke.js"></script>
+            </div>
+        {{ else }}
+            <div class="ad-neon-placeholder">
+                <span><strong>Advertisement</strong>300 × 250</span>
+            </div>
+        {{ end }}
+    </div>
 </div>
-{{ end }}

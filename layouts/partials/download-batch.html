@@ -1,71 +1,584 @@
-<div class="mt-6 bg-[#0F172A]/90 border border-cyan-500/40 rounded-2xl p-6 shadow-[0_0_30px_rgba(34,211,238,0.2)] backdrop-blur-md">
-    <div class="flex flex-col mt-2">
-        {{/*  Div Download Batch  */}}
-        <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-6 mx-auto w-full">
-        {{ range .Params.downloadGroups }}
-            <div class="download-group bg-[#060816]/90 border border-slate-700/80 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(34,211,238,0.15)] flex flex-col">
-                <h3 class="bg-gradient-to-r from-cyan-600 via-blue-700 to-purple-700 text-white select-none font-extrabold p-3.5 border-b border-cyan-400/50 w-full max-w-full flex items-center shadow-md tracking-wide"><i class="fa-solid fa-circle-info mr-2 text-cyan-300 animate-pulse"></i>{{ .title }}</h3>
-                <div class="p-2 flex flex-col gap-2.5">
-                {{ range .downloads }}
-                  <div class="border border-slate-800 rounded-lg overflow-hidden bg-[#0F172A]/60">
-                    <div class="flex select-none flex-row items-center border-b border-slate-800 w-full max-w-full">
-                      <span class="bg-cyan-500/20 text-cyan-300 border-r border-slate-800 w-16 md:w-20 shrink-0 flex items-center justify-center font-extrabold p-2.5 text-sm uppercase shadow-inner">{{ .quality }}</span>
-                      <a id="link-download" target="_blank" rel="nofollow noopener" href="{{ .link }}" class="bg-gradient-to-r from-[#1E293B] to-[#0F172A] w-full text-slate-200 hover:text-cyan-300 hover:bg-cyan-500/10 p-2.5 transition-all duration-300 flex items-center justify-between group">
-                        <span class="font-bold flex items-center gap-2.5 text-sm md:text-base group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-cloud-arrow-down text-cyan-400 text-lg group-hover:scale-110 transition-transform"></i>{{ .button }}</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400 mr-2"></i>
-                      </a>
-                    </div>
-                    <div id="ukuran-download" class="w-full flex items-center gap-2 justify-center font-bold max-w-full bg-gradient-to-r from-purple-900/40 via-blue-900/40 to-cyan-900/40 text-cyan-300 p-2 text-xs md:text-sm border-t border-cyan-500/20">
-                      <i class="fa-solid fa-file-zipper text-purple-400"></i>
-                      <span>{{ .size }}</span>
-                    </div>
-                  </div>
-                {{ end }} 
-                </div>
-            </div>
-        {{ end }}
-        </div>
-        {{/*  Button Download  */}}
-        <button title="Laporkan Link Download Mati" id="reportButton" class="mx-auto w-fit mt-8 cursor-pointer bg-gradient-to-r from-red-500 via-pink-600 to-purple-600 hover:from-red-600 hover:to-pink-500 text-white px-6 py-3 rounded-xl font-bold scroll-mt-[300px] shadow-[0_0_20px_rgba(236,72,153,0.5)] transition duration-300 flex items-center gap-2">
-            <i class="fa-solid fa-triangle-exclamation animate-bounce"></i> Laporkan Link Mati
-        </button>
-        
-        <script>
-            document.getElementById("reportButton").addEventListener("click", function() {
-                let currentUrl = window.location.href; // Ambil URL halaman saat ini
-                let scriptUrl = "https://script.google.com/macros/s/AKfycbzUgz8gd9WRDuGmuPPs5WBHIgZ0L3T1tJLwdtL_RLQW7Rb5e7wu6mJZa9cP3w1mEKnbxw/exec"; // Ganti dengan URL Web App
-        
-                fetch(scriptUrl + "?url=" + encodeURIComponent(currentUrl), { 
-                    method: "GET",
-                    mode: "no-cors"
-                }).then(() => {
-                    alert("✅ Laporan berhasil dikirim untuk halaman: " + currentUrl);
-                }).catch(error => {
-                    alert("❌ Terjadi kesalahan: " + error);
-                });
-            });
-        </script>
+<section class="download-aurora-shell" aria-label="Download Batch Donghua">
+    <div class="download-aurora-head">
+        <span class="download-aurora-kicker"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Download Batch</span>
+        <strong>Pilih resolusi yang kamu inginkan</strong>
+        <p>Semua link tersusun rapi, ringan, dan nyaman dipakai di mobile maupun desktop.</p>
     </div>
-</div>
+
+    {{/*  Div Download Batch  */}}
+    <div class="download-aurora-groups">
+    {{ range .Params.downloadGroups }}
+        <article class="download-aurora-group">
+            <div class="download-aurora-hero">
+                <span class="download-aurora-hero-badge"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Batch Subtitle Indonesia</span>
+                <h3>{{ .title }}</h3>
+            </div>
+
+            <div class="download-aurora-list">
+            {{ range .downloads }}
+                {{ $isUnavailable := in .button "Belum" }}
+                <div class="download-aurora-card{{ if $isUnavailable }} is-unavailable{{ end }}">
+                    <div class="download-aurora-card-top">
+                        <span class="download-aurora-quality">{{ .quality }}</span>
+                        <span class="download-aurora-status">
+                            {{ if $isUnavailable }}
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i> Pending
+                            {{ else }}
+                                <i class="fa-solid fa-check" aria-hidden="true"></i> Ready
+                            {{ end }}
+                        </span>
+                    </div>
+
+                    <div class="download-aurora-size">
+                        <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
+                        <span>{{ .size }}</span>
+                    </div>
+
+                    {{ if $isUnavailable }}
+                        <a class="download-aurora-button" href="#" aria-disabled="true" tabindex="-1">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <span>{{ .button }}</span>
+                        </a>
+                    {{ else }}
+                        <a class="download-aurora-button" target="_blank" rel="nofollow noopener" href="{{ .link }}">
+                            <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
+                            <span>{{ .button }}</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square download-aurora-open" aria-hidden="true"></i>
+                        </a>
+                    {{ end }}
+                </div>
+            {{ end }}
+            </div>
+        </article>
+    {{ end }}
+    </div>
+
+    {{/*  Button Report Download  */}}
+    <button title="Laporkan Link Download Mati" id="reportButton" class="download-aurora-report" type="button">
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        <span>Laporkan Link Mati</span>
+    </button>
+</section>
+
+<style>
+    .download-aurora-shell,
+    .download-aurora-shell * {
+        box-sizing: border-box;
+    }
+
+    .download-aurora-shell {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        width: 100%;
+        margin-top: 1.5rem;
+        padding: clamp(0.9rem, 2.8vw, 1.35rem);
+        border: 1px solid rgba(125, 211, 252, 0.24);
+        border-radius: 1.85rem;
+        background:
+            radial-gradient(circle at 8% 0%, rgba(34, 211, 238, 0.20), transparent 32%),
+            radial-gradient(circle at 92% 18%, rgba(236, 72, 153, 0.15), transparent 34%),
+            linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(2, 6, 23, 0.88));
+        box-shadow:
+            0 24px 70px rgba(0, 0, 0, 0.34),
+            0 0 34px rgba(34, 211, 238, 0.13),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+
+    .download-aurora-shell::before {
+        content: "";
+        position: absolute;
+        inset: -45% -25%;
+        z-index: -2;
+        pointer-events: none;
+        background:
+            conic-gradient(from 180deg at 50% 50%,
+                rgba(34, 211, 238, 0.02),
+                rgba(34, 211, 238, 0.18),
+                rgba(139, 92, 246, 0.16),
+                rgba(236, 72, 153, 0.13),
+                rgba(34, 211, 238, 0.02));
+        filter: blur(24px);
+        opacity: 0.76;
+        animation: downloadAuroraFlow 13s ease-in-out infinite alternate;
+    }
+
+    .download-aurora-shell::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+            linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+        background-size: 32px 32px;
+        opacity: 0.26;
+        mask-image: linear-gradient(135deg, rgba(0,0,0,0.92), transparent 76%);
+    }
+
+    .download-aurora-head {
+        position: relative;
+        display: grid;
+        gap: 0.38rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .download-aurora-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        width: fit-content;
+        padding: 0.4rem 0.7rem;
+        border: 1px solid rgba(34, 211, 238, 0.26);
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.09);
+        color: #a5f3fc;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    .download-aurora-head > strong {
+        display: block;
+        color: transparent;
+        background: linear-gradient(90deg, #e0f2fe, #67e8f9 42%, #c084fc 82%, #f0abfc);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: clamp(1.08rem, 2.8vw, 1.45rem);
+        font-weight: 950;
+        letter-spacing: -0.035em;
+        line-height: 1.16;
+        filter: drop-shadow(0 0 14px rgba(34, 211, 238, 0.15));
+    }
+
+    .download-aurora-head p {
+        max-width: 42rem;
+        margin: 0;
+        color: #9fb1c9;
+        font-size: clamp(0.82rem, 2.3vw, 0.94rem);
+        line-height: 1.6;
+    }
+
+    .download-aurora-groups {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .download-aurora-group {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        border-radius: 1.45rem;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+        box-shadow:
+            0 18px 46px rgba(0, 0, 0, 0.24),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .download-aurora-hero {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1rem, 3vw, 1.25rem);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        background:
+            radial-gradient(circle at 94% 0%, rgba(236, 72, 153, 0.22), transparent 42%),
+            linear-gradient(110deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.16), rgba(236, 72, 153, 0.12));
+    }
+
+    .download-aurora-hero::before {
+        content: "";
+        position: absolute;
+        right: -2.5rem;
+        top: -3rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        filter: blur(1px);
+    }
+
+    .download-aurora-hero-badge {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-bottom: 0.75rem;
+        padding: 0.38rem 0.62rem;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 999px;
+        background: rgba(2, 6, 23, 0.32);
+        color: #cffafe;
+        font-size: 0.72rem;
+        font-weight: 850;
+        line-height: 1;
+    }
+
+    .download-aurora-hero h3 {
+        position: relative;
+        max-width: 42rem;
+        margin: 0;
+        color: #f8fbff;
+        font-size: clamp(1rem, 3.2vw, 1.28rem);
+        font-weight: 950;
+        letter-spacing: -0.02em;
+        line-height: 1.42;
+        text-wrap: balance;
+    }
+
+    .download-aurora-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.78rem;
+        padding: 0.78rem;
+    }
+
+    .download-aurora-card {
+        --download-accent: #22d3ee;
+        position: relative;
+        display: grid;
+        gap: 0.78rem;
+        min-width: 0;
+        min-height: 8.2rem;
+        padding: 0.88rem;
+        border: 1px solid rgba(255, 255, 255, 0.095);
+        border-radius: 1.18rem;
+        background:
+            radial-gradient(circle at 86% 0%, rgba(34, 211, 238, 0.16), transparent 44%),
+            linear-gradient(150deg, rgba(2, 6, 23, 0.56), rgba(15, 23, 42, 0.62));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+        transition:
+            transform 0.22s ease,
+            border-color 0.22s ease,
+            background 0.22s ease,
+            box-shadow 0.22s ease;
+        animation: downloadCardIn 0.45s ease both;
+    }
+
+    .download-aurora-card:nth-child(4n + 1) { --download-accent: #22d3ee; }
+    .download-aurora-card:nth-child(4n + 2) { --download-accent: #38bdf8; }
+    .download-aurora-card:nth-child(4n + 3) { --download-accent: #8b5cf6; }
+    .download-aurora-card:nth-child(4n + 4) { --download-accent: #ec4899; }
+
+    .download-aurora-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        background: radial-gradient(circle at 82% 0%, color-mix(in srgb, var(--download-accent) 26%, transparent), transparent 44%);
+        opacity: 0.72;
+    }
+
+    .download-aurora-card > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .download-aurora-card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.7rem;
+    }
+
+    .download-aurora-quality {
+        color: var(--download-accent);
+        font-size: clamp(1.05rem, 4vw, 1.28rem);
+        font-weight: 1000;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        text-shadow: 0 0 16px color-mix(in srgb, var(--download-accent) 45%, transparent);
+    }
+
+    .download-aurora-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.32rem 0.5rem;
+        border: 1px solid color-mix(in srgb, var(--download-accent) 24%, rgba(255,255,255,0.08));
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--download-accent) 9%, rgba(2, 6, 23, 0.62));
+        color: #d9fbff;
+        font-size: 0.68rem;
+        font-weight: 850;
+        line-height: 1;
+    }
+
+    .download-aurora-size {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: #d9fbff;
+        font-size: 0.82rem;
+        font-weight: 850;
+        line-height: 1.25;
+    }
+
+    .download-aurora-size i {
+        color: #f0abfc;
+    }
+
+    .download-aurora-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        width: 100%;
+        min-height: 2.82rem;
+        margin-top: auto;
+        padding: 0.72rem 0.82rem;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 0.95rem;
+        background:
+            linear-gradient(135deg, rgba(238, 247, 255, 0.98), rgba(207, 250, 254, 0.92));
+        color: #06111f;
+        box-shadow:
+            0 13px 25px rgba(0, 0, 0, 0.20),
+            0 0 20px color-mix(in srgb, var(--download-accent) 14%, transparent);
+        font-size: 0.9rem;
+        font-weight: 950;
+        line-height: 1;
+        text-align: center;
+        text-decoration: none;
+        transition:
+            transform 0.22s ease,
+            box-shadow 0.22s ease,
+            filter 0.22s ease;
+    }
+
+    .download-aurora-open {
+        font-size: 0.72rem;
+        opacity: 0.72;
+    }
+
+    .download-aurora-card.is-unavailable {
+        --download-accent: #64748b;
+        opacity: 0.72;
+    }
+
+    .download-aurora-card.is-unavailable .download-aurora-size {
+        display: none;
+    }
+
+    .download-aurora-card.is-unavailable .download-aurora-button {
+        cursor: not-allowed;
+        color: #94a3b8;
+        background: rgba(15, 23, 42, 0.88);
+        box-shadow: none;
+        pointer-events: none;
+    }
+
+    .download-aurora-card.is-unavailable .download-aurora-status {
+        color: #cbd5e1;
+        border-color: rgba(148, 163, 184, 0.18);
+        background: rgba(148, 163, 184, 0.08);
+    }
+
+    .download-aurora-report {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        width: 100%;
+        min-height: 3rem;
+        margin-top: 1rem;
+        padding: 0.82rem 1rem;
+        border: 1px solid rgba(244, 114, 182, 0.36);
+        border-radius: 1rem;
+        outline: none;
+        background:
+            radial-gradient(circle at 20% 0%, rgba(251, 113, 133, 0.28), transparent 48%),
+            linear-gradient(135deg, rgba(239, 68, 68, 0.88), rgba(219, 39, 119, 0.88), rgba(147, 51, 234, 0.88));
+        color: #ffffff;
+        box-shadow: 0 0 24px rgba(236, 72, 153, 0.26), inset 0 1px 0 rgba(255,255,255,0.18);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.93rem;
+        font-weight: 950;
+        line-height: 1;
+        transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+    }
+
+    .download-aurora-report i {
+        animation: downloadWarningPulse 1.6s ease-in-out infinite;
+    }
+
+    .download-aurora-button:focus-visible,
+    .download-aurora-report:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.58);
+        outline-offset: 4px;
+    }
+
+    @media (hover: hover) {
+        .download-aurora-card:hover {
+            transform: translateY(-4px);
+            border-color: color-mix(in srgb, var(--download-accent) 42%, transparent);
+            background:
+                radial-gradient(circle at 86% 0%, color-mix(in srgb, var(--download-accent) 20%, transparent), transparent 44%),
+                linear-gradient(150deg, rgba(2, 6, 23, 0.48), rgba(15, 23, 42, 0.70));
+            box-shadow:
+                0 16px 30px rgba(0, 0, 0, 0.26),
+                0 0 24px color-mix(in srgb, var(--download-accent) 18%, transparent),
+                inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        }
+
+        .download-aurora-button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.06);
+            box-shadow:
+                0 16px 30px rgba(0, 0, 0, 0.26),
+                0 0 25px color-mix(in srgb, var(--download-accent) 24%, transparent);
+        }
+
+        .download-aurora-report:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.06);
+            box-shadow: 0 0 34px rgba(236, 72, 153, 0.36), inset 0 1px 0 rgba(255,255,255,0.18);
+        }
+    }
+
+    @media (min-width: 520px) {
+        .download-aurora-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .download-aurora-report {
+            width: fit-content;
+            min-width: 15rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+    }
+
+    @media (min-width: 980px) {
+        .download-aurora-groups {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (min-width: 1180px) {
+        .download-aurora-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 520px) {
+        .download-aurora-shell {
+            width: calc(100% + 1.5rem);
+            margin-left: -0.75rem;
+            margin-right: -0.75rem;
+            padding: 0.75rem;
+            border-radius: 1.35rem;
+        }
+
+        .download-aurora-head {
+            text-align: center;
+            justify-items: center;
+            margin-bottom: 0.85rem;
+        }
+
+        .download-aurora-head p {
+            display: none;
+        }
+
+        .download-aurora-group {
+            border-radius: 1.18rem;
+        }
+
+        .download-aurora-hero {
+            padding: 0.95rem;
+        }
+
+        .download-aurora-hero-badge {
+            font-size: 0.68rem;
+        }
+
+        .download-aurora-list {
+            gap: 0.68rem;
+            padding: 0.68rem;
+        }
+
+        .download-aurora-card {
+            min-height: 7.6rem;
+            padding: 0.82rem;
+            border-radius: 1rem;
+        }
+
+        .download-aurora-button {
+            min-height: 2.9rem;
+        }
+    }
+
+    @keyframes downloadAuroraFlow {
+        0% {
+            transform: rotate(0deg) scale(1);
+        }
+        100% {
+            transform: rotate(10deg) scale(1.08);
+        }
+    }
+
+    @keyframes downloadCardIn {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes downloadWarningPulse {
+        0%, 100% {
+            transform: translateY(0) scale(1);
+        }
+        50% {
+            transform: translateY(-1px) scale(1.08);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .download-aurora-shell::before,
+        .download-aurora-card,
+        .download-aurora-report i {
+            animation: none !important;
+        }
+
+        .download-aurora-card,
+        .download-aurora-button,
+        .download-aurora-report {
+            transition: none !important;
+        }
+    }
+</style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const linkDownloads = document.querySelectorAll("#link-download");
-    const ukuranDownloads = document.querySelectorAll("#ukuran-download");
+        const reportButton = document.getElementById("reportButton");
+        if (!reportButton) return;
+
+        reportButton.addEventListener("click", function() {
+            let currentUrl = window.location.href;
+            let scriptUrl = "https://script.google.com/macros/s/AKfycbzUgz8gd9WRDuGmuPPs5WBHIgZ0L3T1tJLwdtL_RLQW7Rb5e7wu6mJZa9cP3w1mEKnbxw/exec";
     
-    linkDownloads.forEach((linkDownload, index) => {
-        const buttonText = linkDownload.textContent.trim();
-        const ukuranDownload = ukuranDownloads[index];
-        
-        if (buttonText.includes("Belum Tersedia")) {
-            linkDownload.style.pointerEvents = "none"; // Nonaktifkan klik
-            linkDownload.style.opacity = "0.5"; // Buat transparan
-            if (ukuranDownload) ukuranDownload.style.display = "none"; // Sembunyikan ukuran download
-        } else {
-            linkDownload.style.pointerEvents = "auto"; // Aktifkan klik
-            linkDownload.style.opacity = "1"; // Kembalikan ke normal
-            if (ukuranDownload) ukuranDownload.style.display = "flex"; // Tampilkan ukuran download
-        }
+            fetch(scriptUrl + "?url=" + encodeURIComponent(currentUrl), { 
+                method: "GET",
+                mode: "no-cors"
+            }).then(() => {
+                alert("✅ Laporan berhasil dikirim untuk halaman: " + currentUrl);
+            }).catch(error => {
+                alert("❌ Terjadi kesalahan: " + error);
+            });
+        });
     });
-});
 </script>
