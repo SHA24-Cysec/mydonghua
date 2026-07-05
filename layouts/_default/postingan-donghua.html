@@ -13,7 +13,7 @@
                         <div class="flex flex-col md:flex-row gap-4 mt-4">
                             <div class="w-full h-full block md:w-[220px] shrink-0">
                                 <div class="w-[200px] h-[300px] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
-                                    <img style="width: 200px !important;" title="{{ .Title }}" class="h-[300px] object-cover hover:scale-105 transition duration-500" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
+                                    <img style="width: 200px !important;" title="{{ .Title }}" class="h-[300px] object-cover hover:scale-105 transition duration-500" loading="eager" decoding="async" width="200" height="300" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
                                 </div>
                                 {{- $rating := .Params.rating | default 0 -}}
                                 {{- $stars := div (mul $rating 5) 10 -}}

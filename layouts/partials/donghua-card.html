@@ -1,7 +1,7 @@
 <article class="donghua-card">
     <a class="donghua-card-link" title="{{ .Title }}" href="{{ .Permalink }}">
         <div class="donghua-card-poster">
-            <img loading="lazy" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt | default .Title }}">
+            <img loading="lazy" decoding="async" width="200" height="300" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt | default .Title }}">
         </div>
         <div class="donghua-card-frame" aria-hidden="true"></div>
         <div class="donghua-card-badges">

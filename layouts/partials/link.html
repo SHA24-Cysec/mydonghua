@@ -1,6 +1,8 @@
 {{ with resources.Get "main.css" }}
     {{ $minified := . | minify }}
-    <link rel="stylesheet" href="{{ $minified.RelPermalink }}">
+    <link rel="preload" as="style" href="{{ $minified.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $minified.RelPermalink }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ $minified.RelPermalink }}"></noscript>
 {{ end }}
 {{ with resources.Get "favicon.ico" }}
 <link rel="shortcut icon" href='{{ .RelPermalink }}' type="image/x-icon">
