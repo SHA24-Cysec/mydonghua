@@ -61,9 +61,24 @@
       } else {
         icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
       }
+    } else {
+      // FontAwesome <i> icon toggle (post page uses fa-bookmark)
+      var faIcon = btn.querySelector('.post-bookmark-icon');
+      if (faIcon) {
+        faIcon.classList.toggle('fa-solid', saved);
+        faIcon.classList.toggle('fa-regular', !saved);
+      }
     }
     var label = btn.querySelector('.fav-label');
-    if (label) label.textContent = saved ? 'Tersimpan' : 'Simpan';
+    if (label) label.textContent = saved ? 'Hapus dari Favorit' : 'Tambah ke Favorit';
+    btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
+    btn.setAttribute('aria-label', saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit');
+    if (btn.classList.contains('post-bookmark-btn')) {
+      btn.classList.remove('is-pulsing');
+      void btn.offsetWidth;
+      btn.classList.add('is-pulsing');
+      setTimeout(function() { btn.classList.remove('is-pulsing'); }, 700);
+    }
   }
 
   function syncAllButtons() {

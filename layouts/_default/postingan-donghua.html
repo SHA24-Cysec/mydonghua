@@ -10,14 +10,6 @@
                         <span class="badge-neon w-fit"><i class="fa-solid fa-user text-cyan-400"></i>Posted by <strong class="text-cyan-300">{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-400 drop-shadow-[0_0_5px_rgba(74,222,128,0.8)]"></i></span>
                         <hr class="mt-4 border-cyan-500/30">
                         <h1 class="text-2xl md:text-3xl mt-4 heading-neon"><strong>{{ .Title }}</strong></h1>
-                        <div class="mt-4">
-                            <button class="post-bookmark-btn" data-fav-id="{{ .Params.permalink | default .Permalink }}" type="button" aria-label="Simpan ke favorit">
-                                <svg class="post-bookmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z"/>
-                                </svg>
-                                <span class="fav-label">Simpan</span>
-                            </button>
-                        </div>
                         <div class="flex flex-col md:flex-row gap-4 mt-4">
                             <div class="w-full h-full block md:w-[220px] shrink-0">
                                 <div class="w-[200px] h-[300px] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
@@ -36,6 +28,11 @@
                                             {{ end }}
                                         {{ end }}
                                     </div>
+                                    <button class="post-bookmark-btn mt-3" data-fav-id="{{ .Params.permalink | default .Permalink }}" type="button" aria-label="Tambah ke daftar favorit" aria-pressed="false">
+                                        <i class="fa-solid fa-bookmark post-bookmark-icon" aria-hidden="true"></i>
+                                        <span class="fav-label">Tambah ke Favorit</span>
+                                        <i class="fa-solid fa-chevron-right fav-chevron" aria-hidden="true"></i>
+                                    </button>
                                 </div>
                             </div>
                             <div class="flex flex-col gap-4 flex-1">

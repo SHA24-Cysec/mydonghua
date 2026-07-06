@@ -10,7 +10,7 @@
 /* ============================
    BOOKMARK BUTTON (Card)
    ============================ */
-.donghua-card-bookmark {
+body .donghua-card-bookmark {
   position: absolute;
   top: 0.6rem;
   right: 0.6rem;
@@ -39,106 +39,217 @@
   appearance: none;
 }
 
-.donghua-card-bookmark:hover {
+body .donghua-card-bookmark:hover {
   background: rgba(34, 211, 238, 0.15);
   border-color: rgba(34, 211, 238, 0.3);
   color: #67e8f9;
   transform: scale(1.08);
 }
 
-.donghua-card-bookmark:active {
+body .donghua-card-bookmark:active {
   transform: scale(0.95);
 }
 
-.donghua-card-bookmark:focus-visible {
+body .donghua-card-bookmark:focus-visible {
   outline: 2px solid rgba(34, 211, 238, 0.6);
   outline-offset: 2px;
 }
 
 /* Saved state */
-.donghua-card-bookmark.is-saved {
+body .donghua-card-bookmark.is-saved {
   background: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(139, 92, 246, 0.2));
   border-color: #22d3ee;
   color: #22d3ee;
   box-shadow: 0 0 14px rgba(34, 211, 238, 0.35);
 }
 
-.donghua-card-bookmark.is-saved svg {
+body .donghua-card-bookmark.is-saved svg {
   animation: bookmark-pop 0.35s ease;
 }
 
-@keyframes bookmark-pop {
-  0% { transform: scale(1); }
-  40% { transform: scale(1.3); }
-  70% { transform: scale(0.9); }
-  100% { transform: scale(1); }
-}
-
-.donghua-card-bookmark svg {
+body .donghua-card-bookmark svg {
   width: 0.9rem;
   height: 0.9rem;
   transition: transform 0.2s ease;
 }
 
 /* ============================
-   BOOKMARK BUTTON (Post Page)
+   BOOKMARK BUTTON (Post Page) — UPGRADED
+   Style: Cyber Neon CTA with shimmer & pulse
    ============================ */
-.post-bookmark-btn {
+body .post-bookmark-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.1rem;
-  border-radius: 0.8rem;
-  border: 1px solid rgba(34, 211, 238, 0.25);
-  background: rgba(34, 211, 238, 0.06);
-  color: #67e8f9;
-  font-size: 0.82rem;
-  font-weight: 700;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(34, 211, 238, 0.55);
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.95) 0%, rgba(56, 189, 248, 0.95) 45%, rgba(139, 92, 246, 0.95) 100%);
+  color: #060816;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
   cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.15) inset,
+    0 8px 22px rgba(34, 211, 238, 0.25),
+    0 0 18px rgba(34, 211, 238, 0.25);
   transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    color 0.2s ease;
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
   -webkit-tap-highlight-color: transparent;
   outline: none;
   appearance: none;
   font: inherit;
 }
 
-.post-bookmark-btn:hover {
-  background: rgba(34, 211, 238, 0.12);
-  border-color: rgba(34, 211, 238, 0.4);
-  color: #a5f3fc;
-  box-shadow: 0 0 16px rgba(34, 211, 238, 0.2);
-  transform: translateY(-1px);
+/* Shimmer sweep on hover */
+body .post-bookmark-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.42) 50%,
+    transparent 70%
+  );
+  transform: translateX(-110%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
 }
 
-.post-bookmark-btn:active {
-  transform: scale(0.97);
+body .post-bookmark-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #22d3ee, #38bdf8, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
 }
 
-.post-bookmark-btn:focus-visible {
-  outline: 2px solid rgba(34, 211, 238, 0.6);
+body .post-bookmark-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 14px 32px rgba(34, 211, 238, 0.38),
+    0 0 28px rgba(139, 92, 246, 0.42);
+}
+
+body .post-bookmark-btn:hover::before {
+  transform: translateX(110%);
+}
+
+body .post-bookmark-btn:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.08s;
+}
+
+body .post-bookmark-btn:focus-visible {
+  outline: 2px solid #22d3ee;
   outline-offset: 3px;
 }
 
-.post-bookmark-btn.is-saved {
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(139, 92, 246, 0.15));
-  border-color: #22d3ee;
-  color: #22d3ee;
-  box-shadow: 0 0 18px rgba(34, 211, 238, 0.3);
-}
-
-.post-bookmark-btn.is-saved .post-bookmark-icon {
-  animation: bookmark-pop 0.35s ease;
-}
-
-.post-bookmark-icon {
+/* ICON */
+body .post-bookmark-icon {
   width: 1rem;
   height: 1rem;
-  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body .post-bookmark-btn:hover .post-bookmark-icon {
+  transform: scale(1.12) rotate(-6deg);
+}
+
+/* ===== SAVED STATE — Solid neon green, with check ===== */
+body .post-bookmark-btn.is-saved {
+  background:
+    linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(16, 185, 129, 0.18)),
+    rgba(6, 18, 12, 0.85);
+  border-color: rgba(34, 197, 94, 0.7);
+  color: #4ade80;
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.25) inset,
+    0 8px 22px rgba(34, 197, 94, 0.22),
+    0 0 22px rgba(34, 197, 94, 0.32);
+}
+
+body .post-bookmark-btn.is-saved::after {
+  background: linear-gradient(135deg, #22c55e, #10b981);
+  opacity: 0.18;
+}
+
+body .post-bookmark-btn.is-saved .post-bookmark-icon {
+  animation: bookmark-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #4ade80;
+}
+
+/* When saved, the trailing chevron rotates to show "saved" */
+body .post-bookmark-btn .fav-chevron {
+  margin-left: auto;
+  opacity: 0.7;
+  font-size: 0.78rem;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+body .post-bookmark-btn:hover .fav-chevron {
+  transform: translateX(2px);
+  opacity: 1;
+}
+
+body .post-bookmark-btn.is-saved .fav-chevron {
+  transform: rotate(180deg);
+  opacity: 0.85;
+}
+
+/* ===== Pulse ring on click ===== */
+@keyframes bookmark-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.55), 0 8px 22px rgba(34, 211, 238, 0.25); }
+  100% { box-shadow: 0 0 0 14px rgba(34, 211, 238, 0),    0 8px 22px rgba(34, 211, 238, 0.25); }
+}
+
+body .post-bookmark-btn.is-pulsing {
+  animation: bookmark-pulse 0.6s ease-out;
+}
+
+@keyframes bookmark-pop {
+  0%   { transform: scale(1)   rotate(0deg); }
+  35%  { transform: scale(1.4) rotate(-8deg); }
+  70%  { transform: scale(0.92) rotate(4deg); }
+  100% { transform: scale(1)   rotate(0deg); }
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 360px) {
+  body .post-bookmark-btn {
+    font-size: 0.82rem;
+    padding: 0.65rem 0.9rem;
+    min-height: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .post-bookmark-btn,
+  body .post-bookmark-btn::before,
+  body .post-bookmark-btn::after,
+  body .post-bookmark-icon,
+  body .fav-chevron {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
 
 /* ============================
@@ -654,9 +765,25 @@
         } else {
           icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
         }
+      } else {
+        // FontAwesome <i> icon toggle (post page uses fa-bookmark)
+        var faIcon = btn.querySelector('.post-bookmark-icon');
+        if (faIcon) {
+          faIcon.classList.toggle('fa-solid', saved);
+          faIcon.classList.toggle('fa-regular', !saved);
+        }
       }
       var label = btn.querySelector('.fav-label');
-      if (label) label.textContent = saved ? 'Tersimpan' : 'Simpan';
+      if (label) label.textContent = saved ? 'Hapus dari Favorit' : 'Tambah ke Favorit';
+      btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
+      btn.setAttribute('aria-label', saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit');
+      // Pulse animation on post-page button
+      if (btn.classList.contains('post-bookmark-btn')) {
+        btn.classList.remove('is-pulsing');
+        void btn.offsetWidth;
+        btn.classList.add('is-pulsing');
+        setTimeout(function() { btn.classList.remove('is-pulsing'); }, 700);
+      }
     });
 
     // Update navbar badge
@@ -881,9 +1008,25 @@
         } else {
           icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
         }
+      } else {
+        // FontAwesome <i> icon toggle (post page uses fa-bookmark)
+        var faIcon = btn.querySelector('.post-bookmark-icon');
+        if (faIcon) {
+          faIcon.classList.toggle('fa-solid', saved);
+          faIcon.classList.toggle('fa-regular', !saved);
+        }
       }
       var label = btn.querySelector('.fav-label');
-      if (label) label.textContent = saved ? 'Tersimpan' : 'Simpan';
+      if (label) label.textContent = saved ? 'Hapus dari Favorit' : 'Tambah ke Favorit';
+      btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
+      btn.setAttribute('aria-label', saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit');
+      // Pulse animation on post-page button
+      if (btn.classList.contains('post-bookmark-btn')) {
+        btn.classList.remove('is-pulsing');
+        void btn.offsetWidth;
+        btn.classList.add('is-pulsing');
+        setTimeout(function() { btn.classList.remove('is-pulsing'); }, 700);
+      }
     });
   }
 

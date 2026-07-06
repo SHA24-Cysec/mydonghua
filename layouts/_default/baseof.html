@@ -193,6 +193,8 @@
     {{ partial "background-pic" . }}
     {{ partial "back-to-top" . }}
     {{ partial "fav-core" . }}
+    {{/*  save-favorite: injects CSS (.post-bookmark-btn, .donghua-card-bookmark, modal, etc.) + bottom sheet HTML + JS. Loaded after fav-core so its styles win over Tailwind preflight resets.  */}}
+    {{ partial "save-favorite" . }}
     {{/*  Scrollbar CSS dipindah ke main.css (assets/input.css) supaya
           bisa di-cache terpisah dan mengurangi ukuran HTML  */}}
 </body>
