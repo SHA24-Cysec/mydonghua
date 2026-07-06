@@ -11,6 +11,10 @@
         <a href="/#genre"><i class="fa-solid fa-folder" aria-hidden="true"></i> Genre</a>
         <a href="/#studio-season"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Studio/Season</a>
         <a href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari</a>
+        <a href='{{ relURL "favorit" }}' class="nav-fav-btn" aria-label="Daftar favorit" title="Favorit">
+          <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+          <span class="nav-fav-badge is-hidden" id="nav-fav-badge">0</span>
+        </a>
         <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Support</a>
         <a href='{{ relURL "kontak" }}'><i class="fa-solid fa-phone" aria-hidden="true"></i> Kontak</a>
       </div>
@@ -51,6 +55,11 @@
       <a href="/#genre" data-nav-link><i class="fa-solid fa-folder" aria-hidden="true"></i><span>Genre</span></a>
       <a href='{{ relURL "search" }}' data-nav-link><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Cari</span></a>
       <a href="/#studio-season" data-nav-link><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Studio/Season</span></a>
+      <a href='{{ relURL "favorit" }}' class="site-nav-fav-btn" data-nav-link>
+        <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+        <span>Favorit</span>
+        <span class="nav-fav-badge is-hidden" id="nav-fav-badge-mobile">0</span>
+      </a>
       <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch" data-nav-link><i class="fa-solid fa-leaf" aria-hidden="true"></i><span>Support</span></a>
       <a href='{{ relURL "kontak" }}' data-nav-link><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Kontak</span></a>
     </div>
@@ -300,7 +309,8 @@
     gap: 0.62rem;
   }
 
-  .site-nav-grid a {
+  .site-nav-grid a,
+  .site-nav-fav-btn {
     display: grid;
     place-items: center;
     gap: 0.42rem;
@@ -317,6 +327,21 @@
     font-size: 0.82rem;
     font-weight: 900;
     transition: transform 0.20s ease, border-color 0.20s ease, box-shadow 0.20s ease, background 0.20s ease;
+    cursor: pointer;
+    position: relative;
+    font: inherit;
+    appearance: none;
+    outline: none;
+  }
+
+  .site-nav-fav-btn {
+    width: 100%;
+  }
+
+  .site-nav-fav-btn .nav-fav-badge {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
   }
 
   .site-nav-grid a i {

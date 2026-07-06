@@ -4,6 +4,11 @@
             <img loading="lazy" decoding="async" width="200" height="300" src='{{ .Params.thumbnail | relURL }}' alt="{{ .Params.alt | default .Title }}">
         </div>
         <div class="donghua-card-frame" aria-hidden="true"></div>
+        <button class="donghua-card-bookmark{{ if false }} is-saved{{ end }}" data-fav-id="{{ .Params.permalink | default .Permalink }}" type="button" aria-label="Simpan ke favorit" title="Simpan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z"/>
+            </svg>
+        </button>
         <div class="donghua-card-badges">
             <span class="donghua-card-badge">{{ .Params.type | default "Donghua" }}</span>
             <span class="donghua-card-badge sub">Sub</span>

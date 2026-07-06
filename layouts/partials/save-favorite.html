@@ -1,0 +1,949 @@
+{{/*  Save Favorite — Bottom Sheet Modal
+      Icon: Bookmark
+      Storage: LocalStorage
+      Trigger: Card + Post page
+      View: Bottom sheet drawer
+      Extras: Clear all button
+*/}}
+
+<style>
+/* ============================
+   BOOKMARK BUTTON (Card)
+   ============================ */
+.donghua-card-bookmark {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 5;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(6, 8, 22, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+.donghua-card-bookmark:hover {
+  background: rgba(34, 211, 238, 0.15);
+  border-color: rgba(34, 211, 238, 0.3);
+  color: #67e8f9;
+  transform: scale(1.08);
+}
+
+.donghua-card-bookmark:active {
+  transform: scale(0.95);
+}
+
+.donghua-card-bookmark:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.6);
+  outline-offset: 2px;
+}
+
+/* Saved state */
+.donghua-card-bookmark.is-saved {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(139, 92, 246, 0.2));
+  border-color: #22d3ee;
+  color: #22d3ee;
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.35);
+}
+
+.donghua-card-bookmark.is-saved svg {
+  animation: bookmark-pop 0.35s ease;
+}
+
+@keyframes bookmark-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.3); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.donghua-card-bookmark svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+/* ============================
+   BOOKMARK BUTTON (Post Page)
+   ============================ */
+.post-bookmark-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  background: rgba(34, 211, 238, 0.06);
+  color: #67e8f9;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  appearance: none;
+  font: inherit;
+}
+
+.post-bookmark-btn:hover {
+  background: rgba(34, 211, 238, 0.12);
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #a5f3fc;
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.2);
+  transform: translateY(-1px);
+}
+
+.post-bookmark-btn:active {
+  transform: scale(0.97);
+}
+
+.post-bookmark-btn:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.6);
+  outline-offset: 3px;
+}
+
+.post-bookmark-btn.is-saved {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(139, 92, 246, 0.15));
+  border-color: #22d3ee;
+  color: #22d3ee;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.3);
+}
+
+.post-bookmark-btn.is-saved .post-bookmark-icon {
+  animation: bookmark-pop 0.35s ease;
+}
+
+.post-bookmark-icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s ease;
+}
+
+/* ============================
+   NAVBAR BOOKMARK ICON
+   ============================ */
+.nav-fav-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  background: rgba(34, 211, 238, 0.05);
+  color: #67e8f9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+.nav-fav-btn:hover {
+  background: rgba(34, 211, 238, 0.12);
+  border-color: rgba(34, 211, 238, 0.35);
+  color: #a5f3fc;
+  transform: translateY(-1px);
+}
+
+.nav-fav-btn:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.6);
+  outline-offset: 2px;
+}
+
+.nav-fav-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #22d3ee, #8b5cf6);
+  color: #060816;
+  font-size: 0.6rem;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+  pointer-events: none;
+}
+
+.nav-fav-badge.is-hidden {
+  display: none;
+}
+
+/* ============================
+   BOTTOM SHEET MODAL
+   ============================ */
+.fav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+}
+
+.fav-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.fav-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2001;
+  width: 100%;
+  max-height: min(85dvh, 40rem);
+  overflow-y: auto;
+  padding: 0.8rem 0.8rem 1rem;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-bottom: 0;
+  border-radius: 1.5rem 1.5rem 0 0;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.12), transparent 34%),
+    radial-gradient(circle at 92% 12%, rgba(56, 189, 248, 0.1), transparent 36%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+  box-shadow:
+    0 -20px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transform: translateY(100%);
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.fav-overlay.is-open .fav-sheet {
+  transform: translateY(0);
+}
+
+.fav-handle {
+  width: 3rem;
+  height: 0.3rem;
+  margin: 0 auto 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22d3ee, #38bdf8, #2563eb);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.25);
+}
+
+.fav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.fav-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #c9f7ff;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+}
+
+.fav-title i {
+  color: #22d3ee;
+  filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.5));
+}
+
+.fav-count {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  color: #67e8f9;
+}
+
+.fav-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.fav-btn-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+  outline: none;
+  appearance: none;
+  padding: 0;
+}
+
+.fav-btn-icon:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.fav-btn-icon:focus-visible {
+  outline: 2px solid rgba(239, 68, 68, 0.5);
+  outline-offset: 2px;
+}
+
+/* Empty state */
+.fav-empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #475569;
+}
+
+.fav-empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.4;
+}
+
+.fav-empty-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fav-empty-sub {
+  font-size: 0.72rem;
+  margin-top: 0.3rem;
+  color: #334155;
+}
+
+/* List */
+.fav-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fav-item {
+  position: relative;
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.fav-item:hover {
+  border-color: rgba(34, 211, 238, 0.2);
+  background: rgba(34, 211, 238, 0.04);
+}
+
+.fav-item-thumb {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 4.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #0F172A;
+}
+
+.fav-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fav-item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fav-item-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #e2e8f0;
+  line-height: 1.3;
+  margin: 0 0 0.3rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.fav-item-meta {
+  font-size: 0.62rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.fav-item-remove {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 0.6rem;
+  transition: all 0.2s ease;
+  outline: none;
+  appearance: none;
+  padding: 0;
+}
+
+.fav-item-remove:hover {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: rgba(239, 68, 68, 0.5);
+  transform: scale(1.1);
+}
+
+/* Confirm dialog */
+.fav-confirm {
+  position: fixed;
+  inset: 0;
+  z-index: 2002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+}
+
+.fav-confirm.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.fav-confirm-box {
+  width: 100%;
+  max-width: 20rem;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(6, 8, 22, 0.98));
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.fav-confirm-title {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #f87171;
+  margin-bottom: 0.5rem;
+}
+
+.fav-confirm-text {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.fav-confirm-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.fav-confirm-btn {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  appearance: none;
+}
+
+.fav-confirm-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fav-confirm-btn.danger {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #f87171;
+}
+
+.fav-confirm-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.35);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (min-width: 640px) {
+  .fav-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .fav-sheet {
+    max-width: 28rem;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 100%);
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+
+  .fav-overlay.is-open .fav-sheet {
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 340px) {
+  .fav-list {
+    grid-template-columns: 1fr;
+  }
+
+  .donghua-card-bookmark {
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .donghua-card-bookmark svg {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .donghua-card-bookmark,
+  .donghua-card-bookmark svg,
+  .post-bookmark-btn,
+  .post-bookmark-icon,
+  .nav-fav-btn,
+  .fav-sheet,
+  .fav-overlay,
+  .fav-item-remove,
+  .fav-btn-icon,
+  .fav-confirm,
+  .fav-confirm-box {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+</style>
+
+{{/*  Navbar favorite button — injected via JS into navbar  */}}
+<script>
+(function() {
+  'use strict';
+
+  var STORAGE_KEY = 'donghuabatch_favorites';
+  var favIds = loadFavorites();
+
+  function loadFavorites() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveFavorites() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favIds));
+    } catch (e) {
+      console.warn('[Fav] localStorage error', e);
+    }
+  }
+
+  function isSaved(id) {
+    return favIds.indexOf(id) !== -1;
+  }
+
+  function toggleSave(id) {
+    if (isSaved(id)) {
+      favIds = favIds.filter(function(i) { return i !== id; });
+      saveFavorites();
+      return false;
+    } else {
+      favIds.push(id);
+      saveFavorites();
+      return true;
+    }
+  }
+
+  function clearAll() {
+    favIds = [];
+    saveFavorites();
+  }
+
+  // Expose globally for inline handlers
+  window.DonghuaFav = {
+    isSaved: isSaved,
+    toggleSave: toggleSave,
+    clearAll: clearAll,
+    loadFavorites: loadFavorites,
+    STORAGE_KEY: STORAGE_KEY
+  };
+
+  // Update all bookmark buttons on page
+  function syncAllButtons() {
+    var btns = document.querySelectorAll('.donghua-card-bookmark, .post-bookmark-btn');
+    btns.forEach(function(btn) {
+      var id = btn.getAttribute('data-fav-id');
+      if (!id) return;
+      var saved = isSaved(id);
+      btn.classList.toggle('is-saved', saved);
+      var icon = btn.querySelector('svg');
+      if (icon) {
+        if (saved) {
+          icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+        } else {
+          icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+        }
+      }
+      var label = btn.querySelector('.fav-label');
+      if (label) label.textContent = saved ? 'Tersimpan' : 'Simpan';
+    });
+
+    // Update navbar badge
+    var badge = document.getElementById('nav-fav-badge');
+    if (badge) {
+      badge.textContent = favIds.length;
+      badge.classList.toggle('is-hidden', favIds.length === 0);
+    }
+  }
+
+  // Bookmark button click handler (event delegation)
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.donghua-card-bookmark, .post-bookmark-btn');
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    var id = btn.getAttribute('data-fav-id');
+    if (!id) return;
+
+    toggleSave(id);
+    syncAllButtons();
+  });
+
+  // Sync on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', syncAllButtons);
+  } else {
+    syncAllButtons();
+  }
+})();
+</script>
+
+{{/*  Bottom Sheet Modal HTML  */}}
+<div class="fav-overlay" id="fav-overlay" aria-hidden="true">
+  <div class="fav-sheet" role="dialog" aria-modal="true" aria-label="Daftar Favorit">
+    <div class="fav-handle" aria-hidden="true"></div>
+
+    <div class="fav-header">
+      <div class="fav-title">
+        <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+        <span>Favorit</span>
+        <span class="fav-count" id="fav-count">0</span>
+      </div>
+      <div class="fav-actions">
+        <button class="fav-btn-icon" id="fav-clear-btn" type="button" aria-label="Hapus semua favorit" title="Hapus semua">
+          <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+        </button>
+        <button class="fav-btn-icon" id="fav-close-btn" type="button" aria-label="Tutup" title="Tutup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="fav-list-container"></div>
+  </div>
+</div>
+
+{{/*  Confirm Dialog  */}}
+<div class="fav-confirm" id="fav-confirm" aria-hidden="true">
+  <div class="fav-confirm-box" role="alertdialog" aria-modal="true">
+    <div class="fav-confirm-title">
+      <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+      Hapus Semua Favorit?
+    </div>
+    <div class="fav-confirm-text">
+      Semua donghua favorit akan dihapus. Tindakan ini tidak bisa dibatalkan.
+    </div>
+    <div class="fav-confirm-actions">
+      <button class="fav-confirm-btn" id="fav-cancel-btn" type="button">Batal</button>
+      <button class="fav-confirm-btn danger" id="fav-confirm-yes-btn" type="button">Hapus</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var STORAGE_KEY = 'donghuabatch_favorites';
+  var overlay = document.getElementById('fav-overlay');
+  var confirmDlg = document.getElementById('fav-confirm');
+  var listContainer = document.getElementById('fav-list-container');
+  var countEl = document.getElementById('fav-count');
+  var closeBtn = document.getElementById('fav-close-btn');
+  var clearBtn = document.getElementById('fav-clear-btn');
+  var cancelBtn = document.getElementById('fav-cancel-btn');
+  var confirmYesBtn = document.getElementById('fav-confirm-yes-btn');
+
+  if (!overlay) return;
+
+  function loadFavIds() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) { return []; }
+  }
+
+  function updateBadge() {
+    var count = loadFavIds().length;
+    if (countEl) countEl.textContent = count;
+    var badge = document.getElementById('nav-fav-badge');
+    var badgeMobile = document.getElementById('nav-fav-badge-mobile');
+    if (badge) {
+      badge.textContent = count;
+      badge.classList.toggle('is-hidden', count === 0);
+    }
+    if (badgeMobile) {
+      badgeMobile.textContent = count;
+      badgeMobile.classList.toggle('is-hidden', count === 0);
+    }
+  }
+
+  function openSheet() {
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    renderList();
+  }
+
+  function closeSheet() {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function openConfirm() {
+    confirmDlg.classList.add('is-open');
+    confirmDlg.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeConfirm() {
+    confirmDlg.classList.remove('is-open');
+    confirmDlg.setAttribute('aria-hidden', 'true');
+  }
+
+  function renderList() {
+    var ids = loadFavIds();
+    countEl.textContent = ids.length;
+
+    if (!ids.length) {
+      listContainer.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon"><i class="fa-regular fa-bookmark"></i></div><div class="fav-empty-text">Belum ada favorit</div><div class="fav-empty-sub">Tap icon bookmark di card donghua untuk menyimpan</div></div>';
+      return;
+    }
+
+    // Build list from DOM elements (cards on current page) or fetch from index
+    var items = [];
+    ids.forEach(function(id) {
+      var card = document.querySelector('[data-fav-id="' + id + '"]');
+      if (card) {
+        var link = card.closest('a') || card.querySelector('a');
+        var titleEl = card.querySelector('.donghua-card-title') || document.querySelector('h1');
+        var imgEl = card.querySelector('img') || document.querySelector('.panel-neon img');
+        var metaEl = card.querySelector('.donghua-card-meta');
+        items.push({
+          id: id,
+          title: titleEl ? titleEl.textContent.trim() : id,
+          href: link ? link.href : '#',
+          img: imgEl ? imgEl.src : '',
+          meta: metaEl ? metaEl.textContent.trim() : ''
+        });
+      }
+    });
+
+    if (!items.length) {
+      listContainer.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon"><i class="fa-regular fa-bookmark"></i></div><div class="fav-empty-text">Data favorit tidak ditemukan</div></div>';
+      return;
+    }
+
+    var html = '<ul class="fav-list">';
+    items.forEach(function(item) {
+      html += '<li class="fav-item">' +
+        '<a class="fav-item-thumb" href="' + item.href + '" aria-label="' + item.title + '">' +
+          (item.img ? '<img src="' + item.img + '" alt="" loading="lazy" decoding="async" width="48" height="72">' : '') +
+        '</a>' +
+        '<div class="fav-item-info">' +
+          '<a class="fav-item-title" href="' + item.href + '">' + item.title + '</a>' +
+          (item.meta ? '<div class="fav-item-meta">' + item.meta + '</div>' : '') +
+        '</div>' +
+        '<button class="fav-item-remove" data-remove-id="' + item.id + '" type="button" aria-label="Hapus ' + item.title + '" title="Hapus">' +
+          '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
+        '</button>' +
+      '</li>';
+    });
+    html += '</ul>';
+
+    listContainer.innerHTML = html;
+  }
+
+  function removeOne(id) {
+    try {
+      var ids = loadFavIds().filter(function(i) { return i !== id; });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+    } catch (e) {}
+    syncButtons();
+    renderList();
+    updateBadge();
+  }
+
+  function clearAllFavs() {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {}
+    syncButtons();
+    renderList();
+    updateBadge();
+    closeConfirm();
+  }
+
+  function syncButtons() {
+    var ids = loadFavIds();
+    document.querySelectorAll('.donghua-card-bookmark, .post-bookmark-btn').forEach(function(btn) {
+      var id = btn.getAttribute('data-fav-id');
+      if (!id) return;
+      var saved = ids.indexOf(id) !== -1;
+      btn.classList.toggle('is-saved', saved);
+      var icon = btn.querySelector('svg');
+      if (icon) {
+        if (saved) {
+          icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+        } else {
+          icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+        }
+      }
+      var label = btn.querySelector('.fav-label');
+      if (label) label.textContent = saved ? 'Tersimpan' : 'Simpan';
+    });
+  }
+
+  // Event listeners
+  document.addEventListener('click', function(e) {
+    // Open sheet (desktop + mobile)
+    if (e.target.closest('#nav-fav-btn') || e.target.closest('#nav-fav-btn-mobile')) {
+      e.preventDefault();
+      openSheet();
+      return;
+    }
+
+    // Close sheet
+    if (e.target.closest('#fav-close-btn') || (e.target === overlay && !e.target.closest('.fav-sheet'))) {
+      closeSheet();
+      return;
+    }
+
+    // Remove one
+    var removeBtn = e.target.closest('.fav-item-remove');
+    if (removeBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      var id = removeBtn.getAttribute('data-remove-id');
+      if (id) removeOne(id);
+      return;
+    }
+
+    // Clear all
+    if (e.target.closest('#fav-clear-btn')) {
+      e.preventDefault();
+      openConfirm();
+      return;
+    }
+
+    // Cancel confirm
+    if (e.target.closest('#fav-cancel-btn')) {
+      closeConfirm();
+      return;
+    }
+
+    // Confirm yes
+    if (e.target.closest('#fav-confirm-yes-btn')) {
+      clearAllFavs();
+      return;
+    }
+  });
+
+  // ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (confirmDlg.classList.contains('is-open')) {
+        closeConfirm();
+      } else if (overlay.classList.contains('is-open')) {
+        closeSheet();
+      }
+    }
+  });
+
+  // Initial badge update
+  updateBadge();
+})();
+</script>

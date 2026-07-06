@@ -1,0 +1,102 @@
+{{/*  Favorite Core JS — Toggle bookmark di card & post page
+      LocalStorage + badge update + sync buttons
+*/}}
+<script>
+(function() {
+  'use strict';
+
+  var STORAGE_KEY = 'donghuabatch_favorites';
+
+  function loadFavIds() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) { return []; }
+  }
+
+  function saveFavIds(ids) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+    } catch (e) { console.warn('[Fav] localStorage error', e); }
+  }
+
+  function toggleFav(id) {
+    var ids = loadFavIds();
+    var idx = ids.indexOf(id);
+    if (idx !== -1) {
+      ids.splice(idx, 1);
+      saveFavIds(ids);
+      return false;
+    } else {
+      ids.push(id);
+      saveFavIds(ids);
+      return true;
+    }
+  }
+
+  function updateBadge() {
+    var count = loadFavIds().length;
+    var badge = document.getElementById('nav-fav-badge');
+    var badgeMobile = document.getElementById('nav-fav-badge-mobile');
+    if (badge) {
+      badge.textContent = count;
+      badge.classList.toggle('is-hidden', count === 0);
+    }
+    if (badgeMobile) {
+      badgeMobile.textContent = count;
+      badgeMobile.classList.toggle('is-hidden', count === 0);
+    }
+  }
+
+  function syncButton(btn) {
+    var id = btn.getAttribute('data-fav-id');
+    if (!id) return;
+    var ids = loadFavIds();
+    var saved = ids.indexOf(id) !== -1;
+    btn.classList.toggle('is-saved', saved);
+    var icon = btn.querySelector('svg');
+    if (icon) {
+      if (saved) {
+        icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+      } else {
+        icon.innerHTML = '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+      }
+    }
+    var label = btn.querySelector('.fav-label');
+    if (label) label.textContent = saved ? 'Tersimpan' : 'Simpan';
+  }
+
+  function syncAllButtons() {
+    document.querySelectorAll('.donghua-card-bookmark, .post-bookmark-btn').forEach(syncButton);
+    updateBadge();
+  }
+
+  // Event delegation for bookmark buttons
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.donghua-card-bookmark, .post-bookmark-btn');
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    var id = btn.getAttribute('data-fav-id');
+    if (!id) return;
+
+    toggleFav(id);
+    syncAllButtons();
+
+    // Jika di halaman favorit, trigger re-render
+    var favGrid = document.getElementById('fav-grid');
+    if (favGrid && typeof renderFavorites === 'function') {
+      setTimeout(renderFavorites, 100);
+    }
+  });
+
+  // Initial sync
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', syncAllButtons);
+  } else {
+    syncAllButtons();
+  }
+})();
+</script>

@@ -1,15 +1,253 @@
-<div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0">
-    <div class="w-full select-none p-6 rounded-t-2xl bg-[#0F172A]/80 border-t border-cyan-500/30 shadow-[0_-5px_25px_rgba(34,211,238,0.15)] text-slate-300 backdrop-blur-md">
-        <div class="flex justify-center text-center items-center gap-2 flex-col">
-            <span>&copy;{{ time.Now.Year }} <span class="font-extrabold" style="color:#c9f7ff; text-shadow:0 0 12px rgba(34,211,238,0.18);">DonghuaBatch</span> - All Rights Reserved</span>
-            <i class="fa-solid fa-microchip fa-spin-pulse my-3 text-2xl text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"></i>
-            <div class="text-sm flex text-center flex-wrap justify-center items-center gap-2 font-semibold text-slate-400">
-                <a class="site-link-glow text-slate-300" href='{{ relURL "about" }}'>About Web</a>
-                <i class="fa-solid fa-code-commit text-purple-500"></i>
-                <a class="site-link-glow text-slate-300" href='{{ relURL "privacy-policy" }}'>Privacy Policy</a>
-                <i class="fa-solid fa-code-commit text-purple-500"></i>
-                <a class="site-link-glow text-slate-300" href='{{ relURL "terms-of-conditions" }}'>Term of Conditions</a>
-            </div>
-        </div>
+{{/*  Footer — Neon Wave Divider
+      SVG wave + aurora line atas + sosial media + navigasi
+      Mobile-first & responsif
+*/}}
+<footer class="site-footer">
+  <!-- Aurora top line -->
+  <div class="site-footer-aurora" aria-hidden="true"></div>
+
+  <!-- Wave SVG -->
+  <svg class="site-footer-wave" viewBox="0 0 400 40" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 20 Q 50 5, 100 20 T 200 20 T 300 20 T 400 20" stroke="#22d3ee" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <path d="M0 25 Q 50 10, 100 25 T 200 25 T 300 25 T 400 25" stroke="#8b5cf6" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M0 30 Q 50 15, 100 30 T 200 30 T 300 30 T 400 30" stroke="#ec4899" stroke-width="1" fill="none" opacity="0.2"/>
+  </svg>
+
+  <!-- Main content -->
+  <div class="site-footer-inner">
+    <div class="site-footer-top">
+      <div class="site-footer-brand">
+        <span class="site-footer-brand-name">DonghuaBatch</span>
+        <p class="site-footer-brand-desc">Tempatnya download batch donghua subtitle Indonesia terlengkap.</p>
+      </div>
+      <div class="site-footer-social">
+        <a class="site-footer-social-link" href="https://saweria.co/DonghuaBatch" target="_blank" rel="noopener noreferrer" aria-label="Dukung di Saweria" title="Dukung di Saweria">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+        </a>
+        <a class="site-footer-social-link" href='{{ relURL "kontak" }}' aria-label="Kontak" title="Kontak">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
-</div>
+
+    <div class="site-footer-links">
+      <a class="site-footer-link" href='{{ relURL "about" }}'>About Web</a>
+      <a class="site-footer-link" href='{{ relURL "privacy-policy" }}'>Privacy Policy</a>
+      <a class="site-footer-link" href='{{ relURL "terms-of-conditions" }}'>Terms of Conditions</a>
+    </div>
+
+    <div class="site-footer-copy">
+      <span>&copy; {{ time.Now.Year }} <span class="site-footer-copy-brand">DonghuaBatch</span> — All Rights Reserved</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* ============================
+   FOOTER — NEON WAVE DIVIDER
+   ============================ */
+.site-footer,
+.site-footer * {
+  box-sizing: border-box;
+}
+
+.site-footer {
+  position: relative;
+  margin-top: 2rem;
+  padding: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(34, 211, 238, 0.05), transparent 50%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(6, 8, 22, 0.98));
+  border-top: 1px solid rgba(34, 211, 238, 0.15);
+  overflow: hidden;
+}
+
+/* Aurora top line */
+.site-footer-aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #22d3ee 20%,
+    #38bdf8 35%,
+    #8b5cf6 55%,
+    #ec4899 75%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Wave SVG */
+.site-footer-wave {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+}
+
+/* Inner container */
+.site-footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem 1.5rem;
+}
+
+/* Top section: brand + social */
+.site-footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.site-footer-brand-name {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 1000;
+  letter-spacing: -0.03em;
+  color: #c9f7ff;
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.22);
+}
+
+.site-footer-brand-desc {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+/* Social icons */
+.site-footer-social {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.site-footer-social-link {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  background: rgba(34, 211, 238, 0.05);
+  display: grid;
+  place-items: center;
+  color: #67e8f9;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.site-footer-social-link:hover {
+  background: rgba(34, 211, 238, 0.15);
+  border-color: #22d3ee;
+  color: #a5f3fc;
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.3);
+  transform: translateY(-2px);
+}
+
+.site-footer-social-link:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.6);
+  outline-offset: 3px;
+}
+
+/* Links row */
+.site-footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.site-footer-link {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 0.2rem 0.1rem;
+  transition: color 0.2s ease;
+}
+
+.site-footer-link:hover {
+  color: #67e8f9;
+}
+
+.site-footer-link:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Copyright */
+.site-footer-copy {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.68rem;
+  color: #475569;
+}
+
+.site-footer-copy-brand {
+  color: #67e8f9;
+  font-weight: 800;
+}
+
+/* ============================
+   DESKTOP: side-by-side layout
+   ============================ */
+@media (min-width: 640px) {
+  .site-footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .site-footer-brand-desc {
+    max-width: 320px;
+  }
+
+  .site-footer-inner {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ============================
+   SMALL MOBILE
+   ============================ */
+@media (max-width: 340px) {
+  .site-footer-wave {
+    height: 30px;
+  }
+
+  .site-footer-inner {
+    padding: 0 0.75rem 1.2rem;
+  }
+}
+
+/* ============================
+   REDUCED MOTION
+   ============================ */
+@media (prefers-reduced-motion: reduce) {
+  .site-footer-social-link {
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
