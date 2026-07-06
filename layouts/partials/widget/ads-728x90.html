@@ -1,24 +1,26 @@
 {{ partial "widget/ad-shell-styles" . }}
-<div class="ad-neon-shell ad-728x90" aria-label="Sponsor 728x90">
-    <div class="ad-neon-head">Advertisement</div>
-    <div class="ad-neon-body ad-size-728">
-        {{ if hugo.IsProduction }}
-            <div class="ad-neon-scroll">
-                <script>
-                    atOptions = {
-                        'key' : 'ef733504b5b389474cecd0340f4fdae0',
-                        'format' : 'iframe',
-                        'height' : 90,
-                        'width' : 728,
-                        'params' : {}
-                    };
-                </script>
-                <script src="https://contentblanksupersede.com/ef733504b5b389474cecd0340f4fdae0/invoke.js" async></script>
-            </div>
-        {{ else }}
-            <div class="ad-neon-placeholder">
-                <span><strong>Advertisement</strong>728 × 90</span>
-            </div>
-        {{ end }}
+<div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-3">
+    <div class="ad-neon-shell ad-728x90" aria-label="Sponsor 728x90">
+        <div class="ad-neon-head">Advertisement</div>
+        <div class="ad-neon-body ad-size-728">
+            {{ if hugo.IsProduction }}
+                <div class="ad-neon-scroll">
+                    <script>
+                        atOptions = {
+                            'key' : 'ef733504b5b389474cecd0340f4fdae0',
+                            'format' : 'iframe',
+                            'height' : 90,
+                            'width' : 728,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://contentblanksupersede.com/ef733504b5b389474cecd0340f4fdae0/invoke.js" async></script>
+                </div>
+            {{ else }}
+                <div class="ad-neon-placeholder">
+                    <span><strong>Advertisement</strong>728 × 90</span>
+                </div>
+            {{ end }}
+        </div>
     </div>
 </div>

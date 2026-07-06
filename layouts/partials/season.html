@@ -23,10 +23,10 @@
         <tbody class="text-center font-medium">
             <tr>
                 {{ if .Params.linkSeasonSebelumnya }}
-                    <td class="p-4 border-r border-cyan-500/30 bg-[#060816]/60"><a class="text-cyan-400 hover:text-cyan-300 hover:underline font-bold transition duration-300 drop-shadow-[0_0_5px_rgba(34,211,238,0.4)] block" href="{{ .Params.linkSeasonSebelumnya | relURL }}">{{ .Params.judulSeasonSebelumnya }}</a></td>
+                    <td class="p-4 border-r border-cyan-500/30 bg-[#060816]/60"><a class="site-link-glow block font-bold text-cyan-400" href="{{ .Params.linkSeasonSebelumnya | relURL }}">{{ .Params.judulSeasonSebelumnya }}</a></td>
                 {{ end }}
                 {{ if .Params.linkSeasonSelanjutnya }}
-                    <td class="p-4 bg-[#060816]/60"><a class="text-pink-400 hover:text-pink-300 hover:underline font-bold transition duration-300 drop-shadow-[0_0_5px_rgba(236,72,153,0.4)] block" href="{{ .Params.linkSeasonSelanjutnya | relURL }}">{{ .Params.judulSeasonSelanjutnya }}</a></td>
+                    <td class="p-4 bg-[#060816]/60"><a class="site-link-glow site-link-glow--pink block font-bold text-pink-400" href="{{ .Params.linkSeasonSelanjutnya | relURL }}">{{ .Params.judulSeasonSelanjutnya }}</a></td>
                 {{ end }}
             </tr>
         </tbody>

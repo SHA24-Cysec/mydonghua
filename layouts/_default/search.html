@@ -10,11 +10,18 @@
         </div>
         {{/*  Elemen Postingan Pencarian  */}}
         <ul class="donghua-card-grid donghua-card-grid-wide h-full max-h-max" id="search-results"></ul>
+
+        <div id="search-empty-state" class="search-empty-state" hidden>
+            <div class="search-empty-icon"><i class="fa-solid fa-satellite-dish" aria-hidden="true"></i></div>
+            <strong>Tidak ada hasil ditemukan</strong>
+            <p>Coba kata kunci lain, gunakan judul yang lebih pendek, atau kombinasikan genre dengan tanda koma.</p>
+        </div>
+
         {{/*  Pagination  */}}
-        <div id="search-pagination" class="flex gap-2 mt-4 w-max p-2 rounded-xl mx-auto items-center flex-wrap text-slate-200">
-            <button class="cyber-pill-nav" id="prev-page" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
-            <span class="px-4 py-2.5 bg-[#0F172A] border border-cyan-500/30 rounded-xl font-bold text-cyan-300 shadow-sm" id="page-info"></span>
-            <button class="cyber-pill-nav" id="next-page" disabled>Next <i class="fa-solid fa-chevron-right"></i></button>
+        <div id="search-pagination" class="pagination-dock mt-4 text-slate-200">
+            <button class="pagination-dock-button" id="prev-page" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
+            <span class="pagination-dock-status" id="page-info"></span>
+            <button class="pagination-dock-button" id="next-page" disabled>Next <i class="fa-solid fa-chevron-right"></i></button>
         </div>
         <style>
             #search-results li {
@@ -22,6 +29,47 @@
             }
             #search-pagination {
                 display: none;
+            }
+            #search-empty-state[hidden] {
+                display: none !important;
+            }
+            .search-empty-state {
+                margin-top: 1rem;
+                padding: 1.25rem;
+                border: 1px solid rgba(125, 211, 252, 0.22);
+                border-radius: 1rem;
+                background:
+                    radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.10), transparent 30%),
+                    linear-gradient(180deg, rgba(15, 23, 42, 0.90), rgba(6, 8, 22, 0.94));
+                box-shadow: 0 0 22px rgba(34, 211, 238, 0.08);
+                text-align: center;
+            }
+            .search-empty-icon {
+                display: inline-grid;
+                place-items: center;
+                width: 3.1rem;
+                height: 3.1rem;
+                margin: 0 auto 0.85rem;
+                border: 1px solid rgba(34, 211, 238, 0.22);
+                border-radius: 999px;
+                background: rgba(34, 211, 238, 0.08);
+                color: #67e8f9;
+                font-size: 1.05rem;
+                box-shadow: 0 0 18px rgba(34, 211, 238, 0.12);
+            }
+            .search-empty-state strong {
+                display: block;
+                color: #e0f2fe;
+                font-size: 1rem;
+                font-weight: 900;
+                letter-spacing: -0.02em;
+            }
+            .search-empty-state p {
+                margin: 0.55rem auto 0;
+                max-width: 34rem;
+                color: #9fb1c9;
+                font-size: 0.9rem;
+                line-height: 1.6;
             }
             mark {
                 background: linear-gradient(135deg, #EC4899, #8B5CF6);

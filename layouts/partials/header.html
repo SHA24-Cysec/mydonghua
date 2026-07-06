@@ -1,5 +1,30 @@
 <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-3">
-    <header class="w-full p-4 panel-neon relative overflow-hidden">
-        <img title="{{ .Title }}" class="mx-auto object-cover rounded-xl relative z-10 drop-shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-transform duration-500" width="720" height="384" fetchpriority="high" decoding="async" src='{{ relURL "img/DonghuaBatch.webp"}}' alt="{{ .Title }}">
+    <header class="site-home-hero" aria-label="Sorotan utama DonghuaBatch">
+        <div class="site-home-hero-media">
+            <img title="Huo Linger" width="4096" height="2304" fetchpriority="high" decoding="async" src='{{ relURL "img/Huo-Linger.webp"}}' alt="Hero image Huo Linger">
+        </div>
+
+        <div class="site-home-hero-card">
+            <span class="site-home-hero-kicker">Tempat nyaman buat jelajah donghua</span>
+            <h1>Cari batch donghua favoritmu, lalu nikmati subtitle Indonesia yang rapi dan update berkala.</h1>
+            <p>Mulai dari judul populer sampai yang sulit dicari, DonghuaBatch siap membantumu menemukan tontonan seru tanpa ribet.</p>
+
+            <div class="site-home-hero-tags" aria-label="Highlight situs">
+                <span class="site-home-hero-tag">Batch Donghua Lengkap</span>
+                <span class="site-home-hero-tag">Subtitle Indonesia</span>
+                <span class="site-home-hero-tag">Mudah Dijelajahi</span>
+            </div>
+
+            <div class="site-home-hero-actions" aria-label="Aksi cepat hero">
+                <a class="site-home-hero-button primary" href="#latest-donghua">
+                    <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                    Lihat Terbaru
+                </a>
+                <a class="site-home-hero-button secondary" href='{{ relURL "search" }}'>
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    Cari Donghua
+                </a>
+            </div>
+        </div>
     </header>
 </div>

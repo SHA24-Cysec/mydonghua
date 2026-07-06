@@ -20,8 +20,7 @@
                             {{ partial "donghua-card" . }}
                         {{ end }}
                     </div>
-                    {{/*  Pagination (Model 6 Glow-Wire Hologram Strip diatur via assets/input.css)  */}}
-                    {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
+                    {{ partial "pagination-option11" . }}
                 </div>
             </div>
         </main>

@@ -54,7 +54,7 @@
     </div>
 
     {{/*  Button Report Download  */}}
-    <button title="Laporkan Link Download Mati" id="reportButton" class="download-aurora-report" type="button">
+    <button title="Laporkan Link Download Mati" id="reportButton" class="download-aurora-report" type="button" data-report-trigger>
         <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
         <span>Laporkan Link Mati</span>
     </button>
@@ -412,6 +412,18 @@
         animation: downloadWarningPulse 1.6s ease-in-out infinite;
     }
 
+    .download-aurora-report.is-highlighted {
+        box-shadow: 0 0 38px rgba(236, 72, 153, 0.42), inset 0 1px 0 rgba(255,255,255,0.18);
+        filter: brightness(1.08);
+        animation: downloadReportPulse 0.9s ease-in-out 2;
+    }
+
+    .download-aurora-report:disabled {
+        opacity: 0.72;
+        cursor: wait;
+        filter: none;
+    }
+
     .download-aurora-button:focus-visible,
     .download-aurora-report:focus-visible {
         outline: 3px solid rgba(255, 255, 255, 0.58);
@@ -549,6 +561,15 @@
         }
     }
 
+    @keyframes downloadReportPulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.04);
+        }
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .download-aurora-shell::before,
         .download-aurora-card,
@@ -567,20 +588,71 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const reportButton = document.getElementById("reportButton");
+        const reportJumpLinks = Array.from(document.querySelectorAll("[data-report-jump]"));
         if (!reportButton) return;
 
-        reportButton.addEventListener("click", function() {
-            let currentUrl = window.location.href;
-            let scriptUrl = "https://script.google.com/macros/s/AKfycbzUgz8gd9WRDuGmuPPs5WBHIgZ0L3T1tJLwdtL_RLQW7Rb5e7wu6mJZa9cP3w1mEKnbxw/exec";
-    
-            fetch(scriptUrl + "?url=" + encodeURIComponent(currentUrl), { 
+        let isSendingReport = false;
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbzUgz8gd9WRDuGmuPPs5WBHIgZ0L3T1tJLwdtL_RLQW7Rb5e7wu6mJZa9cP3w1mEKnbxw/exec";
+
+        function setSendingState(sending) {
+            reportButton.disabled = sending;
+            reportButton.setAttribute("aria-busy", sending ? "true" : "false");
+        }
+
+        function highlightReportButton() {
+            reportButton.classList.remove("is-highlighted");
+            requestAnimationFrame(function () {
+                reportButton.classList.add("is-highlighted");
+                setTimeout(function () {
+                    reportButton.classList.remove("is-highlighted");
+                }, 1800);
+            });
+        }
+
+        function jumpToReportButton(event) {
+            if (event) event.preventDefault();
+
+            const topOffset = 110;
+            const rect = reportButton.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const targetTop = rect.top + scrollTop - topOffset;
+
+            window.scrollTo({
+                top: Math.max(targetTop, 0),
+                behavior: "smooth"
+            });
+
+            highlightReportButton();
+            setTimeout(function () {
+                reportButton.focus({ preventScroll: true });
+            }, 450);
+        }
+
+        function sendReport(event) {
+            if (event) event.preventDefault();
+            if (isSendingReport) return;
+
+            isSendingReport = true;
+            setSendingState(true);
+
+            const currentUrl = window.location.href;
+
+            fetch(scriptUrl + "?url=" + encodeURIComponent(currentUrl), {
                 method: "GET",
                 mode: "no-cors"
-            }).then(() => {
-                alert("✅ Laporan berhasil dikirim untuk halaman: " + currentUrl);
-            }).catch(error => {
-                alert("❌ Terjadi kesalahan: " + error);
+            }).then(function () {
+                alert("✅ Laporan link berhasil dikirim untuk halaman ini.");
+            }).catch(function (error) {
+                alert("❌ Terjadi kesalahan saat mengirim laporan: " + error);
+            }).finally(function () {
+                isSendingReport = false;
+                setSendingState(false);
             });
+        }
+
+        reportButton.addEventListener("click", sendReport);
+        reportJumpLinks.forEach(function (link) {
+            link.addEventListener("click", jumpToReportButton);
         });
     });
 </script>

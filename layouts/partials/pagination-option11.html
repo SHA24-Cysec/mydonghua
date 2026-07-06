@@ -1,0 +1,61 @@
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+    {{ $total := $paginator.TotalPages }}
+    {{ $current := $paginator.PageNumber }}
+    {{ $visible := 3 }}
+    {{ $start := 1 }}
+    {{ $end := $total }}
+
+    {{ if gt $total $visible }}
+        {{ $start = sub $current 1 }}
+        {{ $end = add $current 1 }}
+
+        {{ if lt $start 1 }}
+            {{ $start = 1 }}
+            {{ $end = $visible }}
+        {{ end }}
+
+        {{ if gt $end $total }}
+            {{ $end = $total }}
+            {{ $start = sub $total (sub $visible 1) }}
+        {{ end }}
+    {{ end }}
+
+<nav class="pagination-aurora-dock" aria-label="Navigasi halaman">
+    {{ if $paginator.HasPrev }}
+        <a class="pagination-aurora-button" href="{{ $paginator.Prev.URL }}" aria-label="Halaman sebelumnya">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            <span>Prev</span>
+        </a>
+    {{ else }}
+        <span class="pagination-aurora-button is-disabled" aria-disabled="true">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            <span>Prev</span>
+        </span>
+    {{ end }}
+
+    <div class="pagination-aurora-pages" aria-label="Daftar halaman">
+        {{ range $paginator.Pagers }}
+            {{ if and (ge .PageNumber $start) (le .PageNumber $end) }}
+                {{ if eq .PageNumber $current }}
+                    <span class="pagination-aurora-page is-active" aria-current="page">{{ .PageNumber }}</span>
+                {{ else }}
+                    <a class="pagination-aurora-page" href="{{ .URL }}" aria-label="Ke halaman {{ .PageNumber }}">{{ .PageNumber }}</a>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </div>
+
+    {{ if $paginator.HasNext }}
+        <a class="pagination-aurora-button" href="{{ $paginator.Next.URL }}" aria-label="Halaman berikutnya">
+            <span>Next</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+    {{ else }}
+        <span class="pagination-aurora-button is-disabled" aria-disabled="true">
+            <span>Next</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </span>
+    {{ end }}
+</nav>
+{{ end }}
