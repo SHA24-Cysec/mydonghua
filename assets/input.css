@@ -7390,3 +7390,304 @@ body .post-bookmark-btn.is-pulsing {
 .post-detail-poster-img { width: 200px !important; }
 .post-rating-star { color: #facc15; }
 .site-bg-character { filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.45)); }
+
+@layer components {
+  /* Modern Aurora Search System */
+  
+}
+@layer components {
+  /* ============================================================
+     MODERN AURORA SEARCH SYSTEM (True Mobile-First)
+     ============================================================ */
+  
+  .aurora-search-container {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .aurora-search-input {
+    width: 100% !important;
+    /* Mobile-First: Padding lebih kecil untuk layar sempit */
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px) clamp(8px, 2vw, 12px) clamp(35px, 5vw, 45px) !important;
+    background-color: var(--site-panel) !important;
+    border: 2px solid #334155 !important;
+    border-radius: 9999px !important;
+    color: var(--site-text) !important;
+    outline: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-size: clamp(0.85rem, 2vw, 0.95rem) !important;
+    z-index: 1 !important;
+    box-sizing: border-box !important;
+  }
+
+  .aurora-search-input:focus {
+    border-color: var(--site-cyan) !important;
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15), 0 0 15px rgba(56, 189, 248, 0.2) !important;
+    transform: scale(1.005) !important;
+  }
+
+  .aurora-search-icon {
+    position: absolute !important;
+    left: clamp(10px, 3vw, 16px) !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #94a3b8 !important;
+    transition: all 0.3s ease !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
+  }
+
+  .aurora-search-input:focus + .aurora-search-icon {
+    color: var(--site-cyan) !important;
+  }
+
+  .aurora-search-btn {
+    position: absolute !important;
+    right: 4px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: var(--site-cyan) !important;
+    color: var(--site-bg) !important;
+    border: none !important;
+    padding: 6px !important;
+    border-radius: 9999px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    z-index: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .aurora-search-btn span {
+    display: none; /* Sembunyikan teks di mobile */
+    margin-left: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .aurora-search-btn:hover {
+    background: #7dd3fc !important;
+    transform: translateY(-50%) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3) !important;
+  }
+
+  /* Tablet & Desktop Adaptations */
+  @media (min-width: 640px) {
+    .aurora-search-input {
+      /* Beri ruang lebih di kanan untuk tombol teks */
+      padding-right: clamp(60px, 8vw, 80px) !important;
+    }
+
+    .aurora-search-btn {
+      right: 6px !important;
+      padding: 6px 16px !important;
+    }
+
+    .aurora-search-btn span {
+      display: inline !important; /* Tampilkan teks di layar lebar */
+    }
+  }
+}
+@layer components {
+  /* ============================================================
+     MODERN AURORA SEARCH SYSTEM (True Mobile-First)
+     ============================================================ */
+  
+  .aurora-search-container {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .aurora-search-input {
+    width: 100% !important;
+    /* Mobile-First: Padding lebih kecil untuk layar sempit */
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px) clamp(8px, 2vw, 12px) clamp(35px, 5vw, 45px) !important;
+    background-color: var(--site-panel) !important;
+    border: 2px solid #334155 !important;
+    border-radius: 9999px !important;
+    color: var(--site-text) !important;
+    outline: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-size: clamp(0.85rem, 2vw, 0.95rem) !important;
+    z-index: 1 !important;
+    box-sizing: border-box !important;
+  }
+
+  .aurora-search-input:focus {
+    border-color: var(--site-cyan) !important;
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15), 0 0 15px rgba(56, 189, 248, 0.2) !important;
+    transform: scale(1.005) !important;
+  }
+
+  .aurora-search-icon {
+    position: absolute !important;
+    left: clamp(10px, 3vw, 16px) !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #94a3b8 !important;
+    transition: all 0.3s ease !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
+  }
+
+  .aurora-search-input:focus + .aurora-search-icon {
+    color: var(--site-cyan) !important;
+  }
+
+  .aurora-search-btn {
+    position: absolute !important;
+    right: 4px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: var(--site-cyan) !important;
+    color: var(--site-bg) !important;
+    border: none !important;
+    padding: 6px !important;
+    border-radius: 9999px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    z-index: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .aurora-search-btn span {
+    display: none; /* Sembunyikan teks di mobile */
+    margin-left: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .aurora-search-btn:hover {
+    background: #7dd3fc !important;
+    transform: translateY(-50%) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3) !important;
+  }
+
+  /* Tablet & Desktop Adaptations */
+  @media (min-width: 640px) {
+    .aurora-search-input {
+      /* Beri ruang lebih di kanan untuk tombol teks */
+      padding-right: clamp(60px, 8vw, 80px) !important;
+    }
+
+    .aurora-search-btn {
+      right: 6px !important;
+      padding: 6px 16px !important;
+    }
+
+    .aurora-search-btn span {
+      display: inline !important; /* Tampilkan teks di layar lebar */
+    }
+  }
+}
+
+@layer components {
+  .aurora-search-container {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .aurora-search-input {
+    width: 100% !important;
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px) clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px) !important;
+    background-color: var(--site-panel) !important;
+    border: 2px solid #334155 !important;
+    border-radius: 9999px !important;
+    color: var(--site-text) !important;
+    outline: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-size: clamp(0.85rem, 2vw, 0.95rem) !important;
+    z-index: 1 !important;
+    box-sizing: border-box !important;
+  }
+
+  .aurora-search-input:focus {
+    border-color: var(--site-cyan) !important;
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15), 0 0 15px rgba(56, 189, 248, 0.2) !important;
+    transform: scale(1.005) !important;
+  }
+
+  .aurora-search-icon {
+    position: absolute !important;
+    left: clamp(10px, 3vw, 16px) !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #94a3b8 !important;
+    transition: all 0.3s ease !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
+  }
+
+  .aurora-search-input:focus + .aurora-search-icon {
+    color: var(--site-cyan) !important;
+  }
+
+  .aurora-search-btn {
+    display: none !important; /* Hidden on Mobile & Tablet */
+    position: absolute !important;
+    right: 4px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: var(--site-cyan) !important;
+    color: var(--site-bg) !important;
+    border: none !important;
+    padding: 6px !important;
+    border-radius: 9999px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    z-index: 2 !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .aurora-search-btn span {
+    display: none;
+    margin-left: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .aurora-search-btn:hover {
+    background: #7dd3fc !important;
+    transform: translateY(-50%) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3) !important;
+  }
+
+  @media (min-width: 1024px) {
+    .aurora-search-input {
+      padding-right: clamp(60px, 8vw, 80px) !important;
+    }
+
+    .aurora-search-btn {
+      display: flex !important; /* Show on Desktop only */
+      right: 6px !important;
+      padding: 6px 16px !important;
+    }
+
+    .aurora-search-btn span {
+      display: inline !important;
+    }
+  }
+}

@@ -7,12 +7,13 @@
           <span>DonghuaBatch</span>
         </a>
 
-        <form class="site-navbar-search site-search" action='{{ relURL "search" }}' method="get" role="search">
+        <form class="aurora-search-container" action='{{ relURL "search" }}' method="get" role="search">
           <label class="site-navbar-search-label" for="site-navbar-search-input">Cari Donghua</label>
-          <i class="fa-solid fa-magnifying-glass site-search-icon" aria-hidden="true"></i>
-          <input id="site-navbar-search-input" class="site-search-input" type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
-          <button type="submit" class="site-search-btn" aria-label="Cari donghua">
+          <input id="site-navbar-search-input" class="aurora-search-input" type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
+          <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
+          <button type="submit" class="aurora-search-btn" aria-label="Cari donghua">
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <span>Cari</span>
           </button>
         </form>
 
@@ -63,11 +64,12 @@
       </button>
     </div>
 
-    <form class="site-search site-search-mobile" action='{{ relURL "search" }}' method="get" role="search">
-      <i class="fa-solid fa-magnifying-glass site-search-icon" aria-hidden="true"></i>
-      <input class="site-search-input" type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
-      <button type="submit" class="site-search-btn" aria-label="Cari donghua">
+    <form class="aurora-search-container" action='{{ relURL "search" }}' method="get" role="search">
+      <input class="aurora-search-input" type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
+      <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
+      <button type="submit" class="aurora-search-btn" aria-label="Cari donghua">
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        <span>Cari</span>
       </button>
     </form>
 
