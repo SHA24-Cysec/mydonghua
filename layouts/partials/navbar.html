@@ -9,7 +9,7 @@
 
         <form class="aurora-search-container" action='{{ relURL "search" }}' method="get" role="search">
           <label class="site-navbar-search-label" for="site-navbar-search-input">Cari Donghua</label>
-          <input id="site-navbar-search-input" class="aurora-search-input" type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
+          <input id="site-navbar-search-input" class="aurora-search-input" type="search" name="q" placeholder="Cari donghua..." autocomplete="off">
           <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
           <button type="submit" class="aurora-search-btn" aria-label="Cari donghua">
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -65,7 +65,8 @@
     </div>
 
     <form class="aurora-search-container" action='{{ relURL "search" }}' method="get" role="search">
-      <input class="aurora-search-input" type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
+      <label class="site-navbar-search-label" for="site-navbar-search-input-mobile">Cari Donghua</label>
+      <input id="site-navbar-search-input-mobile" class="aurora-search-input" type="search" name="q" placeholder="Cari donghua..." autocomplete="off">
       <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
       <button type="submit" class="aurora-search-btn" aria-label="Cari donghua">
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>

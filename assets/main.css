@@ -731,10 +731,10 @@ body {
   transform: translateY(-50%) scale(1);
 }
 
-/* Modern Aurora Search System */
-
 /* ============================================================
-     MODERN AURORA SEARCH SYSTEM (True Mobile-First)
+     AURORA SEARCH SYSTEM — UNIFIED v2
+     DonghuaBatch - Mobile-first, konsisten di semua device
+     Lokasi: Navbar Desktop, Navbar Mobile, /search, Sidebar Taxonomy
      ============================================================ */
 
 .aurora-search-container {
@@ -743,292 +743,196 @@ body {
   align-items: center !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .aurora-search-input {
   width: 100% !important;
-  /* Mobile-First: Padding lebih kecil untuk layar sempit */
-  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px) clamp(8px, 2vw, 12px) clamp(35px, 5vw, 45px) !important;
   background-color: var(--site-panel) !important;
   border: 2px solid #334155 !important;
   border-radius: 9999px !important;
   color: var(--site-text) !important;
   outline: none !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  font-size: clamp(0.85rem, 2vw, 0.95rem) !important;
-  z-index: 1 !important;
+  font-family: inherit !important;
+  font-weight: 600 !important;
+  transition: all 0.22s cubic-bezier(0.4,0,0.2,1) !important;
   box-sizing: border-box !important;
+  /* Mobile-first */
+  min-height: 2.65rem !important;
+  padding: 0.62rem 3.1rem 0.62rem 2.55rem !important;
+  font-size: 0.88rem !important;
+}
+
+.aurora-search-input::-moz-placeholder {
+  color: #8ea2ba !important;
+  opacity: 1 !important;
+}
+
+.aurora-search-input::placeholder {
+  color: #8ea2ba !important;
+  opacity: 1 !important;
 }
 
 .aurora-search-input:focus {
   border-color: var(--site-cyan) !important;
-  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15), 0 0 15px rgba(56, 189, 248, 0.2) !important;
-  transform: scale(1.005) !important;
+  background-color: rgba(15, 23, 42, 0.94) !important;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.14), 0 0 16px rgba(34, 211, 238, 0.10) !important;
 }
 
 .aurora-search-icon {
   position: absolute !important;
-  left: clamp(10px, 3vw, 16px) !important;
+  left: 0.95rem !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
   color: #94a3b8 !important;
-  transition: all 0.3s ease !important;
   pointer-events: none !important;
   z-index: 2 !important;
-  font-size: clamp(0.9rem, 2vw, 1rem) !important;
+  font-size: 0.92rem !important;
+  transition: color 0.2s ease !important;
 }
 
-.aurora-search-input:focus + .aurora-search-icon {
+.aurora-search-container:focus-within .aurora-search-icon,
+  .aurora-search-input:focus + .aurora-search-icon {
   color: var(--site-cyan) !important;
 }
 
 .aurora-search-btn {
   position: absolute !important;
-  right: 4px !important;
+  right: 0.32rem !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  background: var(--site-cyan) !important;
-  color: var(--site-bg) !important;
-  border: none !important;
-  padding: 6px !important;
-  border-radius: 9999px !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  z-index: 2 !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  box-sizing: border-box !important;
+  gap: 0.4rem !important;
+  min-height: 2rem !important;
+  padding: 0.42rem 0.72rem !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  background: var(--site-gradient-primary) !important;
+  color: var(--site-ink-on-light) !important;
+  font-family: inherit !important;
+  font-weight: 900 !important;
+  font-size: 0.78rem !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  box-shadow: 0 6px 18px rgba(34, 211, 238, 0.18) !important;
+  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease !important;
+  z-index: 3 !important;
+  white-space: nowrap !important;
 }
+
+.aurora-search-btn i {
+  font-size: 0.82rem !important;
+}
+
+/* Mobile: icon-only */
 
 .aurora-search-btn span {
-  display: none;
-  /* Sembunyikan teks di mobile */
-  margin-left: 6px;
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-
-.aurora-search-btn:hover {
-  background: #7dd3fc !important;
-  transform: translateY(-50%) scale(1.05) !important;
-  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3) !important;
-}
-
-/* Tablet & Desktop Adaptations */
-
-@media (min-width: 640px) {
-  .aurora-search-input {
-    /* Beri ruang lebih di kanan untuk tombol teks */
-    padding-right: clamp(60px, 8vw, 80px) !important;
-  }
-
-  .aurora-search-btn {
-    right: 6px !important;
-    padding: 6px 16px !important;
-  }
-
-  .aurora-search-btn span {
-    display: inline !important;
-    /* Tampilkan teks di layar lebar */
-  }
-}
-
-/* ============================================================
-     MODERN AURORA SEARCH SYSTEM (True Mobile-First)
-     ============================================================ */
-
-.aurora-search-container {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.aurora-search-input {
-  width: 100% !important;
-  /* Mobile-First: Padding lebih kecil untuk layar sempit */
-  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px) clamp(8px, 2vw, 12px) clamp(35px, 5vw, 45px) !important;
-  background-color: var(--site-panel) !important;
-  border: 2px solid #334155 !important;
-  border-radius: 9999px !important;
-  color: var(--site-text) !important;
-  outline: none !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  font-size: clamp(0.85rem, 2vw, 0.95rem) !important;
-  z-index: 1 !important;
-  box-sizing: border-box !important;
-}
-
-.aurora-search-input:focus {
-  border-color: var(--site-cyan) !important;
-  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15), 0 0 15px rgba(56, 189, 248, 0.2) !important;
-  transform: scale(1.005) !important;
-}
-
-.aurora-search-icon {
-  position: absolute !important;
-  left: clamp(10px, 3vw, 16px) !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  color: #94a3b8 !important;
-  transition: all 0.3s ease !important;
-  pointer-events: none !important;
-  z-index: 2 !important;
-  font-size: clamp(0.9rem, 2vw, 1rem) !important;
-}
-
-.aurora-search-input:focus + .aurora-search-icon {
-  color: var(--site-cyan) !important;
-}
-
-.aurora-search-btn {
-  position: absolute !important;
-  right: 4px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  background: var(--site-cyan) !important;
-  color: var(--site-bg) !important;
-  border: none !important;
-  padding: 6px !important;
-  border-radius: 9999px !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  z-index: 2 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-sizing: border-box !important;
-}
-
-.aurora-search-btn span {
-  display: none;
-  /* Sembunyikan teks di mobile */
-  margin-left: 6px;
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-
-.aurora-search-btn:hover {
-  background: #7dd3fc !important;
-  transform: translateY(-50%) scale(1.05) !important;
-  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3) !important;
-}
-
-/* Tablet & Desktop Adaptations */
-
-@media (min-width: 640px) {
-  .aurora-search-input {
-    /* Beri ruang lebih di kanan untuk tombol teks */
-    padding-right: clamp(60px, 8vw, 80px) !important;
-  }
-
-  .aurora-search-btn {
-    right: 6px !important;
-    padding: 6px 16px !important;
-  }
-
-  .aurora-search-btn span {
-    display: inline !important;
-    /* Tampilkan teks di layar lebar */
-  }
-}
-
-.aurora-search-container {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.aurora-search-input {
-  width: 100% !important;
-  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px) clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px) !important;
-  background-color: var(--site-panel) !important;
-  border: 2px solid #334155 !important;
-  border-radius: 9999px !important;
-  color: var(--site-text) !important;
-  outline: none !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  font-size: clamp(0.85rem, 2vw, 0.95rem) !important;
-  z-index: 1 !important;
-  box-sizing: border-box !important;
-}
-
-.aurora-search-input:focus {
-  border-color: var(--site-cyan) !important;
-  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15), 0 0 15px rgba(56, 189, 248, 0.2) !important;
-  transform: scale(1.005) !important;
-}
-
-.aurora-search-icon {
-  position: absolute !important;
-  left: clamp(10px, 3vw, 16px) !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  color: #94a3b8 !important;
-  transition: all 0.3s ease !important;
-  pointer-events: none !important;
-  z-index: 2 !important;
-  font-size: clamp(0.9rem, 2vw, 1rem) !important;
-}
-
-.aurora-search-input:focus + .aurora-search-icon {
-  color: var(--site-cyan) !important;
-}
-
-.aurora-search-btn {
-  /* Hidden on Mobile & Tablet */
-  position: absolute !important;
-  right: 4px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  background: var(--site-cyan) !important;
-  color: var(--site-bg) !important;
-  border: none !important;
-  padding: 6px !important;
-  border-radius: 9999px !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  z-index: 2 !important;
   display: none !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-sizing: border-box !important;
-}
-
-.aurora-search-btn span {
-  display: none;
-  margin-left: 6px;
-  font-weight: 600;
-  font-size: 0.85rem;
 }
 
 .aurora-search-btn:hover {
-  background: #7dd3fc !important;
-  transform: translateY(-50%) scale(1.05) !important;
-  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3) !important;
+  transform: translateY(-50%) translateY(-1px) !important;
+  filter: brightness(1.04) !important;
+  box-shadow: 0 8px 22px rgba(34, 211, 238, 0.24) !important;
 }
+
+.aurora-search-btn:active {
+  transform: translateY(-50%) scale(0.97) !important;
+}
+
+.aurora-search-btn:focus-visible {
+  outline: var(--site-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* Tablet ≥640px: tampilkan teks "Cari" */
+
+@media (min-width: 640px) {
+  .aurora-search-input {
+    min-height: 2.75rem !important;
+    padding-right: 5.6rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  .aurora-search-btn {
+    padding: 0.5rem 0.95rem !important;
+  }
+
+  .aurora-search-btn span {
+    display: inline !important;
+  }
+}
+
+/* Desktop ≥1024px: sedikit lebih lega */
 
 @media (min-width: 1024px) {
   .aurora-search-input {
-    padding-right: clamp(60px, 8vw, 80px) !important;
+    min-height: 2.82rem !important;
+    padding-left: 2.7rem !important;
+  }
+
+  .aurora-search-icon {
+    left: 1.05rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Compact variant untuk sidebar / ruang sempit
+     Pakai: <div class="aurora-search-container aurora-search-compact"> */
+
+.aurora-search-container.aurora-search-compact .aurora-search-input {
+  min-height: 2.45rem !important;
+  padding: 0.55rem 2.6rem 0.55rem 2.3rem !important;
+  font-size: 0.82rem !important;
+}
+
+.aurora-search-container.aurora-search-compact .aurora-search-icon {
+  left: 0.82rem !important;
+  font-size: 0.82rem !important;
+}
+
+.aurora-search-container.aurora-search-compact .aurora-search-btn {
+  min-height: 1.78rem !important;
+  padding: 0.38rem 0.58rem !important;
+  right: 0.28rem !important;
+}
+
+.aurora-search-container.aurora-search-compact .aurora-search-btn span {
+  display: none !important;
+}
+
+/* Jika tidak ada button (fallback legacy), kurangi padding kanan */
+
+.aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-input {
+  padding-right: 1rem !important;
+}
+
+/* Very small screens <360px */
+
+@media (max-width: 359px) {
+  .aurora-search-input {
+    min-height: 2.5rem !important;
+    padding: 0.55rem 2.7rem 0.55rem 2.25rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  .aurora-search-icon {
+    left: 0.78rem !important;
+    font-size: 0.84rem !important;
   }
 
   .aurora-search-btn {
-    display: flex !important;
-    /* Show on Desktop only */
-    right: 6px !important;
-    padding: 6px 16px !important;
+    min-height: 1.85rem !important;
+    padding: 0.38rem 0.55rem !important;
   }
+}
 
-  .aurora-search-btn span {
-    display: inline !important;
+@media (prefers-reduced-motion: reduce) {
+  .aurora-search-input,
+    .aurora-search-icon,
+    .aurora-search-btn {
+    transition: none !important;
   }
 }
 
@@ -1597,11 +1501,6 @@ body {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-sm {
