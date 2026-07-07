@@ -278,10 +278,10 @@
 }
 
 /* ==========================================================
-   GLOBAL PAGINATION CSS (OUTSIDE @layer TO GUARANTEE 100% PRESERVATION)
-   MODEL 6: GLOW-WIRE HOLOGRAM STRIP PAGINATION
-   Electric Cyan-Blue • Uniform Mecha rounded-md (~6px)
-   ========================================================== */
+     GLOBAL PAGINATION CSS (OUTSIDE @layer TO GUARANTEE 100% PRESERVATION)
+     MODEL 6: GLOW-WIRE HOLOGRAM STRIP PAGINATION
+     Electric Cyan-Blue • Uniform Mecha rounded-md (~6px)
+     ========================================================== */
 .pagination,
 .pagination-default {
   display: flex !important;
@@ -294,7 +294,7 @@
   border-radius: 16px !important;
   width: 100% !important;
   max-width: max-content !important;
-  margin: 24px auto !important;
+  margin: 0.5rem auto 0 !important; /* Dikurangi dari 24px agar margin atas pagination rapat */
   justify-content: center !important;
   align-items: center !important;
   flex-wrap: wrap !important;
@@ -1485,7 +1485,7 @@
       body .pagination-dock {
         width: fit-content;
         max-width: 100%;
-        margin: 1.25rem auto 0;
+        margin: 0.5rem auto 0; /* Dikurangi dari 1.25rem agar lebih rapat ke container atas */
         padding: 0.5rem;
         border: 1px solid rgba(34, 211, 238, 0.18);
         border-radius: 1.15rem;
@@ -2796,7 +2796,7 @@
 
 .site-footer {
   position: relative;
-  margin-top: 2rem;
+  margin-top: 0.75rem;
   padding: 0 0 1.1rem;
   background:
     radial-gradient(ellipse at 20% 0%, rgba(34, 211, 238, 0.05), transparent 40%),
@@ -3069,6 +3069,7 @@
         order: 1;
         overflow: hidden;
         min-height: 15rem;
+        aspect-ratio: 2 / 3; /* Membuat aspek rasio 2:3 yang konsisten */
         border: 1px solid rgba(255,255,255,0.08);
         border-radius: 1.15rem;
         background: rgba(255,255,255,0.03);
@@ -3440,6 +3441,7 @@
         .home-rec-slider-media {
             order: 2;
             min-height: 100%;
+            aspect-ratio: 2 / 3; /* Memastikan aspek rasio 2:3 di desktop tetap terjaga sempurna */
         }
 
         .home-rec-slider-content {
@@ -3823,7 +3825,15 @@
   .site-nav-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.62rem;
+    gap: 0.35rem; /* Jauh lebih rapat dari sebelumnya 0.62rem */
+  }
+
+  /* Grid Adaptif untuk jumlah ganjil atau genap */
+  @media (min-width: 480px) {
+    .site-nav-grid {
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.35rem;
+    }
   }
 
   .site-nav-grid a,
@@ -3831,9 +3841,9 @@
   .site-nav-fav-btn {
     display: grid;
     place-items: center;
-    gap: 0.42rem;
-    min-height: 4.35rem;
-    padding: 0.8rem 0.72rem;
+    gap: 0.25rem; /* Jarak antara ikon dan teks lebih rapat */
+    min-height: 3.5rem; /* Lebih tipis dari sebelumnya 4.35rem */
+    padding: 0.5rem 0.5rem; /* Padding lebih sempit agar konten padat */
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1.14rem;
     background:
@@ -6968,6 +6978,14 @@ body .post-bookmark-btn.is-pulsing {
   aspect-ratio: 2 / 3;
 }
 
+.donghua-card-poster {
+  position: absolute;
+  inset: 2px;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: calc(1.22rem - 2px);
+}
+
 .site-random-poster img,
 .donghua-card-poster img,
 .fav-item-thumb img {
@@ -7074,7 +7092,7 @@ body .post-bookmark-btn.is-pulsing {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 0.75rem;
+  margin-top: 0.4rem; /* Dikurangi dari 0.75rem */
 }
 .home-section-divider-dot {
   flex: 0 0 auto;

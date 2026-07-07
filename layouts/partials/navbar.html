@@ -7,15 +7,7 @@
           <span>DonghuaBatch</span>
         </a>
 
-        <form class="aurora-search-container" action='{{ relURL "search" }}' method="get" role="search">
-          <label class="site-navbar-search-label" for="site-navbar-search-input">Cari Donghua</label>
-          <input id="site-navbar-search-input" class="aurora-search-input" type="search" name="q" placeholder="Cari donghua..." autocomplete="off">
-          <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
-          <button type="submit" class="aurora-search-btn" aria-label="Cari donghua">
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            <span>Cari</span>
-          </button>
-        </form>
+
 
         <div class="site-navbar-actions" aria-label="Aksi cepat">
           <button class="site-navbar-action site-nav-random-btn" type="button" data-random-open aria-haspopup="dialog" aria-controls="siteRandomModal">
@@ -64,15 +56,7 @@
       </button>
     </div>
 
-    <form class="aurora-search-container" action='{{ relURL "search" }}' method="get" role="search">
-      <label class="site-navbar-search-label" for="site-navbar-search-input-mobile">Cari Donghua</label>
-      <input id="site-navbar-search-input-mobile" class="aurora-search-input" type="search" name="q" placeholder="Cari donghua..." autocomplete="off">
-      <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
-      <button type="submit" class="aurora-search-btn" aria-label="Cari donghua">
-        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        <span>Cari</span>
-      </button>
-    </form>
+
 
     <div class="site-nav-grid">
       <a href="{{ .Site.BaseURL }}" data-nav-link><i class="fa-solid fa-house" aria-hidden="true"></i><span>Beranda</span></a>
@@ -88,6 +72,7 @@
         <span class="nav-fav-badge is-hidden" id="nav-fav-badge-mobile">0</span>
       </a>
       <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch" data-nav-link><i class="fa-solid fa-leaf" aria-hidden="true"></i><span>Support</span></a>
+      <a href='{{ relURL "search" }}' data-nav-link><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Cari</span></a>
       <a href='{{ relURL "kontak" }}' data-nav-link><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Kontak</span></a>
     </div>
   </div>
