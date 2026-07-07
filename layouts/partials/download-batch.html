@@ -1,51 +1,61 @@
-<section class="download-aurora-shell" aria-label="Download Batch Donghua">
-    <div class="download-aurora-head">
-        <span class="download-aurora-kicker"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Download Batch</span>
+<section class="db-shell" aria-label="Download Batch Donghua">
+    <div class="db-head">
+        <span class="db-kicker"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Download Batch</span>
         <strong>Pilih resolusi yang kamu inginkan</strong>
         <p>Semua link tersusun rapi, ringan, dan nyaman dipakai di mobile maupun desktop.</p>
     </div>
 
-    {{/*  Div Download Batch  */}}
-    <div class="download-aurora-groups">
-    {{ range .Params.downloadGroups }}
-        <article class="download-aurora-group">
-            <div class="download-aurora-hero">
-                <span class="download-aurora-hero-badge"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Batch Subtitle Indonesia</span>
-                <h3>{{ .title }}</h3>
+    <div class="db-groups">
+    {{ range $gi, $group := .Params.downloadGroups }}
+        <article class="db-group">
+            <div class="db-hero">
+                <span class="db-hero-badge"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Batch Subtitle Indonesia</span>
+                <h3>{{ $group.title }}</h3>
             </div>
 
-            <div class="download-aurora-list">
-            {{ range .downloads }}
-                {{ $isUnavailable := in .button "Belum" }}
-                <div class="download-aurora-card{{ if $isUnavailable }} is-unavailable{{ end }}">
-                    <div class="download-aurora-card-top">
-                        <span class="download-aurora-quality">{{ .quality }}</span>
-                        <span class="download-aurora-status">
-                            {{ if $isUnavailable }}
-                                <i class="fa-solid fa-clock" aria-hidden="true"></i> Pending
-                            {{ else }}
-                                <i class="fa-solid fa-check" aria-hidden="true"></i> Ready
-                            {{ end }}
-                        </span>
-                    </div>
+            <div class="db-seg" data-seg>
+            {{ range $i, $d := $group.downloads }}
+                {{ $isUnavailable := in $d.button "Belum" }}
+                <button type="button" class="db-pill{{ if eq $i 0 }} is-selected{{ end }}{{ if $isUnavailable }} is-locked{{ end }}" data-pill="{{ $i }}"{{ if $isUnavailable }} disabled aria-disabled="true"{{ else }} aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}"{{ end }}>
+                    {{ $d.quality }}
+                </button>
+            {{ end }}
+            </div>
 
-                    <div class="download-aurora-size">
-                        <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
-                        <span>{{ .size }}</span>
-                    </div>
+            <div class="db-details">
+            {{ range $i, $d := $group.downloads }}
+                {{ $isUnavailable := in $d.button "Belum" }}
+                <div class="db-detail{{ if eq $i 0 }} is-active{{ end }}{{ if $isUnavailable }} is-unavailable{{ end }}" data-detail="{{ $i }}">
+                    <div class="db-detail-card">
+                        <div class="db-detail-meta">
+                            <span class="db-quality">{{ $d.quality }}</span>
+                            <span class="db-status {{ if $isUnavailable }}pending{{ else }}ready{{ end }}">
+                                {{ if $isUnavailable }}
+                                    <i class="fa-solid fa-clock" aria-hidden="true"></i> Pending
+                                {{ else }}
+                                    <i class="fa-solid fa-check" aria-hidden="true"></i> Ready
+                                {{ end }}
+                            </span>
+                        </div>
 
-                    {{ if $isUnavailable }}
-                        <a class="download-aurora-button" href="#" aria-disabled="true" tabindex="-1">
-                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                            <span>{{ .button }}</span>
-                        </a>
-                    {{ else }}
-                        <a class="download-aurora-button" target="_blank" rel="nofollow noopener" href="{{ .link }}">
-                            <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
-                            <span>{{ .button }}</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square download-aurora-open" aria-hidden="true"></i>
-                        </a>
-                    {{ end }}
+                        <div class="db-size">
+                            <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
+                            <span>{{ $d.size }}</span>
+                        </div>
+
+                        {{ if $isUnavailable }}
+                            <span class="db-button is-locked" aria-disabled="true">
+                                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                                <span>{{ $d.button }}</span>
+                            </span>
+                        {{ else }}
+                            <a class="db-button" target="_blank" rel="nofollow noopener" href="{{ $d.link }}">
+                                <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
+                                <span>{{ $d.button }}</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square db-open" aria-hidden="true"></i>
+                            </a>
+                        {{ end }}
+                    </div>
                 </div>
             {{ end }}
             </div>
@@ -53,81 +63,39 @@
     {{ end }}
     </div>
 
-    {{/*  Button Report Download  */}}
-    <button title="Laporkan Link Download Mati" id="reportButton" class="download-aurora-report" type="button" data-report-trigger>
+    <button title="Laporkan Link Download Mati" id="reportButton" class="db-report" type="button" data-report-trigger>
         <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
         <span>Laporkan Link Mati</span>
     </button>
 </section>
 
 <style>
-    .download-aurora-shell,
-    .download-aurora-shell * {
-        box-sizing: border-box;
-    }
+    .db-shell,
+    .db-shell * { box-sizing: border-box; }
 
-    .download-aurora-shell {
+    .db-shell {
         position: relative;
-        isolation: isolate;
-        overflow: hidden;
         width: 100%;
         margin-top: 1.5rem;
-        padding: clamp(0.9rem, 2.8vw, 1.35rem);
-        border: 1px solid rgba(125, 211, 252, 0.24);
-        border-radius: 1.85rem;
+        padding: clamp(0.95rem, 3vw, 1.5rem);
+        border: 1px solid rgba(125, 211, 252, 0.20);
+        border-radius: 1.5rem;
         background:
-            radial-gradient(circle at 8% 0%, rgba(34, 211, 238, 0.20), transparent 32%),
-            radial-gradient(circle at 92% 18%, rgba(236, 72, 153, 0.15), transparent 34%),
-            linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(2, 6, 23, 0.88));
+            radial-gradient(circle at 8% 0%, rgba(34, 211, 238, 0.07), transparent 30%),
+            linear-gradient(135deg, rgba(15, 23, 42, 0.90), rgba(7, 10, 24, 0.94));
         box-shadow:
-            0 24px 70px rgba(0, 0, 0, 0.34),
-            0 0 34px rgba(34, 211, 238, 0.13),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
+            0 20px 50px rgba(0, 0, 0, 0.30),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
 
-    .download-aurora-shell::before {
-        content: "";
-        position: absolute;
-        inset: -45% -25%;
-        z-index: -2;
-        pointer-events: none;
-        background:
-            conic-gradient(from 180deg at 50% 50%,
-                rgba(34, 211, 238, 0.02),
-                rgba(34, 211, 238, 0.18),
-                rgba(139, 92, 246, 0.16),
-                rgba(236, 72, 153, 0.13),
-                rgba(34, 211, 238, 0.02));
-        filter: blur(24px);
-        opacity: 0.76;
-        animation: downloadAuroraFlow 13s ease-in-out infinite alternate;
-    }
-
-    .download-aurora-shell::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        pointer-events: none;
-        background:
-            linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
-        background-size: 32px 32px;
-        opacity: 0.26;
-        mask-image: linear-gradient(135deg, rgba(0,0,0,0.92), transparent 76%);
-    }
-
-    .download-aurora-head {
-        position: relative;
+    .db-head {
         display: grid;
-        gap: 0.38rem;
+        gap: 0.4rem;
         margin-bottom: 1rem;
         text-align: left;
     }
 
-    .download-aurora-kicker {
+    .db-kicker {
         display: inline-flex;
         align-items: center;
         gap: 0.45rem;
@@ -144,244 +112,204 @@
         text-transform: uppercase;
     }
 
-    .download-aurora-head > strong {
+    .db-head strong {
         display: block;
-        color: transparent;
-        background: linear-gradient(90deg, #e0f2fe, #67e8f9 42%, #c084fc 82%, #f0abfc);
-        -webkit-background-clip: text;
-        background-clip: text;
-        font-size: clamp(1.08rem, 2.8vw, 1.45rem);
-        font-weight: 950;
-        letter-spacing: -0.035em;
-        line-height: 1.16;
-        filter: drop-shadow(0 0 14px rgba(34, 211, 238, 0.15));
+        margin: 0;
+        color: #eaf2ff;
+        font-size: clamp(1.08rem, 2.8vw, 1.4rem);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
     }
 
-    .download-aurora-head p {
+    .db-head p {
         max-width: 42rem;
         margin: 0;
         color: #9fb1c9;
-        font-size: clamp(0.82rem, 2.3vw, 0.94rem);
+        font-size: clamp(0.82rem, 2.3vw, 0.9rem);
         line-height: 1.6;
     }
 
-    .download-aurora-groups {
+    .db-groups {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
         width: 100%;
     }
 
-    .download-aurora-group {
+    .db-group {
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.11);
-        border-radius: 1.45rem;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
-        box-shadow:
-            0 18px 46px rgba(0, 0, 0, 0.24),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
-    .download-aurora-hero {
-        position: relative;
-        overflow: hidden;
-        padding: clamp(1rem, 3vw, 1.25rem);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-        background:
-            radial-gradient(circle at 94% 0%, rgba(236, 72, 153, 0.22), transparent 42%),
-            linear-gradient(110deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.16), rgba(236, 72, 153, 0.12));
+    .db-hero {
+        padding: clamp(0.9rem, 3vw, 1.15rem);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(110deg, rgba(34, 211, 238, 0.12), rgba(139, 92, 246, 0.10), rgba(236, 72, 153, 0.08));
     }
 
-    .download-aurora-hero::before {
-        content: "";
-        position: absolute;
-        right: -2.5rem;
-        top: -3rem;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.16);
-        filter: blur(1px);
-    }
-
-    .download-aurora-hero-badge {
-        position: relative;
+    .db-hero-badge {
         display: inline-flex;
         align-items: center;
         gap: 0.45rem;
-        margin-bottom: 0.75rem;
-        padding: 0.38rem 0.62rem;
+        margin-bottom: 0.6rem;
+        padding: 0.35rem 0.6rem;
         border: 1px solid rgba(255, 255, 255, 0.13);
         border-radius: 999px;
         background: rgba(2, 6, 23, 0.32);
         color: #cffafe;
-        font-size: 0.72rem;
-        font-weight: 850;
+        font-size: 0.7rem;
+        font-weight: 800;
         line-height: 1;
     }
 
-    .download-aurora-hero h3 {
-        position: relative;
-        max-width: 42rem;
+    .db-hero h3 {
         margin: 0;
         color: #f8fbff;
-        font-size: clamp(1rem, 3.2vw, 1.28rem);
-        font-weight: 950;
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        font-weight: 900;
         letter-spacing: -0.02em;
-        line-height: 1.42;
-        text-wrap: balance;
+        line-height: 1.4;
     }
 
-    .download-aurora-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.78rem;
-        padding: 0.78rem;
+    /* Segmented pill selector (#3) — statis, tanpa glow hover */
+    .db-seg {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.9rem 1.15rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
 
-    .download-aurora-card {
-        --download-accent: #22d3ee;
-        position: relative;
-        display: grid;
-        gap: 0.78rem;
-        min-width: 0;
-        min-height: 8.2rem;
-        padding: 0.88rem;
-        border: 1px solid rgba(255, 255, 255, 0.095);
-        border-radius: 1.18rem;
-        background:
-            radial-gradient(circle at 86% 0%, rgba(34, 211, 238, 0.16), transparent 44%),
-            linear-gradient(150deg, rgba(2, 6, 23, 0.56), rgba(15, 23, 42, 0.62));
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
-        transition:
-            transform 0.22s ease,
-            border-color 0.22s ease,
-            background 0.22s ease,
-            box-shadow 0.22s ease;
-        animation: downloadCardIn 0.45s ease both;
+    .db-pill {
+        appearance: none;
+        cursor: pointer;
+        padding: 0.55rem 1rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.04);
+        color: #cbd5e1;
+        font: inherit;
+        font-weight: 800;
+        font-size: 0.85rem;
+        line-height: 1;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
     }
 
-    .download-aurora-card:nth-child(4n + 1) { --download-accent: #22d3ee; }
-    .download-aurora-card:nth-child(4n + 2) { --download-accent: #38bdf8; }
-    .download-aurora-card:nth-child(4n + 3) { --download-accent: #8b5cf6; }
-    .download-aurora-card:nth-child(4n + 4) { --download-accent: #ec4899; }
-
-    .download-aurora-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        pointer-events: none;
-        background: radial-gradient(circle at 82% 0%, color-mix(in srgb, var(--download-accent) 26%, transparent), transparent 44%);
-        opacity: 0.72;
+    .db-pill:hover:not(:disabled) {
+        border-color: rgba(34, 211, 238, 0.50);
+        color: #eaf2ff;
     }
 
-    .download-aurora-card > * {
-        position: relative;
-        z-index: 1;
+    .db-pill.is-selected {
+        background: linear-gradient(135deg, #22d3ee, #8b5cf6);
+        color: #06111f;
+        border-color: transparent;
     }
 
-    .download-aurora-card-top {
+    .db-pill.is-locked,
+    .db-pill:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .db-details {
+        padding: 0.9rem 1.15rem 1.1rem;
+    }
+
+    .db-detail { display: none; }
+    .db-detail.is-active { display: block; }
+
+    .db-detail-card {
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 1rem;
+        padding: 1rem;
+        background: rgba(15, 23, 42, 0.50);
+        transition: border-color 0.2s ease;
+    }
+
+    .db-detail-card:hover {
+        border-color: rgba(34, 211, 238, 0.50);
+    }
+
+    .db-detail.is-unavailable .db-detail-card {
+        border-color: rgba(148, 163, 184, 0.20);
+    }
+
+    .db-detail.is-unavailable .db-detail-card:hover {
+        border-color: rgba(251, 191, 36, 0.40);
+    }
+
+    .db-detail-meta {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 0.7rem;
+        gap: 0.75rem;
     }
 
-    .download-aurora-quality {
-        color: var(--download-accent);
-        font-size: clamp(1.05rem, 4vw, 1.28rem);
-        font-weight: 1000;
-        letter-spacing: 0.03em;
-        line-height: 1;
-        text-shadow: 0 0 16px color-mix(in srgb, var(--download-accent) 45%, transparent);
+    .db-quality {
+        font-weight: 900;
+        color: #eaf2ff;
+        font-size: 1rem;
     }
 
-    .download-aurora-status {
+    .db-status {
         display: inline-flex;
         align-items: center;
         gap: 0.35rem;
-        padding: 0.32rem 0.5rem;
-        border: 1px solid color-mix(in srgb, var(--download-accent) 24%, rgba(255,255,255,0.08));
-        border-radius: 999px;
-        background: color-mix(in srgb, var(--download-accent) 9%, rgba(2, 6, 23, 0.62));
-        color: #d9fbff;
-        font-size: 0.68rem;
-        font-weight: 850;
-        line-height: 1;
+        font-size: 0.8rem;
+        font-weight: 700;
     }
+    .db-status.ready { color: #34d399; }
+    .db-status.pending { color: #fbbf24; }
 
-    .download-aurora-size {
+    .db-size {
         display: inline-flex;
         align-items: center;
-        gap: 0.45rem;
-        color: #d9fbff;
-        font-size: 0.82rem;
-        font-weight: 850;
-        line-height: 1.25;
+        gap: 0.4rem;
+        margin-top: 0.5rem;
+        color: #9fb1c9;
+        font-size: 0.85rem;
     }
 
-    .download-aurora-size i {
-        color: #f0abfc;
-    }
-
-    .download-aurora-button {
+    .db-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 0.55rem;
+        gap: 0.5rem;
         width: 100%;
-        min-height: 2.82rem;
-        margin-top: auto;
-        padding: 0.72rem 0.82rem;
-        border: 1px solid rgba(255, 255, 255, 0.10);
-        border-radius: 0.95rem;
-        background:
-            linear-gradient(135deg, rgba(238, 247, 255, 0.98), rgba(207, 250, 254, 0.92));
+        min-height: 2.8rem;
+        margin-top: 0.9rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0.85rem;
+        background: linear-gradient(135deg, #eef7ff, #cffafe);
         color: #06111f;
-        box-shadow:
-            0 13px 25px rgba(0, 0, 0, 0.20),
-            0 0 20px color-mix(in srgb, var(--download-accent) 14%, transparent);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
         font-size: 0.9rem;
-        font-weight: 950;
+        font-weight: 900;
         line-height: 1;
         text-align: center;
         text-decoration: none;
-        transition:
-            transform 0.22s ease,
-            box-shadow 0.22s ease,
-            filter 0.22s ease;
+        transition: filter 0.2s ease;
     }
 
-    .download-aurora-open {
-        font-size: 0.72rem;
-        opacity: 0.72;
+    .db-open { font-size: 0.72rem; opacity: 0.72; }
+
+    .db-button:hover {
+        filter: brightness(1.03);
     }
 
-    .download-aurora-card.is-unavailable {
-        --download-accent: #64748b;
-        opacity: 0.72;
-    }
-
-    .download-aurora-card.is-unavailable .download-aurora-size {
-        display: none;
-    }
-
-    .download-aurora-card.is-unavailable .download-aurora-button {
+    .db-button.is-locked {
         cursor: not-allowed;
         color: #94a3b8;
-        background: rgba(15, 23, 42, 0.88);
+        background: rgba(15, 23, 42, 0.85);
         box-shadow: none;
-        pointer-events: none;
     }
 
-    .download-aurora-card.is-unavailable .download-aurora-status {
-        color: #cbd5e1;
-        border-color: rgba(148, 163, 184, 0.18);
-        background: rgba(148, 163, 184, 0.08);
-    }
-
-    .download-aurora-report {
+    .db-report {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -391,202 +319,82 @@
         min-width: min(15rem, 100%);
         min-height: 3rem;
         margin: 1rem auto 0;
-        padding: 0.82rem 1rem;
+        padding: 0.8rem 1.1rem;
         border: 1px solid rgba(244, 114, 182, 0.36);
         border-radius: 1rem;
         outline: none;
-        background:
-            radial-gradient(circle at 20% 0%, rgba(251, 113, 133, 0.28), transparent 48%),
-            linear-gradient(135deg, rgba(239, 68, 68, 0.88), rgba(219, 39, 119, 0.88), rgba(147, 51, 234, 0.88));
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.88), rgba(219, 39, 119, 0.88), rgba(147, 51, 234, 0.88));
         color: #ffffff;
-        box-shadow: 0 0 24px rgba(236, 72, 153, 0.26), inset 0 1px 0 rgba(255,255,255,0.18);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
         cursor: pointer;
         font: inherit;
-        font-size: 0.93rem;
-        font-weight: 950;
+        font-size: 0.9rem;
+        font-weight: 850;
         line-height: 1;
-        transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
-}
-
-    .download-aurora-report i {
-        animation: downloadWarningPulse 1.6s ease-in-out infinite;
+        transition: filter 0.2s ease;
     }
 
-    .download-aurora-report.is-highlighted {
-        box-shadow: 0 0 38px rgba(236, 72, 153, 0.42), inset 0 1px 0 rgba(255,255,255,0.18);
-        filter: brightness(1.08);
-        animation: downloadReportPulse 0.9s ease-in-out 2;
+    .db-report:hover {
+        filter: brightness(1.05);
     }
 
-    .download-aurora-report:disabled {
-        opacity: 0.72;
+    .db-report:disabled {
+        opacity: 0.7;
         cursor: wait;
         filter: none;
     }
 
-    .download-aurora-button:focus-visible,
-    .download-aurora-report:focus-visible {
-        outline: 3px solid rgba(255, 255, 255, 0.58);
-        outline-offset: 4px;
-    }
-
-    @media (hover: hover) {
-        .download-aurora-card:hover {
-            transform: translateY(-4px);
-            border-color: color-mix(in srgb, var(--download-accent) 42%, transparent);
-            background:
-                radial-gradient(circle at 86% 0%, color-mix(in srgb, var(--download-accent) 20%, transparent), transparent 44%),
-                linear-gradient(150deg, rgba(2, 6, 23, 0.48), rgba(15, 23, 42, 0.70));
-            box-shadow:
-                0 16px 30px rgba(0, 0, 0, 0.26),
-                0 0 24px color-mix(in srgb, var(--download-accent) 18%, transparent),
-                inset 0 1px 0 rgba(255, 255, 255, 0.10);
-        }
-
-        .download-aurora-button:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.06);
-            box-shadow:
-                0 16px 30px rgba(0, 0, 0, 0.26),
-                0 0 25px color-mix(in srgb, var(--download-accent) 24%, transparent);
-        }
-
-        .download-aurora-report:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.06);
-            box-shadow: 0 0 34px rgba(236, 72, 153, 0.36), inset 0 1px 0 rgba(255,255,255,0.18);
-        }
-    }
-
-    @media (min-width: 520px) {
-        .download-aurora-list {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .download-aurora-report {
-            width: fit-content;
-            min-width: 15rem;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1.25rem;
-            padding-right: 1.25rem;
-        }
-    }
-
-    @media (min-width: 980px) {
-        .download-aurora-groups {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-
-    @media (min-width: 1180px) {
-        .download-aurora-list {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+    .db-button:focus-visible,
+    .db-pill:focus-visible,
+    .db-report:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.55);
+        outline-offset: 3px;
     }
 
     @media (max-width: 520px) {
-        .download-aurora-shell {
-            width: calc(100% + 1.5rem);
-            margin-left: -0.75rem;
-            margin-right: -0.75rem;
-            padding: 0.75rem;
-            border-radius: 1.35rem;
-        }
-
-        .download-aurora-head {
-            text-align: center;
-            justify-items: center;
-            margin-bottom: 0.85rem;
-        }
-
-        .download-aurora-head p {
-            display: none;
-        }
-
-        .download-aurora-group {
-            border-radius: 1.18rem;
-        }
-
-        .download-aurora-hero {
-            padding: 0.95rem;
-        }
-
-        .download-aurora-hero-badge {
-            font-size: 0.68rem;
-        }
-
-        .download-aurora-list {
-            gap: 0.68rem;
-            padding: 0.68rem;
-        }
-
-        .download-aurora-card {
-            min-height: 7.6rem;
-            padding: 0.82rem;
-            border-radius: 1rem;
-        }
-
-        .download-aurora-button {
-            min-height: 2.9rem;
-        }
-    }
-
-    @keyframes downloadAuroraFlow {
-        0% {
-            transform: rotate(0deg) scale(1);
-        }
-        100% {
-            transform: rotate(10deg) scale(1.08);
-        }
-    }
-
-    @keyframes downloadCardIn {
-        from {
-            opacity: 0;
-            transform: translateY(8px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes downloadWarningPulse {
-        0%, 100% {
-            transform: translateY(0) scale(1);
-        }
-        50% {
-            transform: translateY(-1px) scale(1.08);
-        }
-    }
-
-    @keyframes downloadReportPulse {
-        0%, 100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.04);
-        }
+        .db-head { text-align: center; justify-items: center; }
+        .db-head p { display: none; }
+        .db-hero { padding: 0.95rem; }
+        .db-seg { padding: 0.8rem; }
+        .db-details { padding: 0.8rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .download-aurora-shell::before,
-        .download-aurora-card,
-        .download-aurora-report i {
-            animation: none !important;
-        }
-
-        .download-aurora-card,
-        .download-aurora-button,
-        .download-aurora-report {
-            transition: none !important;
-        }
+        .db-pill,
+        .db-detail-card,
+        .db-button,
+        .db-report { transition: none !important; }
     }
 </style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        /* ===== Segmented pill selector (#3) ===== */
+        document.querySelectorAll('[data-seg]').forEach(function (seg) {
+            var pills = seg.querySelectorAll('[data-pill]');
+            var group = seg.closest('.db-group');
+            var details = group ? group.querySelectorAll('[data-detail]') : [];
+
+            function select(idx) {
+                pills.forEach(function (p) {
+                    var on = p.getAttribute('data-pill') === String(idx);
+                    p.classList.toggle('is-selected', on);
+                    if (p.hasAttribute('aria-pressed')) p.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+                details.forEach(function (d) {
+                    d.classList.toggle('is-active', d.getAttribute('data-detail') === String(idx));
+                });
+            }
+
+            pills.forEach(function (p) {
+                p.addEventListener('click', function () {
+                    if (p.disabled) return;
+                    select(p.getAttribute('data-pill'));
+                });
+            });
+        });
+
+        /* ===== Report dead link (original logic, preserved) ===== */
         const reportButton = document.getElementById("reportButton");
         const reportJumpLinks = Array.from(document.querySelectorAll("[data-report-jump]"));
         if (!reportButton) return;

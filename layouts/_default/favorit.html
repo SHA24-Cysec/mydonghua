@@ -15,8 +15,9 @@
             </h1>
             <p class="text-sm text-slate-400">Donghua yang kamu simpan untuk akses cepat</p>
           </div>
-          <button class="cyber-button px-4 py-2 rounded-lg text-sm font-bold hidden" type="button" id="fav-clear-all" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3);color:#f87171;">
-            <i class="fa-solid fa-trash-can mr-1"></i> Hapus Semua
+          <button class="fav-clear-btn hidden" type="button" id="fav-clear-all">
+            <i class="fa-solid fa-trash-can fav-clear-icon" aria-hidden="true"></i>
+            <span>Hapus Semua</span>
           </button>
         </div>
 
@@ -74,6 +75,61 @@
 </div>
 
 <style>
+.fav-clear-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fda4af;
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 640px) {
+  .fav-clear-btn { width: auto; }
+}
+
+.fav-clear-btn .fav-clear-icon {
+  font-size: 0.92em;
+  line-height: 1;
+}
+
+.fav-clear-btn:hover {
+  color: #ffffff;
+  background: rgba(244, 63, 94, 0.16);
+  border-color: rgba(244, 63, 94, 0.45);
+  box-shadow: 0 0 18px rgba(244, 63, 94, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.fav-clear-btn:active {
+  transform: translateY(1px);
+}
+
+.fav-clear-btn:focus-visible {
+  outline: 2px solid rgba(244, 63, 94, 0.55);
+  outline-offset: 2px;
+}
+
+.fav-clear-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.fav-clear-btn.hidden {
+  display: none !important;
+}
+
 .fav-empty-state {
   display: flex;
   justify-content: center;

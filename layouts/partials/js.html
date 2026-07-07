@@ -64,54 +64,6 @@
         .replace(/[\u0300-\u036f]/g, "");
     }
 
-    function tokenizeForSearch(value) {
-      return normalizeForSearch(value)
-        .split(/[^a-z0-9]+/)
-        .filter(Boolean);
-    }
-
-    function getMaxDistance(keyword) {
-      if (keyword.length >= 8) return 2;
-      if (keyword.length >= 5) return 1;
-      return 0;
-    }
-
-    function isSubsequence(needle, haystack) {
-      let cursor = 0;
-      for (const char of haystack) {
-        if (char === needle[cursor]) cursor++;
-        if (cursor === needle.length) return true;
-      }
-      return false;
-    }
-
-    function levenshteinWithinLimit(a, b, limit) {
-      if (a === b) return 0;
-      if (Math.abs(a.length - b.length) > limit) return limit + 1;
-
-      let previous = Array.from({ length: b.length + 1 }, (_, i) => i);
-
-      for (let i = 1; i <= a.length; i++) {
-        const current = [i];
-        let rowMin = current[0];
-
-        for (let j = 1; j <= b.length; j++) {
-          const cost = a[i - 1] === b[j - 1] ? 0 : 1;
-          current[j] = Math.min(
-            previous[j] + 1,
-            current[j - 1] + 1,
-            previous[j - 1] + cost
-          );
-          rowMin = Math.min(rowMin, current[j]);
-        }
-
-        if (rowMin > limit) return limit + 1;
-        previous = current;
-      }
-
-      return previous[b.length];
-    }
-
     function mergeRanges(ranges) {
       if (!ranges.length) return [];
       const sorted = [...ranges].sort((a, b) => a[0] - b[0]);
@@ -170,74 +122,35 @@
       };
     }
 
-    const shortTitleStopwords = new Set([
-      "season", "special", "movie", "subtitle", "indonesia", "donghua",
-      "batch", "download", "the", "of", "a", "an", "part", "chapter"
-    ]);
-
-    function findTitleKeywordRanges(text, keyword, wordStartOnly = false) {
-      const { core, start } = getTitleSearchSource(text);
-      const normalizedText = core.toLowerCase();
-      const normalizedKeyword = keyword.toLowerCase();
+    // PREFIX / WORD-START matching: keyword harus ada di AWAL kata atau
+    // sama dengan kata utuh (case-insensitive). 'batt' -> "Battle",
+    // 'per' -> "Perfect"/"Person" TAPI TIDAK "Supernatural"/"Temple".
+    // Lebih longgar dari whole-word, tapi tetap bebas noise substring
+    // di tengah kata.
+    function findPrefixRanges(source, keyword, offset = 0) {
+      const hay = toText(source).toLowerCase();
+      const needle = keyword.toLowerCase();
       const ranges = [];
+      if (!hay || !needle) return ranges;
 
-      if (!normalizedText || !normalizedKeyword) return ranges;
-
-      if (wordStartOnly) {
-        const regex = /[a-z0-9]+/gi;
-        let match;
-        let firstSignificantWord = null;
-
-        while ((match = regex.exec(normalizedText)) !== null) {
-          const word = match[0].toLowerCase();
-          if (shortTitleStopwords.has(word)) continue;
-          firstSignificantWord = {
-            word,
-            index: match.index
-          };
-          break;
+      const wordRegex = /[a-z0-9]+/g;
+      let match;
+      while ((match = wordRegex.exec(hay)) !== null) {
+        if (match[0].startsWith(needle)) {
+          const idx = match.index;
+          ranges.push([offset + idx, offset + idx + needle.length - 1]);
         }
-
-        if (!firstSignificantWord) return ranges;
-        if (!firstSignificantWord.word.startsWith(normalizedKeyword)) return ranges;
-
-        ranges.push([
-          start + firstSignificantWord.index,
-          start + firstSignificantWord.index + normalizedKeyword.length - 1
-        ]);
-        return ranges;
       }
-
-      let startIndex = 0;
-      while (startIndex < normalizedText.length) {
-        const foundIndex = normalizedText.indexOf(normalizedKeyword, startIndex);
-        if (foundIndex === -1) break;
-
-        ranges.push([start + foundIndex, start + foundIndex + normalizedKeyword.length - 1]);
-        startIndex = foundIndex + normalizedKeyword.length;
-      }
-
       return ranges;
     }
 
+    function findTitleKeywordRanges(text, keyword) {
+      const { core, start } = getTitleSearchSource(text);
+      return findPrefixRanges(core, keyword, start);
+    }
+
     function findKeywordRanges(text, keyword) {
-      const source = toText(text);
-      const normalizedText = source.toLowerCase();
-      const normalizedKeyword = keyword.toLowerCase();
-      const ranges = [];
-
-      if (!normalizedText || !normalizedKeyword) return ranges;
-
-      let startIndex = 0;
-      while (startIndex < normalizedText.length) {
-        const foundIndex = normalizedText.indexOf(normalizedKeyword, startIndex);
-        if (foundIndex === -1) break;
-
-        ranges.push([foundIndex, foundIndex + normalizedKeyword.length - 1]);
-        startIndex = foundIndex + normalizedKeyword.length;
-      }
-
-      return ranges;
+      return findPrefixRanges(text, keyword, 0);
     }
 
     function highlightText(text, matches, key) {
@@ -296,38 +209,6 @@
       return 0;
     }
 
-    function scoreFuzzyFieldMatch(fieldKey, fieldText, keyword) {
-      const words = tokenizeForSearch(fieldText);
-      if (!words.length) return 0;
-
-      const maxDistance = getMaxDistance(keyword);
-      let bestScore = 0;
-
-      words.forEach(word => {
-        if (!word || word === keyword) return;
-
-        if (word.startsWith(keyword) || keyword.startsWith(word)) {
-          bestScore = Math.max(bestScore, fieldKey === "title" ? 92 : 48);
-          return;
-        }
-
-        if (maxDistance > 0) {
-          const distance = levenshteinWithinLimit(word, keyword, maxDistance);
-          if (distance <= maxDistance) {
-            const fuzzyBase = fieldKey === "title" ? 82 : 38;
-            bestScore = Math.max(bestScore, fuzzyBase - (distance * 8));
-            return;
-          }
-        }
-
-        if (keyword.length >= 4 && isSubsequence(keyword, word)) {
-          bestScore = Math.max(bestScore, fieldKey === "title" ? 56 : 26);
-        }
-      });
-
-      return bestScore;
-    }
-
     function searchItems(query) {
       const keywords = parseKeywords(query);
       if (!keywords.length) return [];
@@ -344,37 +225,26 @@
         };
         let score = 0;
 
+        // STRICT MODE (prefix / word-start): keyword harus ada di AWAL
+        // kata atau = kata utuh (case-insensitive). Tidak ada fuzzy /
+        // typo-tolerance, dan tidak ada substring di tengah kata.
+        // Semua bidang (title, studio, season, genre) diuji dengan aturan
+        // yang sama. Multi-kata = AND.
         const matchesAllKeywords = keywords.every(keyword => {
           let keywordMatched = false;
           let bestKeywordScore = 0;
-          const isShortKeyword = keyword.length <= 2;
 
           Object.entries(fields).forEach(([fieldKey, fieldText]) => {
             if (!fieldText) return;
 
-            if (isShortKeyword && fieldKey !== "title") {
-              return;
-            }
-
             const ranges = fieldKey === "title"
-              ? findTitleKeywordRanges(item.title, keyword, isShortKeyword)
+              ? findTitleKeywordRanges(item.title, keyword)
               : findKeywordRanges(fieldText, keyword);
 
             if (ranges.length) {
               keywordMatched = true;
               fieldRanges[fieldKey].push(...ranges);
               bestKeywordScore = Math.max(bestKeywordScore, scoreExactFieldMatch(fieldKey, fieldText, keyword));
-              return;
-            }
-
-            if (isShortKeyword) {
-              return;
-            }
-
-            const fuzzyScore = scoreFuzzyFieldMatch(fieldKey, fieldText, keyword);
-            if (fuzzyScore > 0) {
-              keywordMatched = true;
-              bestKeywordScore = Math.max(bestKeywordScore, fuzzyScore);
             }
           });
 
@@ -478,6 +348,14 @@
 
       const pagination = document.getElementById("search-pagination");
       if (pagination) pagination.style.display = "none";
+    }
+
+    // Tampilkan pesan petunjuk (mis. query terlalu pendek) lewat panel
+    // #search-summary yang sudah ada, agar konsisten dengan tema.
+    function showSearchHint(message) {
+      if (!searchSummary) return;
+      searchSummary.hidden = false;
+      searchSummary.innerHTML = message;
     }
 
     function renderResults() {
@@ -593,6 +471,14 @@
         return;
       }
 
+      // Sama seperti handler input: query < 3 huruf diblokir supaya
+      // tidak muncul noise saat dibuka lewat URL (?q=...).
+      if (query.trim().length < 3) {
+        clearSearchResults();
+        showSearchHint("Ketik minimal <strong>3 huruf</strong> untuk memulai pencarian.");
+        return;
+      }
+
       currentResults = searchItems(query);
 
       const perPage = getSearchPerPage();
@@ -607,7 +493,16 @@
 
         clearSearchResults();
 
-        if (query.length < 2) {
+        if (!query) {
+          updateURL("");
+          return;
+        }
+
+        // Mode Strict: query terlalu pendek (< 3 huruf) tidak dicari,
+        // supaya tidak memunculkan noise substring (mis. "pe" cocok di
+        // tengah kata seperti "Temple"/"Apex").
+        if (query.length < 3) {
+          showSearchHint("Ketik minimal <strong>3 huruf</strong> untuk memulai pencarian.");
           updateURL("");
           return;
         }
