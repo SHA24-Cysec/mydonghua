@@ -2,12 +2,14 @@
 <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-3 mb-3">
 <div class="panel-neon flex flex-col w-full h-full min-h-screen p-6">
     <h1 class="heading-neon text-2xl md:text-3xl text-center">{{ .Title }}</h1>
-    <span class="badge-neon mt-4 mx-auto"><i class="fa-solid fa-info-circle mr-2 text-cyan-400"></i>Cari genre dalam jumlah banyak pakai tanda koma</span>
+    <span class="badge-neon mt-4 mx-auto"><i class="fa-solid fa-info-circle mr-2 text-cyan-400"></i>Ketik minimal 3 huruf. Cari genre dalam jumlah banyak pakai tanda koma</span>
     <div class="w-full max-w-[900px] mx-auto mt-4">
         <div class="aurora-container mb-6">
             <input class="aurora-input" type="text" id="search-input" placeholder="Cari judul donghua favoritmu..."/>
             <i class="fa-solid fa-search aurora-icon text-lg"></i>
         </div>
+        <div id="search-summary" class="search-summary" hidden></div>
+
         {{/*  Elemen Postingan Pencarian  */}}
         <ul class="donghua-card-grid donghua-card-grid-wide h-full max-h-max" id="search-results"></ul>
 
@@ -30,8 +32,26 @@
             #search-pagination {
                 display: none;
             }
-            #search-empty-state[hidden] {
+            #search-empty-state[hidden],
+            #search-summary[hidden] {
                 display: none !important;
+            }
+            .search-summary {
+                margin: -0.1rem 0 1rem;
+                padding: 0.78rem 1rem;
+                border: 1px solid rgba(125, 211, 252, 0.18);
+                border-radius: 0.95rem;
+                background:
+                    radial-gradient(circle at 0% 0%, rgba(34, 211, 238, 0.08), transparent 24%),
+                    linear-gradient(135deg, rgba(14, 18, 40, 0.92), rgba(7, 10, 24, 0.96));
+                color: #cfe8ff;
+                font-size: 0.84rem;
+                line-height: 1.55;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+            }
+            .search-summary strong {
+                color: #eef7ff;
+                font-weight: 900;
             }
             .search-empty-state {
                 margin-top: 1rem;

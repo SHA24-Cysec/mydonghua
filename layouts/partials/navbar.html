@@ -13,6 +13,7 @@
         <a href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari</a>
         <a href='{{ relURL "favorit" }}' class="nav-fav-btn" aria-label="Daftar favorit" title="Favorit">
           <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+          <span class="nav-fav-label">Favorit</span>
           <span class="nav-fav-badge is-hidden" id="nav-fav-badge">0</span>
         </a>
         <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Support</a>
@@ -53,7 +54,6 @@
     <div class="site-nav-grid">
       <a href="{{ .Site.BaseURL }}" data-nav-link><i class="fa-solid fa-house" aria-hidden="true"></i><span>Beranda</span></a>
       <a href="/#genre" data-nav-link><i class="fa-solid fa-folder" aria-hidden="true"></i><span>Genre</span></a>
-      <a href='{{ relURL "search" }}' data-nav-link><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Cari</span></a>
       <a href="/#studio-season" data-nav-link><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Studio/Season</span></a>
       <a href='{{ relURL "favorit" }}' class="site-nav-fav-btn" data-nav-link>
         <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
@@ -89,13 +89,14 @@
     right: 0;
     z-index: 1000;
     width: 100%;
-    border-bottom: 1px solid rgba(34, 211, 238, 0.24);
+    border-bottom: 1px solid rgba(125, 211, 252, 0.18);
     background:
-      radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
-      linear-gradient(135deg, rgba(6, 8, 22, 0.94), rgba(2, 6, 23, 0.90));
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32), 0 0 26px rgba(34, 211, 238, 0.12);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+      radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.1), transparent 32%),
+      radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.08), transparent 28%),
+      linear-gradient(135deg, rgba(7, 10, 24, 0.96), rgba(10, 14, 32, 0.93));
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32), 0 0 18px rgba(34, 211, 238, 0.06);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
   }
 
   .site-navbar-inner {
@@ -142,14 +143,15 @@
     align-items: center;
     gap: 0.45rem;
     min-height: 2.42rem;
-    padding: 0.62rem 0.78rem;
-    border: 1px solid transparent;
+    padding: 0.64rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: 999px;
     color: #d8e9ff;
     font-size: 0.84rem;
     font-weight: 850;
     line-height: 1;
     text-decoration: none;
+    background: rgba(255,255,255,0.015);
     transition: transform 0.20s ease, background 0.20s ease, border-color 0.20s ease, color 0.20s ease, box-shadow 0.20s ease;
   }
 
@@ -164,14 +166,14 @@
     flex: 0 0 auto;
     width: 2.6rem;
     height: 2.6rem;
-    border: 1px solid rgba(34, 211, 238, 0.28);
+    border: 1px solid rgba(125, 211, 252, 0.18);
     border-radius: 0.95rem;
     outline: none;
-    background: rgba(34, 211, 238, 0.08);
+    background: rgba(255,255,255,0.03);
     color: #a5f3fc;
     cursor: pointer;
     font: inherit;
-    box-shadow: 0 0 18px rgba(34, 211, 238, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 8px 20px rgba(0,0,0,0.18);
     transition: transform 0.20s ease, filter 0.20s ease, background 0.20s ease;
   }
 
@@ -196,15 +198,15 @@
     width: 100%;
     max-height: min(86dvh, 42rem);
     overflow-y: auto;
-    padding: 0.82rem 0.82rem 1rem;
-    border: 1px solid rgba(125, 211, 252, 0.26);
+    padding: 0.88rem 0.88rem 1rem;
+    border: 1px solid rgba(125, 211, 252, 0.2);
     border-bottom: 0;
-    border-radius: 1.75rem 1.75rem 0 0;
+    border-radius: 1.85rem 1.85rem 0 0;
     background:
-      radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.18), transparent 34%),
-      radial-gradient(circle at 92% 12%, rgba(56, 189, 248, 0.15), transparent 36%),
-      linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
-    box-shadow: 0 -24px 70px rgba(0, 0, 0, 0.44), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.1), transparent 34%),
+      radial-gradient(circle at 92% 12%, rgba(139, 92, 246, 0.08), transparent 36%),
+      linear-gradient(135deg, rgba(14, 18, 40, 0.98), rgba(7, 10, 24, 0.99));
+    box-shadow: 0 -24px 64px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     transform: translateY(calc(100% + 1rem));
     opacity: 0;
     pointer-events: none;
@@ -288,13 +290,14 @@
     min-height: 2.6rem;
     padding: 0 1rem;
     border: 0;
-    border-radius: 0.72rem;
-    background: linear-gradient(135deg, #22d3ee, #38bdf8, #2563eb);
+    border-radius: 0.8rem;
+    background: linear-gradient(135deg, #22d3ee, #8b5cf6);
     color: #06111f;
     cursor: pointer;
     font: inherit;
     font-size: 0.76rem;
     font-weight: 950;
+    box-shadow: 0 10px 22px rgba(34,211,238,0.14);
     transition: all 0.2s ease;
   }
 
@@ -315,12 +318,12 @@
     place-items: center;
     gap: 0.42rem;
     min-height: 4.35rem;
-    padding: 0.72rem;
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    border-radius: 1.08rem;
+    padding: 0.8rem 0.72rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.14rem;
     background:
-      radial-gradient(circle at 82% 0%, rgba(34, 211, 238, 0.15), transparent 44%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025));
+      radial-gradient(circle at 82% 0%, rgba(34, 211, 238, 0.11), transparent 44%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
     color: #d9fbff;
     text-align: center;
     text-decoration: none;
@@ -332,6 +335,7 @@
     font: inherit;
     appearance: none;
     outline: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
   }
 
   .site-nav-fav-btn {
@@ -349,9 +353,10 @@
     place-items: center;
     width: 2.1rem;
     height: 2.1rem;
-    border-radius: 0.82rem;
-    background: rgba(34, 211, 238, 0.10);
+    border-radius: 0.86rem;
+    background: rgba(34, 211, 238, 0.08);
     color: #67e8f9;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   }
 
   .site-navbar-toggle:focus-visible,
@@ -366,10 +371,10 @@
 
   @media (hover: hover) {
     .site-navbar-menu a:hover {
-      border-color: rgba(34, 211, 238, 0.28);
-      background: rgba(34, 211, 238, 0.10);
+      border-color: rgba(125, 211, 252, 0.16);
+      background: rgba(255,255,255,0.04);
       color: #a5f3fc;
-      box-shadow: 0 0 16px rgba(34, 211, 238, 0.12);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
       transform: translateY(-1px);
     }
 
@@ -377,12 +382,12 @@
     .site-nav-close:hover,
     .site-nav-grid a:hover {
       transform: translateY(-2px);
-      filter: brightness(1.06);
+      filter: brightness(1.03);
     }
 
     .site-nav-grid a:hover {
-      border-color: rgba(34, 211, 238, 0.36);
-      box-shadow: 0 0 20px rgba(34, 211, 238, 0.14);
+      border-color: rgba(125, 211, 252, 0.16);
+      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.18);
     }
   }
 

@@ -12,21 +12,22 @@
    ============================ */
 body .donghua-card-bookmark {
   position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
+  top: 0.68rem;
+  right: 0.68rem;
   z-index: 5;
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(6, 8, 22, 0.75);
+  background: rgba(6, 8, 22, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: grid;
   place-items: center;
   cursor: pointer;
   color: #94a3b8;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
   transition:
     transform 0.2s ease,
     background 0.2s ease,
@@ -68,8 +69,8 @@ body .donghua-card-bookmark.is-saved svg {
 }
 
 body .donghua-card-bookmark svg {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 0.82rem;
+  height: 0.82rem;
   transition: transform 0.2s ease;
 }
 
@@ -79,21 +80,25 @@ body .donghua-card-bookmark svg {
    ============================ */
 body .post-bookmark-btn {
   position: relative;
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 0.9rem minmax(0, 1fr) 0.72rem;
   align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  width: 100%;
-  min-height: 2.75rem;
-  padding: 0.7rem 1.1rem;
-  border-radius: 0.85rem;
+  column-gap: 0.45rem;
+  width: 7.9rem;
+  max-width: 100%;
+  min-height: 2.55rem;
+  padding: 0.6rem 0.72rem;
+  border-radius: 0.82rem;
   border: 1px solid rgba(34, 211, 238, 0.55);
   background:
     linear-gradient(135deg, rgba(34, 211, 238, 0.95) 0%, rgba(56, 189, 248, 0.95) 45%, rgba(139, 92, 246, 0.95) 100%);
   color: #060816;
-  font-size: 0.88rem;
-  font-weight: 800;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.12;
   letter-spacing: 0.01em;
+  text-align: center;
+  box-sizing: border-box;
   cursor: pointer;
   overflow: hidden;
   isolation: isolate;
@@ -108,7 +113,7 @@ body .post-bookmark-btn {
   -webkit-tap-highlight-color: transparent;
   outline: none;
   appearance: none;
-  font: inherit;
+  font-family: inherit;
 }
 
 /* Shimmer sweep on hover */
@@ -164,10 +169,19 @@ body .post-bookmark-btn:focus-visible {
 
 /* ICON */
 body .post-bookmark-icon {
-  width: 1rem;
-  height: 1rem;
+  width: 0.95rem;
+  height: 0.95rem;
   flex-shrink: 0;
+  justify-self: start;
   transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body .post-bookmark-btn .fav-label {
+  display: block;
+  min-width: 0;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 body .post-bookmark-btn:hover .post-bookmark-icon {
@@ -199,9 +213,10 @@ body .post-bookmark-btn.is-saved .post-bookmark-icon {
 
 /* When saved, the trailing chevron rotates to show "saved" */
 body .post-bookmark-btn .fav-chevron {
-  margin-left: auto;
-  opacity: 0.7;
-  font-size: 0.78rem;
+  justify-self: end;
+  margin-left: 0;
+  opacity: 0.72;
+  font-size: 0.76rem;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
@@ -235,9 +250,10 @@ body .post-bookmark-btn.is-pulsing {
 /* ===== Small screens ===== */
 @media (max-width: 360px) {
   body .post-bookmark-btn {
-    font-size: 0.82rem;
-    padding: 0.65rem 0.9rem;
-    min-height: 2.5rem;
+    width: 7.6rem;
+    font-size: 0.78rem;
+    padding: 0.56rem 0.68rem;
+    min-height: 2.3rem;
   }
 }
 
@@ -260,25 +276,40 @@ body .post-bookmark-btn.is-pulsing {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 0.7rem;
-  border: 1px solid rgba(34, 211, 238, 0.2);
-  background: rgba(34, 211, 238, 0.05);
-  color: #67e8f9;
+  gap: 0.45rem;
+  min-height: 2.42rem;
+  padding: 0.64rem 0.92rem 0.64rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: linear-gradient(135deg, rgba(34,211,238,0.06), rgba(139,92,246,0.05));
+  color: #d8e9ff;
   cursor: pointer;
   transition: all 0.2s ease;
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  padding: 0;
   appearance: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.nav-fav-btn i {
+  color: #67e8f9;
+}
+
+.nav-fav-btn .nav-fav-label {
+  display: inline-block;
+  line-height: 1;
 }
 
 .nav-fav-btn:hover {
-  background: rgba(34, 211, 238, 0.12);
-  border-color: rgba(34, 211, 238, 0.35);
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(125, 211, 252, 0.16);
   color: #a5f3fc;
   transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.nav-fav-btn:hover i {
+  color: #a5f3fc;
 }
 
 .nav-fav-btn:focus-visible {
@@ -288,8 +319,8 @@ body .post-bookmark-btn.is-pulsing {
 
 .nav-fav-badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -0.28rem;
+  right: -0.22rem;
   min-width: 1.1rem;
   height: 1.1rem;
   padding: 0 0.3rem;
@@ -301,7 +332,7 @@ body .post-bookmark-btn.is-pulsing {
   display: grid;
   place-items: center;
   line-height: 1;
-  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.22);
   pointer-events: none;
 }
 

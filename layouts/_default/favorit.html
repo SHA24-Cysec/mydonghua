@@ -15,7 +15,7 @@
             </h1>
             <p class="text-sm text-slate-400">Donghua yang kamu simpan untuk akses cepat</p>
           </div>
-          <button class="cyber-button px-4 py-2 rounded-lg text-sm font-bold" type="button" id="fav-clear-all" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3);color:#f87171;">
+          <button class="cyber-button px-4 py-2 rounded-lg text-sm font-bold hidden" type="button" id="fav-clear-all" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3);color:#f87171;">
             <i class="fa-solid fa-trash-can mr-1"></i> Hapus Semua
           </button>
         </div>
@@ -27,15 +27,32 @@
 
         <ul id="fav-grid" class="donghua-card-grid donghua-card-grid-main" style="display:none;"></ul>
 
-        <div id="fav-empty" class="text-center py-12 hidden">
-          <div class="text-5xl mb-4 opacity-30">📚</div>
-          <div class="text-lg font-bold text-slate-300 mb-2">Belum Ada Favorit</div>
-          <div class="text-sm text-slate-500 max-w-md mx-auto">
-            Tap icon <i class="fa-solid fa-bookmark text-cyan-400"></i> di card donghua untuk menyimpan ke daftar favorit.
+        <div id="fav-empty" class="fav-empty-state hidden">
+          <div class="fav-empty-card">
+            <div class="fav-empty-layout">
+              <div class="fav-empty-icon" aria-hidden="true">
+                <i class="fa-regular fa-bookmark"></i>
+              </div>
+              <div class="fav-empty-copy">
+                <div class="fav-empty-kicker">Daftar Favorit</div>
+                <div class="fav-empty-title">Belum Ada Favorit</div>
+                <div class="fav-empty-text">
+                  Simpan donghua favoritmu untuk akses cepat. Tap ikon <i class="fa-solid fa-bookmark text-cyan-400"></i> di card donghua untuk menambahkannya ke daftar ini.
+                </div>
+                <div class="fav-empty-actions">
+                  <a href='{{ relURL "/" }}' class="fav-empty-cta">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Mulai Jelajah</span>
+                  </a>
+                  <a href='{{ relURL "/search" }}' class="fav-empty-ghost">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Lihat Pencarian</span>
+                  </a>
+                </div>
+                <div class="fav-empty-note">Komponen ini sengaja dibuat lebih ringkas dan lebih premium supaya halaman favorit kosong tetap terasa rapi, tidak bolong, dan tetap sesuai tema situs.</div>
+              </div>
+            </div>
           </div>
-          <a href='{{ relURL "/" }}' class="inline-block mt-6 cyber-button px-6 py-2.5 rounded-lg text-sm font-bold">
-            <i class="fa-solid fa-house mr-1"></i> Jelajahi Donghua
-          </a>
         </div>
       </div>
     </div>
@@ -57,6 +74,161 @@
 </div>
 
 <style>
+.fav-empty-state {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 0;
+}
+
+.fav-empty-state.hidden {
+  display: none;
+}
+
+.fav-empty-card {
+  width: 100%;
+  max-width: 44rem;
+  padding: 1.4rem;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  border-radius: 1.4rem;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.05), transparent 30%),
+    radial-gradient(circle at 88% 0%, rgba(168, 85, 247, 0.05), transparent 32%),
+    linear-gradient(135deg, rgba(14, 18, 40, 0.96), rgba(7, 10, 24, 0.98));
+  box-shadow:
+    0 20px 42px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 0 18px rgba(34, 211, 238, 0.05);
+}
+
+.fav-empty-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.fav-empty-copy {
+  text-align: center;
+}
+
+.fav-empty-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.72rem;
+  margin-bottom: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  background: rgba(255,255,255,0.025);
+  color: #ccefff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fav-empty-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  margin: 0 auto;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 1.15rem;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.13), rgba(168, 85, 247, 0.12));
+  color: #d8f7ff;
+  font-size: 1.45rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 0 18px rgba(34, 211, 238, 0.08);
+}
+
+.fav-empty-title {
+  margin-bottom: 0.45rem;
+  color: #eef7ff;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.fav-empty-text {
+  margin: 0 auto;
+  max-width: 29rem;
+  color: #94a3b8;
+  font-size: 0.86rem;
+  line-height: 1.68;
+}
+
+.fav-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.fav-empty-cta,
+.fav-empty-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.7rem;
+  padding: 0 1rem;
+  border-radius: 0.95rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.fav-empty-cta {
+  border: 1px solid rgba(34, 211, 238, 0.22);
+  background: linear-gradient(135deg, #22d3ee, #8b5cf6);
+  color: #08111f;
+  box-shadow: 0 10px 22px rgba(34, 211, 238, 0.14);
+}
+
+.fav-empty-ghost {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: #d8ecff;
+}
+
+.fav-empty-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  color: #7b89a6;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .fav-empty-state {
+    padding-top: 1.25rem;
+  }
+
+  .fav-empty-layout {
+    grid-template-columns: 5.25rem 1fr;
+    gap: 1.15rem;
+  }
+
+  .fav-empty-copy {
+    text-align: left;
+  }
+
+  .fav-empty-actions {
+    justify-content: flex-start;
+  }
+
+  .fav-empty-note {
+    text-align: left;
+  }
+
+  .fav-empty-title {
+    font-size: 1.2rem;
+  }
+}
+
 .fav-confirm-overlay {
   position: fixed;
   inset: 0;
@@ -145,6 +317,12 @@
     }
   }
 
+  function syncClearButton(visible) {
+    if (!clearBtn) return;
+    clearBtn.classList.toggle('hidden', !visible);
+    clearBtn.disabled = !visible;
+  }
+
   function renderCard(item) {
     var type = item.type || 'Donghua';
     var episode = item.episode || '-';
@@ -201,6 +379,7 @@
     updateBadge();
 
     if (!ids.length) {
+      syncClearButton(false);
       statusEl.style.display = 'none';
       grid.style.display = 'none';
       emptyEl.classList.remove('hidden');
@@ -220,16 +399,19 @@
         statusEl.style.display = 'none';
 
         if (!items.length) {
+          syncClearButton(false);
           grid.style.display = 'none';
           emptyEl.classList.remove('hidden');
           return;
         }
 
+        syncClearButton(true);
         grid.innerHTML = items.map(renderCard).join('');
         grid.style.display = 'grid';
         emptyEl.classList.add('hidden');
       })
       .catch(function(err) {
+        syncClearButton(false);
         console.error('[Fav] Error loading index.json', err);
         statusEl.innerHTML = '<div class="text-4xl mb-3 opacity-40"></div><div class="text-red-400 font-semibold">Gagal memuat data favorit</div>';
       });

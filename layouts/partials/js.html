@@ -3,6 +3,7 @@
     const searchInput = document.getElementById("search-input");
     const resultsList = document.getElementById("search-results");
     const emptyState = document.getElementById("search-empty-state");
+    const searchSummary = document.getElementById("search-summary");
     const resultsContainerAwal = document.getElementById("genre-results");
 
     let searchIndexData = [];
@@ -40,12 +41,14 @@
     }
 
     let currentPage = 1;
-    {{/*  Audit: grid search memakai .donghua-card-grid-wide yang bisa tampil
-          sampai 6 kolom di desktop lebar. Nilai lama 8 item/per halaman bikin
-          baris terakhir sering "bolong" (6 + 2). Diubah jadi 12 khusus untuk
-          hasil pencarian supaya desktop lebar terisi 2 baris penuh.  */}}
-    const perPage = 12;
     let currentResults = [];
+
+    function getSearchPerPage() {
+      if (window.matchMedia('(min-width: 1024px)').matches) return 15;
+      if (window.matchMedia('(min-width: 700px)').matches) return 12;
+      if (window.matchMedia('(min-width: 640px)').matches) return 12;
+      return 10;
+    }
 
     function toText(value) {
       if (Array.isArray(value)) {
@@ -128,6 +131,95 @@
       return merged;
     }
 
+    function escapeRegExp(value) {
+      return toText(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    function getTitleSearchSource(text) {
+      const source = toText(text);
+      let start = 0;
+      let end = source.length;
+
+      const prefixMatch = source.match(/^download\s+batch\s+/i);
+      if (prefixMatch) {
+        start = prefixMatch[0].length;
+      }
+
+      const suffixPatterns = [
+        /\s+subtitle\s+indonesia\s*$/i,
+        /\s+sub\s+indo(?:nesia)?\s*$/i
+      ];
+
+      let sliced = source.slice(start, end);
+      for (const pattern of suffixPatterns) {
+        const match = sliced.match(pattern);
+        if (match) {
+          end = start + sliced.length - match[0].length;
+          sliced = source.slice(start, end);
+          break;
+        }
+      }
+
+      const trimmed = sliced.trim();
+      const offset = trimmed ? sliced.indexOf(trimmed) : 0;
+
+      return {
+        source,
+        core: trimmed || sliced || source,
+        start: start + Math.max(offset, 0)
+      };
+    }
+
+    const shortTitleStopwords = new Set([
+      "season", "special", "movie", "subtitle", "indonesia", "donghua",
+      "batch", "download", "the", "of", "a", "an", "part", "chapter"
+    ]);
+
+    function findTitleKeywordRanges(text, keyword, wordStartOnly = false) {
+      const { core, start } = getTitleSearchSource(text);
+      const normalizedText = core.toLowerCase();
+      const normalizedKeyword = keyword.toLowerCase();
+      const ranges = [];
+
+      if (!normalizedText || !normalizedKeyword) return ranges;
+
+      if (wordStartOnly) {
+        const regex = /[a-z0-9]+/gi;
+        let match;
+        let firstSignificantWord = null;
+
+        while ((match = regex.exec(normalizedText)) !== null) {
+          const word = match[0].toLowerCase();
+          if (shortTitleStopwords.has(word)) continue;
+          firstSignificantWord = {
+            word,
+            index: match.index
+          };
+          break;
+        }
+
+        if (!firstSignificantWord) return ranges;
+        if (!firstSignificantWord.word.startsWith(normalizedKeyword)) return ranges;
+
+        ranges.push([
+          start + firstSignificantWord.index,
+          start + firstSignificantWord.index + normalizedKeyword.length - 1
+        ]);
+        return ranges;
+      }
+
+      let startIndex = 0;
+      while (startIndex < normalizedText.length) {
+        const foundIndex = normalizedText.indexOf(normalizedKeyword, startIndex);
+        if (foundIndex === -1) break;
+
+        ranges.push([start + foundIndex, start + foundIndex + normalizedKeyword.length - 1]);
+        startIndex = foundIndex + normalizedKeyword.length;
+      }
+
+      return ranges;
+    }
+
     function findKeywordRanges(text, keyword) {
       const source = toText(text);
       const normalizedText = source.toLowerCase();
@@ -175,7 +267,7 @@
 
     function getSearchableFields(item) {
       return {
-        title: toText(item.title),
+        title: getTitleSearchSource(item.title).core,
         studio: toText(item.studio),
         season: toText(item.season),
         genre: toText(item.genre)
@@ -255,15 +347,27 @@
         const matchesAllKeywords = keywords.every(keyword => {
           let keywordMatched = false;
           let bestKeywordScore = 0;
+          const isShortKeyword = keyword.length <= 2;
 
           Object.entries(fields).forEach(([fieldKey, fieldText]) => {
             if (!fieldText) return;
 
-            const ranges = findKeywordRanges(fieldText, keyword);
+            if (isShortKeyword && fieldKey !== "title") {
+              return;
+            }
+
+            const ranges = fieldKey === "title"
+              ? findTitleKeywordRanges(item.title, keyword, isShortKeyword)
+              : findKeywordRanges(fieldText, keyword);
+
             if (ranges.length) {
               keywordMatched = true;
               fieldRanges[fieldKey].push(...ranges);
               bestKeywordScore = Math.max(bestKeywordScore, scoreExactFieldMatch(fieldKey, fieldText, keyword));
+              return;
+            }
+
+            if (isShortKeyword) {
               return;
             }
 
@@ -341,9 +445,35 @@
       `;
     }
 
+    function updateSearchSummary(query) {
+      if (!searchSummary) return;
+
+      const trimmedQuery = toText(query).trim();
+      if (!trimmedQuery) {
+        searchSummary.hidden = true;
+        searchSummary.innerHTML = "";
+        return;
+      }
+
+      const total = currentResults.length;
+      const safeQuery = trimmedQuery
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
+      searchSummary.hidden = false;
+      searchSummary.innerHTML = `<strong>${total}</strong> donghua ditemukan untuk kata kunci <strong>“${safeQuery}”</strong>.`;
+    }
+
     function clearSearchResults() {
       if (resultsList) resultsList.innerHTML = "";
       if (emptyState) emptyState.hidden = true;
+      if (searchSummary) {
+        searchSummary.hidden = true;
+        searchSummary.innerHTML = "";
+      }
       currentResults = [];
 
       const pagination = document.getElementById("search-pagination");
@@ -353,6 +483,7 @@
     function renderResults() {
       if (!resultsList) return;
       resultsList.innerHTML = "";
+      updateSearchSummary(searchInput ? searchInput.value : "");
 
       if (!currentResults.length) {
         if (emptyState) emptyState.hidden = false;
@@ -362,6 +493,7 @@
 
       if (emptyState) emptyState.hidden = true;
 
+      const perPage = getSearchPerPage();
       const start = (currentPage - 1) * perPage;
       const end = start + perPage;
       const pageItems = currentResults.slice(start, end);
@@ -392,6 +524,7 @@
       const pageInfo = document.getElementById("page-info");
       const prevButton = document.getElementById("prev-page");
       const nextButton = document.getElementById("next-page");
+      const perPage = getSearchPerPage();
       const totalPages = Math.ceil(currentResults.length / perPage);
 
       if (!pagination || !pageInfo || !prevButton || !nextButton) return;
@@ -454,8 +587,15 @@
     }
 
     function triggerSearchFromURL(query, page) {
+      const keywords = parseKeywords(query);
+      if (!keywords.length) {
+        clearSearchResults();
+        return;
+      }
+
       currentResults = searchItems(query);
 
+      const perPage = getSearchPerPage();
       const totalPages = Math.max(1, Math.ceil(currentResults.length / perPage));
       currentPage = Math.min(Math.max(page, 1), totalPages);
       renderResults();
@@ -488,6 +628,7 @@
       });
 
       document.getElementById("next-page").addEventListener("click", () => {
+        const perPage = getSearchPerPage();
         const totalPages = Math.ceil(currentResults.length / perPage);
         if (currentPage < totalPages) {
           currentPage++;
@@ -503,6 +644,19 @@
         searchInput.value = q;
         await ensureSearchIndexReady();
         triggerSearchFromURL(q, page);
+      });
+
+      let resizeTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (!searchInput || !searchInput.value.trim() || !currentResults.length) return;
+          const perPage = getSearchPerPage();
+          const totalPages = Math.max(1, Math.ceil(currentResults.length / perPage));
+          currentPage = Math.min(currentPage, totalPages);
+          updateURL(searchInput.value.trim(), currentPage);
+          renderResults();
+        }, 120);
       });
     }
 </script>
