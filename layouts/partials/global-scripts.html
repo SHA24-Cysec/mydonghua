@@ -1,0 +1,16 @@
+{{/* Global component scripts — moved from inline scripts for maintainability. */}}
+<script defer src='{{ "js/site-navbar.js" | relURL }}'></script>
+<script defer src='{{ "js/site-random.js" | relURL }}'></script>
+<script defer src='{{ "js/site-download-report.js" | relURL }}'></script>
+<script defer src='{{ "js/site-share.js" | relURL }}'></script>
+<script defer src='{{ "js/site-back-to-top.js" | relURL }}'></script>
+<script defer src='{{ "js/site-search.js" | relURL }}'></script>
+<script defer src='{{ "js/site-genre-filter.js" | relURL }}'></script>
+<script defer src='{{ "js/site-favorites.js" | relURL }}'></script>
+<script defer src='{{ "js/site-home-slider.js" | relURL }}'></script>
+<script defer src='{{ "js/site-sidebar.js" | relURL }}'></script>
+<script defer src='{{ "js/site-disqus.js" | relURL }}'></script>
+<script defer src='{{ "js/site-image-loader.js" | relURL }}'></script>
+{{ if hugo.IsProduction }}
+<script defer src='{{ "js/site-social-bar.js" | relURL }}'></script>
+{{ end }}

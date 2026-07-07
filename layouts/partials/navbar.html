@@ -1,28 +1,49 @@
 <div class="site-nav-container" data-site-nav-container>
   <nav class="site-navbar" data-site-navbar>
     <div class="site-navbar-inner">
-      <a href="{{ .Site.BaseURL }}" class="site-navbar-brand" aria-label="DonghuaBatch Beranda">
-        <img class="site-navbar-logo" width="36" height="36" src="/img/favicon.webp" alt="Logo DonghuaBatch">
-        <span>DonghuaBatch</span>
-      </a>
+      <div class="site-navbar-top">
+        <a href="{{ .Site.BaseURL }}" class="site-navbar-brand" aria-label="DonghuaBatch Beranda">
+          <img class="site-navbar-logo" width="36" height="36" src="/img/favicon.webp" alt="Logo DonghuaBatch">
+          <span>DonghuaBatch</span>
+        </a>
 
-      <div class="site-navbar-menu" aria-label="Navigasi utama">
+        <form class="site-navbar-search" action='{{ relURL "search" }}' method="get" role="search">
+          <label class="site-navbar-search-label" for="site-navbar-search-input">Cari Donghua</label>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input id="site-navbar-search-input" type="search" name="q" placeholder="Cari donghua favoritmu..." autocomplete="off">
+          <button type="submit" aria-label="Cari donghua">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        <div class="site-navbar-actions" aria-label="Aksi cepat">
+          <button class="site-navbar-action site-nav-random-btn" type="button" data-random-open aria-haspopup="dialog" aria-controls="siteRandomModal">
+            <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+            <span>Acak</span>
+          </button>
+          <a href='{{ relURL "favorit" }}' class="site-navbar-action nav-fav-btn" aria-label="Daftar favorit" title="Favorit">
+            <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+            <span class="nav-fav-label">Favorit</span>
+            <span class="nav-fav-badge is-hidden" id="nav-fav-badge">0</span>
+          </a>
+          <a class="site-navbar-action site-navbar-support" rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch">
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+            <span>Support</span>
+          </a>
+        </div>
+
+        <button class="site-navbar-toggle" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNavSheet" aria-expanded="false" data-nav-open>
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="site-navbar-bottom" aria-label="Navigasi utama desktop">
         <a href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house" aria-hidden="true"></i> Beranda</a>
         <a href="/#genre"><i class="fa-solid fa-folder" aria-hidden="true"></i> Genre</a>
         <a href="/#studio-season"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Studio/Season</a>
         <a href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari</a>
-        <a href='{{ relURL "favorit" }}' class="nav-fav-btn" aria-label="Daftar favorit" title="Favorit">
-          <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
-          <span class="nav-fav-label">Favorit</span>
-          <span class="nav-fav-badge is-hidden" id="nav-fav-badge">0</span>
-        </a>
-        <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Support</a>
         <a href='{{ relURL "kontak" }}'><i class="fa-solid fa-phone" aria-hidden="true"></i> Kontak</a>
       </div>
-
-      <button class="site-navbar-toggle" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNavSheet" aria-expanded="false" data-nav-open>
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
     </div>
   </nav>
 
@@ -55,6 +76,10 @@
       <a href="{{ .Site.BaseURL }}" data-nav-link><i class="fa-solid fa-house" aria-hidden="true"></i><span>Beranda</span></a>
       <a href="/#genre" data-nav-link><i class="fa-solid fa-folder" aria-hidden="true"></i><span>Genre</span></a>
       <a href="/#studio-season" data-nav-link><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Studio/Season</span></a>
+      <button class="site-nav-random-card" type="button" data-random-open aria-haspopup="dialog" aria-controls="siteRandomModal">
+        <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+        <span>Acak</span>
+      </button>
       <a href='{{ relURL "favorit" }}' class="site-nav-fav-btn" data-nav-link>
         <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
         <span>Favorit</span>
@@ -64,434 +89,52 @@
       <a href='{{ relURL "kontak" }}' data-nav-link><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Kontak</span></a>
     </div>
   </div>
+
+  <div id="siteRandomModal" class="site-random-modal" aria-hidden="true" data-random-modal>
+    <div class="site-random-backdrop" data-random-close aria-hidden="true"></div>
+    <section class="site-random-dialog" role="dialog" aria-modal="true" aria-labelledby="siteRandomTitle" tabindex="-1" data-random-dialog>
+      <button class="site-random-close" type="button" data-random-close aria-label="Tutup preview donghua acak">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <div class="site-random-head">
+        <span class="site-random-kicker"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Donghua Acak</span>
+        <strong>Preview pilihan untuk kamu</strong>
+        <p>Klik acak lagi untuk mencari judul lain, atau buka detail donghua jika cocok.</p>
+      </div>
+
+      <div class="site-random-loading" data-random-loading>
+        <span class="site-random-spinner" aria-hidden="true"></span>
+        <span>Mengambil donghua acak...</span>
+      </div>
+
+      <div class="site-random-error" data-random-error hidden>
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        <strong>Gagal memuat donghua acak.</strong>
+        <span>Coba lagi sebentar lagi.</span>
+      </div>
+
+      <article class="site-random-result" data-random-result hidden>
+        <div class="site-random-poster">
+          <img data-random-image data-no-loader="true" src="/img/DonghuaBatch.webp" alt="Preview donghua acak" loading="lazy" decoding="async">
+        </div>
+        <div class="site-random-body">
+          <span class="site-random-type" data-random-type>Donghua</span>
+          <h2 id="siteRandomTitle" data-random-title>Donghua Acak</h2>
+          <div class="site-random-meta" data-random-meta></div>
+          <div class="site-random-genres" data-random-genres></div>
+          <div class="site-random-actions">
+            <button class="site-random-action secondary" type="button" data-random-reroll>
+              <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+              Acak Lagi
+            </button>
+            <a class="site-random-action primary" href="#" data-random-link>
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Buka Donghua
+            </a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
 </div>
-
-<style>
-  /* Add spacing to body so content doesn't hide under the fixed navbar */
-  body {
-    padding-top: 72px !important;
-  }
-
-  .site-nav-container,
-  .site-nav-container * {
-    box-sizing: border-box;
-  }
-
-  body.site-nav-lock {
-    overflow: hidden;
-    touch-action: none;
-  }
-
-  .site-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    width: 100%;
-    border-bottom: 1px solid rgba(125, 211, 252, 0.18);
-    background:
-      radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.1), transparent 32%),
-      radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.08), transparent 28%),
-      linear-gradient(135deg, rgba(7, 10, 24, 0.96), rgba(10, 14, 32, 0.93));
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32), 0 0 18px rgba(34, 211, 238, 0.06);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-  }
-
-  .site-navbar-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0.68rem 1rem;
-  }
-
-  .site-navbar-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    min-width: 0;
-    color: #c9f7ff;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    font-weight: 1000;
-    letter-spacing: -0.035em;
-    text-decoration: none;
-    text-shadow: 0 0 12px rgba(34, 211, 238, 0.18);
-  }
-
-  .site-navbar-logo {
-    flex: 0 0 auto;
-    width: 2.25rem;
-    height: 2.25rem;
-    border: 2px solid rgba(34, 211, 238, 0.48);
-    border-radius: 999px;
-    box-shadow: 0 0 18px rgba(34, 211, 238, 0.36);
-  }
-
-  .site-navbar-menu {
-    display: none;
-    align-items: center;
-    gap: 0.35rem;
-  }
-
-  .site-navbar-menu a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    min-height: 2.42rem;
-    padding: 0.64rem 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    border-radius: 999px;
-    color: #d8e9ff;
-    font-size: 0.84rem;
-    font-weight: 850;
-    line-height: 1;
-    text-decoration: none;
-    background: rgba(255,255,255,0.015);
-    transition: transform 0.20s ease, background 0.20s ease, border-color 0.20s ease, color 0.20s ease, box-shadow 0.20s ease;
-  }
-
-  .site-navbar-menu a i {
-    color: #67e8f9;
-  }
-
-  .site-navbar-toggle,
-  .site-nav-close {
-    display: inline-grid;
-    place-items: center;
-    flex: 0 0 auto;
-    width: 2.6rem;
-    height: 2.6rem;
-    border: 1px solid rgba(125, 211, 252, 0.18);
-    border-radius: 0.95rem;
-    outline: none;
-    background: rgba(255,255,255,0.03);
-    color: #a5f3fc;
-    cursor: pointer;
-    font: inherit;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 8px 20px rgba(0,0,0,0.18);
-    transition: transform 0.20s ease, filter 0.20s ease, background 0.20s ease;
-  }
-
-  .site-nav-backdrop {
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    pointer-events: none;
-    background: rgba(2, 6, 23, 0.78);
-    opacity: 0;
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    transition: opacity 0.24s ease;
-  }
-
-  .site-nav-sheet {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2001;
-    width: 100%;
-    max-height: min(86dvh, 42rem);
-    overflow-y: auto;
-    padding: 0.88rem 0.88rem 1rem;
-    border: 1px solid rgba(125, 211, 252, 0.2);
-    border-bottom: 0;
-    border-radius: 1.85rem 1.85rem 0 0;
-    background:
-      radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.1), transparent 34%),
-      radial-gradient(circle at 92% 12%, rgba(139, 92, 246, 0.08), transparent 36%),
-      linear-gradient(135deg, rgba(14, 18, 40, 0.98), rgba(7, 10, 24, 0.99));
-    box-shadow: 0 -24px 64px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    transform: translateY(calc(100% + 1rem));
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease;
-    will-change: transform, opacity;
-  }
-
-  /* Open State Triggered by Parent Container */
-  .site-nav-container.is-open .site-nav-backdrop {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .site-nav-container.is-open .site-nav-sheet {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .site-nav-handle {
-    width: 3.5rem;
-    height: 0.34rem;
-    margin: 0 auto 0.9rem;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #22d3ee, #38bdf8, #2563eb);
-    box-shadow: 0 0 16px rgba(34, 211, 238, 0.30);
-  }
-
-  .site-nav-sheet-head {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.9rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .site-nav-kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.42rem;
-    width: fit-content;
-    padding: 0.36rem 0.62rem;
-    border: 1px solid rgba(34, 211, 238, 0.25);
-    border-radius: 999px;
-    background: rgba(34, 211, 238, 0.09);
-    color: #a5f3fc;
-    font-size: 0.68rem;
-    font-weight: 950;
-    letter-spacing: 0.1em;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .site-nav-sheet-head strong {
-    display: block;
-    margin-top: 0.48rem;
-    color: #c9f7ff;
-    text-shadow: 0 0 12px rgba(34, 211, 238, 0.18);
-    font-size: 1.2rem;
-    font-weight: 1000;
-    letter-spacing: -0.035em;
-    line-height: 1.1;
-  }
-
-  .site-nav-sheet-head p {
-    margin: 0.32rem 0 0;
-    color: #9fb1c9;
-    font-size: 0.82rem;
-    line-height: 1.45;
-  }
-
-  .site-nav-search-aurora {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 0.78rem;
-    padding: 0 0.62rem;
-  }
-
-  .site-nav-search-btn {
-    min-height: 2.6rem;
-    padding: 0 1rem;
-    border: 0;
-    border-radius: 0.8rem;
-    background: linear-gradient(135deg, #22d3ee, #8b5cf6);
-    color: #06111f;
-    cursor: pointer;
-    font: inherit;
-    font-size: 0.76rem;
-    font-weight: 950;
-    box-shadow: 0 10px 22px rgba(34,211,238,0.14);
-    transition: all 0.2s ease;
-  }
-
-  .site-nav-search-btn:hover {
-    filter: brightness(1.1);
-    transform: translateY(-1px);
-  }
-
-  .site-nav-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.62rem;
-  }
-
-  .site-nav-grid a,
-  .site-nav-fav-btn {
-    display: grid;
-    place-items: center;
-    gap: 0.42rem;
-    min-height: 4.35rem;
-    padding: 0.8rem 0.72rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.14rem;
-    background:
-      radial-gradient(circle at 82% 0%, rgba(34, 211, 238, 0.11), transparent 44%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-    color: #d9fbff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 900;
-    transition: transform 0.20s ease, border-color 0.20s ease, box-shadow 0.20s ease, background 0.20s ease;
-    cursor: pointer;
-    position: relative;
-    font: inherit;
-    appearance: none;
-    outline: none;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
-  }
-
-  .site-nav-fav-btn {
-    width: 100%;
-  }
-
-  .site-nav-fav-btn .nav-fav-badge {
-    position: absolute;
-    top: 0.3rem;
-    right: 0.3rem;
-  }
-
-  .site-nav-grid a i {
-    display: grid;
-    place-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    border-radius: 0.86rem;
-    background: rgba(34, 211, 238, 0.08);
-    color: #67e8f9;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-  }
-
-  .site-navbar-toggle:focus-visible,
-  .site-nav-close:focus-visible,
-  .site-nav-search input:focus-visible,
-  .site-nav-search button:focus-visible,
-  .site-nav-grid a:focus-visible,
-  .site-navbar-menu a:focus-visible {
-    outline: 3px solid rgba(255, 255, 255, 0.56);
-    outline-offset: 3px;
-  }
-
-  @media (hover: hover) {
-    .site-navbar-menu a:hover {
-      border-color: rgba(125, 211, 252, 0.16);
-      background: rgba(255,255,255,0.04);
-      color: #a5f3fc;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
-      transform: translateY(-1px);
-    }
-
-    .site-navbar-toggle:hover,
-    .site-nav-close:hover,
-    .site-nav-grid a:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.03);
-    }
-
-    .site-nav-grid a:hover {
-      border-color: rgba(125, 211, 252, 0.16);
-      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.18);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .site-navbar-menu {
-      display: flex;
-    }
-
-    .site-navbar-toggle,
-    .site-nav-backdrop,
-    .site-nav-sheet {
-      display: none;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .site-navbar-inner {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
-  @media (max-width: 360px) {
-    .site-nav-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .site-navbar-menu a,
-    .site-navbar-toggle,
-    .site-nav-close,
-    .site-nav-backdrop,
-    .site-nav-sheet,
-    .site-nav-grid a {
-      transition: none !important;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('[data-site-nav-container]');
-    if (!container) return;
-
-    const toggleButton = container.querySelector('[data-nav-open]');
-    const toggleIcon = toggleButton ? toggleButton.querySelector('i') : null;
-    const desktopQuery = window.matchMedia('(min-width: 768px)');
-
-    function isOpen() {
-      return container.classList.contains('is-open');
-    }
-
-    function syncToggleButton(open) {
-      if (!toggleButton) return;
-      toggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggleButton.setAttribute('aria-label', open ? 'Tutup menu navigasi' : 'Buka menu navigasi');
-
-      if (toggleIcon) {
-        toggleIcon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-      }
-    }
-
-    function openNav() {
-      container.classList.add('is-open');
-      document.body.classList.add('site-nav-lock');
-      syncToggleButton(true);
-    }
-
-    function closeNav() {
-      container.classList.remove('is-open');
-      document.body.classList.remove('site-nav-lock');
-      syncToggleButton(false);
-    }
-
-    function toggleNav() {
-      isOpen() ? closeNav() : openNav();
-    }
-
-    if (toggleButton) {
-      toggleButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        toggleNav();
-      });
-    }
-
-    container.addEventListener('click', function (event) {
-      const isBackdrop = event.target.closest('[data-nav-close]');
-      const isNavLink = event.target.closest('[data-nav-link]');
-      
-      if (isBackdrop || isNavLink) {
-        closeNav();
-      }
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && isOpen()) closeNav();
-    });
-
-    desktopQuery.addEventListener('change', function (event) {
-      if (event.matches) closeNav();
-    });
-
-    window.addEventListener('beforeunload', closeNav);
-    syncToggleButton(false);
-  });
-</script>

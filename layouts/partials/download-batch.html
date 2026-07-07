@@ -1,466 +1,64 @@
 <section class="db-shell" aria-label="Download Batch Donghua">
     <div class="db-head">
         <span class="db-kicker"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Download Batch</span>
-        <strong>Pilih resolusi yang kamu inginkan</strong>
-        <p>Semua link tersusun rapi, ringan, dan nyaman dipakai di mobile maupun desktop.</p>
+        <strong>Pilih batch dan resolusi yang kamu inginkan</strong>
+        <p>Semua resolusi ditampilkan sebagai kartu rapi, ringan, dan nyaman dipakai di mobile maupun desktop.</p>
     </div>
 
     <div class="db-groups">
     {{ range $gi, $group := .Params.downloadGroups }}
         <article class="db-group">
             <div class="db-hero">
-                <span class="db-hero-badge"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Batch Subtitle Indonesia</span>
+                <div class="db-hero-top">
+                    <span class="db-hero-badge"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Batch Subtitle Indonesia</span>
+                    <span class="db-hero-count"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> {{ len $group.downloads }} Resolusi</span>
+                </div>
                 <h3>{{ $group.title }}</h3>
             </div>
 
-            <div class="db-seg" data-seg>
+            <div class="db-resolution-grid">
             {{ range $i, $d := $group.downloads }}
                 {{ $isUnavailable := in $d.button "Belum" }}
-                <button type="button" class="db-pill{{ if eq $i 0 }} is-selected{{ end }}{{ if $isUnavailable }} is-locked{{ end }}" data-pill="{{ $i }}"{{ if $isUnavailable }} disabled aria-disabled="true"{{ else }} aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}"{{ end }}>
-                    {{ $d.quality }}
-                </button>
-            {{ end }}
-            </div>
-
-            <div class="db-details">
-            {{ range $i, $d := $group.downloads }}
-                {{ $isUnavailable := in $d.button "Belum" }}
-                <div class="db-detail{{ if eq $i 0 }} is-active{{ end }}{{ if $isUnavailable }} is-unavailable{{ end }}" data-detail="{{ $i }}">
-                    <div class="db-detail-card">
-                        <div class="db-detail-meta">
-                            <span class="db-quality">{{ $d.quality }}</span>
-                            <span class="db-status {{ if $isUnavailable }}pending{{ else }}ready{{ end }}">
-                                {{ if $isUnavailable }}
-                                    <i class="fa-solid fa-clock" aria-hidden="true"></i> Pending
-                                {{ else }}
-                                    <i class="fa-solid fa-check" aria-hidden="true"></i> Ready
-                                {{ end }}
-                            </span>
-                        </div>
-
-                        <div class="db-size">
-                            <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
-                            <span>{{ $d.size }}</span>
-                        </div>
-
-                        {{ if $isUnavailable }}
-                            <span class="db-button is-locked" aria-disabled="true">
-                                <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                                <span>{{ $d.button }}</span>
-                            </span>
-                        {{ else }}
-                            <a class="db-button" target="_blank" rel="nofollow noopener" href="{{ $d.link }}">
-                                <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
-                                <span>{{ $d.button }}</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square db-open" aria-hidden="true"></i>
-                            </a>
-                        {{ end }}
+                <article class="db-res-card{{ if $isUnavailable }} is-unavailable{{ end }}">
+                    <div class="db-res-top">
+                        <span class="db-quality">{{ $d.quality }}</span>
+                        <span class="db-status {{ if $isUnavailable }}pending{{ else }}ready{{ end }}">
+                            {{ if $isUnavailable }}
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i> Pending
+                            {{ else }}
+                                <i class="fa-solid fa-check" aria-hidden="true"></i> Ready
+                            {{ end }}
+                        </span>
                     </div>
-                </div>
+
+                    <div class="db-size">
+                        <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
+                        <span>{{ $d.size }}</span>
+                    </div>
+
+                    <div class="db-card-line" aria-hidden="true"></div>
+
+                    {{ if $isUnavailable }}
+                        <span class="db-button is-locked" aria-disabled="true">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <span>{{ $d.button }}</span>
+                        </span>
+                    {{ else }}
+                        <a class="db-button" target="_blank" rel="nofollow noopener" href="{{ $d.link }}">
+                            <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
+                            <span>{{ $d.button }}</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square db-open" aria-hidden="true"></i>
+                        </a>
+                    {{ end }}
+                </article>
             {{ end }}
             </div>
         </article>
     {{ end }}
     </div>
 
-    <button title="Laporkan Link Download Mati" id="reportButton" class="db-report" type="button" data-report-trigger>
+    <button title="Laporkan Link Download Mati" id="reportButton" class="db-report" type="button" data-report-trigger data-report-endpoint="https://script.google.com/macros/s/AKfycbzUgz8gd9WRDuGmuPPs5WBHIgZ0L3T1tJLwdtL_RLQW7Rb5e7wu6mJZa9cP3w1mEKnbxw/exec">
         <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
         <span>Laporkan Link Mati</span>
     </button>
 </section>
-
-<style>
-    .db-shell,
-    .db-shell * { box-sizing: border-box; }
-
-    .db-shell {
-        position: relative;
-        width: 100%;
-        margin-top: 1.5rem;
-        padding: clamp(0.95rem, 3vw, 1.5rem);
-        border: 1px solid rgba(125, 211, 252, 0.20);
-        border-radius: 1.5rem;
-        background:
-            radial-gradient(circle at 8% 0%, rgba(34, 211, 238, 0.07), transparent 30%),
-            linear-gradient(135deg, rgba(15, 23, 42, 0.90), rgba(7, 10, 24, 0.94));
-        box-shadow:
-            0 20px 50px rgba(0, 0, 0, 0.30),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .db-head {
-        display: grid;
-        gap: 0.4rem;
-        margin-bottom: 1rem;
-        text-align: left;
-    }
-
-    .db-kicker {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        width: fit-content;
-        padding: 0.4rem 0.7rem;
-        border: 1px solid rgba(34, 211, 238, 0.26);
-        border-radius: 999px;
-        background: rgba(34, 211, 238, 0.09);
-        color: #a5f3fc;
-        font-size: 0.72rem;
-        font-weight: 900;
-        letter-spacing: 0.1em;
-        line-height: 1;
-        text-transform: uppercase;
-    }
-
-    .db-head strong {
-        display: block;
-        margin: 0;
-        color: #eaf2ff;
-        font-size: clamp(1.08rem, 2.8vw, 1.4rem);
-        font-weight: 900;
-        letter-spacing: -0.02em;
-        line-height: 1.2;
-    }
-
-    .db-head p {
-        max-width: 42rem;
-        margin: 0;
-        color: #9fb1c9;
-        font-size: clamp(0.82rem, 2.3vw, 0.9rem);
-        line-height: 1.6;
-    }
-
-    .db-groups {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .db-group {
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.10);
-        border-radius: 1.25rem;
-        background: rgba(255, 255, 255, 0.03);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    }
-
-    .db-hero {
-        padding: clamp(0.9rem, 3vw, 1.15rem);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        background: linear-gradient(110deg, rgba(34, 211, 238, 0.12), rgba(139, 92, 246, 0.10), rgba(236, 72, 153, 0.08));
-    }
-
-    .db-hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        margin-bottom: 0.6rem;
-        padding: 0.35rem 0.6rem;
-        border: 1px solid rgba(255, 255, 255, 0.13);
-        border-radius: 999px;
-        background: rgba(2, 6, 23, 0.32);
-        color: #cffafe;
-        font-size: 0.7rem;
-        font-weight: 800;
-        line-height: 1;
-    }
-
-    .db-hero h3 {
-        margin: 0;
-        color: #f8fbff;
-        font-size: clamp(1rem, 3vw, 1.2rem);
-        font-weight: 900;
-        letter-spacing: -0.02em;
-        line-height: 1.4;
-    }
-
-    /* Segmented pill selector (#3) — statis, tanpa glow hover */
-    .db-seg {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        padding: 0.9rem 1.15rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .db-pill {
-        appearance: none;
-        cursor: pointer;
-        padding: 0.55rem 1rem;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: rgba(255, 255, 255, 0.04);
-        color: #cbd5e1;
-        font: inherit;
-        font-weight: 800;
-        font-size: 0.85rem;
-        line-height: 1;
-        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
-    }
-
-    .db-pill:hover:not(:disabled) {
-        border-color: rgba(34, 211, 238, 0.50);
-        color: #eaf2ff;
-    }
-
-    .db-pill.is-selected {
-        background: linear-gradient(135deg, #22d3ee, #8b5cf6);
-        color: #06111f;
-        border-color: transparent;
-    }
-
-    .db-pill.is-locked,
-    .db-pill:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-
-    .db-details {
-        padding: 0.9rem 1.15rem 1.1rem;
-    }
-
-    .db-detail { display: none; }
-    .db-detail.is-active { display: block; }
-
-    .db-detail-card {
-        border: 1px solid rgba(255, 255, 255, 0.10);
-        border-radius: 1rem;
-        padding: 1rem;
-        background: rgba(15, 23, 42, 0.50);
-        transition: border-color 0.2s ease;
-    }
-
-    .db-detail-card:hover {
-        border-color: rgba(34, 211, 238, 0.50);
-    }
-
-    .db-detail.is-unavailable .db-detail-card {
-        border-color: rgba(148, 163, 184, 0.20);
-    }
-
-    .db-detail.is-unavailable .db-detail-card:hover {
-        border-color: rgba(251, 191, 36, 0.40);
-    }
-
-    .db-detail-meta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
-    }
-
-    .db-quality {
-        font-weight: 900;
-        color: #eaf2ff;
-        font-size: 1rem;
-    }
-
-    .db-status {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-size: 0.8rem;
-        font-weight: 700;
-    }
-    .db-status.ready { color: #34d399; }
-    .db-status.pending { color: #fbbf24; }
-
-    .db-size {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        margin-top: 0.5rem;
-        color: #9fb1c9;
-        font-size: 0.85rem;
-    }
-
-    .db-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        width: 100%;
-        min-height: 2.8rem;
-        margin-top: 0.9rem;
-        padding: 0.7rem 1rem;
-        border-radius: 0.85rem;
-        background: linear-gradient(135deg, #eef7ff, #cffafe);
-        color: #06111f;
-        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-        font-size: 0.9rem;
-        font-weight: 900;
-        line-height: 1;
-        text-align: center;
-        text-decoration: none;
-        transition: filter 0.2s ease;
-    }
-
-    .db-open { font-size: 0.72rem; opacity: 0.72; }
-
-    .db-button:hover {
-        filter: brightness(1.03);
-    }
-
-    .db-button.is-locked {
-        cursor: not-allowed;
-        color: #94a3b8;
-        background: rgba(15, 23, 42, 0.85);
-        box-shadow: none;
-    }
-
-    .db-report {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.6rem;
-        width: fit-content;
-        max-width: 100%;
-        min-width: min(15rem, 100%);
-        min-height: 3rem;
-        margin: 1rem auto 0;
-        padding: 0.8rem 1.1rem;
-        border: 1px solid rgba(244, 114, 182, 0.36);
-        border-radius: 1rem;
-        outline: none;
-        background: linear-gradient(135deg, rgba(239, 68, 68, 0.88), rgba(219, 39, 119, 0.88), rgba(147, 51, 234, 0.88));
-        color: #ffffff;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
-        cursor: pointer;
-        font: inherit;
-        font-size: 0.9rem;
-        font-weight: 850;
-        line-height: 1;
-        transition: filter 0.2s ease;
-    }
-
-    .db-report:hover {
-        filter: brightness(1.05);
-    }
-
-    .db-report:disabled {
-        opacity: 0.7;
-        cursor: wait;
-        filter: none;
-    }
-
-    .db-button:focus-visible,
-    .db-pill:focus-visible,
-    .db-report:focus-visible {
-        outline: 3px solid rgba(255, 255, 255, 0.55);
-        outline-offset: 3px;
-    }
-
-    @media (max-width: 520px) {
-        .db-head { text-align: center; justify-items: center; }
-        .db-head p { display: none; }
-        .db-hero { padding: 0.95rem; }
-        .db-seg { padding: 0.8rem; }
-        .db-details { padding: 0.8rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .db-pill,
-        .db-detail-card,
-        .db-button,
-        .db-report { transition: none !important; }
-    }
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        /* ===== Segmented pill selector (#3) ===== */
-        document.querySelectorAll('[data-seg]').forEach(function (seg) {
-            var pills = seg.querySelectorAll('[data-pill]');
-            var group = seg.closest('.db-group');
-            var details = group ? group.querySelectorAll('[data-detail]') : [];
-
-            function select(idx) {
-                pills.forEach(function (p) {
-                    var on = p.getAttribute('data-pill') === String(idx);
-                    p.classList.toggle('is-selected', on);
-                    if (p.hasAttribute('aria-pressed')) p.setAttribute('aria-pressed', on ? 'true' : 'false');
-                });
-                details.forEach(function (d) {
-                    d.classList.toggle('is-active', d.getAttribute('data-detail') === String(idx));
-                });
-            }
-
-            pills.forEach(function (p) {
-                p.addEventListener('click', function () {
-                    if (p.disabled) return;
-                    select(p.getAttribute('data-pill'));
-                });
-            });
-        });
-
-        /* ===== Report dead link (original logic, preserved) ===== */
-        const reportButton = document.getElementById("reportButton");
-        const reportJumpLinks = Array.from(document.querySelectorAll("[data-report-jump]"));
-        if (!reportButton) return;
-
-        let isSendingReport = false;
-        const scriptUrl = "https://script.google.com/macros/s/AKfycbzUgz8gd9WRDuGmuPPs5WBHIgZ0L3T1tJLwdtL_RLQW7Rb5e7wu6mJZa9cP3w1mEKnbxw/exec";
-
-        function setSendingState(sending) {
-            reportButton.disabled = sending;
-            reportButton.setAttribute("aria-busy", sending ? "true" : "false");
-        }
-
-        function highlightReportButton() {
-            reportButton.classList.remove("is-highlighted");
-            requestAnimationFrame(function () {
-                reportButton.classList.add("is-highlighted");
-                setTimeout(function () {
-                    reportButton.classList.remove("is-highlighted");
-                }, 1800);
-            });
-        }
-
-        function jumpToReportButton(event) {
-            if (event) event.preventDefault();
-
-            const topOffset = 110;
-            const rect = reportButton.getBoundingClientRect();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const targetTop = rect.top + scrollTop - topOffset;
-
-            window.scrollTo({
-                top: Math.max(targetTop, 0),
-                behavior: "smooth"
-            });
-
-            highlightReportButton();
-            setTimeout(function () {
-                reportButton.focus({ preventScroll: true });
-            }, 450);
-        }
-
-        function sendReport(event) {
-            if (event) event.preventDefault();
-            if (isSendingReport) return;
-
-            isSendingReport = true;
-            setSendingState(true);
-
-            const currentUrl = window.location.href;
-
-            fetch(scriptUrl + "?url=" + encodeURIComponent(currentUrl), {
-                method: "GET",
-                mode: "no-cors"
-            }).then(function () {
-                alert("✅ Laporan link berhasil dikirim untuk halaman ini.");
-            }).catch(function (error) {
-                alert("❌ Terjadi kesalahan saat mengirim laporan: " + error);
-            }).finally(function () {
-                isSendingReport = false;
-                setSendingState(false);
-            });
-        }
-
-        reportButton.addEventListener("click", sendReport);
-        reportJumpLinks.forEach(function (link) {
-            link.addEventListener("click", jumpToReportButton);
-        });
-    });
-</script>

@@ -13,45 +13,5 @@
             </button>
         </div>
     </div>
-    <div class="rounded-xl border border-cyan-500/30 bg-[#060816]/60 p-4 mt-6 hidden shadow-[0_0_15px_rgba(34,211,238,0.1)]" id="disqus_thread"></div>
+    <div class="rounded-xl border border-cyan-500/30 bg-[#060816]/60 p-4 mt-6 hidden shadow-[0_0_15px_rgba(34,211,238,0.1)]" id="disqus_thread" data-disqus-shortname="mydonghua"></div>
 </div>
-
-<script>
-    const bukaKomen = document.getElementById('buka-komen');
-    const tutupKomen = document.getElementById('tutup-komen');
-    const disqusContainer = document.getElementById('disqus_thread');
-
-    let disqusLoaded = false;
-
-    bukaKomen.addEventListener('click', () => {
-        bukaKomen.classList.add('hidden');
-
-        setTimeout(() => {
-            tutupKomen.classList.remove('hidden');
-            disqusContainer.classList.remove('hidden');
-
-            if (!disqusLoaded) {
-                disqusLoaded = true;
-            
-                var disqus_config = function () {
-                    this.page.url = window.location.href;
-                    this.page.identifier = window.location.pathname;
-                };                
-            
-                var d = document, s = d.createElement('script');
-                s.src = 'https://mydonghua.disqus.com/embed.js'; // Pastikan shortname benar
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            }            
-        }, 1000);
-    });
-
-    tutupKomen.addEventListener('click', () => {
-        tutupKomen.classList.add('hidden');
-        disqusContainer.classList.add('hidden'); // Sembunyikan saja, jangan dihapus
-        
-        setTimeout(() => {
-            bukaKomen.classList.remove('hidden');
-        }, 1000);
-    });    
-</script>
