@@ -7,7 +7,6 @@
 
     const toggleButton = container.querySelector('[data-nav-open]');
     const toggleIcon = toggleButton ? toggleButton.querySelector('i') : null;
-    const desktopQuery = window.matchMedia('(min-width: 1024px)');
 
     function isOpen() {
       return container.classList.contains('is-open');
@@ -57,10 +56,6 @@
 
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && isOpen()) closeNav();
-    });
-
-    desktopQuery.addEventListener('change', function (event) {
-      if (event.matches) closeNav();
     });
 
     window.addEventListener('beforeunload', closeNav);
