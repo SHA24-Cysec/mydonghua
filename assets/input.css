@@ -7675,3 +7675,909 @@ body .pagination-dock-status,
     line-height: 1.45 !important;
   }
 }
+
+/* ==========================================================
+   PHASE 7 — UNIFIED BALANCED SPACING SYSTEM
+   Scope: global layout rhythm, panel padding, grids, and stacks.
+   Mobile-first, responsive, consistent with neon theme.
+   ========================================================== */
+:root {
+  --site-space-xs: clamp(0.5rem, 1.2vw, 0.625rem);
+  --site-space-sm: clamp(0.65rem, 1.6vw, 0.8rem);
+  --site-space-md: clamp(0.85rem, 2vw, 1rem);
+  --site-space-lg: clamp(1rem, 2.6vw, 1.25rem);
+  --site-space-xl: clamp(1.25rem, 3vw, 1.5rem);
+  --site-page-gutter: clamp(0.75rem, 3.5vw, 1rem);
+  --site-section-gap: var(--site-space-md);
+  --site-content-gap: var(--site-space-lg);
+  --site-panel-padding: clamp(1rem, 3vw, 1.5rem);
+  --site-card-padding: clamp(0.85rem, 2.4vw, 1rem);
+  --site-grid-gap: clamp(0.65rem, 1.8vw, 0.9rem);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --site-section-gap: var(--site-space-lg);
+    --site-content-gap: var(--site-space-xl);
+    --site-grid-gap: clamp(0.85rem, 1.5vw, 1rem);
+  }
+}
+
+html {
+  scroll-padding-top: calc(4.75rem + var(--site-section-gap));
+}
+
+body > div[class*="max-w-screen-xl"] {
+  width: 100% !important;
+  margin-top: var(--site-section-gap) !important;
+  margin-right: auto !important;
+  margin-bottom: 0 !important;
+  margin-left: auto !important;
+  padding-right: var(--site-page-gutter) !important;
+  padding-left: var(--site-page-gutter) !important;
+}
+
+@media (min-width: 1024px) {
+  body > div[class*="max-w-screen-xl"] {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+.site-footer {
+  margin-top: var(--site-section-gap) !important;
+}
+
+main.flex,
+main[class*="flex"] {
+  gap: var(--site-section-gap) !important;
+}
+
+main.w-full {
+  display: grid !important;
+  gap: var(--site-section-gap) !important;
+}
+
+main.w-full > .panel-neon,
+main.w-full > [class*="panel-neon"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+aside > .h-full.flex.flex-col {
+  gap: var(--site-section-gap) !important;
+}
+
+main > .flex-1.min-w-0 > .w-full {
+  display: grid !important;
+  gap: var(--site-section-gap) !important;
+}
+
+main > .flex-1.min-w-0 > .w-full > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.panel-neon {
+  padding: var(--site-panel-padding) !important;
+}
+
+.panel-neon > :where(.badge-neon, h1, h2, h3, h4, p, hr, div, section, article, form, table, ul, ol) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.panel-neon > :where(.badge-neon, h1, h2, h3, h4, p, hr, div, section, article, form, table, ul, ol) + :where(.badge-neon, h1, h2, h3, h4, p, hr, div, section, article, form, table, ul, ol) {
+  margin-top: var(--site-content-gap) !important;
+}
+
+.panel-neon > :where(.flex.flex-col, .flex.flex-wrap.flex-col),
+.panel-neon > :where(.flex.flex-col, .flex.flex-wrap.flex-col) > :where(div, section, article, ul, nav) {
+  gap: var(--site-content-gap) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.panel-neon-inset {
+  padding: var(--site-card-padding) !important;
+}
+
+.alert-stack-shell,
+.db-shell,
+.share-premium-card,
+.ad-neon-shell,
+.genre-filter-shell,
+.taxonomy-tabs-widget,
+.fav-empty-card,
+.search-empty-state,
+.search-summary,
+.home-rec-slider,
+.site-home-hero {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.alert-stack-shell,
+.db-groups,
+.db-resolution-grid,
+.share-premium-inner,
+.share-premium-actions,
+.genre-filter-shell,
+.taxonomy-tabs-widget,
+.taxonomy-tabs-content,
+.taxonomy-list,
+.fav-empty-actions {
+  gap: var(--site-grid-gap) !important;
+}
+
+.alert-stack-shell,
+.db-shell,
+.site-home-hero,
+.home-rec-slider,
+.share-premium-card,
+.taxonomy-tabs-widget,
+.genre-filter-card,
+.ad-neon-shell {
+  padding: var(--site-panel-padding) !important;
+}
+
+.alert-stack-row,
+.db-group,
+.db-res-card,
+.share-premium-inner,
+.genre-sheet-option,
+.taxonomy-item,
+.fav-item,
+.search-summary,
+.search-empty-state {
+  padding: var(--site-card-padding) !important;
+}
+
+.donghua-card-grid {
+  --donghua-grid-gap: var(--site-grid-gap) !important;
+  gap: var(--site-grid-gap) !important;
+  padding: 0 !important;
+}
+
+.home-section-divider {
+  margin-top: var(--site-space-xs) !important;
+}
+
+#genre-pagination,
+#search-pagination,
+.pagination-dock,
+.season-nav-wrap {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 639px) {
+  .panel-neon,
+  .alert-stack-shell,
+  .db-shell,
+  .site-home-hero,
+  .home-rec-slider,
+  .share-premium-card,
+  .taxonomy-tabs-widget,
+  .genre-filter-card,
+  .ad-neon-shell {
+    border-radius: var(--site-radius-lg) !important;
+  }
+
+  .site-home-hero-actions,
+  .share-premium-actions,
+  .fav-empty-actions,
+  .db-resolution-grid {
+    gap: var(--site-space-sm) !important;
+  }
+}
+/* ==========================================================
+   PHASE 8 — MOONLIT POSTER FADE HERO
+   Selected design #17. Balanced dark overlay, left-bottom copy,
+   current content preserved, light animation only.
+   ========================================================== */
+.site-home-hero {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  display: grid !important;
+  align-items: end !important;
+  min-height: clamp(30rem, 44vw, 42rem) !important;
+  padding: clamp(1rem, 2.4vw, 1.55rem) !important;
+  border: 1px solid rgba(125, 211, 252, 0.20) !important;
+  border-radius: clamp(1.25rem, 2.8vw, 1.8rem) !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(34, 211, 238, 0.12), transparent 30%),
+    radial-gradient(circle at 88% 0%, rgba(139, 92, 246, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(5, 7, 19, 0.98), rgba(7, 10, 24, 0.98)) !important;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 0 34px rgba(34, 211, 238, 0.08) !important;
+}
+
+.site-home-hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  border-radius: inherit !important;
+  background:
+    radial-gradient(circle at 76% 18%, rgba(226, 232, 240, 0.12), transparent 23%),
+    radial-gradient(circle at 15% 84%, rgba(34, 211, 238, 0.10), transparent 30%),
+    linear-gradient(90deg, rgba(2, 6, 23, 0.86) 0%, rgba(2, 6, 23, 0.50) 43%, rgba(2, 6, 23, 0.20) 68%, rgba(2, 6, 23, 0.32) 100%),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.10) 0%, rgba(2, 6, 23, 0.30) 46%, rgba(2, 6, 23, 0.88) 100%) !important;
+}
+
+.site-home-hero::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: clamp(0.45rem, 1.4vw, 0.85rem) !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+  border-radius: clamp(1rem, 2.2vw, 1.45rem) !important;
+  border: 1px solid rgba(226, 232, 240, 0.10) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    inset 0 -90px 110px rgba(2,6,23,0.30) !important;
+}
+
+.site-home-hero-media {
+  position: absolute !important;
+  inset: clamp(0.45rem, 1.4vw, 0.85rem) !important;
+  z-index: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: clamp(1rem, 2.2vw, 1.45rem) !important;
+  background: #050713 !important;
+  box-shadow: none !important;
+}
+
+.site-home-hero-media::before,
+.site-home-hero-media::after {
+  content: none !important;
+}
+
+.site-home-hero-media img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: brightness(0.72) saturate(1.00) contrast(1.08) !important;
+  transform: scale(1.02) !important;
+  animation: siteHeroMoonlitZoom 22s ease-in-out infinite alternate !important;
+}
+
+.site-home-hero-card {
+  position: relative !important;
+  z-index: 4 !important;
+  width: min(100%, 42rem) !important;
+  margin: 0 !important;
+  padding: 0 0 0 clamp(0.85rem, 1.6vw, 1.15rem) !important;
+  border: 0 !important;
+  border-left: 2px solid rgba(34, 211, 238, 0.58) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.site-home-hero-card::before {
+  content: "" !important;
+  position: static !important;
+  display: block !important;
+  width: clamp(4.25rem, 9vw, 5.75rem) !important;
+  height: 2px !important;
+  margin: 0 0 clamp(0.8rem, 1.8vw, 1rem) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #e0f2fe, var(--site-cyan), var(--site-purple)) !important;
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.30) !important;
+}
+
+.site-home-hero-kicker {
+  padding: 0.42rem 0.72rem !important;
+  border-color: rgba(34, 211, 238, 0.22) !important;
+  background: rgba(34, 211, 238, 0.075) !important;
+  color: #dcfbff !important;
+  box-shadow: none !important;
+}
+
+.site-home-hero-card h1 {
+  margin-top: clamp(0.78rem, 1.7vw, 0.95rem) !important;
+  color: #ffffff !important;
+  font-size: clamp(2rem, 5vw, 3.65rem) !important;
+  line-height: 0.99 !important;
+  letter-spacing: -0.072em !important;
+  text-shadow: 0 4px 26px rgba(0, 0, 0, 0.70) !important;
+}
+
+.site-home-hero-card p {
+  margin-top: clamp(0.72rem, 1.5vw, 0.95rem) !important;
+  max-width: 58ch !important;
+  color: #d3deed !important;
+  font-size: clamp(0.92rem, 1.6vw, 1.02rem) !important;
+  line-height: 1.68 !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.56) !important;
+}
+
+.site-home-hero-tags {
+  gap: 0.55rem !important;
+  margin-top: clamp(0.9rem, 2vw, 1.1rem) !important;
+}
+
+.site-home-hero-tag {
+  min-height: 2rem !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+  color: #eef7ff !important;
+  box-shadow: none !important;
+}
+
+.site-home-hero-actions {
+  gap: 0.7rem !important;
+  margin-top: clamp(1rem, 2.2vw, 1.25rem) !important;
+}
+
+.site-home-hero-button {
+  min-height: 2.85rem !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: var(--site-radius-pill) !important;
+  font-weight: 950 !important;
+}
+
+.site-home-hero-button.primary {
+  position: relative !important;
+  overflow: hidden !important;
+  border-color: transparent !important;
+  background: linear-gradient(135deg, #e0f2fe, #bfdbfe 45%, #ddd6fe) !important;
+  color: #07111f !important;
+  box-shadow: 0 14px 28px rgba(191, 219, 254, 0.15) !important;
+}
+
+.site-home-hero-button.secondary {
+  border-color: rgba(255, 255, 255, 0.13) !important;
+  background: rgba(2, 6, 23, 0.55) !important;
+  color: #f5fbff !important;
+  box-shadow: none !important;
+}
+
+@media (hover: hover) {
+  .site-home-hero-button:hover {
+    transform: translateY(-2px) !important;
+  }
+
+  .site-home-hero-button.primary:hover {
+    filter: brightness(1.035) !important;
+    box-shadow: 0 16px 32px rgba(191, 219, 254, 0.20) !important;
+  }
+
+  .site-home-hero-button.secondary:hover {
+    border-color: rgba(125, 211, 252, 0.24) !important;
+    background: rgba(15, 23, 42, 0.68) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-home-hero-card {
+    width: min(42rem, 56%) !important;
+    margin: 0 0 clamp(0.45rem, 1.2vw, 0.85rem) clamp(0.25rem, 1vw, 0.65rem) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-home-hero {
+    min-height: clamp(32rem, 112vw, 38rem) !important;
+    padding: clamp(0.9rem, 4vw, 1.15rem) !important;
+  }
+
+  .site-home-hero::before {
+    background:
+      radial-gradient(circle at 72% 16%, rgba(226, 232, 240, 0.10), transparent 24%),
+      linear-gradient(180deg, rgba(2, 6, 23, 0.08) 0%, rgba(2, 6, 23, 0.36) 39%, rgba(2, 6, 23, 0.96) 100%) !important;
+  }
+
+  .site-home-hero-media img {
+    object-position: 58% center !important;
+    filter: brightness(0.70) saturate(1.00) contrast(1.08) !important;
+  }
+
+  .site-home-hero-card {
+    width: 100% !important;
+    padding-left: 0.85rem !important;
+  }
+
+  .site-home-hero-card h1 {
+    font-size: clamp(1.85rem, 9.2vw, 2.55rem) !important;
+    line-height: 1 !important;
+  }
+
+  .site-home-hero-actions {
+    gap: 0.65rem !important;
+  }
+
+  .site-home-hero-button {
+    width: 100% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-home-hero-media img {
+    animation: none !important;
+  }
+}
+
+@keyframes siteHeroMoonlitZoom {
+  from { transform: scale(1.02) translate3d(0, 0, 0); }
+  to { transform: scale(1.065) translate3d(-1%, 0.45%, 0); }
+}
+/* ==========================================================
+   PHASE 9 — UNIFIED NEON BUTTON COLOR SYSTEM
+   Advanced audit implementation. All major buttons/CTAs are
+   normalized to the current DonghuaBatch neon palette.
+   Roles: primary, secondary, danger, success, warning/locked.
+   ========================================================== */
+:root {
+  --btn-primary-bg: linear-gradient(135deg, var(--site-cyan) 0%, var(--site-sky) 36%, var(--site-purple) 74%, var(--site-pink) 100%);
+  --btn-primary-text: var(--site-ink-on-light);
+  --btn-primary-border: rgba(255, 255, 255, 0.12);
+  --btn-primary-shadow: 0 12px 28px rgba(34, 211, 238, 0.20), 0 0 22px rgba(139, 92, 246, 0.13);
+  --btn-primary-shadow-hover: 0 16px 34px rgba(34, 211, 238, 0.27), 0 0 28px rgba(139, 92, 246, 0.18);
+
+  --btn-secondary-bg: rgba(255, 255, 255, 0.055);
+  --btn-secondary-bg-hover: rgba(255, 255, 255, 0.085);
+  --btn-secondary-text: #eef7ff;
+  --btn-secondary-border: rgba(255, 255, 255, 0.09);
+  --btn-secondary-border-hover: rgba(34, 211, 238, 0.28);
+  --btn-secondary-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+  --btn-ghost-bg: rgba(34, 211, 238, 0.085);
+  --btn-ghost-bg-hover: rgba(34, 211, 238, 0.13);
+  --btn-ghost-text: #bff6ff;
+  --btn-ghost-border: rgba(34, 211, 238, 0.22);
+
+  --btn-danger-bg: linear-gradient(135deg, #ef4444 0%, #db2777 62%, #9333ea 100%);
+  --btn-danger-text: #ffffff;
+  --btn-danger-border: rgba(244, 114, 182, 0.26);
+  --btn-danger-shadow: 0 12px 28px rgba(239, 68, 68, 0.18), 0 0 20px rgba(219, 39, 119, 0.13);
+
+  --btn-success-bg: linear-gradient(135deg, var(--site-green) 0%, var(--site-cyan) 100%);
+  --btn-success-text: var(--site-ink-on-light);
+  --btn-success-border: rgba(110, 231, 183, 0.30);
+  --btn-success-shadow: 0 12px 26px rgba(52, 211, 153, 0.18), 0 0 18px rgba(34, 211, 238, 0.12);
+
+  --btn-warning-bg: linear-gradient(135deg, var(--site-amber) 0%, #f97316 100%);
+  --btn-warning-text: #1f1300;
+  --btn-disabled-bg: rgba(148, 163, 184, 0.09);
+  --btn-disabled-text: #8294aa;
+  --btn-radius: var(--site-radius-btn);
+  --btn-radius-pill: var(--site-radius-pill);
+  --btn-focus-ring: var(--site-focus-ring);
+}
+
+:is(
+  .site-home-hero-button,
+  .home-rec-slider-button,
+  .home-rec-slider-arrow,
+  .cyber-button,
+  .cyber-pill-nav,
+  .db-button,
+  .db-report,
+  .site-random-action,
+  .site-search-btn,
+  .aurora-search-btn,
+  .fav-empty-cta,
+  .fav-empty-ghost,
+  .fav-clear-btn,
+  #fav-cancel-btn,
+  #fav-confirm-yes-btn,
+  .pagination-aurora-button,
+  .pagination-aurora-page,
+  .pagination-dock-button,
+  .pagination-dock-status,
+  .notfound-dock-btn,
+  .alert-stack-link,
+  .share-premium-button,
+  .genre-sheet-trigger,
+  .genre-clear-button,
+  .genre-apply-button,
+  .taxonomy-tab-button,
+  .post-bookmark-btn,
+  .post-genre-link,
+  .donghua-card-cta,
+  .donghua-card-bookmark,
+  .site-navbar-action,
+  .site-navbar-toggle,
+  .site-nav-close,
+  .site-random-close,
+  .site-nav-grid a,
+  .site-nav-grid button,
+  .site-nav-fav-btn,
+  .btt-btn,
+  #buka-komen button,
+  #tutup-komen button
+) {
+  border-radius: var(--btn-radius) !important;
+  font-family: inherit !important;
+  transition: transform var(--site-transition-fast), filter var(--site-transition-fast), background var(--site-transition-fast), border-color var(--site-transition-fast), box-shadow var(--site-transition-fast), color var(--site-transition-fast) !important;
+}
+
+:is(
+  .site-home-hero-button.primary,
+  .home-rec-slider-button.primary,
+  .cyber-button,
+  .db-button:not(.is-locked),
+  .site-random-action.primary,
+  .site-search-btn,
+  .aurora-search-btn,
+  .fav-empty-cta,
+  .genre-apply-button,
+  .notfound-dock-btn.primary,
+  .pagination-aurora-page.is-active,
+  .pagination-dock-status,
+  .post-bookmark-btn,
+  .donghua-card-cta
+) {
+  border-color: var(--btn-primary-border) !important;
+  background: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-text) !important;
+  box-shadow: var(--btn-primary-shadow) !important;
+}
+
+:is(
+  .site-home-hero-button.secondary,
+  .home-rec-slider-button.secondary,
+  .home-rec-slider-arrow,
+  .cyber-pill-nav,
+  .db-button.is-locked,
+  .site-random-action.secondary,
+  .fav-empty-ghost,
+  #fav-cancel-btn,
+  .pagination-aurora-button,
+  .pagination-aurora-page:not(.is-active),
+  .pagination-dock-button,
+  .notfound-dock-btn.ghost,
+  .share-premium-button,
+  .genre-sheet-trigger,
+  .genre-clear-button,
+  .taxonomy-tab-button,
+  .aurora-search-btn[data-taxonomy-clear],
+  .post-genre-link,
+  .site-navbar-action,
+  .site-navbar-toggle,
+  .site-nav-close,
+  .site-random-close,
+  .site-nav-grid a,
+  .site-nav-grid button,
+  .site-nav-fav-btn,
+  #buka-komen button
+) {
+  border-color: var(--btn-secondary-border) !important;
+  background: var(--btn-secondary-bg) !important;
+  color: var(--btn-secondary-text) !important;
+  box-shadow: var(--btn-secondary-shadow) !important;
+}
+
+:is(
+  .alert-stack-link,
+  .taxonomy-tab-button.is-active,
+  .post-genre-link:hover,
+  .site-navbar-action.nav-fav-btn,
+  .site-nav-fav-btn
+) {
+  border-color: var(--btn-ghost-border) !important;
+  background: var(--btn-ghost-bg) !important;
+  color: var(--btn-ghost-text) !important;
+}
+
+:is(
+  .db-report,
+  .fav-clear-btn,
+  #fav-confirm-yes-btn,
+  .alert-stack-link--pink,
+  #tutup-komen button
+) {
+  border-color: var(--btn-danger-border) !important;
+  background: var(--btn-danger-bg) !important;
+  color: var(--btn-danger-text) !important;
+  box-shadow: var(--btn-danger-shadow) !important;
+}
+
+:is(
+  .post-bookmark-btn.is-saved,
+  .donghua-card-bookmark.is-saved
+) {
+  border-color: var(--btn-success-border) !important;
+  background: var(--btn-success-bg) !important;
+  color: var(--btn-success-text) !important;
+  box-shadow: var(--btn-success-shadow) !important;
+}
+
+:is(
+  .db-button.is-locked,
+  .pagination-aurora-button.is-disabled,
+  .pagination-dock-button:disabled,
+  .cyber-pill-nav:disabled,
+  .fav-clear-btn[disabled],
+  .db-report:disabled
+) {
+  border-color: rgba(148, 163, 184, 0.12) !important;
+  background: var(--btn-disabled-bg) !important;
+  color: var(--btn-disabled-text) !important;
+  box-shadow: none !important;
+  filter: saturate(0.72) !important;
+}
+
+.donghua-card-bookmark {
+  border-radius: 999px !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(2, 6, 23, 0.72) !important;
+  color: #d8e9ff !important;
+}
+
+.share-premium-button i,
+.share-premium-button span {
+  color: currentColor !important;
+}
+
+/* Brand share buttons are normalized to the neon system while keeping
+   subtle per-platform accents through border glow only. */
+.share-premium-button.share-wa { --share-accent: var(--site-green); }
+.share-premium-button.share-fb { --share-accent: var(--site-sky); }
+.share-premium-button.share-x { --share-accent: #e2e8f0; }
+.share-premium-button.share-tg { --share-accent: var(--site-cyan); }
+.share-premium-button.share-ig { --share-accent: var(--site-pink); }
+.share-premium-button.share-copy { --share-accent: var(--site-purple); }
+.share-premium-button {
+  border-color: color-mix(in srgb, var(--share-accent, var(--site-cyan)) 24%, rgba(255, 255, 255, 0.08)) !important;
+}
+
+.site-home-hero-button,
+.home-rec-slider-button,
+.db-button,
+.db-report,
+.site-random-action,
+.fav-empty-cta,
+.fav-empty-ghost,
+.notfound-dock-btn,
+.genre-clear-button,
+.genre-apply-button,
+#fav-cancel-btn,
+#fav-confirm-yes-btn,
+#buka-komen button,
+#tutup-komen button {
+  min-height: 44px !important;
+}
+
+@media (hover: hover) {
+  :is(
+    .site-home-hero-button.primary,
+    .home-rec-slider-button.primary,
+    .cyber-button,
+    .db-button:not(.is-locked),
+    .site-random-action.primary,
+    .site-search-btn,
+    .aurora-search-btn,
+    .fav-empty-cta,
+    .genre-apply-button,
+    .notfound-dock-btn.primary,
+    .pagination-aurora-page.is-active,
+    .post-bookmark-btn,
+    .donghua-card-cta
+  ):hover {
+    filter: brightness(1.045) !important;
+    box-shadow: var(--btn-primary-shadow-hover) !important;
+  }
+
+  :is(
+    .site-home-hero-button.secondary,
+    .home-rec-slider-button.secondary,
+    .home-rec-slider-arrow,
+    .cyber-pill-nav,
+    .site-random-action.secondary,
+    .fav-empty-ghost,
+    #fav-cancel-btn,
+    .pagination-aurora-button,
+    .pagination-aurora-page:not(.is-active),
+    .pagination-dock-button,
+    .notfound-dock-btn.ghost,
+    .share-premium-button,
+    .genre-sheet-trigger,
+    .genre-clear-button,
+    .taxonomy-tab-button,
+    .post-genre-link,
+    .site-navbar-action,
+    .site-navbar-toggle,
+    .site-nav-close,
+    .site-random-close,
+    .site-nav-grid a,
+    .site-nav-grid button,
+    .site-nav-fav-btn,
+    #buka-komen button
+  ):hover {
+    border-color: var(--btn-secondary-border-hover) !important;
+    background: var(--btn-secondary-bg-hover) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.12), var(--btn-secondary-shadow) !important;
+  }
+
+  :is(.db-report, .fav-clear-btn, #fav-confirm-yes-btn, .alert-stack-link--pink, #tutup-komen button):hover {
+    filter: brightness(1.04) !important;
+    box-shadow: 0 16px 32px rgba(239, 68, 68, 0.23), 0 0 24px rgba(219, 39, 119, 0.16) !important;
+  }
+}
+
+:is(
+  .site-home-hero-button,
+  .home-rec-slider-button,
+  .home-rec-slider-arrow,
+  .cyber-button,
+  .cyber-pill-nav,
+  .db-button,
+  .db-report,
+  .site-random-action,
+  .site-search-btn,
+  .aurora-search-btn,
+  .fav-empty-cta,
+  .fav-empty-ghost,
+  .fav-clear-btn,
+  #fav-cancel-btn,
+  #fav-confirm-yes-btn,
+  .pagination-aurora-button,
+  .pagination-aurora-page,
+  .pagination-dock-button,
+  .notfound-dock-btn,
+  .alert-stack-link,
+  .share-premium-button,
+  .genre-sheet-trigger,
+  .genre-clear-button,
+  .genre-apply-button,
+  .taxonomy-tab-button,
+  .post-bookmark-btn,
+  .post-genre-link,
+  .donghua-card-link,
+  .donghua-card-bookmark,
+  .site-navbar-action,
+  .site-navbar-toggle,
+  .site-nav-close,
+  .site-random-close,
+  .site-nav-grid a,
+  .site-nav-grid button,
+  .site-nav-fav-btn,
+  #buka-komen button,
+  #tutup-komen button
+):focus-visible {
+  outline: var(--btn-focus-ring) !important;
+  outline-offset: var(--site-focus-offset) !important;
+}
+
+@media (max-width: 639px) {
+  .site-home-hero-button,
+  .fav-empty-cta,
+  .fav-empty-ghost,
+  .genre-clear-button,
+  .genre-apply-button,
+  #fav-cancel-btn,
+  #fav-confirm-yes-btn {
+    width: 100% !important;
+  }
+}
+/* ==========================================================
+   PHASE 10 — HYBRID C BUTTON COLOR MODE
+   Final selected mode: hero #17 keeps ivory/elegant primary,
+   while other primary CTAs use calmer soft-neon/dark-elegant
+   colors. Secondary remains dark glass from Phase 9.
+   ========================================================== */
+:root {
+  --btn-hybrid-hero-bg: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 48%, #ddd6fe 100%);
+  --btn-hybrid-hero-text: #07111f;
+  --btn-hybrid-hero-border: rgba(255, 255, 255, 0.14);
+  --btn-hybrid-hero-shadow: 0 14px 28px rgba(191, 219, 254, 0.15), 0 0 18px rgba(34, 211, 238, 0.08);
+  --btn-hybrid-hero-shadow-hover: 0 16px 32px rgba(191, 219, 254, 0.21), 0 0 20px rgba(34, 211, 238, 0.11);
+
+  --btn-hybrid-primary-bg: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(56, 189, 248, 0.09) 38%, rgba(139, 92, 246, 0.12) 78%, rgba(236, 72, 153, 0.08));
+  --btn-hybrid-primary-text: #e8fbff;
+  --btn-hybrid-primary-border: rgba(34, 211, 238, 0.22);
+  --btn-hybrid-primary-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.052), 0 0 16px rgba(34, 211, 238, 0.08);
+  --btn-hybrid-primary-shadow-hover: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 0 21px rgba(34, 211, 238, 0.13);
+
+  --btn-hybrid-danger-bg: linear-gradient(135deg, rgba(239, 68, 68, 0.14), rgba(219, 39, 119, 0.11));
+  --btn-hybrid-danger-text: #fecdd3;
+  --btn-hybrid-danger-border: rgba(244, 114, 182, 0.24);
+  --btn-hybrid-danger-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045), 0 0 14px rgba(239, 68, 68, 0.08);
+
+  --btn-hybrid-success-bg: linear-gradient(135deg, rgba(52, 211, 153, 0.13), rgba(34, 211, 238, 0.09));
+  --btn-hybrid-success-text: #c8fff2;
+  --btn-hybrid-success-border: rgba(52, 211, 153, 0.22);
+  --btn-hybrid-success-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045), 0 0 14px rgba(52, 211, 153, 0.08);
+}
+
+/* Hero #17 primary is intentionally ivory/elegant to match the
+   Moonlit Poster Fade composition. */
+.site-home-hero-button.primary {
+  border-color: var(--btn-hybrid-hero-border) !important;
+  background: var(--btn-hybrid-hero-bg) !important;
+  color: var(--btn-hybrid-hero-text) !important;
+  box-shadow: var(--btn-hybrid-hero-shadow) !important;
+}
+
+/* All other primary CTAs become calmer soft-neon so the interface
+   stays consistent without overpowering the dark-elegant hero. */
+:is(
+  .home-rec-slider-button.primary,
+  .cyber-button,
+  .db-button:not(.is-locked),
+  .site-random-action.primary,
+  .site-search-btn,
+  .aurora-search-btn,
+  .fav-empty-cta,
+  .genre-apply-button,
+  .notfound-dock-btn.primary,
+  .pagination-aurora-page.is-active,
+  .pagination-dock-status,
+  .post-bookmark-btn,
+  .donghua-card-cta
+) {
+  border-color: var(--btn-hybrid-primary-border) !important;
+  background: var(--btn-hybrid-primary-bg) !important;
+  color: var(--btn-hybrid-primary-text) !important;
+  box-shadow: var(--btn-hybrid-primary-shadow) !important;
+}
+
+:is(
+  .db-report,
+  .fav-clear-btn,
+  #fav-confirm-yes-btn,
+  .alert-stack-link--pink,
+  #tutup-komen button
+) {
+  border-color: var(--btn-hybrid-danger-border) !important;
+  background: var(--btn-hybrid-danger-bg) !important;
+  color: var(--btn-hybrid-danger-text) !important;
+  box-shadow: var(--btn-hybrid-danger-shadow) !important;
+}
+
+:is(
+  .post-bookmark-btn.is-saved,
+  .donghua-card-bookmark.is-saved
+) {
+  border-color: var(--btn-hybrid-success-border) !important;
+  background: var(--btn-hybrid-success-bg) !important;
+  color: var(--btn-hybrid-success-text) !important;
+  box-shadow: var(--btn-hybrid-success-shadow) !important;
+}
+
+@media (hover: hover) {
+  .site-home-hero-button.primary:hover {
+    filter: brightness(1.04) !important;
+    box-shadow: var(--btn-hybrid-hero-shadow-hover) !important;
+  }
+
+  :is(
+    .home-rec-slider-button.primary,
+    .cyber-button,
+    .db-button:not(.is-locked),
+    .site-random-action.primary,
+    .site-search-btn,
+    .aurora-search-btn,
+    .fav-empty-cta,
+    .genre-apply-button,
+    .notfound-dock-btn.primary,
+    .pagination-aurora-page.is-active,
+    .post-bookmark-btn,
+    .donghua-card-cta
+  ):hover {
+    filter: brightness(1.055) !important;
+    box-shadow: var(--btn-hybrid-primary-shadow-hover) !important;
+  }
+
+  :is(.db-report, .fav-clear-btn, #fav-confirm-yes-btn, .alert-stack-link--pink, #tutup-komen button):hover {
+    filter: brightness(1.055) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 0 20px rgba(239,68,68,0.12) !important;
+  }
+}
