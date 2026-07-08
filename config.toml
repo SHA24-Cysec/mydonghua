@@ -28,5 +28,8 @@ preserveTaxonomyNames = true
     changeFreq = 'weekly'
     priority = 0.8
 
+[pagination]
+    disableAliases = true
+
 [outputs]
     home = ['HTML', 'rss', 'json']

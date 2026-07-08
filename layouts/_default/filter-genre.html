@@ -8,8 +8,8 @@
                 {{ end }}
             </div>
             <div class="panel-neon p-4 min-h-screen">
-                <div class="flex flex-wrap flex-col">
-                    <div class="p-2 md:p-4">
+                <div class="flex flex-col gap-4 w-full">
+                    <div class="p-2 md:p-4 w-full">
                         <div id="genre-alert" class="hidden text-center bg-red-900/80 border border-red-500/50 text-white p-4 rounded-xl gap-4 shadow-[0_0_15px_rgba(239,68,68,0.4)] font-semibold my-4">
                             <span>Tidak ada donghua yang cocok dengan genre yang dipilih 😢</span>
                         </div>
@@ -17,7 +17,7 @@
                         </ul>
                     </div>
                 {{/*  Pagination  */}}
-                <div id="genre-pagination" class="pagination-dock hidden py-4 mx-auto text-slate-200">
+                <div id="genre-pagination" class="pagination-dock hidden w-full py-2 md:py-4 mx-auto text-slate-200">
                   <button id="genre-prev" class="pagination-dock-button">
                     <i class="fa-solid fa-chevron-left"></i> Prev
                   </button>

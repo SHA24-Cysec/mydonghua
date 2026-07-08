@@ -758,7 +758,7 @@ body {
   box-sizing: border-box !important;
   /* Mobile-first */
   min-height: 2.65rem !important;
-  padding: 0.62rem 3.1rem 0.62rem 2.55rem !important;
+  padding: 0.62rem 3.35rem 0.62rem 2.55rem !important;
   font-size: 0.88rem !important;
 }
 
@@ -1026,6 +1026,10 @@ body {
   display: flex;
 }
 
+.inline-flex {
+  display: inline-flex;
+}
+
 .table {
   display: table;
 }
@@ -1055,6 +1059,10 @@ body {
   max-height: max-content;
 }
 
+.min-h-\[2\.75rem\] {
+  min-height: 2.75rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1081,6 +1089,10 @@ body {
   width: max-content;
 }
 
+.min-w-0 {
+  min-width: 0px;
+}
+
 .max-w-\[900px\] {
   max-width: 900px;
 }
@@ -1103,6 +1115,10 @@ body {
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.basis-full {
+  flex-basis: 100%;
 }
 
 @keyframes pulse {
@@ -1173,6 +1189,15 @@ body {
   gap: 1rem;
 }
 
+.gap-x-3 {
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1197,6 +1222,10 @@ body {
 
 .text-wrap {
   text-wrap: wrap;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded-2xl {
@@ -1451,9 +1480,9 @@ body {
   padding-bottom: 0.25rem;
 }
 
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-2\.5 {
@@ -1464,11 +1493,6 @@ body {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .py-8 {
@@ -3051,6 +3075,12 @@ body .pagination-aurora-dock,
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+body .pagination-aurora-dock.hidden,
+      body .pagination-dock.hidden,
+      body .pagination-aurora-pages.hidden {
+  display: none !important;
 }
 
 body .pagination-aurora-button,
@@ -9015,6 +9045,326 @@ body.genre-sheet-lock {
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.45));
 }
 
+/* ==========================================================
+   PHASE 5 — STRUCTURED LAYOUT FIXES
+   Scope: overflow desktop, taxonomy title wrap, mobile tap targets,
+   and small-text readability without breaking site theme.
+   ========================================================== */
+
+/* Safer desktop widths for two-column pages using the right sidebar */
+
+@media (min-width: 1024px) {
+  .site-footer-link {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Global target size tuning */
+
+body .pagination-aurora-button,
+body .pagination-aurora-page,
+body .pagination-dock-button,
+body .pagination-dock-status,
+.site-home-hero-button,
+.home-rec-slider-button,
+.site-random-action,
+.site-search-btn,
+.taxonomy-tab-button,
+.genre-sheet-close {
+  min-height: 44px;
+}
+
+.aurora-search-btn {
+  min-width: 44px !important;
+  min-height: 44px !important;
+}
+
+.site-navbar-brand {
+  min-height: 44px;
+}
+
+.site-navbar-toggle,
+.site-nav-close,
+.site-random-close,
+.genre-sheet-close {
+  width: 44px;
+  height: 44px;
+}
+
+/* Readability uplift for compact UI text */
+
+.donghua-card-badge,
+.donghua-card-chip,
+.donghua-card-rating,
+.donghua-card-cta,
+.db-kicker,
+.db-hero-badge,
+.db-hero-count,
+.share-premium-kicker,
+.site-footer-kicker,
+.site-home-hero-kicker,
+.site-home-hero-tag,
+.home-rec-slider-kicker,
+.home-rec-slider-auto,
+.home-rec-slider-type,
+.home-rec-slider-chip,
+.home-rec-slider-stats span,
+.site-nav-kicker,
+.season-nav-kicker,
+.search-summary,
+.fav-empty-kicker {
+  font-size: 0.75rem;
+}
+
+.home-rec-slider-card-body small {
+  font-size: 0.75rem;
+}
+
+.site-footer-copy {
+  font-size: 0.78rem;
+}
+
+.donghua-card-chip {
+  padding: 0.32rem 0.52rem;
+}
+
+.donghua-card-rating {
+  gap: 0.3rem;
+}
+
+.donghua-card-cta {
+  min-height: 1.85rem;
+  padding: 0 0.72rem;
+}
+
+@media (max-width: 639px) {
+  .donghua-card-badges {
+    inset: 0.72rem 3.8rem auto 0.72rem;
+    gap: 0.38rem;
+  }
+
+  body .donghua-card-bookmark {
+    top: 0.56rem;
+    right: 0.56rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 0.82rem;
+  }
+
+  body .donghua-card-bookmark svg {
+    width: 0.96rem;
+    height: 0.96rem;
+  }
+
+  .post-genre-link {
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+  }
+
+  .aurora-search-input {
+    padding-right: 3.35rem !important;
+  }
+
+  .aurora-search-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+  }
+
+  .aurora-search-container.aurora-search-compact .aurora-search-input {
+    padding-right: 3.15rem !important;
+  }
+
+  .aurora-search-container.aurora-search-compact .aurora-search-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+  }
+
+  .genre-sheet-close,
+  .taxonomy-tab-button {
+    min-height: 44px;
+  }
+
+  .genre-sheet-close {
+    width: 44px;
+    height: 44px;
+  }
+
+  .home-rec-slider-dots {
+    gap: 0.18rem;
+    margin-top: 0.15rem;
+  }
+
+  .home-rec-slider-dot {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: 2.75rem;
+    min-width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 2.75rem;
+    border-radius: 999px;
+    background: transparent;
+  }
+
+  .home-rec-slider-dot::before {
+    content: "";
+    width: 0.62rem;
+    height: 0.62rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.22);
+    transition: width 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, height 0.18s ease;
+  }
+
+  .home-rec-slider-dot.is-active {
+    width: 2.75rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .home-rec-slider-dot.is-active::before {
+    width: 1.55rem;
+    height: 0.62rem;
+    background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+    box-shadow: 0 0 12px rgba(34,211,238,0.16);
+  }
+
+  .home-rec-slider-dot:focus-visible {
+    outline: var(--site-focus-ring);
+    outline-offset: 2px;
+  }
+
+  .alert-stack-link {
+    min-height: 44px;
+    padding: 0.38rem 0.78rem;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  .site-footer-links {
+    gap: 0.35rem;
+  }
+
+  .site-footer-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.45rem 0.1rem;
+  }
+
+  .site-footer-social-link {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .site-footer-card h3 {
+    font-size: 1rem;
+  }
+
+  .site-footer-brand-desc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .site-home-hero-button,
+  .home-rec-slider-button,
+  .site-random-action,
+  body .pagination-aurora-button,
+  body .pagination-aurora-page,
+  body .pagination-dock-button,
+  body .pagination-dock-status {
+    min-height: 44px;
+  }
+
+  .donghua-card-badge,
+  .donghua-card-chip,
+  .donghua-card-rating,
+  .donghua-card-cta,
+  .db-kicker,
+  .db-hero-badge,
+  .db-hero-count,
+  .share-premium-kicker,
+  .site-footer-kicker,
+  .site-home-hero-kicker,
+  .site-home-hero-tag,
+  .home-rec-slider-kicker,
+  .home-rec-slider-auto,
+  .home-rec-slider-type,
+  .home-rec-slider-chip,
+  .home-rec-slider-stats span,
+  .site-nav-kicker,
+  .season-nav-kicker {
+    font-size: 0.76rem;
+  }
+
+  .donghua-card-chip,
+  .donghua-card-rating,
+  .donghua-card-cta {
+    font-weight: 850;
+  }
+
+  .donghua-card-title {
+    font-size: clamp(0.82rem, 2.8vw, 0.92rem);
+  }
+}
+
+/* ==========================================================
+   PHASE 6 — PRIORITY PAGE MICRO POLISH
+   Scope: homepage, post detail, genre, favorit, search.
+   Balanced refinements only.
+   ========================================================== */
+
+@media (max-width: 639px) {
+  .site-random-close,
+  .genre-sheet-close {
+    width: 2.8rem !important;
+    height: 2.8rem !important;
+    min-width: 2.8rem !important;
+    min-height: 2.8rem !important;
+  }
+
+  .taxonomy-tab-button {
+    min-height: 44px !important;
+    padding-top: 0.55rem !important;
+    padding-bottom: 0.55rem !important;
+  }
+
+  .fav-empty-cta,
+  .fav-empty-ghost {
+    min-height: 44px !important;
+  }
+
+  .post-genre-link,
+  a.bg-\[\#060816\].border.border-cyan-500\/40 {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 44px !important;
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7rem !important;
+    font-size: 0.92rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .genre-filter-kicker,
+  .genre-sheet-kicker,
+  .taxonomy-tabs-kicker,
+  .taxonomy-tabs-counter,
+  .site-random-kicker,
+  [data-genre-trigger-count] {
+    font-size: 0.75rem !important;
+  }
+
+  .taxonomy-item-text small,
+  .home-rec-slider-card-body small {
+    font-size: 0.75rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
 .selection\:bg-cyan-500 *::-moz-selection {
   --tw-bg-opacity: 1;
   background-color: rgb(6 182 212 / var(--tw-bg-opacity, 1));
@@ -9105,6 +9455,10 @@ body.genre-sheet-lock {
 }
 
 @media (min-width: 640px) {
+  .sm\:basis-auto {
+    flex-basis: auto;
+  }
+
   .sm\:p-1\.5 {
     padding: 0.375rem;
   }
@@ -9176,11 +9530,6 @@ body.genre-sheet-lock {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-
-  .md\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -9196,12 +9545,16 @@ body.genre-sheet-lock {
     display: flex;
   }
 
-  .lg\:w-\[380px\] {
-    width: 380px;
+  .lg\:w-\[320px\] {
+    width: 320px;
   }
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:items-start {
+    align-items: flex-start;
   }
 
   .lg\:justify-between {
@@ -9211,5 +9564,17 @@ body.genre-sheet-lock {
   .lg\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:w-\[348px\] {
+    width: 348px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:w-\[380px\] {
+    width: 380px;
   }
 }
