@@ -7,7 +7,13 @@
           <span>DonghuaBatch</span>
         </a>
 
-
+        <div class="site-navbar-bottom" aria-label="Navigasi tambahan situs">
+          <a href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house" aria-hidden="true"></i> Beranda</a>
+          <a href="/#genre"><i class="fa-solid fa-folder" aria-hidden="true"></i> Genre</a>
+          <a href="/#studio-season"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Studio/Season</a>
+          <a href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari</a>
+          <a href='{{ relURL "kontak" }}'><i class="fa-solid fa-phone" aria-hidden="true"></i> Kontak</a>
+        </div>
 
         <div class="site-navbar-actions" aria-label="Aksi cepat">
           <button class="site-navbar-action site-nav-random-btn" type="button" data-random-open aria-haspopup="dialog" aria-controls="siteRandomModal">
@@ -29,15 +35,8 @@
           <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
       </div>
-
-      <div class="site-navbar-bottom" aria-label="Navigasi tambahan situs">
-        <a href="{{ .Site.BaseURL }}"><i class="fa-solid fa-house" aria-hidden="true"></i> Beranda</a>
-        <a href="/#genre"><i class="fa-solid fa-folder" aria-hidden="true"></i> Genre</a>
-        <a href="/#studio-season"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Studio/Season</a>
-        <a href='{{ relURL "search" }}'><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari</a>
-        <a href='{{ relURL "kontak" }}'><i class="fa-solid fa-phone" aria-hidden="true"></i> Kontak</a>
-      </div>
     </div>
+
   </nav>
 
   <div class="site-nav-backdrop" data-nav-close aria-hidden="true"></div>

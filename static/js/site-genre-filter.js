@@ -25,8 +25,20 @@ const resultsContainer = document.getElementById("genre-results");
 
 
 let genrePage = 1;
-const genrePerPage = 12;
 let genreResults = [];
+
+// Jumlah item per halaman adaptif, sama persis dengan halaman pencarian
+// (>=1024px: 15, >=700px: 12, >=640px: 12, selain itu: 10).
+function getGenrePerPage() {
+  if (window.DonghuaSearch && typeof window.DonghuaSearch.getPerPage === "function") {
+    return window.DonghuaSearch.getPerPage();
+  }
+  // Fallback jika site-search.js belum termuat
+  if (window.matchMedia('(min-width: 1024px)').matches) return 15;
+  if (window.matchMedia('(min-width: 700px)').matches) return 12;
+  if (window.matchMedia('(min-width: 640px)').matches) return 12;
+  return 10;
+}
 
 
 function renderGenreResults() {
@@ -43,6 +55,7 @@ function renderGenreResults() {
 
   alertBox.classList.add("hidden");
 
+  const genrePerPage = getGenrePerPage();
   const totalPages = Math.ceil(genreResults.length / genrePerPage);
   const start = (genrePage - 1) * genrePerPage;
   const end = start + genrePerPage;
@@ -118,7 +131,7 @@ if (genrePrevBtn && genreNextBtn) {
   });
 
   genreNextBtn.addEventListener("click", () => {
-    const totalPages = Math.ceil(genreResults.length / genrePerPage);
+    const totalPages = Math.ceil(genreResults.length / getGenrePerPage());
     if (genrePage < totalPages) {
       genrePage++;
       renderGenreResults();
@@ -126,6 +139,19 @@ if (genrePrevBtn && genreNextBtn) {
     }
   });
 }
+
+// Saat ukuran layar berubah, jumlah per halaman ikut berubah (adaptif).
+// Sesuaikan halaman aktif supaya tidak keluar dari rentang, lalu render ulang.
+let genreResizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(genreResizeTimer);
+  genreResizeTimer = setTimeout(() => {
+    if (!genreResults.length) return;
+    const totalPages = Math.max(1, Math.ceil(genreResults.length / getGenrePerPage()));
+    genrePage = Math.min(genrePage, totalPages);
+    renderGenreResults();
+  }, 120);
+});
 
 window.addEventListener("DOMContentLoaded", () => {
   

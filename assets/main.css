@@ -1149,6 +1149,18 @@ body {
   scroll-margin-top: 300px;
 }
 
+.scroll-mt-3 {
+  scroll-margin-top: 0.75rem;
+}
+
+.scroll-mt-20 {
+  scroll-margin-top: 5rem;
+}
+
+.scroll-mt-0 {
+  scroll-margin-top: 0px;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -3422,6 +3434,10 @@ body .pagination-aurora-button.is-disabled,
     text-align: left;
   }
 
+  .fav-empty-text {
+    margin-left: 0;
+  }
+
   .fav-empty-actions {
     justify-content: flex-start;
   }
@@ -4628,7 +4644,7 @@ mark {
   }
 
   .site-footer-grid {
-    grid-template-columns: 1.35fr 0.9fr 0.9fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: stretch;
   }
 
@@ -5363,6 +5379,39 @@ body.site-nav-lock,
   border-radius: var(--site-radius-pill);
   background: linear-gradient(90deg, var(--site-cyan), var(--site-sky), #2563eb);
   box-shadow: 0 0 16px rgba(34, 211, 238, 0.30);
+}
+
+/* Layar lebar (tablet ke atas): tombol menu (hamburger) tetap ada, tapi
+     saat dibuka, panelnya muncul sebagai drawer dari SAMPING KANAN
+     (mengisi tinggi layar), bukan dari bawah. Di layar sempit perilaku
+     tidak berubah: tetap muncul sebagai bottom sheet seperti semula. */
+
+@media (min-width: 768px) {
+  .site-nav-sheet {
+    left: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: min(24rem, 90vw);
+    height: 100%;
+    max-height: none;
+    border-radius: 1.85rem 0 0 1.85rem;
+    border: 1px solid rgba(125, 211, 252, 0.2);
+    border-right: 0;
+    transform: translateX(100%);
+  }
+
+  .site-nav-container.is-open .site-nav-sheet {
+    transform: translateX(0);
+  }
+
+  .site-nav-handle {
+    display: none;
+  }
+
+  .site-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .site-nav-sheet-head {

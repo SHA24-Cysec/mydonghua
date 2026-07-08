@@ -549,3 +549,8 @@ window.DonghuaBatchData.getIndexData = function () {
 };
 window.DonghuaBatchCards = window.DonghuaBatchCards || {};
 window.DonghuaBatchCards.donghuaCardTemplate = donghuaCardTemplate;
+
+// Diekspos supaya halaman filter genre memakai jumlah item per halaman
+// yang sama persis (adaptif sesuai lebar layar) dengan halaman pencarian.
+window.DonghuaSearch = window.DonghuaSearch || {};
+window.DonghuaSearch.getPerPage = getSearchPerPage;
