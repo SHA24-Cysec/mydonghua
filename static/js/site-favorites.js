@@ -196,7 +196,7 @@
   function showElement(el, displayValue) {
     if (!el) return;
     el.classList.remove('hidden');
-    if (displayValue) el.style.display = displayValue;
+    el.style.display = displayValue || '';
   }
 
   function hideElement(el) {

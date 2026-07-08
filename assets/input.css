@@ -2005,7 +2005,7 @@
         display: grid;
         gap: 0.88rem;
         width: 100%;
-        margin-top: 0.75rem;
+        margin-top: 1rem;
         padding: 1rem;
         border: 1px solid rgba(34, 211, 238, 0.22);
         border-radius: var(--site-radius-xl);
@@ -2361,7 +2361,7 @@
         isolation: isolate;
         overflow: hidden;
         width: 100%;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
         padding: clamp(0.95rem, 3vw, 1.5rem);
         border: 1px solid rgba(125, 211, 252, 0.20);
         border-radius: var(--site-radius-xl);
@@ -2806,7 +2806,7 @@
 
 .site-footer {
   position: relative;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   padding: 0 0 1.1rem;
   background:
     radial-gradient(ellipse at 20% 0%, rgba(34, 211, 238, 0.05), transparent 40%),
@@ -2900,7 +2900,7 @@
 .site-footer-links {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: clamp(0.2rem, 1.2vw, 0.4rem);
 }
 
 .site-footer-link {
@@ -2908,7 +2908,7 @@
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.3;
 }
 
 .site-footer-social {
@@ -5327,7 +5327,7 @@ body .post-bookmark-btn.is-pulsing {
         position: relative;
         overflow: hidden;
         width: 100%;
-        margin-top: 0.75rem;
+        margin-top: 0;
         padding: clamp(1rem, 2.8vw, 1.35rem);
         border: 1px solid rgba(125, 211, 252, 0.24);
         border-radius: 1.75rem;
@@ -6309,21 +6309,24 @@ body .post-bookmark-btn.is-pulsing {
                 justify-content: center;
                 gap: 0.48rem;
                 min-height: 2.45rem;
-                border: 1px solid transparent;
+                border: 1px solid rgba(125, 211, 252, 0.15);
                 border-radius: 0.78rem;
                 outline: none;
-                background: transparent;
-                color: #cbd5e1;
+                background: rgba(15, 23, 42, 0.65);
+                color: #94a3b8;
                 cursor: pointer;
                 font: inherit;
                 font-size: 0.82rem;
                 font-weight: 950;
-                transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+                transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
             }
 
             .taxonomy-tab-button.is-active {
                 background: linear-gradient(135deg, #22d3ee, #8b5cf6);
                 color: #06111f;
+                border-color: transparent;
                 box-shadow: 0 10px 22px rgba(34, 211, 238, 0.14);
             }
 
@@ -6493,6 +6496,13 @@ body .post-bookmark-btn.is-pulsing {
                     filter: brightness(1.06);
                 }
 
+                .taxonomy-tab-button:not(.is-active):hover {
+                    background: rgba(15, 23, 42, 0.85);
+                    border-color: rgba(34, 211, 238, 0.3);
+                    color: #e2e8f0;
+                    box-shadow: 0 0 12px rgba(34, 211, 238, 0.1);
+                }
+
                 .taxonomy-item:hover {
                     transform: translateX(3px);
                     border-color: color-mix(in srgb, var(--taxonomy-accent) 42%, transparent);
@@ -6613,7 +6623,7 @@ body .post-bookmark-btn.is-pulsing {
     }
 
     .ad-neon-shell.ad-native {
-        margin-top: 0.75rem;
+        margin-top: 0;
         padding: 0.92rem;
     }
 
@@ -7557,14 +7567,14 @@ body .pagination-dock-status,
   }
 
   .site-footer-links {
-    gap: 0.35rem;
+    gap: 0.18rem;
   }
 
   .site-footer-link {
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
-    padding: 0.45rem 0.1rem;
+    min-height: 36px;
+    padding: 0.2rem 0.1rem;
   }
 
   .site-footer-social-link {
@@ -8029,7 +8039,6 @@ html {
   .genre-sheet-trigger,
   .genre-clear-button,
   .genre-apply-button,
-  .taxonomy-tab-button,
   .post-bookmark-btn,
   .post-genre-link,
   .donghua-card-cta,
@@ -8088,7 +8097,6 @@ html {
   .share-premium-button,
   .genre-sheet-trigger,
   .genre-clear-button,
-  .taxonomy-tab-button,
   .aurora-search-btn[data-taxonomy-clear],
   .post-genre-link,
   .site-navbar-action,
@@ -8108,7 +8116,6 @@ html {
 
 :is(
   .alert-stack-link,
-  .taxonomy-tab-button.is-active,
   .post-genre-link:hover,
   .site-navbar-action.nav-fav-btn,
   .site-nav-fav-btn
@@ -8232,7 +8239,6 @@ html {
     .share-premium-button,
     .genre-sheet-trigger,
     .genre-clear-button,
-    .taxonomy-tab-button,
     .post-genre-link,
     .site-navbar-action,
     .site-navbar-toggle,
@@ -8422,5 +8428,40 @@ html {
   :is(.db-report, .fav-clear-btn, #fav-confirm-yes-btn, .alert-stack-link--pink, #tutup-komen button):hover {
     filter: brightness(1.055) !important;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 0 20px rgba(239,68,68,0.12) !important;
+  }
+}
+
+/* ==========================================================
+   TAXONOMY TAB BUTTON — CUSTOM OVERRIDE
+   Mengatasi inkonsistensi warna: tombol non-aktif & aktif
+   harus terlihat jelas bedanya. Override semua !important
+   dari design token system (Phase 1 & Phase 10).
+   ========================================================== */
+
+.taxonomy-tab-button {
+  border-color: rgba(125, 211, 252, 0.15) !important;
+  background: rgba(15, 23, 42, 0.65) !important;
+  color: #94a3b8 !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.taxonomy-tab-button.is-active {
+  background: linear-gradient(135deg, #22d3ee, #8b5cf6) !important;
+  color: #06111f !important;
+  border-color: transparent !important;
+  box-shadow: 0 10px 22px rgba(34, 211, 238, 0.14) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+@media (hover: hover) {
+  .taxonomy-tab-button:not(.is-active):hover {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border-color: rgba(34, 211, 238, 0.3) !important;
+    color: #e2e8f0 !important;
+    box-shadow: 0 0 12px rgba(34, 211, 238, 0.1) !important;
+    transform: translateY(-1px) !important;
   }
 }

@@ -1,28 +1,28 @@
 {{ define "main" }}
     {{ partial "alert" . }}
     {{ partial "widget/ads-728x90" . }}
-    <div class="mt-5 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
-        <main class="flex gap-5 flex-col lg:flex-row lg:items-start">
+    <div class="mt-4 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
+        <main class="flex gap-4 flex-col lg:flex-row lg:items-start">
             {{/*  Main Content  */}}
             <div class="flex-1 min-w-0">
-                <div class="w-full flex flex-col gap-5">
-                    <div class="panel-neon p-5">
-                        <span class="badge-neon w-fit"><i class="fa-solid fa-user text-cyan-400"></i>Posted by <strong class="text-cyan-300">{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-400 drop-shadow-[0_0_5px_rgba(74,222,128,0.8)]"></i></span>
-                        <hr class="mt-5 border-cyan-500/30">
-                        <h1 class="text-2xl md:text-3xl mt-5 heading-neon"><strong>{{ .Title }}</strong></h1>
-                        <div class="flex flex-col md:flex-row gap-5 mt-5">
-                            <div class="w-full h-full block md:w-[220px] shrink-0">
-                                <div class="w-[200px] h-[300px] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
-                                    <img title="{{ .Title }}" class="post-detail-poster-img h-[300px] object-cover hover:scale-105 transition duration-500" loading="eager" decoding="async" width="200" height="300" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
+                <div class="w-full flex flex-col gap-4">
+                    <div class="panel-neon p-3 sm:p-5">
+                        <span class="badge-neon w-fit"><i class="fa-solid fa-user text-cyan-400"></i>Posted by <strong class="text-cyan-300">{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-400 drop-shadow-neon-green"></i></span>
+                        <hr class="mt-4 border-cyan-500/30">
+                        <h1 class="text-2xl md:text-3xl mt-4 heading-neon"><strong>{{ .Title }}</strong></h1>
+                        <div class="flex flex-col md:flex-row gap-4 mt-4">
+                            <div class="w-full md:w-[220px] shrink-0">
+                                <div class="w-[150px] h-[225px] sm:w-[180px] sm:h-[270px] md:w-[200px] md:h-[300px] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-neon-cyan-md">
+                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="eager" decoding="async" width="200" height="300" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
                                 </div>
                                 {{- $rating := .Params.rating | default 0 -}}
                                 {{- $stars := div (mul $rating 5) 10 -}}
-                                <div class="flex flex-col items-center flex-wrap justify-center gap-1.5 bg-[#060816]/80 p-2.5 rounded-xl border border-slate-800">
+                                <div class="flex flex-col items-center flex-wrap justify-center gap-1.5 bg-cyber-dark/80 p-2 sm:p-2.5 rounded-xl border border-slate-800">
                                     <strong class="text-cyan-300 text-sm">Rating: {{ $rating }} / 10</strong>
-                                    <div class="bg-[#0F172A] px-2.5 py-1 rounded-lg flex-wrap flex items-center gap-1 border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
+                                    <div class="bg-cyber-card px-2.5 py-1 rounded-lg flex-wrap flex items-center gap-1 border border-amber-500/30 shadow-neon-amber">
                                         {{ range seq 5 }}
                                             {{ if le . $stars }}
-                                                <i class="fa-solid fa-star post-rating-star drop-shadow-[0_0_6px_rgba(250,204,21,0.9)]"></i>
+                                                <i class="fa-solid fa-star post-rating-star drop-shadow-neon-gold"></i>
                                             {{ else }}
                                                 <i class="fa-regular fa-star text-slate-600"></i>
                                             {{ end }}
@@ -35,16 +35,17 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="flex flex-col gap-5 flex-1">
-                                <p class="panel-neon-inset text-slate-200 leading-relaxed font-sans text-sm md:text-base p-5">{{ .Params.sinopsis }}</p>
+                            <div class="flex flex-col gap-4 flex-1">
+                                <p class="panel-neon-inset text-slate-200 leading-relaxed font-sans text-sm md:text-base p-3 sm:p-5">{{ .Params.sinopsis }}</p>
                                 <div class="flex gap-2 flex-wrap flex-row">
                                     {{ range .Params.genre }}
-                                        <a class="post-genre-link inline-flex items-center min-h-[2.75rem] bg-[#060816] border border-cyan-500/40 hover:border-cyan-300 hover:bg-cyan-500/20 text-cyan-300 hover:text-white font-semibold text-sm px-3.5 py-2 rounded-xl transition-all duration-300 shadow-sm hover:shadow-[0_0_12px_rgba(34,211,238,0.4)]" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
+                                        <a class="post-genre-link inline-flex items-center min-h-[2.75rem] bg-cyber-dark border border-cyan-500/40 hover:border-cyan-300 hover:bg-cyan-500/20 text-cyan-300 hover:text-white font-semibold text-sm px-3.5 py-2 rounded-xl transition-all duration-300 shadow-sm hover:shadow-neon-cyan-xs" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
                                     {{ end }}
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-neon-inset overflow-x-auto w-full mx-auto max-w-full select-none mt-5 shadow-[0_0_20px_rgba(34,211,238,0.15)]">
+                        <!-- Desktop: Table view -->
+                        <div class="hidden sm:block panel-neon-inset overflow-x-auto w-full mx-auto max-w-full select-none mt-4 shadow-neon-cyan-sm">
                             <table class="w-full mx-auto text-sm md:text-base">
                                 <thead>
                                     <tr class="bg-gradient-to-r from-cyan-600/30 via-blue-600/30 to-purple-600/30 text-cyan-300 font-extrabold border-b border-cyan-500/40">
@@ -71,6 +72,46 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <!-- Mobile: Card view -->
+                        <div class="sm:hidden panel-neon-inset mt-4 shadow-neon-cyan-sm overflow-hidden">
+                            <div class="bg-gradient-to-r from-cyan-600/30 via-blue-600/30 to-purple-600/30 text-cyan-300 font-extrabold text-center p-3 border-b border-cyan-500/40">
+                                <i class="fa-solid fa-circle-info text-cyan-400"></i> Info Donghua
+                            </div>
+                            <div class="divide-y divide-slate-800/60">
+                                <div class="flex items-center gap-3 px-4 py-3">
+                                    <span class="text-cyan-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-video"></i>Studio</span>
+                                    <span class="text-slate-200 text-sm font-medium">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</span>
+                                </div>
+                                <div class="flex items-center gap-3 px-4 py-3">
+                                    <span class="text-pink-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-flag"></i>Season</span>
+                                    <span class="text-slate-200 text-sm font-medium">{{ .Params.season }}</span>
+                                </div>
+                                <div class="flex items-center gap-3 px-4 py-3">
+                                    <span class="text-amber-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-clock"></i>Durasi</span>
+                                    <span class="text-slate-200 text-sm font-medium">{{ .Params.durasi }}</span>
+                                </div>
+                                <div class="flex items-center gap-3 px-4 py-3">
+                                    <span class="text-purple-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-film"></i>Episode</span>
+                                    <span class="text-cyan-400 text-sm font-bold">{{ .Params.episode }}</span>
+                                </div>
+                                <div class="flex items-center gap-3 px-4 py-3">
+                                    <span class="text-red-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-fire"></i>Release</span>
+                                    <span class="text-slate-200 text-sm font-medium">{{ .Params.release }}</span>
+                                </div>
+                                <div class="flex items-center gap-3 px-4 py-3">
+                                    <span class="text-emerald-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-bookmark"></i>Type</span>
+                                    <span class="bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-md border border-purple-500/30 text-xs font-bold">{{ .Params.type }}</span>
+                                </div>
+                                <div class="flex items-center gap-3 px-4 py-3">
+                                    <span class="text-sky-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-chart-simple"></i>Status</span>
+                                    <span class="bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md border border-emerald-500/30 text-xs font-bold">{{ .Params.status }}</span>
+                                </div>
+                                <div class="flex items-center gap-3 px-4 py-3">
+                                    <span class="text-indigo-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-user"></i>Sub By</span>
+                                    <span class="text-slate-200 text-sm font-medium">{{ .Params.sub }}</span>
+                                </div>
+                            </div>
                         </div>
                         {{ partial "season" . }}
                         {{ partial "download-batch" . }}
