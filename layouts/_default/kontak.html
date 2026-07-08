@@ -1,8 +1,8 @@
 {{ define "main" }}
-    <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mb-3">
-    <div class="panel-neon p-6 w-full min-h-screen flex flex-col items-center justify-center">
-        <h1 class="heading-neon text-3xl text-center mb-8"><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i>{{ .Title }}</h1>
-        <form class="panel-neon-inset flex justify-center items-center flex-col gap-4 w-full max-w-md p-8 shadow-[0_0_20px_rgba(34,211,238,0.15)]" action="https://formspree.io/f/xregejlg" method="POST" netlify>
+    <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-5 mb-0">
+    <div class="panel-neon p-5 w-full min-h-screen flex flex-col items-center justify-center">
+        <h1 class="heading-neon text-3xl text-center mb-5"><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i>{{ .Title }}</h1>
+        <form class="panel-neon-inset flex justify-center items-center flex-col gap-5 w-full max-w-md p-5 shadow-[0_0_20px_rgba(34,211,238,0.15)]" action="https://formspree.io/f/xregejlg" method="POST" netlify>
             <label class="flex flex-col gap-2 text-left w-full">
               <span class="text-cyan-300 font-bold text-sm uppercase tracking-wider">Alamat Email</span>
               <input required placeholder="xiaoxiao@email.com" class="cyber-input-search" type="email" name="email">

@@ -1,5 +1,5 @@
 {{ if (or .Params.linkSeasonSebelumnya .Params.linkSeasonSelanjutnya) }}
-<div class="season-nav-wrap mt-4">
+<div class="season-nav-wrap mt-5">
     <div class="season-nav-grid{{ if and .Params.linkSeasonSebelumnya .Params.linkSeasonSelanjutnya }} has-two{{ end }}">
         {{ if .Params.linkSeasonSebelumnya }}
             <a class="season-nav-card season-nav-card--prev" href="{{ .Params.linkSeasonSebelumnya | relURL }}">

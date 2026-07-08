@@ -969,9 +969,8 @@ body {
   margin-right: auto;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .mb-2 {
@@ -982,12 +981,8 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .mr-2 {
@@ -998,16 +993,8 @@ body {
   margin-top: 0.75rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .box-border {
@@ -1181,8 +1168,8 @@ body {
   gap: 0.75rem;
 }
 
-.gap-4 {
-  gap: 1rem;
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .gap-x-3 {
@@ -1405,16 +1392,8 @@ body {
      object-fit: cover;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
-.p-1\.5 {
-  padding: 0.375rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
+.p-0 {
+  padding: 0px;
 }
 
 .p-2\.5 {
@@ -1425,16 +1404,8 @@ body {
   padding: 0.875rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
-.p-6 {
-  padding: 1.5rem;
-}
-
-.p-8 {
-  padding: 2rem;
+.p-5 {
+  padding: 1.25rem;
 }
 
 .p-\[1px\] {
@@ -1486,18 +1457,18 @@ body {
   padding-bottom: 0.625rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.pb-4 {
+.py-4 {
+  padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 
 .text-left {
@@ -9399,180 +9370,37 @@ body .pagination-dock-status,
 }
 
 /* ==========================================================
-   PHASE 7 — UNIFIED BALANCED SPACING SYSTEM
-   Scope: global layout rhythm, panel padding, grids, and stacks.
-   Mobile-first, responsive, consistent with neon theme.
+   PHASE 7 — TAILWIND STANDARD SPACING (NO CLAMP, NO !IMPORTANT)
+   Replaced fluid/clamp variables with Tailwind utility classes.
+   HTML templates now use explicit gap-*, p-*, m-* classes.
    ========================================================== */
 
 :root {
-  --site-space-xs: clamp(0.5rem, 1.2vw, 0.625rem);
-  --site-space-sm: clamp(0.65rem, 1.6vw, 0.8rem);
-  --site-space-md: clamp(0.85rem, 2vw, 1rem);
-  --site-space-lg: clamp(1rem, 2.6vw, 1.25rem);
-  --site-space-xl: clamp(1.25rem, 3vw, 1.5rem);
-  --site-page-gutter: clamp(0.75rem, 3.5vw, 1rem);
-  --site-section-gap: var(--site-space-md);
-  --site-content-gap: var(--site-space-lg);
-  --site-panel-padding: clamp(1rem, 3vw, 1.5rem);
-  --site-card-padding: clamp(0.85rem, 2.4vw, 1rem);
-  --site-grid-gap: clamp(0.65rem, 1.8vw, 0.9rem);
-}
-
-@media (min-width: 768px) {
-  :root {
-    --site-section-gap: var(--site-space-lg);
-    --site-content-gap: var(--site-space-xl);
-    --site-grid-gap: clamp(0.85rem, 1.5vw, 1rem);
-  }
+  --site-space-xs: 0.5rem;
+  /* Tailwind 2 */
+  --site-space-sm: 0.75rem;
+  /* Tailwind 3 */
+  --site-space-md: 1rem;
+  /* Tailwind 4 */
+  --site-space-lg: 1.25rem;
+  /* Tailwind 5 */
+  --site-space-xl: 1.5rem;
+  /* Tailwind 6 */
 }
 
 html {
-  scroll-padding-top: calc(4.75rem + var(--site-section-gap));
+  scroll-padding-top: 5.75rem;
+  /* 4.75rem navbar + 1rem */
 }
 
-body > div[class*="max-w-screen-xl"] {
-  width: 100% !important;
-  margin-top: var(--site-section-gap) !important;
-  margin-right: auto !important;
-  margin-bottom: 0 !important;
-  margin-left: auto !important;
-  padding-right: var(--site-page-gutter) !important;
-  padding-left: var(--site-page-gutter) !important;
-}
-
-@media (min-width: 1024px) {
-  body > div[class*="max-w-screen-xl"] {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 6rem;
+    /* 4.75rem navbar + 1.25rem */
   }
 }
 
-.site-footer {
-  margin-top: var(--site-section-gap) !important;
-}
-
-main.flex,
-main[class*="flex"] {
-  gap: var(--site-section-gap) !important;
-}
-
-main.w-full {
-  display: grid !important;
-  gap: var(--site-section-gap) !important;
-}
-
-main.w-full > .panel-neon,
-main.w-full > [class*="panel-neon"] {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-aside > .h-full.flex.flex-col {
-  gap: var(--site-section-gap) !important;
-}
-
-main > .flex-1.min-w-0 > .w-full {
-  display: grid !important;
-  gap: var(--site-section-gap) !important;
-}
-
-main > .flex-1.min-w-0 > .w-full > * {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.panel-neon {
-  padding: var(--site-panel-padding) !important;
-}
-
-.panel-neon > :where(.badge-neon, h1, h2, h3, h4, p, hr, div, section, article, form, table, ul, ol) {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.panel-neon > :where(.badge-neon, h1, h2, h3, h4, p, hr, div, section, article, form, table, ul, ol) + :where(.badge-neon, h1, h2, h3, h4, p, hr, div, section, article, form, table, ul, ol) {
-  margin-top: var(--site-content-gap) !important;
-}
-
-.panel-neon > :where(.flex.flex-col, .flex.flex-wrap.flex-col),
-.panel-neon > :where(.flex.flex-col, .flex.flex-wrap.flex-col) > :where(div, section, article, ul, nav) {
-  gap: var(--site-content-gap) !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.panel-neon-inset {
-  padding: var(--site-card-padding) !important;
-}
-
-.alert-stack-shell,
-.db-shell,
-.share-premium-card,
-.ad-neon-shell,
-.genre-filter-shell,
-.taxonomy-tabs-widget,
-.fav-empty-card,
-.search-empty-state,
-.search-summary,
-.home-rec-slider,
-.site-home-hero {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.alert-stack-shell,
-.db-groups,
-.db-resolution-grid,
-.share-premium-inner,
-.share-premium-actions,
-.genre-filter-shell,
-.taxonomy-tabs-widget,
-.taxonomy-tabs-content,
-.taxonomy-list,
-.fav-empty-actions {
-  gap: var(--site-grid-gap) !important;
-}
-
-.alert-stack-shell,
-.db-shell,
-.site-home-hero,
-.home-rec-slider,
-.share-premium-card,
-.taxonomy-tabs-widget,
-.genre-filter-card,
-.ad-neon-shell {
-  padding: var(--site-panel-padding) !important;
-}
-
-.alert-stack-row,
-.db-group,
-.db-res-card,
-.share-premium-inner,
-.genre-sheet-option,
-.taxonomy-item,
-.fav-item,
-.search-summary,
-.search-empty-state {
-  padding: var(--site-card-padding) !important;
-}
-
-.donghua-card-grid {
-  --donghua-grid-gap: var(--site-grid-gap) !important;
-  gap: var(--site-grid-gap) !important;
-  padding: 0 !important;
-}
-
-.home-section-divider {
-  margin-top: var(--site-space-xs) !important;
-}
-
-#genre-pagination,
-#search-pagination,
-.pagination-dock,
-.season-nav-wrap {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
+/* Mobile border-radius — preserved for consistency */
 
 @media (max-width: 639px) {
   .panel-neon,
@@ -9585,13 +9413,6 @@ main > .flex-1.min-w-0 > .w-full > * {
   .genre-filter-card,
   .ad-neon-shell {
     border-radius: var(--site-radius-lg) !important;
-  }
-
-  .site-home-hero-actions,
-  .share-premium-actions,
-  .fav-empty-actions,
-  .db-resolution-grid {
-    gap: var(--site-space-sm) !important;
   }
 }
 
@@ -10426,14 +10247,6 @@ main > .flex-1.min-w-0 > .w-full > * {
     flex-basis: auto;
   }
 
-  .sm\:p-1\.5 {
-    padding: 0.375rem;
-  }
-
-  .sm\:p-2 {
-    padding: 0.5rem;
-  }
-
   .sm\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -10455,22 +10268,6 @@ main > .flex-1.min-w-0 > .w-full > * {
 
   .md\:justify-between {
     justify-content: space-between;
-  }
-
-  .md\:p-2 {
-    padding: 0.5rem;
-  }
-
-  .md\:p-3 {
-    padding: 0.75rem;
-  }
-
-  .md\:p-4 {
-    padding: 1rem;
-  }
-
-  .md\:p-8 {
-    padding: 2rem;
   }
 
   .md\:px-3 {

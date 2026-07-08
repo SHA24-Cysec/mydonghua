@@ -1,10 +1,10 @@
 {{ define "main" }}
-<div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mb-3">
-<div class="panel-neon flex flex-col w-full h-full min-h-screen p-6">
+<div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-5 mb-0">
+<div class="panel-neon flex flex-col w-full h-full min-h-screen p-5">
     <h1 class="heading-neon text-2xl md:text-3xl text-center">{{ .Title }}</h1>
-    <span class="badge-neon mt-4 mx-auto"><i class="fa-solid fa-info-circle mr-2 text-cyan-400"></i>Ketik minimal 3 huruf. Pisahkan genre dengan koma.</span>
-    <div class="w-full max-w-[900px] mx-auto mt-4">
-        <div class="aurora-search-container mb-6" role="search">
+    <span class="badge-neon mt-5 mx-auto"><i class="fa-solid fa-info-circle mr-2 text-cyan-400"></i>Ketik minimal 3 huruf. Pisahkan genre dengan koma.</span>
+    <div class="w-full max-w-[900px] mx-auto mt-5">
+        <div class="aurora-search-container mb-5" role="search">
             <input class="aurora-search-input" type="search" name="q" id="search-input" placeholder="Cari judul donghua..." autocomplete="off" />
             <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
             <button type="button" class="aurora-search-btn" aria-label="Cari">
@@ -24,7 +24,7 @@
         </div>
 
         {{/*  Pagination  */}}
-        <div id="search-pagination" class="pagination-dock mt-4 text-slate-200">
+        <div id="search-pagination" class="pagination-dock mt-5 text-slate-200">
             <button class="pagination-dock-button" id="prev-page" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
             <span class="pagination-dock-status" id="page-info"></span>
             <button class="pagination-dock-button" id="next-page" disabled>Next <i class="fa-solid fa-chevron-right"></i></button>
