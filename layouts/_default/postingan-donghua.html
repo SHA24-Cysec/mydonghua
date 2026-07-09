@@ -21,9 +21,9 @@
 {{ if $postImg }}
   {{ $pSmall := $postImg.Resize "220x webp q85" }}
   {{ $pMedium := $postImg.Resize "400x webp q85" }}
-                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="eager" fetchpriority="high" decoding="async" src="{{ $pSmall.RelPermalink }}" srcset="{{ $pSmall.RelPermalink }} 220w, {{ $pMedium.RelPermalink }} 400w" sizes="(max-width:640px) 180px, 200px" width="{{ $pSmall.Width }}" height="{{ $pSmall.Height }}" alt="{{ $postImgAlt }}">
+                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="eager" fetchpriority="high" decoding="async" src="{{ $pSmall.RelPermalink }}" srcset="{{ $pSmall.RelPermalink }} 220w, {{ $pMedium.RelPermalink }} 400w" sizes="(max-width:640px) 180px, 200px" width="{{ $pSmall.Width }}" height="{{ $pSmall.Height }}" alt="{{ $postImgAlt }}">
 {{ else }}
-                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="eager" fetchpriority="high" decoding="async" width="200" height="300" src='{{ $postImgSrc | relURL }}' alt="{{ $postImgAlt }}">
+                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="eager" fetchpriority="high" decoding="async" width="200" height="300" src='{{ $postImgSrc | relURL }}' alt="{{ $postImgAlt }}">
 {{ end }}
                                 </div>
                                 {{- $rating := .Params.rating | default 0 -}}
@@ -50,7 +50,7 @@
                                 <p class="panel-neon-inset text-slate-200 leading-relaxed font-sans text-sm md:text-base p-3 sm:p-5">{{ .Params.sinopsis }}</p>
                                 <div class="flex gap-2 flex-wrap flex-row">
                                     {{ range .Params.genre }}
-                                        <a class="post-genre-link inline-flex items-center min-h-[2.75rem] bg-cyber-dark border border-cyan-500/40 hover:border-cyan-300 hover:bg-cyan-500/20 text-cyan-300 hover:text-white font-semibold text-sm px-3.5 py-2 rounded-xl transition-all duration-300 shadow-sm hover:shadow-neon-cyan-xs" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
+                                        <a class="post-genre-link inline-flex items-center min-h-[2.75rem] bg-cyber-dark border border-cyan-500/40 hover:border-cyan-300 hover:bg-cyan-500/20 text-cyan-300 hover:text-white font-semibold text-sm px-3.5 py-2 rounded-xl transition-colors duration-200 shadow-sm hover:shadow-neon-cyan-xs" href='{{ "genre/" | relLangURL }}{{ . | urlize }}'>{{ . | title }}</a>
                                     {{ end }}
                                 </div>
                             </div>

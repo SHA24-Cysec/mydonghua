@@ -16,7 +16,7 @@
     {{ else if .IsHome }}
         <title>{{ .Site.Title }}</title>
     {{ else }}
-        <title>{{ .Title }}</title>
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
     {{ end }}
 </head>
 <body class="text-wrap bg-cyber-dark text-slate-100 selection:bg-cyan-500 selection:text-black z-50 min-h-screen">

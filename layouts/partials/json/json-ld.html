@@ -76,4 +76,25 @@
       }
     }
     </script>
+    {{/*  BreadcrumbList — semua halaman donghua  */}}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": {{ .Site.BaseURL | jsonify | safeJS }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ .Title | jsonify | safeJS }},
+          "item": {{ .Permalink | jsonify | safeJS }}
+        }
+      ]
+    }
+    </script>
 {{ end }}

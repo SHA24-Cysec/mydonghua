@@ -20,6 +20,16 @@
 {{ else if eq .Kind "404" }}
     <meta name="description" content="Halaman tidak ditemukan. Gunakan pencarian DonghuaBatch untuk menemukan batch donghua subtitle Indonesia yang kamu cari.">
     <meta name="robots" content="noindex, follow">
+{{ else if .IsSection }}
+    <meta name="description" content="Daftar {{ .Title }} donghua batch subtitle Indonesia di DonghuaBatch.">
+    <meta name="keywords" content="{{ .Title }}, Donghua, Batch, Subtitle Indonesia">
+    <meta name="robots" content="index, follow">
+{{ else if .Data.Singular }}
+    <meta name="description" content="Daftar donghua {{ .Data.Singular }} {{ .Title }} batch subtitle Indonesia.">
+    <meta name="keywords" content="{{ .Title }}, {{ .Data.Singular }}, Donghua, Batch, Subtitle Indonesia">
+    <meta name="robots" content="index, follow">
 {{ else }}
     <meta name="robots" content="noindex, follow">
 {{ end }}
+<meta name="author" content="{{ .Site.Params.author | default "Admin" }}">
+<meta name="theme-color" content="#060816">

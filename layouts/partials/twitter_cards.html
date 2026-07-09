@@ -4,6 +4,9 @@
 {{ else if eq .Layout "postingan-donghua" }}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="{{ .Params.thumbnail | absURL }}">
+{{ else }}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="{{ site.Params.img | absURL }}">
 {{ end }}
 
 {{- with or .Title site.Title site.Params.title | plainify }}
@@ -13,5 +16,8 @@
 {{ if .IsHome }}
     <meta name="twitter:description" content="{{ site.Params.deskripsi }}">
 {{ else if eq .Layout "postingan-donghua" }}
-     <meta name="twitter:description" content="{{ .Params.deskripsi }}">
+    {{ $desc := .Params.deskripsi | default .Params.sinopsis | default .Summary | plainify | truncate 160 }}
+    <meta name="twitter:description" content="{{ $desc }}">
+{{ else if .Data.Singular }}
+    <meta name="twitter:description" content="Daftar donghua {{ .Data.Singular }} {{ .Title }} batch subtitle Indonesia.">
 {{ end }}

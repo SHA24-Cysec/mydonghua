@@ -20,7 +20,7 @@
     padding: 0.625rem 1.25rem !important;
     font-family: inherit;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: border-color var(--site-transition-med), box-shadow var(--site-transition-med);
     outline: none;
   }
 
@@ -38,7 +38,7 @@
     padding: 0.75rem 1.25rem !important;
     font-family: inherit;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: border-color var(--site-transition-med), box-shadow var(--site-transition-med);
     resize: none;
     outline: none;
   }
@@ -156,7 +156,7 @@
     background: linear-gradient(135deg, var(--site-cyan), var(--site-purple));
     color: var(--site-bg);
     font-weight: 800;
-    transition: all 0.24s ease;
+    transition: transform var(--site-transition-med), filter var(--site-transition-med), box-shadow var(--site-transition-med);
     box-shadow:
       0 12px 26px rgba(34, 211, 238, 0.16),
       inset 0 1px 0 rgba(255,255,255,0.18);
@@ -179,7 +179,7 @@
     border-radius: 9999px !important;
     overflow: hidden !important;
     width: 100% !important;
-    transition: all 0.3s ease;
+    transition: box-shadow var(--site-transition-med);
     box-sizing: border-box !important;
   }
 
@@ -216,7 +216,7 @@
     padding: 0.625rem 1.25rem !important;
     font-family: inherit !important;
     font-weight: 500 !important;
-    transition: all 0.3s ease;
+    transition: background-color var(--site-transition-med), box-shadow var(--site-transition-med);
     outline: none !important;
     z-index: 1 !important;
     box-sizing: border-box !important;
@@ -232,7 +232,7 @@
     color: var(--site-cyan) !important;
     z-index: 2 !important;
     pointer-events: none !important;
-    transition: all 0.3s ease;
+    transition: color var(--site-transition-med);
   }
 
   .aurora-container:focus-within {
@@ -266,7 +266,7 @@
     font-size: 13px;
     opacity: 0;
     transform: translateY(-50%) scale(0.6);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--site-transition-med), transform var(--site-transition-med);
     box-shadow: 0 0 15px rgba(34, 211, 238, 0.9);
     pointer-events: none;
   }
@@ -326,7 +326,7 @@
   font-size: 15px !important;
   text-decoration: none !important;
   overflow: hidden !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: color var(--site-transition-med), background var(--site-transition-med), border-color var(--site-transition-med), box-shadow var(--site-transition-med) !important;
   cursor: pointer !important;
 }
 
@@ -341,7 +341,7 @@
   right: 0 !important;
   height: 3px !important;
   background: #334155 !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: background var(--site-transition-med), height var(--site-transition-med), box-shadow var(--site-transition-med) !important;
 }
 
 /* Hover state for all buttons */
@@ -437,7 +437,7 @@
   color: #94a3b8 !important;
   font-weight: 700 !important;
   font-size: 14px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: color var(--site-transition-med), background var(--site-transition-med), border-color var(--site-transition-med), box-shadow var(--site-transition-med) !important;
   cursor: pointer !important;
 }
 
@@ -1273,7 +1273,7 @@
         transform: translateX(-50%);
         color: rgba(255, 255, 255, 0.09);
         font-size: clamp(6rem, 30vw, 18rem);
-        font-weight: 1000;
+        font-weight: 900;
         letter-spacing: -0.09em;
         line-height: 0.8;
         text-shadow: 0 0 44px rgba(34, 211, 238, 0.18);
@@ -1338,7 +1338,7 @@
         -webkit-background-clip: text;
         background-clip: text;
         font-size: clamp(1.55rem, 5vw, 2.75rem);
-        font-weight: 1000;
+        font-weight: 900;
         letter-spacing: -0.05em;
         line-height: 1.08;
         filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.14));
@@ -3731,7 +3731,7 @@
     min-width: 0;
     color: #c9f7ff;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
-    font-weight: 1000;
+    font-weight: 900;
     letter-spacing: -0.035em;
     text-decoration: none;
     text-shadow: 0 0 12px rgba(34, 211, 238, 0.18);
@@ -3828,6 +3828,7 @@
     pointer-events: none;
     transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease;
     will-change: transform, opacity;
+    contain: layout style;
   }
 
   /* Open State Triggered by Parent Container */
@@ -3914,7 +3915,7 @@
     color: #c9f7ff;
     text-shadow: 0 0 12px rgba(34, 211, 238, 0.18);
     font-size: 1.2rem;
-    font-weight: 1000;
+    font-weight: 900;
     letter-spacing: -0.035em;
     line-height: 1.1;
   }
@@ -4808,7 +4809,7 @@ body .post-bookmark-btn.is-pulsing {
   background: linear-gradient(135deg, rgba(34,211,238,0.06), rgba(139,92,246,0.05));
   color: var(--site-soft);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform var(--site-transition-fast), background var(--site-transition-fast), border-color var(--site-transition-fast), color var(--site-transition-fast), box-shadow var(--site-transition-fast);
   -webkit-tap-highlight-color: transparent;
   outline: none;
   appearance: none;
@@ -4972,7 +4973,7 @@ body .post-bookmark-btn.is-pulsing {
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background var(--site-transition-fast), border-color var(--site-transition-fast), color var(--site-transition-fast);
   font-size: 0.8rem;
   outline: none;
   appearance: none;
@@ -5032,7 +5033,7 @@ body .post-bookmark-btn.is-pulsing {
   border-radius: 0.8rem;
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: rgba(255, 255, 255, 0.03);
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: border-color var(--site-transition-fast), background var(--site-transition-fast);
 }
 
 .fav-item:hover {
@@ -5096,7 +5097,7 @@ body .post-bookmark-btn.is-pulsing {
   place-items: center;
   cursor: pointer;
   font-size: 0.6rem;
-  transition: all 0.2s ease;
+  transition: background var(--site-transition-fast), border-color var(--site-transition-fast), transform var(--site-transition-fast);
   outline: none;
   appearance: none;
   padding: 0;
@@ -5172,7 +5173,7 @@ body .post-bookmark-btn.is-pulsing {
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background var(--site-transition-fast), border-color var(--site-transition-fast), color var(--site-transition-fast);
   outline: none;
   appearance: none;
 }
@@ -6007,7 +6008,7 @@ body .post-bookmark-btn.is-pulsing {
                 background: rgba(255,255,255,0.055);
                 color: #cfefff;
                 cursor: pointer;
-                transition: transform 0.2s ease, background 0.2s ease;
+                transition: transform var(--site-transition-fast), background var(--site-transition-fast);
             }
 
             .genre-selected-tray {
@@ -6102,7 +6103,7 @@ body .post-bookmark-btn.is-pulsing {
                 color: #d8e9ff;
                 cursor: pointer;
                 user-select: none;
-                transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+                transition: transform var(--site-transition-fast), border-color var(--site-transition-fast), background var(--site-transition-fast), box-shadow var(--site-transition-fast);
             }
 
             .genre-option-icon,
@@ -6505,7 +6506,7 @@ body .post-bookmark-btn.is-pulsing {
                 background: rgba(255,255,255,0.045);
                 color: #cbd5e1;
                 cursor: pointer;
-                transition: all 0.2s ease;
+                transition: filter var(--site-transition-fast), background var(--site-transition-fast);
             }
 
             .taxonomy-tabs-clear-btn:hover {
@@ -6926,6 +6927,9 @@ body .post-bookmark-btn.is-pulsing {
    Scope: global tokens + reusable component classes + safe
    compatibility normalization for main UI components.
    ========================================================== */
+/* NOTE: Multiple :root blocks are intentional — each phase adds
+   tokens separately for git-blame traceability. CSS cascade
+   merges them correctly. No runtime cost. */
 :root {
   --site-bg: #060816;
   --site-panel: #0f172a;
@@ -6973,6 +6977,7 @@ body .post-bookmark-btn.is-pulsing {
   --site-gradient-danger: linear-gradient(135deg, rgba(239, 68, 68, 0.90), rgba(219, 39, 119, 0.90), rgba(147, 51, 234, 0.90));
   --site-transition-fast: 0.18s ease;
   --site-transition-med: 0.22s ease;
+  --site-transition-slow: 0.32s ease;
   --site-focus-ring: 3px solid rgba(255, 255, 255, 0.56);
   --site-focus-offset: 3px;
 }
@@ -7362,7 +7367,7 @@ body .post-bookmark-btn.is-pulsing {
     outline: none !important;
     font-family: inherit !important;
     font-weight: 600 !important;
-    transition: all 0.22s cubic-bezier(0.4,0,0.2,1) !important;
+    transition: border-color 0.22s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
     box-sizing: border-box !important;
     /* Mobile-first */
     min-height: 2.65rem !important;
@@ -7878,6 +7883,24 @@ html {
   .ad-neon-shell {
     border-radius: var(--site-radius-lg) !important;
   }
+}
+
+
+/* Performance: contain layout paint for heavy grid components */
+.donghua-card-grid,
+.home-rec-slider-rail,
+.genre-sheet-list,
+.fav-list {
+  contain: layout style;
+}
+
+
+/* Performance: content-visibility for off-screen heavy sections */
+.site-footer,
+.share-premium-card,
+.ad-neon-shell {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px;
 }
 
 /* ==========================================================
