@@ -145,13 +145,6 @@
     backdrop-filter: blur(12px);
   }
   
-  .cyber-card-purple {
-    background-color: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(139, 92, 246, 0.3);
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
-    backdrop-filter: blur(12px);
-  }
-
   .cyber-button {
     background: linear-gradient(135deg, var(--site-cyan), var(--site-purple));
     color: var(--site-bg);
@@ -170,111 +163,8 @@
     filter: brightness(1.03);
   }
 
-  /* Aurora Flow Search Input */
-  .aurora-container {
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 2px !important;
-    border-radius: 9999px !important;
-    overflow: hidden !important;
-    width: 100% !important;
-    transition: box-shadow var(--site-transition-med);
-    box-sizing: border-box !important;
-  }
-
-  .aurora-container::before {
-    content: '';
-    position: absolute !important;
-    width: 150% !important;
-    height: 300% !important;
-    background: conic-gradient(
-      from 0deg,
-      var(--site-cyan),
-      var(--site-purple),
-      var(--site-pink),
-      var(--site-cyan)
-    ) !important;
-    animation: aurora-rotate 4s linear infinite !important;
-    left: -25% !important;
-    top: -100% !important;
-    z-index: 0 !important;
-  }
-
-  @keyframes aurora-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  .aurora-input {
-    position: relative !important;
-    width: 100% !important;
-    border-radius: 9999px !important;
-    background-color: var(--site-panel) !important;
-    border: none !important;
-    color: var(--site-text) !important;
-    padding: 0.625rem 1.25rem !important;
-    font-family: inherit !important;
-    font-weight: 500 !important;
-    transition: background-color var(--site-transition-med), box-shadow var(--site-transition-med);
-    outline: none !important;
-    z-index: 1 !important;
-    box-sizing: border-box !important;
-  }
-
-  .aurora-input:focus {
-    background-color: rgba(15, 23, 42, 0.8) !important;
-  }
-
-  .aurora-icon {
-    position: absolute !important;
-    right: 1rem !important;
-    color: var(--site-cyan) !important;
-    z-index: 2 !important;
-    pointer-events: none !important;
-    transition: color var(--site-transition-med);
-  }
-
-  .aurora-container:focus-within {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4) !important;
-  }
-
   /* Model 2: Neon Holo-Overlay Title & Interactive Hover Button */
 
-  .card-holo-title {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding-right: 36px;
-  }
-
-  .card-holo-title::after {
-    content: '\f0ed'; /* FontAwesome download icon */
-    font-family: 'Font Awesome 6 Free', 'FontAwesome';
-    font-weight: 900;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--site-cyan), var(--site-sky));
-    color: var(--site-bg);
-    font-size: 13px;
-    opacity: 0;
-    transform: translateY(-50%) scale(0.6);
-    transition: opacity var(--site-transition-med), transform var(--site-transition-med);
-    box-shadow: 0 0 15px rgba(34, 211, 238, 0.9);
-    pointer-events: none;
-  }
-
-  .group:hover .card-holo-title::after {
-    opacity: 1;
-    transform: translateY(-50%) scale(1);
-  }
 }
 
 /* ==========================================================
@@ -1981,15 +1871,6 @@
   color: #d8ecff;
 }
 
-.fav-empty-note {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  color: #7b89a6;
-  font-size: 0.78rem;
-  line-height: 1.6;
-}
-
 @media (min-width: 768px) {
   .fav-empty-state {
     padding-top: 1.25rem;
@@ -2010,10 +1891,6 @@
 
   .fav-empty-actions {
     justify-content: flex-start;
-  }
-
-  .fav-empty-note {
-    text-align: left;
   }
 
   .fav-empty-title {
@@ -7340,7 +7217,6 @@ body .post-bookmark-btn.is-pulsing {
 @media (min-width: 640px) {
   .home-section-divider-label { display: inline-flex; }
 }
-.post-detail-poster-img { width: 200px !important; }
 .post-rating-star { color: #facc15; }
 .site-bg-character { filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.45)); }
 @layer components {

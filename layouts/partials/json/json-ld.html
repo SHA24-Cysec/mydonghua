@@ -40,7 +40,6 @@
     {{/*  Donghua – TVSeries / Movie JSON-LD  */}}
     {{ $desc := .Params.sinopsis | default .Params.deskripsi | plainify | truncate 160 }}
     {{ $img := .Params.image | default .Params.thumbnail | absURL }}
-    {{ $rating := .Params.rating | default 8 }}
     {{ $genres := .Params.genre | default (slice "Donghua") }}
     {{ $episodeCount := 0 }}
     {{ with .Params.episode }}{{ $num := replaceRE "[^0-9]" "" . }}{{ if $num }}{{ $episodeCount = int $num }}{{ end }}{{ end }}
@@ -57,12 +56,6 @@
       "inLanguage": "id",
       "genre": {{ $genres | jsonify | safeJS }},
       {{ with .Params.studio }}"productionCompany": {"@type": "Organization", "name": {{ delimit . ", " | jsonify | safeJS }} },{{ end }}
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "{{ $rating }}",
-        "bestRating": "10",
-        "ratingCount": "1"
-      },
       {{ if gt $episodeCount 0 }}"numberOfEpisodes": {{ $episodeCount }},{{ end }}
       "datePublished": "{{ .Date.Format "2006-01-02" }}",
       "author": {

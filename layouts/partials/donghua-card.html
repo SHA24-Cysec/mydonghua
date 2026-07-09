@@ -23,8 +23,12 @@
                  sizes="(max-width:340px) 90vw, (max-width:640px) 45vw, (max-width:1024px) 22vw, 280px"
                  width="{{ $small.Width }}" height="{{ $small.Height }}"
                  alt="{{ $thumbAlt }}">
-{{ else }}
+{{ else if $thumbSrc }}
             <img loading="lazy" decoding="async" width="200" height="300" src='{{ $thumbSrc | relURL }}' alt="{{ $thumbAlt }}">
+{{ else }}
+            <div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true">
+              <i class="fa-solid fa-film text-6xl"></i>
+            </div>
 {{ end }}
         </div>
         <div class="donghua-card-frame" aria-hidden="true"></div>

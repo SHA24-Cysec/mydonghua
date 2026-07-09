@@ -23,7 +23,7 @@
   {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
   {{ $first := index (first 1 ($pages.ByDate.Reverse)) 0 }}
   {{ with $first }}
-    <link rel="preload" as="image" fetchpriority="high" href="{{ .Params.thumbnail | relURL }}">
+    <link rel="preload" as="image" fetchpriority="high" href="{{ .Params.thumbnail | default "/img/favicon.webp" | relURL }}">
   {{ end }}
 {{ end }}
 {{- with .OutputFormats.Get "rss" -}}

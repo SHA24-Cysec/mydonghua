@@ -60,17 +60,6 @@
   </main>
 </div>
 
-{{/*  Confirm Dialog  */}}
-<div class="fav-confirm-overlay" id="fav-confirm" aria-hidden="true">
-  <div class="fav-confirm-box" role="alertdialog" aria-modal="true">
-    <div class="text-4xl mt-4 mb-0">️</div>
-    <div class="text-xl font-bold text-red-400 mb-2">Hapus Semua Favorit?</div>
-    <div class="text-sm text-slate-400 mb-4">Semua donghua favorit akan dihapus dari daftar. Tindakan ini tidak bisa dibatalkan.</div>
-    <div class="flex gap-4">
-      <button class="flex-1 px-4 py-2.5 rounded-lg border border-slate-700 bg-slate-800/50 text-slate-200 font-semibold hover:bg-slate-700/50 transition-colors" id="fav-cancel-btn" type="button">Batal</button>
-      <button class="flex-1 px-4 py-2.5 rounded-lg border border-red-500/40 bg-red-500/20 text-red-400 font-semibold hover:bg-red-500/30 transition-colors" id="fav-confirm-yes-btn" type="button">Hapus Semua</button>
-    </div>
-  </div>
-</div>
-
+{{/*  Confirm Dialog disediakan oleh save-favorite.html (partial yang di-load via baseof.html)
+      untuk menghindari duplikasi ID dengan halaman favorit  */}}
 {{ end }}
