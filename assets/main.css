@@ -4711,8 +4711,8 @@ mark {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center top;
-     object-position: center top;
+  -o-object-position: center center;
+     object-position: center center;
   display: block;
   filter: brightness(0.88) saturate(1.03);
   transition: opacity 0.28s ease, transform 0.28s ease, filter 0.28s ease;
