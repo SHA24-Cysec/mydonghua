@@ -18,9 +18,19 @@
                 </span>
 
                 <h1 id="notfound-title">Halaman tidak ditemukan</h1>
-                <p>Halaman yang Anda buka tidak tersedia, telah dipindahkan, atau alamat URL yang dimasukkan kurang tepat.</p>
+                <p id="notfound-desc">Halaman yang kamu buka tidak tersedia, telah dipindahkan, atau alamat URL yang dimasukkan kurang tepat.</p>
 
-                <div class="notfound-dock-actions" aria-label="Navigasi halaman 404">
+                <form class="notfound-dock-search mt-5" role="search" action='{{ "search/" | relURL }}' method="get" aria-label="Cari donghua dari halaman 404">
+                    <label class="sr-only" for="notfound-search-input">Cari judul donghua</label>
+                    <i class="fa-solid fa-magnifying-glass notfound-dock-search-icon" aria-hidden="true"></i>
+                    <input id="notfound-search-input" class="notfound-dock-search-input" type="search" name="q" minlength="3" autocomplete="off" placeholder="Cari judul donghua..." aria-label="Cari judul donghua">
+                    <button class="notfound-dock-search-btn" type="submit" aria-label="Cari donghua">
+                        <span>Cari</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </form>
+
+                <nav class="notfound-dock-actions mt-4" aria-label="Navigasi bantuan halaman 404">
                     <a class="notfound-dock-btn primary" href='{{ "/" | relURL }}'>
                         <i class="fa-solid fa-house" aria-hidden="true"></i>
                         Beranda

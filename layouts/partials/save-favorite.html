@@ -12,11 +12,11 @@
 
 {{/*  Bottom Sheet Modal HTML  */}}
 <div class="fav-overlay" id="fav-overlay" aria-hidden="true">
-  <div class="fav-sheet" role="dialog" aria-modal="true" aria-label="Daftar Favorit">
+  <div class="fav-sheet" role="dialog" aria-modal="true" aria-labelledby="fav-sheet-title" tabindex="-1">
     <div class="fav-handle" aria-hidden="true"></div>
 
     <div class="fav-header">
-      <div class="fav-title">
+      <div class="fav-title" id="fav-sheet-title">
         <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
         <span>Favorit</span>
         <span class="fav-count" id="fav-count">0</span>
@@ -31,23 +31,23 @@
       </div>
     </div>
 
-    <div id="fav-list-container"></div>
+    <div id="fav-list-container" aria-live="polite"></div>
   </div>
 </div>
 
 {{/*  Confirm Dialog  */}}
 <div class="fav-confirm" id="fav-confirm" aria-hidden="true">
-  <div class="fav-confirm-box" role="alertdialog" aria-modal="true">
-    <div class="fav-confirm-title">
+  <div class="fav-confirm-box" role="alertdialog" aria-modal="true" aria-labelledby="fav-confirm-title" aria-describedby="fav-confirm-desc" tabindex="-1">
+    <div class="fav-confirm-title" id="fav-confirm-title">
       <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
       Hapus Semua Favorit?
     </div>
-    <div class="fav-confirm-text">
+    <div class="fav-confirm-text" id="fav-confirm-desc">
       Semua donghua favorit akan dihapus. Tindakan ini tidak bisa dibatalkan.
     </div>
     <div class="fav-confirm-actions">
       <button class="fav-confirm-btn" id="fav-cancel-btn" type="button">Batal</button>
-      <button class="fav-confirm-btn danger" id="fav-confirm-yes-btn" type="button">Hapus</button>
+      <button class="fav-confirm-btn danger" id="fav-confirm-yes-btn" type="button">Hapus Semua</button>
     </div>
   </div>
 </div>

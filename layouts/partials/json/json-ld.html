@@ -10,6 +10,32 @@
           "inLanguage": "id"
         }
     </script>
+    {{/*  ItemList – Daftar donghua terbaru homepage (hanya halaman pertama paginasi)  */}}
+    {{ if not .Paginator.HasPrev }}
+        {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
+        {{ $paginator := .Paginate $pages.ByDate.Reverse 16 }}
+        {{ $itemList := slice }}
+        {{ range $index, $page := $paginator.Pages }}
+            {{ $item := dict
+                "@type" "ListItem"
+                "position" (add $index 1)
+                "url" $page.Permalink
+                "name" $page.Title
+            }}
+            {{ with $page.Params.thumbnail }}
+                {{ $item = merge $item (dict "image" (. | absURL)) }}
+            {{ end }}
+            {{ $itemList = $itemList | append $item }}
+        {{ end }}
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Daftar Donghua Batch Subtitle Indonesia Terbaru",
+          "itemListElement": {{ $itemList | jsonify | safeJS }}
+        }
+        </script>
+    {{ end }}
 {{ else if eq .Layout "postingan-donghua" }}
     {{/*  Donghua – TVSeries / Movie JSON-LD  */}}
     {{ $desc := .Params.sinopsis | default .Params.deskripsi | plainify | truncate 160 }}

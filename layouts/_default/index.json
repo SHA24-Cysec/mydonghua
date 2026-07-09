@@ -23,7 +23,6 @@
       "studio" .Params.studio
       "season" .Params.season
       "genre" (delimit .Params.genre ", ")
-      "content" .Plain
       "permalink" .Permalink
       "thumbnail" $thumb
       "thumbnail_small" $thumb_small

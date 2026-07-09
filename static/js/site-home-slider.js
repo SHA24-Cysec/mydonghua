@@ -109,17 +109,58 @@ document.addEventListener('DOMContentLoaded', function () {
       progressNode.style.animationPlayState = 'running';
     }
 
+    let dotButtons = [];
+
+    function updateActiveDots() {
+      dotButtons.forEach(function (dot, index) {
+        const isActive = index === currentIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+        dot.setAttribute('tabindex', isActive ? '0' : '-1');
+      });
+    }
+
     function renderDots() {
       dotsNode.innerHTML = '';
-      slides.forEach(function (_, index) {
+      dotButtons = slides.map(function (_, index) {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'home-rec-slider-dot' + (index === currentIndex ? ' is-active' : '');
-        button.setAttribute('aria-label', 'Buka slide ' + (index + 1));
+        button.setAttribute('aria-label', 'Tampilkan slide ' + (index + 1) + ' dari ' + slides.length);
+        button.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
+        button.setAttribute('tabindex', index === currentIndex ? '0' : '-1');
         button.addEventListener('click', function () {
           goToSlide(index, true);
+          button.focus();
         });
         dotsNode.appendChild(button);
+        return button;
+      });
+      bindDotsKeyboard();
+    }
+
+    function bindDotsKeyboard() {
+      if (!dotsNode) return;
+      dotsNode.addEventListener('keydown', function (e) {
+        const key = e.key;
+        let newIndex = currentIndex;
+        if (key === 'ArrowRight' || key === 'ArrowDown') {
+          newIndex = (currentIndex + 1) % slides.length;
+          e.preventDefault();
+        } else if (key === 'ArrowLeft' || key === 'ArrowUp') {
+          newIndex = (currentIndex - 1 + slides.length) % slides.length;
+          e.preventDefault();
+        } else if (key === 'Home') {
+          newIndex = 0;
+          e.preventDefault();
+        } else if (key === 'End') {
+          newIndex = slides.length - 1;
+          e.preventDefault();
+        } else {
+          return;
+        }
+        goToSlide(newIndex, true);
+        if (dotButtons[newIndex]) dotButtons[newIndex].focus();
       });
     }
 
@@ -129,7 +170,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'home-rec-slider-card' + (index === currentIndex ? ' is-active' : '');
-        button.setAttribute('aria-label', 'Buka rekomendasi ' + (item.title || ('Slide ' + (index + 1))));
+        button.setAttribute('aria-label', 'Tampilkan rekomendasi: ' + (item.title || ('Slide ' + (index + 1))));
+        button.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
         button.dataset.slideIndex = String(index);
         button.innerHTML = `
           <span class="home-rec-slider-card-thumb">
@@ -150,7 +192,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateActiveRail() {
       railCards.forEach(function (card, index) {
-        card.classList.toggle('is-active', index === currentIndex);
+        const isActive = index === currentIndex;
+        card.classList.toggle('is-active', isActive);
+        card.setAttribute('aria-current', isActive ? 'true' : 'false');
       });
     }
 

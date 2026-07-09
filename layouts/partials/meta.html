@@ -17,6 +17,9 @@
     {{ if not $kw }}{{ $kw = slice (.Site.Params.keywords) }}{{ end }}
     <meta name="keywords" content="{{ delimit $kw ", " }}">
     <meta name="robots" content="index, follow">
+{{ else if eq .Kind "404" }}
+    <meta name="description" content="Halaman tidak ditemukan. Gunakan pencarian DonghuaBatch untuk menemukan batch donghua subtitle Indonesia yang kamu cari.">
+    <meta name="robots" content="noindex, follow">
 {{ else }}
     <meta name="robots" content="noindex, follow">
 {{ end }}

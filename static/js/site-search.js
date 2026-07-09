@@ -263,8 +263,17 @@ const searchInput = document.getElementById("search-input");
       const status = toText(item.status);
       const rating = toText(item.rating);
       const permalink = toText(item.permalink);
-      const thumbnail = toText(item.thumbnail);
       const title = toText(item.title);
+
+      // Thumbnail – srcset/WebP – sama seperti donghua-card.html / site-favorites.js
+      const thumbFallback = toText(item.thumbnail || "");
+      const thumbSmall = toText(item.thumbnail_small || thumbFallback);
+      const thumbMedium = toText(item.thumbnail_medium || "");
+      let thumbSrcset = toText(item.thumbnail_srcset || "");
+      if (!thumbSrcset && thumbSmall && thumbMedium) {
+        thumbSrcset = thumbSmall + " 240w, " + thumbMedium + " 400w";
+      }
+      const thumbSrc = thumbSmall || thumbFallback;
 
       const metaChips = [episode, status]
         .filter(value => value && value !== "-")
@@ -277,11 +286,43 @@ const searchInput = document.getElementById("search-input");
 
       const extraMeta = extraMetaHTML ? `<div class="donghua-card-search-meta">${extraMetaHTML}</div>` : "";
 
+      // Bookmark – cek status favorit via DonghuaFav (kalau sudah load)
+      const favId = permalink;
+      let saved = false;
+      try {
+        if (window.DonghuaFav && window.DonghuaFav.isSaved) {
+          saved = window.DonghuaFav.isSaved(favId);
+        } else {
+          const raw = localStorage.getItem('donghuabatch_favorites');
+          if (raw) {
+            const ids = JSON.parse(raw);
+            saved = Array.isArray(ids) && ids.indexOf(favId) !== -1;
+          }
+        }
+      } catch(e) {}
+      const bookmarkClass = saved ? "donghua-card-bookmark is-saved" : "donghua-card-bookmark";
+      const bookmarkLabel = saved ? "Hapus dari favorit" : "Simpan ke favorit";
+      const bookmarkIcon = saved
+        ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
+        : '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+
+      let imgTag = "";
+      if (thumbSrc) {
+        imgTag = `<img loading="lazy" decoding="async" src="${thumbSrc}" alt="${title.replace(/"/g, '&quot;')}"`;
+        if (thumbSrcset) {
+          imgTag += ` srcset="${thumbSrcset}" sizes="(max-width:340px) 90vw, (max-width:640px) 45vw, (max-width:1024px) 22vw, 280px"`;
+        }
+        imgTag += ` width="240" height="320">`;
+      }
+
       return `
         <article class="donghua-card">
+          <button class="${bookmarkClass}" data-fav-id="${permalink}" type="button" aria-label="${bookmarkLabel}" title="${saved ? "Hapus" : "Simpan"}">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">${bookmarkIcon}</svg>
+          </button>
           <a class="donghua-card-link" title="${title}" href="${permalink}">
             <div class="donghua-card-poster">
-              <img loading="lazy" decoding="async" width="200" height="300" src="${thumbnail}" alt="${title}">
+              ${imgTag}
             </div>
             <div class="donghua-card-frame" aria-hidden="true"></div>
             <div class="donghua-card-badges">
@@ -382,6 +423,12 @@ const searchInput = document.getElementById("search-input");
       });
 
       updatePagination();
+      // Sync bookmark buttons – sama seperti di halaman Favorit
+      try {
+        if (window.DonghuaFav && window.DonghuaFav.syncAllButtons) {
+          window.DonghuaFav.syncAllButtons();
+        }
+      } catch(e) {}
     }
 
     function updatePagination() {
@@ -401,8 +448,12 @@ const searchInput = document.getElementById("search-input");
 
       pagination.style.display = "flex";
       pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-      prevButton.disabled = currentPage <= 1;
-      nextButton.disabled = currentPage >= totalPages;
+      const prevDisabled = currentPage <= 1;
+      const nextDisabled = currentPage >= totalPages;
+      prevButton.disabled = prevDisabled;
+      nextButton.disabled = nextDisabled;
+      prevButton.setAttribute("aria-disabled", prevDisabled ? "true" : "false");
+      nextButton.setAttribute("aria-disabled", nextDisabled ? "true" : "false");
     }
 
     function parseGenres(input) {

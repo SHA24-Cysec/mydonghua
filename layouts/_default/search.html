@@ -5,7 +5,7 @@
     <span class="badge-neon mt-4 mx-auto"><i class="fa-solid fa-info-circle mr-2 text-cyan-400"></i>Ketik minimal 3 huruf. Pisahkan genre dengan koma.</span>
     <div class="w-full max-w-[900px] mx-auto mt-4">
         <div class="aurora-search-container mb-4" role="search">
-            <input class="aurora-search-input" type="search" name="q" id="search-input" placeholder="Cari judul donghua..." autocomplete="off" />
+            <input required class="aurora-search-input" type="search" name="q" id="search-input" placeholder="Cari judul donghua..." autocomplete="off" aria-label="Cari judul donghua" />
             <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
             <button type="button" class="aurora-search-btn" aria-label="Cari">
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -24,10 +24,10 @@
         </div>
 
         {{/*  Pagination  */}}
-        <div id="search-pagination" class="pagination-dock mt-4 text-slate-200">
-            <button class="pagination-dock-button" id="prev-page" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
-            <span class="pagination-dock-status" id="page-info"></span>
-            <button class="pagination-dock-button" id="next-page" disabled>Next <i class="fa-solid fa-chevron-right"></i></button>
+        <div id="search-pagination" class="pagination-dock mt-4 text-slate-200" role="navigation" aria-label="Navigasi halaman hasil pencarian">
+            <button class="pagination-dock-button" id="prev-page" disabled aria-label="Halaman sebelumnya" aria-disabled="true"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Prev</button>
+            <span class="pagination-dock-status" id="page-info" aria-live="polite"></span>
+            <button class="pagination-dock-button" id="next-page" disabled aria-label="Halaman berikutnya" aria-disabled="true">Next <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
         </div>
         
     </div>

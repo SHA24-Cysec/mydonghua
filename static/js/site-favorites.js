@@ -4,6 +4,8 @@
   var STORAGE_KEY = 'donghuabatch_favorites';
   var bookmarkSelector = '.donghua-card-bookmark, .post-bookmark-btn';
   var indexPromise = null;
+  var lastSheetTrigger = null;
+  var lastConfirmTrigger = null;
 
   function loadFavIds() {
     try {
@@ -145,6 +147,49 @@
     return item.id || item.permalink || item.objectID || '';
   }
 
+  function orderItemsByIds(data, ids) {
+    if (!Array.isArray(data)) return [];
+    var byId = {};
+    data.forEach(function (item) {
+      byId[itemId(item)] = item;
+    });
+    return ids.map(function (id) { return byId[id]; }).filter(Boolean);
+  }
+
+  function isFocusableVisible(el) {
+    return !!(el && typeof el.focus === 'function' && !el.disabled && (el.offsetParent !== null || el === document.activeElement));
+  }
+
+  function focusFirst(container, preferredSelector) {
+    if (!container) return false;
+    var target = preferredSelector ? container.querySelector(preferredSelector) : null;
+    if (isFocusableVisible(target)) {
+      target.focus();
+      return true;
+    }
+    var focusable = container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
+    for (var i = 0; i < focusable.length; i += 1) {
+      if (isFocusableVisible(focusable[i])) {
+        focusable[i].focus();
+        return true;
+      }
+    }
+    if (isFocusableVisible(container)) {
+      container.focus();
+      return true;
+    }
+    return false;
+  }
+
+  function restoreFocus(target, fallbackSelector) {
+    if (isFocusableVisible(target)) {
+      target.focus();
+      return;
+    }
+    var fallback = fallbackSelector ? document.querySelector(fallbackSelector) : null;
+    if (isFocusableVisible(fallback)) fallback.focus();
+  }
+
   function renderFavoriteCard(item) {
     var type = escapeHTML(item.type || 'Donghua');
     var episode = escapeHTML(item.episode || '-');
@@ -186,7 +231,7 @@
 
     return '<li class="donghua-card-item">' +
       '<article class="donghua-card">' +
-        '<button class="donghua-card-bookmark' + (saved ? ' is-saved' : '') + '" data-fav-id="' + id + '" type="button" aria-label="Hapus dari favorit" title="Hapus">' +
+        '<button class="donghua-card-bookmark' + (saved ? ' is-saved' : '') + '" data-fav-id="' + id + '" type="button" aria-pressed="' + (saved ? 'true' : 'false') + '" aria-label="' + (saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit') + '" title="' + (saved ? 'Hapus dari favorit' : 'Simpan ke favorit') + '">' +
           '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">' + iconPath + '</svg>' +
         '</button>' +
         '<a class="donghua-card-link" title="' + title + '" href="' + permalink + '">' +
@@ -252,9 +297,7 @@
 
     getIndexData()
       .then(function (data) {
-        var items = Array.isArray(data)
-          ? data.filter(function (item) { return ids.indexOf(itemId(item)) !== -1; })
-          : [];
+        var items = orderItemsByIds(data, ids);
 
         hideElement(statusEl);
 
@@ -298,9 +341,7 @@
 
     getIndexData()
       .then(function (data) {
-        var items = Array.isArray(data)
-          ? data.filter(function (item) { return ids.indexOf(itemId(item)) !== -1; })
-          : [];
+        var items = orderItemsByIds(data, ids);
 
         if (!items.length) {
           listContainer.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon"><i class="fa-regular fa-bookmark"></i></div><div class="fav-empty-text">Data favorit tidak ditemukan</div></div>';
@@ -312,10 +353,16 @@
           var title = escapeHTML(item.title || 'Donghua');
           var href = escapeHTML(item.permalink || '#');
           var img = escapeHTML(item.thumbnail_small || item.thumbnail || '');
+          var imgSrcset = '';
+          if (item.thumbnail_srcset) {
+            imgSrcset = escapeHTML(item.thumbnail_srcset);
+          } else if (item.thumbnail_small && item.thumbnail_medium) {
+            imgSrcset = escapeHTML(item.thumbnail_small) + ' 240w, ' + escapeHTML(item.thumbnail_medium) + ' 400w';
+          }
           var meta = [item.episode, item.status].filter(Boolean).map(escapeHTML).join(' • ');
           html += '<li class="fav-item">' +
-            '<a class="fav-item-thumb" href="' + href + '" aria-label="' + title + '">' +
-              (img ? '<img src="' + img + '" alt="" loading="lazy" decoding="async" width="48" height="72">' : '') +
+            '<a class="fav-item-thumb" href="' + href + '" aria-label="Buka detail ' + title + '">' +
+              (img ? '<img src="' + img + '"' + (imgSrcset ? ' srcset="' + imgSrcset + '" sizes="48px"' : '') + ' alt="" loading="lazy" decoding="async" width="48" height="72">' : '') +
             '</a>' +
             '<div class="fav-item-info">' +
               '<a class="fav-item-title" href="' + href + '">' + title + '</a>' +
@@ -334,13 +381,17 @@
       });
   }
 
-  function openSheet() {
+  function openSheet(trigger) {
     var overlay = document.getElementById('fav-overlay');
     if (!overlay) return;
+    lastSheetTrigger = trigger || document.activeElement;
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     renderSheetList();
+    window.setTimeout(function () {
+      focusFirst(overlay, '#fav-close-btn');
+    }, 0);
   }
 
   function closeSheet() {
@@ -349,13 +400,19 @@
     overlay.classList.remove('is-open');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    restoreFocus(lastSheetTrigger, '#nav-fav-btn, #nav-fav-btn-mobile');
+    lastSheetTrigger = null;
   }
 
-  function openConfirm(selector) {
+  function openConfirm(selector, trigger) {
     var dlg = document.querySelector(selector || '#fav-confirm');
     if (!dlg) return;
+    lastConfirmTrigger = trigger || document.activeElement;
     dlg.classList.add('is-open');
     dlg.setAttribute('aria-hidden', 'false');
+    window.setTimeout(function () {
+      focusFirst(dlg, '#fav-cancel-btn');
+    }, 0);
   }
 
   function closeConfirm(selector) {
@@ -363,6 +420,8 @@
     if (!dlg) return;
     dlg.classList.remove('is-open');
     dlg.setAttribute('aria-hidden', 'true');
+    restoreFocus(lastConfirmTrigger, '#fav-clear-all, #fav-clear-btn, .fav-empty-cta');
+    lastConfirmTrigger = null;
   }
 
   function removeOne(id) {
@@ -415,7 +474,7 @@
     var sheetTrigger = event.target.closest('[data-fav-open], #nav-fav-btn, #nav-fav-btn-mobile');
     if (sheetTrigger) {
       event.preventDefault();
-      openSheet();
+      openSheet(sheetTrigger);
       return;
     }
 
@@ -436,7 +495,13 @@
 
     if (event.target.closest('#fav-clear-btn, #fav-clear-all')) {
       event.preventDefault();
-      openConfirm('#fav-confirm');
+      openConfirm('#fav-confirm', event.target.closest('#fav-clear-btn, #fav-clear-all'));
+      return;
+    }
+
+    var confirmDlg = document.getElementById('fav-confirm');
+    if (confirmDlg && event.target === confirmDlg) {
+      closeConfirm('#fav-confirm');
       return;
     }
 
