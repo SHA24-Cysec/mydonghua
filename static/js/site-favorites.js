@@ -151,7 +151,13 @@
     var status = escapeHTML(item.status || '-');
     var rating = escapeHTML(item.rating || '-');
     var permalink = escapeHTML(item.permalink || '#');
-    var thumbnail = escapeHTML(item.thumbnail || '');
+    var thumbnail = escapeHTML(item.thumbnail_small || item.thumbnail || '');
+    var thumbnailSrcset = '';
+    if (item.thumbnail_srcset) {
+      thumbnailSrcset = escapeHTML(item.thumbnail_srcset);
+    } else if (item.thumbnail_small && item.thumbnail_medium) {
+      thumbnailSrcset = escapeHTML(item.thumbnail_small) + ' 240w, ' + escapeHTML(item.thumbnail_medium) + ' 400w';
+    }
     var title = escapeHTML(item.title || 'Donghua');
     var id = escapeHTML(itemId(item));
 
@@ -169,16 +175,25 @@
       ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
       : '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
 
+    var thumbImg = '';
+    if (thumbnail) {
+      thumbImg = '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '"';
+      if (thumbnailSrcset) {
+        thumbImg += ' srcset="' + thumbnailSrcset + '" sizes="(max-width:340px) 90vw, (max-width:640px) 45vw, (max-width:1024px) 22vw, 280px"';
+      }
+      thumbImg += ' width="240" height="320">';
+    }
+
     return '<li class="donghua-card-item">' +
       '<article class="donghua-card">' +
+        '<button class="donghua-card-bookmark' + (saved ? ' is-saved' : '') + '" data-fav-id="' + id + '" type="button" aria-label="Hapus dari favorit" title="Hapus">' +
+          '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">' + iconPath + '</svg>' +
+        '</button>' +
         '<a class="donghua-card-link" title="' + title + '" href="' + permalink + '">' +
           '<div class="donghua-card-poster">' +
-            (thumbnail ? '<img loading="lazy" decoding="async" width="200" height="300" src="' + thumbnail + '" alt="' + title + '">' : '') +
+            thumbImg +
           '</div>' +
           '<div class="donghua-card-frame" aria-hidden="true"></div>' +
-          '<button class="donghua-card-bookmark' + (saved ? ' is-saved' : '') + '" data-fav-id="' + id + '" type="button" aria-label="Hapus dari favorit" title="Hapus">' +
-            '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">' + iconPath + '</svg>' +
-          '</button>' +
           '<div class="donghua-card-badges">' +
             '<span class="donghua-card-badge">' + type + '</span>' +
             '<span class="donghua-card-badge sub">Sub</span>' +
@@ -296,7 +311,7 @@
         items.forEach(function (item) {
           var title = escapeHTML(item.title || 'Donghua');
           var href = escapeHTML(item.permalink || '#');
-          var img = escapeHTML(item.thumbnail || '');
+          var img = escapeHTML(item.thumbnail_small || item.thumbnail || '');
           var meta = [item.episode, item.status].filter(Boolean).map(escapeHTML).join(' • ');
           html += '<li class="fav-item">' +
             '<a class="fav-item-thumb" href="' + href + '" aria-label="' + title + '">' +

@@ -10,15 +10,22 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.google.com">
-{{/*  Font Awesome tadinya dimuat lewat <link rel="stylesheet"> biasa
-      (render-blocking) plus <link rel="preload"> ganda untuk file yang
-      sama (dua request untuk satu file). Sekarang cuma satu request,
-      dan CSS-nya tidak lagi memblokir render awal halaman: browser
-      mengambilnya di background lalu baru diterapkan begitu selesai.  */}}
+{{/*  Font Awesome 6.7.2 – CDN full – rollback 2026-07-09
+      FA Kit 40c8dc61cd menyebabkan ikon rusak / missing,
+      kembali ke CDN cdnjs non-blocking, aman untuk semua ikon.
+*/}}
 <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"></noscript>
 <link rel="preload" as="image" fetchpriority="high" href='{{ "img/Huo-Linger.webp" | relURL }}'>
+{{/* Preload slider hero thumbnail – LCP optimization – homepage only */}}
+{{ if .IsHome }}
+  {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
+  {{ $first := index (first 1 ($pages.ByDate.Reverse)) 0 }}
+  {{ with $first }}
+    <link rel="preload" as="image" fetchpriority="high" href="{{ .Params.thumbnail | relURL }}">
+  {{ end }}
+{{ end }}
 {{- with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}

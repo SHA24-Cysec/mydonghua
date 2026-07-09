@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.dataset.slideIndex = String(index);
         button.innerHTML = `
           <span class="home-rec-slider-card-thumb">
-            <img data-no-loader="true" src="${escapeHTML(item.thumbnail)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async">
+            <img data-no-loader="true" src="${escapeHTML(item.thumbnail)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" width="120" height="160">
           </span>
           <span class="home-rec-slider-card-body">
             <strong>${escapeHTML(item.title)}</strong>
@@ -174,8 +174,14 @@ document.addEventListener('DOMContentLoaded', function () {
       statusNode.textContent = item.status ? `Status: ${item.status}` : 'Status: —';
       ratingNode.textContent = item.rating ? `Rating: ${item.rating}/10` : 'Rating: —';
       linkNode.href = item.permalink || '#';
-      imageNode.src = item.thumbnail || imageNode.src;
-      imageNode.alt = item.title || 'Rekomendasi Donghua';
+      if (imageNode) {
+        imageNode.loading = 'eager';
+        imageNode.decoding = 'async';
+        try { imageNode.fetchPriority = 'high'; } catch(e) {}
+        imageNode.setAttribute('fetchpriority', 'high');
+        imageNode.src = item.thumbnail || imageNode.src;
+        imageNode.alt = item.title || 'Rekomendasi Donghua';
+      }
       updateHeroImageFocus();
 
       chipsNode.innerHTML = '';

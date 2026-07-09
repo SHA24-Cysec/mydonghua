@@ -17,7 +17,7 @@
     <div class="home-rec-slider-stage">
         <div class="home-rec-slider-hero">
             <div class="home-rec-slider-media">
-                <img class="home-rec-slider-image" data-no-loader="true" src='{{ $firstFallback.Params.thumbnail | relURL }}' alt='{{ $firstFallback.Title }}' loading="lazy" decoding="async">
+                <img class="home-rec-slider-image" data-no-loader="true" src='{{ $firstFallback.Params.thumbnail | relURL }}' alt='{{ $firstFallback.Title }}' loading="eager" fetchpriority="high" decoding="async" width="400" height="534">
             </div>
             <div class="home-rec-slider-overlay"></div>
 
@@ -70,7 +70,7 @@
                   {{ $railDescription := $railDescriptionRaw | plainify | truncate 120 }}
                   <button class="home-rec-slider-card{{ if eq $index 0 }} is-active{{ end }}" type="button" data-fallback-index="{{ $index }}">
                       <span class="home-rec-slider-card-thumb">
-                          <img data-no-loader="true" src='{{ $page.Params.thumbnail | relURL }}' alt='{{ $page.Title }}' loading="lazy" decoding="async">
+                          <img data-no-loader="true" src='{{ $page.Params.thumbnail | relURL }}' alt='{{ $page.Title }}' loading="lazy" decoding="async" width="120" height="160">
                       </span>
                       <span class="home-rec-slider-card-body">
                           <strong>{{ $page.Title }}</strong>
