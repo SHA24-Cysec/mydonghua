@@ -8,8 +8,14 @@
     <meta name="keywords" content="{{ .Site.Params.keywords }}">
     <meta name="robots" content="index, follow">
 {{ else if eq .Layout "postingan-donghua" }}
-    <meta name="description" content="{{ .Params.deskripsi }}">
-    <meta name="keywords" content='{{ with .Params.keywords }}{{ delimit . " " }}{{ end }}'>
+    {{ $desc := .Params.deskripsi | default .Params.sinopsis | default .Summary | plainify | truncate 160 }}
+    <meta name="description" content="{{ $desc }}">
+    {{ $kw := slice }}
+    {{ with .Params.keywords }}{{ $kw = $kw | append . }}{{ end }}
+    {{ with .Params.genre }}{{ $kw = $kw | append . }}{{ end }}
+    {{ with .Params.studio }}{{ $kw = $kw | append . }}{{ end }}
+    {{ if not $kw }}{{ $kw = slice (.Site.Params.keywords) }}{{ end }}
+    <meta name="keywords" content="{{ delimit $kw ", " }}">
     <meta name="robots" content="index, follow">
 {{ else }}
     <meta name="robots" content="noindex, follow">

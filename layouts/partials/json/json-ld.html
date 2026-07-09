@@ -1,33 +1,53 @@
 {{ if .IsHome }}
     <script type="application/ld+json">
         {
-          "@context": "https://schema.org/", 
-          "@type": "Book", 
+          "@context": "https://schema.org", 
+          "@type": "WebSite",
           "name": "{{ .Site.Title }}",
-          "image": "{{ "img/DonghuaBatch.webp" | absURL }}"
+          "url": "{{ .Permalink }}",
+          "description": "{{ .Site.Params.deskripsi }}",
+          "image": "{{ "img/DonghuaBatch.webp" | absURL }}",
+          "inLanguage": "id"
         }
     </script>
 {{ else if eq .Layout "postingan-donghua" }}
-    {{/*  Rating  */}}
+    {{/*  Donghua – TVSeries / Movie JSON-LD  */}}
+    {{ $desc := .Params.sinopsis | default .Params.deskripsi | plainify | truncate 160 }}
+    {{ $img := .Params.image | default .Params.thumbnail | absURL }}
+    {{ $rating := .Params.rating | default 8 }}
+    {{ $genres := .Params.genre | default (slice "Donghua") }}
+    {{ $episodeCount := 0 }}
+    {{ with .Params.episode }}{{ $num := replaceRE "[^0-9]" "" . }}{{ if $num }}{{ $episodeCount = int $num }}{{ end }}{{ end }}
+    {{ $type := cond (gt $episodeCount 1) "TVSeries" "Movie" }}
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/", 
-          "@type": "Book", 
-          "name": "{{ .Title }}",
-          "image": "{{ .Params.image | absURL }}"
-        }
-    </script>
-    {{/*  Article  */}}
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "{{ .Title }}",
-        "datePublished": "{{ .Date.Format "2006-01-02" }}",
-        "author": {
-          "@type": "Person",
-          "name": "{{ .Site.Params.author }}"
-        }
+    {
+      "@context": "https://schema.org",
+      "@type": "{{ $type }}",
+      "name": {{ .Title | jsonify | safeJS }},
+      "headline": {{ .Title | jsonify | safeJS }},
+      "description": {{ $desc | jsonify | safeJS }},
+      "image": {{ $img | jsonify | safeJS }},
+      "url": {{ .Permalink | jsonify | safeJS }},
+      "inLanguage": "id",
+      "genre": {{ $genres | jsonify | safeJS }},
+      {{ with .Params.studio }}"productionCompany": {"@type": "Organization", "name": {{ delimit . ", " | jsonify | safeJS }} },{{ end }}
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ $rating }}",
+        "bestRating": "10",
+        "ratingCount": "1"
+      },
+      {{ if gt $episodeCount 0 }}"numberOfEpisodes": {{ $episodeCount }},{{ end }}
+      "datePublished": "{{ .Date.Format "2006-01-02" }}",
+      "author": {
+        "@type": "Person",
+        "name": {{ .Site.Params.author | jsonify | safeJS }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ .Site.Title | jsonify | safeJS }},
+        "url": {{ .Site.BaseURL | jsonify | safeJS }}
       }
-      </script>      
+    }
+    </script>
 {{ end }}

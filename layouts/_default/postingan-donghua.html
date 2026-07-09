@@ -13,7 +13,18 @@
                         <div class="flex flex-col md:flex-row gap-4 mt-4">
                             <div class="w-full md:w-[220px] shrink-0">
                                 <div class="w-[150px] h-[225px] sm:w-[180px] sm:h-[270px] md:w-[200px] md:h-[300px] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-neon-cyan-md">
-                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="eager" decoding="async" width="200" height="300" src='{{ .Params.image | relURL }}' alt="{{ .Params.alt }}">
+{{/*  Poster – srcset/WebP – LCP – Hugo Pipes  */}}
+{{ $postImgSrc := .Params.image | default (.Params.thumbnail | default "") }}
+{{ $postImgAlt := .Params.alt | default .Title }}
+{{ $postImg := "" }}
+{{ with $postImgSrc }}{{ $clean := strings.TrimPrefix "/" . }}{{ with resources.Get $clean }}{{ $postImg = . }}{{ end }}{{ end }}
+{{ if $postImg }}
+  {{ $pSmall := $postImg.Resize "220x webp q85" }}
+  {{ $pMedium := $postImg.Resize "400x webp q85" }}
+                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="eager" fetchpriority="high" decoding="async" src="{{ $pSmall.RelPermalink }}" srcset="{{ $pSmall.RelPermalink }} 220w, {{ $pMedium.RelPermalink }} 400w" sizes="(max-width:640px) 180px, 200px" width="{{ $pSmall.Width }}" height="{{ $pSmall.Height }}" alt="{{ $postImgAlt }}">
+{{ else }}
+                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="eager" fetchpriority="high" decoding="async" width="200" height="300" src='{{ $postImgSrc | relURL }}' alt="{{ $postImgAlt }}">
+{{ end }}
                                 </div>
                                 {{- $rating := .Params.rating | default 0 -}}
                                 {{- $stars := div (mul $rating 5) 10 -}}
