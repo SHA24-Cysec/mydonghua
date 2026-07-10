@@ -1,49 +1,129 @@
-const genreForm = document.getElementById("genre-filter-form");
+// Fungsi Toast Notification untuk alert genre
+function showGenreToast(message, type = 'warning') {
+  // Hapus toast yang sudah ada
+  var existingToast = document.querySelector('.genre-toast-notification');
+  if (existingToast) existingToast.remove();
 
-if (genreForm) {
-  genreForm.addEventListener("submit", e => {
-    e.preventDefault();
+  var toast = document.createElement('div');
+  toast.className = 'genre-toast-notification genre-toast-' + type;
+  toast.setAttribute('role', 'alert');
+  toast.innerHTML = 
+    '<div class="genre-toast-content">' +
+      '<i class="fa-solid fa-circle-exclamation genre-toast-icon"></i>' +
+      '<span class="genre-toast-message">' + message + '</span>' +
+      '<button class="genre-toast-close" aria-label="Tutup">' +
+        '<i class="fa-solid fa-xmark"></i>' +
+      '</button>' +
+    '</div>';
 
-    const genres = [...document.querySelectorAll('input[name="genre"]:checked')]
-      .map(i => i.value);
+  // Styling toast inline
+  toast.style.cssText = 
+    'position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:9999;' +
+    'background:linear-gradient(135deg,#dc2626 0%,#991b1b 100%);' +
+    'color:white;padding:14px 20px;border-radius:12px;' +
+    'box-shadow:0 8px 32px rgba(220,38,38,0.4),0 0 0 1px rgba(255,255,255,0.1);' +
+    'font-family:system-ui,-apple-system,sans-serif;font-size:14px;font-weight:500;' +
+    'max-width:90vw;animation:genreToastSlideIn 0.3s ease-out;';
 
-    if (!genres.length) return;
+  var content = toast.querySelector('.genre-toast-content');
+  content.style.cssText = 'display:flex;align-items:center;gap:10px;';
 
-    window.location.href = "/filter-genre/#" + genres.join(",");
-  });
+  var icon = toast.querySelector('.genre-toast-icon');
+  icon.style.cssText = 'font-size:18px;flex-shrink:0;';
+
+  var msg = toast.querySelector('.genre-toast-message');
+  msg.style.cssText = 'flex:1;';
+
+  var closeBtn = toast.querySelector('.genre-toast-close');
+  closeBtn.style.cssText = 
+    'background:rgba(255,255,255,0.2);border:none;color:white;' +
+    'width:24px;height:24px;border-radius:50%;cursor:pointer;' +
+    'display:flex;align-items:center;justify-content:center;font-size:12px;' +
+    'flex-shrink:0;transition:background 0.2s;';
+  closeBtn.onmouseover = function() { closeBtn.style.background = 'rgba(255,255,255,0.3)'; };
+  closeBtn.onmouseout = function() { closeBtn.style.background = 'rgba(255,255,255,0.2)'; };
+  closeBtn.onclick = function() { toast.remove(); };
+
+  // Tambah animasi CSS
+  if (!document.getElementById('genre-toast-styles')) {
+    var style = document.createElement('style');
+    style.id = 'genre-toast-styles';
+    style.textContent = 
+      '@keyframes genreToastSlideIn{' +
+        'from{opacity:0;transform:translateX(-50%) translateY(-20px);}' +
+        'to{opacity:1;transform:translateX(-50%) translateY(0);}' +
+      '}' +
+      '@keyframes genreToastSlideOut{' +
+        'from{opacity:1;transform:translateX(-50%) translateY(0);}' +
+        'to{opacity:0;transform:translateX(-50%) translateY(-20px);}' +
+      '}';
+    document.head.appendChild(style);
+  }
+
+  document.body.appendChild(toast);
+
+  // Auto remove setelah 4 detik
+  setTimeout(function() {
+    if (toast.parentElement) {
+      toast.style.animation = 'genreToastSlideOut 0.3s ease-out forwards';
+      setTimeout(function() { toast.remove(); }, 300);
+    }
+  }, 4000);
 }
+
+// Fungsi apply genre filter - dipanggil dari onclick tombol
+function applyGenreFilter(btn) {
+  var genres = [];
+  var checkboxes = document.querySelectorAll('input[name="genre"]:checked');
+  checkboxes.forEach(function(cb) {
+    genres.push(cb.value);
+  });
+
+  if (!genres.length) {
+    showGenreToast('Silakan pilih minimal satu genre terlebih dahulu!');
+    return;
+  }
+
+  window.location.href = "/filter-genre/#" + genres.join(",");
+}
+
+// Handle form submit sebagai backup
+document.addEventListener('DOMContentLoaded', function() {
+  var genreForm = document.getElementById("genre-filter-form");
+  if (genreForm) {
+    genreForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      applyGenreFilter(this.querySelector('.genre-apply-button'));
+    });
+  }
+});
 
 function getGenresFromHash() {
   return location.hash
     .replace("#", "")
     .split(",")
-    .map(g => g.trim().toLowerCase())
+    .map(function(g) { return g.trim().toLowerCase(); })
     .filter(Boolean);
 }
 
-const resultsContainer = document.getElementById("genre-results");
+var resultsContainer = document.getElementById("genre-results");
+var genrePage = 1;
+var genreResults = [];
 
-
-let genrePage = 1;
-let genreResults = [];
-
-// Jumlah item per halaman adaptif, sama persis dengan halaman pencarian
-// (>=1024px: 15, >=700px: 12, >=640px: 12, selain itu: 10).
+// Jumlah item per halaman adaptif
 function getGenrePerPage() {
   if (window.DonghuaSearch && typeof window.DonghuaSearch.getPerPage === "function") {
     return window.DonghuaSearch.getPerPage();
   }
-  // Fallback jika site-search.js belum termuat
   if (window.matchMedia('(min-width: 1024px)').matches) return 15;
   if (window.matchMedia('(min-width: 700px)').matches) return 12;
   if (window.matchMedia('(min-width: 640px)').matches) return 12;
   return 10;
 }
 
-
 function renderGenreResults() {
-  const alertBox = document.getElementById("genre-alert");
-  const pagination = document.getElementById("genre-pagination");
+  var alertBox = document.getElementById("genre-alert");
+  var pagination = document.getElementById("genre-pagination");
 
   resultsContainer.innerHTML = "";
 
@@ -55,74 +135,66 @@ function renderGenreResults() {
 
   alertBox.classList.add("hidden");
 
-  const genrePerPage = getGenrePerPage();
-  const totalPages = Math.ceil(genreResults.length / genrePerPage);
-  const start = (genrePage - 1) * genrePerPage;
-  const end = start + genrePerPage;
+  var genrePerPage = getGenrePerPage();
+  var totalPages = Math.ceil(genreResults.length / genrePerPage);
+  var start = (genrePage - 1) * genrePerPage;
+  var end = start + genrePerPage;
 
-  genreResults.slice(start, end).forEach(item => {
-    
-    const li = document.createElement("li");
+  genreResults.slice(start, end).forEach(function(item) {
+    var li = document.createElement("li");
     li.className = "donghua-card-item";
     
-    // Gunakan fungsi template global yang aman dari window.DonghuaBatchCards jika tersedia, atau fallback aman
     if (window.DonghuaBatchCards && typeof window.DonghuaBatchCards.donghuaCardTemplate === "function") {
       li.innerHTML = window.DonghuaBatchCards.donghuaCardTemplate(item, item.title, "");
     } else if (typeof donghuaCardTemplate === "function") {
       li.innerHTML = donghuaCardTemplate(item, item.title, "");
     } else {
-      // Fallback lokal jika script global belum termuat sempurna
-      const type = item.type || "Donghua";
-      const ratingHTML = item.rating && item.rating !== "-"
-        ? `<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ${item.rating}/10</span>`
-        : `<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>`;
-      const metaChips = [item.episode, item.status]
-        .filter(value => value && value !== "-")
-        .map(value => `<span class="donghua-card-chip">${value}</span>`)
+      var type = item.type || "Donghua";
+      var ratingHTML = item.rating && item.rating !== "-"
+        ? '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ' + item.rating + '/10</span>'
+        : '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>';
+      var metaChips = [item.episode, item.status]
+        .filter(function(v) { return v && v !== "-"; })
+        .map(function(v) { return '<span class="donghua-card-chip">' + v + '</span>'; })
         .join("");
 
-      li.innerHTML = `
-        <article class="donghua-card">
-          <a class="donghua-card-link" title="${item.title}" href="${item.permalink}">
-            <div class="donghua-card-poster">
-              <img loading="lazy" decoding="async" width="200" height="300" src="${item.thumbnail}" alt="${item.title}">
-            </div>
-            <div class="donghua-card-frame" aria-hidden="true"></div>
-            <div class="donghua-card-badges">
-              <span class="donghua-card-badge">${type}</span>
-              <span class="donghua-card-badge sub">Sub</span>
-            </div>
-            <div class="donghua-card-body">
-              <h3 class="donghua-card-title">${item.title}</h3>
-              <div class="donghua-card-meta">${metaChips}</div>
-              <div class="donghua-card-footer">
-                ${ratingHTML}
-                <span class="donghua-card-cta">Detail</span>
-              </div>
-            </div>
-          </a>
-        </article>
-      `;
+      li.innerHTML = 
+        '<article class="donghua-card">' +
+          '<a class="donghua-card-link" title="' + item.title + '" href="' + item.permalink + '">' +
+            '<div class="donghua-card-poster">' +
+              '<img loading="lazy" decoding="async" width="200" height="300" src="' + item.thumbnail + '" alt="' + item.title + '">' +
+            '</div>' +
+            '<div class="donghua-card-frame" aria-hidden="true"></div>' +
+            '<div class="donghua-card-badges">' +
+              '<span class="donghua-card-badge">' + type + '</span>' +
+              '<span class="donghua-card-badge sub">Sub</span>' +
+            '</div>' +
+            '<div class="donghua-card-body">' +
+              '<h3 class="donghua-card-title">' + item.title + '</h3>' +
+              '<div class="donghua-card-meta">' + metaChips + '</div>' +
+              '<div class="donghua-card-footer">' +
+                ratingHTML +
+                '<span class="donghua-card-cta">Detail</span>' +
+              '</div>' +
+            '</div>' +
+          '</a>' +
+        '</article>';
     }
 
     resultsContainer.appendChild(li);
   });
 
-  // Pagination UI
   pagination.classList.toggle("hidden", totalPages <= 1);
-  document.getElementById("genre-page-info").textContent =
-    `Page ${genrePage} of ${totalPages}`;
-
+  document.getElementById("genre-page-info").textContent = "Page " + genrePage + " of " + totalPages;
   document.getElementById("genre-prev").disabled = genrePage === 1;
   document.getElementById("genre-next").disabled = genrePage === totalPages;
 }
 
-
-const genrePrevBtn = document.getElementById("genre-prev");
-const genreNextBtn = document.getElementById("genre-next");
+var genrePrevBtn = document.getElementById("genre-prev");
+var genreNextBtn = document.getElementById("genre-next");
 
 if (genrePrevBtn && genreNextBtn) {
-  genrePrevBtn.addEventListener("click", () => {
+  genrePrevBtn.addEventListener("click", function() {
     if (genrePage > 1) {
       genrePage--;
       renderGenreResults();
@@ -130,8 +202,8 @@ if (genrePrevBtn && genreNextBtn) {
     }
   });
 
-  genreNextBtn.addEventListener("click", () => {
-    const totalPages = Math.ceil(genreResults.length / getGenrePerPage());
+  genreNextBtn.addEventListener("click", function() {
+    var totalPages = Math.ceil(genreResults.length / getGenrePerPage());
     if (genrePage < totalPages) {
       genrePage++;
       renderGenreResults();
@@ -140,58 +212,50 @@ if (genrePrevBtn && genreNextBtn) {
   });
 }
 
-// Saat ukuran layar berubah, jumlah per halaman ikut berubah (adaptif).
-// Sesuaikan halaman aktif supaya tidak keluar dari rentang, lalu render ulang.
-let genreResizeTimer;
-window.addEventListener("resize", () => {
+window.addEventListener("resize", function() {
   clearTimeout(genreResizeTimer);
-  genreResizeTimer = setTimeout(() => {
+  genreResizeTimer = setTimeout(function() {
     if (!genreResults.length) return;
-    const totalPages = Math.max(1, Math.ceil(genreResults.length / getGenrePerPage()));
+    var totalPages = Math.max(1, Math.ceil(genreResults.length / getGenrePerPage()));
     genrePage = Math.min(genrePage, totalPages);
     renderGenreResults();
   }, 120);
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  
+window.addEventListener("DOMContentLoaded", function() {
   if (!resultsContainer) return;
 
-  const selectedGenres = getGenresFromHash();
+  var selectedGenres = getGenresFromHash();
   if (!selectedGenres.length) return;
 
-  const sourcePromise = (window.DonghuaBatchData && window.DonghuaBatchData.getIndexData) ? window.DonghuaBatchData.getIndexData() : fetch('/index.json').then(res => res.json());
+  var sourcePromise = (window.DonghuaBatchData && window.DonghuaBatchData.getIndexData) 
+    ? window.DonghuaBatchData.getIndexData() 
+    : fetch('/index.json').then(function(res) { return res.json(); });
 
-  sourcePromise.then(data => {
+  sourcePromise.then(function(data) {
     genreResults = filterByGenres(data, selectedGenres);
     genrePage = 1;
-    
     renderGenreResults();
-  }).catch(err => {
+  }).catch(function(err) {
     console.error("[Genre Filter] index.json gagal dimuat", err);
   });
 });
 
 function normalizeGenres(input) {
   if (!input) return [];
-
-  
   return input
     .toLowerCase()
     .split(/[,|]+/)
-    .map(g => g.trim().replace(/\s+/g, "-"))
+    .map(function(g) { return g.trim().replace(/\s+/g, "-"); })
     .filter(Boolean);
 }
 
 function filterByGenres(data, selectedGenres) {
-  const selected = selectedGenres.map(g => g.toLowerCase());
+  var selected = selectedGenres.map(function(g) { return g.toLowerCase(); });
 
-  return data.filter(item => {
+  return data.filter(function(item) {
     if (!item.genre) return false;
-
-    const itemGenres = normalizeGenres(item.genre);
-
-    // AND logic → semua genre harus ada
-    return selected.every(g => itemGenres.includes(g));
+    var itemGenres = normalizeGenres(item.genre);
+    return selected.every(function(g) { return itemGenres.includes(g); });
   });
 }
