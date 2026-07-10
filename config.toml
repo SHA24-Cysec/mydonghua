@@ -2,8 +2,6 @@ baseURL = 'https://donghuabatch.com/'
 title = 'DonghuaBatch - Tempatnya Download Batch Donghua Subtitle Indonesia'
 defaultContentLanguage = 'id'
 
-preserveTaxonomyNames = true
-
 [services]
     [services.googleAnalytics]
         id = 'G-7B40JB824Z'

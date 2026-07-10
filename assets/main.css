@@ -712,24 +712,7 @@ body {
   filter: brightness(1.03);
 }
 
-/* Aurora Flow Search Input */
-
-@keyframes aurora-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Model 2: Neon Holo-Overlay Title & Interactive Hover Button */
-
-.group:hover .card-holo-title::after {
-  opacity: 1;
-  transform: translateY(-50%) scale(1);
-}
 
 /* ============================================================
      AURORA SEARCH SYSTEM — UNIFIED v2
@@ -1289,17 +1272,8 @@ body {
   border-color: rgb(168 85 247 / 0.3);
 }
 
-.border-red-500\/40 {
-  border-color: rgb(239 68 68 / 0.4);
-}
-
 .border-red-500\/50 {
   border-color: rgb(239 68 68 / 0.5);
-}
-
-.border-slate-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(51 65 85 / var(--tw-border-opacity, 1));
 }
 
 .border-slate-800 {
@@ -1333,16 +1307,8 @@ body {
   background-color: rgb(168 85 247 / 0.2);
 }
 
-.bg-red-500\/20 {
-  background-color: rgb(239 68 68 / 0.2);
-}
-
 .bg-red-900\/80 {
   background-color: rgb(127 29 29 / 0.8);
-}
-
-.bg-slate-800\/50 {
-  background-color: rgb(30 41 59 / 0.5);
 }
 
 .bg-gradient-to-r {
@@ -1518,6 +1484,16 @@ body {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1536,16 +1512,6 @@ body {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -1589,6 +1555,10 @@ body {
 .text-cyan-400 {
   --tw-text-opacity: 1;
   color: rgb(34 211 238 / var(--tw-text-opacity, 1));
+}
+
+.text-cyan-400\/40 {
+  color: rgb(34 211 238 / 0.4);
 }
 
 .text-emerald-300 {
@@ -1664,10 +1634,6 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-cyan-400\/40 {
-  color: rgb(34 211 238 / 0.4);
 }
 
 .opacity-40 {
@@ -2700,7 +2666,7 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  margin-top: 1rem;
+  padding: clamp(5rem, 10vw, 6.5rem) 1rem 1.5rem;
   color: #eef7ff;
 }
 
@@ -10441,14 +10407,6 @@ html {
 .hover\:bg-cyber-dark:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(6 8 22 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-red-500\/30:hover {
-  background-color: rgb(239 68 68 / 0.3);
-}
-
-.hover\:bg-slate-700\/50:hover {
-  background-color: rgb(51 65 85 / 0.5);
 }
 
 .hover\:text-white:hover {

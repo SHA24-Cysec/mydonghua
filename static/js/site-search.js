@@ -44,6 +44,17 @@ const searchInput = document.getElementById("search-input");
       return value == null ? "" : String(value);
     }
 
+    // Escape HTML supaya nilai teks aman saat di-inject via innerHTML.
+    // Pola sama dengan escapeHTML() di site-favorites.js agar konsisten.
+    function escapeHTML(value) {
+      return toText(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
     function normalizeForSearch(value) {
       return toText(value)
         .toLowerCase()
@@ -142,10 +153,12 @@ const searchInput = document.getElementById("search-input");
 
     function highlightText(text, matches, key) {
       const source = toText(text);
-      if (!matches || !source) return source;
+      // Selalu kembalikan HTML yang sudah di-escape. Segmen teks di-escape
+      // sebelum disisipkan, sedangkan tag <mark> tetap HTML asli (untuk highlight).
+      if (!matches || !source) return escapeHTML(source);
 
       const relevantMatches = matches.filter(match => match.key === key && Array.isArray(match.indices));
-      if (!relevantMatches.length) return source;
+      if (!relevantMatches.length) return escapeHTML(source);
 
       const indices = relevantMatches
         .flatMap(match => match.indices)
@@ -156,12 +169,12 @@ const searchInput = document.getElementById("search-input");
 
       indices.forEach(([start, end]) => {
         if (start < lastIndex) return;
-        highlighted += source.slice(lastIndex, start);
-        highlighted += `<mark>${source.slice(start, end + 1)}</mark>`;
+        highlighted += escapeHTML(source.slice(lastIndex, start));
+        highlighted += `<mark>${escapeHTML(source.slice(start, end + 1))}</mark>`;
         lastIndex = end + 1;
       });
 
-      highlighted += source.slice(lastIndex);
+      highlighted += escapeHTML(source.slice(lastIndex));
       return highlighted;
     }
 
@@ -258,18 +271,20 @@ const searchInput = document.getElementById("search-input");
     }
 
     function donghuaCardTemplate(item, titleHTML, extraMetaHTML) {
-      const type = toText(item.type) || "Donghua";
-      const episode = toText(item.episode);
-      const status = toText(item.status);
-      const rating = toText(item.rating);
-      const permalink = toText(item.permalink);
-      const title = toText(item.title);
+      // Semua nilai berikut disisipkan via innerHTML, jadi di-escape untuk cegah XSS.
+      // Catatan: titleHTML & extraMetaHTML sudah berupa HTML aman dari highlightText().
+      const type = escapeHTML(item.type) || "Donghua";
+      const episode = escapeHTML(item.episode);
+      const status = escapeHTML(item.status);
+      const rating = escapeHTML(item.rating);
+      const permalink = escapeHTML(item.permalink);
+      const title = escapeHTML(item.title);
 
       // Thumbnail – srcset/WebP – sama seperti donghua-card.html / site-favorites.js
-      const thumbFallback = toText(item.thumbnail || "");
-      const thumbSmall = toText(item.thumbnail_small || thumbFallback);
-      const thumbMedium = toText(item.thumbnail_medium || "");
-      let thumbSrcset = toText(item.thumbnail_srcset || "");
+      const thumbFallback = escapeHTML(item.thumbnail || "");
+      const thumbSmall = escapeHTML(item.thumbnail_small || thumbFallback);
+      const thumbMedium = escapeHTML(item.thumbnail_medium || "");
+      let thumbSrcset = escapeHTML(item.thumbnail_srcset || "");
       if (!thumbSrcset && thumbSmall && thumbMedium) {
         thumbSrcset = thumbSmall + " 240w, " + thumbMedium + " 400w";
       }
@@ -308,7 +323,7 @@ const searchInput = document.getElementById("search-input");
 
       let imgTag = "";
       if (thumbSrc) {
-        imgTag = `<img loading="lazy" decoding="async" src="${thumbSrc}" alt="${title.replace(/"/g, '&quot;')}"`;
+        imgTag = `<img loading="lazy" decoding="async" src="${thumbSrc}" alt="${title}"`;
         if (thumbSrcset) {
           imgTag += ` srcset="${thumbSrcset}" sizes="(max-width:340px) 90vw, (max-width:640px) 45vw, (max-width:1024px) 22vw, 280px"`;
         }
@@ -354,12 +369,7 @@ const searchInput = document.getElementById("search-input");
       }
 
       const total = currentResults.length;
-      const safeQuery = trimmedQuery
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/\"/g, "&quot;")
-        .replace(/'/g, "&#39;");
+      const safeQuery = escapeHTML(trimmedQuery);
 
       searchSummary.hidden = false;
       searchSummary.innerHTML = `<strong>${total}</strong> donghua ditemukan untuk kata kunci <strong>“${safeQuery}”</strong>.`;
