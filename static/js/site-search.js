@@ -81,10 +81,6 @@ const searchInput = document.getElementById("search-input");
       return merged;
     }
 
-    function escapeRegExp(value) {
-      return toText(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    }
-
     function getTitleSearchSource(text) {
       const source = toText(text);
       let start = 0;
@@ -464,14 +460,6 @@ const searchInput = document.getElementById("search-input");
       nextButton.disabled = nextDisabled;
       prevButton.setAttribute("aria-disabled", prevDisabled ? "true" : "false");
       nextButton.setAttribute("aria-disabled", nextDisabled ? "true" : "false");
-    }
-
-    function parseGenres(input) {
-      return input
-        .toLowerCase()
-        .split(/[, ]+/)
-        .map(g => g.trim())
-        .filter(Boolean);
     }
 
     function parseKeywords(input) {

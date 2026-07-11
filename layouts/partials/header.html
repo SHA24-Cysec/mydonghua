@@ -1,7 +1,35 @@
 <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0">
     <header class="site-home-hero" aria-label="Sorotan utama DonghuaBatch">
         <div class="site-home-hero-media">
-            <img title="Huo Linger" width="4096" height="2304" fetchpriority="high" decoding="async" src='{{ relURL "img/Huo-Linger.webp"}}' alt="Hero image Huo Linger">
+            {{ with resources.Get "img/Huo-Linger.webp" }}
+                {{ $hero640 := .Resize "640x webp q82" }}
+                {{ $hero960 := .Resize "960x webp q82" }}
+                {{ $hero1280 := .Resize "1280x webp q82" }}
+                {{ $hero1920 := .Resize "1920x webp q82" }}
+                <img
+                    title="Huo Linger"
+                    width="{{ $hero1280.Width }}"
+                    height="{{ $hero1280.Height }}"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="async"
+                    src="{{ $hero1280.RelPermalink }}"
+                    srcset="{{ $hero640.RelPermalink }} 640w, {{ $hero960.RelPermalink }} 960w, {{ $hero1280.RelPermalink }} 1280w, {{ $hero1920.RelPermalink }} 1920w"
+                    sizes="(max-width: 1023px) calc(100vw - 1.5rem), (max-width: 1279px) 100vw, 1280px"
+                    alt="Huo Linger"
+                >
+            {{ else }}
+                <img
+                    title="Huo Linger"
+                    width="4096"
+                    height="2304"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="async"
+                    src='{{ relURL "img/Huo-Linger.webp" }}'
+                    alt="Huo Linger"
+                >
+            {{ end }}
         </div>
 
         <div class="site-home-hero-card">

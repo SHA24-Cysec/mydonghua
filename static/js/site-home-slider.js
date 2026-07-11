@@ -111,15 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let dotButtons = [];
 
-    function updateActiveDots() {
-      dotButtons.forEach(function (dot, index) {
-        const isActive = index === currentIndex;
-        dot.classList.toggle('is-active', isActive);
-        dot.setAttribute('aria-current', isActive ? 'true' : 'false');
-        dot.setAttribute('tabindex', isActive ? '0' : '-1');
-      });
-    }
-
     function renderDots() {
       dotsNode.innerHTML = '';
       dotButtons = slides.map(function (_, index) {

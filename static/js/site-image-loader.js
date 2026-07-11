@@ -3,6 +3,7 @@
 
   const processedImages = new WeakSet();
   const minVisualSize = 80;
+  const dynamicImageRootSelector = '#search-results, #genre-results, #fav-grid';
 
   function getVisualSize(img) {
     const rect = img.getBoundingClientRect();
@@ -95,7 +96,10 @@
   document.addEventListener('DOMContentLoaded', function () {
     processImages(document);
 
-    const observer = new MutationObserver(function (mutations) {
+    const dynamicRoots = document.querySelectorAll(dynamicImageRootSelector);
+    if (!dynamicRoots.length || !('MutationObserver' in window)) return;
+
+    const observer = new window.MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
         mutation.addedNodes.forEach(function (node) {
           if (!(node instanceof HTMLElement)) return;
@@ -109,8 +113,8 @@
       });
     });
 
-    if (document.body) {
-      observer.observe(document.body, { childList: true, subtree: true });
-    }
+    dynamicRoots.forEach(function (root) {
+      observer.observe(root, { childList: true, subtree: true });
+    });
   });
 })();

@@ -3,9 +3,6 @@
 
   var STORAGE_KEY = 'donghuabatch_favorites';
   var bookmarkSelector = '.donghua-card-bookmark, .post-bookmark-btn';
-  var indexPromise = null;
-  var lastSheetTrigger = null;
-  var lastConfirmTrigger = null;
 
   function loadFavIds() {
     try {
@@ -50,27 +47,16 @@
     saveFavIds([]);
   }
 
-  function updateBadges() {
+  function updateBadge() {
     var count = loadFavIds().length;
     var badge = document.getElementById('nav-fav-badge');
-    var badgeMobile = document.getElementById('nav-fav-badge-mobile');
-    var countEl = document.getElementById('fav-count');
-
-    if (badge) {
-      badge.textContent = count;
-      badge.classList.toggle('is-hidden', count === 0);
-    }
-    if (badgeMobile) {
-      badgeMobile.textContent = count;
-      badgeMobile.classList.toggle('is-hidden', count === 0);
-    }
-    if (countEl) {
-      countEl.textContent = count;
-    }
+    if (!badge) return;
+    badge.textContent = count;
+    badge.classList.toggle('is-hidden', count === 0);
   }
 
-  function setBookmarkIcon(btn, saved) {
-    var svg = btn.querySelector('svg');
+  function setBookmarkIcon(button, saved) {
+    var svg = button.querySelector('svg');
     if (svg) {
       svg.innerHTML = saved
         ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
@@ -78,367 +64,44 @@
       return;
     }
 
-    var faIcon = btn.querySelector('.post-bookmark-icon');
-    if (faIcon) {
-      faIcon.classList.toggle('fa-solid', saved);
-      faIcon.classList.toggle('fa-regular', !saved);
+    var icon = button.querySelector('.post-bookmark-icon');
+    if (icon) {
+      icon.classList.toggle('fa-solid', saved);
+      icon.classList.toggle('fa-regular', !saved);
     }
   }
 
-  function syncButton(btn) {
-    var id = btn.getAttribute('data-fav-id');
+  function syncButton(button) {
+    var id = button.getAttribute('data-fav-id');
     if (!id) return;
-
     var saved = isSaved(id);
-    btn.classList.toggle('is-saved', saved);
-    setBookmarkIcon(btn, saved);
+    button.classList.toggle('is-saved', saved);
+    setBookmarkIcon(button, saved);
 
-    var label = btn.querySelector('.fav-label');
-    if (label) {
-      label.textContent = saved ? 'Hapus dari Favorit' : 'Tambah ke Favorit';
-    }
+    var label = button.querySelector('.fav-label');
+    if (label) label.textContent = saved ? 'Hapus dari Favorit' : 'Tambah ke Favorit';
 
-    btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
-    btn.setAttribute('aria-label', saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit');
+    button.setAttribute('aria-pressed', saved ? 'true' : 'false');
+    button.setAttribute('aria-label', saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit');
   }
 
-  function pulsePostButton(btn) {
-    if (!btn.classList.contains('post-bookmark-btn')) return;
-    btn.classList.remove('is-pulsing');
-    void btn.offsetWidth;
-    btn.classList.add('is-pulsing');
-    setTimeout(function () {
-      btn.classList.remove('is-pulsing');
-    }, 700);
+  function pulsePostButton(button) {
+    if (!button.classList.contains('post-bookmark-btn')) return;
+    button.classList.remove('is-pulsing');
+    void button.offsetWidth;
+    button.classList.add('is-pulsing');
+    window.setTimeout(function () { button.classList.remove('is-pulsing'); }, 700);
   }
 
   function syncAllButtons() {
     document.querySelectorAll(bookmarkSelector).forEach(syncButton);
-    updateBadges();
+    updateBadge();
   }
 
-  function getIndexData() {
-    if (indexPromise) return indexPromise;
-    if (window.DonghuaBatchData && typeof window.DonghuaBatchData.getIndexData === 'function') {
-      indexPromise = window.DonghuaBatchData.getIndexData();
-    } else {
-      indexPromise = fetch('/index.json').then(function (res) {
-        if (!res.ok) throw new Error('Gagal memuat index.json');
-        return res.json();
-      });
-    }
-    return indexPromise;
-  }
-
-  function toText(value) {
-    return value == null ? '' : String(value);
-  }
-
-  function escapeHTML(value) {
-    return toText(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
-
-  function itemId(item) {
-    return item.id || item.permalink || item.objectID || '';
-  }
-
-  function orderItemsByIds(data, ids) {
-    if (!Array.isArray(data)) return [];
-    var byId = {};
-    data.forEach(function (item) {
-      byId[itemId(item)] = item;
-    });
-    return ids.map(function (id) { return byId[id]; }).filter(Boolean);
-  }
-
-  function isFocusableVisible(el) {
-    return !!(el && typeof el.focus === 'function' && !el.disabled && (el.offsetParent !== null || el === document.activeElement));
-  }
-
-  function focusFirst(container, preferredSelector) {
-    if (!container) return false;
-    var target = preferredSelector ? container.querySelector(preferredSelector) : null;
-    if (isFocusableVisible(target)) {
-      target.focus();
-      return true;
-    }
-    var focusable = container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
-    for (var i = 0; i < focusable.length; i += 1) {
-      if (isFocusableVisible(focusable[i])) {
-        focusable[i].focus();
-        return true;
-      }
-    }
-    if (isFocusableVisible(container)) {
-      container.focus();
-      return true;
-    }
-    return false;
-  }
-
-  function restoreFocus(target, fallbackSelector) {
-    if (isFocusableVisible(target)) {
-      target.focus();
-      return;
-    }
-    var fallback = fallbackSelector ? document.querySelector(fallbackSelector) : null;
-    if (isFocusableVisible(fallback)) fallback.focus();
-  }
-
-  function renderFavoriteCard(item) {
-    var type = escapeHTML(item.type || 'Donghua');
-    var episode = escapeHTML(item.episode || '-');
-    var status = escapeHTML(item.status || '-');
-    var rating = escapeHTML(item.rating || '-');
-    var permalink = escapeHTML(item.permalink || '#');
-    var thumbnail = escapeHTML(item.thumbnail_small || item.thumbnail || '');
-    var thumbnailSrcset = '';
-    if (item.thumbnail_srcset) {
-      thumbnailSrcset = escapeHTML(item.thumbnail_srcset);
-    } else if (item.thumbnail_small && item.thumbnail_medium) {
-      thumbnailSrcset = escapeHTML(item.thumbnail_small) + ' 240w, ' + escapeHTML(item.thumbnail_medium) + ' 400w';
-    }
-    var title = escapeHTML(item.title || 'Donghua');
-    var id = escapeHTML(itemId(item));
-
-    var ratingHTML = rating && rating !== '-'
-      ? '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ' + rating + '/10</span>'
-      : '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>';
-
-    var metaChips = [episode, status]
-      .filter(function (value) { return value && value !== '-'; })
-      .map(function (value) { return '<span class="donghua-card-chip">' + value + '</span>'; })
-      .join('');
-
-    var saved = isSaved(itemId(item));
-    var iconPath = saved
-      ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
-      : '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
-
-    var thumbImg = '';
-    if (thumbnail) {
-      thumbImg = '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '"';
-      if (thumbnailSrcset) {
-        thumbImg += ' srcset="' + thumbnailSrcset + '" sizes="(max-width:340px) 90vw, (max-width:640px) 45vw, (max-width:1024px) 22vw, 280px"';
-      }
-      thumbImg += ' width="240" height="320">';
-    }
-
-    return '<li class="donghua-card-item">' +
-      '<article class="donghua-card">' +
-        '<button class="donghua-card-bookmark' + (saved ? ' is-saved' : '') + '" data-fav-id="' + id + '" type="button" aria-pressed="' + (saved ? 'true' : 'false') + '" aria-label="' + (saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit') + '" title="' + (saved ? 'Hapus dari favorit' : 'Simpan ke favorit') + '">' +
-          '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">' + iconPath + '</svg>' +
-        '</button>' +
-        '<a class="donghua-card-link" title="' + title + '" href="' + permalink + '">' +
-          '<div class="donghua-card-poster">' +
-            thumbImg +
-          '</div>' +
-          '<div class="donghua-card-frame" aria-hidden="true"></div>' +
-          '<div class="donghua-card-badges">' +
-            '<span class="donghua-card-badge">' + type + '</span>' +
-            '<span class="donghua-card-badge sub">Sub</span>' +
-          '</div>' +
-          '<div class="donghua-card-body">' +
-            '<h3 class="donghua-card-title">' + title + '</h3>' +
-            '<div class="donghua-card-meta">' + metaChips + '</div>' +
-            '<div class="donghua-card-footer">' + ratingHTML + '<span class="donghua-card-cta">Detail</span></div>' +
-          '</div>' +
-        '</a>' +
-      '</article>' +
-    '</li>';
-  }
-
-  function showElement(el, displayValue) {
-    if (!el) return;
-    el.classList.remove('hidden');
-    el.style.display = displayValue || '';
-  }
-
-  function hideElement(el) {
-    if (!el) return;
-    el.classList.add('hidden');
-    el.style.display = 'none';
-  }
-
-  function syncClearButton(visible) {
-    var clearBtn = document.getElementById('fav-clear-all');
-    if (!clearBtn) return;
-    var shouldShow = visible || loadFavIds().length > 0;
-    if (shouldShow) {
-      clearBtn.classList.remove('hidden');
-      clearBtn.disabled = false;
-    } else {
-      clearBtn.classList.add('hidden');
-      clearBtn.disabled = true;
-    }
-  }
-
-  function renderFavoritesPage() {
-    var grid = document.getElementById('fav-grid');
-    if (!grid) return;
-
-    var statusEl = document.getElementById('fav-status');
-    var emptyEl = document.getElementById('fav-empty');
-    var ids = loadFavIds();
-    updateBadges();
-
-    if (!ids.length) {
-      syncClearButton(false);
-      hideElement(statusEl);
-      hideElement(grid);
-      showElement(emptyEl);
-      return;
-    }
-
-    getIndexData()
-      .then(function (data) {
-        var items = orderItemsByIds(data, ids);
-
-        hideElement(statusEl);
-
-        if (!items.length) {
-          syncClearButton(false);
-          hideElement(grid);
-          showElement(emptyEl);
-          return;
-        }
-
-        syncClearButton(true);
-        grid.innerHTML = items.map(renderFavoriteCard).join('');
-        showElement(grid, 'grid');
-        hideElement(emptyEl);
-        syncAllButtons();
-        window.setTimeout(function () {
-          syncClearButton(loadFavIds().length > 0 && grid.querySelectorAll('li').length > 0);
-        }, 0);
-      })
-      .catch(function (error) {
-        syncClearButton(false);
-        console.error('[Fav] Error loading index.json', error);
-        if (statusEl) {
-          statusEl.innerHTML = '<div class="text-4xl mb-3 opacity-40"></div><div class="text-red-400 font-semibold">Gagal memuat data favorit</div>';
-          showElement(statusEl);
-        }
-      });
-  }
-
-  function renderSheetList() {
-    var listContainer = document.getElementById('fav-list-container');
-    if (!listContainer) return;
-
-    var ids = loadFavIds();
-    updateBadges();
-
-    if (!ids.length) {
-      listContainer.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon"><i class="fa-regular fa-bookmark"></i></div><div class="fav-empty-text">Belum ada favorit</div><div class="fav-empty-sub">Tap icon bookmark di card donghua untuk menyimpan</div></div>';
-      return;
-    }
-
-    getIndexData()
-      .then(function (data) {
-        var items = orderItemsByIds(data, ids);
-
-        if (!items.length) {
-          listContainer.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon"><i class="fa-regular fa-bookmark"></i></div><div class="fav-empty-text">Data favorit tidak ditemukan</div></div>';
-          return;
-        }
-
-        var html = '<ul class="fav-list">';
-        items.forEach(function (item) {
-          var title = escapeHTML(item.title || 'Donghua');
-          var href = escapeHTML(item.permalink || '#');
-          var img = escapeHTML(item.thumbnail_small || item.thumbnail || '');
-          var imgSrcset = '';
-          if (item.thumbnail_srcset) {
-            imgSrcset = escapeHTML(item.thumbnail_srcset);
-          } else if (item.thumbnail_small && item.thumbnail_medium) {
-            imgSrcset = escapeHTML(item.thumbnail_small) + ' 240w, ' + escapeHTML(item.thumbnail_medium) + ' 400w';
-          }
-          var meta = [item.episode, item.status].filter(Boolean).map(escapeHTML).join(' • ');
-          html += '<li class="fav-item">' +
-            '<a class="fav-item-thumb" href="' + href + '" aria-label="Buka detail ' + title + '">' +
-              (img ? '<img src="' + img + '"' + (imgSrcset ? ' srcset="' + imgSrcset + '" sizes="48px"' : '') + ' alt="" loading="lazy" decoding="async" width="48" height="72">' : '') +
-            '</a>' +
-            '<div class="fav-item-info">' +
-              '<a class="fav-item-title" href="' + href + '">' + title + '</a>' +
-              (meta ? '<div class="fav-item-meta">' + meta + '</div>' : '') +
-            '</div>' +
-            '<button class="fav-item-remove" data-remove-id="' + escapeHTML(itemId(item)) + '" type="button" aria-label="Hapus ' + title + '" title="Hapus">' +
-              '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
-            '</button>' +
-          '</li>';
-        });
-        html += '</ul>';
-        listContainer.innerHTML = html;
-      })
-      .catch(function () {
-        listContainer.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon"><i class="fa-regular fa-bookmark"></i></div><div class="fav-empty-text">Data favorit tidak ditemukan</div></div>';
-      });
-  }
-
-  function openSheet(trigger) {
-    var overlay = document.getElementById('fav-overlay');
-    if (!overlay) return;
-    lastSheetTrigger = trigger || document.activeElement;
-    overlay.classList.add('is-open');
-    overlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    renderSheetList();
-    window.setTimeout(function () {
-      focusFirst(overlay, '#fav-close-btn');
-    }, 0);
-  }
-
-  function closeSheet() {
-    var overlay = document.getElementById('fav-overlay');
-    if (!overlay) return;
-    overlay.classList.remove('is-open');
-    overlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    restoreFocus(lastSheetTrigger, '#nav-fav-btn, #nav-fav-btn-mobile');
-    lastSheetTrigger = null;
-  }
-
-  function openConfirm(selector, trigger) {
-    var dlg = document.querySelector(selector || '#fav-confirm');
-    if (!dlg) return;
-    lastConfirmTrigger = trigger || document.activeElement;
-    dlg.classList.add('is-open');
-    dlg.setAttribute('aria-hidden', 'false');
-    window.setTimeout(function () {
-      focusFirst(dlg, '#fav-cancel-btn');
-    }, 0);
-  }
-
-  function closeConfirm(selector) {
-    var dlg = document.querySelector(selector || '#fav-confirm');
-    if (!dlg) return;
-    dlg.classList.remove('is-open');
-    dlg.setAttribute('aria-hidden', 'true');
-    restoreFocus(lastConfirmTrigger, '#fav-clear-all, #fav-clear-btn, .fav-empty-cta');
-    lastConfirmTrigger = null;
-  }
-
-  function removeOne(id) {
-    saveFavIds(loadFavIds().filter(function (item) { return item !== id; }));
-    syncAllButtons();
-    renderSheetList();
-    renderFavoritesPage();
-    updateBadges();
-  }
-
-  function clearAllFavorites() {
-    clearAll();
-    syncAllButtons();
-    renderSheetList();
-    renderFavoritesPage();
-    updateBadges();
-    closeConfirm('#fav-confirm');
+  function notifyChanged() {
+    document.dispatchEvent(new CustomEvent('donghua:favorites-changed', {
+      detail: { ids: loadFavIds() }
+    }));
   }
 
   window.DonghuaFav = {
@@ -447,90 +110,24 @@
     clearAll: clearAll,
     loadFavorites: loadFavIds,
     syncAllButtons: syncAllButtons,
-    renderFavorites: renderFavoritesPage,
     STORAGE_KEY: STORAGE_KEY
   };
-  window.renderFavorites = renderFavoritesPage;
 
   document.addEventListener('click', function (event) {
-    var bookmarkBtn = event.target.closest(bookmarkSelector);
-    if (bookmarkBtn) {
-      event.preventDefault();
-      event.stopPropagation();
+    var bookmarkButton = event.target.closest(bookmarkSelector);
+    if (!bookmarkButton) return;
 
-      var favId = bookmarkBtn.getAttribute('data-fav-id');
-      if (!favId) return;
+    event.preventDefault();
+    event.stopPropagation();
 
-      toggleSave(favId);
-      syncAllButtons();
-      pulsePostButton(bookmarkBtn);
-      renderFavoritesPage();
-      if (document.getElementById('fav-overlay') && document.getElementById('fav-overlay').classList.contains('is-open')) {
-        renderSheetList();
-      }
-      return;
-    }
+    var id = bookmarkButton.getAttribute('data-fav-id');
+    if (!id) return;
 
-    var sheetTrigger = event.target.closest('[data-fav-open], #nav-fav-btn, #nav-fav-btn-mobile');
-    if (sheetTrigger) {
-      event.preventDefault();
-      openSheet(sheetTrigger);
-      return;
-    }
-
-    var overlay = document.getElementById('fav-overlay');
-    if (event.target.closest('#fav-close-btn') || (overlay && event.target === overlay && !event.target.closest('.fav-sheet'))) {
-      closeSheet();
-      return;
-    }
-
-    var removeBtn = event.target.closest('.fav-item-remove');
-    if (removeBtn) {
-      event.preventDefault();
-      event.stopPropagation();
-      var removeId = removeBtn.getAttribute('data-remove-id');
-      if (removeId) removeOne(removeId);
-      return;
-    }
-
-    if (event.target.closest('#fav-clear-btn, #fav-clear-all')) {
-      event.preventDefault();
-      openConfirm('#fav-confirm', event.target.closest('#fav-clear-btn, #fav-clear-all'));
-      return;
-    }
-
-    var confirmDlg = document.getElementById('fav-confirm');
-    if (confirmDlg && event.target === confirmDlg) {
-      closeConfirm('#fav-confirm');
-      return;
-    }
-
-    if (event.target.closest('#fav-cancel-btn')) {
-      closeConfirm('#fav-confirm');
-      return;
-    }
-
-    if (event.target.closest('#fav-confirm-yes-btn')) {
-      event.preventDefault();
-      clearAllFavorites();
-    }
-  });
-
-  document.addEventListener('keydown', function (event) {
-    if (event.key !== 'Escape') return;
-
-    var confirmDlg = document.getElementById('fav-confirm');
-    var overlay = document.getElementById('fav-overlay');
-
-    if (confirmDlg && confirmDlg.classList.contains('is-open')) {
-      closeConfirm('#fav-confirm');
-    } else if (overlay && overlay.classList.contains('is-open')) {
-      closeSheet();
-    }
-  });
-
-  document.addEventListener('DOMContentLoaded', function () {
+    toggleSave(id);
     syncAllButtons();
-    renderFavoritesPage();
+    pulsePostButton(bookmarkButton);
+    notifyChanged();
   });
+
+  document.addEventListener('DOMContentLoaded', syncAllButtons);
 })();

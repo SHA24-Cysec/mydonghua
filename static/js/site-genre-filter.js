@@ -71,8 +71,8 @@ function showGenreToast(message, type = 'warning') {
   }, 4000);
 }
 
-// Fungsi apply genre filter - dipanggil dari onclick tombol
-function applyGenreFilter(btn) {
+// Terapkan pilihan genre saat form sidebar dikirim.
+function applyGenreFilter() {
   var genres = [];
   var checkboxes = document.querySelectorAll('input[name="genre"]:checked');
   checkboxes.forEach(function(cb) {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (genreForm) {
     genreForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      applyGenreFilter(this.querySelector('.genre-apply-button'));
+      applyGenreFilter();
     });
   }
 });
@@ -109,6 +109,7 @@ function getGenresFromHash() {
 var resultsContainer = document.getElementById("genre-results");
 var genrePage = 1;
 var genreResults = [];
+var genreResizeTimer = null;
 
 // Jumlah item per halaman adaptif
 function getGenrePerPage() {

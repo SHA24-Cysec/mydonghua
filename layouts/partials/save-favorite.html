@@ -1,41 +1,8 @@
-{{/*  Save Favorite — Bottom Sheet Modal
-      Icon: Bookmark
-      Storage: LocalStorage
-      Trigger: Card + Post page
-      View: Bottom sheet drawer
-      Extras: Clear all button
+{{/*
+  Dialog konfirmasi Hapus Semua Favorit.
+  Partial ini hanya dirender pada layout Favorit melalui baseof.html.
+  Storage, badge, bookmark, dan perilaku dialog ditangani site-favorites.js.
 */}}
-
-
-{{/*  Navbar favorite button — injected via JS into navbar  */}}
-
-
-{{/*  Bottom Sheet Modal HTML  */}}
-<div class="fav-overlay" id="fav-overlay" aria-hidden="true">
-  <div class="fav-sheet" role="dialog" aria-modal="true" aria-labelledby="fav-sheet-title" tabindex="-1">
-    <div class="fav-handle" aria-hidden="true"></div>
-
-    <div class="fav-header">
-      <div class="fav-title" id="fav-sheet-title">
-        <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
-        <span>Favorit</span>
-        <span class="fav-count" id="fav-count">0</span>
-      </div>
-      <div class="fav-actions">
-        <button class="fav-btn-icon" id="fav-clear-btn" type="button" aria-label="Hapus semua favorit" title="Hapus semua">
-          <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
-        </button>
-        <button class="fav-btn-icon" id="fav-close-btn" type="button" aria-label="Tutup" title="Tutup">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-
-    <div id="fav-list-container" aria-live="polite"></div>
-  </div>
-</div>
-
-{{/*  Confirm Dialog  */}}
 <div class="fav-confirm" id="fav-confirm" aria-hidden="true">
   <div class="fav-confirm-box" role="alertdialog" aria-modal="true" aria-labelledby="fav-confirm-title" aria-describedby="fav-confirm-desc" tabindex="-1">
     <div class="fav-confirm-title" id="fav-confirm-title">
@@ -51,4 +18,3 @@
     </div>
   </div>
 </div>
-

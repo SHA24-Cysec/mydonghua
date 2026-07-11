@@ -1,16 +1,56 @@
-{{/* Global component scripts — moved from inline scripts for maintainability. */}}
+{{/* Conditional component scripts — page matrix audited in Stage 6. */}}
+{{- $isPost := eq .Layout "postingan-donghua" -}}
+{{- $isSearch := eq .Layout "search" -}}
+{{- $isFilterGenre := eq .Layout "filter-genre" -}}
+{{- $isFavorite := eq .Layout "favorit" -}}
+{{- $hasSidebar := or .IsHome (or $isPost $isFavorite) -}}
+
+{{/* Global: markup tersedia dari baseof/navbar pada seluruh halaman HTML. */}}
 <script defer src='{{ "js/site-navbar.js" | relURL }}'></script>
 <script defer src='{{ "js/site-random.js" | relURL }}'></script>
+
+{{/* Post-only: report, share, dan Disqus hanya dirender pada posting donghua. */}}
+{{ if $isPost }}
 <script defer src='{{ "js/site-download-report.js" | relURL }}'></script>
 <script defer src='{{ "js/site-share.js" | relURL }}'></script>
+{{ end }}
+
+{{/* Global: komponen berada pada baseof dan dibutuhkan di seluruh halaman HTML. */}}
 <script defer src='{{ "js/site-back-to-top.js" | relURL }}'></script>
+<script defer src='{{ "js/site-floating-ad.js" | relURL }}'></script>
+
+{{/* Search menyediakan data/card helper untuk halaman Search dan Filter Genre. */}}
+{{ if or $isSearch $isFilterGenre }}
 <script defer src='{{ "js/site-search.js" | relURL }}'></script>
+{{ end }}
+
+{{/* Genre Filter dipakai oleh sidebar serta halaman hasil Filter Genre. */}}
+{{ if or $hasSidebar $isFilterGenre }}
 <script defer src='{{ "js/site-genre-filter.js" | relURL }}'></script>
+{{ end }}
+
+{{/* Global core: storage, badge navbar, dan bookmark card/post. */}}
 <script defer src='{{ "js/site-favorites.js" | relURL }}'></script>
+{{ if $isFavorite }}
+<script defer src='{{ "js/site-favorites-page.js" | relURL }}'></script>
+{{ end }}
+
+{{ if .IsHome }}
 <script defer src='{{ "js/site-home-slider.js" | relURL }}'></script>
+{{ end }}
+
+{{ if $hasSidebar }}
 <script defer src='{{ "js/site-sidebar.js" | relURL }}'></script>
+{{ end }}
+
+{{ if $isPost }}
 <script defer src='{{ "js/site-disqus.js" | relURL }}'></script>
+{{ end }}
+
+{{/* Global konservatif: menangani image statis dan image hasil render dinamis. */}}
 <script defer src='{{ "js/site-image-loader.js" | relURL }}'></script>
+
+{{/* Jaringan social bar tetap hanya dimuat pada production. */}}
 {{ if hugo.IsProduction }}
 <script defer src='{{ "js/site-social-bar.js" | relURL }}'></script>
 {{ end }}

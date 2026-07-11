@@ -1,0 +1,101 @@
+{{/*
+  Floating bottom ad.
+  - Production: memuat unit iklan 728x90 yang sama dengan ads-728x90.html.
+  - Development: tidak memuat script/elemen jaringan iklan dan hanya menampilkan placeholder.
+  Visibility, fallback production, dan close state per-tab ditangani oleh
+  static/js/site-floating-ad.js.
+*/}}
+<section
+  class="site-floating-ad"
+  id="site-floating-ad"
+  data-floating-ad
+  aria-label="Iklan"
+  hidden
+>
+  <div class="site-floating-ad__panel">
+    <button
+      class="site-floating-ad__close"
+      type="button"
+      data-floating-ad-close
+      aria-label="Tutup iklan untuk sesi ini"
+      title="Tutup iklan"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6 6 18"/>
+      </svg>
+    </button>
+
+    <div class="site-floating-ad__meta" aria-hidden="true">
+      <span>Advertisement</span>
+      <span class="site-floating-ad__demo" data-floating-ad-status>
+        {{ if hugo.IsProduction }}Live{{ else }}Placeholder{{ end }}
+      </span>
+    </div>
+
+    <div
+      class="site-floating-ad__slot"
+      {{ if hugo.IsProduction }}
+        aria-label="Advertisement 728 × 90"
+      {{ else }}
+        role="img"
+        aria-label="Placeholder iklan responsif"
+      {{ end }}
+    >
+      {{ if hugo.IsProduction }}
+        {{/*
+          ================================================================
+          PRODUCTION — MULAI SCRIPT DAN ELEMEN IKLAN
+
+          Blok ini hanya dirender ketika Hugo dibangun dengan environment
+          production. Konfigurasi dan script menggunakan unit 728x90 yang
+          sama dengan layouts/partials/widget/ads-728x90.html.
+          ================================================================
+        */}}
+        <div class="site-floating-ad__unit" data-floating-ad-unit>
+          <script>
+            window.atOptions = {
+              'key' : 'ef733504b5b389474cecd0340f4fdae0',
+              'format' : 'iframe',
+              'height' : 90,
+              'width' : 728,
+              'params' : {}
+            };
+          </script>
+          <script
+            src="https://contentblanksupersede.com/ef733504b5b389474cecd0340f4fdae0/invoke.js"
+            async
+            data-floating-ad-network-script
+          ></script>
+        </div>
+
+        <div
+          class="site-floating-ad__fallback"
+          data-floating-ad-fallback
+          role="status"
+          hidden
+        >
+          <span class="site-floating-ad__mark" aria-hidden="true">AD</span>
+          <span class="site-floating-ad__copy">
+            <strong>Iklan belum tersedia</strong>
+            <small>Konten cadangan ditampilkan karena unit iklan gagal dimuat.</small>
+          </span>
+        </div>
+        {{/* ================ PRODUCTION — SELESAI SCRIPT DAN ELEMEN IKLAN ================ */}}
+      {{ else }}
+        {{/*
+          ================================================================
+          DEVELOPMENT — PLACEHOLDER SAJA
+
+          Tidak ada script atau elemen jaringan iklan yang dirender pada
+          development agar proses preview lokal tetap aman dan cepat.
+          ================================================================
+        */}}
+        <span class="site-floating-ad__mark" aria-hidden="true">AD</span>
+        <span class="site-floating-ad__copy">
+          <strong>Ruang iklan responsif</strong>
+          <small><span class="site-floating-ad__size-mobile">320 × 50</span><span class="site-floating-ad__size-desktop">728 × 90</span> · Development placeholder</small>
+        </span>
+      {{ end }}
+    </div>
+  </div>
+</section>
