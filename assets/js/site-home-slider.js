@@ -247,6 +247,60 @@ document.addEventListener('DOMContentLoaded', function () {
       imageNode.addEventListener('load', updateHeroImageFocus);
     }
 
+    function applyHeroImage(item) {
+      if (!imageNode || !item) return;
+
+      const heroDisplayW = imageNode.getBoundingClientRect().width || 400;
+      const nextSrc = pickBestSrc(item, heroDisplayW) || item.thumbnail || '';
+      const nextSrcset = buildSrcset(item);
+      const nextAlt = item.title || 'Rekomendasi Donghua';
+      const prevKey = imageNode.getAttribute('data-slider-image-key') || '';
+      const nextKey = [nextSrc, nextSrcset, nextAlt].join('|');
+
+      imageNode.loading = 'eager';
+      imageNode.decoding = 'async';
+      try { imageNode.fetchPriority = 'high'; } catch (e) {}
+      imageNode.setAttribute('fetchpriority', 'high');
+      imageNode.alt = nextAlt;
+
+      /* Selalu sinkronkan srcset: jika slide baru tidak punya multi-res,
+         atribut lama harus dihapus agar browser tidak tetap pakai srcset slide sebelumnya. */
+      if (nextSrcset) {
+        imageNode.setAttribute('srcset', nextSrcset);
+        imageNode.setAttribute('sizes', '(max-width:640px) 90vw, (max-width:1024px) 45vw, 400px');
+      } else {
+        imageNode.removeAttribute('srcset');
+        imageNode.removeAttribute('sizes');
+      }
+
+      if (!nextSrc) {
+        imageNode.removeAttribute('src');
+        imageNode.removeAttribute('data-slider-image-key');
+        updateHeroImageFocus();
+        return;
+      }
+
+      /* Paksa reload jika key sama (edge cache) atau beda slide. */
+      if (prevKey === nextKey && imageNode.getAttribute('src') === nextSrc) {
+        updateHeroImageFocus();
+        return;
+      }
+
+      /* Clear dulu supaya browser tidak menahan currentSrc dari srcset lama. */
+      imageNode.removeAttribute('src');
+      if (nextSrcset) {
+        imageNode.setAttribute('srcset', nextSrcset);
+      }
+      imageNode.src = nextSrc;
+      imageNode.setAttribute('data-slider-image-key', nextKey);
+
+      if (typeof imageNode.decode === 'function') {
+        imageNode.decode().then(updateHeroImageFocus).catch(updateHeroImageFocus);
+      } else {
+        updateHeroImageFocus();
+      }
+    }
+
     function applySlide(item) {
       typeNode.textContent = item.type || 'Donghua';
       titleNode.textContent = item.title || 'Rekomendasi Donghua';
@@ -255,22 +309,8 @@ document.addEventListener('DOMContentLoaded', function () {
       statusNode.textContent = item.status ? `Status: ${item.status}` : 'Status: —';
       ratingNode.textContent = item.rating ? `Rating: ${item.rating}/10` : 'Rating: —';
       linkNode.href = item.permalink || '#';
-      if (imageNode) {
-        imageNode.loading = 'eager';
-        imageNode.decoding = 'async';
-        try { imageNode.fetchPriority = 'high'; } catch(e) {}
-        imageNode.setAttribute('fetchpriority', 'high');
-        const heroDisplayW = imageNode.getBoundingClientRect().width || 400;
-        const heroSrc = pickBestSrc(item, heroDisplayW);
-        const heroSrcset = buildSrcset(item);
-        imageNode.src = heroSrc || item.thumbnail || imageNode.src;
-        if (heroSrcset) {
-          imageNode.srcset = heroSrcset;
-          imageNode.sizes = '(max-width:640px) 90vw, (max-width:1024px) 45vw, 400px';
-        }
-        imageNode.alt = item.title || 'Rekomendasi Donghua';
-      }
-      updateHeroImageFocus();
+
+      applyHeroImage(item);
 
       chipsNode.innerHTML = '';
       const genres = Array.isArray(item.genres) ? item.genres.slice(0, 3) : [];

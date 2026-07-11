@@ -4322,14 +4322,25 @@ mark {
   text-transform: uppercase;
 }
 
-.home-rec-slider-content h2 {
+.home-rec-slider-content h2,
+    .home-rec-slider-content [data-slider-title] {
   margin: 0;
   color: #f8fbff;
   font-size: clamp(1.2rem, 4.4vw, 1.95rem);
   font-weight: 950;
   letter-spacing: -0.04em;
-  line-height: 1.04;
-  text-wrap: balance;
+  line-height: 1.12;
+  max-width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+  /* Jangan balance: bisa memaksa wrap aneh saat di-clamp 2 baris. */
+  text-wrap: pretty;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .home-rec-slider-content p {
