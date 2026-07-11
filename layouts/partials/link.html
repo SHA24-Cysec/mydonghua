@@ -1,8 +1,8 @@
 {{ with resources.Get "main.css" }}
     {{ $minified := . | minify }}
-    <link rel="preload" as="style" href="{{ $minified.RelPermalink }}">
-    <link rel="stylesheet" href="{{ $minified.RelPermalink }}" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="{{ $minified.RelPermalink }}"></noscript>
+    {{/* Blocking stylesheet: pola media=print+onload sering gagal apply di production
+         (minify HTML, adblock, atau JS disabled partial) dan membuat site unstyled. */}}
+    <link rel="stylesheet" href="{{ $minified.RelPermalink }}">
 {{ end }}
 {{ with resources.Get "favicon.ico" }}
 <link rel="shortcut icon" href='{{ .RelPermalink }}' type="image/x-icon">

@@ -7602,8 +7602,6 @@ body.genre-sheet-lock {
   --site-focus-offset: 3px;
 }
 
-padding: 0.34rem 0.62rem;
-
 /* Compatibility normalization for existing main components.
    Uses !important because several components still render scoped \3c style>
    blocks after the main stylesheet. */

@@ -5762,7 +5762,6 @@ body .post-bookmark-btn.is-pulsing {
   --site-focus-offset: 3px;
 }
 
-  padding: 0.34rem 0.62rem;
 /* Compatibility normalization for existing main components.
    Uses !important because several components still render scoped <style>
    blocks after the main stylesheet. */
