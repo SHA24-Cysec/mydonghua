@@ -1,8 +1,8 @@
-<div class="ad-neon-shell ad-300x250" aria-label="Sponsor 300x250">
+<div class="ad-neon-shell ad-300x250" aria-label="Sponsor 300x250" data-ad-widget data-ad-type="300x250">
     <div class="ad-neon-head">Sponsor</div>
     <div class="ad-neon-body ad-size-300">
         {{ if hugo.IsProduction }}
-            <div class="ad-neon-scroll">
+            <div class="ad-neon-scroll" data-ad-unit>
                 <script>
                     atOptions = {
                         'key' : 'f7995a6dce010095a1c087975e306a0a',
@@ -12,7 +12,10 @@
                         'params' : {}
                     };
                 </script>
-                <script src="https://contentblanksupersede.com/f7995a6dce010095a1c087975e306a0a/invoke.js" async></script>
+                <script src="https://contentblanksupersede.com/f7995a6dce010095a1c087975e306a0a/invoke.js" async data-ad-network-script></script>
+            </div>
+            <div class="ad-widget-fallback" data-ad-fallback hidden>
+                <span><strong>Iklan belum tersedia</strong><small>Konten cadangan ditampilkan karena unit iklan gagal dimuat.</small></span>
             </div>
         {{ else }}
             <div class="ad-neon-placeholder">

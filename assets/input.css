@@ -7560,3 +7560,40 @@ body {
     animation: none !important;
   }
 }
+
+/* ==========================================================
+   AD WIDGET FALLBACK SYSTEM
+   Fallback untuk widget iklan (300x250, 728x90, native)
+   jika unit iklan gagal dimuat (ad blocker, script error, dll.)
+   ========================================================== */
+.ad-widget-unit[hidden],
+.ad-widget-fallback[hidden] {
+  display: none !important;
+}
+
+.ad-widget-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: inherit;
+  padding: 1rem;
+  color: #7dd3fc;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+.ad-widget-fallback strong {
+  display: block;
+  color: #cffafe;
+  font-size: 0.92rem;
+  margin-bottom: 0.22rem;
+}
+
+.ad-widget-fallback small {
+  display: block;
+  color: #91a4bd;
+  font-size: 0.68rem;
+  font-weight: 650;
+}

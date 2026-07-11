@@ -1,0 +1,60 @@
+{
+  "buildCommand": "hugo --gc --minify",
+  "outputDirectory": "public",
+  "framework": "hugo",
+  "installCommand": "npm install",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+        { "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/prince,dont-do-this/",
+      "destination": "/prince-dont-do-this/",
+      "permanent": true
+    },
+    {
+      "source": "/tales-of-demons-of-gods-season-4/",
+      "destination": "/tales-of-demons-and-gods-season-4/",
+      "permanent": true
+    },
+    {
+      "source": "/tales-of-demons-of-gods-season-5-dan-6/",
+      "destination": "/tales-of-demons-and-gods-season-5-dan-6/",
+      "permanent": true
+    },
+    {
+      "source": "/tales-of-demons-of-gods-season-7/",
+      "destination": "/tales-of-demons-and-gods-season-7/",
+      "permanent": true
+    }
+  ]
+}
