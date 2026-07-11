@@ -1,14 +1,14 @@
 (function () {
   'use strict';
 
-  var favoriteCore = window.DonghuaFav;
+  const favoriteCore = window.DonghuaFav;
   if (!favoriteCore) {
     console.error('[Fav] Core module tidak tersedia.');
     return;
   }
 
-  var indexPromise = null;
-  var lastConfirmTrigger = null;
+  let indexPromise = null;
+  let lastConfirmTrigger = null;
 
   function getIndexData() {
     if (indexPromise) return indexPromise;
@@ -42,7 +42,7 @@
 
   function orderItemsByIds(data, ids) {
     if (!Array.isArray(data)) return [];
-    var byId = {};
+    const byId = {};
     data.forEach(function (item) { byId[itemId(item)] = item; });
     return ids.map(function (id) { return byId[id]; }).filter(Boolean);
   }
@@ -53,14 +53,14 @@
 
   function focusFirst(container, preferredSelector) {
     if (!container) return false;
-    var target = preferredSelector ? container.querySelector(preferredSelector) : null;
+    const target = preferredSelector ? container.querySelector(preferredSelector) : null;
     if (isFocusableVisible(target)) {
       target.focus();
       return true;
     }
 
-    var focusable = container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
-    for (var i = 0; i < focusable.length; i += 1) {
+    const focusable = container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
+    for (let i = 0; i < focusable.length; i += 1) {
       if (isFocusableVisible(focusable[i])) {
         focusable[i].focus();
         return true;
@@ -79,18 +79,18 @@
       target.focus();
       return;
     }
-    var fallback = fallbackSelector ? document.querySelector(fallbackSelector) : null;
+    const fallback = fallbackSelector ? document.querySelector(fallbackSelector) : null;
     if (isFocusableVisible(fallback)) fallback.focus();
   }
 
   function renderFavoriteCard(item) {
-    var type = escapeHTML(item.type || 'Donghua');
-    var episode = escapeHTML(item.episode || '-');
-    var status = escapeHTML(item.status || '-');
-    var rating = escapeHTML(item.rating || '-');
-    var permalink = escapeHTML(item.permalink || '#');
-    var thumbnail = escapeHTML(item.thumbnail_small || item.thumbnail || '');
-    var thumbnailSrcset = '';
+    const type = escapeHTML(item.type || 'Donghua');
+    const episode = escapeHTML(item.episode || '-');
+    const status = escapeHTML(item.status || '-');
+    const rating = escapeHTML(item.rating || '-');
+    const permalink = escapeHTML(item.permalink || '#');
+    const thumbnail = escapeHTML(item.thumbnail_small || item.thumbnail || '');
+    let thumbnailSrcset = '';
 
     if (item.thumbnail_srcset) {
       thumbnailSrcset = escapeHTML(item.thumbnail_srcset);
@@ -98,20 +98,20 @@
       thumbnailSrcset = escapeHTML(item.thumbnail_small) + ' 240w, ' + escapeHTML(item.thumbnail_medium) + ' 400w';
     }
 
-    var title = escapeHTML(item.title || 'Donghua');
-    var id = escapeHTML(itemId(item));
-    var ratingHTML = rating && rating !== '-'
+    const title = escapeHTML(item.title || 'Donghua');
+    const id = escapeHTML(itemId(item));
+    const ratingHTML = rating && rating !== '-'
       ? '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ' + rating + '/10</span>'
       : '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>';
-    var metaChips = [episode, status]
+    const metaChips = [episode, status]
       .filter(function (value) { return value && value !== '-'; })
       .map(function (value) { return '<span class="donghua-card-chip">' + value + '</span>'; })
       .join('');
-    var saved = favoriteCore.isSaved(itemId(item));
-    var iconPath = saved
+    const saved = favoriteCore.isSaved(itemId(item));
+    const iconPath = saved
       ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
       : '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
-    var thumbnailHTML = '';
+    let thumbnailHTML = '';
 
     if (thumbnail) {
       thumbnailHTML = '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '"';
@@ -153,20 +153,20 @@
   }
 
   function syncClearButton(visible) {
-    var clearButton = document.getElementById('fav-clear-all');
+    const clearButton = document.getElementById('fav-clear-all');
     if (!clearButton) return;
-    var shouldShow = visible || favoriteCore.loadFavorites().length > 0;
+    const shouldShow = visible || favoriteCore.loadFavorites().length > 0;
     clearButton.classList.toggle('hidden', !shouldShow);
     clearButton.disabled = !shouldShow;
   }
 
   function renderFavoritesPage() {
-    var grid = document.getElementById('fav-grid');
+    const grid = document.getElementById('fav-grid');
     if (!grid) return;
 
-    var statusElement = document.getElementById('fav-status');
-    var emptyElement = document.getElementById('fav-empty');
-    var ids = favoriteCore.loadFavorites();
+    const statusElement = document.getElementById('fav-status');
+    const emptyElement = document.getElementById('fav-empty');
+    const ids = favoriteCore.loadFavorites();
     favoriteCore.syncAllButtons();
 
     if (!ids.length) {
@@ -179,7 +179,7 @@
 
     getIndexData()
       .then(function (data) {
-        var items = orderItemsByIds(data, ids);
+        const items = orderItemsByIds(data, ids);
         hideElement(statusElement);
 
         if (!items.length) {
@@ -209,7 +209,7 @@
   }
 
   function openConfirm(trigger) {
-    var dialog = document.getElementById('fav-confirm');
+    const dialog = document.getElementById('fav-confirm');
     if (!dialog) return;
     lastConfirmTrigger = trigger || document.activeElement;
     dialog.classList.add('is-open');
@@ -218,7 +218,7 @@
   }
 
   function closeConfirm() {
-    var dialog = document.getElementById('fav-confirm');
+    const dialog = document.getElementById('fav-confirm');
     if (!dialog) return;
     dialog.classList.remove('is-open');
     dialog.setAttribute('aria-hidden', 'true');
@@ -239,14 +239,14 @@
   document.addEventListener('donghua:favorites-changed', renderFavoritesPage);
 
   document.addEventListener('click', function (event) {
-    var clearButton = event.target.closest('#fav-clear-all');
+    const clearButton = event.target.closest('#fav-clear-all');
     if (clearButton) {
       event.preventDefault();
       openConfirm(clearButton);
       return;
     }
 
-    var dialog = document.getElementById('fav-confirm');
+    const dialog = document.getElementById('fav-confirm');
     if (dialog && event.target === dialog) {
       closeConfirm();
       return;
@@ -264,7 +264,7 @@
   });
 
   document.addEventListener('keydown', function (event) {
-    var dialog = document.getElementById('fav-confirm');
+    const dialog = document.getElementById('fav-confirm');
     if (event.key === 'Escape' && dialog && dialog.classList.contains('is-open')) closeConfirm();
   });
 

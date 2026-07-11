@@ -1,10 +1,13 @@
+(function () {
+  'use strict';
+
 // Fungsi Toast Notification untuk alert genre
 function showGenreToast(message, type = 'warning') {
   // Hapus toast yang sudah ada
-  var existingToast = document.querySelector('.genre-toast-notification');
+  const existingToast = document.querySelector('.genre-toast-notification');
   if (existingToast) existingToast.remove();
 
-  var toast = document.createElement('div');
+  const toast = document.createElement('div');
   toast.className = 'genre-toast-notification genre-toast-' + type;
   toast.setAttribute('role', 'alert');
   toast.innerHTML = 
@@ -25,16 +28,16 @@ function showGenreToast(message, type = 'warning') {
     'font-family:system-ui,-apple-system,sans-serif;font-size:14px;font-weight:500;' +
     'max-width:90vw;animation:genreToastSlideIn 0.3s ease-out;';
 
-  var content = toast.querySelector('.genre-toast-content');
+  const content = toast.querySelector('.genre-toast-content');
   content.style.cssText = 'display:flex;align-items:center;gap:10px;';
 
-  var icon = toast.querySelector('.genre-toast-icon');
+  const icon = toast.querySelector('.genre-toast-icon');
   icon.style.cssText = 'font-size:18px;flex-shrink:0;';
 
-  var msg = toast.querySelector('.genre-toast-message');
+  const msg = toast.querySelector('.genre-toast-message');
   msg.style.cssText = 'flex:1;';
 
-  var closeBtn = toast.querySelector('.genre-toast-close');
+  const closeBtn = toast.querySelector('.genre-toast-close');
   closeBtn.style.cssText = 
     'background:rgba(255,255,255,0.2);border:none;color:white;' +
     'width:24px;height:24px;border-radius:50%;cursor:pointer;' +
@@ -46,7 +49,7 @@ function showGenreToast(message, type = 'warning') {
 
   // Tambah animasi CSS
   if (!document.getElementById('genre-toast-styles')) {
-    var style = document.createElement('style');
+    const style = document.createElement('style');
     style.id = 'genre-toast-styles';
     style.textContent = 
       '@keyframes genreToastSlideIn{' +
@@ -73,8 +76,8 @@ function showGenreToast(message, type = 'warning') {
 
 // Terapkan pilihan genre saat form sidebar dikirim.
 function applyGenreFilter() {
-  var genres = [];
-  var checkboxes = document.querySelectorAll('input[name="genre"]:checked');
+  const genres = [];
+  const checkboxes = document.querySelectorAll('input[name="genre"]:checked');
   checkboxes.forEach(function(cb) {
     genres.push(cb.value);
   });
@@ -89,7 +92,7 @@ function applyGenreFilter() {
 
 // Handle form submit sebagai backup
 document.addEventListener('DOMContentLoaded', function() {
-  var genreForm = document.getElementById("genre-filter-form");
+  const genreForm = document.getElementById("genre-filter-form");
   if (genreForm) {
     genreForm.addEventListener("submit", function(e) {
       e.preventDefault();
@@ -106,10 +109,10 @@ function getGenresFromHash() {
     .filter(Boolean);
 }
 
-var resultsContainer = document.getElementById("genre-results");
-var genrePage = 1;
-var genreResults = [];
-var genreResizeTimer = null;
+const resultsContainer = document.getElementById("genre-results");
+let genrePage = 1;
+let genreResults = [];
+let genreResizeTimer = null;
 
 // Jumlah item per halaman adaptif
 function getGenrePerPage() {
@@ -123,8 +126,8 @@ function getGenrePerPage() {
 }
 
 function renderGenreResults() {
-  var alertBox = document.getElementById("genre-alert");
-  var pagination = document.getElementById("genre-pagination");
+  const alertBox = document.getElementById("genre-alert");
+  const pagination = document.getElementById("genre-pagination");
 
   resultsContainer.innerHTML = "";
 
@@ -136,13 +139,13 @@ function renderGenreResults() {
 
   alertBox.classList.add("hidden");
 
-  var genrePerPage = getGenrePerPage();
-  var totalPages = Math.ceil(genreResults.length / genrePerPage);
-  var start = (genrePage - 1) * genrePerPage;
-  var end = start + genrePerPage;
+  const genrePerPage = getGenrePerPage();
+  const totalPages = Math.ceil(genreResults.length / genrePerPage);
+  const start = (genrePage - 1) * genrePerPage;
+  const end = start + genrePerPage;
 
   genreResults.slice(start, end).forEach(function(item) {
-    var li = document.createElement("li");
+    const li = document.createElement("li");
     li.className = "donghua-card-item";
     
     if (window.DonghuaBatchCards && typeof window.DonghuaBatchCards.donghuaCardTemplate === "function") {
@@ -150,11 +153,11 @@ function renderGenreResults() {
     } else if (typeof donghuaCardTemplate === "function") {
       li.innerHTML = donghuaCardTemplate(item, item.title, "");
     } else {
-      var type = item.type || "Donghua";
-      var ratingHTML = item.rating && item.rating !== "-"
+      const type = item.type || "Donghua";
+      const ratingHTML = item.rating && item.rating !== "-"
         ? '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ' + item.rating + '/10</span>'
         : '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>';
-      var metaChips = [item.episode, item.status]
+      const metaChips = [item.episode, item.status]
         .filter(function(v) { return v && v !== "-"; })
         .map(function(v) { return '<span class="donghua-card-chip">' + v + '</span>'; })
         .join("");
@@ -191,8 +194,8 @@ function renderGenreResults() {
   document.getElementById("genre-next").disabled = genrePage === totalPages;
 }
 
-var genrePrevBtn = document.getElementById("genre-prev");
-var genreNextBtn = document.getElementById("genre-next");
+const genrePrevBtn = document.getElementById("genre-prev");
+const genreNextBtn = document.getElementById("genre-next");
 
 if (genrePrevBtn && genreNextBtn) {
   genrePrevBtn.addEventListener("click", function() {
@@ -204,7 +207,7 @@ if (genrePrevBtn && genreNextBtn) {
   });
 
   genreNextBtn.addEventListener("click", function() {
-    var totalPages = Math.ceil(genreResults.length / getGenrePerPage());
+    const totalPages = Math.ceil(genreResults.length / getGenrePerPage());
     if (genrePage < totalPages) {
       genrePage++;
       renderGenreResults();
@@ -217,7 +220,7 @@ window.addEventListener("resize", function() {
   clearTimeout(genreResizeTimer);
   genreResizeTimer = setTimeout(function() {
     if (!genreResults.length) return;
-    var totalPages = Math.max(1, Math.ceil(genreResults.length / getGenrePerPage()));
+    const totalPages = Math.max(1, Math.ceil(genreResults.length / getGenrePerPage()));
     genrePage = Math.min(genrePage, totalPages);
     renderGenreResults();
   }, 120);
@@ -226,10 +229,10 @@ window.addEventListener("resize", function() {
 window.addEventListener("DOMContentLoaded", function() {
   if (!resultsContainer) return;
 
-  var selectedGenres = getGenresFromHash();
+  const selectedGenres = getGenresFromHash();
   if (!selectedGenres.length) return;
 
-  var sourcePromise = (window.DonghuaBatchData && window.DonghuaBatchData.getIndexData) 
+  const sourcePromise = (window.DonghuaBatchData && window.DonghuaBatchData.getIndexData) 
     ? window.DonghuaBatchData.getIndexData() 
     : fetch('/index.json').then(function(res) { return res.json(); });
 
@@ -252,11 +255,12 @@ function normalizeGenres(input) {
 }
 
 function filterByGenres(data, selectedGenres) {
-  var selected = selectedGenres.map(function(g) { return g.toLowerCase(); });
+  const selected = selectedGenres.map(function(g) { return g.toLowerCase(); });
 
   return data.filter(function(item) {
     if (!item.genre) return false;
-    var itemGenres = normalizeGenres(item.genre);
+    const itemGenres = normalizeGenres(item.genre);
     return selected.every(function(g) { return itemGenres.includes(g); });
   });
 }
+})();

@@ -7,7 +7,7 @@
     }
 
     return new Promise(function (resolve, reject) {
-      var textarea = document.createElement('textarea');
+      const textarea = document.createElement('textarea');
       textarea.value = text;
       textarea.setAttribute('readonly', '');
       textarea.style.position = 'fixed';
@@ -27,13 +27,13 @@
   }
 
   document.addEventListener('click', function (event) {
-    var button = event.target.closest('[data-copy-url]');
+    const button = event.target.closest('[data-copy-url]');
     if (!button) return;
 
-    var component = button.closest('[data-share-component]');
-    var feedback = component ? component.querySelector('.share-copy-feedback') : null;
-    var icon = button.querySelector('i');
-    var url = button.getAttribute('data-copy-url') || window.location.href;
+    const component = button.closest('[data-share-component]');
+    const feedback = component ? component.querySelector('.share-copy-feedback') : null;
+    const icon = button.querySelector('i');
+    const url = button.getAttribute('data-copy-url') || window.location.href;
 
     copyText(url).then(function () {
       button.classList.add('is-copied');

@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  var SESSION_KEY = 'donghuabatch:floating-ad-closed';
-  var EXIT_DURATION = 240;
-  var AD_LOAD_TIMEOUT = 8000;
+  const SESSION_KEY = 'donghuabatch:floating-ad-closed';
+  const EXIT_DURATION = 240;
+  const AD_LOAD_TIMEOUT = 8000;
 
   function getSessionValue() {
     try {
@@ -22,13 +22,13 @@
   }
 
   function monitorProductionAd(ad) {
-    var unit = ad.querySelector('[data-floating-ad-unit]');
-    var fallback = ad.querySelector('[data-floating-ad-fallback]');
-    var status = ad.querySelector('[data-floating-ad-status]');
-    var networkScript = ad.querySelector('[data-floating-ad-network-script]');
-    var observer = null;
-    var timeoutId = null;
-    var settled = false;
+    const unit = ad.querySelector('[data-floating-ad-unit]');
+    const fallback = ad.querySelector('[data-floating-ad-fallback]');
+    const status = ad.querySelector('[data-floating-ad-status]');
+    const networkScript = ad.querySelector('[data-floating-ad-network-script]');
+    let observer = null;
+    let timeoutId = null;
+    let settled = false;
 
     if (!unit || !fallback) return function () {};
 
@@ -87,9 +87,9 @@
   }
 
   function initFloatingAd() {
-    var ad = document.querySelector('[data-floating-ad]');
-    var closeButton = ad && ad.querySelector('[data-floating-ad-close]');
-    var productionUnit = ad && ad.querySelector('[data-floating-ad-unit]');
+    const ad = document.querySelector('[data-floating-ad]');
+    const closeButton = ad && ad.querySelector('[data-floating-ad-close]');
+    const productionUnit = ad && ad.querySelector('[data-floating-ad-unit]');
 
     if (!ad || !closeButton) return;
 
@@ -98,7 +98,7 @@
       return;
     }
 
-    var stopMonitoring = monitorProductionAd(ad);
+    const stopMonitoring = monitorProductionAd(ad);
     ad.hidden = false;
 
     window.requestAnimationFrame(function () {

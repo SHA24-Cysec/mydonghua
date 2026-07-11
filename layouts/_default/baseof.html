@@ -20,10 +20,15 @@
     {{ end }}
 </head>
 <body class="text-wrap bg-cyber-dark text-slate-100 selection:bg-cyan-500 selection:text-black z-50 min-h-screen">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded-lg focus:font-bold focus:text-sm" style="text-decoration:none;">
+      Langsung ke konten utama
+    </a>
     {{ partial "navbar" . }}
+    <main id="main-content" tabindex="-1">
     {{ block "main" . }}
 
     {{ end }}
+    </main>
     {{ partial "footer" . }}
     {{ partial "js" . }}
     {{/*  loading-screen dihapus: menghalangi konten dan menunda LCP/FCP  */}}

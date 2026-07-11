@@ -1,3 +1,6 @@
+(function () {
+  'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('[data-home-random-slider]');
     if (!slider) return;
@@ -334,3 +337,4 @@ document.addEventListener('DOMContentLoaded', function () {
     renderSlide(false);
     restartAutoplay(true);
   });
+})();

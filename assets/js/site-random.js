@@ -1,3 +1,6 @@
+(function () {
+  'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
     const openButtons = Array.from(document.querySelectorAll('[data-random-open]'));
     const modal = document.querySelector('[data-random-modal]');
@@ -202,3 +205,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+})();

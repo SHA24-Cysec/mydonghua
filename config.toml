@@ -61,3 +61,6 @@ defaultContentLanguage = 'id'
   [[module.mounts]]
     source = "static/img"
     target = "assets/img"
+
+[minify]
+  disableJS = false

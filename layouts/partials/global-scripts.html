@@ -5,52 +5,63 @@
 {{- $isFavorite := eq .Layout "favorit" -}}
 {{- $hasSidebar := or .IsHome (or $isPost $isFavorite) -}}
 
+{{/* Helper: minify JS via Hugo Pipes */}}
+{{- define "minjs" -}}
+  {{- $res := resources.Get . -}}
+  {{- if $res -}}
+    {{- $min := $res | minify -}}
+    <script defer src="{{ $min.RelPermalink }}"></script>
+  {{- else -}}
+    <script defer src="{{ . | relURL }}"></script>
+  {{- end -}}
+{{- end -}}
+
 {{/* Global: markup tersedia dari baseof/navbar pada seluruh halaman HTML. */}}
-<script defer src='{{ "js/site-navbar.js" | relURL }}'></script>
-<script defer src='{{ "js/site-random.js" | relURL }}'></script>
+{{- template "minjs" "js/site-navbar.js" -}}
+{{- template "minjs" "js/site-random.js" -}}
 
 {{/* Post-only: report, share, dan Disqus hanya dirender pada posting donghua. */}}
 {{ if $isPost }}
-<script defer src='{{ "js/site-download-report.js" | relURL }}'></script>
-<script defer src='{{ "js/site-share.js" | relURL }}'></script>
+{{- template "minjs" "js/site-download-report.js" -}}
+{{- template "minjs" "js/site-share.js" -}}
 {{ end }}
 
 {{/* Global: komponen berada pada baseof dan dibutuhkan di seluruh halaman HTML. */}}
-<script defer src='{{ "js/site-back-to-top.js" | relURL }}'></script>
-<script defer src='{{ "js/site-floating-ad.js" | relURL }}'></script>
+{{- template "minjs" "js/site-back-to-top.js" -}}
+{{- template "minjs" "js/site-floating-ad.js" -}}
 
 {{/* Search menyediakan data/card helper untuk halaman Search dan Filter Genre. */}}
 {{ if or $isSearch $isFilterGenre }}
-<script defer src='{{ "js/site-search.js" | relURL }}'></script>
+{{- template "minjs" "js/site-search.js" -}}
 {{ end }}
 
 {{/* Genre Filter dipakai oleh sidebar serta halaman hasil Filter Genre. */}}
 {{ if or $hasSidebar $isFilterGenre }}
-<script defer src='{{ "js/site-genre-filter.js" | relURL }}'></script>
+{{- template "minjs" "js/site-genre-filter.js" -}}
 {{ end }}
 
 {{/* Global core: storage, badge navbar, dan bookmark card/post. */}}
-<script defer src='{{ "js/site-favorites.js" | relURL }}'></script>
+{{- template "minjs" "js/site-favorites.js" -}}
 {{ if $isFavorite }}
-<script defer src='{{ "js/site-favorites-page.js" | relURL }}'></script>
+{{- template "minjs" "js/site-favorites-page.js" -}}
 {{ end }}
 
 {{ if .IsHome }}
-<script defer src='{{ "js/site-home-slider.js" | relURL }}'></script>
+{{- template "minjs" "js/site-home-slider.js" -}}
 {{ end }}
 
 {{ if $hasSidebar }}
-<script defer src='{{ "js/site-sidebar.js" | relURL }}'></script>
+{{- template "minjs" "js/site-sidebar.js" -}}
 {{ end }}
 
 {{ if $isPost }}
-<script defer src='{{ "js/site-disqus.js" | relURL }}'></script>
+{{- template "minjs" "js/site-disqus.js" -}}
 {{ end }}
 
 {{/* Global konservatif: menangani image statis dan image hasil render dinamis. */}}
-<script defer src='{{ "js/site-image-loader.js" | relURL }}'></script>
+{{- template "minjs" "js/site-image-loader.js" -}}
 
 {{/* Jaringan social bar tetap hanya dimuat pada production. */}}
 {{ if hugo.IsProduction }}
-<script defer src='{{ "js/site-social-bar.js" | relURL }}'></script>
+{{- template "minjs" "js/site-social-bar.js" -}}
 {{ end }}

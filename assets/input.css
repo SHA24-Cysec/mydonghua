@@ -167,185 +167,6 @@
 
 }
 
-/* ==========================================================
-     GLOBAL PAGINATION CSS (OUTSIDE @layer TO GUARANTEE 100% PRESERVATION)
-     MODEL 6: GLOW-WIRE HOLOGRAM STRIP PAGINATION
-     Electric Cyan-Blue • Uniform Mecha rounded-md (~6px)
-     ========================================================== */
-.pagination,
-.pagination-default {
-  display: flex !important;
-  flex-direction: row !important;
-  gap: 8px !important;
-  background: rgba(6, 8, 22, 0.95) !important;
-  border: 1px solid rgba(30, 41, 59, 0.9) !important;
-  box-shadow: 0 0 25px rgba(34, 211, 238, 0.15) !important;
-  padding: 12px 16px !important;
-  border-radius: 16px !important;
-  width: 100% !important;
-  max-width: max-content !important;
-  margin: 0.5rem auto 0 !important; /* Dikurangi dari 24px agar margin atas pagination rapat */
-  justify-content: center !important;
-  align-items: center !important;
-  flex-wrap: wrap !important;
-  list-style: none !important;
-}
-
-.page-item {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Universal Square Mecha HUD styling for all items */
-.page-item a,
-.page-item .page-link,
-.page-item span {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-width: 44px !important;
-  height: 44px !important;
-  padding: 0 14px !important;
-  background: var(--site-panel) !important;
-  border: 1px solid #334155 !important;
-  border-radius: 6px !important;
-  color: #94a3b8 !important;
-  font-weight: 700 !important;
-  font-size: 15px !important;
-  text-decoration: none !important;
-  overflow: hidden !important;
-  transition: color var(--site-transition-med), background var(--site-transition-med), border-color var(--site-transition-med), box-shadow var(--site-transition-med) !important;
-  cursor: pointer !important;
-}
-
-/* Glow-Wire Strip at bottom of button (Applied ONLY to numbered items) */
-.page-item a::after,
-.page-item .page-link::after,
-.page-item span::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 3px !important;
-  background: #334155 !important;
-  transition: background var(--site-transition-med), height var(--site-transition-med), box-shadow var(--site-transition-med) !important;
-}
-
-/* Hover state for all buttons */
-.page-item a:hover,
-.page-item .page-link:hover,
-.page-item span:hover {
-  color: #ffffff !important;
-  background: rgba(34, 211, 238, 0.15) !important;
-  border-color: var(--site-cyan) !important;
-  box-shadow: 0 0 15px rgba(34, 211, 238, 0.35) !important;
-}
-
-.page-item a:hover::after,
-.page-item .page-link:hover::after,
-.page-item span:hover::after {
-  background: var(--site-cyan) !important;
-  height: 4px !important;
-  box-shadow: 0 0 12px var(--site-cyan) !important;
-}
-
-/* Active Numbered State (Electric Cyan-Blue) */
-.page-item.active a,
-.page-item.active .page-link,
-.page-item.active span {
-  background: rgba(34, 211, 238, 0.2) !important;
-  border-color: var(--site-cyan) !important;
-  color: var(--site-cyan) !important;
-  font-weight: 800 !important;
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4) !important;
-  cursor: default !important;
-}
-
-.page-item.active a::after,
-.page-item.active .page-link::after,
-.page-item.active span::after {
-  background: linear-gradient(90deg, var(--site-cyan), #3B82F6) !important;
-  height: 5px !important;
-  box-shadow: 0 0 15px var(--site-cyan) !important;
-}
-
-/* Navigation Arrow Items (««, «, », »») - Remove Glow-Wire Strip, Keep Square Mecha HUD */
-.page-item.page-item-first a::after,
-.page-item.page-item-first .page-link::after,
-.page-item.page-item-first span::after,
-.page-item.page-item-last a::after,
-.page-item.page-item-last .page-link::after,
-.page-item.page-item-last span::after,
-.page-item.page-item-previous a::after,
-.page-item.page-item-previous .page-link::after,
-.page-item.page-item-previous span::after,
-.page-item.page-item-next a::after,
-.page-item.page-item-next .page-link::after,
-.page-item.page-item-next span::after {
-  display: none !important;
-}
-
-/* Ensure Arrow Items stay exactly uniform square shape (~6px) */
-.page-item.page-item-first a,
-.page-item.page-item-first .page-link,
-.page-item.page-item-first span,
-.page-item.page-item-last a,
-.page-item.page-item-last .page-link,
-.page-item.page-item-last span,
-.page-item.page-item-previous a,
-.page-item.page-item-previous .page-link,
-.page-item.page-item-previous span,
-.page-item.page-item-next a,
-.page-item.page-item-next .page-link,
-.page-item.page-item-next span {
-  border-radius: 6px !important;
-}
-
-/* Disabled state */
-.page-item.disabled a,
-.page-item.disabled .page-link,
-.page-item.disabled span {
-  opacity: 0.35 !important;
-  pointer-events: none !important;
-}
-
-/* Uniform Square Nav buttons for Search & Filter pages */
-.cyber-pill-nav {
-  position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  height: 44px !important;
-  padding: 0 20px !important;
-  background: var(--site-panel) !important;
-  border: 1px solid #334155 !important;
-  border-radius: 6px !important;
-  color: #94a3b8 !important;
-  font-weight: 700 !important;
-  font-size: 14px !important;
-  transition: color var(--site-transition-med), background var(--site-transition-med), border-color var(--site-transition-med), box-shadow var(--site-transition-med) !important;
-  cursor: pointer !important;
-}
-
-.cyber-pill-nav:hover:not(:disabled) {
-  background: rgba(34, 211, 238, 0.15) !important;
-  border-color: var(--site-cyan) !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 15px rgba(34, 211, 238, 0.35) !important;
-}
-
-.cyber-pill-nav:disabled {
-  opacity: 0.35 !important;
-  border-color: #334155 !important;
-  color: #64748b !important;
-  cursor: not-allowed !important;
-  box-shadow: none !important;
-}
-
 /* ===============================
    GLOBAL SCROLLBAR
    OPTION 11: AURORA THIN RAIL
@@ -738,35 +559,6 @@
   }
 }
 
-/* ===============================
-   GLOBAL LINK GLOW HOVER
-   Replaces underline hover with soft glow background
-   =============================== */
-.site-link-glow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.18rem 0.48rem;
-  border: 1px solid transparent;
-  border-radius: 0.8rem;
-  text-decoration: none !important;
-  transition: transform var(--site-transition-fast), color 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-}
-
-.site-link-glow:hover {
-  transform: translateY(-1px);
-  color: #cffafe !important;
-  background: rgba(34, 211, 238, 0.10);
-  border-color: rgba(34, 211, 238, 0.22);
-  box-shadow: 0 0 14px rgba(34, 211, 238, 0.12);
-}
-
-.site-link-glow--pink:hover {
-  color: #ffe4f1 !important;
-  background: rgba(236, 72, 153, 0.12);
-  border-color: rgba(236, 72, 153, 0.24);
-  box-shadow: 0 0 14px rgba(236, 72, 153, 0.12);
-}
 
 .prose-neon a {
   color: var(--site-cyan);
@@ -1298,42 +1090,10 @@
         min-width: 42px;
         min-height: 42px;
         padding: 0 0.95rem;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 0.95rem;
-        background: rgba(255, 255, 255, 0.04);
-        color: #d8e9ff;
         font-size: 0.88rem;
         font-weight: 850;
         line-height: 1;
         text-decoration: none;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
-      }
-
-      body .pagination-aurora-button:hover:not(.is-disabled),
-      body .pagination-aurora-page:hover:not(.is-active),
-      body .pagination-dock-button:hover:not(:disabled) {
-        transform: translateY(-2px);
-        border-color: rgba(34, 211, 238, 0.28);
-        background: rgba(255, 255, 255, 0.08);
-        box-shadow: 0 0 16px rgba(34, 211, 238, 0.12);
-        color: #ffffff;
-      }
-
-      body .pagination-aurora-page.is-active,
-      body .pagination-dock-status {
-        background: linear-gradient(135deg, #22d3ee, #38bdf8 45%, #8b5cf6 78%, #ec4899);
-        border-color: transparent;
-        color: #06111f;
-        box-shadow: 0 0 18px rgba(34, 211, 238, 0.18);
-      }
-
-      body .pagination-aurora-button.is-disabled,
-      body .pagination-dock-button:disabled {
-        opacity: 0.4;
-        color: #6c8198;
-        pointer-events: none;
-        box-shadow: none;
       }
 
       @media (max-width: 520px) {
@@ -5993,106 +5753,7 @@ body .post-bookmark-btn.is-pulsing {
   --site-focus-offset: 3px;
 }
 
-/* Reusable classes for new/future UI */
-.site-panel,
-.site-card {
-  position: relative;
-  isolation: isolate;
-  border: 1px solid var(--site-line);
-  background: var(--site-gradient-panel);
-  color: var(--site-text);
-  box-shadow: var(--site-shadow-panel);
-}
-
-.site-panel { border-radius: var(--site-radius-xl); }
-.site-card { border-radius: var(--site-radius-lg); }
-
-.site-chip,
-.site-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.42rem;
-  width: fit-content;
-  border-radius: var(--site-radius-pill);
-  line-height: 1;
-  text-decoration: none;
-}
-
-.site-badge {
-  min-height: 1.85rem;
-  padding: 0.4rem 0.7rem;
-  border: 1px solid var(--site-line-strong);
-  background: rgba(34, 211, 238, 0.09);
-  color: #baf6ff;
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.site-chip {
-  min-height: 1.9rem;
   padding: 0.34rem 0.62rem;
-  border: 1px solid var(--site-line-soft);
-  background: rgba(255, 255, 255, 0.045);
-  color: #dcecff;
-  font-size: 0.74rem;
-  font-weight: 820;
-}
-
-.site-button {
-  position: relative;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.48rem;
-  min-height: 2.75rem;
-  padding: 0.74rem 1rem;
-  border-radius: var(--site-radius-btn);
-  border: 1px solid transparent;
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.86rem;
-  font-weight: 950;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-  transition: transform var(--site-transition-fast), filter var(--site-transition-fast), background var(--site-transition-fast), border-color var(--site-transition-fast), box-shadow var(--site-transition-fast), color var(--site-transition-fast);
-}
-
-.site-button-primary {
-  background: var(--site-gradient-primary);
-  color: var(--site-ink-on-light);
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.16);
-}
-
-.site-button-ghost {
-  border-color: var(--site-line-soft);
-  background: rgba(255, 255, 255, 0.05);
-  color: #eef7ff;
-}
-
-.site-button-danger {
-  border-color: rgba(244, 114, 182, 0.32);
-  background: var(--site-gradient-danger);
-  color: #fff;
-}
-
-@media (hover: hover) {
-  .site-button:hover {
-    transform: translateY(-2px);
-  }
-  .site-button-primary:hover {
-    filter: brightness(1.05);
-    box-shadow: 0 0 24px rgba(34, 211, 238, 0.22);
-  }
-  .site-button-ghost:hover {
-    border-color: rgba(34, 211, 238, 0.24);
-    background: rgba(255, 255, 255, 0.08);
-  }
-}
-
 /* Compatibility normalization for existing main components.
    Uses !important because several components still render scoped <style>
    blocks after the main stylesheet. */
@@ -6152,40 +5813,6 @@ body .post-bookmark-btn.is-pulsing {
 .home-rec-slider-button,
 .db-button,
 .db-report,
-.site-random-action,
-.site-navbar-action,
-.share-premium-button,
-.fav-empty-cta,
-.fav-empty-ghost,
-.fav-confirm-btn,
-.post-bookmark-btn,
-.cyber-pill-nav {
-  border-radius: var(--site-radius-btn) !important;
-  transition: transform var(--site-transition-fast), filter var(--site-transition-fast), background var(--site-transition-fast), border-color var(--site-transition-fast), box-shadow var(--site-transition-fast), color var(--site-transition-fast) !important;
-}
-
-.cyber-button,
-.site-home-hero-button.primary,
-.home-rec-slider-button.primary,
-.db-button:not(.is-locked),
-.site-random-action.primary,
-.fav-empty-cta {
-  background: var(--site-gradient-primary) !important;
-  color: var(--site-ink-on-light) !important;
-}
-
-.site-home-hero-button.secondary,
-.home-rec-slider-button.secondary,
-.site-random-action.secondary,
-.fav-empty-ghost,
-.cyber-pill-nav,
-.site-navbar-action,
-.share-premium-button,
-.db-button.is-locked {
-  border-color: var(--site-line-soft) !important;
-  background-color: rgba(255, 255, 255, 0.05) !important;
-}
-
 .donghua-card-link,
 .site-random-poster,
 .home-rec-slider-card-thumb {
@@ -6211,49 +5838,9 @@ body .post-bookmark-btn.is-pulsing {
   object-position: center top;
 }
 
-:is(
-  .site-button,
-  .site-navbar-action,
-  .site-nav-grid a,
-  .site-nav-grid button,
-  .site-random-close,
-  .site-random-action,
-  .db-button,
-  .db-report,
-  .share-premium-button,
-  .fav-confirm-btn,
-  .fav-empty-cta,
-  .fav-empty-ghost,
-  .post-bookmark-btn,
-  .donghua-card-link,
-  .donghua-card-bookmark,
-  .cyber-pill-nav
-):focus-visible {
-  outline: var(--site-focus-ring) !important;
-  outline-offset: var(--site-focus-offset) !important;
-}
-
-@media (hover: hover) {
-  .cyber-button:hover,
-  .site-home-hero-button:hover,
-  .home-rec-slider-button:hover,
-  .db-button:hover,
-  .db-report:hover,
-  .site-random-action:hover,
-  .site-navbar-action:hover,
-  .share-premium-button:hover,
-  .fav-empty-cta:hover,
-  .fav-empty-ghost:hover,
-  .post-bookmark-btn:hover,
-  .cyber-pill-nav:hover:not(:disabled) {
-    transform: translateY(-2px) !important;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .site-panel,
   .site-card,
-  .site-button,
   .panel-neon,
   .site-home-hero,
   .home-rec-slider,
@@ -7195,7 +6782,6 @@ html {
   .home-rec-slider-button,
   .home-rec-slider-arrow,
   .cyber-button,
-  .cyber-pill-nav,
   .db-button,
   .db-report,
   .site-random-action,
@@ -7235,7 +6821,6 @@ html {
   .site-home-hero-button.secondary,
   .home-rec-slider-button.secondary,
   .home-rec-slider-arrow,
-  .cyber-pill-nav,
   .db-button.is-locked,
   .site-random-action.secondary,
   .fav-empty-ghost,
@@ -7276,7 +6861,6 @@ html {
   .db-button.is-locked,
   .pagination-aurora-button.is-disabled,
   .pagination-dock-button:disabled,
-  .cyber-pill-nav:disabled,
   .fav-clear-btn[disabled],
   .db-report:disabled
 ) {
@@ -7333,7 +6917,6 @@ html {
     .site-home-hero-button.secondary,
     .home-rec-slider-button.secondary,
     .home-rec-slider-arrow,
-    .cyber-pill-nav,
     .site-random-action.secondary,
     .fav-empty-ghost,
     :where(#fav-cancel-btn, #buka-komen button),
@@ -7365,7 +6948,6 @@ html {
   .home-rec-slider-button,
   .home-rec-slider-arrow,
   .cyber-button,
-  .cyber-pill-nav,
   .db-button,
   .db-report,
   .site-random-action,

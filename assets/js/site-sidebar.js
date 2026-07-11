@@ -1,3 +1,6 @@
+(function () {
+  'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
                 const shell = document.querySelector('[data-genre-filter]');
                 if (!shell) return;
@@ -150,3 +153,4 @@ document.addEventListener('DOMContentLoaded', function () {
                     setActive(active);
                 });
             });
+})();

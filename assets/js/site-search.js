@@ -1,3 +1,6 @@
+(function () {
+  'use strict';
+
 const searchInput = document.getElementById("search-input");
     const resultsList = document.getElementById("search-results");
     const emptyState = document.getElementById("search-empty-state");
@@ -603,3 +606,4 @@ window.DonghuaBatchCards.donghuaCardTemplate = donghuaCardTemplate;
 // yang sama persis (adaptif sesuai lebar layar) dengan halaman pencarian.
 window.DonghuaSearch = window.DonghuaSearch || {};
 window.DonghuaSearch.getPerPage = getSearchPerPage;
+})();
