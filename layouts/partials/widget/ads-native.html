@@ -2,13 +2,15 @@
     <div class="ad-neon-head">Advertisement</div>
     <div class="ad-neon-body ad-size-native">
         {{ if hugo.IsProduction }}
-            <div class="ad-neon-scroll" data-ad-unit>
-                <script async="async" data-cfasync="false" src="https://contentblanksupersede.com/4aab23755134ef6ae6e4d517e0c554dc/invoke.js" data-ad-network-script></script>
-                <div id="container-4aab23755134ef6ae6e4d517e0c554dc"></div>
+            <div
+                class="ad-neon-scroll"
+                data-ad-unit
+                data-ad-invoke="https://contentblanksupersede.com/4aab23755134ef6ae6e4d517e0c554dc/invoke.js"
+                data-ad-container-id="container-4aab23755134ef6ae6e4d517e0c554dc"
+            >
+                <div id="container-4aab23755134ef6ae6e4d517e0c554dc" data-ad-ignore></div>
             </div>
-            <div class="ad-widget-fallback" data-ad-fallback hidden>
-                <span><strong>Iklan belum tersedia</strong><small>Konten cadangan ditampilkan karena unit iklan gagal dimuat.</small></span>
-            </div>
+            <div class="ad-widget-fallback" data-ad-fallback hidden aria-hidden="true"></div>
         {{ else }}
             <div class="ad-neon-placeholder">
                 <span><strong>Native Advertisement</strong>Preview wrapper aktif, script iklan hanya production.</span>

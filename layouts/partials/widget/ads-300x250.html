@@ -2,21 +2,17 @@
     <div class="ad-neon-head">Sponsor</div>
     <div class="ad-neon-body ad-size-300">
         {{ if hugo.IsProduction }}
-            <div class="ad-neon-scroll" data-ad-unit>
-                <script>
-                    atOptions = {
-                        'key' : 'f7995a6dce010095a1c087975e306a0a',
-                        'format' : 'iframe',
-                        'height' : 250,
-                        'width' : 300,
-                        'params' : {}
-                    };
-                </script>
-                <script src="https://contentblanksupersede.com/f7995a6dce010095a1c087975e306a0a/invoke.js" async data-ad-network-script></script>
-            </div>
-            <div class="ad-widget-fallback" data-ad-fallback hidden>
-                <span><strong>Iklan belum tersedia</strong><small>Konten cadangan ditampilkan karena unit iklan gagal dimuat.</small></span>
-            </div>
+            {{/* Script di-inject berurutan oleh site-ad-fallback.js agar atOptions tidak race. */}}
+            <div
+                class="ad-neon-scroll"
+                data-ad-unit
+                data-ad-key="f7995a6dce010095a1c087975e306a0a"
+                data-ad-format="iframe"
+                data-ad-height="250"
+                data-ad-width="300"
+                data-ad-invoke="https://contentblanksupersede.com/f7995a6dce010095a1c087975e306a0a/invoke.js"
+            ></div>
+            <div class="ad-widget-fallback" data-ad-fallback hidden aria-hidden="true"></div>
         {{ else }}
             <div class="ad-neon-placeholder">
                 <span><strong>Advertisement</strong>300 × 250</span>

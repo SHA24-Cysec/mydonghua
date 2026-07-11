@@ -5614,11 +5614,11 @@ body .post-bookmark-btn.is-pulsing {
 
     .ad-neon-body.ad-size-728 {
         --ad-min-height: 90px;
+        --ad-creative-width: 728px;
         width: 100%;
         max-width: 100%;
         margin-inline: auto;
-        overflow-x: auto;
-        overflow-y: hidden;
+        overflow: hidden;
     }
 
     .ad-neon-body.ad-size-native {
@@ -5630,11 +5630,64 @@ body .post-bookmark-btn.is-pulsing {
     .ad-neon-scroll {
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 100%;
         max-width: 100%;
         margin-inline: auto;
-        overflow-x: auto;
-        overflow-y: hidden;
+        overflow: hidden;
+    }
+
+    /* display:flex di atas mengalahkan atribut hidden — paksa hide. */
+    .ad-neon-scroll[hidden],
+    .ad-widget-fallback[hidden],
+    .ad-neon-shell[hidden] {
+        display: none !important;
+    }
+
+    .ad-neon-shell[hidden] {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+    }
+
+    /* Scale 728 creative agar muat di viewport sempit (mobile-first). */
+    .ad-neon-scale-host {
+        --ad-creative-width: 728px;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        min-height: calc(var(--ad-creative-width) * 90 / 728 * min(1, 100cqi / 728));
+        container-type: inline-size;
+        overflow: hidden;
+    }
+
+    .ad-neon-scale-host > iframe,
+    .ad-neon-scale-host iframe {
+        display: block;
+        width: var(--ad-creative-width);
+        max-width: none;
+        height: 90px;
+        border: 0;
+        transform-origin: left center;
+        transform: scale(min(1, 100cqi / 728));
+    }
+
+    @supports not (width: 1cqi) {
+        .ad-neon-scale-host {
+            min-height: 90px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .ad-neon-scale-host > iframe,
+        .ad-neon-scale-host iframe {
+            transform: none;
+        }
     }
 
     .ad-neon-placeholder {
@@ -5673,8 +5726,17 @@ body .post-bookmark-btn.is-pulsing {
         }
 
         .ad-neon-body.ad-size-728 {
-            justify-content: flex-start;
+            --ad-min-height: clamp(52px, 12.4vw, 90px);
+            justify-content: center;
             padding-inline: 0;
+        }
+
+        .ad-neon-shell.ad-300x250 {
+            padding: 0.7rem;
+        }
+
+        .ad-neon-body.ad-size-300 {
+            max-width: min(300px, 100%);
         }
     }
 
@@ -7280,7 +7342,7 @@ html {
 .site-floating-ad__unit,
 .site-floating-ad__fallback {
   width: 100%;
-  min-height: 5.625rem;
+  min-height: 3.125rem;
 }
 
 .site-floating-ad__unit[hidden],
@@ -7289,36 +7351,52 @@ html {
 }
 
 .site-floating-ad__unit {
+  --ad-creative-width: 728px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  overflow-x: auto;
-  overflow-y: hidden;
-  overscroll-behavior-inline: contain;
-  scrollbar-width: thin;
+  justify-content: center;
+  overflow: hidden;
+  container-type: inline-size;
+  min-height: clamp(3.125rem, 12.4vw, 5.625rem);
 }
 
 .site-floating-ad__unit iframe {
   display: block;
   flex: 0 0 auto;
+  width: var(--ad-creative-width);
   max-width: none;
+  height: 90px;
   border: 0;
+  transform-origin: center center;
+  transform: scale(min(1, 100cqi / 728));
+}
+
+@supports not (width: 1cqi) {
+  .site-floating-ad__unit {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+  }
+
+  .site-floating-ad__unit iframe {
+    transform: none;
+  }
 }
 
 .site-floating-ad__fallback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  padding: 0.45rem 0.75rem;
-  color: #dcecff;
-  text-align: left;
+  display: none;
 }
 
-.site-floating-ad[data-ad-status="fallback"] .site-floating-ad__demo {
-  border-color: rgba(245, 158, 11, 0.28);
-  background: rgba(245, 158, 11, 0.1);
-  color: #fcd34d;
+.site-floating-ad[data-ad-status="failed"] {
+  pointer-events: none;
+}
+
+.site-floating-ad[data-ad-status="failed"] .site-floating-ad__demo {
+  border-color: rgba(148, 163, 184, 0.28);
+  background: rgba(148, 163, 184, 0.1);
+  color: #cbd5e1;
 }
 
 .site-floating-ad__mark {
@@ -7437,6 +7515,7 @@ body.has-floating-production-ad .btt-wrapper {
 @media (min-width: 760px) {
   .site-floating-ad__unit {
     justify-content: center;
+    min-height: 5.625rem;
   }
 }
 
@@ -7562,37 +7641,26 @@ body {
 
 /* ==========================================================
    AD WIDGET FALLBACK SYSTEM
-   Fallback untuk widget iklan (300x250, 728x90, native)
-   jika unit iklan gagal dimuat (ad blocker, script error, dll.)
+   Jika unit gagal dimuat: shell di-hide total (tanpa teks
+   "Iklan belum tersedia"). Unit & fallback saling eksklusif.
    ========================================================== */
 .ad-widget-unit[hidden],
-.ad-widget-fallback[hidden] {
+.ad-widget-fallback[hidden],
+.ad-neon-scroll[hidden],
+.ad-neon-shell[hidden],
+[data-ad-widget][hidden] {
   display: none !important;
 }
 
 .ad-widget-fallback {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  min-height: inherit;
-  padding: 1rem;
-  color: #7dd3fc;
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 850;
-  line-height: 1.5;
+  display: none;
 }
 
-.ad-widget-fallback strong {
+/* Saat loaded, pastikan unit terlihat & shell normal. */
+[data-ad-widget][data-ad-status="loaded"] {
   display: block;
-  color: #cffafe;
-  font-size: 0.92rem;
-  margin-bottom: 0.22rem;
 }
 
-.ad-widget-fallback small {
-  display: block;
-  color: #91a4bd;
-  font-size: 0.68rem;
-  font-weight: 650;
+[data-ad-widget][data-ad-status="failed"] {
+  display: none !important;
 }

@@ -1,9 +1,13 @@
 (function () {
   'use strict';
 
-  const SESSION_KEY = 'donghuabatch:floating-ad-closed';
-  const EXIT_DURATION = 240;
-  const AD_LOAD_TIMEOUT = 8000;
+  var SESSION_KEY = 'donghuabatch:floating-ad-closed';
+  var EXIT_DURATION = 240;
+  var AD_LOAD_TIMEOUT = 12000;
+  var INSPECT_INTERVAL = 400;
+  var MIN_CREATIVE_AREA = 80;
+  /* Delay start so in-page widgets can claim atOptions first. */
+  var START_DELAY = 700;
 
   function getSessionValue() {
     try {
@@ -17,27 +21,85 @@
     try {
       window.sessionStorage.setItem(SESSION_KEY, '1');
     } catch (error) {
-      // The close action must still work when browser storage is unavailable.
+      // Close must still work when storage is unavailable.
     }
   }
 
+  function isVisibleSize(el) {
+    if (!el || !el.getBoundingClientRect) return false;
+    var rect = el.getBoundingClientRect();
+    var w = rect.width || el.offsetWidth || 0;
+    var h = rect.height || el.offsetHeight || 0;
+    return w >= 2 && h >= 2 && w * h >= MIN_CREATIVE_AREA;
+  }
+
+  function hasRenderedCreative(unit) {
+    if (!unit) return false;
+
+    var nodes = unit.querySelectorAll('iframe, object, embed, img, video, ins');
+    for (var i = 0; i < nodes.length; i++) {
+      if (isVisibleSize(nodes[i])) return true;
+    }
+
+    var kids = unit.children;
+    for (var k = 0; k < kids.length; k++) {
+      var child = kids[k];
+      if (child.tagName === 'SCRIPT') continue;
+      if (isVisibleSize(child) && (child.childElementCount > 0 || (child.textContent || '').trim().length > 0)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function injectNetworkScript(unit) {
+    if (!unit) return null;
+    var existing = unit.querySelector('[data-floating-ad-network-script]');
+    if (existing) return existing;
+
+    var invoke = unit.getAttribute('data-ad-invoke');
+    var key = unit.getAttribute('data-ad-key');
+    if (!invoke) return null;
+
+    try {
+      if (key) {
+        window.atOptions = {
+          key: key,
+          format: unit.getAttribute('data-ad-format') || 'iframe',
+          height: parseInt(unit.getAttribute('data-ad-height') || '90', 10),
+          width: parseInt(unit.getAttribute('data-ad-width') || '728', 10),
+          params: {}
+        };
+      }
+    } catch (e) {
+      /* ignore */
+    }
+
+    var script = document.createElement('script');
+    script.src = invoke;
+    script.async = true;
+    script.setAttribute('data-floating-ad-network-script', '');
+    unit.appendChild(script);
+    return script;
+  }
+
   function monitorProductionAd(ad) {
-    const unit = ad.querySelector('[data-floating-ad-unit]');
-    const fallback = ad.querySelector('[data-floating-ad-fallback]');
-    const status = ad.querySelector('[data-floating-ad-status]');
-    const networkScript = ad.querySelector('[data-floating-ad-network-script]');
-    let observer = null;
-    let timeoutId = null;
-    let settled = false;
+    var unit = ad.querySelector('[data-floating-ad-unit]');
+    var fallback = ad.querySelector('[data-floating-ad-fallback]');
+    var status = ad.querySelector('[data-floating-ad-status]');
+    var observer = null;
+    var timeoutId = null;
+    var intervalId = null;
+    var settled = false;
 
-    if (!unit || !fallback) return function () {};
-
-    function hasRenderedCreative() {
-      return Boolean(unit.querySelector('iframe, object, embed'));
+    if (!unit) {
+      return function () {};
     }
 
     function stopMonitoring() {
       window.clearTimeout(timeoutId);
+      window.clearInterval(intervalId);
       if (observer) observer.disconnect();
     }
 
@@ -45,51 +107,71 @@
       if (settled) return;
       settled = true;
       stopMonitoring();
+      unit.hidden = false;
+      if (fallback) fallback.hidden = true;
       ad.setAttribute('data-ad-status', 'loaded');
       if (status) status.textContent = 'Live';
     }
 
-    function showFallback() {
-      if (settled || hasRenderedCreative()) {
-        if (hasRenderedCreative()) markLoaded();
+    function hideAdCompletely() {
+      if (settled) return;
+      if (hasRenderedCreative(unit)) {
+        markLoaded();
         return;
       }
 
       settled = true;
       stopMonitoring();
       unit.hidden = true;
-      fallback.hidden = false;
-      ad.setAttribute('data-ad-status', 'fallback');
-      if (status) status.textContent = 'Fallback';
+      if (fallback) fallback.hidden = true;
+      ad.setAttribute('data-ad-status', 'failed');
+      if (status) status.textContent = 'Hidden';
+      ad.classList.remove('is-visible');
+      ad.classList.add('is-closing');
+      document.body.classList.remove('has-floating-ad', 'has-floating-production-ad');
+      window.setTimeout(function () {
+        ad.hidden = true;
+        ad.setAttribute('aria-hidden', 'true');
+        ad.classList.remove('is-closing');
+      }, EXIT_DURATION);
     }
 
     function inspectUnit() {
-      if (hasRenderedCreative()) markLoaded();
+      if (hasRenderedCreative(unit)) markLoaded();
     }
 
-    if (hasRenderedCreative()) {
+    var networkScript = injectNetworkScript(unit);
+
+    if (hasRenderedCreative(unit)) {
       markLoaded();
       return stopMonitoring;
     }
 
     if ('MutationObserver' in window) {
       observer = new MutationObserver(inspectUnit);
-      observer.observe(unit, { childList: true, subtree: true });
+      observer.observe(unit, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class', 'src', 'hidden']
+      });
     }
 
+    intervalId = window.setInterval(inspectUnit, INSPECT_INTERVAL);
+
     if (networkScript) {
-      networkScript.addEventListener('error', showFallback, { once: true });
+      networkScript.addEventListener('error', hideAdCompletely, { once: true });
       networkScript.addEventListener('load', inspectUnit, { once: true });
     }
 
-    timeoutId = window.setTimeout(showFallback, AD_LOAD_TIMEOUT);
+    timeoutId = window.setTimeout(hideAdCompletely, AD_LOAD_TIMEOUT);
     return stopMonitoring;
   }
 
   function initFloatingAd() {
-    const ad = document.querySelector('[data-floating-ad]');
-    const closeButton = ad && ad.querySelector('[data-floating-ad-close]');
-    const productionUnit = ad && ad.querySelector('[data-floating-ad-unit]');
+    var ad = document.querySelector('[data-floating-ad]');
+    var closeButton = ad && ad.querySelector('[data-floating-ad-close]');
+    var productionUnit = ad && ad.querySelector('[data-floating-ad-unit]');
 
     if (!ad || !closeButton) return;
 
@@ -98,14 +180,25 @@
       return;
     }
 
-    const stopMonitoring = monitorProductionAd(ad);
-    ad.hidden = false;
+    var stopMonitoring = function () {};
 
-    window.requestAnimationFrame(function () {
-      ad.classList.add('is-visible');
-      document.body.classList.add('has-floating-ad');
-      if (productionUnit) document.body.classList.add('has-floating-production-ad');
-    });
+    function revealAndMonitor() {
+      stopMonitoring = monitorProductionAd(ad);
+      ad.hidden = false;
+      ad.removeAttribute('aria-hidden');
+
+      window.requestAnimationFrame(function () {
+        ad.classList.add('is-visible');
+        document.body.classList.add('has-floating-ad');
+        if (productionUnit) document.body.classList.add('has-floating-production-ad');
+      });
+    }
+
+    if (productionUnit) {
+      window.setTimeout(revealAndMonitor, START_DELAY);
+    } else {
+      revealAndMonitor();
+    }
 
     closeButton.addEventListener('click', function () {
       rememberClosed();
