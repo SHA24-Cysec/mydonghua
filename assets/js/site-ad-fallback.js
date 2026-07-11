@@ -5,9 +5,14 @@
   var AD_LOAD_TIMEOUT = 12000;
   var INSPECT_INTERVAL = 400;
   var MIN_CREATIVE_AREA = 80;
+  var MOBILE_MAX = 767;
 
   var loadQueue = [];
   var queueRunning = false;
+
+  function isMobileViewport() {
+    return window.matchMedia('(max-width: ' + MOBILE_MAX + 'px)').matches;
+  }
 
   function isVisibleSize(el) {
     if (!el || !el.getBoundingClientRect) return false;
@@ -55,6 +60,7 @@
     widget.removeAttribute('aria-hidden');
     if (unit) unit.hidden = false;
     if (fallback) fallback.hidden = true;
+    applyBannerBodySize(widget, unit);
   }
 
   function failWidget(widget, unit, fallback) {
@@ -77,6 +83,63 @@
       width: width || undefined,
       params: {}
     };
+  }
+
+  function applyBannerBodySize(widget, unit) {
+    if (!widget || !unit) return;
+    var body = widget.querySelector('[data-ad-banner-body]');
+    if (!body) return;
+
+    var width = parseInt(unit.getAttribute('data-ad-width') || '0', 10) || 320;
+    var height = parseInt(unit.getAttribute('data-ad-height') || '0', 10) || 50;
+    var variant = unit.getAttribute('data-ad-variant') || '';
+
+    body.style.setProperty('--ad-creative-width', width + 'px');
+    body.style.setProperty('--ad-creative-height', height + 'px');
+    body.classList.toggle('is-mobile-banner', variant === 'mobile' || width <= 320);
+    body.classList.toggle('is-desktop-banner', variant === 'desktop' || width >= 728);
+    widget.setAttribute('data-ad-active-size', width + 'x' + height);
+  }
+
+  /**
+   * Responsive banner: keep only one unit (mobile 320x50 or desktop 728x90).
+   * Other variants are removed so they never load / race atOptions.
+   */
+  function pickResponsiveUnit(widget) {
+    var units = widget.querySelectorAll('[data-ad-unit]');
+    if (!units.length) return null;
+    if (units.length === 1) {
+      units[0].hidden = false;
+      return units[0];
+    }
+
+    var want = isMobileViewport() ? 'mobile' : 'desktop';
+    var chosen = null;
+
+    for (var i = 0; i < units.length; i++) {
+      var variant = units[i].getAttribute('data-ad-variant') || '';
+      if (variant === want) {
+        chosen = units[i];
+        break;
+      }
+    }
+
+    if (!chosen) {
+      chosen = units[0];
+    }
+
+    for (var j = 0; j < units.length; j++) {
+      if (units[j] === chosen) {
+        units[j].hidden = false;
+      } else {
+        /* Remove inactive variant completely — never inject its script. */
+        if (units[j].parentNode) units[j].parentNode.removeChild(units[j]);
+      }
+    }
+
+    widget.setAttribute('data-ad-viewport', want);
+    applyBannerBodySize(widget, chosen);
+    return chosen;
   }
 
   function ensureNetworkScript(unit, done) {
@@ -119,7 +182,7 @@
   }
 
   function monitorWidget(widget, onSettled) {
-    var unit = widget.querySelector('[data-ad-unit]');
+    var unit = pickResponsiveUnit(widget);
     var fallback = widget.querySelector('[data-ad-fallback]');
     var observer = null;
     var timeoutId = null;
@@ -142,6 +205,7 @@
       settled = true;
       stopMonitoring();
       markLoaded(widget, unit, fallback);
+      scheduleFitAdScaleHosts();
       if (onSettled) onSettled();
     }
 
@@ -212,10 +276,71 @@
     });
   }
 
+  function readCssNumber(el, prop, fallback) {
+    var raw = window.getComputedStyle(el).getPropertyValue(prop);
+    var num = parseFloat(raw);
+    return isFinite(num) && num > 0 ? num : fallback;
+  }
+
+  function fitAdScaleHosts(root) {
+    var scope = root && root.querySelectorAll ? root : document;
+    var hosts = scope.querySelectorAll(
+      '.ad-neon-scale-host, .ad-neon-body.ad-size-300 .ad-neon-scroll, .ad-neon-body.ad-size-banner .ad-neon-scroll:not([hidden]), .site-floating-ad__unit:not([hidden])'
+    );
+
+    for (var i = 0; i < hosts.length; i++) {
+      var host = hosts[i];
+      if (!host || host.hidden) continue;
+
+      var cw = readCssNumber(host, '--ad-creative-width', 0);
+      if (!cw) {
+        cw = parseInt(host.getAttribute('data-ad-width') || '0', 10) || 320;
+      }
+      var ch = readCssNumber(host, '--ad-creative-height', 0);
+      if (!ch) {
+        ch = parseInt(host.getAttribute('data-ad-height') || '0', 10) || 50;
+      }
+
+      host.style.setProperty('--ad-creative-width', cw + 'px');
+      host.style.setProperty('--ad-creative-height', ch + 'px');
+
+      var parent = host.parentElement;
+      var available = host.clientWidth || (parent && parent.clientWidth) || 0;
+
+      if (available <= 0) {
+        available = Math.min(window.innerWidth || cw, cw);
+      }
+
+      var scale = Math.min(1, available / cw);
+      if (!isFinite(scale) || scale <= 0) scale = 1;
+
+      host.style.setProperty('--ad-scale', String(scale));
+      host.style.height = (ch * scale) + 'px';
+    }
+  }
+
+  var fitRaf = 0;
+  function scheduleFitAdScaleHosts() {
+    if (fitRaf) return;
+    fitRaf = window.requestAnimationFrame(function () {
+      fitRaf = 0;
+      fitAdScaleHosts(document);
+    });
+  }
+
   function initAdFallbacks() {
     var widgets = document.querySelectorAll('[data-ad-widget]');
     for (var i = 0; i < widgets.length; i++) {
       enqueueWidget(widgets[i]);
+    }
+
+    fitAdScaleHosts(document);
+    window.addEventListener('resize', scheduleFitAdScaleHosts, { passive: true });
+    window.addEventListener('orientationchange', scheduleFitAdScaleHosts, { passive: true });
+
+    if ('MutationObserver' in window) {
+      var fitObserver = new MutationObserver(scheduleFitAdScaleHosts);
+      fitObserver.observe(document.body, { childList: true, subtree: true });
     }
   }
 

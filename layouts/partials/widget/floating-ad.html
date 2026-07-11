@@ -1,36 +1,38 @@
 {{/*
-  Floating bottom ad.
-  - Production: unit 728x90 (scale responsif di mobile).
-  - Development: placeholder saja.
-  - Jika gagal load: shell disembunyikan total (tanpa teks fallback).
-  Visibility + close state ditangani assets/js/site-floating-ad.js.
-  Script network di-inject JS agar tidak race dengan banner 728 di halaman yang sama.
+  Floating bottom ad — responsif:
+  - Mobile (<768px): 320x50
+  - Desktop (>=768px): 728x90
+  Hanya SATU unit di-load (dipilih JS). Gagal load → shell di-hide total.
 */}}
 <section
   class="site-floating-ad"
   id="site-floating-ad"
   data-floating-ad
+  data-floating-responsive
   aria-label="Iklan"
   hidden
 >
   <div class="site-floating-ad__panel">
-    <button
-      class="site-floating-ad__close"
-      type="button"
-      data-floating-ad-close
-      aria-label="Tutup iklan untuk sesi ini"
-      title="Tutup iklan"
-    >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true">
-        <path d="M6 6l12 12M18 6 6 18"/>
-      </svg>
-    </button>
+    <div class="site-floating-ad__toolbar">
+      <div class="site-floating-ad__meta">
+        <span>Advertisement</span>
+        <span class="site-floating-ad__demo" data-floating-ad-status>
+          {{ if hugo.IsProduction }}Live{{ else }}Placeholder{{ end }}
+        </span>
+      </div>
 
-    <div class="site-floating-ad__meta" aria-hidden="true">
-      <span>Advertisement</span>
-      <span class="site-floating-ad__demo" data-floating-ad-status>
-        {{ if hugo.IsProduction }}Live{{ else }}Placeholder{{ end }}
-      </span>
+      <button
+        class="site-floating-ad__close"
+        type="button"
+        data-floating-ad-close
+        aria-label="Tutup iklan untuk sesi ini"
+        title="Tutup iklan"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18"/>
+        </svg>
+        <span class="sr-only">Tutup</span>
+      </button>
     </div>
 
     <div
@@ -44,13 +46,26 @@
     >
       {{ if hugo.IsProduction }}
         <div
-          class="site-floating-ad__unit ad-neon-scale-host"
+          class="site-floating-ad__unit is-desktop-unit"
           data-floating-ad-unit
+          data-ad-variant="desktop"
           data-ad-key="ef733504b5b389474cecd0340f4fdae0"
           data-ad-format="iframe"
           data-ad-height="90"
           data-ad-width="728"
           data-ad-invoke="https://contentblanksupersede.com/ef733504b5b389474cecd0340f4fdae0/invoke.js"
+          hidden
+        ></div>
+        <div
+          class="site-floating-ad__unit is-mobile-unit"
+          data-floating-ad-unit
+          data-ad-variant="mobile"
+          data-ad-key="b4c00e77c26996f5f359cd13c19b7a85"
+          data-ad-format="iframe"
+          data-ad-height="50"
+          data-ad-width="320"
+          data-ad-invoke="https://bendspecimen.com/b4c00e77c26996f5f359cd13c19b7a85/invoke.js"
+          hidden
         ></div>
 
         <div
@@ -64,7 +79,7 @@
         <span class="site-floating-ad__mark" aria-hidden="true">AD</span>
         <span class="site-floating-ad__copy">
           <strong>Ruang iklan responsif</strong>
-          <small><span class="site-floating-ad__size-mobile">Scale to fit</span><span class="site-floating-ad__size-desktop">728 × 90</span> · Development placeholder</small>
+          <small><span class="site-floating-ad__size-mobile">320 × 50</span><span class="site-floating-ad__size-desktop">728 × 90</span> · Development placeholder</small>
         </span>
       {{ end }}
     </div>

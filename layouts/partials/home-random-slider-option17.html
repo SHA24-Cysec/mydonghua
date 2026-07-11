@@ -1,5 +1,5 @@
 {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
-{{ $fallbackPages := first 6 ($pages.ByDate.Reverse) }}
+{{ $fallbackPages := first 3 ($pages.ByDate.Reverse) }}
 
 {{ if gt (len $fallbackPages) 0 }}
   {{ $firstFallback := index $fallbackPages 0 }}
@@ -27,7 +27,7 @@
   {{ end }}
 {{ end }}
 
-<section class="home-rec-slider" aria-label="Slider rekomendasi donghua pilihan hari ini" data-home-random-slider data-autoplay-ms="5000" data-item-count="6">
+<section class="home-rec-slider" aria-label="Slider rekomendasi donghua pilihan hari ini" data-home-random-slider data-autoplay-ms="5000" data-item-count="3">
     <div class="home-rec-slider-head">
         <div>
             <span class="home-rec-slider-kicker"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Rekomendasi Donghua Hari Ini</span>

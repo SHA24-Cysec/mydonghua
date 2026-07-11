@@ -2755,18 +2755,15 @@
         animation-play-state: paused;
     }
 
+    /* Rail: maks 3 item. Mobile-first = 1 kolom (3 card menumpuk), lebar = 3 kolom. */
     .home-rec-slider-rail {
         display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(17rem, 82%);
-        gap: 0.75rem;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding-bottom: 0.2rem;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        -webkit-overflow-scrolling: touch;
+        grid-template-columns: minmax(0, 1fr);
+        grid-auto-flow: row;
+        gap: 0.65rem;
+        overflow: visible;
+        padding-bottom: 0;
+        align-items: stretch;
     }
 
     .home-rec-slider-rail::-webkit-scrollbar {
@@ -2778,9 +2775,10 @@
         grid-template-columns: 4.25rem minmax(0, 1fr);
         gap: 0.75rem;
         align-items: center;
+        width: 100%;
         min-width: 0;
-        min-height: 7.15rem;
-        padding: 0.78rem;
+        min-height: 6.4rem;
+        padding: 0.72rem;
         border: 1px solid rgba(255,255,255,0.08);
         border-radius: 1rem;
         background: rgba(255,255,255,0.04);
@@ -2936,18 +2934,23 @@
             align-content: center;
         }
 
+        /* Tablet+: tampilkan 3 card rail berdampingan (maks 3 item). */
         .home-rec-slider-rail {
-            grid-auto-columns: minmax(18rem, 22rem);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-flow: row;
+            gap: 0.75rem;
+            overflow: visible;
+        }
+
+        .home-rec-slider-card {
+            min-height: 7rem;
         }
     }
 
     @media (min-width: 1180px) {
         .home-rec-slider-rail {
-            grid-auto-flow: row;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            grid-auto-columns: auto;
-            overflow: visible;
-            align-items: stretch;
+            gap: 0.85rem;
         }
 
         .home-rec-slider-card {
@@ -2973,8 +2976,16 @@
             min-width: 0;
         }
 
+        /* Mobile: 3 card tetap tampil (stack 1 kolom), tanpa horizontal scroll. */
         .home-rec-slider-rail {
-            grid-auto-columns: 84%;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 0.6rem;
+            overflow: visible;
+        }
+
+        .home-rec-slider-card {
+            min-height: 6.1rem;
+            padding: 0.65rem;
         }
     }
 
@@ -5608,17 +5619,85 @@ body .post-bookmark-btn.is-pulsing {
 
     .ad-neon-body.ad-size-300 {
         --ad-min-height: 250px;
-        max-width: 300px;
+        --ad-creative-width: 300px;
+        --ad-creative-height: 250px;
+        max-width: min(300px, 100%);
+        width: 100%;
+        min-width: 0;
         margin-inline: auto;
+        overflow: hidden !important;
     }
 
-    .ad-neon-body.ad-size-728 {
-        --ad-min-height: 90px;
-        --ad-creative-width: 728px;
+    .ad-neon-body.ad-size-728,
+    .ad-neon-body.ad-size-banner {
+        --ad-min-height: 50px;
+        --ad-creative-width: 320px;
+        --ad-creative-height: 50px;
         width: 100%;
         max-width: 100%;
+        min-width: 0;
         margin-inline: auto;
-        overflow: hidden;
+        overflow: hidden !important;
+    }
+
+    /* Desktop banner defaults (JS may override via inline vars). */
+    .ad-neon-body.ad-size-banner.is-desktop-banner {
+        --ad-min-height: 90px;
+        --ad-creative-width: 728px;
+        --ad-creative-height: 90px;
+    }
+
+    .ad-neon-body.ad-size-banner.is-mobile-banner {
+        --ad-min-height: 50px;
+        --ad-creative-width: 320px;
+        --ad-creative-height: 50px;
+    }
+
+    .ad-neon-body.ad-size-banner .ad-neon-scroll {
+        --ad-creative-width: inherit;
+        --ad-creative-height: inherit;
+        --ad-scale: 1;
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: calc(var(--ad-creative-height) * var(--ad-scale));
+        min-height: 0;
+        overflow: hidden !important;
+        isolation: isolate;
+        contain: layout paint;
+    }
+
+    .ad-neon-body.ad-size-banner .ad-neon-scroll > iframe,
+    .ad-neon-body.ad-size-banner .ad-neon-scroll iframe,
+    .ad-neon-body.ad-size-banner .ad-neon-scroll > div,
+    .ad-neon-body.ad-size-banner .ad-neon-scroll > ins {
+        position: absolute !important;
+        top: 0;
+        left: 50%;
+        display: block !important;
+        width: var(--ad-creative-width) !important;
+        max-width: none !important;
+        height: var(--ad-creative-height) !important;
+        margin: 0 !important;
+        border: 0 !important;
+        transform: translateX(-50%) scale(var(--ad-scale));
+        transform-origin: top center;
+    }
+
+    .ad-banner-placeholder-desktop { display: none; }
+    .ad-banner-placeholder-mobile { display: grid; }
+
+    @media (min-width: 768px) {
+        .ad-neon-body.ad-size-banner {
+            --ad-min-height: 90px;
+            --ad-creative-width: 728px;
+            --ad-creative-height: 90px;
+        }
+
+        .ad-banner-placeholder-desktop { display: grid; }
+        .ad-banner-placeholder-mobile { display: none; }
     }
 
     .ad-neon-body.ad-size-native {
@@ -5654,40 +5733,87 @@ body .post-bookmark-btn.is-pulsing {
         pointer-events: none !important;
     }
 
-    /* Scale 728 creative agar muat di viewport sempit (mobile-first). */
+    /* Scale 728 creative agar muat di viewport sempit (mobile-first).
+       Iframe di-absolute supaya box 728px tidak melebarkan layout/halaman. */
     .ad-neon-scale-host {
         --ad-creative-width: 728px;
+        --ad-creative-height: 90px;
+        --ad-scale: min(1, 100% / var(--ad-creative-width));
         position: relative;
+        display: block;
         width: 100%;
         max-width: 100%;
-        min-height: calc(var(--ad-creative-width) * 90 / 728 * min(1, 100cqi / 728));
-        container-type: inline-size;
-        overflow: hidden;
+        min-width: 0;
+        height: calc(var(--ad-creative-height) * var(--ad-scale));
+        min-height: 0;
+        overflow: hidden !important;
+        isolation: isolate;
+        contain: layout paint;
     }
 
     .ad-neon-scale-host > iframe,
-    .ad-neon-scale-host iframe {
-        display: block;
-        width: var(--ad-creative-width);
-        max-width: none;
-        height: 90px;
-        border: 0;
-        transform-origin: left center;
-        transform: scale(min(1, 100cqi / 728));
+    .ad-neon-scale-host iframe,
+    .ad-neon-scale-host > div,
+    .ad-neon-scale-host > ins {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        display: block !important;
+        width: var(--ad-creative-width) !important;
+        max-width: none !important;
+        height: var(--ad-creative-height) !important;
+        margin: 0 !important;
+        border: 0 !important;
+        transform: scale(var(--ad-scale));
+        transform-origin: top left;
+        pointer-events: auto;
     }
 
-    @supports not (width: 1cqi) {
-        .ad-neon-scale-host {
-            min-height: 90px;
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
-        }
+    /* 300x250: host scale agar tidak overflow di kolom sempit. */
+    .ad-neon-body.ad-size-300 .ad-neon-scroll {
+        --ad-creative-width: 300px;
+        --ad-creative-height: 250px;
+        --ad-scale: 1;
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: calc(var(--ad-creative-height) * var(--ad-scale));
+        min-height: 0;
+        overflow: hidden !important;
+        isolation: isolate;
+        contain: layout paint;
+    }
 
-        .ad-neon-scale-host > iframe,
-        .ad-neon-scale-host iframe {
-            transform: none;
-        }
+    .ad-neon-body.ad-size-300 .ad-neon-scroll > iframe,
+    .ad-neon-body.ad-size-300 .ad-neon-scroll iframe,
+    .ad-neon-body.ad-size-300 .ad-neon-scroll > div,
+    .ad-neon-body.ad-size-300 .ad-neon-scroll > ins {
+        position: absolute !important;
+        top: 0;
+        left: 50%;
+        display: block !important;
+        width: var(--ad-creative-width) !important;
+        max-width: none !important;
+        height: var(--ad-creative-height) !important;
+        margin: 0 !important;
+        border: 0 !important;
+        transform: translateX(-50%) scale(var(--ad-scale));
+        transform-origin: top center;
+    }
+
+    .ad-neon-body.ad-size-native,
+    .ad-neon-body.ad-size-native .ad-neon-scroll {
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden !important;
+    }
+
+    .ad-neon-body.ad-size-native iframe,
+    .ad-neon-body.ad-size-native img {
+        max-width: 100% !important;
+        height: auto;
     }
 
     .ad-neon-placeholder {
@@ -5720,13 +5846,17 @@ body .post-bookmark-btn.is-pulsing {
         50% { opacity: 1; transform: scale(1.06); }
     }
 
-    @media (max-width: 760px) {
-        .ad-neon-shell.ad-728x90 {
+    @media (max-width: 767px) {
+        .ad-neon-shell.ad-728x90,
+        .ad-neon-shell.ad-banner-responsive {
             padding: 0.7rem;
         }
 
-        .ad-neon-body.ad-size-728 {
-            --ad-min-height: clamp(52px, 12.4vw, 90px);
+        .ad-neon-body.ad-size-728,
+        .ad-neon-body.ad-size-banner {
+            --ad-min-height: 50px;
+            --ad-creative-width: 320px;
+            --ad-creative-height: 50px;
             justify-content: center;
             padding-inline: 0;
         }
@@ -7202,10 +7332,11 @@ html {
   justify-content: center;
   padding-left: max(0.5rem, env(safe-area-inset-left));
   padding-right: max(0.5rem, env(safe-area-inset-right));
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(calc(100% + 2.75rem));
+  transform: translateY(calc(100% + 1.5rem));
   transition:
     opacity 0.24s ease,
     visibility 0.24s ease,
@@ -7221,13 +7352,17 @@ html {
 .site-floating-ad.is-closing {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(calc(100% + 2.75rem));
+  transform: translateY(calc(100% + 1.5rem));
 }
 
 .site-floating-ad__panel {
   position: relative;
+  display: grid;
+  gap: 0.42rem;
   width: min(100%, 47.5rem);
-  padding: 0.4rem 0.45rem max(0.45rem, env(safe-area-inset-bottom));
+  max-width: 100%;
+  min-width: 0;
+  padding: 0.42rem 0.48rem max(0.48rem, env(safe-area-inset-bottom));
   border: 1px solid rgba(125, 211, 252, 0.24);
   border-bottom: 0;
   border-radius: 1rem 1rem 0 0;
@@ -7242,12 +7377,13 @@ html {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   pointer-events: auto;
+  overflow: hidden;
 }
 
 .site-floating-ad__panel::before {
   content: "";
   position: absolute;
-  top: -1px;
+  top: 0;
   right: 1rem;
   left: 1rem;
   height: 1px;
@@ -7256,12 +7392,23 @@ html {
   pointer-events: none;
 }
 
+/* Header menyatu: label iklan + tombol close di dalam panel. */
+.site-floating-ad__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  min-height: 2rem;
+  padding: 0.05rem 0.1rem 0.05rem 0.28rem;
+}
+
 .site-floating-ad__meta {
   display: flex;
   align-items: center;
+  flex: 1 1 auto;
   gap: 0.42rem;
+  min-width: 0;
   min-height: 1.45rem;
-  padding: 0 2.6rem 0 0.35rem;
   color: #91a4bd;
   font-size: 0.57rem;
   font-weight: 900;
@@ -7271,6 +7418,7 @@ html {
 }
 
 .site-floating-ad__demo {
+  flex: 0 0 auto;
   padding: 0.2rem 0.34rem;
   border: 1px solid rgba(139, 92, 246, 0.24);
   border-radius: 999px;
@@ -7281,33 +7429,38 @@ html {
 }
 
 .site-floating-ad__close {
-  position: absolute;
-  top: -2.15rem;
-  right: 0.55rem;
+  position: relative;
+  top: auto;
+  right: auto;
   z-index: 2;
-  display: inline-flex;
+  display: inline-flex !important;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
   margin: 0;
   padding: 0;
-  border: 1px solid rgba(125, 211, 252, 0.24);
-  border-bottom: 0;
-  border-radius: 0.75rem 0.75rem 0 0;
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  border-radius: 0.65rem;
   outline: none;
   appearance: none;
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(6, 8, 22, 0.99));
-  color: #c9d8e9;
-  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.24);
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e2e8f0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
   cursor: pointer;
+  pointer-events: auto;
   -webkit-tap-highlight-color: transparent;
-  transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
 }
 
 .site-floating-ad__close svg {
-  width: 1rem;
-  height: 1rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  pointer-events: none;
 }
 
 .site-floating-ad__close:focus-visible {
@@ -7317,6 +7470,13 @@ html {
 
 .site-floating-ad__close:disabled {
   cursor: default;
+  opacity: 0.7;
+}
+
+.site-floating-ad.is-visible .site-floating-ad__close {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .site-floating-ad__slot {
@@ -7327,9 +7487,9 @@ html {
   width: 100%;
   min-height: 3.125rem;
   overflow: hidden;
-  padding: 0.45rem 0.75rem;
+  padding: 0.4rem 0.55rem;
   border: 1px dashed rgba(125, 211, 252, 0.24);
-  border-radius: 0.72rem 0.72rem 0.25rem 0.25rem;
+  border-radius: 0.72rem;
   background:
     linear-gradient(rgba(34, 211, 238, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(34, 211, 238, 0.035) 1px, transparent 1px),
@@ -7342,7 +7502,9 @@ html {
 .site-floating-ad__unit,
 .site-floating-ad__fallback {
   width: 100%;
-  min-height: 3.125rem;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
 }
 
 .site-floating-ad__unit[hidden],
@@ -7351,42 +7513,58 @@ html {
 }
 
 .site-floating-ad__unit {
-  --ad-creative-width: 728px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  container-type: inline-size;
-  min-height: clamp(3.125rem, 12.4vw, 5.625rem);
-}
-
-.site-floating-ad__unit iframe {
+  /* Default mobile-first 320x50; JS sets exact vars per active unit. */
+  --ad-creative-width: 320px;
+  --ad-creative-height: 50px;
+  --ad-scale: 1;
+  position: relative;
   display: block;
-  flex: 0 0 auto;
-  width: var(--ad-creative-width);
-  max-width: none;
-  height: 90px;
-  border: 0;
-  transform-origin: center center;
-  transform: scale(min(1, 100cqi / 728));
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: calc(var(--ad-creative-height) * var(--ad-scale));
+  overflow: hidden !important;
+  isolation: isolate;
+  contain: layout paint;
 }
 
-@supports not (width: 1cqi) {
-  .site-floating-ad__unit {
-    justify-content: flex-start;
-    overflow-x: auto;
-    overflow-y: hidden;
-    overscroll-behavior-inline: contain;
-    scrollbar-width: thin;
-  }
+.site-floating-ad__unit[hidden] {
+  display: none !important;
+}
 
-  .site-floating-ad__unit iframe {
-    transform: none;
+@media (min-width: 768px) {
+  .site-floating-ad__unit.is-desktop-unit,
+  .site-floating-ad[data-ad-viewport="desktop"] .site-floating-ad__unit {
+    --ad-creative-width: 728px;
+    --ad-creative-height: 90px;
   }
+}
+
+.site-floating-ad__unit iframe,
+.site-floating-ad__unit > div,
+.site-floating-ad__unit > ins {
+  position: absolute !important;
+  top: 0;
+  left: 50%;
+  display: block !important;
+  width: var(--ad-creative-width) !important;
+  max-width: none !important;
+  height: var(--ad-creative-height) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  transform: translateX(-50%) scale(var(--ad-scale));
+  transform-origin: top center;
 }
 
 .site-floating-ad__fallback {
   display: none;
+}
+
+.site-floating-ad,
+.site-floating-ad__panel,
+.site-floating-ad__slot {
+  max-width: 100%;
+  min-width: 0;
 }
 
 .site-floating-ad[data-ad-status="failed"] {
@@ -7457,8 +7635,9 @@ body.has-floating-production-ad .btt-wrapper {
 @media (hover: hover) {
   .site-floating-ad__close:hover {
     border-color: rgba(34, 211, 238, 0.5);
-    background: linear-gradient(145deg, rgba(21, 31, 54, 0.99), rgba(8, 12, 28, 0.99));
+    background: rgba(34, 211, 238, 0.1);
     color: #67e8f9;
+    transform: translateY(-1px);
   }
 }
 
@@ -7469,20 +7648,31 @@ body.has-floating-production-ad .btt-wrapper {
   }
 
   .site-floating-ad__panel {
-    padding: 0.45rem 0.6rem max(0.55rem, env(safe-area-inset-bottom));
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem max(0.55rem, env(safe-area-inset-bottom));
     border-radius: 1.15rem 1.15rem 0 0;
   }
 
+  .site-floating-ad__toolbar {
+    min-height: 2.15rem;
+  }
+
   .site-floating-ad__meta {
-    min-height: 1.7rem;
-    padding-left: 0.45rem;
+    min-height: 1.5rem;
     font-size: 0.62rem;
+  }
+
+  .site-floating-ad__close {
+    width: 2.15rem;
+    height: 2.15rem;
+    min-width: 2.15rem;
+    min-height: 2.15rem;
   }
 
   .site-floating-ad__slot {
     min-height: 5.625rem;
     gap: 0.85rem;
-    border-radius: 0.82rem 0.82rem 0.3rem 0.3rem;
+    border-radius: 0.82rem;
   }
 
   .site-floating-ad__mark {
@@ -7512,10 +7702,19 @@ body.has-floating-production-ad .btt-wrapper {
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 768px) {
   .site-floating-ad__unit {
-    justify-content: center;
     min-height: 5.625rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-floating-ad__unit {
+    min-height: 3.125rem;
+  }
+
+  body.has-floating-production-ad .btt-wrapper {
+    bottom: calc(6.1rem + env(safe-area-inset-bottom));
   }
 }
 
@@ -7663,4 +7862,63 @@ body {
 
 [data-ad-widget][data-ad-status="failed"] {
   display: none !important;
+}
+
+/* ==========================================================
+   AD OVERFLOW LOCK — mobile-first
+   Pastikan creative fixed-size (728/300/native) tidak memicu
+   horizontal page scroll di viewport sempit.
+   ========================================================== */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+[data-ad-widget],
+.ad-neon-shell,
+.ad-neon-body,
+.ad-neon-scroll,
+.site-floating-ad,
+.site-floating-ad__panel,
+.site-floating-ad__slot,
+.site-floating-ad__unit {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Close sudah di dalam panel — clip horizontal aman di floating shell. */
+.site-floating-ad {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.site-floating-ad__panel {
+  overflow: hidden;
+}
+
+.site-floating-ad__slot,
+.site-floating-ad__unit {
+  overflow-x: hidden;
+}
+
+[data-ad-widget],
+.ad-neon-shell,
+.ad-neon-body,
+.ad-neon-scroll {
+  overflow-x: hidden !important;
+}
+
+/* Network kadang inject wrapper lebar; non-scale slot dibatasi 100%. */
+.ad-neon-scroll > *:not(script) {
+  max-width: 100%;
+}
+
+/* Creative fixed-size di scale-host / floating: biarkan width asli, di-clip parent. */
+.ad-neon-scale-host > *:not(script),
+.ad-neon-body.ad-size-300 .ad-neon-scroll > *:not(script),
+.ad-neon-body.ad-size-banner .ad-neon-scroll > *:not(script),
+.site-floating-ad__unit > *:not(script) {
+  max-width: none !important;
 }

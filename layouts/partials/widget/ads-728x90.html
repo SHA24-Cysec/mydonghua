@@ -1,21 +1,49 @@
+{{/*
+  Banner horizontal responsif:
+  - Mobile (<768px): 320x50
+  - Desktop (>=768px): 728x90
+  Hanya SATU unit yang di-load (dipilih JS) agar tidak double request / race atOptions.
+*/}}
 <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4">
-    <div class="ad-neon-shell ad-728x90" aria-label="Sponsor 728x90" data-ad-widget data-ad-type="728x90">
+    <div
+        class="ad-neon-shell ad-728x90 ad-banner-responsive"
+        aria-label="Sponsor banner"
+        data-ad-widget
+        data-ad-type="banner-responsive"
+        data-ad-responsive-banner
+    >
         <div class="ad-neon-head">Advertisement</div>
-        <div class="ad-neon-body ad-size-728">
+        <div class="ad-neon-body ad-size-banner" data-ad-banner-body>
             {{ if hugo.IsProduction }}
                 <div
-                    class="ad-neon-scroll ad-neon-scale-host"
+                    class="ad-neon-scroll ad-banner-unit is-desktop-unit"
                     data-ad-unit
+                    data-ad-variant="desktop"
                     data-ad-key="ef733504b5b389474cecd0340f4fdae0"
                     data-ad-format="iframe"
                     data-ad-height="90"
                     data-ad-width="728"
                     data-ad-invoke="https://contentblanksupersede.com/ef733504b5b389474cecd0340f4fdae0/invoke.js"
+                    hidden
+                ></div>
+                <div
+                    class="ad-neon-scroll ad-banner-unit is-mobile-unit"
+                    data-ad-unit
+                    data-ad-variant="mobile"
+                    data-ad-key="b4c00e77c26996f5f359cd13c19b7a85"
+                    data-ad-format="iframe"
+                    data-ad-height="50"
+                    data-ad-width="320"
+                    data-ad-invoke="https://bendspecimen.com/b4c00e77c26996f5f359cd13c19b7a85/invoke.js"
+                    hidden
                 ></div>
                 <div class="ad-widget-fallback" data-ad-fallback hidden aria-hidden="true"></div>
             {{ else }}
-                <div class="ad-neon-placeholder">
-                    <span><strong>Advertisement</strong>728 × 90</span>
+                <div class="ad-neon-placeholder ad-banner-placeholder-desktop">
+                    <span><strong>Advertisement</strong>728 × 90 · Desktop</span>
+                </div>
+                <div class="ad-neon-placeholder ad-banner-placeholder-mobile">
+                    <span><strong>Advertisement</strong>320 × 50 · Mobile</span>
                 </div>
             {{ end }}
         </div>

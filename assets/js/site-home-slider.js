@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!sourceItems.length) return;
 
     const autoplayMs = parseInt(slider.getAttribute('data-autoplay-ms') || '5000', 10);
-    const itemCount = parseInt(slider.getAttribute('data-item-count') || '6', 10);
+    const itemCount = parseInt(slider.getAttribute('data-item-count') || '3', 10);
     const titleNode = slider.querySelector('[data-slider-title]');
     const descNode = slider.querySelector('[data-slider-description]');
     const typeNode = slider.querySelector('[data-slider-type]');

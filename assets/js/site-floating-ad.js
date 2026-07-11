@@ -8,6 +8,7 @@
   var MIN_CREATIVE_AREA = 80;
   /* Delay start so in-page widgets can claim atOptions first. */
   var START_DELAY = 700;
+  var MOBILE_MAX = 767;
 
   function getSessionValue() {
     try {
@@ -23,6 +24,10 @@
     } catch (error) {
       // Close must still work when storage is unavailable.
     }
+  }
+
+  function isMobileViewport() {
+    return window.matchMedia('(max-width: ' + MOBILE_MAX + 'px)').matches;
   }
 
   function isVisibleSize(el) {
@@ -53,6 +58,41 @@
     return false;
   }
 
+  function pickResponsiveFloatingUnit(ad) {
+    var units = ad.querySelectorAll('[data-floating-ad-unit]');
+    if (!units.length) return null;
+    if (units.length === 1) {
+      units[0].hidden = false;
+      return units[0];
+    }
+
+    var want = isMobileViewport() ? 'mobile' : 'desktop';
+    var chosen = null;
+
+    for (var i = 0; i < units.length; i++) {
+      if ((units[i].getAttribute('data-ad-variant') || '') === want) {
+        chosen = units[i];
+        break;
+      }
+    }
+    if (!chosen) chosen = units[0];
+
+    for (var j = 0; j < units.length; j++) {
+      if (units[j] === chosen) {
+        units[j].hidden = false;
+      } else if (units[j].parentNode) {
+        units[j].parentNode.removeChild(units[j]);
+      }
+    }
+
+    ad.setAttribute('data-ad-viewport', want);
+    ad.setAttribute(
+      'data-ad-active-size',
+      (chosen.getAttribute('data-ad-width') || '') + 'x' + (chosen.getAttribute('data-ad-height') || '')
+    );
+    return chosen;
+  }
+
   function injectNetworkScript(unit) {
     if (!unit) return null;
     var existing = unit.querySelector('[data-floating-ad-network-script]');
@@ -67,8 +107,8 @@
         window.atOptions = {
           key: key,
           format: unit.getAttribute('data-ad-format') || 'iframe',
-          height: parseInt(unit.getAttribute('data-ad-height') || '90', 10),
-          width: parseInt(unit.getAttribute('data-ad-width') || '728', 10),
+          height: parseInt(unit.getAttribute('data-ad-height') || '50', 10),
+          width: parseInt(unit.getAttribute('data-ad-width') || '320', 10),
           params: {}
         };
       }
@@ -84,8 +124,21 @@
     return script;
   }
 
-  function monitorProductionAd(ad) {
-    var unit = ad.querySelector('[data-floating-ad-unit]');
+  function fitUnit(unit) {
+    if (!unit || unit.hidden) return;
+    var cw = parseInt(unit.getAttribute('data-ad-width') || '0', 10) || 320;
+    var ch = parseInt(unit.getAttribute('data-ad-height') || '0', 10) || 50;
+    unit.style.setProperty('--ad-creative-width', cw + 'px');
+    unit.style.setProperty('--ad-creative-height', ch + 'px');
+
+    var available = unit.clientWidth || (unit.parentElement && unit.parentElement.clientWidth) || window.innerWidth || cw;
+    var scale = Math.min(1, available / cw);
+    if (!isFinite(scale) || scale <= 0) scale = 1;
+    unit.style.setProperty('--ad-scale', String(scale));
+    unit.style.height = (ch * scale) + 'px';
+  }
+
+  function monitorProductionAd(ad, unit) {
     var fallback = ad.querySelector('[data-floating-ad-fallback]');
     var status = ad.querySelector('[data-floating-ad-status]');
     var observer = null;
@@ -111,6 +164,7 @@
       if (fallback) fallback.hidden = true;
       ad.setAttribute('data-ad-status', 'loaded');
       if (status) status.textContent = 'Live';
+      fitUnit(unit);
     }
 
     function hideAdCompletely() {
@@ -171,7 +225,6 @@
   function initFloatingAd() {
     var ad = document.querySelector('[data-floating-ad]');
     var closeButton = ad && ad.querySelector('[data-floating-ad-close]');
-    var productionUnit = ad && ad.querySelector('[data-floating-ad-unit]');
 
     if (!ad || !closeButton) return;
 
@@ -180,10 +233,11 @@
       return;
     }
 
+    var productionUnit = pickResponsiveFloatingUnit(ad);
     var stopMonitoring = function () {};
 
     function revealAndMonitor() {
-      stopMonitoring = monitorProductionAd(ad);
+      stopMonitoring = monitorProductionAd(ad, productionUnit);
       ad.hidden = false;
       ad.removeAttribute('aria-hidden');
 
@@ -191,16 +245,37 @@
         ad.classList.add('is-visible');
         document.body.classList.add('has-floating-ad');
         if (productionUnit) document.body.classList.add('has-floating-production-ad');
+        fitUnit(productionUnit);
       });
     }
 
     if (productionUnit) {
       window.setTimeout(revealAndMonitor, START_DELAY);
     } else {
-      revealAndMonitor();
+      /* Dev placeholder path */
+      ad.hidden = false;
+      window.requestAnimationFrame(function () {
+        ad.classList.add('is-visible');
+        document.body.classList.add('has-floating-ad');
+      });
     }
 
-    closeButton.addEventListener('click', function () {
+    window.addEventListener('resize', function () {
+      fitUnit(productionUnit);
+    }, { passive: true });
+    window.addEventListener('orientationchange', function () {
+      fitUnit(productionUnit);
+    }, { passive: true });
+
+    /* Tombol close selalu aktif selama floating tampil (bukan hanya setelah ad loaded). */
+    closeButton.hidden = false;
+    closeButton.removeAttribute('aria-hidden');
+    closeButton.disabled = false;
+
+    closeButton.addEventListener('click', function (event) {
+      if (event && event.preventDefault) event.preventDefault();
+      if (event && event.stopPropagation) event.stopPropagation();
+
       rememberClosed();
       stopMonitoring();
       ad.classList.remove('is-visible');
@@ -210,9 +285,10 @@
 
       window.setTimeout(function () {
         ad.hidden = true;
+        ad.setAttribute('aria-hidden', 'true');
         ad.classList.remove('is-closing');
       }, EXIT_DURATION);
-    }, { once: true });
+    });
   }
 
   if (document.readyState === 'loading') {
