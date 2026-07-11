@@ -6,6 +6,8 @@
                 {{ $hero960 := .Resize "960x webp q82" }}
                 {{ $hero1280 := .Resize "1280x webp q82" }}
                 {{ $hero1920 := .Resize "1920x webp q82" }}
+                {{ $hero2560 := .Resize "2560x webp q82" }}
+                {{ $hero3840 := .Resize "3840x webp q82" }}
                 <img
                     title="Huo Linger"
                     width="{{ $hero1280.Width }}"
@@ -14,8 +16,8 @@
                     loading="eager"
                     decoding="async"
                     src="{{ $hero1280.RelPermalink }}"
-                    srcset="{{ $hero640.RelPermalink }} 640w, {{ $hero960.RelPermalink }} 960w, {{ $hero1280.RelPermalink }} 1280w, {{ $hero1920.RelPermalink }} 1920w"
-                    sizes="(max-width: 1023px) calc(100vw - 1.5rem), (max-width: 1279px) 100vw, 1280px"
+                    srcset="{{ $hero640.RelPermalink }} 640w, {{ $hero960.RelPermalink }} 960w, {{ $hero1280.RelPermalink }} 1280w, {{ $hero1920.RelPermalink }} 1920w, {{ $hero2560.RelPermalink }} 2560w, {{ $hero3840.RelPermalink }} 3840w"
+                    sizes="(max-width: 1023px) calc(100vw - 1.5rem), (max-width: 1279px) 100vw, 1920px"
                     alt="Huo Linger"
                 >
             {{ else }}

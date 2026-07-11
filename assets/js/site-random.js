@@ -132,7 +132,13 @@ document.addEventListener('DOMContentLoaded', function () {
       lastPermalink = item.permalink || '';
 
       if (imageNode) {
-        imageNode.src = toText(item.thumbnail) || '/img/DonghuaBatch.webp';
+        const randomSrc = toText(item.thumbnail) || '/img/DonghuaBatch.webp';
+        const randomSrcset = toText(item.thumbnail_srcset);
+        if (randomSrcset) {
+          imageNode.srcset = randomSrcset;
+          imageNode.sizes = '(max-width:640px) 50vw, 200px';
+        }
+        imageNode.src = randomSrc;
         imageNode.alt = cleanTitle(item.title);
       }
       if (typeNode) typeNode.textContent = toText(item.type) || 'Donghua';

@@ -17,9 +17,14 @@
 {{ if $imgRes }}
   {{ $small := $imgRes.Resize "240x webp q82" }}
   {{ $medium := $imgRes.Resize "400x webp q82" }}
+  {{ $srcset := printf "%s 240w, %s 400w" $small.RelPermalink $medium.RelPermalink }}
+  {{ if ge $imgRes.Width 600 }}
+    {{ $large := $imgRes.Resize "600x webp q82" }}
+    {{ $srcset = printf "%s, %s 600w" $srcset $large.RelPermalink }}
+  {{ end }}
             <img loading="lazy" decoding="async" 
                  src="{{ $small.RelPermalink }}" 
-                 srcset="{{ $small.RelPermalink }} 240w, {{ $medium.RelPermalink }} 400w"
+                 srcset="{{ $srcset }}"
                  sizes="(max-width:340px) 90vw, (max-width:640px) 45vw, (max-width:1024px) 22vw, 280px"
                  width="{{ $small.Width }}" height="{{ $small.Height }}"
                  alt="{{ $thumbAlt }}">

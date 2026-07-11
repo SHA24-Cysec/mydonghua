@@ -6,6 +6,27 @@
   {{ $firstDescriptionRaw := $firstFallback.Params.deskripsi | default ($firstFallback.Params.sinopsis | default $firstFallback.Plain) }}
   {{ $firstDescription := $firstDescriptionRaw | plainify | truncate 160 }}
 
+{{/*  Slider Hero – Hugo Pipes srcset  */}}
+{{ $heroSrc := $firstFallback.Params.thumbnail | default "" }}
+{{ $heroImgRes := "" }}
+{{ with $heroSrc }}{{ $clean := strings.TrimPrefix "/" . }}{{ with resources.Get $clean }}{{ $heroImgRes = . }}{{ end }}{{ end }}
+{{ $heroS400 := "" }}
+{{ $heroSrcset := "" }}
+{{ $heroW := 400 }}
+{{ $heroH := 534 }}
+{{ if $heroImgRes }}
+  {{ $s240 := $heroImgRes.Resize "240x webp q82" }}
+  {{ $s400 := $heroImgRes.Resize "400x webp q82" }}
+  {{ $heroS400 = $s400.RelPermalink }}
+  {{ $heroSrcset = printf "%s 240w, %s 400w" $s240.RelPermalink $s400.RelPermalink }}
+  {{ $heroW = $s400.Width }}
+  {{ $heroH = $s400.Height }}
+  {{ if ge $heroImgRes.Width 600 }}
+    {{ $s600 := $heroImgRes.Resize "600x webp q82" }}
+    {{ $heroSrcset = printf "%s, %s 600w" $heroSrcset $s600.RelPermalink }}
+  {{ end }}
+{{ end }}
+
 <section class="home-rec-slider" aria-label="Slider rekomendasi donghua pilihan hari ini" data-home-random-slider data-autoplay-ms="5000" data-item-count="6">
     <div class="home-rec-slider-head">
         <div>
@@ -17,7 +38,11 @@
     <div class="home-rec-slider-stage">
         <div class="home-rec-slider-hero">
             <div class="home-rec-slider-media">
-                <img class="home-rec-slider-image" data-no-loader="true" src='{{ $firstFallback.Params.thumbnail | relURL }}' alt='{{ $firstFallback.Title }}' loading="eager" fetchpriority="high" decoding="async" width="400" height="534">
+                {{ if $heroImgRes }}
+                <img class="home-rec-slider-image" data-no-loader="true" src="{{ $heroS400 }}" srcset="{{ $heroSrcset }}" sizes="(max-width:640px) 90vw, (max-width:1024px) 45vw, 400px" alt="{{ $firstFallback.Title }}" loading="eager" fetchpriority="high" decoding="async" width="{{ $heroW }}" height="{{ $heroH }}">
+                {{ else }}
+                <img class="home-rec-slider-image" data-no-loader="true" src='{{ $heroSrc | relURL }}' alt='{{ $firstFallback.Title }}' loading="eager" fetchpriority="high" decoding="async" width="400" height="534">
+                {{ end }}
             </div>
             <div class="home-rec-slider-overlay"></div>
 
@@ -68,9 +93,19 @@
                 {{ range $index, $page := $fallbackPages }}
                   {{ $railDescriptionRaw := $page.Params.deskripsi | default ($page.Params.sinopsis | default $page.Plain) }}
                   {{ $railDescription := $railDescriptionRaw | plainify | truncate 120 }}
+                  {{/*  Rail card thumbnail – Hugo Pipes srcset  */}}
+                  {{ $railSrc := $page.Params.thumbnail | default "" }}
+                  {{ $railImgRes := "" }}
+                  {{ with $railSrc }}{{ $clean := strings.TrimPrefix "/" . }}{{ with resources.Get $clean }}{{ $railImgRes = . }}{{ end }}{{ end }}
                   <button class="home-rec-slider-card{{ if eq $index 0 }} is-active{{ end }}" type="button" data-fallback-index="{{ $index }}">
                       <span class="home-rec-slider-card-thumb">
-                          <img data-no-loader="true" src='{{ $page.Params.thumbnail | relURL }}' alt='{{ $page.Title }}' loading="lazy" decoding="async" width="120" height="160">
+                          {{ if $railImgRes }}
+                            {{ $r120 := $railImgRes.Resize "120x webp q82" }}
+                            {{ $r240 := $railImgRes.Resize "240x webp q82" }}
+                            <img data-no-loader="true" src="{{ $r120.RelPermalink }}" srcset="{{ $r120.RelPermalink }} 120w, {{ $r240.RelPermalink }} 240w" sizes="120px" alt='{{ $page.Title }}' loading="lazy" decoding="async" width="{{ $r120.Width }}" height="{{ $r120.Height }}">
+                          {{ else }}
+                            <img data-no-loader="true" src='{{ $railSrc | relURL }}' alt='{{ $page.Title }}' loading="lazy" decoding="async" width="120" height="160">
+                          {{ end }}
                       </span>
                       <span class="home-rec-slider-card-body">
                           <strong>{{ $page.Title }}</strong>
@@ -89,11 +124,25 @@
           {{ $descriptionRaw := .Params.deskripsi | default (.Params.sinopsis | default .Plain) }}
           {{ $description := $descriptionRaw | plainify | truncate 160 }}
           {{ $genres := delimit (.Params.genre | default (slice)) "||" }}
+          {{/*  Build multi-res thumbnail data for JS  */}}
+          {{ $jsSrc := .Params.thumbnail | default "" }}
+          {{ $jsImgRes := "" }}
+          {{ with $jsSrc }}{{ $clean := strings.TrimPrefix "/" . }}{{ with resources.Get $clean }}{{ $jsImgRes = . }}{{ end }}{{ end }}
           <div
             class="home-rec-slider-source-item"
             data-title="{{ .Title }}"
             data-url="{{ .Permalink }}"
-            data-thumbnail="{{ .Params.thumbnail | relURL }}"
+            data-thumbnail="{{ $jsSrc | relURL }}"
+            {{ if $jsImgRes }}
+              {{ $js240 := $jsImgRes.Resize "240x webp q82" }}
+              {{ $js400 := $jsImgRes.Resize "400x webp q82" }}
+              data-thumbnail-240="{{ $js240.RelPermalink }}"
+              data-thumbnail-400="{{ $js400.RelPermalink }}"
+              {{ if ge $jsImgRes.Width 600 }}
+                {{ $js600 := $jsImgRes.Resize "600x webp q82" }}
+                data-thumbnail-600="{{ $js600.RelPermalink }}"
+              {{ end }}
+            {{ end }}
             data-type="{{ .Params.type | default "Donghua" }}"
             data-episode="{{ .Params.episode | default "" }}"
             data-status="{{ .Params.status | default "" }}"

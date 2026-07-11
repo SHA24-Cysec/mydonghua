@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         title: node.dataset.title || '',
         permalink: node.dataset.url || '#',
         thumbnail: node.dataset.thumbnail || '',
+        thumbnail240: node.dataset.thumbnail240 || '',
+        thumbnail400: node.dataset.thumbnail400 || '',
+        thumbnail600: node.dataset.thumbnail600 || '',
         type: node.dataset.type || 'Donghua',
         episode: node.dataset.episode || '',
         status: node.dataset.status || '',
@@ -38,6 +41,42 @@ document.addEventListener('DOMContentLoaded', function () {
         description: node.dataset.description || '',
         genres: (node.dataset.genres || '').split('||').filter(Boolean)
       };
+    }
+
+    /**
+     * Pick the best thumbnail variant for a given display width + DPR.
+     * Falls back to item.thumbnail if no multi-res data is available.
+     */
+    function pickBestSrc(item, displayWidth) {
+      const dpr = window.devicePixelRatio || 1;
+      const needed = Math.ceil(displayWidth * dpr);
+      const candidates = [
+        { w: 240, src: item.thumbnail240 },
+        { w: 400, src: item.thumbnail400 },
+        { w: 600, src: item.thumbnail600 }
+      ].filter(function (c) { return c.src; });
+
+      if (!candidates.length) return item.thumbnail;
+
+      const match = candidates
+        .filter(function (c) { return c.w >= needed; })
+        .sort(function (a, b) { return a.w - b.w; })[0];
+
+      return match ? match.src : candidates[candidates.length - 1].src;
+    }
+
+    /**
+     * Build a srcset string from available multi-res data.
+     */
+    function buildSrcset(item) {
+      const entries = [
+        { w: '240w', src: item.thumbnail240 },
+        { w: '400w', src: item.thumbnail400 },
+        { w: '600w', src: item.thumbnail600 }
+      ].filter(function (e) { return e.src; });
+
+      if (entries.length < 2) return '';
+      return entries.map(function (e) { return e.src + ' ' + e.w; }).join(', ');
     }
 
     function escapeHTML(value) {
@@ -167,9 +206,13 @@ document.addEventListener('DOMContentLoaded', function () {
         button.setAttribute('aria-label', 'Tampilkan rekomendasi: ' + (item.title || ('Slide ' + (index + 1))));
         button.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
         button.dataset.slideIndex = String(index);
+        const railImgSrcset = buildSrcset(item);
+        const railImgHtml = railImgSrcset
+          ? `<img data-no-loader="true" src="${escapeHTML(pickBestSrc(item, 120))}" srcset="${escapeHTML(railImgSrcset)}" sizes="120px" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" width="120" height="160">`
+          : `<img data-no-loader="true" src="${escapeHTML(item.thumbnail)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" width="120" height="160">`;
         button.innerHTML = `
           <span class="home-rec-slider-card-thumb">
-            <img data-no-loader="true" src="${escapeHTML(item.thumbnail)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" width="120" height="160">
+            ${railImgHtml}
           </span>
           <span class="home-rec-slider-card-body">
             <strong>${escapeHTML(item.title)}</strong>
@@ -217,7 +260,14 @@ document.addEventListener('DOMContentLoaded', function () {
         imageNode.decoding = 'async';
         try { imageNode.fetchPriority = 'high'; } catch(e) {}
         imageNode.setAttribute('fetchpriority', 'high');
-        imageNode.src = item.thumbnail || imageNode.src;
+        const heroDisplayW = imageNode.getBoundingClientRect().width || 400;
+        const heroSrc = pickBestSrc(item, heroDisplayW);
+        const heroSrcset = buildSrcset(item);
+        imageNode.src = heroSrc || item.thumbnail || imageNode.src;
+        if (heroSrcset) {
+          imageNode.srcset = heroSrcset;
+          imageNode.sizes = '(max-width:640px) 90vw, (max-width:1024px) 45vw, 400px';
+        }
         imageNode.alt = item.title || 'Rekomendasi Donghua';
       }
       updateHeroImageFocus();

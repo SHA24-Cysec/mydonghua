@@ -21,7 +21,12 @@
 {{ if $postImg }}
   {{ $pSmall := $postImg.Resize "220x webp q85" }}
   {{ $pMedium := $postImg.Resize "400x webp q85" }}
-                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="eager" fetchpriority="high" decoding="async" src="{{ $pSmall.RelPermalink }}" srcset="{{ $pSmall.RelPermalink }} 220w, {{ $pMedium.RelPermalink }} 400w" sizes="(max-width:640px) 180px, 200px" width="{{ $pSmall.Width }}" height="{{ $pSmall.Height }}" alt="{{ $postImgAlt }}">
+  {{ $srcset := printf "%s 220w, %s 400w" $pSmall.RelPermalink $pMedium.RelPermalink }}
+  {{ if ge $postImg.Width 600 }}
+    {{ $pLarge := $postImg.Resize "600x webp q85" }}
+    {{ $srcset = printf "%s, %s 600w" $srcset $pLarge.RelPermalink }}
+  {{ end }}
+                                    <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="eager" fetchpriority="high" decoding="async" src="{{ $pSmall.RelPermalink }}" srcset="{{ $srcset }}" sizes="(max-width:640px) 180px, 200px" width="{{ $pSmall.Width }}" height="{{ $pSmall.Height }}" alt="{{ $postImgAlt }}">
 {{ else if $postImgSrc }}
                                     <img title="{{ .Title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="eager" fetchpriority="high" decoding="async" width="200" height="300" src='{{ $postImgSrc | relURL }}' alt="{{ $postImgAlt }}">
 {{ else }}
