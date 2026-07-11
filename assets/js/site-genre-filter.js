@@ -1,79 +1,6 @@
 (function () {
   'use strict';
 
-// Fungsi Toast Notification untuk alert genre
-function showGenreToast(message, type = 'warning') {
-  // Hapus toast yang sudah ada
-  const existingToast = document.querySelector('.genre-toast-notification');
-  if (existingToast) existingToast.remove();
-
-  const toast = document.createElement('div');
-  toast.className = 'genre-toast-notification genre-toast-' + type;
-  toast.setAttribute('role', 'alert');
-  toast.innerHTML = 
-    '<div class="genre-toast-content">' +
-      '<i class="fa-solid fa-circle-exclamation genre-toast-icon"></i>' +
-      '<span class="genre-toast-message">' + message + '</span>' +
-      '<button class="genre-toast-close" aria-label="Tutup">' +
-        '<i class="fa-solid fa-xmark"></i>' +
-      '</button>' +
-    '</div>';
-
-  // Styling toast inline
-  toast.style.cssText = 
-    'position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:9999;' +
-    'background:linear-gradient(135deg,#dc2626 0%,#991b1b 100%);' +
-    'color:white;padding:14px 20px;border-radius:12px;' +
-    'box-shadow:0 8px 32px rgba(220,38,38,0.4),0 0 0 1px rgba(255,255,255,0.1);' +
-    'font-family:system-ui,-apple-system,sans-serif;font-size:14px;font-weight:500;' +
-    'max-width:90vw;animation:genreToastSlideIn 0.3s ease-out;';
-
-  const content = toast.querySelector('.genre-toast-content');
-  content.style.cssText = 'display:flex;align-items:center;gap:10px;';
-
-  const icon = toast.querySelector('.genre-toast-icon');
-  icon.style.cssText = 'font-size:18px;flex-shrink:0;';
-
-  const msg = toast.querySelector('.genre-toast-message');
-  msg.style.cssText = 'flex:1;';
-
-  const closeBtn = toast.querySelector('.genre-toast-close');
-  closeBtn.style.cssText = 
-    'background:rgba(255,255,255,0.2);border:none;color:white;' +
-    'width:24px;height:24px;border-radius:50%;cursor:pointer;' +
-    'display:flex;align-items:center;justify-content:center;font-size:12px;' +
-    'flex-shrink:0;transition:background 0.2s;';
-  closeBtn.onmouseover = function() { closeBtn.style.background = 'rgba(255,255,255,0.3)'; };
-  closeBtn.onmouseout = function() { closeBtn.style.background = 'rgba(255,255,255,0.2)'; };
-  closeBtn.onclick = function() { toast.remove(); };
-
-  // Tambah animasi CSS
-  if (!document.getElementById('genre-toast-styles')) {
-    const style = document.createElement('style');
-    style.id = 'genre-toast-styles';
-    style.textContent = 
-      '@keyframes genreToastSlideIn{' +
-        'from{opacity:0;transform:translateX(-50%) translateY(-20px);}' +
-        'to{opacity:1;transform:translateX(-50%) translateY(0);}' +
-      '}' +
-      '@keyframes genreToastSlideOut{' +
-        'from{opacity:1;transform:translateX(-50%) translateY(0);}' +
-        'to{opacity:0;transform:translateX(-50%) translateY(-20px);}' +
-      '}';
-    document.head.appendChild(style);
-  }
-
-  document.body.appendChild(toast);
-
-  // Auto remove setelah 4 detik
-  setTimeout(function() {
-    if (toast.parentElement) {
-      toast.style.animation = 'genreToastSlideOut 0.3s ease-out forwards';
-      setTimeout(function() { toast.remove(); }, 300);
-    }
-  }, 4000);
-}
-
 // Terapkan pilihan genre saat form sidebar dikirim.
 function applyGenreFilter() {
   const genres = [];
@@ -82,10 +9,7 @@ function applyGenreFilter() {
     genres.push(cb.value);
   });
 
-  if (!genres.length) {
-    showGenreToast('Silakan pilih minimal satu genre terlebih dahulu!');
-    return;
-  }
+  if (!genres.length) return;
 
   window.location.href = "/filter-genre/#" + genres.join(",");
 }
@@ -190,8 +114,16 @@ function renderGenreResults() {
 
   pagination.classList.toggle("hidden", totalPages <= 1);
   document.getElementById("genre-page-info").textContent = "Page " + genrePage + " of " + totalPages;
-  document.getElementById("genre-prev").disabled = genrePage === 1;
-  document.getElementById("genre-next").disabled = genrePage === totalPages;
+
+  const prevButton = document.getElementById("genre-prev");
+  const nextButton = document.getElementById("genre-next");
+  const prevDisabled = genrePage <= 1;
+  const nextDisabled = genrePage >= totalPages;
+
+  prevButton.disabled = prevDisabled;
+  nextButton.disabled = nextDisabled;
+  prevButton.setAttribute("aria-disabled", prevDisabled ? "true" : "false");
+  nextButton.setAttribute("aria-disabled", nextDisabled ? "true" : "false");
 }
 
 const genrePrevBtn = document.getElementById("genre-prev");

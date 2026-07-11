@@ -5028,6 +5028,15 @@ body .post-bookmark-btn.is-pulsing {
                 }
             }
 
+            .genre-apply-button:disabled,
+            .genre-apply-button:disabled:hover {
+                cursor: not-allowed;
+                opacity: 0.5;
+                filter: saturate(0.45);
+                box-shadow: none;
+                transform: none;
+            }
+
             @media (min-width: 430px) {
                 .genre-sheet-list {
                     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -6869,6 +6878,11 @@ html {
   color: var(--btn-disabled-text) !important;
   box-shadow: none !important;
   filter: saturate(0.72) !important;
+  cursor: not-allowed !important;
+}
+
+.pagination-aurora-button.is-disabled {
+  pointer-events: none;
 }
 
 .donghua-card-bookmark {
@@ -6920,9 +6934,9 @@ html {
     .site-random-action.secondary,
     .fav-empty-ghost,
     :where(#fav-cancel-btn, #buka-komen button),
-    .pagination-aurora-button,
+    .pagination-aurora-button:not(.is-disabled),
     .pagination-aurora-page:not(.is-active),
-    .pagination-dock-button,
+    .pagination-dock-button:not(:disabled),
     .notfound-dock-btn.ghost,
     .share-premium-button,
     .genre-sheet-trigger,
@@ -7494,6 +7508,44 @@ body.has-floating-production-ad .btt-wrapper {
   .site-navbar-actions {
     gap: 0.28rem;
   }
+}
+
+/* ==========================================================
+   GLOBAL PAGE OUTER SPACING
+   Satu sumber jarak vertikal untuk seluruh halaman:
+   navbar -> konten = 16px, konten -> footer = 16px.
+   ========================================================== */
+:root {
+  --site-navbar-height: 4rem;
+  --site-page-outer-gap: 1rem;
+}
+
+body {
+  padding-top: var(--site-navbar-height) !important;
+}
+
+#main-content {
+  padding-block: var(--site-page-outer-gap);
+}
+
+/* Margin lama pada container terluar tidak boleh menggandakan gap global. */
+#main-content > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Detail donghua memakai wrapper Alert sebagai elemen pertama. */
+#main-content > :first-child .alert-stack-shell {
+  margin-top: 0;
+}
+
+/* Halaman 404 sebelumnya memiliki padding vertikal khusus. */
+#main-content > .notfound-dock-page {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.site-footer {
+  margin-top: 0 !important;
 }
 
 /* Final reduced-motion guard — must stay after Button System rules. */

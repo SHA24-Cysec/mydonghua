@@ -60,8 +60,3 @@
 
 {{/* Global konservatif: menangani image statis dan image hasil render dinamis. */}}
 {{- template "minjs" "js/site-image-loader.js" -}}
-
-{{/* Jaringan social bar tetap hanya dimuat pada production. */}}
-{{ if hugo.IsProduction }}
-{{- template "minjs" "js/site-social-bar.js" -}}
-{{ end }}

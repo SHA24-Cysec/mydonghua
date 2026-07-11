@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const clearButton = shell.querySelector('[data-genre-clear]');
                 const tray = shell.querySelector('[data-genre-tray]');
                 const triggerCount = shell.querySelector('[data-genre-trigger-count]');
+                const applyButton = shell.querySelector('.genre-apply-button');
                 const inputs = Array.from(shell.querySelectorAll('input[name="genre"]'));
 
                 function selectedInputs() {
@@ -20,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     const selected = selectedInputs();
                     if (triggerCount) {
                         triggerCount.textContent = selected.length + ' dipilih';
+                    }
+                    if (applyButton) {
+                        applyButton.disabled = selected.length === 0;
                     }
                     if (!tray) return;
 
