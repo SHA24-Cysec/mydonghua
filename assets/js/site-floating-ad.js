@@ -121,6 +121,7 @@
     var script = document.createElement('script');
     script.src = invoke;
     script.async = true;
+    script.setAttribute('data-cfasync', 'false');
     script.setAttribute('data-floating-ad-network-script', '');
     unit.appendChild(script);
     return script;
@@ -158,6 +159,15 @@
       if (observer) observer.disconnect();
     }
 
+    function notifyAdFallback(adStatus) {
+      /* Let site-ad-fallback.js re-run fitAdScaleHosts after floating ad settles.
+         Body padding changes (has-floating-ad class) can shift available widths
+         for inline widgets, so a global scale recalc is needed. */
+      document.dispatchEvent(new CustomEvent('donghua:floating-ad-settled', {
+        detail: { status: adStatus }
+      }));
+    }
+
     function markLoaded() {
       if (settled) return;
       settled = true;
@@ -167,6 +177,7 @@
       ad.setAttribute('data-ad-status', 'loaded');
       if (status) status.textContent = 'Live';
       fitUnit(unit);
+      notifyAdFallback('loaded');
     }
 
     function hideAdCompletely() {
@@ -189,6 +200,7 @@
         ad.hidden = true;
         ad.setAttribute('aria-hidden', 'true');
         ad.classList.remove('is-closing');
+        notifyAdFallback('failed');
       }, EXIT_DURATION);
     }
 
@@ -252,7 +264,19 @@
     }
 
     if (productionUnit) {
-      window.setTimeout(revealAndMonitor, START_DELAY);
+      /* If a banner widget (ads-728x90) is present on this page, it shares the
+         same ad key — wait for it to settle before injecting floating's script
+         so window.atOptions is no longer in use and there is no race condition.
+         If no banner widget is found, fall back to the normal START_DELAY. */
+      var hasBannerWidget = !!document.querySelector('[data-ad-type="banner-responsive"]');
+      if (hasBannerWidget) {
+        document.addEventListener('donghua:banner-widget-settled', function onBannerSettled() {
+          document.removeEventListener('donghua:banner-widget-settled', onBannerSettled);
+          revealAndMonitor();
+        }, { once: true });
+      } else {
+        window.setTimeout(revealAndMonitor, START_DELAY);
+      }
     } else {
       /* Dev placeholder path */
       ad.hidden = false;

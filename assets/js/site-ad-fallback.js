@@ -53,6 +53,11 @@
     widget.hidden = true;
     widget.setAttribute('aria-hidden', 'true');
     widget.setAttribute('data-ad-status', status || 'failed');
+    /* Hide outer wrapper (e.g. ads-728x90) so its margin/padding don't leave whitespace. */
+    var wrapper = widget.closest('[data-ad-banner-wrapper]');
+    if (wrapper) {
+      wrapper.hidden = true;
+    }
   }
 
   function markLoaded(widget, unit, fallback) {
@@ -61,6 +66,11 @@
     widget.removeAttribute('aria-hidden');
     if (unit) unit.hidden = false;
     if (fallback) fallback.hidden = true;
+    /* Ensure wrapper is visible when the creative loads successfully. */
+    var wrapper = widget.closest('[data-ad-banner-wrapper]');
+    if (wrapper) {
+      wrapper.hidden = false;
+    }
     applyBannerBodySize(widget, unit);
   }
 
@@ -201,12 +211,23 @@
       if (observer) observer.disconnect();
     }
 
+    function notifyBannerSettled(status) {
+      /* Notify floating-ad.js that the banner widget (728x90/320x50) has
+         settled so it can safely inject its own script without atOptions race. */
+      if ((widget.getAttribute('data-ad-type') || '') === 'banner-responsive') {
+        document.dispatchEvent(new CustomEvent('donghua:banner-widget-settled', {
+          detail: { status: status }
+        }));
+      }
+    }
+
     function finishLoaded() {
       if (settled) return;
       settled = true;
       stopMonitoring();
       markLoaded(widget, unit, fallback);
       scheduleFitAdScaleHosts();
+      notifyBannerSettled('loaded');
       if (onSettled) onSettled();
     }
 
@@ -219,6 +240,7 @@
       settled = true;
       stopMonitoring();
       failWidget(widget, unit, fallback);
+      notifyBannerSettled('failed');
       if (onSettled) onSettled();
     }
 
@@ -338,6 +360,11 @@
     fitAdScaleHosts(document);
     window.addEventListener('resize', scheduleFitAdScaleHosts, { passive: true });
     window.addEventListener('orientationchange', scheduleFitAdScaleHosts, { passive: true });
+
+    /* Re-run scale when floating ad settles (loaded or failed).
+       Body padding shifts (has-floating-ad class toggle) can alter available
+       widths for inline widgets — a global recalc keeps all units pixel-perfect. */
+    document.addEventListener('donghua:floating-ad-settled', scheduleFitAdScaleHosts);
 
     /*
      * Widget-local observers in monitorWidget already catch ad mutations and
