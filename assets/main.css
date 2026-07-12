@@ -7153,7 +7153,6 @@ body.genre-sheet-lock {
 }
 
 .ad-neon-shell {
-  --ad-accent: #22d3ee;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -7566,10 +7565,9 @@ html body .ad-neon-body.ad-size-300 .ad-neon-scroll > iframe,
    merges them correctly. No runtime cost. */
 
 :root {
+  /* Hanya token yang benar-benar di-var() di stylesheet / markup. */
   --site-bg: #060816;
   --site-panel: #0f172a;
-  --site-panel-deep: #070a18;
-  --site-panel-soft: rgba(15, 23, 42, 0.72);
   --site-text: #f1f5f9;
   --site-title: #f8fbff;
   --site-muted: #9fb1c9;
@@ -7580,39 +7578,23 @@ html body .ad-neon-body.ad-size-300 .ad-neon-scroll > iframe,
   --site-pink: #ec4899;
   --site-green: #34d399;
   --site-amber: #fbbf24;
-  --site-danger: #ef4444;
   --site-ink-on-light: #06111f;
   --site-line: rgba(125, 211, 252, 0.18);
-  --site-line-strong: rgba(34, 211, 238, 0.24);
   --site-line-soft: rgba(255, 255, 255, 0.085);
-  --site-glow-cyan: rgba(34, 211, 238, 0.14);
-  --site-glow-purple: rgba(139, 92, 246, 0.12);
-  --site-glow-pink: rgba(236, 72, 153, 0.12);
-  --site-radius-xs: 0.6rem;
   --site-radius-sm: 0.85rem;
   --site-radius-btn: 0.95rem;
   --site-radius-md: 1rem;
   --site-radius-lg: 1.25rem;
   --site-radius-xl: 1.5rem;
-  --site-radius-2xl: 1.6rem;
   --site-radius-pill: 999px;
-  --site-shadow-card: 0 14px 30px rgba(0, 0, 0, 0.20), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   --site-shadow-panel: 0 20px 48px rgba(0, 0, 0, 0.30), 0 0 20px rgba(34, 211, 238, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  --site-shadow-hover: 0 16px 34px rgba(0, 0, 0, 0.24), 0 0 18px rgba(34, 211, 238, 0.12);
   --site-gradient-panel:
     radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.12), transparent 32%),
     radial-gradient(circle at 92% 12%, rgba(139, 92, 246, 0.10), transparent 34%),
     linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(6, 8, 22, 0.98));
-  --site-gradient-panel-angle:
-    radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.08), transparent 32%),
-    radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.07), transparent 32%),
-    linear-gradient(135deg, rgba(15, 23, 42, 0.90), rgba(7, 10, 24, 0.96));
   --site-gradient-primary: linear-gradient(135deg, #22d3ee, #38bdf8, #8b5cf6);
-  --site-gradient-soft: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(139, 92, 246, 0.10), rgba(236, 72, 153, 0.08));
-  --site-gradient-danger: linear-gradient(135deg, rgba(239, 68, 68, 0.90), rgba(219, 39, 119, 0.90), rgba(147, 51, 234, 0.90));
   --site-transition-fast: 0.18s ease;
   --site-transition-med: 0.22s ease;
-  --site-transition-slow: 0.32s ease;
   --site-focus-ring: 3px solid rgba(255, 255, 255, 0.56);
   --site-focus-offset: 3px;
 }
@@ -8159,24 +8141,8 @@ body .pagination-dock-status,
   }
 }
 
-/* ==========================================================
-   PHASE 7 — TAILWIND STANDARD SPACING (NO CLAMP, NO !IMPORTANT)
-   Replaced fluid/clamp variables with Tailwind utility classes.
-   HTML templates now use explicit gap-*, p-*, m-* classes.
-   ========================================================== */
-
-:root {
-  --site-space-xs: 0.5rem;
-  /* Tailwind 2 */
-  --site-space-sm: 0.75rem;
-  /* Tailwind 3 */
-  --site-space-md: 1rem;
-  /* Tailwind 4 */
-  --site-space-lg: 1.25rem;
-  /* Tailwind 5 */
-  --site-space-xl: 1.5rem;
-  /* Tailwind 6 */
-}
+/* PHASE 7 spacing tokens removed: HTML uses explicit Tailwind gap/padding/margin
+   utilities; --site-space-* was never referenced via var(). */
 
 html {
   scroll-padding-top: 5.75rem;

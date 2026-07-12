@@ -1,18 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./layouts/**/*.{html,js}"],
+  // Safelist only state classes that may be toggled by JS / Hugo without
+  // a static full class string in layouts. Legacy Hugo pagination classes
+  // (page-item, page-link, pagination-default, page-item-*) and cyber-pill-nav
+  // were removed — pagination now uses custom pagination-aurora / pagination-dock.
   safelist: [
-    "pagination",
-    "pagination-default",
-    "page-item",
-    "page-link",
     "active",
     "disabled",
-    "page-item-first",
-    "page-item-last",
-    "page-item-previous",
-    "page-item-next",
-    "cyber-pill-nav"
   ],
   theme: {
     extend: {
