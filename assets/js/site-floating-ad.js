@@ -4,10 +4,12 @@
   var SESSION_KEY = 'donghuabatch:floating-ad-closed';
   var EXIT_DURATION = 240;
   var AD_LOAD_TIMEOUT = 12000;
-  var INSPECT_INTERVAL = 400;
+  /* MutationObserver handles normal ad injection; this is a fallback only. */
+  var INSPECT_INTERVAL = 1200;
   var MIN_CREATIVE_AREA = 80;
   /* Delay start so in-page widgets can claim atOptions first. */
-  var START_DELAY = 700;
+  /* Do not compete with initial rendering and the user's first scroll. */
+  var START_DELAY = 2200;
   var MOBILE_MAX = 767;
 
   function getSessionValue() {

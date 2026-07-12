@@ -7,8 +7,16 @@
     return;
   }
 
+  const WATCH_STATUS = {
+    belum: { label: 'Belum Ditonton', shortLabel: 'Belum', icon: 'fa-clock', className: 'is-belum' },
+    sedang: { label: 'Sedang Ditonton', shortLabel: 'Sedang', icon: 'fa-play', className: 'is-sedang' },
+    selesai: { label: 'Selesai Ditonton', shortLabel: 'Selesai', icon: 'fa-check', className: 'is-selesai' }
+  };
+
   let indexPromise = null;
   let lastConfirmTrigger = null;
+  let activeWatchFilter = 'all';
+  let favoriteItems = [];
 
   function getIndexData() {
     if (indexPromise) return indexPromise;
@@ -47,6 +55,11 @@
     return ids.map(function (id) { return byId[id]; }).filter(Boolean);
   }
 
+  function getWatchStatus(id) {
+    const status = favoriteCore.getWatchStatus ? favoriteCore.getWatchStatus(id) : 'belum';
+    return WATCH_STATUS[status] ? status : 'belum';
+  }
+
   function isFocusableVisible(element) {
     return !!(element && typeof element.focus === 'function' && !element.disabled && (element.offsetParent !== null || element === document.activeElement));
   }
@@ -83,23 +96,29 @@
     if (isFocusableVisible(fallback)) fallback.focus();
   }
 
+  function statusControlHTML(id, status) {
+    const safeId = escapeHTML(id);
+    const activeMeta = WATCH_STATUS[status];
+    const buttons = Object.keys(WATCH_STATUS).map(function (key) {
+      const meta = WATCH_STATUS[key];
+      const active = key === status;
+      return '<button class="fav-card-watch-option' + (active ? ' is-active' : '') + '" type="button" data-fav-watch-status="' + key + '" data-fav-watch-id="' + safeId + '" aria-pressed="' + (active ? 'true' : 'false') + '" aria-label="Tandai ' + meta.label + '"><i class="fa-solid ' + meta.icon + '" aria-hidden="true"></i><span>' + meta.shortLabel + '</span></button>';
+    }).join('');
+
+    return '<div class="fav-card-watch-control ' + activeMeta.className + '" role="group" aria-label="Status tontonan">' + buttons + '</div>';
+  }
+
   function renderFavoriteCard(item) {
     const type = escapeHTML(item.type || 'Donghua');
     const episode = escapeHTML(item.episode || '-');
     const status = escapeHTML(item.status || '-');
     const rating = escapeHTML(item.rating || '-');
     const permalink = escapeHTML(item.permalink || '#');
-    const thumbnail = escapeHTML(item.thumbnail_small || item.thumbnail || '');
-    let thumbnailSrcset = '';
-
-    if (item.thumbnail_srcset) {
-      thumbnailSrcset = escapeHTML(item.thumbnail_srcset);
-    } else if (item.thumbnail_small && item.thumbnail_medium) {
-      thumbnailSrcset = escapeHTML(item.thumbnail_small) + ' 240w, ' + escapeHTML(item.thumbnail_medium) + ' 400w';
-    }
-
+    const thumbnail = escapeHTML(item.thumbnail || '');
     const title = escapeHTML(item.title || 'Donghua');
-    const id = escapeHTML(itemId(item));
+    const rawId = itemId(item);
+    const id = escapeHTML(rawId);
+    const watchStatus = getWatchStatus(rawId);
     const ratingHTML = rating && rating !== '-'
       ? '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ' + rating + '/10</span>'
       : '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>';
@@ -107,22 +126,16 @@
       .filter(function (value) { return value && value !== '-'; })
       .map(function (value) { return '<span class="donghua-card-chip">' + value + '</span>'; })
       .join('');
-    const saved = favoriteCore.isSaved(itemId(item));
+    const saved = favoriteCore.isSaved(rawId);
     const iconPath = saved
       ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
       : '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
-    let thumbnailHTML = '';
-
-    if (thumbnail) {
-      thumbnailHTML = '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '"';
-      if (thumbnailSrcset) {
-        thumbnailHTML += ' srcset="' + thumbnailSrcset + '" sizes="(max-width:340px) 90vw, (max-width:640px) 45vw, (max-width:1024px) 22vw, 280px"';
-      }
-      thumbnailHTML += ' width="240" height="320">';
-    }
+    const thumbnailHTML = thumbnail
+      ? '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="240" height="320">'
+      : '<div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true"><i class="fa-solid fa-film text-6xl"></i></div>';
 
     return '<li class="donghua-card-item">' +
-      '<article class="donghua-card">' +
+      '<article class="donghua-card fav-watch-card">' +
         '<button class="donghua-card-bookmark' + (saved ? ' is-saved' : '') + '" data-fav-id="' + id + '" type="button" aria-pressed="' + (saved ? 'true' : 'false') + '" aria-label="' + (saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit') + '" title="' + (saved ? 'Hapus dari favorit' : 'Simpan ke favorit') + '">' +
           '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">' + iconPath + '</svg>' +
         '</button>' +
@@ -136,6 +149,7 @@
             '<div class="donghua-card-footer">' + ratingHTML + '<span class="donghua-card-cta">Detail</span></div>' +
           '</div>' +
         '</a>' +
+        statusControlHTML(rawId, watchStatus) +
       '</article>' +
     '</li>';
   }
@@ -143,12 +157,14 @@
   function showElement(element, displayValue) {
     if (!element) return;
     element.classList.remove('hidden');
+    element.hidden = false;
     element.style.display = displayValue || '';
   }
 
   function hideElement(element) {
     if (!element) return;
     element.classList.add('hidden');
+    element.hidden = true;
     element.style.display = 'none';
   }
 
@@ -160,42 +176,110 @@
     clearButton.disabled = !shouldShow;
   }
 
+  function watchCounts(items) {
+    const counts = { all: items.length, belum: 0, sedang: 0, selesai: 0 };
+    items.forEach(function (item) {
+      const status = getWatchStatus(itemId(item));
+      counts[status] += 1;
+    });
+    return counts;
+  }
+
+  function renderWatchToolbar(items) {
+    const toolbar = document.getElementById('fav-watch-toolbar');
+    const total = document.getElementById('fav-watch-total');
+    if (!toolbar) return;
+
+    if (!items.length) {
+      hideElement(toolbar);
+      return;
+    }
+
+    const counts = watchCounts(items);
+    showElement(toolbar);
+    if (total) total.textContent = counts.all + ' favorit';
+
+    document.querySelectorAll('[data-fav-watch-count]').forEach(function (element) {
+      const key = element.getAttribute('data-fav-watch-count');
+      element.textContent = String(counts[key] || 0);
+    });
+    document.querySelectorAll('[data-fav-watch-filter]').forEach(function (button) {
+      const isActive = button.getAttribute('data-fav-watch-filter') === activeWatchFilter;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  }
+
+  function renderFavoriteList() {
+    const grid = document.getElementById('fav-grid');
+    const emptyElement = document.getElementById('fav-empty');
+    const filterEmpty = document.getElementById('fav-watch-empty');
+    if (!grid) return;
+
+    renderWatchToolbar(favoriteItems);
+    const items = activeWatchFilter === 'all'
+      ? favoriteItems
+      : favoriteItems.filter(function (item) { return getWatchStatus(itemId(item)) === activeWatchFilter; });
+
+    if (!items.length) {
+      hideElement(grid);
+      if (favoriteItems.length) {
+        showElement(filterEmpty);
+        hideElement(emptyElement);
+      } else {
+        hideElement(filterEmpty);
+        showElement(emptyElement);
+      }
+      return;
+    }
+
+    grid.innerHTML = items.map(renderFavoriteCard).join('');
+    showElement(grid, 'grid');
+    hideElement(filterEmpty);
+    hideElement(emptyElement);
+    favoriteCore.syncAllButtons();
+  }
+
   function renderFavoritesPage() {
     const grid = document.getElementById('fav-grid');
     if (!grid) return;
 
     const statusElement = document.getElementById('fav-status');
     const emptyElement = document.getElementById('fav-empty');
+    const filterEmpty = document.getElementById('fav-watch-empty');
     const ids = favoriteCore.loadFavorites();
     favoriteCore.syncAllButtons();
 
     if (!ids.length) {
+      favoriteItems = [];
+      activeWatchFilter = 'all';
       syncClearButton(false);
       hideElement(statusElement);
       hideElement(grid);
+      hideElement(filterEmpty);
+      renderWatchToolbar([]);
       showElement(emptyElement);
       return;
     }
 
     getIndexData()
       .then(function (data) {
-        const items = orderItemsByIds(data, ids);
+        favoriteItems = orderItemsByIds(data, ids);
         hideElement(statusElement);
 
-        if (!items.length) {
+        if (!favoriteItems.length) {
           syncClearButton(false);
           hideElement(grid);
+          hideElement(filterEmpty);
+          renderWatchToolbar([]);
           showElement(emptyElement);
           return;
         }
 
         syncClearButton(true);
-        grid.innerHTML = items.map(renderFavoriteCard).join('');
-        showElement(grid, 'grid');
-        hideElement(emptyElement);
-        favoriteCore.syncAllButtons();
+        renderFavoriteList();
         window.setTimeout(function () {
-          syncClearButton(favoriteCore.loadFavorites().length > 0 && grid.querySelectorAll('li').length > 0);
+          syncClearButton(favoriteCore.loadFavorites().length > 0 && favoriteItems.length > 0);
         }, 0);
       })
       .catch(function (error) {
@@ -237,8 +321,26 @@
   window.renderFavorites = renderFavoritesPage;
 
   document.addEventListener('donghua:favorites-changed', renderFavoritesPage);
+  document.addEventListener('donghua:watch-status-changed', renderFavoriteList);
 
   document.addEventListener('click', function (event) {
+    const watchButton = event.target.closest('[data-fav-watch-status]');
+    if (watchButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      const id = watchButton.getAttribute('data-fav-watch-id');
+      const status = watchButton.getAttribute('data-fav-watch-status');
+      favoriteCore.setWatchStatus(id, status);
+      return;
+    }
+
+    const filterButton = event.target.closest('[data-fav-watch-filter]');
+    if (filterButton) {
+      activeWatchFilter = filterButton.getAttribute('data-fav-watch-filter') || 'all';
+      renderFavoriteList();
+      return;
+    }
+
     const clearButton = event.target.closest('#fav-clear-all');
     if (clearButton) {
       event.preventDefault();

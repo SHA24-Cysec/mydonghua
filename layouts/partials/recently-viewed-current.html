@@ -1,0 +1,13 @@
+{{/* Data aman untuk disimpan secara lokal ketika halaman detail donghua dibuka. */}}
+<div
+  id="recently-viewed-current"
+  hidden
+  data-id="{{ .Params.permalink | default .Permalink }}"
+  data-title="{{ .Title }}"
+  data-url="{{ .Permalink }}"
+  data-thumbnail="{{ .Params.thumbnail | default .Params.image | default "" }}"
+  data-type="{{ .Params.type | default "Donghua" }}"
+  data-episode="{{ .Params.episode | default "" }}"
+  data-status="{{ .Params.status | default "" }}"
+  data-rating="{{ .Params.rating | default "" }}"
+></div>

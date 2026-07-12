@@ -3,7 +3,8 @@
 
   /* Timeout long enough for slow ad networks; progressive inspect avoids false fail. */
   var AD_LOAD_TIMEOUT = 12000;
-  var INSPECT_INTERVAL = 400;
+  /* MutationObserver detects normal injections. This is only a low-frequency safety check. */
+  var INSPECT_INTERVAL = 1200;
   var MIN_CREATIVE_AREA = 80;
   var MOBILE_MAX = 767;
 
@@ -338,10 +339,12 @@
     window.addEventListener('resize', scheduleFitAdScaleHosts, { passive: true });
     window.addEventListener('orientationchange', scheduleFitAdScaleHosts, { passive: true });
 
-    if ('MutationObserver' in window) {
-      var fitObserver = new MutationObserver(scheduleFitAdScaleHosts);
-      fitObserver.observe(document.body, { childList: true, subtree: true });
-    }
+    /*
+     * Widget-local observers in monitorWidget already catch ad mutations and
+     * call scheduleFitAdScaleHosts after a creative is ready. Observing the
+     * entire document here made every unrelated DOM mutation (image states,
+     * sliders, third-party markup) schedule a layout pass.
+     */
   }
 
   if (document.readyState === 'loading') {

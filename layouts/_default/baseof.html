@@ -36,6 +36,9 @@
     {{ partial "background-pic" . }}
     {{ partial "back-to-top" . }}
     {{ partial "widget/floating-ad" . }}
+    {{ if eq .Layout "postingan-donghua" }}
+        {{ partial "recently-viewed-current" . }}
+    {{ end }}
     {{ if eq .Layout "favorit" }}
         {{/*  Dialog konfirmasi Hapus Semua khusus halaman Favorit.  */}}
         {{ partial "save-favorite" . }}

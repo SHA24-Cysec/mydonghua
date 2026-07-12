@@ -2,6 +2,9 @@
   'use strict';
 
   const STORAGE_KEY = 'donghuabatch_favorites';
+  const WATCH_STATUS_KEY = 'donghuabatch_watch_statuses';
+  const DEFAULT_WATCH_STATUS = 'belum';
+  const WATCH_STATUSES = ['belum', 'sedang', 'selesai'];
   const bookmarkSelector = '.donghua-card-bookmark, .post-bookmark-btn';
 
   function loadFavIds() {
@@ -22,6 +25,58 @@
     }
   }
 
+  function loadWatchStatuses() {
+    try {
+      const raw = localStorage.getItem(WATCH_STATUS_KEY);
+      const parsed = raw ? JSON.parse(raw) : {};
+      if (!parsed || Array.isArray(parsed) || typeof parsed !== 'object') return {};
+      const clean = {};
+      Object.keys(parsed).forEach(function (id) {
+        if (WATCH_STATUSES.indexOf(parsed[id]) !== -1) clean[id] = parsed[id];
+      });
+      return clean;
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function saveWatchStatuses(statuses) {
+    try {
+      localStorage.setItem(WATCH_STATUS_KEY, JSON.stringify(statuses));
+    } catch (error) {
+      console.warn('[Fav] watch status storage error', error);
+    }
+  }
+
+  function getWatchStatus(id) {
+    if (!id) return DEFAULT_WATCH_STATUS;
+    const statuses = loadWatchStatuses();
+    return WATCH_STATUSES.indexOf(statuses[id]) !== -1 ? statuses[id] : DEFAULT_WATCH_STATUS;
+  }
+
+  function setWatchStatus(id, status) {
+    if (!id || WATCH_STATUSES.indexOf(status) === -1) return DEFAULT_WATCH_STATUS;
+    const statuses = loadWatchStatuses();
+    if (status === DEFAULT_WATCH_STATUS) {
+      delete statuses[id];
+    } else {
+      statuses[id] = status;
+    }
+    saveWatchStatuses(statuses);
+    document.dispatchEvent(new CustomEvent('donghua:watch-status-changed', {
+      detail: { id: id, status: status }
+    }));
+    return status;
+  }
+
+  function removeWatchStatus(id) {
+    if (!id) return;
+    const statuses = loadWatchStatuses();
+    if (!Object.prototype.hasOwnProperty.call(statuses, id)) return;
+    delete statuses[id];
+    saveWatchStatuses(statuses);
+  }
+
   function isSaved(id) {
     return loadFavIds().indexOf(id) !== -1;
   }
@@ -33,6 +88,7 @@
 
     if (idx !== -1) {
       ids.splice(idx, 1);
+      removeWatchStatus(id);
       saved = false;
     } else {
       ids.push(id);
@@ -45,6 +101,7 @@
 
   function clearAll() {
     saveFavIds([]);
+    saveWatchStatuses({});
   }
 
   function updateBadge() {
@@ -109,6 +166,11 @@
     toggleSave: toggleSave,
     clearAll: clearAll,
     loadFavorites: loadFavIds,
+    getWatchStatus: getWatchStatus,
+    setWatchStatus: setWatchStatus,
+    loadWatchStatuses: loadWatchStatuses,
+    WATCH_STATUS_KEY: WATCH_STATUS_KEY,
+    WATCH_STATUSES: WATCH_STATUSES.slice(),
     syncAllButtons: syncAllButtons,
     STORAGE_KEY: STORAGE_KEY
   };

@@ -6,7 +6,7 @@
     </button>
     <a class="donghua-card-link" title="{{ .Title }}" href="{{ .Permalink }}">
         <div class="donghua-card-poster">
-{{/*  Donghua Card Thumbnail – srcset/WebP – Hugo Pipes  */}}
+{{/* Berkas thumbnail sumber dipakai apa adanya; CSS hanya menjaga ukuran layout card. */}}
 {{ $thumbSrc := .Params.thumbnail | default "" }}
 {{ $thumbAlt := .Params.alt | default .Title }}
 {{ $imgRes := "" }}
@@ -15,18 +15,9 @@
   {{ with resources.Get $clean }}{{ $imgRes = . }}{{ end }}
 {{ end }}
 {{ if $imgRes }}
-  {{ $small := $imgRes.Resize "240x webp q82" }}
-  {{ $medium := $imgRes.Resize "400x webp q82" }}
-  {{ $srcset := printf "%s 240w, %s 400w" $small.RelPermalink $medium.RelPermalink }}
-  {{ if ge $imgRes.Width 600 }}
-    {{ $large := $imgRes.Resize "600x webp q82" }}
-    {{ $srcset = printf "%s, %s 600w" $srcset $large.RelPermalink }}
-  {{ end }}
-            <img loading="lazy" decoding="async" 
-                 src="{{ $small.RelPermalink }}" 
-                 srcset="{{ $srcset }}"
-                 sizes="(max-width:340px) 90vw, (max-width:640px) 45vw, (max-width:1024px) 22vw, 280px"
-                 width="{{ $small.Width }}" height="{{ $small.Height }}"
+            <img loading="lazy" decoding="async"
+                 src="{{ $imgRes.RelPermalink }}"
+                 width="{{ $imgRes.Width }}" height="{{ $imgRes.Height }}"
                  alt="{{ $thumbAlt }}">
 {{ else if $thumbSrc }}
             <img loading="lazy" decoding="async" width="200" height="300" src='{{ $thumbSrc | relURL }}' alt="{{ $thumbAlt }}">

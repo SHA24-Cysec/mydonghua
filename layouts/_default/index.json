@@ -2,22 +2,9 @@
 {{- $counter := 0 -}}
 
 {{- range where .Site.RegularPages "Layout" "postingan-donghua" -}}
-  {{/* Thumbnail srcset – Hugo Pipes */}}
+  {{/* Semua UI dinamis memakai URL berkas thumbnail sumber, tanpa varian resize. */}}
   {{- $thumb := .Params.thumbnail | default "" -}}
-  {{- $thumb_small := "" -}}
-  {{- $thumb_medium := "" -}}
-  {{- $thumb_srcset := "" -}}
-  {{- with $thumb -}}
-    {{- $clean := strings.TrimPrefix "/" . -}}
-    {{- with resources.Get $clean -}}
-      {{- $small := .Resize "240x webp q82" -}}
-      {{- $medium := .Resize "400x webp q82" -}}
-      {{- $thumb_small = $small.RelPermalink -}}
-      {{- $thumb_medium = $medium.RelPermalink -}}
-      {{- $thumb_srcset = printf "%s 240w, %s 400w" $small.RelPermalink $medium.RelPermalink -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $item := dict 
+  {{- $item := dict
       "objectID" $counter
       "title" .Title
       "studio" .Params.studio
@@ -25,14 +12,12 @@
       "genre" (delimit .Params.genre ", ")
       "permalink" .Permalink
       "thumbnail" $thumb
-      "thumbnail_small" $thumb_small
-      "thumbnail_medium" $thumb_medium
-      "thumbnail_srcset" $thumb_srcset
       "type" (.Params.type | default "Donghua")
       "sub" (.Params.sub | default "Sub")
       "episode" (.Params.episode | default "")
       "status" (.Params.status | default "")
       "rating" (.Params.rating | default "")
+      "date" (.Date.Format "2006-01-02T15:04:05Z07:00")
   -}}
   {{- $index = $index | append $item -}}
   {{- $counter = add $counter 1 -}}

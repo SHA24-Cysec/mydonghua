@@ -17,27 +17,9 @@
 <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous"></noscript>
-{{/* Homepage LCP images: responsive preload untuk Hero, hanya pada Home. */}}
+{{/* Homepage LCP: preload berkas gambar sumber tanpa resize/kompresi Hugo. */}}
 {{ if .IsHome }}
-  {{ with resources.Get "img/Huo-Linger.webp" }}
-    {{ $hero640 := .Resize "640x webp q82" }}
-    {{ $hero960 := .Resize "960x webp q82" }}
-    {{ $hero1280 := .Resize "1280x webp q82" }}
-    {{ $hero1920 := .Resize "1920x webp q82" }}
-    {{ $hero2560 := .Resize "2560x webp q82" }}
-    {{ $hero3840 := .Resize "3840x webp q82" }}
-    <link
-      rel="preload"
-      as="image"
-      type="image/webp"
-      fetchpriority="high"
-      href="{{ $hero1280.RelPermalink }}"
-      imagesrcset="{{ $hero640.RelPermalink }} 640w, {{ $hero960.RelPermalink }} 960w, {{ $hero1280.RelPermalink }} 1280w, {{ $hero1920.RelPermalink }} 1920w, {{ $hero2560.RelPermalink }} 2560w, {{ $hero3840.RelPermalink }} 3840w"
-      imagesizes="(max-width: 1023px) calc(100vw - 1.5rem), (max-width: 1279px) 100vw, 1920px"
-    >
-  {{ else }}
-    <link rel="preload" as="image" fetchpriority="high" href='{{ "img/Huo-Linger.webp" | relURL }}'>
-  {{ end }}
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high" href='{{ "img/Huo-Linger.webp" | relURL }}'>
   {{/* Preload slider hero thumbnail – LCP optimization – homepage only */}}
   {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
   {{ $first := index (first 1 ($pages.ByDate.Reverse)) 0 }}

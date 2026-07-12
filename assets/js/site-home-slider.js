@@ -31,9 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         title: node.dataset.title || '',
         permalink: node.dataset.url || '#',
         thumbnail: node.dataset.thumbnail || '',
-        thumbnail240: node.dataset.thumbnail240 || '',
-        thumbnail400: node.dataset.thumbnail400 || '',
-        thumbnail600: node.dataset.thumbnail600 || '',
         type: node.dataset.type || 'Donghua',
         episode: node.dataset.episode || '',
         status: node.dataset.status || '',
@@ -43,41 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
       };
     }
 
-    /**
-     * Pick the best thumbnail variant for a given display width + DPR.
-     * Falls back to item.thumbnail if no multi-res data is available.
-     */
-    function pickBestSrc(item, displayWidth) {
-      const dpr = window.devicePixelRatio || 1;
-      const needed = Math.ceil(displayWidth * dpr);
-      const candidates = [
-        { w: 240, src: item.thumbnail240 },
-        { w: 400, src: item.thumbnail400 },
-        { w: 600, src: item.thumbnail600 }
-      ].filter(function (c) { return c.src; });
-
-      if (!candidates.length) return item.thumbnail;
-
-      const match = candidates
-        .filter(function (c) { return c.w >= needed; })
-        .sort(function (a, b) { return a.w - b.w; })[0];
-
-      return match ? match.src : candidates[candidates.length - 1].src;
-    }
-
-    /**
-     * Build a srcset string from available multi-res data.
-     */
-    function buildSrcset(item) {
-      const entries = [
-        { w: '240w', src: item.thumbnail240 },
-        { w: '400w', src: item.thumbnail400 },
-        { w: '600w', src: item.thumbnail600 }
-      ].filter(function (e) { return e.src; });
-
-      if (entries.length < 2) return '';
-      return entries.map(function (e) { return e.src + ' ' + e.w; }).join(', ');
-    }
 
     function escapeHTML(value) {
       return String(value || '')
@@ -206,10 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.setAttribute('aria-label', 'Tampilkan rekomendasi: ' + (item.title || ('Slide ' + (index + 1))));
         button.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
         button.dataset.slideIndex = String(index);
-        const railImgSrcset = buildSrcset(item);
-        const railImgHtml = railImgSrcset
-          ? `<img data-no-loader="true" src="${escapeHTML(pickBestSrc(item, 120))}" srcset="${escapeHTML(railImgSrcset)}" sizes="120px" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" width="120" height="160">`
-          : `<img data-no-loader="true" src="${escapeHTML(item.thumbnail)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" width="120" height="160">`;
+        const railImgHtml = `<img data-no-loader="true" src="${escapeHTML(item.thumbnail)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" width="120" height="160">`;
         button.innerHTML = `
           <span class="home-rec-slider-card-thumb">
             ${railImgHtml}
@@ -250,28 +209,18 @@ document.addEventListener('DOMContentLoaded', function () {
     function applyHeroImage(item) {
       if (!imageNode || !item) return;
 
-      const heroDisplayW = imageNode.getBoundingClientRect().width || 400;
-      const nextSrc = pickBestSrc(item, heroDisplayW) || item.thumbnail || '';
-      const nextSrcset = buildSrcset(item);
+      const nextSrc = item.thumbnail || '';
       const nextAlt = item.title || 'Rekomendasi Donghua';
       const prevKey = imageNode.getAttribute('data-slider-image-key') || '';
-      const nextKey = [nextSrc, nextSrcset, nextAlt].join('|');
+      const nextKey = [nextSrc, nextAlt].join('|');
 
       imageNode.loading = 'eager';
       imageNode.decoding = 'async';
       try { imageNode.fetchPriority = 'high'; } catch (e) {}
       imageNode.setAttribute('fetchpriority', 'high');
       imageNode.alt = nextAlt;
-
-      /* Selalu sinkronkan srcset: jika slide baru tidak punya multi-res,
-         atribut lama harus dihapus agar browser tidak tetap pakai srcset slide sebelumnya. */
-      if (nextSrcset) {
-        imageNode.setAttribute('srcset', nextSrcset);
-        imageNode.setAttribute('sizes', '(max-width:640px) 90vw, (max-width:1024px) 45vw, 400px');
-      } else {
-        imageNode.removeAttribute('srcset');
-        imageNode.removeAttribute('sizes');
-      }
+      imageNode.removeAttribute('srcset');
+      imageNode.removeAttribute('sizes');
 
       if (!nextSrc) {
         imageNode.removeAttribute('src');
@@ -280,17 +229,12 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      /* Paksa reload jika key sama (edge cache) atau beda slide. */
       if (prevKey === nextKey && imageNode.getAttribute('src') === nextSrc) {
         updateHeroImageFocus();
         return;
       }
 
-      /* Clear dulu supaya browser tidak menahan currentSrc dari srcset lama. */
       imageNode.removeAttribute('src');
-      if (nextSrcset) {
-        imageNode.setAttribute('srcset', nextSrcset);
-      }
       imageNode.src = nextSrc;
       imageNode.setAttribute('data-slider-image-key', nextKey);
 

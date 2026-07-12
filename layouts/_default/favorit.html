@@ -26,7 +26,30 @@
           <div class="text-slate-400 font-semibold">Memuat daftar favorit...</div>
         </div>
 
+        <section id="fav-watch-toolbar" class="fav-watch-toolbar site-feature-surface" aria-labelledby="fav-watch-title" hidden>
+          <div class="fav-watch-head">
+            <div>
+              <span class="fav-watch-kicker"><i class="fa-solid fa-eye" aria-hidden="true"></i> Watchlist</span>
+              <h2 id="fav-watch-title">Status Tontonan</h2>
+              <p>Atur progres tontonan dan tampilkan favorit berdasarkan status.</p>
+            </div>
+            <span id="fav-watch-total" class="fav-watch-total" aria-live="polite"></span>
+          </div>
+          <div id="fav-watch-filters" class="fav-watch-filters" role="group" aria-label="Filter status tontonan">
+            <button type="button" class="fav-watch-filter is-active" data-fav-watch-filter="all"><span>Semua</span><strong data-fav-watch-count="all">0</strong></button>
+            <button type="button" class="fav-watch-filter" data-fav-watch-filter="belum"><span>Belum</span><strong data-fav-watch-count="belum">0</strong></button>
+            <button type="button" class="fav-watch-filter" data-fav-watch-filter="sedang"><span>Sedang</span><strong data-fav-watch-count="sedang">0</strong></button>
+            <button type="button" class="fav-watch-filter" data-fav-watch-filter="selesai"><span>Selesai</span><strong data-fav-watch-count="selesai">0</strong></button>
+          </div>
+        </section>
+
         <ul id="fav-grid" class="donghua-card-grid donghua-card-grid-main hidden mt-4"></ul>
+
+        <div id="fav-watch-empty" class="fav-watch-empty" hidden>
+          <i class="fa-solid fa-filter-circle-xmark" aria-hidden="true"></i>
+          <strong>Belum ada favorit pada status ini</strong>
+          <span>Pilih status lain atau ubah status tontonan pada card favoritmu.</span>
+        </div>
 
         <div id="fav-empty" class="fav-empty-state hidden">
           <div class="fav-empty-card">

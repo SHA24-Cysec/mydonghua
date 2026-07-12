@@ -1,0 +1,19 @@
+{{/* Riwayat lokal: konten dan card diisi oleh site-recently-viewed.js. */}}
+<section id="recently-viewed-section" class="panel-neon-inset site-feature-surface p-3 sm:p-4" aria-labelledby="recently-viewed-title" hidden>
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+    <div>
+      <span class="badge-neon text-xs">
+        <i class="fa-solid fa-clock-rotate-left text-cyan-400" aria-hidden="true"></i>
+        Riwayat Perangkat
+      </span>
+      <h2 id="recently-viewed-title" class="heading-neon mt-2 flex items-center gap-2 text-xl md:text-2xl">
+        <i class="fa-solid fa-eye text-cyan-400" aria-hidden="true"></i>
+        Terakhir Dilihat
+      </h2>
+      <p class="mt-1 text-sm leading-relaxed text-slate-400">Lanjutkan menjelajahi donghua yang baru kamu buka.</p>
+    </div>
+    <span id="recently-viewed-count" class="badge-neon self-start text-xs sm:self-auto" aria-live="polite"></span>
+  </div>
+
+  <ul id="recently-viewed-grid" class="donghua-card-grid donghua-card-grid-latest recently-viewed-grid mt-4" aria-label="Daftar donghua terakhir dilihat"></ul>
+</section>

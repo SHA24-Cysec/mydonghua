@@ -133,11 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (imageNode) {
         const randomSrc = toText(item.thumbnail) || '/img/DonghuaBatch.webp';
-        const randomSrcset = toText(item.thumbnail_srcset);
-        if (randomSrcset) {
-          imageNode.srcset = randomSrcset;
-          imageNode.sizes = '(max-width:640px) 50vw, 200px';
-        }
+        imageNode.removeAttribute('srcset');
+        imageNode.removeAttribute('sizes');
         imageNode.src = randomSrc;
         imageNode.alt = cleanTitle(item.title);
       }

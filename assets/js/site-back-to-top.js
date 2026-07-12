@@ -13,30 +13,32 @@
 
     let isVisible = false;
     let ticking = false;
+    let maxScroll = 0;
+    let lastPercent = -1;
 
-    function getScrollPercent() {
+    /*
+     * Reading every document dimension for every scroll frame can force layout
+     * on long pages. Keep the metric cached and refresh it only when the
+     * viewport or the document's load state can change its dimensions.
+     */
+    function refreshScrollMetrics() {
       const doc = document.documentElement;
       const body = document.body;
-      const scrollTop = window.pageYOffset || doc.scrollTop || body.scrollTop || 0;
-      const scrollHeight = Math.max(
-        body.scrollHeight, doc.scrollHeight,
-        body.offsetHeight, doc.offsetHeight,
-        body.clientHeight, doc.clientHeight
-      );
-      const clientHeight = doc.clientHeight;
-      const maxScroll = scrollHeight - clientHeight;
-
-      if (maxScroll <= 0) return 0;
-      return Math.min(100, Math.round((scrollTop / maxScroll) * 100));
+      const scrollHeight = Math.max(doc.scrollHeight, body ? body.scrollHeight : 0);
+      maxScroll = Math.max(0, scrollHeight - doc.clientHeight);
     }
 
     function update() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
-      const pct = getScrollPercent();
+      const pct = maxScroll > 0 ? Math.min(100, Math.round((scrollY / maxScroll) * 100)) : 0;
       const shouldBeVisible = scrollY > THRESHOLD;
 
-      gauge.style.width = pct + '%';
-      pctLabel.textContent = pct + '%';
+      /* Avoid DOM writes when the displayed progress has not changed. */
+      if (pct !== lastPercent) {
+        gauge.style.width = pct + '%';
+        pctLabel.textContent = pct + '%';
+        lastPercent = pct;
+      }
 
       if (shouldBeVisible !== isVisible) {
         isVisible = shouldBeVisible;
@@ -54,6 +56,11 @@
       }
     }
 
+    function refreshAndUpdate() {
+      refreshScrollMetrics();
+      onScroll();
+    }
+
     btn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -66,6 +73,11 @@
     });
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', refreshAndUpdate, { passive: true });
+    window.addEventListener('orientationchange', refreshAndUpdate, { passive: true });
+    window.addEventListener('load', refreshAndUpdate, { once: true });
+
+    refreshScrollMetrics();
     update();
   }
 

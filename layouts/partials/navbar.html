@@ -4,9 +4,7 @@
       <div class="site-navbar-top">
         <a href="{{ .Site.BaseURL }}" class="site-navbar-brand" aria-label="DonghuaBatch Beranda">
           {{ with resources.Get "img/favicon.webp" }}
-            {{ $logo36 := .Resize "36x webp q85" }}
-            {{ $logo72 := .Resize "72x webp q85" }}
-            <img class="site-navbar-logo" width="36" height="36" src="{{ $logo36.RelPermalink }}" srcset="{{ $logo36.RelPermalink }} 1x, {{ $logo72.RelPermalink }} 2x" alt="Logo DonghuaBatch">
+            <img class="site-navbar-logo" width="36" height="36" src="{{ .RelPermalink }}" alt="Logo DonghuaBatch">
           {{ else }}
             <img class="site-navbar-logo" width="36" height="36" src="/img/favicon.webp" alt="Logo DonghuaBatch">
           {{ end }}

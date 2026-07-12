@@ -12,6 +12,43 @@
                 <span>Cari</span>
             </button>
         </div>
+
+        <section id="search-discovery" class="search-discovery-panel site-feature-surface" aria-label="Riwayat dan pencarian populer" hidden>
+            <div id="search-history-block" class="search-discovery-block" hidden>
+                <div class="search-discovery-head">
+                    <span><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Riwayat Pencarian</span>
+                    <small>Perangkat ini</small>
+                </div>
+                <div id="search-history-list" class="search-discovery-chips" aria-label="Riwayat pencarian terbaru"></div>
+            </div>
+
+            <div class="search-discovery-block">
+                <div class="search-discovery-head">
+                    <span><i class="fa-solid fa-fire" aria-hidden="true"></i> Pencarian Populer</span>
+                    <small>Pilihan cepat</small>
+                </div>
+                <div id="popular-search-list" class="search-discovery-chips" aria-label="Pencarian populer"></div>
+            </div>
+        </section>
+
+        <div id="search-tools" class="search-tools site-feature-toolbar" aria-label="Urutkan dan filter hasil pencarian" hidden>
+            <label class="search-sort-field" for="search-sort">
+                <span><i class="fa-solid fa-arrow-down-wide-short" aria-hidden="true"></i> Urutkan</span>
+                <select id="search-sort" class="search-control-select" aria-label="Urutkan hasil pencarian">
+                    <option value="relevance">Paling Relevan</option>
+                    <option value="newest">Terbaru</option>
+                    <option value="rating">Rating Tertinggi</option>
+                    <option value="alphabetical">A–Z</option>
+                </select>
+            </label>
+
+            <button id="search-filter-open" class="search-filter-trigger" type="button" aria-expanded="false" aria-controls="search-filter-dialog">
+                <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                <span>Filter</span>
+                <span id="search-filter-active-count" class="search-filter-active-count" hidden>0</span>
+            </button>
+        </div>
+
         <div id="search-summary" class="search-summary" hidden></div>
 
         {{/*  Elemen Postingan Pencarian  */}}
@@ -20,7 +57,54 @@
         <div id="search-empty-state" class="search-empty-state" hidden>
             <div class="search-empty-icon"><i class="fa-solid fa-satellite-dish" aria-hidden="true"></i></div>
             <strong>Tidak ada hasil ditemukan</strong>
-            <p>Coba kata kunci lain, gunakan judul yang lebih pendek, atau kombinasikan genre dengan tanda koma.</p>
+            <p>Coba kata kunci lain, ubah filter, atau gunakan judul yang lebih pendek.</p>
+        </div>
+
+        <div id="search-filter-dialog" class="search-filter-dialog" role="presentation" hidden aria-hidden="true">
+            <button class="search-filter-backdrop" type="button" data-search-filter-close aria-label="Tutup filter"></button>
+            <section class="search-filter-sheet site-feature-sheet" role="dialog" aria-modal="true" aria-labelledby="search-filter-title">
+                <div class="search-filter-handle" aria-hidden="true"></div>
+                <div class="search-filter-head">
+                    <div>
+                        <span class="search-filter-kicker"><i class="fa-solid fa-sliders" aria-hidden="true"></i> Search Filter</span>
+                        <h2 id="search-filter-title">Saring Hasil Pencarian</h2>
+                        <p>Pilih kriteria yang sesuai. Semua filter aktif digabungkan.</p>
+                    </div>
+                    <button class="search-filter-close" type="button" data-search-filter-close aria-label="Tutup filter">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <form id="search-filter-form">
+                    <div class="search-filter-fields">
+                        <label class="search-filter-field">
+                            <span>Status</span>
+                            <select class="search-control-select" data-search-filter="status" aria-label="Filter status"><option value="">Semua status</option></select>
+                        </label>
+                        <label class="search-filter-field">
+                            <span>Tipe</span>
+                            <select class="search-control-select" data-search-filter="type" aria-label="Filter tipe"><option value="">Semua tipe</option></select>
+                        </label>
+                        <label class="search-filter-field">
+                            <span>Genre</span>
+                            <select class="search-control-select" data-search-filter="genre" aria-label="Filter genre"><option value="">Semua genre</option></select>
+                        </label>
+                        <label class="search-filter-field">
+                            <span>Studio</span>
+                            <select class="search-control-select" data-search-filter="studio" aria-label="Filter studio"><option value="">Semua studio</option></select>
+                        </label>
+                        <label class="search-filter-field search-filter-field-wide">
+                            <span>Season</span>
+                            <select class="search-control-select" data-search-filter="season" aria-label="Filter season"><option value="">Semua season</option></select>
+                        </label>
+                    </div>
+
+                    <div class="search-filter-actions">
+                        <button id="search-filter-reset" class="search-filter-reset" type="button"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i><span>Reset</span></button>
+                        <button class="search-filter-apply" type="submit"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Terapkan</span></button>
+                    </div>
+                </form>
+            </section>
         </div>
 
         {{/*  Pagination  */}}

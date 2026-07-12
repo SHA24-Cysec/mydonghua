@@ -51,6 +51,11 @@
 {{- template "minjs" "js/site-home-slider.js" -}}
 {{ end }}
 
+{{/* Riwayat lokal dipakai di halaman detail untuk menyimpan, dan di beranda untuk menampilkan. */}}
+{{ if or .IsHome $isPost }}
+{{- template "minjs" "js/site-recently-viewed.js" -}}
+{{ end }}
+
 {{ if $hasSidebar }}
 {{- template "minjs" "js/site-sidebar.js" -}}
 {{ end }}
@@ -59,5 +64,4 @@
 {{- template "minjs" "js/site-disqus.js" -}}
 {{ end }}
 
-{{/* Global konservatif: menangani image statis dan image hasil render dinamis. */}}
-{{- template "minjs" "js/site-image-loader.js" -}}
+{{/* Efek loading gambar dinonaktifkan: placeholder statis disediakan oleh CSS. */}}
