@@ -544,15 +544,7 @@
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-  html body .donghua-card,
-  html body .donghua-card-link,
-  html body .donghua-card-poster img,
-  html body .donghua-card-title {
-    animation: none;
-    transition: none;
-  }
-}
+
 
 
 .prose-neon a {
@@ -1032,15 +1024,7 @@
         to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        html body .notfound-dock-shell::before,
-        html body .notfound-dock-orbit,
-        html body .notfound-dock-panel,
-        html body .notfound-dock-btn {
-            animation: none;
-            transition: none;
-        }
-    }
+    
 
 /* ===== Source: layouts/_default/baseof.html (style block 1) ===== */
       body .pagination-aurora-dock,
@@ -1748,18 +1732,7 @@ html body .fav-clear-btn.hidden {
 /* ============================
    REDUCED MOTION
    ============================ */
-@media (prefers-reduced-motion: reduce) {
-  html body .btt-wrapper,
-  html body .btt-btn,
-  html body .btt-btn svg.btt-icon,
-  html body .btt-gauge-fill {
-    transition-duration: 0.01ms;
-  }
 
-  .btt-gauge-fill::after {
-    display: none;
-  }
-}
 
 /* ===== Source: layouts/partials/download-batch.html (style block 1) ===== */
     .db-shell,
@@ -2192,20 +2165,7 @@ html body .fav-clear-btn.hidden {
         50% { box-shadow: 0 0 0 6px rgba(236, 72, 153, 0.16), 0 0 22px rgba(236, 72, 153, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.22); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        html body .db-shell::before,
-        html body .db-group,
-        html body .db-res-card,
-        html body .db-res-card::before,
-        html body .db-res-card::after,
-        html body .db-button,
-        html body .db-button::before,
-        html body .db-report,
-        html body .db-report.is-highlighted {
-            animation: none;
-            transition: none;
-        }
-    }
+    
 
 /* ===== Source: layouts/partials/footer.html (style block 1) ===== */
 .site-footer,
@@ -2396,11 +2356,7 @@ html body .fav-clear-btn.hidden {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html body .site-footer-social-link {
-    transition-duration: 0.01ms;
-  }
-}
+
 
 /* ===== Source: layouts/partials/home-random-slider-option17.html (style block 1) ===== */
     .home-rec-slider,
@@ -3582,19 +3538,7 @@ html body .fav-clear-btn.hidden {
     }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .site-navbar-toggle,
-    .site-nav-close,
-    .site-nav-backdrop,
-    .site-nav-sheet,
-    .site-nav-grid a,
-    .site-nav-grid button,
-    .site-random-modal,
-    .site-random-dialog,
-    .site-random-result {
-      transition: none;
-    }
-  }
+  
 
 /* ===== Source: layouts/partials/save-favorite.html (style block 1) ===== */
 /* ============================
@@ -3847,16 +3791,7 @@ body .post-bookmark-btn.is-pulsing {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  body .post-bookmark-btn,
-  body .post-bookmark-btn::before,
-  body .post-bookmark-btn::after,
-  body .post-bookmark-icon,
-  body .fav-chevron {
-    transition-duration: 0.01ms;
-    animation-duration: 0.01ms;
-  }
-}
+
 
 /* ============================
    NAVBAR BOOKMARK ICON
@@ -3994,18 +3929,7 @@ body .post-bookmark-btn.is-pulsing {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .donghua-card-bookmark,
-  .donghua-card-bookmark svg,
-  .post-bookmark-btn,
-  .post-bookmark-icon,
-  .nav-fav-btn,
-  .fav-confirm,
-  .fav-confirm-box {
-    transition-duration: 0.01ms;
-    animation-duration: 0.01ms;
-  }
-}
+
 
 /* ===== Source: layouts/partials/season.html (style block 1) ===== */
 .season-nav-wrap,
@@ -4225,11 +4149,7 @@ body .post-bookmark-btn.is-pulsing {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    html body .season-nav-card {
-        transition: none;
-    }
-}
+
 
 /* ===== Source: layouts/partials/share-donghua.html (style block 1) ===== */
     .share-premium-card,
@@ -5086,22 +5006,7 @@ body .post-bookmark-btn.is-pulsing {
                 to { opacity: 1; transform: translateY(0); }
             }
 
-            @media (prefers-reduced-motion: reduce) {
-                html body .genre-filter-card::before,
-                html body .genre-sheet-option {
-                    animation: none;
-                }
-
-                html body .genre-sheet-panel,
-                html body .genre-sheet-backdrop,
-                html body .genre-option-body,
-                html body .genre-sheet-trigger,
-                html body .genre-clear-button,
-                html body .genre-apply-button,
-                html body .genre-sheet-close {
-                    transition: none;
-                }
-            }
+            
         
 
 /* ===== Source: layouts/partials/sidebar.html (style block 2) ===== */
@@ -5439,17 +5344,7 @@ body .post-bookmark-btn.is-pulsing {
                 to { opacity: 1; transform: translateY(0); }
             }
 
-            @media (prefers-reduced-motion: reduce) {
-                html body .taxonomy-tabs-widget::before,
-                html body .taxonomy-item {
-                    animation: none;
-                }
-
-                html body .taxonomy-tab-button,
-                html body .taxonomy-item {
-                    transition: none;
-                }
-            }
+            
         
 
     .ad-neon-shell,
@@ -5829,13 +5724,7 @@ body .post-bookmark-btn.is-pulsing {
         }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        .ad-neon-shell::before,
-        .ad-neon-head::before,
-        .ad-neon-head::after {
-            animation: none;
-        }
-    }
+    
 
 /* ===== End Phase 3 extracted component CSS ===== */
 
@@ -5983,25 +5872,7 @@ html body .site-random-result {
   object-position: center top;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html body .site-panel,
-  html body .site-card,
-  html body .panel-neon,
-  html body .site-home-hero,
-  html body .home-rec-slider,
-  html body .alert-stack-shell,
-  html body .db-shell,
-  html body .db-res-card,
-  html body .donghua-card,
-  html body .donghua-card-link,
-  html body .share-premium-card,
-  html body .site-footer-card,
-  html body .site-random-dialog,
-  html body .site-random-result {
-    animation: none;
-    transition: none;
-  }
-}
+
 
 
 /* ==========================================================
@@ -6251,13 +6122,7 @@ html body .site-random-result {
     }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .aurora-search-input,
-    .aurora-search-icon,
-    .aurora-search-btn {
-      transition: none;
-    }
-  }
+  
 }
 
 /* ==========================================================
@@ -6882,11 +6747,7 @@ html body .site-home-hero-button.secondary {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .site-home-hero-media img {
-    animation: none;
-  }
-}
+
 
 @keyframes siteHeroMoonlitZoom {
   from { transform: scale(1.02) translate3d(0, 0, 0); }
@@ -7657,11 +7518,7 @@ body.has-floating-production-ad .btt-wrapper {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .site-floating-ad {
-    transition-duration: 0.01ms;
-  }
-}
+
 
 /* ==========================================================
    NAVBAR QUICK ACTIONS — ACAK + FAVORIT BEFORE MENU
@@ -7765,17 +7622,7 @@ html body .site-footer {
 }
 
 /* Final reduced-motion guard — must stay after Button System rules. */
-@media (prefers-reduced-motion: reduce) {
-  html body .site-random-close,
-  html body .site-random-action {
-    transition: none;
-    transform: none;
-  }
 
-  html body .site-random-spinner {
-    animation: none;
-  }
-}
 
 /* ==========================================================
    AD WIDGET FALLBACK SYSTEM
@@ -8949,18 +8796,7 @@ body.search-filter-lock {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .site-feature-surface,
-  .site-feature-toolbar,
-  .site-feature-sheet,
-  .search-discovery-chip,
-  .fav-watch-filter,
-  .fav-card-watch-option {
-    animation: none;
-    transition: none;
-    transform: none;
-  }
-}
+
 
 /* Search tool bar: keep desktop controls compact instead of leaving an empty feature surface. */
 @media (min-width: 640px) {
@@ -9067,18 +8903,7 @@ body.search-filter-lock {
   transform: translateY(0) scale(0.975);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .search-filter-reset,
-  .search-filter-apply,
-  .search-filter-reset::after,
-  .search-filter-apply::after,
-  .search-filter-reset i,
-  .search-filter-apply i {
-    animation: none;
-    transition: none;
-    transform: none;
-  }
-}
+
 
 /* Reset action intentionally matches the established Genre Filter reset control. */
 .search-filter-reset {
@@ -9161,14 +8986,7 @@ body.search-filter-lock {
   transform: translateY(0) scale(0.98);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .search-tools .search-control-select,
-  .search-tools .search-filter-trigger,
-  .search-tools .search-filter-active-count {
-    transition: none;
-    transform: none;
-  }
-}
+
 
 /* Search filter action pair: both follow the site's primary CTA language. */
 .search-filter-reset,

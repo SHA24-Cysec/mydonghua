@@ -3,6 +3,7 @@
   "outputDirectory": "public",
   "framework": "hugo",
   "installCommand": "npm install",
+  "ignoreBuildStep": "exit 1",
   "headers": [
     {
       "source": "/(.*)",

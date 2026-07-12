@@ -51,6 +51,9 @@
 {{- template "minjs" "js/site-home-slider.js" -}}
 {{ end }}
 
+{{/* Image fallback handler: ensures broken images are replaced with placeholders. */}}
+{{- template "minjs" "js/site-image-loader.js" -}}
+
 {{/* Riwayat lokal dipakai di halaman detail untuk menyimpan, dan di beranda untuk menampilkan. */}}
 {{ if or .IsHome $isPost }}
 {{- template "minjs" "js/site-recently-viewed.js" -}}
