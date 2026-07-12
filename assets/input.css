@@ -7594,7 +7594,6 @@ html body .site-footer {
    Jika unit gagal dimuat: shell di-hide total (tanpa teks
    "Iklan belum tersedia"). Unit & fallback saling eksklusif.
    ========================================================== */
-.ad-widget-unit[hidden],
 .ad-widget-fallback[hidden],
 .ad-neon-scroll[hidden],
 .ad-neon-shell[hidden],
@@ -9042,4 +9041,98 @@ body.search-filter-lock {
     linear-gradient(135deg, #67e8f9 50%, transparent 50%) calc(100% - 0.75rem) 50% / 0.38rem 0.38rem no-repeat,
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(7, 10, 24, 0.98));
   color: #e5f3ff;
+}
+
+/* ==========================================================
+   GENRE FILTER ACTION PAIR — shared primary / secondary system
+   Scope intentionally limited to the Reset + Terapkan pair.
+   ========================================================== */
+html body .genre-sheet-actions > .genre-clear-button,
+html body .genre-sheet-actions > .genre-apply-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    transform var(--site-transition-fast),
+    filter var(--site-transition-fast),
+    background var(--site-transition-fast),
+    border-color var(--site-transition-fast),
+    box-shadow var(--site-transition-fast),
+    color var(--site-transition-fast);
+}
+
+html body .genre-sheet-actions > .genre-clear-button {
+  border-color: var(--btn-secondary-border);
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  box-shadow: var(--btn-secondary-shadow);
+}
+
+html body .genre-sheet-actions > .genre-apply-button {
+  border-color: var(--btn-hybrid-primary-border);
+  background: var(--btn-hybrid-primary-bg);
+  color: var(--btn-hybrid-primary-text);
+  box-shadow: var(--btn-hybrid-primary-shadow);
+}
+
+html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button) > i {
+  width: 1rem;
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):focus-visible {
+  outline: var(--btn-focus-ring);
+  outline-offset: var(--site-focus-offset);
+}
+
+html body .genre-sheet-actions > .genre-apply-button:disabled,
+html body .genre-sheet-actions > .genre-apply-button:disabled:hover {
+  border-color: rgba(148, 163, 184, 0.14);
+  background: var(--btn-disabled-bg);
+  color: var(--btn-disabled-text);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 1;
+  filter: saturate(0.72);
+  transform: none;
+}
+
+@media (hover: hover) {
+  html body .genre-sheet-actions > .genre-clear-button:hover {
+    border-color: var(--btn-secondary-border-hover);
+    background: var(--btn-secondary-bg-hover);
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.12), var(--btn-secondary-shadow);
+    transform: translateY(-2px);
+  }
+
+  html body .genre-sheet-actions > .genre-apply-button:not(:disabled):hover {
+    border-color: rgba(103, 232, 249, 0.4);
+    filter: brightness(1.055);
+    box-shadow: var(--btn-hybrid-primary-shadow-hover);
+    transform: translateY(-2px);
+  }
+}
+
+html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button) {
+    transition-duration: 0.01ms;
+  }
 }

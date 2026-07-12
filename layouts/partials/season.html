@@ -2,7 +2,7 @@
 <div class="season-nav-wrap mt-4">
     <div class="season-nav-grid{{ if and .Params.linkSeasonSebelumnya .Params.linkSeasonSelanjutnya }} has-two{{ end }}">
         {{ if .Params.linkSeasonSebelumnya }}
-            <a class="season-nav-card season-nav-card--prev" href="{{ .Params.linkSeasonSebelumnya | relURL }}">
+            <a class="season-nav-card season-nav-card--prev" href="{{ .Params.linkSeasonSebelumnya | strings.TrimSuffix "/" | printf "%s/" | relURL }}">
                 <span class="season-nav-accent" aria-hidden="true"></span>
                 <div class="season-nav-head">
                     <span class="season-nav-kicker season-nav-kicker--prev">
@@ -29,7 +29,7 @@
         {{ end }}
 
         {{ if .Params.linkSeasonSelanjutnya }}
-            <a class="season-nav-card season-nav-card--next" href="{{ .Params.linkSeasonSelanjutnya | relURL }}">
+            <a class="season-nav-card season-nav-card--next" href="{{ .Params.linkSeasonSelanjutnya | strings.TrimSuffix "/" | printf "%s/" | relURL }}">
                 <span class="season-nav-accent" aria-hidden="true"></span>
                 <div class="season-nav-head">
                     <span class="season-nav-kicker season-nav-kicker--next">

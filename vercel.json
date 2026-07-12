@@ -2,8 +2,8 @@
   "buildCommand": "hugo --gc --minify",
   "outputDirectory": "public",
   "framework": "hugo",
+  "trailingSlash": true,
   "installCommand": "npm install",
-  "ignoreBuildStep": "exit 1",
   "headers": [
     {
       "source": "/(.*)",

@@ -1,6 +1,7 @@
 baseURL = 'https://donghuabatch.com/'
 title = 'DonghuaBatch - Tempatnya Download Batch Donghua Subtitle Indonesia'
 defaultContentLanguage = 'id'
+uglyURLs = false
 
 [services]
     [services.googleAnalytics]
