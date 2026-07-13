@@ -2,7 +2,6 @@
     <div class="ad-neon-head">Sponsor</div>
     <div class="ad-neon-body ad-size-300">
         {{ if hugo.IsProduction }}
-            {{/* Script di-inject berurutan oleh site-ad-fallback.js agar atOptions tidak race. */}}
             <div
                 class="ad-neon-scroll"
                 data-ad-unit
@@ -12,10 +11,6 @@
                 data-ad-width="300"
                 data-ad-invoke="https://bendspecimen.com/f7995a6dce010095a1c087975e306a0a/invoke.js"
             ></div>
-            <div class="ad-widget-fallback" data-ad-fallback hidden aria-hidden="true">
-                <i class="fa-solid fa-rectangle-ad"></i>
-                <span>Sponsor</span>
-            </div>
         {{ else }}
             <div class="ad-neon-placeholder">
                 <span><strong>Advertisement</strong>300 × 250</span>

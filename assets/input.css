@@ -5538,89 +5538,9 @@ body .post-bookmark-btn.is-pulsing {
         min-height: 170px;
     }
 
-    .ad-widget-fallback {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        min-height: inherit;
-        background: rgba(15, 23, 42, 0.5);
-        color: #67e8f9;
-        gap: clamp(0.35rem, 1.5vw, 0.6rem);
-        padding: clamp(0.75rem, 3vw, 1.25rem);
-        text-align: center;
-        border-radius: 0.85rem;
-    }
+    /* Fallback styles removed as per request */
 
-    .ad-widget-fallback i {
-        font-size: clamp(1.15rem, 4.5vw, 1.65rem);
-        filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.6));
-    }
-
-    .ad-widget-fallback span {
-        font-size: clamp(0.62rem, 2.8vw, 0.72rem);
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        opacity: 0.85;
-        line-height: 1.1;
-    }
-
-    /* Floating ad fallback — lebih elegan & mobile-first */
-    .site-floating-ad__fallback {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: 58px;
-        background: rgba(15, 23, 42, 0.65);
-        color: #67e8f9;
-        gap: 0.25rem;
-        padding: 0.55rem 0.75rem;
-        border-radius: 0.65rem;
-        border: 1px solid rgba(103, 232, 249, 0.15);
-        text-align: center;
-    }
-
-    .site-floating-ad__fallback i {
-        font-size: clamp(1.05rem, 4vw, 1.35rem);
-        filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.5));
-    }
-
-    .site-floating-ad__fallback span {
-        font-size: clamp(0.58rem, 2.6vw, 0.68rem);
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        opacity: 0.9;
-    }
-
-    @media (max-width: 380px) {
-        .ad-widget-fallback {
-            padding: 0.55rem;
-            gap: 0.3rem;
-        }
-        .ad-widget-fallback i {
-            font-size: 1.05rem;
-        }
-        .ad-widget-fallback span {
-            font-size: 0.58rem;
-        }
-
-        .site-floating-ad__fallback {
-            min-height: 52px;
-            padding: 0.45rem 0.6rem;
-        }
-    }
-
-    /* display:flex di atas mengalahkan atribut hidden — paksa hide. */
-    html body .ad-neon-scroll[hidden],
-    html body .ad-widget-fallback[hidden],
-    html body .ad-neon-shell[hidden] {
-        display: none;
-    }
+    /* Fallback hidden styles removed */
 
     .ad-neon-shell[hidden] {
         margin: 0;

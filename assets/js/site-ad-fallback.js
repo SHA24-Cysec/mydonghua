@@ -10,15 +10,9 @@
     return window.matchMedia('(max-width: ' + MOBILE_MAX + 'px)').matches;
   }
 
+  // Fallback detection removed as per request
   function hasRenderedCreative(unit) {
-    if (!unit) return false;
-    // Cek apakah ada iframe, img, atau div yang bukan script
-    var nodes = unit.querySelectorAll('iframe, img, ins, div:not([data-ad-ignore])');
-    for (var i = 0; i < nodes.length; i++) {
-      var rect = nodes[i].getBoundingClientRect();
-      if (rect.width > 10 && rect.height > 10) return true;
-    }
-    return false;
+    return true; // Always assume success (fallback disabled)
   }
 
   function applyBannerBodySize(widget, unit) {
@@ -93,19 +87,8 @@
     unit.hidden = false;
     widget.hidden = false;
     
-    // Logika Fallback Terukur
-    setTimeout(function() {
-      if (!hasRenderedCreative(unit)) {
-        unit.hidden = true;
-        if (fallback) {
-            fallback.hidden = false;
-            fallback.style.display = 'flex';
-        }
-        widget.setAttribute('data-ad-status', 'fallback');
-      } else {
-        widget.setAttribute('data-ad-status', 'loaded');
-      }
-    }, AD_INSPECT_TIMEOUT);
+    // Fallback logic removed
+    widget.setAttribute('data-ad-status', 'loaded');
 
     setTimeout(function() {
       if (done) done();
