@@ -9,11 +9,41 @@
     return window.matchMedia('(max-width: ' + MOBILE_MAX + 'px)').matches;
   }
 
-  // Render unit floating ad di dalam iframe terisolasi miliknya sendiri,
-  // supaya window.atOptions tidak berebut dengan unit iklan lain di
-  // halaman yang sama (mis. banner 728x90 yang memakai key sama).
+  // Deteksi adblock; pakai cache bersama dengan site-ad-fallback.js bila ada.
+  function detectAdBlock(cb) {
+    if (typeof window.__siteAdBlocked === 'boolean') {
+      cb(window.__siteAdBlocked);
+      return;
+    }
+    var bait = document.createElement('div');
+    bait.className = 'ad ads adsbox ad-banner ad-placement pub_300x250 text-ad textAd';
+    bait.style.cssText =
+      'position:absolute!important;left:-9999px!important;top:-9999px!important;' +
+      'width:1px!important;height:1px!important;pointer-events:none!important;';
+    bait.setAttribute('aria-hidden', 'true');
+    (document.body || document.documentElement).appendChild(bait);
+
+    window.setTimeout(function () {
+      var blocked = false;
+      try {
+        var cs = window.getComputedStyle ? window.getComputedStyle(bait) : null;
+        blocked =
+          bait.offsetParent === null ||
+          bait.offsetHeight === 0 ||
+          bait.clientHeight === 0 ||
+          (cs && (cs.display === 'none' || cs.visibility === 'hidden'));
+      } catch (e) {
+        blocked = false;
+      }
+      if (bait.parentNode) bait.parentNode.removeChild(bait);
+      window.__siteAdBlocked = !!blocked;
+      cb(window.__siteAdBlocked);
+    }, 130);
+  }
+
+  // Render unit floating ad di dalam iframe terisolasi miliknya sendiri.
   function injectAdIframe(unit, key, format, width, height, invokeUrl) {
-    if (!unit || !invokeUrl) return;
+    if (!unit || !invokeUrl) return null;
 
     var iframe = document.createElement('iframe');
     iframe.setAttribute('scrolling', 'no');
@@ -28,7 +58,7 @@
     unit.appendChild(iframe);
 
     var doc = iframe.contentWindow && iframe.contentWindow.document;
-    if (!doc) return;
+    if (!doc) return iframe;
 
     var atOptionsJson = JSON.stringify({
       key: key,
@@ -47,6 +77,7 @@
       '</body></html>'
     );
     doc.close();
+    return iframe;
   }
 
   function pickResponsiveUnit(ad) {
@@ -77,29 +108,96 @@
     return chosen;
   }
 
-  function injectFloating(ad) {
-    var unit = pickResponsiveUnit(ad);
-    if (!unit) return;
+  function adRendered(unit) {
+    if (!unit) return false;
+    var iframe = unit.querySelector('iframe');
+    if (!iframe) return false;
+    try {
+      var idoc = iframe.contentWindow && iframe.contentWindow.document;
+      if (idoc && idoc.body) {
+        var kids = idoc.body.children;
+        var real = 0;
+        for (var i = 0; i < kids.length; i++) {
+          if (kids[i].tagName !== 'SCRIPT') real++;
+        }
+        if (real > 0) return true;
+        if (idoc.body.scrollHeight > 12) return true;
+        return false;
+      }
+    } catch (e) {
+      // Cross-origin => anggap berhasil.
+      return true;
+    }
+    return false;
+  }
 
-    var invoke = unit.getAttribute('data-ad-invoke');
-    var key = unit.getAttribute('data-ad-key');
-    var format = unit.getAttribute('data-ad-format') || 'iframe';
-    var height = parseInt(unit.getAttribute('data-ad-height') || '50', 10);
-    var width = parseInt(unit.getAttribute('data-ad-width') || '320', 10);
+  function showFallback(ad, kind) {
+    var fallback = ad.querySelector('[data-ad-fallback]');
+    if (!fallback) return false;
 
-    if (invoke && key) {
-      injectAdIframe(unit, key, format, width, height, invoke);
-    } else if (invoke) {
-      var script = document.createElement('script');
-      script.src = invoke;
-      script.async = true;
-      script.setAttribute('data-cfasync', 'false');
-      unit.appendChild(script);
+    var units = ad.querySelectorAll('[data-floating-ad-unit]');
+    for (var i = 0; i < units.length; i++) {
+      if (units[i].parentNode) units[i].parentNode.removeChild(units[i]);
     }
 
+    var variants = fallback.querySelectorAll('[data-ad-fallback-variant]');
+    for (var v = 0; v < variants.length; v++) {
+      var match = variants[v].getAttribute('data-ad-fallback-variant') === kind;
+      variants[v].hidden = !match;
+    }
+
+    fallback.hidden = false;
+    fallback.setAttribute('aria-hidden', 'false');
+    return true;
+  }
+
+  function reveal(ad) {
     ad.hidden = false;
     ad.classList.add('is-visible');
     document.body.classList.add('has-floating-ad');
+  }
+
+  function injectFloating(ad) {
+    detectAdBlock(function (blocked) {
+      if (blocked) {
+        showFallback(ad, 'adblock');
+        reveal(ad);
+        return;
+      }
+
+      var unit = pickResponsiveUnit(ad);
+      if (!unit) {
+        showFallback(ad, 'house');
+        reveal(ad);
+        return;
+      }
+
+      var invoke = unit.getAttribute('data-ad-invoke');
+      var key = unit.getAttribute('data-ad-key');
+      var format = unit.getAttribute('data-ad-format') || 'iframe';
+      var height = parseInt(unit.getAttribute('data-ad-height') || '50', 10);
+      var width = parseInt(unit.getAttribute('data-ad-width') || '320', 10);
+
+      if (invoke && key) {
+        injectAdIframe(unit, key, format, width, height, invoke);
+      } else if (invoke) {
+        var script = document.createElement('script');
+        script.src = invoke;
+        script.async = true;
+        script.setAttribute('data-cfasync', 'false');
+        script.onerror = function () { showFallback(ad, 'house'); };
+        unit.appendChild(script);
+      }
+
+      reveal(ad);
+
+      // Inspeksi apakah kreatif benar-benar tampil; kalau tidak -> house ad.
+      window.setTimeout(function () {
+        if (!adRendered(unit)) {
+          showFallback(ad, 'house');
+        }
+      }, AD_INSPECT_TIMEOUT);
+    });
   }
 
   function initFloatingAd() {

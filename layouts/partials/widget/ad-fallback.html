@@ -1,0 +1,44 @@
+{{/*
+  Ad fallback (reusable)
+  Ditampilkan JS ketika unit iklan gagal tampil:
+  - variant "adblock": terdeteksi pemblokir iklan -> ajakan sopan mendukung situs
+  - variant "house"  : no-fill / jaringan bermasalah -> promosi internal (Donghua Acak)
+  Markup hidden secara default; script site-ad-fallback.js yang mengaktifkan.
+  Ikon memakai inline SVG agar tetap tampil walau FontAwesome ikut diblokir.
+*/}}
+<div class="ad-neon-fallback" data-ad-fallback hidden aria-hidden="true">
+    {{/* --- Variant: Adblock terdeteksi --- */}}
+    <div class="ad-fallback-card ad-fallback--adblock" data-ad-fallback-variant="adblock" hidden>
+        <span class="ad-fallback-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s-7.5-4.35-10-9.5C.6 8.3 2.3 5 5.5 5c2 0 3.3 1.1 4.2 2.4C10.6 6.1 11.9 5 13.9 5c3.2 0 4.9 3.3 3.5 6.5"/>
+                <path d="M15 15l6 6M21 15l-6 6"/>
+            </svg>
+        </span>
+        <div class="ad-fallback-text">
+            <strong>Dukung DonghuaBatch</strong>
+            <span>Sepertinya kamu memakai pemblokir iklan. Matikan sebentar untuk membantu situs tetap gratis.</span>
+        </div>
+        <a class="ad-fallback-cta" rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Traktir Kami</span>
+        </a>
+    </div>
+
+    {{/* --- Variant: House ad (no-fill / jaringan) --- */}}
+    <div class="ad-fallback-card ad-fallback--house" data-ad-fallback-variant="house" hidden>
+        <span class="ad-fallback-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/>
+            </svg>
+        </span>
+        <div class="ad-fallback-text">
+            <strong>Bingung mau nonton apa?</strong>
+            <span>Temukan rekomendasi donghua acak pilihan kami.</span>
+        </div>
+        <button class="ad-fallback-cta" type="button" data-random-open>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/><path d="M8 21H3v-5"/><path d="M21 16v5h-5"/><path d="m14 14 7 7"/><path d="M3 3l7 7"/></svg>
+            <span>Donghua Acak</span>
+        </button>
+    </div>
+</div>

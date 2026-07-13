@@ -1000,6 +1000,10 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
   display: block;
 }
 
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
@@ -7359,9 +7363,132 @@ html body .ad-neon-body.ad-size-banner .ad-neon-scroll > iframe,
   min-height: 170px;
 }
 
-/* Fallback styles removed as per request */
+/* ===== Ad fallback (adblock / no-fill / jaringan) ===== */
 
-/* Fallback hidden styles removed */
+.ad-neon-fallback[hidden] {
+  display: none !important;
+}
+
+.ad-neon-fallback {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.ad-fallback-card[hidden] {
+  display: none !important;
+}
+
+.ad-fallback-card {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  min-height: inherit;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(34, 211, 238, 0.24);
+  border-radius: 0.9rem;
+  background:
+            radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.10), transparent 40%),
+            radial-gradient(circle at 90% 10%, rgba(139, 92, 246, 0.10), transparent 42%),
+            rgba(2, 6, 23, 0.55);
+  color: #dbeafe;
+  text-align: left;
+}
+
+.ad-fallback--adblock {
+  border-color: rgba(251, 146, 60, 0.30);
+  background:
+            radial-gradient(circle at 12% 0%, rgba(251, 146, 60, 0.12), transparent 42%),
+            rgba(2, 6, 23, 0.55);
+}
+
+.ad-fallback-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  background: rgba(34, 211, 238, 0.08);
+  color: #67e8f9;
+}
+
+.ad-fallback--adblock .ad-fallback-icon {
+  border-color: rgba(251, 146, 60, 0.28);
+  background: rgba(251, 146, 60, 0.10);
+  color: #fdba74;
+}
+
+.ad-fallback-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.ad-fallback-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.ad-fallback-text strong {
+  color: #f0f9ff;
+  font-size: 0.86rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.ad-fallback-text span {
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ad-fallback-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.18));
+  color: #e0f2fe;
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.ad-fallback-cta svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.ad-fallback-cta:hover,
+    .ad-fallback-cta:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(103, 232, 249, 0.75);
+  box-shadow: 0 6px 18px rgba(34, 211, 238, 0.18);
+  outline: none;
+}
+
+.ad-fallback--adblock .ad-fallback-cta {
+  border-color: rgba(251, 146, 60, 0.5);
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.20), rgba(244, 114, 182, 0.16));
+  color: #fff7ed;
+}
+
+/* Catatan: fallback kini hanya dipakai floating ad. Gaya kontekstualnya
+       ada di blok .site-floating-ad__slot .ad-fallback-* (lihat di bawah). */
 
 .ad-neon-shell[hidden] {
   margin: 0;
@@ -9023,6 +9150,49 @@ html body .site-floating-ad__close {
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+}
+
+/* Fallback di dalam floating ad: kompak, satu baris. */
+
+.site-floating-ad__slot .ad-neon-fallback {
+  width: 100%;
+}
+
+.site-floating-ad__slot .ad-fallback-card {
+  padding: 0.35rem 0.45rem;
+  min-height: 0;
+  border-radius: 0.6rem;
+  gap: 0.55rem;
+}
+
+.site-floating-ad__slot .ad-fallback-icon {
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 0.55rem;
+}
+
+.site-floating-ad__slot .ad-fallback-icon svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.site-floating-ad__slot .ad-fallback-text strong {
+  font-size: 0.78rem;
+}
+
+.site-floating-ad__slot .ad-fallback-text span {
+  font-size: 0.66rem;
+}
+
+.site-floating-ad__slot .ad-fallback-cta {
+  padding: 0.42rem 0.7rem;
+  font-size: 0.68rem;
+}
+
+@media (max-width: 480px) {
+  .site-floating-ad__slot .ad-fallback-text span {
+    display: none;
+  }
 }
 
 .site-floating-ad__unit[hidden],

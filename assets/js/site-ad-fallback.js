@@ -2,7 +2,7 @@
   'use strict';
 
   var MOBILE_MAX = 767;
-  var AD_INSPECT_TIMEOUT = 8000; // Tunggu 8 detik sebelum fallback
+  var AD_INSPECT_TIMEOUT = 7000; // Tunggu ~7 dtk sebelum memutuskan iklan gagal.
   var loadQueue = [];
   var queueRunning = false;
 
@@ -10,12 +10,44 @@
     return window.matchMedia('(max-width: ' + MOBILE_MAX + 'px)').matches;
   }
 
+  /* =========================================================
+     Deteksi pemblokir iklan (adblock) — metode "bait".
+     Hasil di-cache di window agar dipakai bersama oleh floating-ad.
+     ========================================================= */
+  function detectAdBlock(cb) {
+    if (typeof window.__siteAdBlocked === 'boolean') {
+      cb(window.__siteAdBlocked);
+      return;
+    }
+    var bait = document.createElement('div');
+    bait.className = 'ad ads adsbox ad-banner ad-placement pub_300x250 text-ad textAd';
+    bait.style.cssText =
+      'position:absolute!important;left:-9999px!important;top:-9999px!important;' +
+      'width:1px!important;height:1px!important;pointer-events:none!important;';
+    bait.setAttribute('aria-hidden', 'true');
+    (document.body || document.documentElement).appendChild(bait);
+
+    window.setTimeout(function () {
+      var blocked = false;
+      try {
+        var cs = window.getComputedStyle ? window.getComputedStyle(bait) : null;
+        blocked =
+          bait.offsetParent === null ||
+          bait.offsetHeight === 0 ||
+          bait.clientHeight === 0 ||
+          (cs && (cs.display === 'none' || cs.visibility === 'hidden'));
+      } catch (e) {
+        blocked = false;
+      }
+      if (bait.parentNode) bait.parentNode.removeChild(bait);
+      window.__siteAdBlocked = !!blocked;
+      cb(window.__siteAdBlocked);
+    }, 130);
+  }
+
   // Render satu unit iklan di dalam iframe terisolasi miliknya sendiri.
-  // Ini memastikan window.atOptions tiap unit independen, tidak saling
-  // menimpa walau ada beberapa unit (bahkan dengan key yang sama) di
-  // halaman yang sama.
   function injectAdIframe(unit, key, format, width, height, invokeUrl) {
-    if (!unit || !invokeUrl) return;
+    if (!unit || !invokeUrl) return null;
 
     var iframe = document.createElement('iframe');
     iframe.setAttribute('scrolling', 'no');
@@ -30,7 +62,7 @@
     unit.appendChild(iframe);
 
     var doc = iframe.contentWindow && iframe.contentWindow.document;
-    if (!doc) return;
+    if (!doc) return iframe;
 
     var atOptionsJson = JSON.stringify({
       key: key,
@@ -49,6 +81,7 @@
       '</body></html>'
     );
     doc.close();
+    return iframe;
   }
 
   function applyBannerBodySize(widget, unit) {
@@ -69,7 +102,7 @@
   function pickResponsiveUnit(widget) {
     var units = widget.querySelectorAll('[data-ad-unit]');
     if (!units.length) return null;
-    
+
     var want = isMobileViewport() ? 'mobile' : 'desktop';
     var chosen = null;
 
@@ -94,43 +127,115 @@
     return chosen;
   }
 
-  function injectWidget(widget, done) {
+  /* =========================================================
+     Cek apakah unit iklan benar-benar terisi kreatif.
+     ========================================================= */
+  function adRendered(unit) {
+    if (!unit) return false;
+
+    // Unit native/container-based (script langsung mengisi container).
+    var container = unit.querySelector('[data-ad-ignore]');
+    if (container && container.childElementCount > 0) return true;
+
+    // Unit berbasis iframe isolasi (300x250, banner).
+    var iframe = unit.querySelector('iframe');
+    if (iframe) {
+      try {
+        var idoc = iframe.contentWindow && iframe.contentWindow.document;
+        if (idoc && idoc.body) {
+          var kids = idoc.body.children;
+          var real = 0;
+          for (var i = 0; i < kids.length; i++) {
+            if (kids[i].tagName !== 'SCRIPT') real++;
+          }
+          if (real > 0) return true;
+          if (idoc.body.scrollHeight > 12) return true;
+          return false;
+        }
+      } catch (e) {
+        // Tidak bisa diintip (cross-origin) => anggap iklan berhasil dimuat.
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /* =========================================================
+     Iklan gagal tampil pada widget (adblock/no-fill/jaringan).
+     Untuk unit non-floating: sembunyikan SELURUH widget (bingkai
+     neon ikut hilang lewat .ad-neon-shell[hidden]). Fallback kartu
+     hanya dipakai floating ad (ditangani site-floating-ad.js).
+     ========================================================= */
+  function showFallback(widget, kind) {
+    // Buang unit iklan & placeholder demo agar tidak menyisakan ruang.
+    var units = widget.querySelectorAll('[data-ad-unit]');
+    for (var i = 0; i < units.length; i++) {
+      if (units[i].parentNode) units[i].parentNode.removeChild(units[i]);
+    }
+
+    widget.hidden = true;
+    widget.setAttribute('aria-hidden', 'true');
+    widget.setAttribute('data-ad-status', 'hidden-' + kind);
+
+    // Banner responsif punya wrapper luar (mt-4) — sembunyikan juga
+    // supaya tidak menyisakan celah kosong.
+    var wrapper = widget.closest ? widget.closest('[data-ad-banner-wrapper]') : null;
+    if (wrapper) wrapper.hidden = true;
+  }
+
+  function injectWidget(widget, adBlocked, done) {
+    // Adblock terdeteksi: jangan minta iklan, langsung fallback sopan.
+    if (adBlocked) {
+      showFallback(widget, 'adblock');
+      if (done) window.setTimeout(done, 60);
+      return;
+    }
+
     var unit = pickResponsiveUnit(widget);
-    var fallback = widget.querySelector('[data-ad-fallback]');
-    if (!unit) { if (done) done(); return; }
+    if (!unit) {
+      showFallback(widget, 'house');
+      if (done) window.setTimeout(done, 60);
+      return;
+    }
 
     var invoke = unit.getAttribute('data-ad-invoke');
     var key = unit.getAttribute('data-ad-key');
 
     if (invoke && key) {
-      // Unit berbasis atOptions (300x250, 728x90/320x50): isolasi di iframe
-      // sendiri supaya tidak berebut window.atOptions dengan unit lain.
       var format = unit.getAttribute('data-ad-format') || 'iframe';
       var height = parseInt(unit.getAttribute('data-ad-height') || '0', 10);
       var width = parseInt(unit.getAttribute('data-ad-width') || '0', 10);
       injectAdIframe(unit, key, format, width, height, invoke);
     } else if (invoke) {
-      // Unit native/container-based: tidak pakai atOptions, aman langsung.
       var script = document.createElement('script');
       script.src = invoke;
       script.async = true;
       script.setAttribute('data-cfasync', 'false');
+      script.onerror = function () {
+        showFallback(widget, 'house');
+      };
       unit.appendChild(script);
     }
 
     unit.hidden = false;
     widget.hidden = false;
-    
-    // Fallback logic removed
-    widget.setAttribute('data-ad-status', 'loaded');
+    widget.setAttribute('data-ad-status', 'loading');
 
-    setTimeout(function() {
+    // Beri waktu network mengisi kreatif, lalu inspeksi.
+    window.setTimeout(function () {
+      if (widget.getAttribute('data-ad-status') === 'loading') {
+        if (adRendered(unit)) {
+          widget.setAttribute('data-ad-status', 'loaded');
+        } else {
+          showFallback(widget, 'house');
+        }
+      }
       if (done) done();
-    }, 150);
+    }, AD_INSPECT_TIMEOUT);
   }
 
-  function enqueueWidget(widget) {
-    loadQueue.push(widget);
+  function enqueueWidget(widget, adBlocked) {
+    loadQueue.push({ widget: widget, blocked: adBlocked });
     if (!queueRunning) pumpQueue();
   }
 
@@ -141,16 +246,31 @@
       return;
     }
     queueRunning = true;
-    injectWidget(next, function () {
+    // Saat adblock, langsung lanjut (tanpa menunggu timeout penuh).
+    injectWidget(next.widget, next.blocked, function () {
       pumpQueue();
     });
+    if (next.blocked) {
+      // Fallback adblock instan: jangan blok antrean menunggu timeout.
+      window.setTimeout(pumpQueue, 0);
+      queueRunning = false;
+    }
   }
 
   function initAdFallbacks() {
     var widgets = document.querySelectorAll('[data-ad-widget]:not([data-floating-ad])');
-    for (var i = 0; i < widgets.length; i++) {
-      enqueueWidget(widgets[i]);
-    }
+    if (!widgets.length) return;
+
+    detectAdBlock(function (blocked) {
+      for (var i = 0; i < widgets.length; i++) {
+        if (blocked) {
+          // Adblock: tampilkan fallback serentak, tak perlu antrean network.
+          showFallback(widgets[i], 'adblock');
+        } else {
+          enqueueWidget(widgets[i], false);
+        }
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
