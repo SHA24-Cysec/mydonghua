@@ -9,14 +9,44 @@
     return window.matchMedia('(max-width: ' + MOBILE_MAX + 'px)').matches;
   }
 
-  function hasRenderedCreative(unit) {
-    if (!unit) return false;
-    var nodes = unit.querySelectorAll('iframe, img, ins, div:not([data-ad-ignore])');
-    for (var i = 0; i < nodes.length; i++) {
-      var rect = nodes[i].getBoundingClientRect();
-      if (rect.width > 30 && rect.height > 20) return true;
-    }
-    return false;
+  // Render unit floating ad di dalam iframe terisolasi miliknya sendiri,
+  // supaya window.atOptions tidak berebut dengan unit iklan lain di
+  // halaman yang sama (mis. banner 728x90 yang memakai key sama).
+  function injectAdIframe(unit, key, format, width, height, invokeUrl) {
+    if (!unit || !invokeUrl) return;
+
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('title', 'Advertisement');
+    iframe.style.border = '0';
+    iframe.style.display = 'block';
+    iframe.style.overflow = 'hidden';
+    iframe.style.width = (width || 320) + 'px';
+    iframe.style.height = (height || 50) + 'px';
+    iframe.style.maxWidth = '100%';
+    unit.appendChild(iframe);
+
+    var doc = iframe.contentWindow && iframe.contentWindow.document;
+    if (!doc) return;
+
+    var atOptionsJson = JSON.stringify({
+      key: key,
+      format: format || 'iframe',
+      height: height,
+      width: width,
+      params: {}
+    });
+
+    doc.open();
+    doc.write(
+      '<!doctype html><html><head><style>html,body{margin:0;padding:0;overflow:hidden;background:transparent;}</style></head>' +
+      '<body>' +
+      '<script>window.atOptions = ' + atOptionsJson + ';<' + '/script>' +
+      '<script src="' + invokeUrl + '"><' + '/script>' +
+      '</body></html>'
+    );
+    doc.close();
   }
 
   function pickResponsiveUnit(ad) {
@@ -49,24 +79,17 @@
 
   function injectFloating(ad) {
     var unit = pickResponsiveUnit(ad);
-    var fallback = ad.querySelector('[data-floating-ad-fallback]');
     if (!unit) return;
 
     var invoke = unit.getAttribute('data-ad-invoke');
     var key = unit.getAttribute('data-ad-key');
+    var format = unit.getAttribute('data-ad-format') || 'iframe';
+    var height = parseInt(unit.getAttribute('data-ad-height') || '50', 10);
+    var width = parseInt(unit.getAttribute('data-ad-width') || '320', 10);
 
-    // Set atOptions only once per unit
-    if (key && !window.atOptions) {
-      window.atOptions = {
-        key: key,
-        format: unit.getAttribute('data-ad-format') || 'iframe',
-        height: parseInt(unit.getAttribute('data-ad-height') || '50', 10),
-        width: parseInt(unit.getAttribute('data-ad-width') || '320', 10),
-        params: {}
-      };
-    }
-
-    if (invoke) {
+    if (invoke && key) {
+      injectAdIframe(unit, key, format, width, height, invoke);
+    } else if (invoke) {
       var script = document.createElement('script');
       script.src = invoke;
       script.async = true;
@@ -77,8 +100,6 @@
     ad.hidden = false;
     ad.classList.add('is-visible');
     document.body.classList.add('has-floating-ad');
-
-    // Fallback detection removed
   }
 
   function initFloatingAd() {

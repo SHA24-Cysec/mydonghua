@@ -10,9 +10,45 @@
     return window.matchMedia('(max-width: ' + MOBILE_MAX + 'px)').matches;
   }
 
-  // Fallback detection removed as per request
-  function hasRenderedCreative(unit) {
-    return true; // Always assume success (fallback disabled)
+  // Render satu unit iklan di dalam iframe terisolasi miliknya sendiri.
+  // Ini memastikan window.atOptions tiap unit independen, tidak saling
+  // menimpa walau ada beberapa unit (bahkan dengan key yang sama) di
+  // halaman yang sama.
+  function injectAdIframe(unit, key, format, width, height, invokeUrl) {
+    if (!unit || !invokeUrl) return;
+
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('title', 'Advertisement');
+    iframe.style.border = '0';
+    iframe.style.display = 'block';
+    iframe.style.overflow = 'hidden';
+    iframe.style.width = (width || 300) + 'px';
+    iframe.style.height = (height || 250) + 'px';
+    iframe.style.maxWidth = '100%';
+    unit.appendChild(iframe);
+
+    var doc = iframe.contentWindow && iframe.contentWindow.document;
+    if (!doc) return;
+
+    var atOptionsJson = JSON.stringify({
+      key: key,
+      format: format || 'iframe',
+      height: height,
+      width: width,
+      params: {}
+    });
+
+    doc.open();
+    doc.write(
+      '<!doctype html><html><head><style>html,body{margin:0;padding:0;overflow:hidden;background:transparent;}</style></head>' +
+      '<body>' +
+      '<script>window.atOptions = ' + atOptionsJson + ';<' + '/script>' +
+      '<script src="' + invokeUrl + '"><' + '/script>' +
+      '</body></html>'
+    );
+    doc.close();
   }
 
   function applyBannerBodySize(widget, unit) {
@@ -65,25 +101,23 @@
 
     var invoke = unit.getAttribute('data-ad-invoke');
     var key = unit.getAttribute('data-ad-key');
-    
-    if (key) {
-      window.atOptions = {
-        key: key,
-        format: unit.getAttribute('data-ad-format') || 'iframe',
-        height: parseInt(unit.getAttribute('data-ad-height') || '0', 10),
-        width: parseInt(unit.getAttribute('data-ad-width') || '0', 10),
-        params: {}
-      };
-    }
 
-    if (invoke) {
+    if (invoke && key) {
+      // Unit berbasis atOptions (300x250, 728x90/320x50): isolasi di iframe
+      // sendiri supaya tidak berebut window.atOptions dengan unit lain.
+      var format = unit.getAttribute('data-ad-format') || 'iframe';
+      var height = parseInt(unit.getAttribute('data-ad-height') || '0', 10);
+      var width = parseInt(unit.getAttribute('data-ad-width') || '0', 10);
+      injectAdIframe(unit, key, format, width, height, invoke);
+    } else if (invoke) {
+      // Unit native/container-based: tidak pakai atOptions, aman langsung.
       var script = document.createElement('script');
       script.src = invoke;
       script.async = true;
       script.setAttribute('data-cfasync', 'false');
       unit.appendChild(script);
     }
-    
+
     unit.hidden = false;
     widget.hidden = false;
     
