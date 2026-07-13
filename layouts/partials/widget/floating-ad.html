@@ -1,14 +1,11 @@
-{{/*
-  Floating bottom ad — responsif:
-  - Mobile (<768px): 320x50
-  - Desktop (>=768px): 728x90
-  Hanya SATU unit di-load (dipilih JS). Gagal load → shell di-hide total.
+{{/* 
+  Floating bottom ad — menggunakan Adsterra Native (script #3)
+  Aman & tidak bentrok dengan banner 728x90 / 320x50
 */}}
 <section
   class="site-floating-ad"
   id="site-floating-ad"
   data-floating-ad
-  data-floating-responsive
   aria-label="Iklan"
 >
   <div class="site-floating-ad__panel">
@@ -37,35 +34,18 @@
     <div
       class="site-floating-ad__slot"
       {{ if hugo.IsProduction }}
-        aria-label="Advertisement responsif"
+        aria-label="Advertisement"
       {{ else }}
         role="img"
-        aria-label="Placeholder iklan responsif"
+        aria-label="Placeholder iklan"
       {{ end }}
     >
       {{ if hugo.IsProduction }}
-        <div
-          class="site-floating-ad__unit is-desktop-unit"
-          data-floating-ad-unit
-          data-ad-variant="desktop"
-          data-ad-key="ef733504b5b389474cecd0340f4fdae0"
-          data-ad-format="iframe"
-          data-ad-height="90"
-          data-ad-width="728"
-          data-ad-invoke="https://contentblanksupersede.com/ef733504b5b389474cecd0340f4fdae0/invoke.js"
-          hidden
-        ></div>
-        <div
-          class="site-floating-ad__unit is-mobile-unit"
-          data-floating-ad-unit
-          data-ad-variant="mobile"
-          data-ad-key="b4c00e77c26996f5f359cd13c19b7a85"
-          data-ad-format="iframe"
-          data-ad-height="50"
-          data-ad-width="320"
-          data-ad-invoke="https://contentblanksupersede.com/b4c00e77c26996f5f359cd13c19b7a85/invoke.js"
-          hidden
-        ></div>
+        <!-- Adsterra Native Ad -->
+        <div class="ad-neon-native-floating">
+          <script async="async" data-cfasync="false" src="https://bendspecimen.com/4aab23755134ef6ae6e4d517e0c554dc/invoke.js"></script>
+          <div id="container-4aab23755134ef6ae6e4d517e0c554dc"></div>
+        </div>
 
         <div
           class="site-floating-ad__fallback"
@@ -80,8 +60,8 @@
       {{ else }}
         <span class="site-floating-ad__mark" aria-hidden="true">AD</span>
         <span class="site-floating-ad__copy">
-          <strong>Ruang iklan responsif</strong>
-          <small><span class="site-floating-ad__size-mobile">320 × 50</span><span class="site-floating-ad__size-desktop">728 × 90</span> · Development placeholder</small>
+          <strong>Native Advertisement</strong>
+          <small>Adsterra Native · Development placeholder</small>
         </span>
       {{ end }}
     </div>
