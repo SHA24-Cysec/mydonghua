@@ -9,8 +9,8 @@
 {{- define "minjs" -}}
   {{- $res := resources.Get . -}}
   {{- if $res -}}
-    {{- $min := $res | minify -}}
-    <script defer src="{{ $min.RelPermalink }}"></script>
+    {{- $min := $res | minify | fingerprint "sha256" -}}
+    <script defer src="{{ $min.RelPermalink }}" integrity="{{ $min.Data.Integrity }}"></script>
   {{- else -}}
     <script defer src="{{ . | relURL }}"></script>
   {{- end -}}

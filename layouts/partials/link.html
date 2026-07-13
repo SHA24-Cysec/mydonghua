@@ -1,8 +1,8 @@
 {{ with resources.Get "main.css" }}
-    {{ $minified := . | minify }}
+    {{ $minified := . | minify | fingerprint "sha256" }}
     {{/* Blocking stylesheet: pola media=print+onload sering gagal apply di production
          (minify HTML, adblock, atau JS disabled partial) dan membuat site unstyled. */}}
-    <link rel="stylesheet" href="{{ $minified.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $minified.RelPermalink }}" integrity="{{ $minified.Data.Integrity }}">
 {{ end }}
 {{ with resources.Get "favicon.ico" }}
 <link rel="shortcut icon" href='{{ .RelPermalink }}' type="image/x-icon">
