@@ -27,6 +27,11 @@
     <link rel="preload" as="image" fetchpriority="high" href="{{ .Params.thumbnail | default "/img/favicon.webp" | relURL }}">
   {{ end }}
 {{ end }}
-{{- with .OutputFormats.Get "rss" -}}
-  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{- $seoNoindexExact := slice "/post/" "/halaman/" "/genre/" "/studio/" "/season/" "/season/-/" "/studio/-/" "/genre/-/" "/season/2d-animation/" "/season/3d-animation/" -}}
+{{- $seoNoindexPrefix := or (strings.HasPrefix .RelPermalink "/post/page/") (strings.HasPrefix .RelPermalink "/halaman/page/") -}}
+{{- $seoNoindex := or (in $seoNoindexExact .RelPermalink) $seoNoindexPrefix -}}
+{{- if not $seoNoindex -}}
+  {{- with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+  {{ end }}
 {{ end }}
