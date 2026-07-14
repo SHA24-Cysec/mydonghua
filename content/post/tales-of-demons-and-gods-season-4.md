@@ -81,9 +81,9 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://pixeldrain.com/u/9kryAGVy'
+      link: 'https://acefile.co/f/30926763'
       button: 'Download'
-      size: '872 MB'
+      size: '831.69 MB'
     
     - quality: '480p'
       link: 'https://drive.usercontent.google.com/download?id=1b8lodFYIC0-YlLk4Zz0glnitOaDOImYN&export=download&authuser=0'

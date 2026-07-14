@@ -45,14 +45,14 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/BRhq9iDP'
+      link: 'https://www.mediafire.com/file/t478hrrbeinpmvv/Anichin.best_Gol.Wug.Ep1-24_480.zip/file'
       button: 'Download'
       size: '2.42 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/VD7M7EnF'
+      link: 'https://www.mediafire.com/file/2pqnuxe8qdah55u/Anichin.best_Gol.Wug.Ep1-24_720.zip/file'
       button: 'Download'
-      size: '1.99 GB'
+      size: '3.64 GB'
     
     - quality: '1080p'
       link: 'https://pixeldrain.com/u/Z15NWtcd'
