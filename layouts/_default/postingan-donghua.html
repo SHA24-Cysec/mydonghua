@@ -12,7 +12,7 @@
                         <h1 class="text-2xl md:text-3xl mt-4 heading-neon"><strong>{{ .Title }}</strong></h1>
                         <div class="flex flex-col md:flex-row gap-4 mt-4">
                             <div class="w-full md:w-[220px] shrink-0">
-                                <div class="w-[150px] h-[225px] sm:w-[180px] sm:h-[270px] md:w-[200px] md:h-[300px] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-neon-cyan-md">
+                                <div class="w-[clamp(130px,35vw,200px)] aspect-[2/3] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-neon-cyan-md">
 {{/* Poster asli: tanpa resize/kompresi Hugo atau srcset optimasi. */}}
 {{ $postImgSrc := .Params.image | default (.Params.thumbnail | default "") }}
 {{ $postImgAlt := .Params.alt | default .Title }}
@@ -93,35 +93,35 @@
                             </div>
                             <div class="divide-y divide-slate-800/60">
                                 <div class="flex items-center gap-3 px-4 py-3">
-                                    <span class="text-cyan-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-video"></i>Studio</span>
-                                    <span class="text-slate-200 text-sm font-medium">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</span>
+                                    <span class="text-cyan-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-video"></i>Studio</span>
+                                    <span class="text-slate-200 text-sm font-medium truncate">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
-                                    <span class="text-pink-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-flag"></i>Season</span>
-                                    <span class="text-slate-200 text-sm font-medium">{{ .Params.season }}</span>
+                                    <span class="text-pink-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-flag"></i>Season</span>
+                                    <span class="text-slate-200 text-sm font-medium truncate">{{ .Params.season }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
-                                    <span class="text-amber-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-clock"></i>Durasi</span>
-                                    <span class="text-slate-200 text-sm font-medium">{{ .Params.durasi }}</span>
+                                    <span class="text-amber-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-clock"></i>Durasi</span>
+                                    <span class="text-slate-200 text-sm font-medium truncate">{{ .Params.durasi }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
-                                    <span class="text-purple-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-film"></i>Episode</span>
-                                    <span class="text-cyan-400 text-sm font-bold">{{ .Params.episode }}</span>
+                                    <span class="text-purple-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-film"></i>Episode</span>
+                                    <span class="text-cyan-400 text-sm font-bold truncate">{{ .Params.episode }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
-                                    <span class="text-red-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-fire"></i>Release</span>
-                                    <span class="text-slate-200 text-sm font-medium">{{ .Params.release }}</span>
+                                    <span class="text-red-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-fire"></i>Release</span>
+                                    <span class="text-slate-200 text-sm font-medium truncate">{{ .Params.release }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
-                                    <span class="text-emerald-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-bookmark"></i>Type</span>
-                                    <span class="bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-md border border-purple-500/30 text-xs font-bold">{{ .Params.type }}</span>
+                                    <span class="text-emerald-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-bookmark"></i>Type</span>
+                                    <span class="bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-md border border-purple-500/30 text-xs font-bold truncate">{{ .Params.type }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
-                                    <span class="text-sky-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-chart-simple"></i>Status</span>
-                                    <span class="bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md border border-emerald-500/30 text-xs font-bold">{{ .Params.status }}</span>
+                                    <span class="text-sky-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-chart-simple"></i>Status</span>
+                                    <span class="bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md border border-emerald-500/30 text-xs font-bold truncate">{{ .Params.status }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
-                                    <span class="text-indigo-400 text-sm font-bold w-24 shrink-0 flex items-center gap-2"><i class="fa-solid fa-user"></i>Sub By</span>
+                                    <span class="text-indigo-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-user"></i>Sub By</span>
                                     <span class="text-slate-200 text-sm font-medium">{{ .Params.sub }}</span>
                                 </div>
                             </div>

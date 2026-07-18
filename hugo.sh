@@ -1,1 +1,1 @@
-hugo server -D --ignoreCache --noBuildLock --cleanDestinationDir --disableFastRender
+hugo server -D --ignoreCache --disableFastRender --navigateToChanged --noHTTPCache --bind 0.0.0.0

@@ -35,8 +35,8 @@
         <div class="donghua-card-body">
             <h3 class="donghua-card-title">{{ .Title }}</h3>
             <div class="donghua-card-meta">
-                {{ with .Params.episode }}<span class="donghua-card-chip">{{ . }}</span>{{ end }}
-                {{ with .Params.status }}<span class="donghua-card-chip">{{ . }}</span>{{ end }}
+                {{ with .Params.episode }}<span class="donghua-card-chip" title="{{ . }}">{{ . }}</span>{{ end }}
+                {{ with .Params.status }}<span class="donghua-card-chip" title="{{ . }}">{{ . }}</span>{{ end }}
             </div>
             <div class="donghua-card-footer">
                 {{ with .Params.rating }}

@@ -175,6 +175,15 @@
     STORAGE_KEY: STORAGE_KEY
   };
 
+  // Escape key untuk tutup dialog konfirmasi hapus favorit
+  document.addEventListener('keydown', function (event) {
+    if (event.key !== 'Escape') return;
+    var confirm = document.getElementById('fav-confirm');
+    if (confirm && confirm.classList.contains('is-open')) {
+      document.getElementById('fav-cancel-btn').click();
+    }
+  });
+
   document.addEventListener('click', function (event) {
     const bookmarkButton = event.target.closest(bookmarkSelector);
     if (!bookmarkButton) return;

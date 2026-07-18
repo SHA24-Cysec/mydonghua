@@ -512,6 +512,13 @@
   }
 }
 
+/* Aspect ratio card yang lebih mulus di layar kecil-menengah */
+@media (min-width: 341px) and (max-width: 480px) {
+  .donghua-card-link {
+    aspect-ratio: 0.75;
+  }
+}
+
 @media (min-width: 640px) {
   .donghua-card-grid {
     --donghua-grid-cols: 3;
@@ -3325,7 +3332,7 @@ html body .fav-clear-btn.hidden {
     position: relative;
     overflow: hidden;
     justify-self: center;
-    width: min(100%, 17rem);
+    width: min(100%, clamp(15.5rem, 65vw, 20rem));
     aspect-ratio: 2 / 3;
     min-height: 0;
     border: 1px solid rgba(255, 255, 255, 0.09);
@@ -3459,7 +3466,7 @@ html body .fav-clear-btn.hidden {
     }
 
     .site-random-poster {
-      width: min(100%, 14.75rem);
+      width: min(100%, clamp(13.5rem, 70vw, 18rem));
     }
   }
 
@@ -6783,7 +6790,7 @@ html body .site-home-hero-button.secondary {
 
 @media (max-width: 767px) {
   .site-home-hero {
-    min-height: clamp(32rem, 112vw, 38rem);
+    min-height: clamp(26rem, 100vw, 38rem);
     padding: clamp(0.9rem, 4vw, 1.15rem);
   }
 
@@ -7766,10 +7773,13 @@ html body [data-ad-widget][data-ad-status="failed"] {
    Pastikan creative fixed-size (728/300/native) tidak memicu
    horizontal page scroll di viewport sempit.
    ========================================================== */
-html,
+html {
+  max-width: 100%;
+  overflow-x: clip;
+}
 body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 [data-ad-widget],
@@ -8680,8 +8690,8 @@ body.search-filter-lock {
 }
 
 .fav-card-watch-option:focus-visible {
-  outline: 1px solid #e0faff;
-  outline-offset: -1px;
+  outline: 2px solid #67e8f9;
+  outline-offset: 1px;
 }
 
 .fav-card-watch-control.is-belum .fav-card-watch-option.is-active {
@@ -9245,6 +9255,14 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):f
   outline-offset: var(--site-focus-offset);
 }
 
+/* Tabel scroll indicator — gradient fade hint di kanan saat overflow */
+.panel-neon-inset.overflow-x-auto {
+  background-image:
+    linear-gradient(to right, transparent 85%, rgba(34,211,238,0.12) 100%);
+  background-attachment: local, scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 3rem 100%;
+}
 html body .genre-sheet-actions > .genre-apply-button:disabled,
 html body .genre-sheet-actions > .genre-apply-button:disabled:hover {
   border-color: rgba(148, 163, 184, 0.14);
@@ -9279,7 +9297,9 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button) {
-    transition-duration: 0.01ms;
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -1024,8 +1024,8 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
   display: none;
 }
 
-.h-\[225px\] {
-  height: 225px;
+.aspect-\[2\/3\] {
+  aspect-ratio: 2/3;
 }
 
 .h-auto {
@@ -1049,16 +1049,12 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
   min-height: 100vh;
 }
 
-.w-24 {
-  width: 6rem;
-}
-
-.w-\[150px\] {
-  width: 150px;
-}
-
 .w-\[250px\] {
   width: 250px;
+}
+
+.w-\[clamp\(130px\2c 35vw\2c 200px\)\] {
+  width: clamp(130px, 35vw, 200px);
 }
 
 .w-fit {
@@ -1077,6 +1073,10 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
 
 .min-w-0 {
   min-width: 0px;
+}
+
+.min-w-\[4\.5rem\] {
+  min-width: 4.5rem;
 }
 
 .max-w-\[900px\] {
@@ -1696,6 +1696,12 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.ring {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 .drop-shadow-neon-gold {
   --tw-drop-shadow: drop-shadow(0 0 6px rgba(250, 204, 21, 0.9));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2099,6 +2105,14 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
   .donghua-card-link {
     aspect-ratio: 1.08;
     min-height: 12rem;
+  }
+}
+
+/* Aspect ratio card yang lebih mulus di layar kecil-menengah */
+
+@media (min-width: 341px) and (max-width: 480px) {
+  .donghua-card-link {
+    aspect-ratio: 0.75;
   }
 }
 
@@ -5046,7 +5060,7 @@ html body .site-random-error[hidden],
   position: relative;
   overflow: hidden;
   justify-self: center;
-  width: min(100%, 17rem);
+  width: min(100%, clamp(15.5rem, 65vw, 20rem));
   aspect-ratio: 2 / 3;
   min-height: 0;
   border: 1px solid rgba(255, 255, 255, 0.09);
@@ -5182,7 +5196,7 @@ html body .site-random-error[hidden],
   }
 
   .site-random-poster {
-    width: min(100%, 14.75rem);
+    width: min(100%, clamp(13.5rem, 70vw, 18rem));
   }
 }
 
@@ -8532,7 +8546,7 @@ html body .site-home-hero-button.secondary {
 
 @media (max-width: 767px) {
   .site-home-hero {
-    min-height: clamp(32rem, 112vw, 38rem);
+    min-height: clamp(26rem, 100vw, 38rem);
     padding: clamp(0.9rem, 4vw, 1.15rem);
   }
 
@@ -9547,10 +9561,14 @@ html body [data-ad-widget][data-ad-status="failed"] {
    horizontal page scroll di viewport sempit.
    ========================================================== */
 
-html,
+html {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 [data-ad-widget],
@@ -10478,8 +10496,8 @@ body.search-filter-lock {
 }
 
 .fav-card-watch-option:focus-visible {
-  outline: 1px solid #e0faff;
-  outline-offset: -1px;
+  outline: 2px solid #67e8f9;
+  outline-offset: 1px;
 }
 
 .fav-card-watch-control.is-belum .fav-card-watch-option.is-active {
@@ -11061,6 +11079,16 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):f
   outline-offset: var(--site-focus-offset);
 }
 
+/* Tabel scroll indicator — gradient fade hint di kanan saat overflow */
+
+.panel-neon-inset.overflow-x-auto {
+  background-image:
+    linear-gradient(to right, transparent 85%, rgba(34,211,238,0.12) 100%);
+  background-attachment: local, scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 3rem 100%;
+}
+
 html body .genre-sheet-actions > .genre-apply-button:disabled,
 html body .genre-sheet-actions > .genre-apply-button:disabled:hover {
   border-color: rgba(148, 163, 184, 0.14);
@@ -11095,8 +11123,10 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button) {
-    transition-duration: 0.01ms;
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -11250,14 +11280,6 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
     display: none;
   }
 
-  .sm\:h-\[270px\] {
-    height: 270px;
-  }
-
-  .sm\:w-\[180px\] {
-    width: 180px;
-  }
-
   .sm\:basis-auto {
     flex-basis: auto;
   }
@@ -11302,14 +11324,6 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
 }
 
 @media (min-width: 768px) {
-  .md\:h-\[300px\] {
-    height: 300px;
-  }
-
-  .md\:w-\[200px\] {
-    width: 200px;
-  }
-
   .md\:w-\[220px\] {
     width: 220px;
   }
@@ -11360,8 +11374,8 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
     display: flex;
   }
 
-  .lg\:w-\[320px\] {
-    width: 320px;
+  .lg\:w-\[clamp\(280px\2c 28vw\2c 380px\)\] {
+    width: clamp(280px, 28vw, 380px);
   }
 
   .lg\:flex-row {
@@ -11379,17 +11393,5 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
   .lg\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:w-\[348px\] {
-    width: 348px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32xl\:w-\[380px\] {
-    width: 380px;
   }
 }
