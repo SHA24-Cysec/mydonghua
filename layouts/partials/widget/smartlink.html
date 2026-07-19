@@ -1,0 +1,24 @@
+{{/*
+  Smartlink — Adsterra / Monetag
+  ─────────────────────────────────
+  Buka Smartlink URL di tab baru saat user klik:
+  - Tombol Download Batch
+  - Link Kartu Donghua
+  - Slider "Buka Donghua" CTA
+
+  Fitur:
+  - 1x per session (sessionStorage)
+  - Tidak menghalangi navigasi asli
+  - Skip bots/crawlers
+  - Safelinku tetap aktif, tidak saling ganggu
+
+  CARA PAKAI:
+  - Tidak perlu edit apapun, Smartlink URL sudah di-set di JS
+  - Untuk ganti URL, edit CONFIG.smartlinkUrl di js/site-smartlink.js
+*/}}
+{{ if hugo.IsProduction }}
+  {{ with resources.Get "js/site-smartlink.js" }}
+    {{ $min := . | minify | fingerprint "sha256" }}
+    <script defer src="{{ $min.RelPermalink }}" integrity="{{ $min.Data.Integrity }}"></script>
+  {{ end }}
+{{ end }}

@@ -19,8 +19,8 @@ release : 'Feb 18, 2023'
 rating : 8
 
 # Jika ada Season selanjutnya, hilangkan komentar
-# linkSeasonSelanjutnya : ''
-# judulSeasonSelanjutnya : ''
+linkSeasonSelanjutnya : '/100000-years-of-refining-qi-special-yang-dominates-the-world'
+judulSeasonSelanjutnya : '100.000 Years of Refining Qi Special: Yang Dominates the World Subtitle Indonesia'
 
 # Jika ada Season sebelumnya, hilangkan komentar
 # linkSeasonSebelumnya : ''

@@ -371,4 +371,24 @@ document.addEventListener('DOMContentLoaded', function () {
     renderSlide(false);
     restartAutoplay(true);
   });
+
+  /* =========================================================
+     SCROLL PERFORMANCE — Pause hero zoom animation when off-screen
+     Site-hero image runs a continuous 22s zoom animation.
+     When the user scrolls past it, we pause the animation via
+     IntersectionObserver to free GPU compositing budget.
+     ========================================================= */
+  document.addEventListener('DOMContentLoaded', function () {
+    var heroImg = document.querySelector('.site-home-hero-media img');
+    if (!heroImg) return;
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          heroImg.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+        });
+      }, { threshold: 0.02 });
+      obs.observe(heroImg);
+    }
+  });
 })();

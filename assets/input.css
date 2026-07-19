@@ -57,14 +57,16 @@
     background:
       radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.06), transparent 28%),
       radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.05), transparent 30%),
-      linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(7, 10, 24, 0.96));
+      linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(7, 10, 24, 0.99));
     border: 1px solid rgba(125, 211, 252, 0.18);
     border-radius: var(--site-radius-lg);
     box-shadow:
       0 20px 48px rgba(0, 0, 0, 0.34),
       0 0 20px rgba(34, 211, 238, 0.06),
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(14px);
+    /* SCROLL PERF: backdrop-filter:blur(14px) removed — 90→98% opaque gradient
+       looks identical without per-frame GPU blur. */
+    backdrop-filter: none;
   }
 
   .panel-neon-inset {
@@ -214,6 +216,8 @@
   width: 100%;
   max-width: 100%;
   align-items: stretch;
+  /* SCROLL PERF: CSS containment — helps browser skip re-layout for off-screen rows. */
+  contain: layout style;
 }
 
 .donghua-card-grid-main {
@@ -244,18 +248,91 @@
   width: 100%;
 }
 
+/* ==========================================================
+   DONGHUA CARD — PRECOMPUTED COLOR-MIX VALUES
+   color-mix() di-resolve browser tiap style-recalc.
+   Pada grid 16+ card × 9 color-mix = 144+ resolve per paint.
+   Precompute ke rgba statis per variant → nol resolve cost.
+   ========================================================== */
+
 .donghua-card:nth-child(6n + 1),
-.donghua-card-grid > li:nth-child(6n + 1) .donghua-card { --donghua-accent: var(--site-cyan); }
+.donghua-card-grid > li:nth-child(6n + 1) .donghua-card {
+  --donghua-accent: #22d3ee; /* cyan */
+  --da-grad-start: #56d9f2;       /* 72% + #dbeafe */
+  --da-overlay-glow: rgba(5,30,33,0.14);   /* 14% + transparent */
+  --da-poster-glow: rgba(10,59,67,0.28);    /* 28% + transparent */
+  --da-poster-grad: #164c5f;       /* 28% + #111827 */
+  --da-frame-shadow: rgba(3,17,19,0.08);    /* 8% + transparent */
+  --da-chip-border: rgba(215,247,252,0.25); /* 18% + rgba(255,255,255,0.08) */
+  --da-chip-bg: rgba(5,22,40,0.65);         /* 8% + rgba(2,6,23,0.62) */
+  --da-cta-shadow: rgba(3,21,24,0.10);      /* 10% + transparent */
+  --da-hover-glow: rgba(5,30,33,0.14);      /* 14% + transparent */
+}
 .donghua-card:nth-child(6n + 2),
-.donghua-card-grid > li:nth-child(6n + 2) .donghua-card { --donghua-accent: var(--site-sky); }
+.donghua-card-grid > li:nth-child(6n + 2) .donghua-card {
+  --donghua-accent: #38bdf8; /* sky */
+  --da-grad-start: #66cafa;
+  --da-overlay-glow: rgba(8,26,35,0.14);
+  --da-poster-glow: rgba(16,53,69,0.28);
+  --da-poster-grad: #1c4662;
+  --da-frame-shadow: rgba(4,15,20,0.08);
+  --da-chip-border: rgba(219,243,254,0.25);
+  --da-chip-bg: rgba(6,21,41,0.65);
+  --da-cta-shadow: rgba(6,19,25,0.10);
+  --da-hover-glow: rgba(8,26,35,0.14);
+}
 .donghua-card:nth-child(6n + 3),
-.donghua-card-grid > li:nth-child(6n + 3) .donghua-card { --donghua-accent: var(--site-purple); }
+.donghua-card-grid > li:nth-child(6n + 3) .donghua-card {
+  --donghua-accent: #8b5cf6; /* purple */
+  --da-grad-start: #a184f8;
+  --da-overlay-glow: rgba(19,13,34,0.14);
+  --da-poster-glow: rgba(39,26,69,0.28);
+  --da-poster-grad: #332b61;
+  --da-frame-shadow: rgba(11,7,20,0.08);
+  --da-chip-border: rgba(234,226,253,0.25);
+  --da-chip-bg: rgba(13,13,41,0.65);
+  --da-cta-shadow: rgba(14,9,25,0.10);
+  --da-hover-glow: rgba(19,13,34,0.14);
+}
 .donghua-card:nth-child(6n + 4),
-.donghua-card-grid > li:nth-child(6n + 4) .donghua-card { --donghua-accent: var(--site-pink); }
+.donghua-card-grid > li:nth-child(6n + 4) .donghua-card {
+  --donghua-accent: #ec4899; /* pink */
+  --da-grad-start: #e775b5;
+  --da-overlay-glow: rgba(33,10,21,0.14);
+  --da-poster-glow: rgba(66,20,43,0.28);
+  --da-poster-grad: #4e2547;
+  --da-frame-shadow: rgba(19,6,12,0.08);
+  --da-chip-border: rgba(252,222,237,0.25);
+  --da-chip-bg: rgba(21,11,33,0.65);
+  --da-cta-shadow: rgba(24,7,15,0.10);
+  --da-hover-glow: rgba(33,10,21,0.14);
+}
 .donghua-card:nth-child(6n + 5),
-.donghua-card-grid > li:nth-child(6n + 5) .donghua-card { --donghua-accent: #22c55e; }
+.donghua-card-grid > li:nth-child(6n + 5) .donghua-card {
+  --donghua-accent: #22c55e; /* green */
+  --da-grad-start: #56cf8b;
+  --da-overlay-glow: rgba(5,28,13,0.14);
+  --da-poster-glow: rgba(10,55,26,0.28);
+  --da-poster-grad: #164836;
+  --da-frame-shadow: rgba(3,16,8,0.08);
+  --da-chip-border: rgba(215,245,226,0.25);
+  --da-chip-bg: rgba(5,21,29,0.65);
+  --da-cta-shadow: rgba(3,20,9,0.10);
+  --da-hover-glow: rgba(5,28,13,0.14);
+}
 .donghua-card:nth-child(6n + 6),
-.donghua-card-grid > li:nth-child(6n + 6) .donghua-card { --donghua-accent: #f59e0b; }
+.donghua-card-grid > li:nth-child(6n + 6) .donghua-card {
+  --donghua-accent: #f59e0b; /* amber */
+  --da-grad-start: #eeb34f;
+  --da-overlay-glow: rgba(34,22,2,0.14);
+  --da-poster-glow: rgba(69,44,3,0.28);
+  --da-poster-grad: #513e1f;
+  --da-frame-shadow: rgba(20,13,1,0.08);
+  --da-chip-border: rgba(253,238,211,0.25);
+  --da-chip-bg: rgba(21,18,22,0.65);
+  --da-cta-shadow: rgba(25,16,1,0.10);
+  --da-hover-glow: rgba(34,22,2,0.14);
+}
 
 .donghua-card-link {
   position: relative;
@@ -268,13 +345,11 @@
   border-radius: 1.22rem;
   padding: 2px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--donghua-accent) 72%, #dbeafe), rgba(255,255,255,0.04) 34%, rgba(139,92,246,0.78)),
+    linear-gradient(135deg, var(--da-grad-start), rgba(255,255,255,0.04) 34%, rgba(139,92,246,0.78)),
     rgba(15, 23, 42, 0.92);
   color: #eef7ff;
   text-decoration: none;
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.32),
-    0 0 18px color-mix(in srgb, var(--donghua-accent) 8%, transparent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   transition: transform 0.22s ease, filter 0.22s ease, box-shadow 0.22s ease;
   -webkit-tap-highlight-color: transparent;
 }
@@ -297,7 +372,7 @@
   border-radius: calc(1.22rem - 2px);
   background:
     radial-gradient(circle at 18% 10%, rgba(255,255,255,0.14), transparent 22%),
-    radial-gradient(circle at 88% 0%, color-mix(in srgb, var(--donghua-accent) 14%, transparent), transparent 36%),
+    radial-gradient(circle at 88% 0%, var(--da-overlay-glow), transparent 36%),
     linear-gradient(to top, rgba(4,6,20,0.94) 0%, rgba(4,6,20,0.68) 31%, rgba(4,6,20,0.12) 62%, transparent 100%);
 }
 
@@ -308,8 +383,8 @@
   overflow: hidden;
   border-radius: calc(1.22rem - 2px);
   background:
-    radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--donghua-accent) 28%, transparent), transparent 38%),
-    linear-gradient(145deg, color-mix(in srgb, var(--donghua-accent) 28%, #111827), #07091a 72%);
+    radial-gradient(circle at 80% 0%, var(--da-poster-glow), transparent 38%),
+    linear-gradient(145deg, var(--da-poster-grad), #07091a 72%);
 }
 
 .donghua-card-poster img {
@@ -329,7 +404,7 @@
   border-radius: 0.94rem;
   box-shadow:
     inset 0 0 16px rgba(255,255,255,0.028),
-    0 0 14px color-mix(in srgb, var(--donghua-accent) 8%, transparent);
+    0 0 14px var(--da-frame-shadow);
 }
 
 .donghua-card-badges {
@@ -352,10 +427,11 @@
   padding: 0.38rem 0.56rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--site-radius-pill);
-  background: rgba(2, 6, 23, 0.58);
+  background: rgba(2, 6, 23, 0.94);
   color: #d9fbff;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* SCROLL PERF: backdrop-filter:blur(10px) removed — solid bg. */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   font-size: 0.64rem;
   font-weight: 900;
   line-height: 1;
@@ -413,9 +489,9 @@
   max-width: 100%;
   min-width: 0;
   padding: 0.28rem 0.44rem;
-  border: 1px solid color-mix(in srgb, var(--donghua-accent) 18%, rgba(255,255,255,0.08));
+  border: 1px solid var(--da-chip-border);
   border-radius: 0.6rem;
-  background: color-mix(in srgb, var(--donghua-accent) 8%, rgba(2,6,23,0.62));
+  background: var(--da-chip-bg);
   color: #d9fbff;
   font-size: 0.62rem;
   font-weight: 800;
@@ -457,7 +533,7 @@
   font-size: 0.64rem;
   font-weight: 900;
   line-height: 1;
-  box-shadow: 0 10px 18px color-mix(in srgb, var(--donghua-accent) 10%, transparent);
+  box-shadow: 0 10px 18px var(--da-cta-shadow);
 }
 
 .donghua-card-search-meta {
@@ -487,8 +563,8 @@
     transform: translateY(-4px);
     filter: brightness(1.03);
     box-shadow:
-      0 22px 44px rgba(0,0,0,0.36),
-      0 0 22px color-mix(in srgb, var(--donghua-accent) 14%, transparent);
+      0 18px 40px rgba(0,0,0,0.36),
+      0 0 18px var(--da-hover-glow);
   }
 
   .donghua-card-link:hover .donghua-card-poster img {
@@ -595,13 +671,14 @@
         background:
             radial-gradient(circle at 18% 8%, rgba(34, 211, 238, 0.24), transparent 34%),
             radial-gradient(circle at 88% 16%, rgba(56, 189, 248, 0.18), transparent 34%),
-            linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.91));
+            linear-gradient(135deg, rgba(15, 23, 42, 0.99), rgba(2, 6, 23, 0.98));
         box-shadow:
             0 26px 80px rgba(0, 0, 0, 0.40),
             0 0 42px rgba(34, 211, 238, 0.15),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
+        /* SCROLL PERF: backdrop-filter:blur(14px) removed — 91→98% opaque. */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .notfound-dock-shell::before {
@@ -610,10 +687,14 @@
         inset: -52% -28%;
         z-index: -2;
         pointer-events: none;
-        background: conic-gradient(from 180deg, rgba(34,211,238,0.02), rgba(34,211,238,0.20), rgba(56,189,248,0.16), rgba(37,99,235,0.12), rgba(34,211,238,0.02));
-        filter: blur(26px);
+        /* SCROLL PERF: conic-gradient+filter:blur(26px) replaced with
+           pre-blurred radial-gradient. Zero GPU blur cost. */
+        background:
+          radial-gradient(ellipse at 25% 15%, rgba(34,211,238,0.14), transparent 50%),
+          radial-gradient(ellipse at 65% 20%, rgba(56,189,248,0.11), transparent 50%),
+          radial-gradient(ellipse at 75% 50%, rgba(37,99,235,0.08), transparent 50%);
         opacity: 0.78;
-        animation: notfoundAuroraFlow 14s ease-in-out infinite alternate;
+        /* animation: notfoundAuroraFlow 14s ease-in-out infinite alternate; — dihapus: conic-gradient + blur + infinite = scroll lag */
     }
 
     .notfound-dock-hero {
@@ -692,13 +773,14 @@
         padding: 1rem 0.9rem 1.1rem;
         border: 1px solid rgba(125, 211, 252, 0.24);
         border-radius: 1.55rem;
-        background: rgba(15, 23, 42, 0.92);
+        background: rgba(15, 23, 42, 0.99);
         box-shadow:
             0 -18px 48px rgba(0, 0, 0, 0.30),
             0 0 30px rgba(34, 211, 238, 0.13),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        /* SCROLL PERF: backdrop-filter:blur(16px) removed — 92→99% opaque. */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         animation: notfoundPanelIn 0.42s ease both;
     }
 
@@ -1035,10 +1117,11 @@
         padding: 0.5rem;
         border: 1px solid rgba(34, 211, 238, 0.18);
         border-radius: 1.15rem;
-        background: linear-gradient(135deg, rgba(34, 211, 238, 0.06), rgba(139, 92, 246, 0.08), rgba(236, 72, 153, 0.06));
+        background: linear-gradient(135deg, rgba(14, 20, 38, 0.96), rgba(10, 14, 32, 0.97), rgba(16, 10, 28, 0.96));
         box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22), 0 0 18px rgba(34, 211, 238, 0.08);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        /* SCROLL PERF: backdrop-filter:blur(10px) removed — solid gradient replacement. */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
       }
 
       body .pagination-aurora-dock,
@@ -1422,7 +1505,7 @@ html body .fav-clear-btn.hidden {
         border: 1px solid rgba(255,255,255,0.06);
         border-radius: 1.1rem;
         background:
-            radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--alert-accent) 12%, transparent), transparent 34%),
+            radial-gradient(circle at 100% 0%, var(--aa-glow), transparent 34%),
             rgba(255,255,255,0.03);
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
     }
@@ -1432,11 +1515,11 @@ html body .fav-clear-btn.hidden {
         place-items: center;
         width: 2.7rem;
         height: 2.7rem;
-        border: 1px solid color-mix(in srgb, var(--alert-accent) 30%, rgba(255,255,255,0.10));
+        border: 1px solid var(--aa-border);
         border-radius: var(--site-radius-btn);
-        background: color-mix(in srgb, var(--alert-accent) 14%, rgba(6,8,22,0.82));
+        background: var(--aa-bg);
         color: var(--alert-accent);
-        box-shadow: 0 0 14px color-mix(in srgb, var(--alert-accent) 14%, transparent);
+        box-shadow: 0 0 14px var(--aa-shadow);
         flex: 0 0 auto;
         font-size: 1rem;
     }
@@ -2938,10 +3021,12 @@ html body .fav-clear-btn.hidden {
     background:
       radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.1), transparent 32%),
       radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.08), transparent 28%),
-      linear-gradient(135deg, rgba(7, 10, 24, 0.96), rgba(10, 14, 32, 0.93));
+      linear-gradient(135deg, rgba(7, 10, 24, 0.99), rgba(10, 14, 32, 0.98));
     box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32), 0 0 18px rgba(34, 211, 238, 0.06);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    /* SCROLL PERF: backdrop-filter:blur(18px) removed — 93→99% opaque + solid gradient
+       gives identical visual without GPU blur cost on every scroll frame. */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .site-navbar-brand {
@@ -2991,10 +3076,11 @@ html body .fav-clear-btn.hidden {
     inset: 0;
     z-index: 2000;
     pointer-events: none;
-    background: rgba(2, 6, 23, 0.78);
+    background: rgba(2, 6, 23, 0.96);
     opacity: 0;
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    /* SCROLL PERF: backdrop-filter:blur(7px) removed — solid bg, hidden by default. */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     transition: opacity 0.24s ease;
   }
 
@@ -3210,9 +3296,10 @@ html body .fav-clear-btn.hidden {
   .site-random-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(2, 6, 23, 0.82);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(2, 6, 23, 0.96);
+    /* SCROLL PERF: backdrop-filter:blur(8px) removed — solid bg. */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .site-random-dialog {
@@ -3553,9 +3640,10 @@ body .donghua-card-bookmark {
   height: 1.8rem;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(6, 8, 22, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(6, 8, 22, 0.95);
+  /* SCROLL PERF: backdrop-filter:blur(8px) removed — solid bg. */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -3838,9 +3926,10 @@ body .post-bookmark-btn.is-pulsing {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: rgba(2, 6, 23, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(2, 6, 23, 0.96);
+  /* SCROLL PERF: backdrop-filter:blur(8px) removed — modal hidden by default, solid bg when open. */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease;
@@ -4168,13 +4257,14 @@ body .post-bookmark-btn.is-pulsing {
         background:
             radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
             radial-gradient(circle at 88% 20%, rgba(168, 85, 247, 0.18), transparent 34%),
-            linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(2, 6, 23, 0.86));
+            linear-gradient(135deg, rgba(15, 23, 42, 0.99), rgba(2, 6, 23, 0.98));
         box-shadow:
             0 22px 70px rgba(0, 0, 0, 0.34),
             0 0 34px rgba(34, 211, 238, 0.12),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
+        /* SCROLL PERF: backdrop-filter:blur(14px) removed — 86→98% opaque. */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         isolation: isolate;
     }
 
@@ -4201,8 +4291,8 @@ body .post-bookmark-btn.is-pulsing {
         width: 11rem;
         height: 11rem;
         border-radius: var(--site-radius-pill);
-        background: rgba(34, 211, 238, 0.13);
-        filter: blur(2px);
+        background: radial-gradient(circle, rgba(34, 211, 238, 0.13), transparent 70%);
+        /* SCROLL PERF: filter:blur(2px) replaced with pre-blurred radial-gradient. */
         z-index: -1;
     }
 
@@ -4286,7 +4376,7 @@ body .post-bookmark-btn.is-pulsing {
         border-radius: var(--site-radius-btn);
         outline: none;
         background:
-            radial-gradient(circle at 35% 10%, color-mix(in srgb, var(--share-accent) 18%, transparent), transparent 55%),
+            radial-gradient(circle at 35% 10%, var(--sa-glow), transparent 55%),
             linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 0.92));
         color: var(--share-accent);
         box-shadow:
@@ -4326,14 +4416,14 @@ body .post-bookmark-btn.is-pulsing {
     .share-premium-button:hover,
     .share-premium-button:focus-visible {
         transform: translateY(-3px) scale(1.035);
-        border-color: color-mix(in srgb, var(--share-accent) 52%, transparent);
+        border-color: var(--sa-border-hover);
         color: #ffffff;
         background:
-            radial-gradient(circle at 35% 10%, color-mix(in srgb, var(--share-accent) 42%, transparent), transparent 58%),
-            linear-gradient(145deg, color-mix(in srgb, var(--share-accent) 38%, #111827), rgba(2, 6, 23, 0.96));
+            radial-gradient(circle at 35% 10%, var(--sa-focus-glow), transparent 58%),
+            linear-gradient(145deg, var(--sa-focus-grad), rgba(2, 6, 23, 0.96));
         box-shadow:
             0 17px 34px rgba(0, 0, 0, 0.28),
-            0 0 24px color-mix(in srgb, var(--share-accent) 34%, transparent),
+            0 0 24px var(--sa-focus-shadow),
             inset 0 1px 0 rgba(255, 255, 255, 0.12);
     }
 
@@ -4346,13 +4436,6 @@ body .post-bookmark-btn.is-pulsing {
         outline: 3px solid rgba(255, 255, 255, 0.55);
         outline-offset: 4px;
     }
-
-    .share-wa { --share-accent: #22c55e; }
-    .share-fb { --share-accent: #60a5fa; }
-    .share-x { --share-accent: var(--site-sky); }
-    .share-tg { --share-accent: var(--site-cyan); }
-    .share-ig { --share-accent: var(--site-pink); }
-    .share-copy { --share-accent: #a78bfa; font: inherit; }
 
     .share-copy.is-copied {
         --share-accent: var(--site-green);
@@ -4485,13 +4568,14 @@ body .post-bookmark-btn.is-pulsing {
                 background:
                     radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.08), transparent 34%),
                     radial-gradient(circle at 92% 18%, rgba(236, 72, 153, 0.06), transparent 36%),
-                    linear-gradient(135deg, rgba(14, 18, 40, 0.94), rgba(7, 10, 24, 0.97));
+                    linear-gradient(135deg, rgba(14, 18, 40, 0.99), rgba(7, 10, 24, 0.99));
                 box-shadow:
                     0 20px 48px rgba(0, 0, 0, 0.28),
                     0 0 18px rgba(34, 211, 238, 0.06),
                     inset 0 1px 0 rgba(255,255,255,0.05);
-                backdrop-filter: blur(14px);
-                -webkit-backdrop-filter: blur(14px);
+                /* SCROLL PERF: backdrop-filter:blur(14px) removed — 94→99% opaque. */
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
             }
 
             .genre-filter-card::before {
@@ -4500,10 +4584,14 @@ body .post-bookmark-btn.is-pulsing {
                 inset: -55% -28%;
                 z-index: 0;
                 pointer-events: none;
-                background: conic-gradient(from 180deg, rgba(34,211,238,0.02), rgba(34,211,238,0.17), rgba(139,92,246,0.14), rgba(236,72,153,0.12), rgba(34,211,238,0.02));
-                filter: blur(24px);
+                /* SCROLL PERF: conic-gradient+filter:blur(24px) replaced with
+                   pre-blurred radial-gradient. Identical visual, zero GPU blur cost. */
+                background:
+                  radial-gradient(ellipse at 30% 20%, rgba(34,211,238,0.12), transparent 50%),
+                  radial-gradient(ellipse at 70% 30%, rgba(139,92,246,0.09), transparent 50%),
+                  radial-gradient(ellipse at 80% 60%, rgba(236,72,153,0.08), transparent 50%);
                 opacity: 0.75;
-                animation: genreAuroraFlow 13s ease-in-out infinite alternate;
+                /* animation: genreAuroraFlow 13s ease-in-out infinite alternate; — dihapus: conic-gradient + blur + infinite = scroll lag */
             }
 
             .genre-filter-card > * {
@@ -4594,10 +4682,11 @@ body .post-bookmark-btn.is-pulsing {
                 inset: 0;
                 z-index: 1;
                 pointer-events: none;
-                background: rgba(2, 6, 23, 0.88);
+                background: rgba(2, 6, 23, 0.96);
                 opacity: 0;
-                backdrop-filter: blur(7px);
-                -webkit-backdrop-filter: blur(7px);
+                /* SCROLL PERF: backdrop-filter:blur(7px) removed — solid bg, hidden by default. */
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
                 transition: opacity 0.25s ease;
             }
 
@@ -4775,7 +4864,7 @@ body .post-bookmark-btn.is-pulsing {
                 border: 1px solid rgba(255,255,255,0.10);
                 border-radius: 0.95rem;
                 background:
-                    radial-gradient(circle at 84% 0%, color-mix(in srgb, var(--genre-accent) 22%, transparent), transparent 46%),
+                    radial-gradient(circle at 84% 0%, var(--ga-body-glow), transparent 46%),
                     linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
                 color: #d8e9ff;
                 cursor: pointer;
@@ -4794,7 +4883,7 @@ body .post-bookmark-btn.is-pulsing {
                 width: 2rem;
                 height: 2rem;
                 border-radius: 0.78rem;
-                background: color-mix(in srgb, var(--genre-accent) 14%, rgba(2,6,23,0.72));
+                background: var(--ga-icon-bg);
                 color: var(--genre-accent);
                 box-shadow: inset 0 1px rgba(255,255,255,0.08);
             }
@@ -4811,7 +4900,7 @@ body .post-bookmark-btn.is-pulsing {
             .genre-option-check {
                 width: 1.28rem;
                 height: 1.28rem;
-                border: 1px solid color-mix(in srgb, var(--genre-accent) 32%, rgba(255,255,255,0.14));
+                border: 1px solid var(--ga-check-border);
                 border-radius: 0.48rem;
                 background: rgba(2,6,23,0.46);
                 color: #06111f;
@@ -4826,11 +4915,11 @@ body .post-bookmark-btn.is-pulsing {
             }
 
             .genre-sheet-option input:checked + .genre-option-body {
-                border-color: color-mix(in srgb, var(--genre-accent) 52%, transparent);
+                border-color: var(--ga-checked-border);
                 background:
-                    radial-gradient(circle at 84% 0%, color-mix(in srgb, var(--genre-accent) 34%, transparent), transparent 46%),
-                    linear-gradient(145deg, color-mix(in srgb, var(--genre-accent) 12%, rgba(255,255,255,0.07)), rgba(255,255,255,0.03));
-                box-shadow: 0 0 22px color-mix(in srgb, var(--genre-accent) 17%, transparent), inset 0 1px 0 rgba(255,255,255,0.10);
+                    radial-gradient(circle at 84% 0%, var(--ga-checked-glow), transparent 46%),
+                    linear-gradient(145deg, var(--ga-checked-grad), rgba(255,255,255,0.03));
+                box-shadow: 0 0 22px var(--ga-checked-shadow), inset 0 1px 0 rgba(255,255,255,0.10);
                 transform: translateY(-2px);
             }
 
@@ -4899,7 +4988,7 @@ body .post-bookmark-btn.is-pulsing {
                 }
 
                 .genre-option-body:hover {
-                    border-color: color-mix(in srgb, var(--genre-accent) 38%, transparent);
+                    border-color: var(--ga-hover-border);
                     transform: translateY(-2px);
                 }
             }
@@ -5026,13 +5115,14 @@ body .post-bookmark-btn.is-pulsing {
                 background:
                     radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.08), transparent 34%),
                     radial-gradient(circle at 92% 12%, rgba(56, 189, 248, 0.06), transparent 36%),
-                    linear-gradient(135deg, rgba(14, 18, 40, 0.94), rgba(7, 10, 24, 0.97));
+                    linear-gradient(135deg, rgba(14, 18, 40, 0.99), rgba(7, 10, 24, 0.99));
                 box-shadow:
                     0 22px 56px rgba(0, 0, 0, 0.28),
                     0 0 20px rgba(34, 211, 238, 0.06),
                     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(14px);
-                -webkit-backdrop-filter: blur(14px);
+                /* SCROLL PERF: backdrop-filter:blur(14px) removed — 94→99% opaque. */
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
             }
 
             .taxonomy-tabs-widget::before {
@@ -5041,10 +5131,14 @@ body .post-bookmark-btn.is-pulsing {
                 inset: -55% -28%;
                 z-index: -2;
                 pointer-events: none;
-                background: conic-gradient(from 180deg, rgba(34,211,238,0.02), rgba(34,211,238,0.18), rgba(56,189,248,0.16), rgba(37,99,235,0.12), rgba(34,211,238,0.02));
-                filter: blur(24px);
+                /* SCROLL PERF: conic-gradient+filter:blur(24px) replaced with
+                   pre-blurred radial-gradient. Identical visual, zero GPU blur cost. */
+                background:
+                  radial-gradient(ellipse at 25% 15%, rgba(34,211,238,0.12), transparent 50%),
+                  radial-gradient(ellipse at 70% 25%, rgba(56,189,248,0.10), transparent 50%),
+                  radial-gradient(ellipse at 75% 50%, rgba(37,99,235,0.08), transparent 50%);
                 opacity: 0.72;
-                animation: taxonomyAuroraFlow 14s ease-in-out infinite alternate;
+                /* animation: taxonomyAuroraFlow 14s ease-in-out infinite alternate; — dihapus: conic-gradient + blur + infinite = scroll lag */
             }
 
             .taxonomy-tabs-widget::after {
@@ -5140,7 +5234,7 @@ body .post-bookmark-btn.is-pulsing {
                 border: 1px solid rgba(125, 211, 252, 0.15);
                 border-radius: 0.78rem;
                 outline: none;
-                background: rgba(15, 23, 42, 0.65);
+                background: rgba(10, 16, 32, 0.92);
                 color: #94a3b8;
                 box-shadow: none;
                 cursor: pointer;
@@ -5148,8 +5242,9 @@ body .post-bookmark-btn.is-pulsing {
                 font-size: 0.82rem;
                 font-weight: 950;
                 transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
+                /* SCROLL PERF: backdrop-filter:blur(8px) removed — solid bg. */
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
             }
 
             .taxonomy-tab-button.is-active {
@@ -5207,7 +5302,7 @@ body .post-bookmark-btn.is-pulsing {
                 border: 1px solid rgba(255, 255, 255, 0.10);
                 border-radius: 0.95rem;
                 background:
-                    radial-gradient(circle at 88% 0%, color-mix(in srgb, var(--taxonomy-accent) 18%, transparent), transparent 46%),
+                    radial-gradient(circle at 88% 0%, rgba(6,38,43,0.18), transparent 46%),
                     linear-gradient(145deg, rgba(255,255,255,0.060), rgba(255,255,255,0.025));
                 color: #dcecff;
                 text-decoration: none;
@@ -5234,7 +5329,7 @@ body .post-bookmark-btn.is-pulsing {
                 width: 2rem;
                 height: 2rem;
                 border-radius: 0.78rem;
-                background: color-mix(in srgb, var(--taxonomy-accent) 14%, rgba(2,6,23,0.72));
+                background: rgba(6,35,53,0.76);
                 color: var(--taxonomy-accent);
                 box-shadow: inset 0 1px rgba(255,255,255,0.08);
             }
@@ -5305,10 +5400,10 @@ body .post-bookmark-btn.is-pulsing {
 
                 .taxonomy-item:hover {
                     transform: translateX(3px);
-                    border-color: color-mix(in srgb, var(--taxonomy-accent) 42%, transparent);
-                    box-shadow: 0 0 18px color-mix(in srgb, var(--taxonomy-accent) 13%, transparent);
+                    border-color: rgba(14,89,100,0.42);
+                    box-shadow: 0 0 18px rgba(4,27,31,0.13);
                     background:
-                        radial-gradient(circle at 88% 0%, color-mix(in srgb, var(--taxonomy-accent) 27%, transparent), transparent 46%),
+                        radial-gradient(circle at 88% 0%, rgba(9,57,64,0.27), transparent 46%),
                         linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.03));
                 }
             }
@@ -5364,13 +5459,14 @@ body .post-bookmark-btn.is-pulsing {
         background:
             radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.18), transparent 34%),
             radial-gradient(circle at 92% 12%, rgba(56, 189, 248, 0.14), transparent 36%),
-            linear-gradient(135deg, rgba(15, 23, 42, 0.90), rgba(2, 6, 23, 0.88));
+            linear-gradient(135deg, rgba(15, 23, 42, 0.99), rgba(2, 6, 23, 0.98));
         box-shadow:
             0 18px 48px rgba(0, 0, 0, 0.28),
             0 0 28px rgba(34, 211, 238, 0.13),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
+        /* SCROLL PERF: backdrop-filter:blur(14px) removed — 88→98% opaque. */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .ad-neon-shell::before {
@@ -5379,10 +5475,14 @@ body .post-bookmark-btn.is-pulsing {
         inset: -60% -24%;
         z-index: -2;
         pointer-events: none;
-        background: conic-gradient(from 180deg, rgba(34,211,238,0.02), rgba(34,211,238,0.17), rgba(56,189,248,0.15), rgba(37,99,235,0.10), rgba(34,211,238,0.02));
-        filter: blur(22px);
+        /* SCROLL PERF: conic-gradient+filter:blur(22px) replaced with
+           pre-blurred radial-gradient. Zero GPU blur cost. */
+        background:
+          radial-gradient(ellipse at 25% 15%, rgba(34,211,238,0.12), transparent 50%),
+          radial-gradient(ellipse at 65% 25%, rgba(56,189,248,0.10), transparent 50%),
+          radial-gradient(ellipse at 75% 55%, rgba(37,99,235,0.07), transparent 50%);
         opacity: 0.72;
-        animation: adNeonFlow 14s ease-in-out infinite alternate;
+        /* animation: adNeonFlow 14s ease-in-out infinite alternate; — dihapus: conic-gradient + blur + infinite = scroll lag */
     }
 
     .ad-neon-shell::after {
@@ -5965,18 +6065,83 @@ html body .site-random-result {
 /* ==========================================================
    PHASE 4 INLINE STYLE REDUCTION HELPERS
    ========================================================== */
-.alert-accent-cyan { --alert-accent: var(--site-cyan); }
-.alert-accent-sky { --alert-accent: var(--site-sky); }
-.alert-accent-purple-soft { --alert-accent: #c084fc; }
-.alert-accent-pink { --alert-accent: var(--site-pink); }
-.alert-accent-amber { --alert-accent: #f59e0b; }
+.alert-accent-cyan { --alert-accent: #22d3ee; --aa-glow: rgba(4,25,29,0.12); --aa-border: rgba(189,242,250,0.37); --aa-bg: rgba(10,36,52,0.85); --aa-shadow: rgba(5,30,33,0.14); }
+.alert-accent-sky { --alert-accent: #38bdf8; --aa-glow: rgba(7,23,30,0.12); --aa-border: rgba(195,235,253,0.37); --aa-bg: rgba(13,33,54,0.85); --aa-shadow: rgba(8,26,35,0.14); }
+.alert-accent-purple-soft { --alert-accent: #c084fc; --aa-glow: rgba(23,16,30,0.12); --aa-border: rgba(236,218,254,0.37); --aa-bg: rgba(32,25,54,0.85); --aa-shadow: rgba(27,18,35,0.14); }
+.alert-accent-pink { --alert-accent: #ec4899; --aa-glow: rgba(28,9,18,0.12); --aa-border: rgba(249,200,224,0.37); --aa-bg: rgba(38,17,40,0.85); --aa-shadow: rgba(33,10,21,0.14); }
+.alert-accent-amber { --alert-accent: #f59e0b; --aa-glow: rgba(29,19,1,0.12); --aa-border: rgba(252,226,182,0.37); --aa-bg: rgba(39,29,20,0.85); --aa-shadow: rgba(34,22,2,0.14); }
 
-.genre-accent-0 { --genre-accent: var(--site-cyan); }
-.genre-accent-1 { --genre-accent: var(--site-sky); }
-.genre-accent-2 { --genre-accent: var(--site-purple); }
-.genre-accent-3 { --genre-accent: var(--site-pink); }
-.genre-accent-4 { --genre-accent: #22c55e; }
-.genre-accent-5 { --genre-accent: #f59e0b; }
+/* ==========================================================
+   GENRE — PRECOMPUTED COLOR-MIX VALUES
+   8 color-mix per genre option × banyak genre = mahal.
+   Precompute ke rgba statis per variant.
+   ========================================================== */
+.genre-accent-0 {
+  --genre-accent: #22d3ee;
+  --ga-body-glow: rgba(5,30,33,0.22);          /* 22% + transparent */
+  --ga-icon-bg: rgba(5,22,40,0.80);             /* 14% + rgba(2,6,23,0.72) */
+  --ga-check-border: rgba(125,211,252,0.40);    /* 32% + rgba(255,255,255,0.14) */
+  --ga-checked-border: rgba(125,211,252,0.60);  /* 52% + transparent */
+  --ga-checked-glow: rgba(8,40,46,0.34);        /* 34% + transparent */
+  --ga-checked-grad: rgba(215,247,252,0.18);    /* 12% + rgba(255,255,255,0.07) */
+  --ga-checked-shadow: rgba(5,30,33,0.17);      /* 17% + transparent */
+  --ga-hover-border: rgba(125,211,252,0.48);    /* 38% + transparent */
+}
+.genre-accent-1 {
+  --genre-accent: #38bdf8;
+  --ga-body-glow: rgba(8,26,35,0.22);
+  --ga-icon-bg: rgba(6,21,41,0.80);
+  --ga-check-border: rgba(148,210,252,0.40);
+  --ga-checked-border: rgba(148,210,252,0.60);
+  --ga-checked-glow: rgba(16,53,69,0.34);
+  --ga-checked-grad: rgba(219,243,254,0.18);
+  --ga-checked-shadow: rgba(8,26,35,0.17);
+  --ga-hover-border: rgba(148,210,252,0.48);
+}
+.genre-accent-2 {
+  --genre-accent: #8b5cf6;
+  --ga-body-glow: rgba(19,13,34,0.22);
+  --ga-icon-bg: rgba(13,13,41,0.80);
+  --ga-check-border: rgba(162,146,250,0.40);
+  --ga-checked-border: rgba(162,146,250,0.60);
+  --ga-checked-glow: rgba(39,26,69,0.34);
+  --ga-checked-grad: rgba(234,226,253,0.18);
+  --ga-checked-shadow: rgba(19,13,34,0.17);
+  --ga-hover-border: rgba(162,146,250,0.48);
+}
+.genre-accent-3 {
+  --genre-accent: #ec4899;
+  --ga-body-glow: rgba(33,10,21,0.22);
+  --ga-icon-bg: rgba(21,11,33,0.80);
+  --ga-check-border: rgba(241,116,169,0.40);
+  --ga-checked-border: rgba(241,116,169,0.60);
+  --ga-checked-glow: rgba(66,20,43,0.34);
+  --ga-checked-grad: rgba(252,222,237,0.18);
+  --ga-checked-shadow: rgba(33,10,21,0.17);
+  --ga-hover-border: rgba(241,116,169,0.48);
+}
+.genre-accent-4 {
+  --genre-accent: #22c55e;
+  --ga-body-glow: rgba(5,28,13,0.22);
+  --ga-icon-bg: rgba(5,21,29,0.80);
+  --ga-check-border: rgba(74,222,128,0.40);
+  --ga-checked-border: rgba(74,222,128,0.60);
+  --ga-checked-glow: rgba(10,55,26,0.34);
+  --ga-checked-grad: rgba(215,245,226,0.18);
+  --ga-checked-shadow: rgba(5,28,13,0.17);
+  --ga-hover-border: rgba(74,222,128,0.48);
+}
+.genre-accent-5 {
+  --genre-accent: #f59e0b;
+  --ga-body-glow: rgba(34,22,2,0.22);
+  --ga-icon-bg: rgba(21,18,22,0.80);
+  --ga-check-border: rgba(247,166,50,0.40);
+  --ga-checked-border: rgba(247,166,50,0.60);
+  --ga-checked-glow: rgba(69,44,3,0.34);
+  --ga-checked-grad: rgba(253,238,211,0.18);
+  --ga-checked-shadow: rgba(34,22,2,0.17);
+  --ga-hover-border: rgba(247,166,50,0.48);
+}
 .genre-delay-0 { --genre-delay: 0ms; }
 .genre-delay-1 { --genre-delay: 25ms; }
 .genre-delay-2 { --genre-delay: 50ms; }
@@ -6640,6 +6805,7 @@ html body .site-home-hero-media img {
   object-position: center center;
   filter: brightness(0.72) saturate(1.00) contrast(1.08);
   transform: scale(1.02);
+  will-change: transform;
   animation: siteHeroMoonlitZoom 22s ease-in-out infinite alternate;
 }
 
@@ -6967,14 +7133,19 @@ html body .share-premium-button span {
 
 /* Brand share buttons are normalized to the neon system while keeping
    subtle per-platform accents through border glow only. */
-.share-premium-button.share-wa { --share-accent: var(--site-green); }
-.share-premium-button.share-fb { --share-accent: var(--site-sky); }
-.share-premium-button.share-x { --share-accent: #e2e8f0; }
-.share-premium-button.share-tg { --share-accent: var(--site-cyan); }
-.share-premium-button.share-ig { --share-accent: var(--site-pink); }
-.share-premium-button.share-copy { --share-accent: var(--site-purple); }
+/* ==========================================================
+   SHARE — PRECOMPUTED COLOR-MIX VALUES
+   5 color-mix per share button × 6 buttons = 30 resolve.
+   Precompute ke rgba statis per variant.
+   ========================================================== */
+.share-premium-button.share-wa { --share-accent: #22c55e; --sa-glow: rgba(6,35,17,0.18); --sa-border-hover: rgba(18,102,49,0.52); --sa-focus-glow: rgba(14,83,39,0.42); --sa-focus-grad: #175a3c; --sa-focus-shadow: rgba(12,67,32,0.34); --sa-default-border: rgba(202,241,216,0.30); }
+.share-premium-button.share-fb { --share-accent: #38bdf8; --sa-glow: rgba(8,26,35,0.18); --sa-border-hover: rgba(20,95,119,0.52); --sa-focus-glow: rgba(15,76,96,0.42); --sa-focus-grad: #1c4662; --sa-focus-shadow: rgba(13,62,79,0.34); --sa-default-border: rgba(219,243,254,0.30); }
+.share-premium-button.share-x { --share-accent: #e2e8f0; --sa-glow: rgba(41,42,43,0.18); --sa-border-hover: rgba(118,121,125,0.52); --sa-focus-glow: rgba(95,97,101,0.42); --sa-focus-grad: #606773; --sa-focus-shadow: rgba(77,79,82,0.34); --sa-default-border: rgba(248,249,251,0.30); }
+.share-premium-button.share-tg { --share-accent: #22d3ee; --sa-glow: rgba(6,38,43,0.18); --sa-border-hover: rgba(18,110,124,0.52); --sa-focus-glow: rgba(14,89,100,0.42); --sa-focus-grad: #175f73; --sa-focus-shadow: rgba(12,72,81,0.34); --sa-default-border: rgba(202,244,251,0.30); }
+.share-premium-button.share-ig { --share-accent: #ec4899; --sa-glow: rgba(42,13,28,0.18); --sa-border-hover: rgba(123,37,80,0.52); --sa-focus-glow: rgba(99,30,64,0.42); --sa-focus-grad: #642a52; --sa-focus-shadow: rgba(80,24,52,0.34); --sa-default-border: rgba(250,211,231,0.30); }
+.share-premium-button.share-copy { --share-accent: #8b5cf6; --sa-glow: rgba(25,17,44,0.18); --sa-border-hover: rgba(72,48,128,0.52); --sa-focus-glow: rgba(58,39,103,0.42); --sa-focus-grad: #3f3276; --sa-focus-shadow: rgba(47,31,84,0.34); --sa-default-border: rgba(227,216,253,0.30); font: inherit; }
 html body .share-premium-button {
-  border-color: color-mix(in srgb, var(--share-accent, var(--site-cyan)) 24%, rgba(255, 255, 255, 0.08));
+  border-color: var(--sa-default-border, rgba(125, 211, 252, 0.24));
 }
 
 .site-home-hero-button,
@@ -7246,13 +7417,14 @@ html body .site-floating-ad[hidden] {
   background:
     radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.1), transparent 34%),
     radial-gradient(circle at 92% 0%, rgba(139, 92, 246, 0.1), transparent 36%),
-    linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(6, 8, 22, 0.99));
+    linear-gradient(145deg, rgba(15, 23, 42, 1), rgba(6, 8, 22, 1));
   box-shadow:
     0 -18px 48px rgba(0, 0, 0, 0.4),
     0 0 24px rgba(34, 211, 238, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  /* SCROLL PERF: backdrop-filter:blur(16px) removed — already 98-99% opaque. */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   pointer-events: auto;
   overflow: hidden;
 }
@@ -7742,6 +7914,24 @@ html body .site-footer {
 
 /* Final reduced-motion guard — must stay after Button System rules. */
 
+/* ==========================================================
+   SCROLL PERFORMANCE — Pause off-screen infinite animations
+   Animasi infinite yang kecil (dot pulse, orb float, sheen)
+   tetap berjalan tapi di-pause saat elemen off-screen.
+   ========================================================== */
+@supports (content-visibility: auto) {
+  /* Orbit animations di halaman 404 — hanya aktif saat terlihat */
+  .notfound-dock-orbit,
+  /* Download batch orb float — hanya aktif saat terlihat */
+  .db-shell::before,
+  /* Ad dot pulse — hanya aktif saat terlihat */
+  .ad-neon-head::before,
+  .ad-neon-head::after {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1rem;
+  }
+}
+
 
 /* ==========================================================
    AD WIDGET FALLBACK SYSTEM
@@ -7880,11 +8070,85 @@ html body .ad-neon-shell {
   backdrop-filter: none;
 }
 
+/* ===== SCROLL PERFORMANCE — Phase 2: Additional backdrop-filter removal =====
+   Panels besar yang terlihat saat scroll. backdrop-filter: blur() memaksa
+   browser re-sample konten di belakang tiap frame scroll → drop frame rate
+   di perangkat mid-range/low-end. Gradient solid pengganti mempertahankan
+   visual gelap-elegan tanpa penalty GPU.
+   ========================================================== */
+html body .home-rec-slider,
+html body .home-rec-slider-hero {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+html body .home-rec-slider {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(34,211,238,0.09), transparent 32%),
+    radial-gradient(circle at 92% 14%, rgba(139,92,246,0.07), transparent 34%),
+    linear-gradient(180deg, rgb(14,20,40), rgb(6,8,22));
+}
+
+html body .home-rec-slider-hero {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(34,211,238,0.10), transparent 26%),
+    linear-gradient(180deg, rgb(14,21,38), rgb(8,12,24));
+}
+
+html body .share-premium-card {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34,211,238,0.12), transparent 34%),
+    radial-gradient(circle at 88% 20%, rgba(168,85,247,0.14), transparent 34%),
+    linear-gradient(135deg, rgb(13,17,38), rgb(2,6,23));
+}
+
+html body .fav-empty-card {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34,211,238,0.04), transparent 30%),
+    radial-gradient(circle at 88% 0%, rgba(168,85,247,0.04), transparent 32%),
+    linear-gradient(135deg, rgb(13,16,36), rgb(7,10,24));
+}
+
+/* Notfound page panels — halaman 404, tapi tetap konsisten */
+html body .notfound-dock-shell,
+html body .notfound-dock-panel {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+html body .notfound-dock-shell {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(34,211,238,0.18), transparent 34%),
+    radial-gradient(circle at 88% 16%, rgba(56,189,248,0.12), transparent 34%),
+    linear-gradient(135deg, rgb(13,18,36), rgb(2,6,23));
+}
+
+html body .notfound-dock-panel {
+  background: rgba(15,23,42,0.95);
+}
+
 /* Skip painting off-screen catalogue/sidebar rows while preserving their size. */
 @supports (content-visibility: auto) {
   html body .taxonomy-item {
     content-visibility: auto;
     contain-intrinsic-size: auto 3.75rem;
+  }
+
+  /* Donghua card grid — up to 16+ cards per page; skip rendering off-screen */
+  html body .donghua-card-item,
+  html body .donghua-card {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 14.2rem;
+  }
+
+  /* Slider rail cards */
+  html body .home-rec-slider-card {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 7rem;
   }
 }
 
