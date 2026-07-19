@@ -2,9 +2,12 @@
   Smartlink — Adsterra / Monetag
   ─────────────────────────────────
   Buka Smartlink URL di tab baru saat user klik:
-  - Tombol Download Batch
   - Link Kartu Donghua
   - Slider "Buka Donghua" CTA
+
+  Catatan (v3): Tombol Download Batch sengaja TIDAK di-hook
+  karena target="_blank" + Safelinku shortlink berkonflik
+  dengan popup blocker (klik jadi sia-sia).
 
   Fitur:
   - 1x per session (sessionStorage)

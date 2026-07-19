@@ -8,6 +8,9 @@
      - Hanya trigger 1 kali per session (tab close = session baru)
      - Hanya trigger saat user KLIK elemen tertentu
        (bukan auto-open seperti popunder)
+     - Hanya klik kiri polos — Ctrl/Cmd+click (= buka di tab baru)
+       diabaikan supaya tidak dobel tab
+     - Tab iklan dibuka dengan 'noopener' (anti reverse-tabnabbing)
      - Tidak mencegah navigasi asli user
      - Safelinku tetap jalan, tidak saling ganggu
      - Skip bots/crawlers
@@ -33,9 +36,6 @@
 
     // Session storage key untuk track status
     sessionKey: 'db_smartlink_fired',
-
-    // Max trigger per session (1 = sangat aman, tidak spam)
-    maxPerSession: 1,
 
     // CSS selector untuk elemen yang trigger Smartlink
     triggers: [
@@ -70,7 +70,9 @@
     if (hasFired()) return false;
 
     try {
-      var win = window.open(CONFIG.smartlinkUrl, '_blank');
+      // 'noopener': tab iklan tidak dapat mengakses window.opener
+      // (anti reverse-tabnabbing dari rantai redirect Smartlink)
+      var win = window.open(CONFIG.smartlinkUrl, '_blank', 'noopener');
       if (win && !win.closed) {
         markFired();
         return true;
@@ -97,6 +99,10 @@
     document.addEventListener('click', function (e) {
       // Double-check: mungkin sudah di-trigger oleh klik sebelumnya
       if (hasFired()) return;
+
+      // Hanya klik kiri polos. Ctrl/Cmd+click = user sengaja buka
+      // link di tab baru; jangan tambah tab iklan kedua.
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
 
       // Cari elemen trigger terdekat dari klik target
       var target = e.target.closest(selector);
