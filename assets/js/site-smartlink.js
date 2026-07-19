@@ -10,10 +10,15 @@
        (bukan auto-open seperti popunder)
      - Hanya klik kiri polos — Ctrl/Cmd+click (= buka di tab baru)
        diabaikan supaya tidak dobel tab
-     - Tab iklan dibuka dengan 'noopener' (anti reverse-tabnabbing)
+     - Tab iklan dibuka dengan 'noopener,noreferrer'
+       (anti reverse-tabnabbing + cegah Referer leak)
      - Tidak mencegah navigasi asli user
      - Safelinku tetap jalan, tidak saling ganggu
      - Skip bots/crawlers
+     - SKIP TOTAL jika sessionStorage tidak tersedia (mencegah
+       spam tab iklan di mode privat / storage disabled)
+     - URL dibaca dari data-attribute (base64, di-render Hugo)
+       bukan hardcoded di JS — memudahkan rotasi tanpa rebuild JS
 
      Lokasi trigger:
      1. Link Kartu Donghua (a.donghua-card-link)
@@ -31,8 +36,10 @@
 
   // ─── CONFIG ────────────────────────────────────────────────
   var CONFIG = {
-    // Smartlink URL
-    smartlinkUrl: 'https://bendspecimen.com/td7zxakvmh?key=72a4fb839fdab976a2aec02aa04b2be4',
+    // Smartlink URL — diisi oleh loadConfig() dari data-attribute
+    // yang di-render server-side oleh Hugo (base64 encoded).
+    // Tidak lagi hardcoded di file JS.
+    smartlinkUrl: '',
 
     // Session storage key untuk track status
     sessionKey: 'db_smartlink_fired',
@@ -44,6 +51,39 @@
     ]
   };
   // ─── END CONFIG ────────────────────────────────────────────
+
+  /**
+   * Baca & decode Smartlink URL dari data-attribute di <html>.
+   * URL di-encode base64 oleh Hugo template (config.toml → base64Encode).
+   * Return true jika URL berhasil dimuat.
+   */
+  function loadConfig() {
+    var el = document.documentElement;
+    var encoded = el && el.dataset && el.dataset.slc;
+    if (!encoded) return false;
+    try {
+      CONFIG.smartlinkUrl = atob(encoded);
+      return !!CONFIG.smartlinkUrl;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /**
+   * Cek apakah sessionStorage benar-benar tersedia & berfungsi.
+   * Mencegah spam tab iklan di browser yang memblokir storage
+   * (mode privat Safari, enterprise policy, setting ketat, dll).
+   */
+  function isSessionStorageAvailable() {
+    try {
+      var k = '__sl_test';
+      sessionStorage.setItem(k, '1');
+      sessionStorage.removeItem(k);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 
   /** Cek apakah Smartlink sudah pernah trigger di session ini */
   function hasFired() {
@@ -62,7 +102,7 @@
   /** Deteksi bot/crawler — jangan pernah trigger untuk bot */
   function isCrawler() {
     var ua = (navigator.userAgent || '').toLowerCase();
-    return /googlebot|bingbot|yandexbot|baiduspider|duckduckbot|slurp|sogou|exabot|facebot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|developers\.google\.com\/\+\/web\/snippet|slackbot|vkshare|w3c_validator|ahrefsbot|semrushbot/i.test(ua);
+    return /googlebot|bingbot|yandexbot|baiduspider|duckduckbot|slurp|sogou|exabot|facebot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link prefix|showyoubot|outbrain|pinterest|developers\.google\.com\/\+\/web\/snippet|slackbot|vkshare|w3c_validator|ahrefsbot|semrushbot/i.test(ua);
   }
 
   /** Buka Smartlink di tab baru. Return true jika berhasil. */
@@ -71,8 +111,10 @@
 
     try {
       // 'noopener': tab iklan tidak dapat mengakses window.opener
-      // (anti reverse-tabnabbing dari rantai redirect Smartlink)
-      var win = window.open(CONFIG.smartlinkUrl, '_blank', 'noopener');
+      //   → anti reverse-tabnabbing dari rantai redirect Smartlink
+      // 'noreferrer': jangan kirim Referer header ke domain iklan
+      //   → cegah kebocoran URL halaman & data navigasi user
+      var win = window.open(CONFIG.smartlinkUrl, '_blank', 'noopener,noreferrer');
       if (win && !win.closed) {
         markFired();
         return true;
@@ -85,6 +127,14 @@
 
   /** Inisialisasi Smartlink listener */
   function init() {
+    // [C2] Baca URL dari data-attribute (server-side rendered)
+    if (!loadConfig()) return;
+
+    // [C1] Skip TOTAL jika sessionStorage tidak tersedia.
+    // Tanpa ini, smartlink akan fire SETIAP klik → spam tab iklan
+    // → browser crash / user pergi.
+    if (!isSessionStorageAvailable()) return;
+
     // Skip jika sudah trigger session ini
     if (hasFired()) return;
 

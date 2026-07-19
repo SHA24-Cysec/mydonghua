@@ -44,7 +44,12 @@
         {{ partial "save-favorite" . }}
     {{ end }}
     {{ partial "global-scripts" . }}
-    {{ partial "widget/smartlink" . }}
+    {{/*  Smartlink hanya di homepage & detail donghua —
+          bukan di 404, kontak, favorit, search, dll.
+          Mencegah invalid traffic / ad fraud flag dari network.  */}}
+    {{ if or .IsHome (eq .Layout "postingan-donghua") }}
+        {{ partial "widget/smartlink" . }}
+    {{ end }}
     {{/*  Scrollbar CSS dipindah ke main.css (assets/input.css) supaya
           bisa di-cache terpisah dan mengurangi ukuran HTML  */}}
 </body>

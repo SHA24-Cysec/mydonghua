@@ -14,12 +14,25 @@
   - Tidak menghalangi navigasi asli
   - Skip bots/crawlers
   - Safelinku tetap aktif, tidak saling ganggu
+  - URL dikonfigurasi dari Hugo params (config.toml)
+    dan di-encode base64 agar tidak terekspos mentah di HTML
+  - Graceful skip jika sessionStorage tidak tersedia
 
   CARA PAKAI:
-  - Tidak perlu edit apapun, Smartlink URL sudah di-set di JS
-  - Untuk ganti URL, edit CONFIG.smartlinkUrl di js/site-smartlink.js
+  - Edit URL di config.toml → [params.smartlink] url = '...'
+  - Untuk ganti URL, cukup update config.toml lalu rebuild
+  - DAFTAR DOMAIN LOCKING di dashboard Adsterra/Monetag!
+
+  Hanya dimuat di:
+  - Homepage
+  - Halaman detail donghua (postingan-donghua)
 */}}
 {{ if hugo.IsProduction }}
+  {{ $smartlinkUrl := .Site.Params.smartlink.url | default "" }}
+  {{ if $smartlinkUrl }}
+    {{ $encoded := $smartlinkUrl | base64Encode }}
+    <script>document.documentElement.dataset.slc="{{ $encoded }}"</script>
+  {{ end }}
   {{ with resources.Get "js/site-smartlink.js" }}
     {{ $min := . | minify | fingerprint "sha256" }}
     <script defer src="{{ $min.RelPermalink }}" integrity="{{ $min.Data.Integrity }}"></script>
