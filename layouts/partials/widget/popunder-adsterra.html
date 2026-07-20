@@ -17,6 +17,12 @@
   - Contoh: homepage 1x, halaman donghua A 1x, halaman donghua B 1x.
   - Reset saat sessionStorage browser terhapus / tab ditutup.
 
+  Implementasi:
+  - Tetap page-load sesuai permintaan.
+  - Menggunakan document.write agar bentuk pemuatan script lebih mirip
+    snippet asli Adsterra dibanding appendChild async.
+  - Flag session ditulis hanya ketika browser akan menulis tag script.
+
   Catatan:
   - Script hanya dimuat saat build production, mengikuti pola iklan lama.
   - Tidak ada listener klik custom atau window.open manual.
@@ -46,15 +52,19 @@
           }
         }
 
+        function escapeAttr(value) {
+          return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+        }
+
         if (!src || !isSessionStorageAvailable()) return;
         if (window.sessionStorage.getItem(key) === '1') return;
 
         window.sessionStorage.setItem(key, '1');
-
-        var script = document.createElement('script');
-        script.src = src;
-        script.async = true;
-        (document.head || document.body || document.documentElement).appendChild(script);
+        document.write('<script src="' + escapeAttr(src) + '"><\\/script>');
       })();
     </script>
   {{ end }}
