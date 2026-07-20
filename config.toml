@@ -23,14 +23,13 @@ uglyURLs = false
     author = 'Admin'
     img = '/img/favicon.webp'
 
-  # Smartlink (Adsterra/Monetag) — URL dipindah dari JS supaya
-  # tidak ter-expose mentah di file .js yang di-cache browser.
-  # Di-render via Hugo template & di-encode base64 saat build.
-  # Untuk rotate URL: cukup ganti nilai di bawah, lalu rebuild.
-  # REKOMENDASI: Daftarkan domain locking di dashboard Adsterra
-  # agar key hanya bisa dipakai dari donghuabatch.com.
-  [params.smartlink]
-    url = 'https://bendspecimen.com/td7zxakvmh?key=72a4fb839fdab976a2aec02aa04b2be4'
+  # Popunder Adsterra — menggantikan fitur Smartlink click-trigger.
+  # Script hanya dimuat pada halaman yang dipanggil dari layout
+  # agar scope iklan tetap terkontrol dan tidak mengganggu halaman lain.
+  # Untuk rotasi script: cukup ganti nilai src di bawah, lalu rebuild.
+  [params.popunder]
+    enabled = true
+    src = 'https://bendspecimen.com/b5/5c/0f/b55c0fe92f1b9672886a2698dfa8de8f.js'
 
 [sitemap]
     changeFreq = 'weekly'
