@@ -1,6 +1,6 @@
 {{/*
-  Popunder Adsterra
-  ─────────────────────────────────
+  Popunder Adsterra — klik pertama elemen interaktif
+  ───────────────────────────────────────────────────
   Menggantikan Smartlink click-trigger lama.
 
   Scope pemuatan dikontrol dari layouts/_default/baseof.html:
@@ -17,16 +17,17 @@
   - Contoh: homepage 1x, halaman donghua A 1x, halaman donghua B 1x.
   - Reset saat sessionStorage browser terhapus / tab ditutup.
 
-  Implementasi:
-  - Tetap page-load sesuai permintaan.
-  - Menggunakan document.write agar bentuk pemuatan script lebih mirip
-    snippet asli Adsterra dibanding appendChild async.
-  - Flag session ditulis hanya ketika browser akan menulis tag script.
+  Trigger:
+  - Hanya saat user berinteraksi dengan elemen interaktif:
+    link, tombol, atau role="button".
+  - Menggunakan pointerdown/touchstart lebih awal dari click supaya script
+    sempat dimuat sebelum browser menjalankan navigasi link.
+  - Tidak preventDefault, jadi klik/navigasi user tetap normal.
 
   Catatan:
   - Script hanya dimuat saat build production, mengikuti pola iklan lama.
-  - Tidak ada listener klik custom atau window.open manual.
-  - Jika sessionStorage tidak tersedia, script tidak dimuat untuk mencegah spam reload.
+  - Tidak ada window.open manual.
+  - Jika sessionStorage tidak tersedia, script tidak dimuat untuk mencegah spam.
   - Jika ingin menonaktifkan sementara, set enabled = false.
 */}}
 {{ if hugo.IsProduction }}
@@ -39,11 +40,13 @@
         'use strict';
 
         var src = {{ $src | jsonify | safeJS }};
-        var key = 'db_popunder_fired:' + window.location.pathname;
+        var key = 'db_popunder_click_fired:' + window.location.pathname;
+        var interactiveSelector = 'a, button, [role="button"], input[type="button"], input[type="submit"]';
+        var firedInMemory = false;
 
         function isSessionStorageAvailable() {
           try {
-            var testKey = '__db_popunder_test';
+            var testKey = '__db_popunder_click_test';
             window.sessionStorage.setItem(testKey, '1');
             window.sessionStorage.removeItem(testKey);
             return true;
@@ -52,19 +55,52 @@
           }
         }
 
-        function escapeAttr(value) {
-          return String(value)
-            .replace(/&/g, '&amp;')
-            .replace(/"/g, '&quot;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;');
+        function hasFired() {
+          if (firedInMemory) return true;
+          try {
+            return window.sessionStorage.getItem(key) === '1';
+          } catch (e) {
+            return true;
+          }
         }
 
-        if (!src || !isSessionStorageAvailable()) return;
-        if (window.sessionStorage.getItem(key) === '1') return;
+        function markFired() {
+          firedInMemory = true;
+          try {
+            window.sessionStorage.setItem(key, '1');
+          } catch (e) {
+            // sessionStorage sudah dicek di init, ini hanya fallback aman.
+          }
+        }
 
-        window.sessionStorage.setItem(key, '1');
-        document.write('<script src="' + escapeAttr(src) + '"><\\/script>');
+        function isInteractiveTarget(eventTarget) {
+          if (!eventTarget || !eventTarget.closest) return false;
+          return !!eventTarget.closest(interactiveSelector);
+        }
+
+        function loadPopunderScript() {
+          if (!src || hasFired()) return;
+
+          markFired();
+
+          var script = document.createElement('script');
+          script.src = src;
+          script.async = true;
+          (document.head || document.body || document.documentElement).appendChild(script);
+        }
+
+        function onFirstInteraction(event) {
+          if (hasFired()) return;
+          if (!isInteractiveTarget(event.target)) return;
+          loadPopunderScript();
+        }
+
+        if (!src || !isSessionStorageAvailable() || hasFired()) return;
+
+        // Capture phase supaya berjalan sebelum handler/navigasi lain.
+        document.addEventListener('pointerdown', onFirstInteraction, true);
+        document.addEventListener('touchstart', onFirstInteraction, true);
+        document.addEventListener('click', onFirstInteraction, true);
       })();
     </script>
   {{ end }}
