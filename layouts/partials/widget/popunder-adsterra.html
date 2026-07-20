@@ -1,7 +1,7 @@
 {{/*
-  Popunder Adsterra — klik pertama elemen interaktif
-  ───────────────────────────────────────────────────
-  Menggantikan Smartlink click-trigger lama.
+  Popunder Adsterra — native / bawaan Adsterra
+  ─────────────────────────────────────────────
+  Menggantikan Smartlink lama dan menghapus wrapper custom.
 
   Scope pemuatan dikontrol dari layouts/_default/baseof.html:
   - Homepage
@@ -12,22 +12,12 @@
     enabled = true
     src = 'https://...js'
 
-  Pembatas sesi:
-  - 1x per halaman per session/tab browser.
-  - Contoh: homepage 1x, halaman donghua A 1x, halaman donghua B 1x.
-  - Reset saat sessionStorage browser terhapus / tab ditutup.
-
-  Trigger:
-  - Hanya saat user berinteraksi dengan elemen interaktif:
-    link, tombol, atau role="button".
-  - Menggunakan pointerdown/touchstart lebih awal dari click supaya script
-    sempat dimuat sebelum browser menjalankan navigasi link.
-  - Tidak preventDefault, jadi klik/navigasi user tetap normal.
-
   Catatan:
-  - Script hanya dimuat saat build production, mengikuti pola iklan lama.
-  - Tidak ada window.open manual.
-  - Jika sessionStorage tidak tersedia, script tidak dimuat untuk mencegah spam.
+  - Frequency/capping sepenuhnya mengikuti sistem Adsterra.
+  - Tanpa wrapper frequency custom.
+  - Tanpa listener klik custom.
+  - Tanpa pembuka tab manual dari kode situs.
+  - Tidak memodifikasi script Adsterra.
   - Jika ingin menonaktifkan sementara, set enabled = false.
 */}}
 {{ if hugo.IsProduction }}
@@ -35,73 +25,6 @@
   {{ $enabled := $popunder.enabled | default false }}
   {{ $src := $popunder.src | default "" }}
   {{ if and $enabled $src }}
-    <script>
-      (function () {
-        'use strict';
-
-        var src = {{ $src | jsonify | safeJS }};
-        var key = 'db_popunder_click_fired:' + window.location.pathname;
-        var interactiveSelector = 'a, button, [role="button"], input[type="button"], input[type="submit"]';
-        var firedInMemory = false;
-
-        function isSessionStorageAvailable() {
-          try {
-            var testKey = '__db_popunder_click_test';
-            window.sessionStorage.setItem(testKey, '1');
-            window.sessionStorage.removeItem(testKey);
-            return true;
-          } catch (e) {
-            return false;
-          }
-        }
-
-        function hasFired() {
-          if (firedInMemory) return true;
-          try {
-            return window.sessionStorage.getItem(key) === '1';
-          } catch (e) {
-            return true;
-          }
-        }
-
-        function markFired() {
-          firedInMemory = true;
-          try {
-            window.sessionStorage.setItem(key, '1');
-          } catch (e) {
-            // sessionStorage sudah dicek di init, ini hanya fallback aman.
-          }
-        }
-
-        function isInteractiveTarget(eventTarget) {
-          if (!eventTarget || !eventTarget.closest) return false;
-          return !!eventTarget.closest(interactiveSelector);
-        }
-
-        function loadPopunderScript() {
-          if (!src || hasFired()) return;
-
-          markFired();
-
-          var script = document.createElement('script');
-          script.src = src;
-          script.async = true;
-          (document.head || document.body || document.documentElement).appendChild(script);
-        }
-
-        function onFirstInteraction(event) {
-          if (hasFired()) return;
-          if (!isInteractiveTarget(event.target)) return;
-          loadPopunderScript();
-        }
-
-        if (!src || !isSessionStorageAvailable() || hasFired()) return;
-
-        // Capture phase supaya berjalan sebelum handler/navigasi lain.
-        document.addEventListener('pointerdown', onFirstInteraction, true);
-        document.addEventListener('touchstart', onFirstInteraction, true);
-        document.addEventListener('click', onFirstInteraction, true);
-      })();
-    </script>
+    <script src="{{ $src | safeURL }}"></script>
   {{ end }}
 {{ end }}
