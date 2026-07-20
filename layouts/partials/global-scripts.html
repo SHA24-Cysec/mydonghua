@@ -25,11 +25,13 @@
 {{- template "minjs" "js/site-download-report.js" -}}
 {{- template "minjs" "js/site-share.js" -}}
 
-  {{- /* Smartlink Adsterra — trigger klik tombol download */ -}}
+  {{- /* Smartlink Adsterra — trigger interstitial klik download */ -}}
   {{- $smartlink := .Site.Params.smartlink -}}
   {{- if and $smartlink.enabled $smartlink.src -}}
-    <script>window.__SMARTLINK_SRC = '{{ $smartlink.src }}';
-    window.__SMARTLINK_ENV = '{{ if hugo.IsProduction }}production{{ else }}development{{ end }}';</script>
+    <script>
+    window.__SMARTLINK_SRC = '{{ $smartlink.src }}';
+    window.__SMARTLINK_ENV = '{{ if hugo.IsProduction }}production{{ else }}development{{ end }}';
+    </script>
     {{- template "minjs" "js/site-smartlink.js" -}}
   {{- end -}}
 {{ end }}

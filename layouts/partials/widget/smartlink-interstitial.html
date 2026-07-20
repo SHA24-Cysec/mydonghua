@@ -1,0 +1,163 @@
+{{/* 
+  Smartlink Interstitial — overlay halus sebelum redirect ke safelinku
+  Tema: Cyber-dark dengan aksen cyan (konsisten dengan tema situs)
+  Hanya dirender di halaman detail donghua (postingan-donghua layout)
+*/}}
+<div
+  id="smartlink-overlay"
+  class="smartlink-overlay"
+  data-smartlink-overlay
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mengalihkan ke link download"
+  hidden
+>
+  <div class="smartlink-overlay__backdrop"></div>
+  <div class="smartlink-overlay__card" role="document">
+    <!-- Spinner -->
+    <div class="smartlink-overlay__spinner" aria-hidden="true">
+      <svg viewBox="0 0 48 48" width="48" height="48">
+        <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+          stroke-dasharray="125.6" stroke-dashoffset="0"
+          class="smartlink-overlay__spinner-track"/>
+        <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+          stroke-dasharray="125.6" stroke-dashoffset="100"
+          class="smartlink-overlay__spinner-dash"/>
+      </svg>
+    </div>
+
+    <!-- Teks -->
+    <p class="smartlink-overlay__title">Mengalihkan ke Link Download</p>
+    <p class="smartlink-overlay__desc">
+      Sabar ya, kamu akan segera diarahkan ke link download...
+    </p>
+
+    <!-- Timer progress -->
+    <div class="smartlink-overlay__progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+      <span class="smartlink-overlay__progress-bar" data-smartlink-progress></span>
+    </div>
+
+    <!-- Tombol langsung (jika macet) -->
+    <button
+      type="button"
+      class="smartlink-overlay__skip"
+      data-smartlink-skip
+      hidden
+    >
+      Lanjutkan langsung &rsaquo;
+    </button>
+  </div>
+</div>
+
+{{- /* Style inline — konsisten tema cyber-dark */ -}}
+<style>
+  .smartlink-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+  }
+  .smartlink-overlay[hidden] {
+    display: none !important;
+  }
+  .smartlink-overlay__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .smartlink-overlay__card {
+    position: relative;
+    max-width: 380px;
+    width: 90vw;
+    background: linear-gradient(145deg, #0f1a24 0%, #0a121c 100%);
+    border: 1px solid rgba(34,211,238,0.25);
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem 2rem;
+    text-align: center;
+    box-shadow:
+      0 0 40px rgba(34,211,238,0.08),
+      0 8px 32px rgba(0,0,0,0.6);
+    animation: smartlinkFadeIn 0.3s ease-out;
+  }
+  @keyframes smartlinkFadeIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Spinner */
+  .smartlink-overlay__spinner {
+    color: rgba(34,211,238,0.7);
+    margin-bottom: 1.25rem;
+  }
+  .smartlink-overlay__spinner-track {
+    opacity: 0.2;
+  }
+  .smartlink-overlay__spinner-dash {
+    animation: smartlinkSpin 1s linear infinite;
+    transform-origin: center;
+  }
+  @keyframes smartlinkSpin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Text */
+  .smartlink-overlay__title {
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+    line-height: 1.4;
+  }
+  .smartlink-overlay__desc {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin: 0 0 1.25rem;
+    line-height: 1.5;
+  }
+
+  /* Progress bar */
+  .smartlink-overlay__progress {
+    height: 4px;
+    background: rgba(34,211,238,0.1);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .smartlink-overlay__progress-bar {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #06b6d4, #22d3ee);
+    border-radius: 999px;
+    transition: width 0.3s linear;
+  }
+
+  /* Skip button */
+  .smartlink-overlay__skip {
+    display: inline-block;
+    margin-top: 0.25rem;
+    padding: 0.4rem 1rem;
+    background: transparent;
+    border: 1px solid rgba(34,211,238,0.2);
+    border-radius: 999px;
+    color: #64748b;
+    font-size: 0.75rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .smartlink-overlay__skip:hover {
+    color: #22d3ee;
+    border-color: rgba(34,211,238,0.4);
+    background: rgba(34,211,238,0.06);
+  }
+  .smartlink-overlay__skip[hidden] {
+    display: none !important;
+  }
+</style>
