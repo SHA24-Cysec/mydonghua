@@ -23,13 +23,12 @@ uglyURLs = false
     author = 'Admin'
     img = '/img/favicon.webp'
 
-  # Popunder Adsterra — menggantikan fitur Smartlink click-trigger.
-  # Script hanya dimuat pada halaman yang dipanggil dari layout
-  # agar scope iklan tetap terkontrol dan tidak mengganggu halaman lain.
-  # Untuk rotasi script: cukup ganti nilai src di bawah, lalu rebuild.
-  [params.popunder]
+  # Smartlink Adsterra — trigger klik tombol Download Batch
+  # Link muncul di tab baru saat user klik tombol download,
+  # tanpa mengganggu safelinku yang sudah berjalan.
+  [params.smartlink]
     enabled = true
-    src = 'https://bendspecimen.com/b5/5c/0f/b55c0fe92f1b9672886a2698dfa8de8f.js'
+    src = 'https://bendspecimen.com/td7zxakvmh?key=72a4fb839fdab976a2aec02aa04b2be4'
 
 [sitemap]
     changeFreq = 'weekly'

@@ -44,12 +44,6 @@
         {{ partial "save-favorite" . }}
     {{ end }}
     {{ partial "global-scripts" . }}
-    {{/*  Popunder Adsterra hanya di homepage & detail donghua —
-          bukan di 404, kontak, favorit, search, dll.
-          Scope mengikuti Smartlink lama sesuai permintaan.  */}}
-    {{ if or .IsHome (eq .Layout "postingan-donghua") }}
-        {{ partial "widget/popunder-adsterra" . }}
-    {{ end }}
     {{/*  Scrollbar CSS dipindah ke main.css (assets/input.css) supaya
           bisa di-cache terpisah dan mengurangi ukuran HTML  */}}
 </body>

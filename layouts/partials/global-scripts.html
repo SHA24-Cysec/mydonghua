@@ -20,10 +20,18 @@
 {{- template "minjs" "js/site-navbar.js" -}}
 {{- template "minjs" "js/site-random.js" -}}
 
-{{/* Post-only: report, share, dan Disqus hanya dirender pada posting donghua. */}}
+{{/* Post-only: report, share, smartlink, dan Disqus hanya dirender pada posting donghua. */}}
 {{ if $isPost }}
 {{- template "minjs" "js/site-download-report.js" -}}
 {{- template "minjs" "js/site-share.js" -}}
+
+  {{- /* Smartlink Adsterra — trigger klik tombol download */ -}}
+  {{- $smartlink := .Site.Params.smartlink -}}
+  {{- if and $smartlink.enabled $smartlink.src -}}
+    <script>window.__SMARTLINK_SRC = '{{ $smartlink.src }}';
+    window.__SMARTLINK_ENV = '{{ if hugo.IsProduction }}production{{ else }}development{{ end }}';</script>
+    {{- template "minjs" "js/site-smartlink.js" -}}
+  {{- end -}}
 {{ end }}
 
 {{/* Global: komponen berada pada baseof dan dibutuhkan di seluruh halaman HTML. */}}
