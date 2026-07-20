@@ -4,6 +4,7 @@
 {{- $isFilterGenre := eq .Layout "filter-genre" -}}
 {{- $isFavorite := eq .Layout "favorit" -}}
 {{- $hasSidebar := or .IsHome (or $isPost $isFavorite) -}}
+{{- $hasCardGrid := or .IsHome (or $isPost (or $isSearch (or $isFilterGenre (or $isFavorite (or (eq .Kind "taxonomy") (eq .Kind "term")))))) -}}
 
 {{/* Helper: minify JS via Hugo Pipes */}}
 {{- define "minjs" -}}
@@ -20,20 +21,20 @@
 {{- template "minjs" "js/site-navbar.js" -}}
 {{- template "minjs" "js/site-random.js" -}}
 
-{{/* Post-only: report, share, smartlink, dan Disqus hanya dirender pada posting donghua. */}}
+{{/* Smartlink Adsterra — trigger klik judul/kartu donghua (halaman yang punya donghua-card-link) */}}
+{{- $smartlink := .Site.Params.smartlink -}}
+{{- if and $smartlink.enabled $smartlink.src $hasCardGrid -}}
+  <script>
+  window.__SMARTLINK_SRC = '{{ $smartlink.src }}';
+  window.__SMARTLINK_ENV = '{{ if hugo.IsProduction }}production{{ else }}development{{ end }}';
+  </script>
+  {{- template "minjs" "js/site-smartlink.js" -}}
+{{- end -}}
+
+{{/* Post-only: report, share, dan Disqus hanya dirender pada posting donghua. */}}
 {{ if $isPost }}
 {{- template "minjs" "js/site-download-report.js" -}}
 {{- template "minjs" "js/site-share.js" -}}
-
-  {{- /* Smartlink Adsterra — trigger interstitial klik download */ -}}
-  {{- $smartlink := .Site.Params.smartlink -}}
-  {{- if and $smartlink.enabled $smartlink.src -}}
-    <script>
-    window.__SMARTLINK_SRC = '{{ $smartlink.src }}';
-    window.__SMARTLINK_ENV = '{{ if hugo.IsProduction }}production{{ else }}development{{ end }}';
-    </script>
-    {{- template "minjs" "js/site-smartlink.js" -}}
-  {{- end -}}
 {{ end }}
 
 {{/* Global: komponen berada pada baseof dan dibutuhkan di seluruh halaman HTML. */}}
