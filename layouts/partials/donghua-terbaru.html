@@ -1,5 +1,5 @@
 <div class="panel-neon p-3 sm:p-5">
-    <span class="heading-neon text-lg sm:text-xl flex items-center gap-2"><i class="fa fa-fire text-cyan-400 animate-pulse"></i>Donghua Terbaru</span>
+    <span class="heading-neon text-lg sm:text-xl flex items-center gap-2"><i class="fa fa-fire text-cyan-400"></i>Donghua Terbaru</span>
     <hr class="mt-4 border-cyan-500/30">
     <div class="mt-4 donghua-card-grid donghua-card-grid-latest">
         {{ range where .Site.RegularPages.ByDate.Reverse "Layout" "postingan-donghua" | first 8 }}
