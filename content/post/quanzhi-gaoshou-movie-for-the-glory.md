@@ -3,7 +3,7 @@ date : '2025-03-01T16:37:32+07:00'
 draft : false
 title : 'Download Batch Quanzhi Gaoshou Movie: for the Glory Subtitle Indonesia'
 studio :
-    - 'B.CMAY PICTURES'
+    - 'B.CMAY Pictures'
 season : '2019'
 genre :
     - Action

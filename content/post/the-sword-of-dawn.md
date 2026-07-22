@@ -8,7 +8,7 @@ season : 'Fall 2022'
 genre :
     - Adventure
     - Fantasy
-    - Sci-fi
+    - Sci-Fi
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'

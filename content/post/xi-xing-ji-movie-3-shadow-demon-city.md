@@ -3,7 +3,7 @@ date : '2025-03-01T10:03:34+07:00'
 draft : false
 title : 'Download Batch Xi Xing Ji Movie 3: Shadow Demon City Subtitle Indonesia'
 studio :
-    - Byment
+    - BYMENT
 season : 'Winter 2023'
 genre :
     - Action

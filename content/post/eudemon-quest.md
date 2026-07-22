@@ -2,8 +2,7 @@
 date : '2025-08-18T03:23:46+07:00'
 draft : false
 title : 'Download Batch Eudemon Quest Subtitle Indonesia'
-studio :
-    - '-'
+studio : []
 season : '2D Animation'
 genre :
     - 'Action'

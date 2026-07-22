@@ -3,7 +3,7 @@ date : '2025-03-02T19:36:09+07:00'
 draft : false
 title : "Download Batch Cupid's Chocolates Season 2 Subtitle Indonesia"
 studio :
-    - 'B.Cmay Pictures'
+    - 'B.CMAY Pictures'
 season : '2017'
 genre :
     - Comedy

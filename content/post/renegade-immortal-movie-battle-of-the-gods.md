@@ -3,7 +3,7 @@ date : '2025-06-30T18:58:03+07:00'
 draft : false
 title : 'Download Batch Renegade Immortal Movie: Battle of the Gods Subtitle Indonesia'
 studio :
-    - 'BUILD DREAM'
+    - 'Build Dream'
 season : '2025'
 genre :
     - 'Action'

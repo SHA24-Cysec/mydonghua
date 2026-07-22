@@ -9,7 +9,7 @@ genre :
     - 'Action'
     - 'Adventure'
     - 'Fantasy'
-    - 'Sci-fi'
+    - 'Sci-Fi'
 type : 'Donghua'
 status : 'Ongoing'
 sub : 'Anichin'

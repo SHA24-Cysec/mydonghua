@@ -3,7 +3,7 @@ date : '2026-05-20T10:39:02+07:00'
 draft : false
 title : 'Download Batch The Ravages of Time Season 2 Subtitle Indonesia'
 studio :
-    - 'Lx Animation Studio'
+    - 'LX Animation Studio'
 season : 'Winter 2025'
 genre :
     - 'Action'

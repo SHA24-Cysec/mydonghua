@@ -21,7 +21,7 @@ uglyURLs = false
     deskripsi = 'Tempat Download Batch Donghua subtitle Indonesia'
     keywords = 'Donghua, Batch, Subtitle Indonesia'
     author = 'Admin'
-    img = '/img/favicon.webp'
+    img = '/img/DonghuaBatch.webp'
 
   # Smartlink Adsterra — trigger klik judul/kartu donghua
   # Saat user klik kartu donghua (judul/poster), smartlink terbuka

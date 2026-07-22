@@ -8,7 +8,7 @@ season : 'Summer 2022'
 genre :
     - Drama
     - Mystery
-    - Sci-fi
+    - Sci-Fi
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'

@@ -7,7 +7,8 @@
 {{ with resources.Get "favicon.ico" }}
 <link rel="shortcut icon" href='{{ .RelPermalink }}' type="image/x-icon">
 {{ end }}
-<link rel="canonical" href="{{ .Permalink }}">
+{{- $pagination := partial "pagination-context" . -}}
+<link rel="canonical" href="{{ $pagination.canonicalURL }}">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
@@ -20,19 +21,13 @@
 <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous"></noscript>
-{{/* Homepage LCP: preload berkas gambar sumber tanpa resize/kompresi Hugo. */}}
+{{/* Homepage LCP: preload hanya gambar hero utama. */}}
 {{ if .IsHome }}
   <link rel="preload" as="image" type="image/webp" fetchpriority="high" href='{{ "img/Huo-Linger.webp" | relURL }}'>
-  {{/* Preload slider hero thumbnail – LCP optimization – homepage only */}}
-  {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
-  {{ $first := index (first 1 ($pages.ByDate.Reverse)) 0 }}
-  {{ with $first }}
-    <link rel="preload" as="image" fetchpriority="high" href="{{ .Params.thumbnail | default "/img/favicon.webp" | relURL }}">
-  {{ end }}
 {{ end }}
 {{- $seoNoindexExact := slice "/post/" "/halaman/" "/genre/" "/studio/" "/season/" "/season/-/" "/studio/-/" "/genre/-/" "/season/2d-animation/" "/season/3d-animation/" -}}
 {{- $seoNoindexPrefix := or (strings.HasPrefix .RelPermalink "/post/page/") (strings.HasPrefix .RelPermalink "/halaman/page/") -}}
-{{- $seoNoindex := or (in $seoNoindexExact .RelPermalink) $seoNoindexPrefix -}}
+{{- $seoNoindex := or $pagination.isPaged (or (in $seoNoindexExact .RelPermalink) $seoNoindexPrefix) -}}
 {{- if not $seoNoindex -}}
   {{- with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}

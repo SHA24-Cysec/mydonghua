@@ -2,6 +2,7 @@
 date : '2025-02-22T21:01:41+07:00'
 draft : false
 title : 'DonghuaBatch: Tempat Download Batch Donghua Subtitle Indonesia Terlengkap'
+deskripsi : 'Kenali DonghuaBatch, situs untuk menjelajahi dan menemukan koleksi batch donghua subtitle Indonesia.'
 layout : halaman
 url : about
 ---

@@ -4,7 +4,7 @@
 */}}
 {{ define "main" }}
 <div class="mt-4 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
-  <main class="flex gap-4 flex-col lg:flex-row lg:items-start">
+  <div class="flex gap-4 flex-col lg:flex-row lg:items-start">
     <div class="flex-1 min-w-0">
       <div class="panel-neon p-3 sm:p-5">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
@@ -80,7 +80,7 @@
       </div>
     </div>
     {{ partial "sidebar" . }}
-  </main>
+  </div>
 </div>
 
 {{/*  Confirm Dialog disediakan oleh save-favorite.html (partial yang di-load via baseof.html)

@@ -5,7 +5,7 @@ title : 'Download Batch Langlang Shan Xiao Yaoguai Subtitle Indonesia'
 studio :
     - 'bilibili'
     - 'Number 19 Animation'
-season : '-'
+season : ''
 genre :
     - 'Fantasy'
 type : 'Donghua'

@@ -2,8 +2,7 @@
 date : '2025-12-27T14:15:46+07:00'
 draft : false
 title : 'Download Batch Demigod Realm Subtitle Indonesia'
-studio :
-    - '-'
+studio : []
 season : 'Spring 2023'
 genre :
     - 'Action'

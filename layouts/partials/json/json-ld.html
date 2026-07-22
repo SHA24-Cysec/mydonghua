@@ -12,10 +12,8 @@
     </script>
     {{/*  ItemList – Daftar donghua terbaru homepage (hanya halaman pertama paginasi)  */}}
     {{ if not .Paginator.HasPrev }}
-        {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
-        {{ $paginator := .Paginate $pages.ByDate.Reverse 16 }}
         {{ $itemList := slice }}
-        {{ range $index, $page := $paginator.Pages }}
+        {{ range $index, $page := .Paginator.Pages }}
             {{ $item := dict
                 "@type" "ListItem"
                 "position" (add $index 1)
@@ -41,8 +39,11 @@
     {{ $desc := .Params.sinopsis | default .Params.deskripsi | plainify | truncate 160 }}
     {{ $img := .Params.image | default .Params.thumbnail | absURL }}
     {{ $genres := .Params.genre | default (slice "Donghua") }}
-    {{ $episodeCount := 0 }}
-    {{ with .Params.episode }}{{ $num := replaceRE "[^0-9]" "" . }}{{ if $num }}{{ $episodeCount = int $num }}{{ end }}{{ end }}
+    {{ $episodeCount := int (.Params.episodeCount | default 0) }}
+    {{ if and (eq $episodeCount 0) .Params.episode }}
+        {{ $numbers := findRE `[0-9]+` .Params.episode 1 }}
+        {{ if $numbers }}{{ $episodeCount = int (index $numbers 0) }}{{ end }}
+    {{ end }}
     {{ $type := cond (gt $episodeCount 1) "TVSeries" "Movie" }}
     <script type="application/ld+json">
     {

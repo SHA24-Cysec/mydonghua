@@ -3,7 +3,7 @@ date : '2025-03-10T02:11:15+07:00'
 draft : false
 title : 'Download Batch Guomin Laogong Dai Huijia Season 2 Subtitle Indonesia'
 studio :
-    - 'B.cmay Pictures'
+    - 'B.CMAY Pictures'
 season : '2D Animation'
 genre :
     - Drama

@@ -3,7 +3,7 @@ date : '2025-03-09T13:12:21+07:00'
 draft : false
 title : 'Download Batch Xi Xing Ji Season 2 Subtitle Indonesia'
 studio :
-    - Byment
+    - BYMENT
 season : '2019'
 genre :
     - Action

@@ -2,7 +2,7 @@
     {{ partial "header" . }}
     {{ partial "alert" . }}
     <div class="mt-4 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
-        <main class="flex gap-4 flex-col lg:flex-row lg:items-start">
+        <div class="flex gap-4 flex-col lg:flex-row lg:items-start">
             {{/*  Main Content  */}}
             <div class="panel-neon p-3 sm:p-5 flex-1 min-w-0">
                 <div class="flex flex-wrap flex-col gap-4">
@@ -20,9 +20,7 @@
                         </div>
                     </div>
                     <div class="donghua-card-grid donghua-card-grid-main p-0">
-                        {{ $pages := where .Site.RegularPages "Layout" "postingan-donghua" }}
-                        {{ $paginator := .Paginate $pages.ByDate.Reverse 16 }}
-                        {{ range $paginator.Pages }}
+                        {{ range .Paginator.Pages }}
                             {{ partial "donghua-card" (dict "page" . "headingLevel" 3) }}
                         {{ end }}
                     </div>
@@ -32,6 +30,6 @@
             {{/*  Sidebar  */}}
             {{ partial "sidebar" . }}
             {{/*  Akhir Sidebar  */}}
-        </main>
+        </div>
     </div>
 {{ end }}

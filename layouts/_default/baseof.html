@@ -1,3 +1,10 @@
+{{- if .IsHome -}}
+    {{- $pages := where .Site.RegularPages "Layout" "postingan-donghua" -}}
+    {{- $paginator := .Paginate $pages.ByDate.Reverse 16 -}}
+{{- else if and (in (slice "section" "taxonomy" "term") .Kind) (ne .Layout "filter-genre") -}}
+    {{- $paginator := .Paginate .RegularPages.ByTitle 16 -}}
+{{- end -}}
+{{- $pagination := partial "pagination-context" . -}}
 <!DOCTYPE html>
 <html lang="id" dir="ltr" class="scroll-smooth box-border overflow-x-hidden">
 <head>
@@ -6,15 +13,18 @@
     {{ partial "schema" . }}
     {{ partial "twitter_cards" . }}
     {{ partial "opengraph" . }}
-    {{ partial "donghua-card-styles" . }}
     
     {{ if hugo.IsProduction }}
         {{ template "_internal/google_analytics.html" . }}    
     {{ end }}
     {{ if eq .Kind "404" }}
         <title>404 - Halaman Tidak Ditemukan | DonghuaBatch</title>
+    {{ else if and .IsHome $pagination.isPaged }}
+        <title>{{ .Site.Title }} | Halaman {{ $pagination.pageNumber }}</title>
     {{ else if .IsHome }}
         <title>{{ .Site.Title }}</title>
+    {{ else if $pagination.isPaged }}
+        <title>{{ .Title }} | Halaman {{ $pagination.pageNumber }} | DonghuaBatch</title>
     {{ else }}
         <title>{{ .Title }} | DonghuaBatch</title>
     {{ end }}

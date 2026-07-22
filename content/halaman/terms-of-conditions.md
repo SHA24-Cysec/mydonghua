@@ -2,6 +2,7 @@
 date : '2025-02-22T21:02:11+07:00'
 draft : false
 title : 'Syarat dan Ketentuan DonghuaBatch'
+deskripsi : 'Pelajari syarat dan ketentuan penggunaan layanan, konten, serta tanggung jawab pengguna DonghuaBatch.'
 layout : halaman
 url : terms-of-conditions
 ---

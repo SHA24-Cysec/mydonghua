@@ -1,6 +1,6 @@
 {{ define "main" }}
     <div class="mt-4 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
-        <main class="w-full flex flex-col gap-4">
+        <div class="w-full flex flex-col gap-4">
             {{/*  Main Content  */}}
             <div class="panel-neon p-3 sm:p-5">
                 {{ if eq .Type "genre" }}
@@ -16,15 +16,13 @@
             <div class="panel-neon p-3 sm:p-5 min-h-screen">
                 <div class="flex flex-wrap flex-col gap-4">
                     <div class="donghua-card-grid donghua-card-grid-wide p-0 mt-4">
-                        {{ $pages := .RegularPages }}
-                        {{ $paginator := .Paginate $pages.ByTitle 16 }}
-                        {{ range $paginator.Pages }}
+                        {{ range .Paginator.Pages }}
                             {{ partial "donghua-card" (dict "page" . "headingLevel" 2) }}
                         {{ end }}
                     </div>
                     {{ partial "pagination-option11" . }}
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 {{ end }}

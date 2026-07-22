@@ -2,8 +2,7 @@
 date : '2025-08-28T13:19:44+07:00'
 draft : false
 title : 'Download Batch Soul Land Live Action Subtitle Indonesia'
-studio :
-    - '-'
+studio : []
 season : '2021'
 genre :
     - 'Action'

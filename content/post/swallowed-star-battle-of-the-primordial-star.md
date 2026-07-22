@@ -8,7 +8,7 @@ season : 'Spring 2026'
 genre :
     - 'Action'
     - 'Adventure'
-    - 'Sci-fi'
+    - 'Sci-Fi'
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'

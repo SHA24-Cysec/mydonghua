@@ -2,7 +2,7 @@
 date : '2025-03-08T22:23:31+07:00'
 draft : false
 title : 'Download Batch Start to Be a Star Today Subtitle Indonesia'
-studio :
+studio : []
 season : '2019'
 genre :
     - Comedy

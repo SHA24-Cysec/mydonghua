@@ -1,15 +1,21 @@
-<meta property="og:url" content="{{ .Permalink }}">
+{{- $pagination := partial "pagination-context" . -}}
+<meta property="og:url" content="{{ $pagination.canonicalURL }}">
 
 {{- with or site.Title site.Params.title | plainify }}
     <meta property="og:site_name" content="{{ . }}">
 {{- end }}
 
-{{- with or .Title site.Title site.Params.title | plainify }}
-    <meta property="og:title" content="{{ . }}">
-{{- end }}
+{{- $ogTitle := or .Title site.Title site.Params.title | plainify -}}
+{{- if .IsHome }}{{ $ogTitle = site.Title }}{{ end -}}
+{{- if $pagination.isPaged }}{{ $ogTitle = printf "%s | Halaman %d" $ogTitle $pagination.pageNumber }}{{ end -}}
+<meta property="og:title" content="{{ $ogTitle }}">
 
-{{- with or .Params.deskripsi site.Params.deskripsi | plainify | htmlUnescape }}
-    <meta property="og:description" content="{{ trim . "\n\r\t " }}">
+{{- if $pagination.isPaged }}
+    <meta property="og:description" content="Halaman {{ $pagination.pageNumber }} dari daftar donghua batch subtitle Indonesia di DonghuaBatch.">
+{{- else }}
+    {{- with or .Params.deskripsi site.Params.deskripsi | plainify | htmlUnescape }}
+        <meta property="og:description" content="{{ trim . "\n\r\t " }}">
+    {{- end }}
 {{- end }}
 
 {{- $locale := or .Params.locale site.Language.Lang "id_ID" -}}
@@ -36,15 +42,14 @@
     <meta property="og:type" content="website">
 {{- end }}
 
-{{ if .IsHome }}
-    <meta property="og:image" content="{{ site.Params.img | absURL }}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/webp">
-{{ else if eq .Layout "postingan-donghua" }}
-    <meta property="og:image" content="{{ .Params.thumbnail | absURL }}">
-    <meta property="og:image:width" content="400">
-    <meta property="og:image:height" content="600">
-{{ else if .Data.Singular }}
-    <meta property="og:image" content="{{ site.Params.img | absURL }}">
-{{ end }}
+{{- $ogImage := site.Params.img -}}
+{{- if eq .Layout "postingan-donghua" -}}
+    {{- $ogImage = .Params.thumbnail | default .Params.image | default site.Params.img -}}
+{{- end }}
+<meta property="og:image" content="{{ $ogImage | absURL }}">
+{{- $cleanImage := strings.TrimPrefix "/" $ogImage -}}
+{{- with resources.Get $cleanImage }}
+    <meta property="og:image:width" content="{{ .Width }}">
+    <meta property="og:image:height" content="{{ .Height }}">
+    <meta property="og:image:type" content="{{ .MediaType.Type }}">
+{{- end }}

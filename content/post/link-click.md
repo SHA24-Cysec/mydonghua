@@ -13,6 +13,7 @@ status : 'Completed'
 sub : 'Anichin'
 durasi : '23 Menit'
 episode : '11 Episode + 4 Spesial'
+episodeCount : 15
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : '2021'
 # Rating 1-10

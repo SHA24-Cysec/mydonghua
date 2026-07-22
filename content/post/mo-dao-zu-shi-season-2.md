@@ -3,7 +3,7 @@ date : '2026-04-23T08:54:02+07:00'
 draft : false
 title : 'Download Batch Mo Dao Zu Shi Season 2 Subtitle Indonesia'
 studio :
-    - 'B.CMAY PICTURES'
+    - 'B.CMAY Pictures'
 season : '2019'
 genre :
     - 'Action'

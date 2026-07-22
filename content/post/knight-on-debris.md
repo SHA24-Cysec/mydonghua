@@ -7,7 +7,7 @@ studio :
 season : 'Fall 2020'
 genre :
     - Action
-    - Sci-fi
+    - Sci-Fi
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'

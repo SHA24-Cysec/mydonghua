@@ -11,7 +11,20 @@ type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
 durasi : ' Menit'
+
+# Teks jumlah episode yang tampil untuk pengunjung.
 episode : ' Episode'
+
+# episodeCount bersifat opsional dan hanya dipakai untuk JSON-LD/SEO.
+# - Jika `episode` hanya memiliki satu angka, field ini boleh tidak diisi.
+#   Contoh: episode : '12 Episode' akan terbaca otomatis sebagai 12.
+# - Jika `episode` memiliki lebih dari satu angka, isi jumlah totalnya.
+#   Contoh: episode : '11 Episode + 4 Spesial' -> episodeCount : 15.
+# - Jika jumlah episode belum diketahui, gunakan episode : 'Belum diketahui'
+#   dan biarkan episodeCount tetap dikomentari.
+# - Rentang batch seperti Episode 1-20 ditulis pada downloadGroups, bukan di sini.
+# episodeCount : 15
+
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : ''
 # Rating 1-10

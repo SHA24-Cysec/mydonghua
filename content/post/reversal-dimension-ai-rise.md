@@ -12,7 +12,7 @@ genre :
     - Fantasy
     - Game
     - 'Martial Arts'
-    - Sci-fi
+    - Sci-Fi
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'

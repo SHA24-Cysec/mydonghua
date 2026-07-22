@@ -3,7 +3,7 @@ date : '2026-01-06T23:16:03+07:00'
 draft : false
 title : 'Download Batch Renegade Immortal Subtitle Indonesia'
 studio :
-    - 'BUILD DREAM'
+    - 'Build Dream'
 season : 'Summer 2023'
 genre :
     - 'Action'

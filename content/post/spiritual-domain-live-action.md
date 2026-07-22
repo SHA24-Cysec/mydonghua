@@ -2,8 +2,7 @@
 date : '2025-12-27T16:09:04+07:00'
 draft : false
 title : 'Download Batch Spiritual Domain Live Action Subtitle Indonesia'
-studio :
-    - '-'
+studio : []
 season : '3D Animation'
 genre :
     - 'Action'

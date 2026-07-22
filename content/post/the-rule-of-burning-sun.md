@@ -11,7 +11,7 @@ genre :
     - Mecha
     - Military
     - Mystery
-    - Sci-fi
+    - Sci-Fi
     - Space
     - Supranatural
 type : 'Donghua Movie'

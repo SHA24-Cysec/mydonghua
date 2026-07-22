@@ -1,3 +1,4 @@
+{{- $pagination := partial "pagination-context" . -}}
 {{ if .IsHome }}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="{{ site.Params.img | absURL }}">
@@ -9,15 +10,20 @@
     <meta name="twitter:image" content="{{ site.Params.img | absURL }}">
 {{ end }}
 
-{{- with or .Title site.Title site.Params.title | plainify }}
-    <meta name="twitter:title" content="{{ . }}">
-{{- end }}
+{{- $twitterTitle := or .Title site.Title site.Params.title | plainify -}}
+{{- if .IsHome }}{{ $twitterTitle = site.Title }}{{ end -}}
+{{- if $pagination.isPaged }}{{ $twitterTitle = printf "%s | Halaman %d" $twitterTitle $pagination.pageNumber }}{{ end -}}
+<meta name="twitter:title" content="{{ $twitterTitle }}">
 
-{{ if .IsHome }}
+{{ if $pagination.isPaged }}
+    <meta name="twitter:description" content="Halaman {{ $pagination.pageNumber }} dari daftar donghua batch subtitle Indonesia di DonghuaBatch.">
+{{ else if .IsHome }}
     <meta name="twitter:description" content="{{ site.Params.deskripsi }}">
 {{ else if eq .Layout "postingan-donghua" }}
     {{ $desc := .Params.deskripsi | default .Params.sinopsis | default .Summary | plainify | truncate 160 }}
     <meta name="twitter:description" content="{{ $desc }}">
 {{ else if .Data.Singular }}
     <meta name="twitter:description" content="Daftar donghua {{ .Data.Singular }} {{ .Title }} batch subtitle Indonesia.">
+{{ else }}
+    <meta name="twitter:description" content="{{ .Params.deskripsi | default site.Params.deskripsi | plainify | truncate 160 }}">
 {{ end }}

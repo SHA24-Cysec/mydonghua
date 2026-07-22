@@ -10,7 +10,7 @@ genre :
     - Action
     - Adventure
     - Fantasy
-    - Sci-fi
+    - Sci-Fi
 type : 'Donghua Movie'
 status : 'Completed'
 sub : 'Anichin'

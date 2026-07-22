@@ -3,7 +3,7 @@ date : '2025-12-28T12:22:42+07:00'
 draft : false
 title : 'Download Batch Quanzhi Gaoshou Subtitle Indonesia'
 studio :
-    - 'B.CMAY PICTURES'
+    - 'B.CMAY Pictures'
 season : '2017'
 genre :
     - 'Action'

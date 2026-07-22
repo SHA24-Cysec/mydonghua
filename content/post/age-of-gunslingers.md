@@ -7,7 +7,7 @@ studio :
 season : '3D Animation'
 genre :
     - Action
-    - Sci-fi
+    - Sci-Fi
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'

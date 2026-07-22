@@ -3,7 +3,7 @@ date : '2026-05-20T10:33:20+07:00'
 draft : false
 title : 'Download Batch The Ravages of Time Subtitle Indonesia'
 studio :
-    - 'Lx Animation Studio'
+    - 'LX Animation Studio'
 season : 'Spring 2023'
 genre :
     - 'Action'

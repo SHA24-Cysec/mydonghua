@@ -2,7 +2,7 @@
 date : '2025-03-17T05:45:36+07:00'
 draft : false
 title : 'Download Batch Wonderland Season 2 Subtitle Indonesia'
-studio :
+studio : []
 season : '2018'
 genre :
     - Action

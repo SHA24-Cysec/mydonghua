@@ -17,7 +17,8 @@
 
             <div class="db-resolution-grid">
             {{ range $i, $d := $group.downloads }}
-                {{ $isUnavailable := in $d.button "Belum" }}
+                {{ $buttonLabel := $d.button | default "Belum Tersedia" }}
+                {{ $isUnavailable := or (not $d.link) (in $buttonLabel "Belum") }}
                 <article class="db-res-card{{ if $isUnavailable }} is-unavailable{{ end }}">
                     <div class="db-res-top">
                         <span class="db-quality">{{ $d.quality }}</span>
@@ -40,12 +41,12 @@
                     {{ if $isUnavailable }}
                         <span class="db-button is-locked" aria-disabled="true">
                             <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                            <span>{{ $d.button }}</span>
+                            <span>{{ $buttonLabel }}</span>
                         </span>
                     {{ else }}
                         <a class="db-button" target="_blank" rel="nofollow noopener" href="{{ $d.link }}">
                             <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
-                            <span>{{ $d.button }}</span>
+                            <span>{{ $buttonLabel }}</span>
                             <i class="fa-solid fa-arrow-up-right-from-square db-open" aria-hidden="true"></i>
                         </a>
                     {{ end }}

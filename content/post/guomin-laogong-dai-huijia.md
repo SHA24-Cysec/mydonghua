@@ -3,7 +3,7 @@ date : '2025-03-09T13:52:43+07:00'
 draft : false
 title : 'Download Batch Guomin Laogong Dai Huijia Subtitle Indonesia'
 studio :
-    - 'B.cmay Pictures'
+    - 'B.CMAY Pictures'
 season : '2016'
 genre :
     - Drama

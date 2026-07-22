@@ -10,7 +10,7 @@ genre :
     - Demons
     - Drama
     - Horror
-    - Sci-fi
+    - Sci-Fi
     - Thriller
 type : 'Donghua'
 status : 'Completed'

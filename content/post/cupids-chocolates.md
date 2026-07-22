@@ -3,7 +3,7 @@ date : '2025-03-02T19:28:42+07:00'
 draft : false
 title : "Download Batch Cupid's Chocolates Subtitle Indonesia"
 studio :
-    - 'B.Cmay Pictures'
+    - 'B.CMAY Pictures'
 season : '2015'
 genre :
     - Comedy

@@ -3,7 +3,7 @@ date : '2025-03-01T09:41:19+07:00'
 draft : false
 title : 'Download Batch Xi Xing Ji Movie 2: the Fantasy Cave Subtitle Indonesia'
 studio :
-    - Byment
+    - BYMENT
 season : 'Summer 2022'
 genre :
     - Action

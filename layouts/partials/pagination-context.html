@@ -1,0 +1,11 @@
+{{- $enabled := or .IsHome (and (in (slice "section" "taxonomy" "term") .Kind) (ne .Layout "filter-genre")) -}}
+{{- $pageNumber := 1 -}}
+{{- $canonicalURL := .Permalink -}}
+{{- if $enabled -}}
+  {{- $paginator := .Paginator -}}
+  {{- $pageNumber = $paginator.PageNumber -}}
+  {{- if gt $pageNumber 1 -}}
+    {{- $canonicalURL = $paginator.URL | absURL -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "enabled" $enabled "pageNumber" $pageNumber "isPaged" (gt $pageNumber 1) "canonicalURL" $canonicalURL) -}}

@@ -2,6 +2,7 @@
 date : '2025-02-22T21:01:56+07:00'
 draft : false
 title : 'Kebijakan Privasi DonghuaBatch'
+deskripsi : 'Baca kebijakan privasi DonghuaBatch mengenai data, cookie, tautan eksternal, dan hak pengguna.'
 layout : halaman
 url : privacy-policy
 ---

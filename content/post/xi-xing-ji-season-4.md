@@ -28,8 +28,8 @@ linkSeasonSebelumnya : '/xi-xing-ji-season-3'
 judulSeasonSebelumnya : 'Xi Xing Ji Season 3 Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
-thumbnail : /img/post/xi-xing-ji-season-4.webp
-image : /img/post/xi-xing-ji-season-4.webp
+thumbnail : /img/post/xi-xing-ji-season-3.webp
+image : /img/post/xi-xing-ji-season-3.webp
 
 alt : 'Xi Xing Ji Season 4'
 url: 'xi-xing-ji-season-4'

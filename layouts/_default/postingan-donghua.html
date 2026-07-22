@@ -2,7 +2,7 @@
     {{ partial "alert" . }}
     {{ partial "widget/ads-728x90" . }}
     <div class="mt-4 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
-        <main class="flex gap-4 flex-col lg:flex-row lg:items-start">
+        <div class="flex gap-4 flex-col lg:flex-row lg:items-start">
             {{/*  Main Content  */}}
             <div class="flex-1 min-w-0">
                 <div class="w-full flex flex-col gap-4">
@@ -74,8 +74,8 @@
                                 </thead>
                                 <tbody class="text-center font-medium text-slate-200">
                                     <tr class="hover:bg-cyan-500/10 transition-colors">
-                                        <td class="p-3.5 border-r border-slate-800">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</td>
-                                        <td class="p-3.5 border-r border-slate-800">{{ .Params.season }}</td>
+                                        <td class="p-3.5 border-r border-slate-800">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ else }}Belum diketahui{{ end }}</td>
+                                        <td class="p-3.5 border-r border-slate-800">{{ .Params.season | default "Belum diketahui" }}</td>
                                         <td class="p-3.5 border-r border-slate-800">{{ .Params.durasi }}</td>
                                         <td class="p-3.5 border-r border-slate-800 text-cyan-400 font-bold">{{ .Params.episode }}</td>
                                         <td class="p-3.5 border-r border-slate-800">{{ .Params.release }}</td>
@@ -94,11 +94,11 @@
                             <div class="divide-y divide-slate-800/60">
                                 <div class="flex items-center gap-3 px-4 py-3">
                                     <span class="text-cyan-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-video"></i>Studio</span>
-                                    <span class="text-slate-200 text-sm font-medium truncate">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ end }}</span>
+                                    <span class="text-slate-200 text-sm font-medium truncate">{{ with .Params.studio }}{{ delimit . ", " | title }}{{ else }}Belum diketahui{{ end }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
                                     <span class="text-pink-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-flag"></i>Season</span>
-                                    <span class="text-slate-200 text-sm font-medium truncate">{{ .Params.season }}</span>
+                                    <span class="text-slate-200 text-sm font-medium truncate">{{ .Params.season | default "Belum diketahui" }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 px-4 py-3">
                                     <span class="text-amber-400 text-sm font-bold min-w-[4.5rem] shrink-0 flex items-center gap-2"><i class="fa-solid fa-clock"></i>Durasi</span>
@@ -138,6 +138,6 @@
             {{/*  Sidebar  */}}
                 {{ partial "sidebar" . }}
             {{/*  Akhir Sidebar  */}}
-        </main>
+        </div>
     </div>
 {{ end }}

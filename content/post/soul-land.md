@@ -88,7 +88,7 @@ downloadGroups:
     - quality: '480p'
       link: 'https://drive.usercontent.google.com/download?id=1QSSSRxcrgQJ3Muuw7-xO519ImOmYFlXA&export=download&authuser=0'
       button: 'Download'
-      size: ''
+      size: 'Tidak diketahui'
     
     - quality: '720p'
       link: 'https://drive.usercontent.google.com/download?id=127tZVdnYE_641OX_atpdNNvTL2TZ3W0X&export=download&authuser=0'

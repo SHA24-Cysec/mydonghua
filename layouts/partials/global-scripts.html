@@ -59,10 +59,6 @@
 {{- template "minjs" "js/site-favorites-page.js" -}}
 {{ end }}
 
-{{ if .IsHome }}
-{{/* Slider fitur telah dihapus untuk optimasi performa scroll */}}
-{{ end }}
-
 {{/* Image fallback handler: ensures broken images are replaced with placeholders. */}}
 {{- template "minjs" "js/site-image-loader.js" -}}
 

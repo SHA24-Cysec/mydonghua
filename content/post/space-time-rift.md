@@ -3,7 +3,7 @@ date : '2025-03-12T16:14:25+07:00'
 draft : false
 title : 'Download Batch Space Time Rift Subtitle Indonesia'
 studio :
-    - 'B.cmay Pictures'
+    - 'B.CMAY Pictures'
 season : 'Spring 2022'
 genre :
     - Action

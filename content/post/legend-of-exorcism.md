@@ -67,6 +67,6 @@ downloadGroups:
     
     - quality: '4K'
       link: ''
-      button: ''
-      size: 'Belum Tersedia'
+      button: 'Belum Tersedia'
+      size: ''
 ---
