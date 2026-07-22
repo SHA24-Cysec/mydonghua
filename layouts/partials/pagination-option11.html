@@ -34,7 +34,7 @@
         </span>
     {{ end }}
 
-    <div class="pagination-aurora-pages" aria-label="Daftar halaman">
+    <div class="pagination-aurora-pages" role="group" aria-label="Daftar halaman">
         {{ range $paginator.Pagers }}
             {{ if and (ge .PageNumber $start) (le .PageNumber $end) }}
                 {{ if eq .PageNumber $current }}

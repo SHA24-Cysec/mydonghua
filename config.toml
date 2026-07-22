@@ -41,6 +41,9 @@ uglyURLs = false
 
 [outputs]
     home = ['HTML', 'rss', 'json']
+    section = ['HTML']
+    taxonomy = ['HTML']
+    term = ['HTML']
 
 # Hugo Modules – mount static/img to assets/img
 # Supaya resources.Get bisa proses thumbnail di static/img/post/

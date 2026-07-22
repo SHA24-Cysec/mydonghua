@@ -1702,7 +1702,7 @@ body.has-floating-ad .btt-wrapper {
         color: #ddd6fe;
     }
 
-    .db-hero h3 {
+    .db-hero h2 {
         margin: 0;
         color: var(--site-title);
         font-size: clamp(1rem, 3vw, 1.2rem);
@@ -1976,7 +1976,7 @@ body.has-floating-ad .btt-wrapper {
         .db-head p { display: none; }
         .db-hero { padding: 0.95rem; }
         .db-hero-top { justify-content: center; }
-        .db-hero h3 { text-align: center; }
+        .db-hero h2 { text-align: center; }
         .db-resolution-grid { padding: 0.8rem; }
         .db-res-card { min-height: 10rem; padding: 0.9rem; }
     }
@@ -2094,7 +2094,7 @@ body.has-floating-ad .btt-wrapper {
   max-width: 38rem;
 }
 
-.site-footer-card h3 {
+.site-footer-card h2 {
   margin: 0 0 0.8rem;
   font-size: 0.96rem;
   line-height: 1.2;
@@ -2475,6 +2475,10 @@ body.has-floating-ad .btt-wrapper {
   .site-random-modal,
   .site-random-modal * {
     box-sizing: border-box;
+  }
+
+  .site-random-modal[hidden] {
+    display: none !important;
   }
 
   .site-random-modal {
@@ -3822,7 +3826,7 @@ body .post-bookmark-btn.is-pulsing {
                 text-transform: uppercase;
             }
 
-            .genre-filter-preview h3 {
+            .genre-filter-preview h2 {
                 margin: 0;
                 color: transparent;
                 background: linear-gradient(90deg, #e0f2fe, #67e8f9 42%, #c084fc 82%, #f0abfc);
@@ -4378,7 +4382,7 @@ body .post-bookmark-btn.is-pulsing {
                 text-transform: uppercase;
             }
 
-            .taxonomy-tabs-head h3 {
+            .taxonomy-tabs-head h2 {
                 margin: 0.5rem 0 0;
                 color: transparent;
                 background: linear-gradient(90deg, #e0f2fe, #67e8f9 45%, #38bdf8 82%, #93c5fd);
@@ -5560,7 +5564,7 @@ body .pagination-dock-status,
     height: 2.75rem;
   }
 
-  .site-footer-card h3 {
+  .site-footer-card h2 {
     font-size: 1rem;
   }
 

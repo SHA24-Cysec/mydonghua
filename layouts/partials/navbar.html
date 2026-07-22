@@ -1,5 +1,5 @@
 <div class="site-nav-container" data-site-nav-container>
-  <nav class="site-navbar" data-site-navbar>
+  <nav class="site-navbar" aria-label="Navigasi utama" data-site-navbar>
     <div class="site-navbar-inner">
       <div class="site-navbar-top">
         <a href="{{ .Site.BaseURL }}" class="site-navbar-brand" aria-label="DonghuaBatch Beranda">
@@ -11,7 +11,7 @@
           <span>DonghuaBatch</span>
         </a>
 
-        <div class="site-navbar-actions" aria-label="Aksi cepat navbar">
+        <div class="site-navbar-actions" role="group" aria-label="Aksi cepat navbar">
           <button
             class="site-navbar-action site-nav-random-btn"
             type="button"
@@ -44,7 +44,7 @@
 
   <div class="site-nav-backdrop" data-nav-close aria-hidden="true"></div>
 
-  <div id="mobileNavSheet" class="site-nav-sheet" aria-label="Menu navigasi situs">
+  <nav id="mobileNavSheet" class="site-nav-sheet" aria-label="Menu navigasi situs">
     <div class="site-nav-handle" aria-hidden="true"></div>
 
     <div class="site-nav-sheet-head">
@@ -68,9 +68,9 @@
       <a href='{{ relURL "search/" }}' data-nav-link><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Cari</span></a>
       <a href='{{ relURL "kontak/" }}' data-nav-link><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Kontak</span></a>
     </div>
-  </div>
+  </nav>
 
-  <div id="siteRandomModal" class="site-random-modal" aria-hidden="true" data-random-modal>
+  <div id="siteRandomModal" class="site-random-modal" aria-hidden="true" data-random-modal hidden>
     <div class="site-random-backdrop" data-random-close aria-hidden="true"></div>
     <section class="site-random-dialog" role="dialog" aria-modal="true" aria-labelledby="siteRandomTitle" tabindex="-1" data-random-dialog>
       <button class="site-random-close" type="button" data-random-close aria-label="Tutup preview donghua acak">

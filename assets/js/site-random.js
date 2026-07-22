@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function openModal() {
       previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
       closeMobileNavIfOpen();
+      modal.hidden = false;
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('site-random-lock');
@@ -96,6 +97,38 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.remove('site-random-lock');
       if (previouslyFocused && document.contains(previouslyFocused)) {
         previouslyFocused.focus({ preventScroll: true });
+      }
+      window.setTimeout(function () {
+        if (!modal.classList.contains('is-open')) modal.hidden = true;
+      }, 280);
+    }
+
+    function trapModalFocus(event) {
+      if (event.key !== 'Tab' || !modal.classList.contains('is-open')) return;
+
+      const focusable = Array.from(modal.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )).filter(function (element) {
+        return !element.hidden && element.getAttribute('aria-hidden') !== 'true' && element.offsetParent !== null;
+      });
+
+      if (!focusable.length) {
+        event.preventDefault();
+        if (dialog) dialog.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (!focusable.includes(document.activeElement)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      } else if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     }
 
@@ -203,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('keydown', function (event) {
+      trapModalFocus(event);
       if (event.key === 'Escape' && modal.classList.contains('is-open')) {
         closeModal();
       }

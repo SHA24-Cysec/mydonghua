@@ -1,7 +1,19 @@
 {
+  "name": "donghua",
+  "private": true,
   "scripts": {
-    "dev": "npx tailwindcss -i ./assets/input.css -o ./assets/main.css --watch",
-    "dev:all": "./dev.sh"
+    "dev": "tailwindcss -i ./assets/input.css -o ./assets/main.css --watch",
+    "dev:all": "./dev.sh",
+    "build:css": "tailwindcss -i ./assets/input.css -o ./assets/main.css",
+    "build:hugo": "hugo --gc --minify",
+    "build": "npm run check:content && npm run build:css && npm run build:hugo && npm run audit:build",
+    "check:content": "node ./scripts/validate-content.mjs",
+    "check:css": "node ./scripts/check-css.mjs",
+    "audit:build": "node ./scripts/audit-build.mjs",
+    "check": "npm run check:content && npm run check:css"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
