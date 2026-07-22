@@ -95,7 +95,6 @@ function renderGenreResults() {
             '<div class="donghua-card-frame" aria-hidden="true"></div>' +
             '<div class="donghua-card-badges">' +
               '<span class="donghua-card-badge">' + type + '</span>' +
-              '<span class="donghua-card-badge sub">Sub</span>' +
             '</div>' +
             '<div class="donghua-card-body">' +
               '<h3 class="donghua-card-title">' + item.title + '</h3>' +
