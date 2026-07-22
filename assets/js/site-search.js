@@ -103,6 +103,11 @@ const searchInput = document.getElementById("search-input");
         .replace(/'/g, "&#39;");
     }
 
+    function cardTypeLabel(value) {
+      const label = toText(value).trim();
+      return label.toLowerCase() === "donghua movie" ? "Movie" : label;
+    }
+
     function normalizeForSearch(value) {
       return toText(value)
         .toLowerCase()
@@ -314,10 +319,11 @@ const searchInput = document.getElementById("search-input");
       });
     }
 
-    function donghuaCardTemplate(item, titleHTML, extraMetaHTML) {
+    function donghuaCardTemplate(item, titleHTML, extraMetaHTML, headingLevel = 3) {
       // Semua nilai berikut disisipkan via innerHTML, jadi di-escape untuk cegah XSS.
       // Catatan: titleHTML & extraMetaHTML sudah berupa HTML aman dari highlightText().
-      const type = escapeHTML(item.type) || "Donghua";
+      const type = escapeHTML(cardTypeLabel(item.type)) || "Donghua";
+      const headingTag = headingLevel === 2 ? "h2" : "h3";
       const episode = escapeHTML(item.episode);
       const status = escapeHTML(item.status);
       const rating = escapeHTML(item.rating);
@@ -363,7 +369,7 @@ const searchInput = document.getElementById("search-input");
         /* Hasil pencarian sering berubah; hindari skeleton wrapper yang membuat
            poster fade-in lagi pada setiap query. */
         imgTag = `<img data-no-loader="true" loading="lazy" decoding="async" src="${thumbSrc}" alt="${title}"`;
-        imgTag += ` width="240" height="320">`;
+        imgTag += ` width="200" height="300">`;
       }
 
       return `
@@ -380,7 +386,7 @@ const searchInput = document.getElementById("search-input");
               <span class="donghua-card-badge">${type}</span>
             </div>
             <div class="donghua-card-body">
-              <h3 class="donghua-card-title">${titleHTML || title}</h3>
+              <${headingTag} class="donghua-card-title">${titleHTML || title}</${headingTag}>
               ${extraMeta}
               <div class="donghua-card-meta">${metaChips}</div>
               <div class="donghua-card-footer">
@@ -709,7 +715,7 @@ const searchInput = document.getElementById("search-input");
         const metaStr = [studio, season, genre].filter(Boolean).join(" • ");
 
         li.className = "donghua-card-item";
-        li.innerHTML = donghuaCardTemplate(item, title, metaStr);
+        li.innerHTML = donghuaCardTemplate(item, title, metaStr, 2);
         fragment.appendChild(li);
       });
 

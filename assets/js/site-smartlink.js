@@ -3,80 +3,93 @@
   ────────────────────────────────────────────────────────
   Flow:
   1. User klik kartu donghua (.donghua-card-link)
-  2. Smartlink Adsterra terbuka di tab baru (background)
-  3. Navigasi ke halaman detail tetap berjalan normal
-     — tidak ada block, tidak ada delay, tidak ada overlay.
+  2. Cooldown per-tab dicatat sebelum percobaan popup
+  3. Smartlink terbuka di tab baru
+  4. Navigasi ke halaman detail tetap berjalan normal
 
-  Konfigurasi URL ada di config.toml [params.smartlink].
-  Cooldown 5 menit agar tidak terlalu agresif.
+  Konfigurasi URL dan cooldown ada di config.toml [params.smartlink].
 */
 
 (function () {
   'use strict';
 
-  /* ------------------------------------------------------------------ */
-  /*  Config                                                             */
-  /* ------------------------------------------------------------------ */
   var SMARTLINK_URL = window.__SMARTLINK_SRC || '';
   var TRIGGER_SELECTOR = 'a.donghua-card-link';
   var SESSION_KEY = 'adsterra_smartlink_triggered';
-  var COOLDOWN_MS = 5 * 60 * 1000; // 5 menit antar trigger
+  var DEFAULT_COOLDOWN_MS = 5 * 60 * 1000;
+  var configuredCooldown = Number(window.__SMARTLINK_COOLDOWN_MS);
+  var COOLDOWN_MS = Number.isFinite(configuredCooldown) && configuredCooldown >= 0
+    ? configuredCooldown
+    : DEFAULT_COOLDOWN_MS;
+  var memoryLastTrigger = 0;
 
-  /* ------------------------------------------------------------------ */
-  /*  Helpers                                                            */
-  /* ------------------------------------------------------------------ */
   function isProduction() {
     return window.__SMARTLINK_ENV === 'production';
   }
 
-  function canTrigger() {
-    var last = parseInt(sessionStorage.getItem(SESSION_KEY), 10);
-    if (!last) return true;
-    return Date.now() - last > COOLDOWN_MS;
+  function readLastTrigger() {
+    try {
+      var stored = parseInt(window.sessionStorage.getItem(SESSION_KEY), 10);
+      if (stored > 0) {
+        memoryLastTrigger = stored;
+      }
+    } catch (_) {
+      /* Storage dapat diblokir. Gunakan fallback in-memory pada tab ini. */
+    }
+
+    return memoryLastTrigger;
   }
 
-  function markTriggered() {
+  function markTriggered(timestamp) {
+    memoryLastTrigger = timestamp;
+
     try {
-      sessionStorage.setItem(SESSION_KEY, String(Date.now()));
-    } catch (_) { /* storage penuh — skip */ }
+      window.sessionStorage.setItem(SESSION_KEY, String(timestamp));
+    } catch (_) {
+      /* Fallback in-memory sudah diperbarui. */
+    }
+  }
+
+  function canTrigger(timestamp) {
+    var last = readLastTrigger();
+    if (!last) return true;
+    return timestamp - last >= COOLDOWN_MS;
   }
 
   function openSmartlink() {
     if (!SMARTLINK_URL) return;
-    if (!canTrigger()) return;
+
+    var now = Date.now();
+    if (!canTrigger(now)) return;
+
+    // Catat percobaan sebelum window.open. Browser modern dapat membuka popup
+    // tetapi mengembalikan null ketika noopener/noreferrer dipakai.
+    markTriggered(now);
 
     try {
-      var win = window.open(SMARTLINK_URL, '_blank', 'noopener,noreferrer');
-      if (win) {
-        markTriggered();
-      }
-      // Popup blocker — tidak usah feedback, navigasi tetap jalan
-    } catch (_) {}
+      window.open(SMARTLINK_URL, '_blank', 'noopener,noreferrer');
+    } catch (_) {
+      /* Navigasi card utama tetap berjalan tanpa gangguan. */
+    }
   }
 
-  /* ------------------------------------------------------------------ */
-  /*  Click handler — delegasi ke document                              */
-  /* ------------------------------------------------------------------ */
-  function onClick(e) {
-    var link = e.target.closest(TRIGGER_SELECTOR);
-    if (!link) return;
+  function onClick(event) {
+    var target = event.target;
+    if (!target || typeof target.closest !== 'function') return;
 
-    // Hanya aktif di production
-    if (!isProduction()) return;
+    var link = target.closest(TRIGGER_SELECTOR);
+    if (!link || !isProduction()) return;
 
-    // Trigger smartlink — navigasi ke detail tetap jalan normal
+    // Tidak memanggil preventDefault: navigasi card tetap berjalan normal.
     openSmartlink();
   }
 
-  /* ------------------------------------------------------------------ */
-  /*  Init                                                               */
-  /* ------------------------------------------------------------------ */
   function init() {
     document.addEventListener('click', onClick);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
     init();
   }

@@ -44,9 +44,6 @@
         {{ partial "save-favorite" . }}
     {{ end }}
     {{ partial "global-scripts" . }}
-    {{ if eq .Layout "postingan-donghua" }}
-        {{ partial "widget/smartlink-interstitial" . }}
-    {{ end }}
     {{/*  Scrollbar CSS dipindah ke main.css (assets/input.css) supaya
           bisa di-cache terpisah dan mengurangi ukuran HTML  */}}
 </body>

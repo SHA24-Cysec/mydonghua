@@ -8,6 +8,11 @@
     return value == null ? '' : String(value).trim();
   }
 
+  function cardTypeLabel(value) {
+    var label = asText(value);
+    return label.toLowerCase() === 'donghua movie' ? 'Movie' : label;
+  }
+
   function escapeHTML(value) {
     return asText(value)
       .replace(/&/g, '&amp;')
@@ -83,7 +88,7 @@
 
   function cardTemplate(item) {
     var title = escapeHTML(item.title);
-    var type = escapeHTML(item.type || 'Donghua');
+    var type = escapeHTML(cardTypeLabel(item.type || 'Donghua'));
     var episode = escapeHTML(item.episode);
     var status = escapeHTML(item.status);
     var rating = escapeHTML(item.rating);

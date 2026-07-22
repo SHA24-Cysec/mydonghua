@@ -4,19 +4,20 @@ draft : false
 title : 'Download Batch Law of the Devil Subtitle Indonesia'
 studio :
     - 'CG Year'
-season : ''
+season : 'Summer 2023'
 genre :
-    - ''
+    - 'Action'
+    - 'Adventure'
+    - 'Fantasy'
 type : 'Donghua'
 status : 'Completed'
 sub : 'Anichin'
-durasi : ' Menit'
-episode : ' Episode'
+durasi : '20 Menit'
+episode : '24 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
-release : ''
+release : 'Sep 29, 2023'
 # Rating 1-10
-rating : 
-
+rating : 8
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/law-of-the-devil.webp

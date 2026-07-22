@@ -35,6 +35,11 @@
     return value == null ? '' : String(value);
   }
 
+  function cardTypeLabel(value) {
+    const label = toText(value).trim();
+    return label.toLowerCase() === 'donghua movie' ? 'Movie' : label;
+  }
+
   function escapeHTML(value) {
     return toText(value)
       .replace(/&/g, '&amp;')
@@ -109,7 +114,7 @@
   }
 
   function renderFavoriteCard(item) {
-    const type = escapeHTML(item.type || 'Donghua');
+    const type = escapeHTML(cardTypeLabel(item.type || 'Donghua'));
     const episode = escapeHTML(item.episode || '-');
     const status = escapeHTML(item.status || '-');
     const rating = escapeHTML(item.rating || '-');
@@ -131,7 +136,7 @@
       ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
       : '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
     const thumbnailHTML = thumbnail
-      ? '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="240" height="320">'
+      ? '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="200" height="300">'
       : '<div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true"><i class="fa-solid fa-film text-6xl"></i></div>';
 
     return '<li class="donghua-card-item">' +

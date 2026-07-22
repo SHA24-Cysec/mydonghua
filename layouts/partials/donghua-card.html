@@ -1,14 +1,19 @@
+{{ $page := .page }}
+{{ $headingLevel := .headingLevel | default 3 }}
+{{ $cardType := $page.Params.type | default "Donghua" }}
+{{ if eq (lower $cardType) "donghua movie" }}{{ $cardType = "Movie" }}{{ end }}
+
 <article class="donghua-card">
-    <button class="donghua-card-bookmark{{ if false }} is-saved{{ end }}" data-fav-id="{{ .Params.permalink | default .Permalink }}" type="button" aria-label="Simpan ke favorit" title="Simpan">
+    <button class="donghua-card-bookmark{{ if false }} is-saved{{ end }}" data-fav-id="{{ $page.Params.permalink | default $page.Permalink }}" type="button" aria-label="Simpan ke favorit" title="Simpan">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
             <path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z"/>
         </svg>
     </button>
-    <a class="donghua-card-link" title="{{ .Title }}" href="{{ .Permalink }}">
+    <a class="donghua-card-link" title="{{ $page.Title }}" href="{{ $page.Permalink }}">
         <div class="donghua-card-poster">
 {{/* Berkas thumbnail sumber dipakai apa adanya; CSS hanya menjaga ukuran layout card. */}}
-{{ $thumbSrc := .Params.thumbnail | default "" }}
-{{ $thumbAlt := .Params.alt | default .Title }}
+{{ $thumbSrc := $page.Params.thumbnail | default "" }}
+{{ $thumbAlt := $page.Params.alt | default $page.Title }}
 {{ $imgRes := "" }}
 {{ with $thumbSrc }}
   {{ $clean := strings.TrimPrefix "/" . }}
@@ -29,16 +34,20 @@
         </div>
         <div class="donghua-card-frame" aria-hidden="true"></div>
         <div class="donghua-card-badges">
-            <span class="donghua-card-badge">{{ .Params.type | default "Donghua" }}</span>
+            <span class="donghua-card-badge">{{ $cardType }}</span>
         </div>
         <div class="donghua-card-body">
-            <h3 class="donghua-card-title">{{ .Title }}</h3>
+            {{ if eq $headingLevel 2 }}
+                <h2 class="donghua-card-title">{{ $page.Title }}</h2>
+            {{ else }}
+                <h3 class="donghua-card-title">{{ $page.Title }}</h3>
+            {{ end }}
             <div class="donghua-card-meta">
-                {{ with .Params.episode }}<span class="donghua-card-chip" title="{{ . }}">{{ . }}</span>{{ end }}
-                {{ with .Params.status }}<span class="donghua-card-chip" title="{{ . }}">{{ . }}</span>{{ end }}
+                {{ with $page.Params.episode }}<span class="donghua-card-chip" title="{{ . }}">{{ . }}</span>{{ end }}
+                {{ with $page.Params.status }}<span class="donghua-card-chip" title="{{ . }}">{{ . }}</span>{{ end }}
             </div>
             <div class="donghua-card-footer">
-                {{ with .Params.rating }}
+                {{ with $page.Params.rating }}
                     <span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> {{ . }}/10</span>
                 {{ else }}
                     <span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>

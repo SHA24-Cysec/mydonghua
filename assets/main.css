@@ -743,7 +743,7 @@ html body .aurora-search-input {
   box-sizing: border-box;
   /* Mobile-first */
   min-height: 2.65rem;
-  padding: 0.62rem 3.35rem 0.62rem 2.55rem;
+  padding: 0.62rem 1rem 0.62rem 2.55rem;
   font-size: 0.88rem;
 }
 
@@ -780,72 +780,11 @@ html body .aurora-search-container:focus-within .aurora-search-icon,
   color: var(--site-cyan);
 }
 
-html body .aurora-search-btn {
-  position: absolute;
-  right: 0.32rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  min-height: 2rem;
-  padding: 0.42rem 0.72rem;
-  border: none;
-  border-radius: 9999px;
-  background: var(--site-gradient-primary);
-  color: var(--site-ink-on-light);
-  font-family: inherit;
-  font-weight: 900;
-  font-size: 0.78rem;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(34, 211, 238, 0.18);
-  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
-  z-index: 3;
-  white-space: nowrap;
-}
-
-html body .aurora-search-btn i {
-  font-size: 0.82rem;
-}
-
-/* Mobile: icon-only */
-
-html body .aurora-search-btn span {
-  display: none;
-}
-
-html body .aurora-search-btn:hover {
-  transform: translateY(-50%) translateY(-1px);
-  filter: brightness(1.04);
-  box-shadow: 0 8px 22px rgba(34, 211, 238, 0.24);
-}
-
-html body .aurora-search-btn:active {
-  transform: translateY(-50%) scale(0.97);
-}
-
-html body .aurora-search-btn:focus-visible {
-  outline: var(--site-focus-ring);
-  outline-offset: 2px;
-}
-
-/* Tablet ≥640px: tampilkan teks "Cari" */
-
 @media (min-width: 640px) {
   .aurora-search-input {
     min-height: 2.75rem;
-    padding-right: 5.6rem;
+    padding-right: 1rem;
     font-size: 0.92rem;
-  }
-
-  .aurora-search-btn {
-    padding: 0.5rem 0.95rem;
-  }
-
-  .aurora-search-btn span {
-    display: inline;
   }
 }
 
@@ -867,9 +806,17 @@ html body .aurora-search-btn:focus-visible {
      Pakai: <div class="aurora-search-container aurora-search-compact"> */
 
 html body .aurora-search-container.aurora-search-compact .aurora-search-input {
-  min-height: 2.45rem;
-  padding: 0.55rem 2.6rem 0.55rem 2.3rem;
+  min-height: 44px;
+  padding: 0.55rem 1rem 0.55rem 2.3rem;
   font-size: 0.82rem;
+}
+
+/* Semua kontrol clear bawaan browser disembunyikan agar sisi kanan input bersih. */
+
+html body input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
@@ -877,39 +824,18 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   font-size: 0.82rem;
 }
 
-html body .aurora-search-container.aurora-search-compact .aurora-search-btn {
-  min-height: 1.78rem;
-  padding: 0.38rem 0.58rem;
-  right: 0.28rem;
-}
-
-.aurora-search-container.aurora-search-compact html body .aurora-search-btn span {
-  display: none;
-}
-
-/* Jika tidak ada button (fallback legacy), kurangi padding kanan */
-
-html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-input {
-  padding-right: 1rem;
-}
-
 /* Very small screens <360px */
 
 @media (max-width: 359px) {
   .aurora-search-input {
     min-height: 2.5rem;
-    padding: 0.55rem 2.7rem 0.55rem 2.25rem;
+    padding: 0.55rem 1rem 0.55rem 2.25rem;
     font-size: 0.82rem;
   }
 
   .aurora-search-icon {
     left: 0.78rem;
     font-size: 0.84rem;
-  }
-
-  .aurora-search-btn {
-    min-height: 1.85rem;
-    padding: 0.38rem 0.55rem;
   }
 }
 
@@ -935,14 +861,6 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
 
 .fixed {
   position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
 }
 
 .sticky {
@@ -1115,10 +1033,6 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
 
 .basis-full {
   flex-basis: 100%;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -1702,11 +1616,6 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
-.blur {
-  --tw-blur: blur(8px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .drop-shadow-neon-gold {
   --tw-drop-shadow: drop-shadow(0 0 6px rgba(250, 204, 21, 0.9));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1719,19 +1628,6 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.backdrop-filter {
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 .transition-colors {
@@ -1806,14 +1702,33 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
 }
 
 .donghua-card-grid {
+  --donghua-grid-gap: clamp(0.6rem, 2.5vw, 1rem);
+  --donghua-card-min: 8.75rem;
+  --donghua-card-fourth: calc((100% - var(--donghua-grid-gap) - var(--donghua-grid-gap) - var(--donghua-grid-gap)) / 4);
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(0.6rem, 2.5vw, 1rem);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, max(var(--donghua-card-min), var(--donghua-card-fourth))), 1fr)
+  );
+  gap: var(--donghua-grid-gap);
   width: 100%;
   max-width: 100%;
   align-items: stretch;
   /* SCROLL PERF: CSS containment — helps browser skip re-layout for off-screen rows. */
   contain: layout style;
+}
+
+/* Grid lebar membutuhkan card sedikit lebih lega. Jumlah kolom tetap
+   mengikuti lebar container dan dibatasi maksimal empat kolom. */
+
+.donghua-card-grid-wide {
+  --donghua-card-min: 9.25rem;
+}
+
+/* Kontrol watchlist memerlukan ruang ekstra agar label tidak terpotong. */
+
+#fav-grid {
+  --donghua-card-min: 10.625rem;
 }
 
 .donghua-card-grid > li,
@@ -1874,7 +1789,7 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
-  right: 3rem;
+  right: 3.4rem;
   z-index: 3;
   display: flex;
   flex-wrap: wrap;
@@ -2015,32 +1930,26 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
 }
 
 @media (hover: hover) {
-  .donghua-card-link:hover {
-    box-shadow: 0 0 0 1px rgba(34, 211, 255, 0.5), 0 0 14px rgba(34, 211, 238, 0.22);
+  /* State hover berada pada article agar tetap aktif ketika pointer berpindah
+     ke bookmark atau kontrol watchlist yang merupakan sibling dari link. */
+
+  .donghua-card:hover .donghua-card-link {
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 255, 0.56),
+      0 0 18px rgba(34, 211, 238, 0.28),
+      0 0 30px rgba(139, 92, 246, 0.1);
   }
 
-  .donghua-card-link:hover .donghua-card-poster img {
+  .donghua-card:hover .donghua-card-poster img {
     transform: scale(1.05);
   }
 
-  .donghua-card-link:hover .donghua-card-title {
+  .donghua-card:hover .donghua-card-title {
     color: #a5f3fc;
   }
 }
 
-/* Kolom adaptif — mobile-first, maksimal 4 kolom */
-
-@media (min-width: 520px) {
-  .donghua-card-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 768px) {
-  .donghua-card-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
+/* Jumlah kolom dihitung dari lebar container melalui minmax() di atas. */
 
 .prose-neon a {
   color: var(--site-cyan);
@@ -2273,8 +2182,8 @@ html body .aurora-search-container:not(:has(.aurora-search-btn)) .aurora-search-
 .notfound-dock-search {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.45rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   width: 100%;
   margin-top: 1rem;
 }
@@ -2328,38 +2237,6 @@ html body .notfound-dock-search .notfound-dock-search-icon {
   border-color: rgba(34, 211, 238, 0.6);
   background: rgba(6, 8, 22, 0.92);
   box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.14), 0 0 18px rgba(34, 211, 238, 0.12);
-}
-
-.notfound-dock-search-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  min-height: 2.8rem;
-  padding: 0 1rem;
-  border: 1px solid rgba(125, 211, 252, 0.28);
-  border-radius: 0.95rem;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.20));
-  color: #d9fbff;
-  font-family: inherit;
-  font-size: 0.86rem;
-  font-weight: 850;
-  line-height: 1;
-  cursor: pointer;
-  transition: transform .2s ease, filter .2s ease, box-shadow .2s ease, border-color .2s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.notfound-dock-search-btn:hover {
-  filter: brightness(1.08);
-  border-color: rgba(34, 211, 238, 0.5);
-  border: 1px solid rgba(34, 211, 238, 0.16);
-  transform: translateY(-1px);
-}
-
-.notfound-dock-search-btn:focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.56);
-  outline-offset: 3px;
 }
 
 .notfound-dock-btn {
@@ -2481,13 +2358,6 @@ html body .notfound-dock-search .notfound-dock-search-icon {
     min-height: 2.7rem;
     padding: 0 0.6rem 0 2.2rem;
     font-size: 0.82rem;
-    border-radius: 0.85rem;
-  }
-
-  .notfound-dock-search-btn {
-    min-height: 2.7rem;
-    padding: 0 0.8rem;
-    font-size: 0.8rem;
     border-radius: 0.85rem;
   }
 
@@ -2637,6 +2507,7 @@ body .pagination-aurora-button,
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
+  min-height: 44px;
   padding: 0.6rem 1.1rem;
   border-radius: var(--site-radius-sm);
   font-size: 0.85rem;
@@ -2666,7 +2537,7 @@ body .pagination-aurora-button,
   color: #ffffff;
   background: rgba(244, 63, 94, 0.16);
   border-color: rgba(244, 63, 94, 0.45);
-  border: 1px solid rgba(244, 63, 94, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .fav-clear-btn:active {
@@ -3081,12 +2952,13 @@ mark {
 /* ===== Source: layouts/partials/back-to-top.html (style block 1) ===== */
 
 /* ============================
-   BACK TO TOP — BOTTOM GAUGE BAR
+   BACK TO TOP — FLOATING CONTROL
    ============================ */
 
 .btt-wrapper {
+  --btt-base-bottom: 1.5rem;
   position: fixed;
-  bottom: 1.5rem;
+  bottom: calc(var(--btt-base-bottom) + var(--btt-ad-height, 0px) + env(safe-area-inset-bottom));
   right: 1rem;
   margin-right: 16px;
   z-index: 40;
@@ -3100,7 +2972,8 @@ mark {
   transition:
     opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    bottom 0.24s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
 }
 
@@ -3111,137 +2984,107 @@ mark {
   pointer-events: auto;
 }
 
+body.has-floating-ad .btt-wrapper {
+  --btt-base-bottom: 1rem;
+}
+
 .btt-wrapper:hover {
   transform: translateY(-3px) scale(1);
 }
 
 .btt-btn {
   position: relative;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: linear-gradient(
-    145deg,
-    rgba(15, 23, 42, 0.95),
-    rgba(6, 8, 22, 0.98)
-  );
-  border: 1px solid rgba(34, 211, 238, 0.18);
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.35),
-    0 0 0 rgba(34, 211, 238, 0);
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.22s ease;
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
+  width: 48px;
+  height: 48px;
   padding: 0;
-  font: inherit;
-  color: inherit;
+  border: 1px solid var(--btn-secondary-border, rgba(255, 255, 255, 0.09));
+  border-radius: var(--site-radius-btn, 0.95rem);
+  outline: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(34, 211, 238, 0.16), transparent 48%),
+    radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.14), transparent 52%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(6, 8, 22, 0.97));
+  color: #67e8f9;
+  box-shadow:
+    var(--btn-secondary-shadow, inset 0 1px 0 rgba(255, 255, 255, 0.045)),
+    0 10px 24px rgba(0, 0, 0, 0.28),
+    0 0 14px rgba(34, 211, 238, 0.07);
+  cursor: pointer;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform var(--site-transition-fast, 0.18s ease),
+    border-color var(--site-transition-fast, 0.18s ease),
+    background var(--site-transition-fast, 0.18s ease),
+    color var(--site-transition-fast, 0.18s ease),
+    box-shadow var(--site-transition-fast, 0.18s ease);
+}
+
+.btt-btn::after {
+  content: "";
+  position: absolute;
+  right: 0.48rem;
+  bottom: 0;
+  left: 0.48rem;
+  z-index: -1;
+  height: 2px;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(90deg, var(--site-cyan), var(--site-purple), var(--site-pink));
+  opacity: 0.72;
+  transform: scaleX(0.68);
+  transition: opacity var(--site-transition-fast), transform var(--site-transition-fast);
+  pointer-events: none;
 }
 
 .btt-btn:hover {
-  border-color: rgba(34, 211, 238, 0.38);
+  border-color: var(--btn-secondary-border-hover, rgba(34, 211, 238, 0.28));
+  background:
+    radial-gradient(circle at 16% 0%, rgba(34, 211, 238, 0.22), transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.2), transparent 54%),
+    linear-gradient(145deg, rgba(18, 29, 50, 0.96), rgba(8, 10, 28, 0.98));
+  color: #ffffff;
   box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.35),
-    0 0 18px rgba(34, 211, 238, 0.18);
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 12px 28px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(34, 211, 238, 0.14);
+}
+
+.btt-btn:hover::after {
+  opacity: 0.95;
+  transform: scaleX(1);
 }
 
 .btt-btn:active {
   transform: scale(0.95);
+  filter: brightness(0.96);
 }
 
 .btt-btn:focus-visible {
-  outline: 2px solid rgba(34, 211, 238, 0.6);
-  outline-offset: 3px;
+  outline: var(--btn-focus-ring, 3px solid rgba(255, 255, 255, 0.56));
+  outline-offset: var(--site-focus-offset, 3px);
 }
 
 .btt-btn svg.btt-icon {
+  position: relative;
+  z-index: 1;
   width: 19px;
   height: 19px;
-  color: #e2e8f0;
-  transition: transform 0.22s ease, color 0.22s ease;
+  color: currentColor;
+  filter: drop-shadow(0 0 7px rgba(34, 211, 238, 0.24));
+  transition: transform var(--site-transition-fast), color var(--site-transition-fast), filter var(--site-transition-fast);
 }
 
 .btt-btn:hover svg.btt-icon {
-  color: #67e8f9;
   transform: translateY(-2px);
-}
-
-/* --- Gauge Bar --- */
-
-.btt-gauge {
-  position: relative;
-  width: 48px;
-  height: 5px;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(34, 211, 238, 0.1);
-  overflow: visible;
-}
-
-.btt-gauge-fill {
-  height: 100%;
-  border-radius: 99px;
-  background: linear-gradient(
-    90deg,
-    #22d3ee 0%,
-    #38bdf8 33%,
-    #8b5cf6 66%,
-    #ec4899 100%
-  );
-  box-shadow: 0 0 8px rgba(34, 211, 238, 0.3);
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.12s ease-out;
-  position: relative;
-}
-
-/* Laser tip at the end of the gauge */
-
-.btt-gauge-fill::after {
-  content: '';
-  position: absolute;
-  right: -2px;
-  top: -1.5px;
-  bottom: -1.5px;
-  width: 5px;
-  border-radius: 99px;
-  background: #fff;
-  box-shadow:
-    0 0 5px #22d3ee,
-    0 0 10px rgba(34, 211, 238, 0.7),
-    0 0 16px rgba(34, 211, 238, 0.35);
-  opacity: 0.9;
-}
-
-/* --- Persentase --- */
-
-.btt-pct {
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  color: rgba(148, 163, 184, 0.7);
-  text-align: center;
-  min-width: 2.2em;
-  transition: color 0.25s ease;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  pointer-events: none;
-}
-
-.btt-wrapper:hover .btt-pct {
-  color: rgba(103, 232, 249, 0.65);
+  filter: drop-shadow(0 0 9px rgba(34, 211, 238, 0.4));
 }
 
 /* ============================
@@ -3250,7 +3093,7 @@ mark {
 
 @media (max-width: 480px) {
   .btt-wrapper {
-    bottom: 1.25rem;
+    --btt-base-bottom: 1.25rem;
     right: 1rem;
     margin-right: 16px;
   }
@@ -3258,31 +3101,22 @@ mark {
   .btt-btn {
     width: 44px;
     height: 44px;
-    border-radius: 12px;
+    border-radius: var(--site-radius-btn, 0.95rem);
   }
 
   .btt-btn svg.btt-icon {
     width: 17px;
     height: 17px;
   }
-
-  .btt-gauge {
-    width: 44px;
-    height: 4px;
-  }
 }
 
 @media (max-width: 340px) {
   .btt-wrapper {
-    bottom: 1rem;
+    --btt-base-bottom: 1rem;
     right: 1rem;
     margin-right: 16px;
   }
 }
-
-/* ============================
-   REDUCED MOTION
-   ============================ */
 
 /* ===== Source: layouts/partials/download-batch.html (style block 1) ===== */
 
@@ -3663,7 +3497,8 @@ mark {
 .db-report:hover {
   transform: translateY(-1px);
   filter: brightness(1.05);
-  border: 1px solid rgba(236, 72, 153, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  border-color: rgba(236, 72, 153, 0.36);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20);
 }
 
 .db-report.is-highlighted {
@@ -5194,11 +5029,11 @@ html body .site-random-error[hidden],
 
 body .donghua-card-bookmark {
   position: absolute;
-  top: 0.68rem;
-  right: 0.68rem;
+  top: 0.56rem;
+  right: 0.56rem;
   z-index: 5;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(6, 8, 22, 0.95);
@@ -5255,8 +5090,8 @@ body .donghua-card-bookmark.is-saved svg {
 }
 
 body .donghua-card-bookmark svg {
-  width: 0.82rem;
-  height: 0.82rem;
+  width: 0.96rem;
+  height: 0.96rem;
   transition: transform 0.2s ease;
 }
 
@@ -7960,11 +7795,6 @@ body .pagination-dock-status,
   min-height: 44px;
 }
 
-.aurora-search-btn {
-  min-width: 44px;
-  min-height: 44px;
-}
-
 .genre-sheet-close {
   width: 44px;
   height: 44px;
@@ -8019,24 +7849,9 @@ body .pagination-dock-status,
     justify-content: center;
   }
 
-  .aurora-search-input {
-    padding-right: 3.35rem;
-  }
-
-  .aurora-search-btn {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0;
-  }
-
+  .aurora-search-input,
   .aurora-search-container.aurora-search-compact .aurora-search-input {
-    padding-right: 3.15rem;
-  }
-
-  .aurora-search-container.aurora-search-compact .aurora-search-btn {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0;
+    padding-right: 1rem;
   }
 
   .genre-sheet-close {
@@ -8556,7 +8371,6 @@ html body :is(
   .db-button,
   .db-report,
   .site-random-action,
-  .aurora-search-btn,
   .fav-empty-cta,
   .fav-empty-ghost,
   .fav-clear-btn,
@@ -8583,6 +8397,8 @@ html body :is(
   .site-nav-grid button,
   .btt-btn
 ) {
+  border-width: 1px;
+  border-style: solid;
   border-radius: var(--btn-radius);
   font-family: inherit;
   transition: transform var(--site-transition-fast), filter var(--site-transition-fast), background var(--site-transition-fast), border-color var(--site-transition-fast), box-shadow var(--site-transition-fast), color var(--site-transition-fast);
@@ -8603,7 +8419,6 @@ html body :is(
   .share-premium-button,
   .genre-sheet-trigger,
   .genre-clear-button,
-  .aurora-search-btn[data-taxonomy-clear],
   .post-genre-link,
   .site-navbar-action,
   .site-navbar-toggle,
@@ -8776,7 +8591,7 @@ html body .share-premium-button {
     border-color: var(--btn-secondary-border-hover);
     background: var(--btn-secondary-bg-hover);
     color: #ffffff;
-    border: 1px solid rgba(34, 211, 238, 0.12), var(--btn-secondary-shadow);
+    box-shadow: var(--btn-secondary-shadow);
   }
 }
 
@@ -8788,7 +8603,6 @@ html body .share-premium-button {
   .db-button,
   .db-report,
   .site-random-action,
-  .aurora-search-btn,
   .fav-empty-cta,
   .fav-empty-ghost,
   .fav-clear-btn,
@@ -8876,7 +8690,6 @@ html body :is(
   .cyber-button,
   .db-button:not(.is-locked),
   .site-random-action.primary,
-  .aurora-search-btn,
   .fav-empty-cta,
   .genre-apply-button,
   .notfound-dock-btn.primary,
@@ -8924,7 +8737,6 @@ html body :is(
     .cyber-button,
     .db-button:not(.is-locked),
     .site-random-action.primary,
-    .aurora-search-btn,
     .fav-empty-cta,
     .genre-apply-button,
     .notfound-dock-btn.primary,
@@ -9073,10 +8885,10 @@ html body .site-floating-ad__close {
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  min-width: 2rem;
-  min-height: 2rem;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   margin: 0;
   padding: 0;
   border: 1px solid rgba(125, 211, 252, 0.28);
@@ -9304,14 +9116,6 @@ html body .site-floating-ad__unit > ins {
   display: none;
 }
 
-body.has-floating-ad .btt-wrapper {
-  bottom: calc(6.5rem + env(safe-area-inset-bottom));
-}
-
-body.has-floating-production-ad .btt-wrapper {
-  bottom: calc(9.15rem + env(safe-area-inset-bottom));
-}
-
 @media (hover: hover) {
   .site-floating-ad__close:hover {
     border-color: rgba(34, 211, 238, 0.5);
@@ -9376,10 +9180,6 @@ body.has-floating-production-ad .btt-wrapper {
   .site-floating-ad__size-desktop {
     display: inline;
   }
-
-  body.has-floating-ad .btt-wrapper {
-    bottom: calc(9.15rem + env(safe-area-inset-bottom));
-  }
 }
 
 @media (min-width: 768px) {
@@ -9391,10 +9191,6 @@ body.has-floating-production-ad .btt-wrapper {
 @media (max-width: 767px) {
   .site-floating-ad__unit {
     min-height: 3.125rem;
-  }
-
-  body.has-floating-production-ad .btt-wrapper {
-    bottom: calc(6.1rem + env(safe-area-inset-bottom));
   }
 }
 
@@ -9745,13 +9541,8 @@ html body .notfound-dock-panel {
     contain-intrinsic-size: auto 3.75rem;
   }
 
-  /* Donghua card grid — up to 16+ cards per page; skip rendering off-screen */
-
-  html body .donghua-card-item,
-  html body .donghua-card {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 14.2rem;
-  }
+  /* Card donghua tetap dirender normal agar outer glow hover tidak dipotong
+     oleh paint containment dari content-visibility. */
 
   /* Slider rail cards */
 
@@ -10020,8 +9811,10 @@ body.search-filter-lock {
   display: inline-grid;
   flex: 0 0 auto;
   place-items: center;
-  width: 2.45rem;
-  height: 2.45rem;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border: 1px solid rgba(125, 211, 252, 0.24);
   border-radius: 0.72rem;
   background: rgba(255, 255, 255, 0.04);
@@ -10201,7 +9994,7 @@ body.search-filter-lock {
   align-items: center;
   min-width: 0;
   max-width: 100%;
-  min-height: 2.15rem;
+  min-height: 44px;
   gap: 0.38rem;
   padding: 0.45rem 0.65rem;
   border: 1px solid rgba(125, 211, 252, 0.18);
@@ -10344,7 +10137,7 @@ body.search-filter-lock {
   align-items: center;
   justify-content: center;
   gap: 0.38rem;
-  min-height: 2.2rem;
+  min-height: 44px;
   padding: 0.42rem 0.62rem;
   border: 1px solid rgba(125, 211, 252, 0.17);
   border-radius: 0.68rem;
@@ -10523,7 +10316,7 @@ body.search-filter-lock {
 /* Watch status segmented control — replaces the select menu in favorite cards. */
 
 .fav-watch-card .donghua-card-body {
-  padding-bottom: 3.15rem;
+  padding-bottom: 4.15rem;
 }
 
 .fav-card-watch-control {
@@ -10533,8 +10326,8 @@ body.search-filter-lock {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.16rem;
-  min-height: 2.05rem;
-  padding: 0.16rem;
+  min-height: 48px;
+  padding: 0.12rem;
   border-color: rgba(125, 211, 252, 0.3);
   border-radius: 0.7rem;
   background: rgba(2, 6, 23, 0.94);
@@ -10546,14 +10339,15 @@ body.search-filter-lock {
   align-items: center;
   justify-content: center;
   min-width: 0;
+  min-height: 44px;
   gap: 0.22rem;
-  padding: 0.2rem 0.12rem;
+  padding: 0.35rem 0.12rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
   background: transparent;
   color: #91a6bd;
   font: inherit;
-  font-size: 0.56rem;
+  font-size: 0.62rem;
   font-weight: 900;
   line-height: 1;
   cursor: pointer;
@@ -10561,8 +10355,7 @@ body.search-filter-lock {
 }
 
 .fav-card-watch-option i {
-  flex: 0 0 auto;
-  font-size: 0.5rem;
+  display: none;
 }
 
 .fav-card-watch-option span {
@@ -10598,19 +10391,20 @@ body.search-filter-lock {
 
 @media (max-width: 340px) {
   .fav-watch-card .donghua-card-body {
-    padding-bottom: 2.9rem;
+    padding-bottom: 4rem;
   }
 
   .fav-card-watch-control {
     right: 0.46rem;
     bottom: 0.46rem;
     left: 0.46rem;
-    min-height: 1.85rem;
+    min-height: 48px;
   }
 
   .fav-card-watch-option {
     gap: 0;
-    font-size: 0.51rem;
+    min-height: 44px;
+    font-size: 0.58rem;
   }
 
   .fav-card-watch-option i {
@@ -10628,9 +10422,10 @@ body.search-filter-lock {
 @media (max-width: 639px) {
   .fav-card-watch-option {
     gap: 0;
-    padding-right: 0.04rem;
-    padding-left: 0.04rem;
-    font-size: 0.53rem;
+    min-height: 44px;
+    padding-right: 0.08rem;
+    padding-left: 0.08rem;
+    font-size: 0.6rem;
   }
 
   .fav-card-watch-option i {
@@ -11005,27 +10800,43 @@ body.search-filter-lock {
   transform: translateY(0) scale(0.98);
 }
 
-/* Search filter action pair: both follow the site's primary CTA language. */
+/* Search filter action pair: Reset stays secondary; Apply remains primary. */
 
 .search-filter-reset,
 .search-filter-apply {
-  min-height: 2.9rem;
-  border: 1px solid var(--btn-hybrid-primary-border);
+  min-height: 44px;
+  border-width: 1px;
+  border-style: solid;
   border-radius: var(--btn-radius);
-  background: var(--btn-hybrid-primary-bg);
   background-size: auto;
   background-position: 0 0;
-  color: var(--btn-hybrid-primary-text);
-  box-shadow: var(--btn-hybrid-primary-shadow);
   transition:
     transform var(--site-transition-fast),
     filter var(--site-transition-fast),
     border-color var(--site-transition-fast),
     box-shadow var(--site-transition-fast),
-    background var(--site-transition-fast);
+    background var(--site-transition-fast),
+    color var(--site-transition-fast);
 }
 
-.search-filter-reset::after,
+.search-filter-reset {
+  border-color: var(--btn-secondary-border);
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  box-shadow: var(--btn-secondary-shadow);
+}
+
+.search-filter-apply {
+  border-color: var(--btn-hybrid-primary-border);
+  background: var(--btn-hybrid-primary-bg);
+  color: var(--btn-hybrid-primary-text);
+  box-shadow: var(--btn-hybrid-primary-shadow);
+}
+
+.search-filter-reset::after {
+  display: none;
+}
+
 .search-filter-apply::after {
   display: block;
   background: linear-gradient(105deg, transparent 24%, rgba(255, 255, 255, 0.16) 48%, transparent 72%);
@@ -11046,19 +10857,32 @@ body.search-filter-lock {
   .search-filter-reset:hover,
   .search-filter-apply:hover {
     transform: translateY(-2px);
+  }
+
+  .search-filter-reset:hover {
+    border-color: var(--btn-secondary-border-hover);
+    background: var(--btn-secondary-bg-hover);
+    color: #ffffff;
+    filter: brightness(1.03);
+    box-shadow: var(--btn-secondary-shadow);
+  }
+
+  .search-filter-apply:hover {
     border-color: rgba(103, 232, 249, 0.4);
     background: var(--btn-hybrid-primary-bg);
     filter: brightness(1.055);
     box-shadow: var(--btn-hybrid-primary-shadow-hover);
   }
 
-  .search-filter-reset:hover::after,
   .search-filter-apply:hover::after {
     opacity: 1;
     transform: translateX(120%);
   }
 
-  .search-filter-reset:hover i,
+  .search-filter-reset:hover i {
+    transform: rotate(-90deg);
+  }
+
   .search-filter-apply:hover i {
     transform: translateY(-1px) scale(1.08);
   }
@@ -11182,7 +11006,7 @@ html body .genre-sheet-actions > .genre-apply-button:disabled:hover {
     border-color: var(--btn-secondary-border-hover);
     background: var(--btn-secondary-bg-hover);
     color: #ffffff;
-    border: 1px solid rgba(34, 211, 238, 0.12), var(--btn-secondary-shadow);
+    box-shadow: var(--btn-secondary-shadow);
     transform: translateY(-2px);
   }
 
@@ -11198,6 +11022,20 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
   transform: translateY(0) scale(0.98);
 }
 
+@media (hover: hover) {
+  html body .donghua-card-bookmark.is-saved:hover {
+    border-color: rgba(52, 211, 153, 0.48);
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.2), rgba(34, 211, 238, 0.14));
+    color: #ecfdf5;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 8px 18px rgba(0, 0, 0, 0.24),
+      0 0 18px rgba(52, 211, 153, 0.18);
+    transform: scale(1.08);
+    filter: brightness(1.05);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -11206,22 +11044,22 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
   }
 }
 
-/* RADICAL PERFORMANCE OPTIMIZATION */
-
-.donghua-card-grid {
-  content-visibility: auto;
-  contain-intrinsic-size: 800px;
-}
+/* CARD HOVER PAINTING
+   Hindari paint containment dan promosi layer global agar outer glow dapat
+   dirender penuh. Grid tetap memakai contain: layout style pada rule utama. */
 
 .donghua-card {
-  contain: content;
-  transform: translateZ(0);
+  contain: layout style;
 }
 
-.site-navbar, .btt-wrapper {
+.site-navbar {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   background-color: rgba(6, 8, 22, 0.98) !important;
+}
+
+.btt-wrapper {
+  background-color: transparent !important;
 }
 
 .selection\:bg-cyan-500 *::-moz-selection {

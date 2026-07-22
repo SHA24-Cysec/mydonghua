@@ -19,7 +19,7 @@
                         {{ $pages := .RegularPages }}
                         {{ $paginator := .Paginate $pages.ByTitle 16 }}
                         {{ range $paginator.Pages }}
-                            {{ partial "donghua-card" . }}
+                            {{ partial "donghua-card" (dict "page" . "headingLevel" 2) }}
                         {{ end }}
                     </div>
                     {{ partial "pagination-option11" . }}

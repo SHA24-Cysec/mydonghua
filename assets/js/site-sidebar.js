@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     const buttons = Array.from(widget.querySelectorAll('[data-taxonomy-tab]'));
                     const panels = Array.from(widget.querySelectorAll('[data-taxonomy-panel]'));
                     const search = widget.querySelector('[data-taxonomy-search]');
-                    const clear = widget.querySelector('[data-taxonomy-clear]');
                     const counter = widget.querySelector('[data-taxonomy-count]');
                     let active = 'studio';
 
@@ -144,14 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     if (search) {
                         search.addEventListener('input', filterItems);
-                    }
-
-                    if (clear) {
-                        clear.addEventListener('click', function () {
-                            if (search) search.value = '';
-                            filterItems();
-                            if (search) search.focus();
-                        });
                     }
 
                     setActive(active);

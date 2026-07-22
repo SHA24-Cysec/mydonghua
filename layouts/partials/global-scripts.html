@@ -27,6 +27,7 @@
   <script>
   window.__SMARTLINK_SRC = '{{ $smartlink.src }}';
   window.__SMARTLINK_ENV = '{{ if hugo.IsProduction }}production{{ else }}development{{ end }}';
+  window.__SMARTLINK_COOLDOWN_MS = {{ mul ($smartlink.cooldownSeconds | default 300) 1000 }};
   </script>
   {{- template "minjs" "js/site-smartlink.js" -}}
 {{- end -}}

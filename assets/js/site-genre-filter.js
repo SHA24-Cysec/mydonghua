@@ -68,46 +68,18 @@ function renderGenreResults() {
   const start = (genrePage - 1) * genrePerPage;
   const end = start + genrePerPage;
 
+  const cardFactory = window.DonghuaBatchCards && window.DonghuaBatchCards.donghuaCardTemplate;
+  if (typeof cardFactory !== "function") {
+    console.error("[Genre Filter] Card factory tidak tersedia.");
+    alertBox.classList.remove("hidden");
+    pagination.classList.add("hidden");
+    return;
+  }
+
   genreResults.slice(start, end).forEach(function(item) {
     const li = document.createElement("li");
     li.className = "donghua-card-item";
-    
-    if (window.DonghuaBatchCards && typeof window.DonghuaBatchCards.donghuaCardTemplate === "function") {
-      li.innerHTML = window.DonghuaBatchCards.donghuaCardTemplate(item, item.title, "");
-    } else if (typeof donghuaCardTemplate === "function") {
-      li.innerHTML = donghuaCardTemplate(item, item.title, "");
-    } else {
-      const type = item.type || "Donghua";
-      const ratingHTML = item.rating && item.rating !== "-"
-        ? '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ' + item.rating + '/10</span>'
-        : '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>';
-      const metaChips = [item.episode, item.status]
-        .filter(function(v) { return v && v !== "-"; })
-        .map(function(v) { return '<span class="donghua-card-chip">' + v + '</span>'; })
-        .join("");
-
-      li.innerHTML = 
-        '<article class="donghua-card">' +
-          '<a class="donghua-card-link" title="' + item.title + '" href="' + item.permalink + '">' +
-            '<div class="donghua-card-poster">' +
-              '<img loading="lazy" decoding="async" width="200" height="300" src="' + item.thumbnail + '" alt="' + item.title + '">' +
-            '</div>' +
-            '<div class="donghua-card-frame" aria-hidden="true"></div>' +
-            '<div class="donghua-card-badges">' +
-              '<span class="donghua-card-badge">' + type + '</span>' +
-            '</div>' +
-            '<div class="donghua-card-body">' +
-              '<h3 class="donghua-card-title">' + item.title + '</h3>' +
-              '<div class="donghua-card-meta">' + metaChips + '</div>' +
-              '<div class="donghua-card-footer">' +
-                ratingHTML +
-                '<span class="donghua-card-cta">Detail</span>' +
-              '</div>' +
-            '</div>' +
-          '</a>' +
-        '</article>';
-    }
-
+    li.innerHTML = cardFactory(item, "", "", 2);
     resultsContainer.appendChild(li);
   });
 
