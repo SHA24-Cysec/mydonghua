@@ -13,7 +13,7 @@
     "check": "npm run check:content && npm run check:css"
   },
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
