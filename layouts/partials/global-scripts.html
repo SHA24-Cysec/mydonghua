@@ -21,17 +21,6 @@
 {{- template "minjs" "js/site-navbar.js" -}}
 {{- template "minjs" "js/site-random.js" -}}
 
-{{/* Smartlink Adsterra — trigger klik judul/kartu donghua (halaman yang punya donghua-card-link) */}}
-{{- $smartlink := .Site.Params.smartlink -}}
-{{- if and $smartlink.enabled $smartlink.src $hasCardGrid -}}
-  <script>
-  window.__SMARTLINK_SRC = '{{ $smartlink.src }}';
-  window.__SMARTLINK_ENV = '{{ if hugo.IsProduction }}production{{ else }}development{{ end }}';
-  window.__SMARTLINK_COOLDOWN_MS = {{ mul ($smartlink.cooldownSeconds | default 300) 1000 }};
-  </script>
-  {{- template "minjs" "js/site-smartlink.js" -}}
-{{- end -}}
-
 {{/* Post-only: report, share, dan Disqus hanya dirender pada posting donghua. */}}
 {{ if $isPost }}
 {{- template "minjs" "js/site-download-report.js" -}}

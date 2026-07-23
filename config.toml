@@ -23,15 +23,6 @@ uglyURLs = false
     author = 'Admin'
     img = '/img/DonghuaBatch.webp'
 
-  # Smartlink Adsterra — trigger klik judul/kartu donghua
-  # Saat user klik kartu donghua (judul/poster), smartlink terbuka
-  # di tab baru tanpa mengganggu navigasi ke halaman detail.
-  [params.smartlink]
-    enabled = true
-    src = 'https://bendspecimen.com/td7zxakvmh?key=72a4fb839fdab976a2aec02aa04b2be4'
-    # Cooldown per-tab dalam detik.
-    cooldownSeconds = 300
-
 [sitemap]
     changeFreq = 'weekly'
     priority = 0.8
