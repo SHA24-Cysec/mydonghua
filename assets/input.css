@@ -8517,3 +8517,322 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
 .btt-wrapper {
   background-color: transparent !important;
 }
+
+/* Bookmark card: mobile-first, compact neon, consistent touch target. */
+html body .donghua-card-bookmark {
+  --bookmark-size: clamp(2.25rem, 11vw, 2.75rem);
+  --bookmark-offset: clamp(0.42rem, 2vw, 0.62rem);
+  width: var(--bookmark-size);
+  height: var(--bookmark-size);
+  top: var(--bookmark-offset);
+  right: var(--bookmark-offset);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 999px;
+  background: rgba(5, 10, 28, 0.94);
+  color: #b6c6dc;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.035) inset,
+    0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+html body .donghua-card-bookmark svg {
+  width: clamp(0.9rem, 4vw, 1.05rem);
+  height: clamp(0.9rem, 4vw, 1.05rem);
+}
+
+html body .donghua-card-bookmark:hover,
+html body .donghua-card-bookmark:focus-visible {
+  border-color: rgba(34, 211, 238, 0.7);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.22), rgba(139, 92, 246, 0.2));
+  color: #67e8f9;
+  box-shadow:
+    0 0 0 3px rgba(34, 211, 238, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.32);
+}
+
+html body .donghua-card-bookmark.is-saved {
+  border-color: rgba(34, 211, 238, 0.72);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.28), rgba(139, 92, 246, 0.24));
+  color: #67e8f9;
+}
+
+@media (min-width: 640px) {
+  html body .donghua-card-bookmark {
+    --bookmark-size: 2.5rem;
+    --bookmark-offset: 0.56rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .donghua-card-bookmark,
+  html body .donghua-card-bookmark svg {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Site-wide controls: mobile-first compact sizing with consistent neon states. */
+:where(
+  .notfound-dock-btn,
+  .site-home-hero-button,
+  .site-navbar-action,
+  .site-random-action,
+  .pagination-dock-button,
+  .pagination-aurora-button,
+  .fav-watch-filter,
+  .fav-clear-btn,
+  .fav-confirm-btn,
+  .search-filter-trigger,
+  .search-filter-reset,
+  .search-filter-apply,
+  .genre-sheet-trigger,
+  .genre-clear-button,
+  .genre-apply-button,
+  .taxonomy-tab-button,
+  .share-premium-button,
+  .db-button,
+  .ad-fallback-cta
+) {
+  min-height: clamp(2.5rem, 10vw, 2.75rem);
+  padding-block: clamp(0.58rem, 2.2vw, 0.72rem);
+  padding-inline: clamp(0.78rem, 3.2vw, 1.05rem);
+  border-radius: clamp(0.65rem, 2.5vw, 0.85rem);
+  font-size: clamp(0.75rem, 2.1vw, 0.875rem);
+  line-height: 1.2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(
+  .notfound-dock-btn,
+  .site-home-hero-button,
+  .site-navbar-action,
+  .site-random-action,
+  .pagination-dock-button,
+  .pagination-aurora-button,
+  .fav-watch-filter,
+  .fav-clear-btn,
+  .fav-confirm-btn,
+  .search-filter-trigger,
+  .search-filter-reset,
+  .search-filter-apply,
+  .genre-sheet-trigger,
+  .genre-clear-button,
+  .genre-apply-button,
+  .taxonomy-tab-button,
+  .share-premium-button,
+  .db-button,
+  .ad-fallback-cta
+):focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.72);
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  :where(
+      .notfound-dock-btn,
+    .site-home-hero-button,
+    .site-navbar-action,
+    .site-random-action,
+    .pagination-dock-button,
+    .pagination-aurora-button,
+    .fav-watch-filter,
+    .fav-clear-btn,
+    .fav-confirm-btn,
+    .search-filter-trigger,
+    .search-filter-reset,
+    .search-filter-apply,
+    .genre-sheet-trigger,
+    .genre-clear-button,
+    .genre-apply-button,
+    .taxonomy-tab-button,
+    .share-premium-button,
+    .db-button,
+    .ad-fallback-cta
+  ) {
+    min-height: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(button, a) {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Unified button system: existing component classes keep their behaviour. */
+:where(
+  .site-navbar-toggle,
+  .site-nav-close,
+  .site-random-close,
+  .search-filter-close,
+  .search-filter-backdrop,
+  .genre-sheet-close,
+  .site-floating-ad__close,
+  .btt-btn,
+  .donghua-card-bookmark,
+  .pagination-dock-button
+) {
+  width: clamp(2.25rem, 11vw, 2.75rem);
+  min-width: clamp(2.25rem, 11vw, 2.75rem);
+  height: clamp(2.25rem, 11vw, 2.75rem);
+  min-height: clamp(2.25rem, 11vw, 2.75rem);
+  padding: 0;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+}
+
+:where(
+  .site-navbar-toggle,
+  .site-nav-close,
+  .site-random-close,
+  .search-filter-close,
+  .genre-sheet-close,
+  .site-floating-ad__close,
+  .btt-btn,
+  .donghua-card-bookmark,
+  .pagination-dock-button
+) svg,
+:where(
+  .site-navbar-toggle,
+  .site-nav-close,
+  .site-random-close,
+  .search-filter-close,
+  .genre-sheet-close,
+  .site-floating-ad__close,
+  .btt-btn,
+  .donghua-card-bookmark,
+  .pagination-dock-button
+) i {
+  width: clamp(0.9rem, 4vw, 1.1rem);
+  height: clamp(0.9rem, 4vw, 1.1rem);
+  flex: 0 0 auto;
+}
+
+:where(
+  .site-navbar-action,
+  .site-nav-random-btn,
+  .site-random-action,
+  .notfound-dock-btn,
+  .site-home-hero-button,
+  .cyber-button,
+  .post-bookmark-btn,
+  .db-report,
+  .db-button,
+  .share-premium-button,
+  .fav-clear-btn,
+  .fav-confirm-btn,
+  .search-filter-trigger,
+  .search-filter-reset,
+  .search-filter-apply,
+  .genre-sheet-trigger,
+  .genre-clear-button,
+  .genre-apply-button,
+  .taxonomy-tab-button,
+  .fav-watch-filter,
+  .ad-fallback-cta
+) {
+  min-height: clamp(2.5rem, 10vw, 2.75rem);
+  padding-block: clamp(0.58rem, 2.2vw, 0.72rem);
+  padding-inline: clamp(0.78rem, 3.2vw, 1.05rem);
+  font-size: clamp(0.75rem, 2.1vw, 0.875rem);
+  line-height: 1.2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(
+  .site-navbar-toggle,
+  .site-nav-close,
+  .site-random-close,
+  .search-filter-close,
+  .genre-sheet-close,
+  .site-floating-ad__close,
+  .btt-btn,
+  .donghua-card-bookmark,
+  .pagination-dock-button,
+  .site-navbar-action,
+  .site-nav-random-btn,
+  .site-random-action,
+  .notfound-dock-btn,
+  .site-home-hero-button,
+  .cyber-button,
+  .post-bookmark-btn,
+  .db-report,
+  .db-button,
+  .share-premium-button,
+  .fav-clear-btn,
+  .fav-confirm-btn,
+  .search-filter-trigger,
+  .search-filter-reset,
+  .search-filter-apply,
+  .genre-sheet-trigger,
+  .genre-clear-button,
+  .genre-apply-button,
+  .taxonomy-tab-button,
+  .fav-watch-filter,
+  .ad-fallback-cta
+):focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.75);
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  :where(
+    .site-navbar-toggle,
+    .site-nav-close,
+    .site-random-close,
+    .search-filter-close,
+    .genre-sheet-close,
+    .site-floating-ad__close,
+    .btt-btn,
+    .donghua-card-bookmark,
+    .pagination-dock-button
+  ) {
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    min-height: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(
+    .site-navbar-toggle,
+    .site-nav-close,
+    .site-random-close,
+    .search-filter-close,
+    .genre-sheet-close,
+    .site-floating-ad__close,
+    .btt-btn,
+    .donghua-card-bookmark,
+    .pagination-dock-button,
+    .site-navbar-action,
+    .site-random-action,
+    .notfound-dock-btn,
+    .site-home-hero-button,
+    .cyber-button,
+    .post-bookmark-btn,
+    .share-premium-button
+  ) {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Floating-ad close control: explicit override keeps the component in the shared icon scale. */
+html body .site-floating-ad__close {
+  width: clamp(2.25rem, 11vw, 2.75rem);
+  min-width: clamp(2.25rem, 11vw, 2.75rem);
+  height: clamp(2.25rem, 11vw, 2.75rem);
+  min-height: clamp(2.25rem, 11vw, 2.75rem);
+  padding: 0;
+  border-radius: var(--btn-radius);
+}
+
+html body .site-floating-ad__close svg {
+  width: clamp(0.9rem, 4vw, 1.1rem);
+  height: clamp(0.9rem, 4vw, 1.1rem);
+}
