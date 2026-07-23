@@ -13,7 +13,7 @@ genre :
     - Mystery
     - Sci-Fi
     - Space
-    - Supranatural
+    - Supernatural
 type : 'Donghua Movie'
 status : 'Completed'
 sub : 'Anichin'
