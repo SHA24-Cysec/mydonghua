@@ -5,7 +5,7 @@
   {{ range .Pages }}
     {{ $seoNoindexPrefix := or (strings.HasPrefix .RelPermalink "/post/page/") (strings.HasPrefix .RelPermalink "/halaman/page/") }}
     {{ $seoNoindex := or (in $seoNoindexExact .RelPermalink) $seoNoindexPrefix }}
-    {{ if not $seoNoindex }}
+    {{ if and .Permalink (not $seoNoindex) }}
       <url>
         <loc>{{ .Permalink }}</loc>
         {{ if not .Lastmod.IsZero }}
