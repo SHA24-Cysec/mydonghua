@@ -1,64 +1,64 @@
 ---
-date : '2025-02-22T21:01:56+07:00'
+date : '2026-07-23T10:45:00+07:00'
 draft : false
-title : 'Kebijakan Privasi DonghuaBatch'
-deskripsi : 'Baca kebijakan privasi DonghuaBatch mengenai data, cookie, tautan eksternal, dan hak pengguna.'
+title : 'Kebijakan Privasi'
+deskripsi : 'Baca kebijakan privasi DonghuaBatch mengenai data, cookie, dan hak pengguna.'
 layout : halaman
 url : privacy-policy
 ---
 
-Selamat datang di **DonghuaBatch**! Privasi pengguna adalah prioritas utama kami. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi yang diberikan oleh pengguna saat mengakses situs web **DonghuaBatch**, platform yang menyediakan tempat download batch donghua terlengkap dengan subtitle Indonesia.
+# Kebijakan Privasi
+
+Privasi kamu penting bagi kami. Halaman ini menjelaskan bagaimana DonghuaBatch mengumpulkan, menggunakan, dan melindungi informasi saat kamu mengunjungi situs ini.
 
 ## 1. Informasi yang Kami Kumpulkan
 
-Ketika Anda mengunjungi **DonghuaBatch**, kami dapat mengumpulkan beberapa jenis informasi, termasuk:
+Saat kamu mengunjungi DonghuaBatch, kami mengumpulkan dua jenis informasi:
 
-- **Informasi Non-Pribadi**: Seperti alamat IP, jenis browser, perangkat yang digunakan, halaman yang dikunjungi, serta waktu akses untuk keperluan analisis dan peningkatan layanan.
-- **Informasi Pribadi**: Kami hanya mengumpulkan informasi pribadi seperti alamat email jika Anda secara sukarela memberikannya, misalnya saat berlangganan buletin atau menghubungi kami melalui formulir kontak.
+- **Informasi Non-Pribadi**: Alamat IP, jenis browser, perangkat yang dipakai, halaman yang dikunjungi, dan waktu akses. Ini dipakai untuk analisis dan memperbaiki layanan.
+- **Informasi Pribadi**: Kami hanya mengumpulkan alamat email kalau kamu secara sukarela memberikannya, misalnya saat menghubungi kami lewat formulir kontak.
 
 ## 2. Penggunaan Informasi
 
-Kami menggunakan informasi yang dikumpulkan untuk berbagai tujuan, termasuk:
+Kami pakai informasi yang terkumpul untuk:
 
-- Meningkatkan kualitas layanan dan pengalaman pengguna di **DonghuaBatch**.
-- Menyediakan konten yang lebih relevan dan sesuai dengan preferensi pengguna.
-- Mengelola komunikasi dengan pengguna, termasuk menanggapi pertanyaan atau memberikan informasi terbaru seputar donghua.
-- Menganalisis pola penggunaan situs untuk memahami kebutuhan dan keinginan pengguna.
+- Meningkatkan kualitas layanan dan pengalaman pengguna
+- Memberi konten yang lebih relevan
+- Menjawab pertanyaan dan memberikan update seputar donghua
+- Memahami pola penggunaan situs
 
-## 3. Perlindungan Data Pengguna
+## 3. Perlindungan Data
 
-Kami berkomitmen untuk melindungi informasi pengguna dengan langkah-langkah keamanan yang sesuai, termasuk enkripsi dan sistem perlindungan data untuk mencegah akses tidak sah, penyalahgunaan, atau perubahan informasi pengguna.
-
-Kami tidak akan menjual, menyewakan, atau membagikan informasi pribadi pengguna kepada pihak ketiga tanpa izin, kecuali jika diwajibkan oleh hukum atau dalam rangka penegakan kebijakan situs.
+Kami berusaha melindungi informasi kamu dengan langkah keamanan yang wajar. Kami tidak akan menjual atau membagikan data pribadi kamu ke pihak ketiga tanpa izin, kecuali kalau diwajibkan oleh hukum.
 
 ## 4. Penggunaan Cookie
 
-**DonghuaBatch** menggunakan cookie untuk meningkatkan pengalaman pengguna dengan cara:
+DonghuaBatch menggunakan cookie untuk:
 
-- Menyimpan preferensi pengguna agar situs lebih mudah diakses di kunjungan berikutnya.
-- Menganalisis lalu lintas situs untuk memahami tren penggunaan.
-- Menyediakan fitur-fitur interaktif yang lebih optimal.
+- Menyimpan preferensi kamu agar situs lebih mudah diakses di kunjungan berikutnya
+- Menganalisis lalu lintas situs
+- Menyediakan fitur interaktif yang lebih baik
 
-Pengguna dapat mengatur browser untuk menolak atau menghapus cookie kapan saja melalui pengaturan browser mereka.
+Kamu bisa menolak atau menghapus cookie kapan saja lewat pengaturan browser.
 
-## 5. Tautan ke Situs Eksternal
+## 5. Tautan ke Situs Lain
 
-Situs kami mungkin mengandung tautan ke website lain. Kami tidak bertanggung jawab atas kebijakan privasi atau praktik situs eksternal tersebut. Kami menyarankan pengguna untuk membaca kebijakan privasi masing-masing situs yang dikunjungi.
+Situs kami mungkin punya tautan ke website lain. Kami tidak bertanggung jawab atas kebijakan privasi situs eksternal tersebut. Sebaiknya kamu baca kebijakan privasi masing-masing situs yang dikunjungi.
 
-## 6. Hak Pengguna
+## 6. Hak Kamu
 
-Pengguna memiliki hak atas informasi mereka, termasuk:
+Kamu punya hak atas informasi pribadimu, termasuk:
 
-- Meminta akses ke data pribadi yang telah kami kumpulkan.
-- Memperbarui atau menghapus informasi pribadi yang telah diberikan.
-- Menolak atau membatasi penggunaan data tertentu sesuai dengan peraturan yang berlaku.
+- Meminta akses ke data yang sudah kami kumpulkan
+- Memperbarui atau menghapus informasi yang sudah diberikan
+- Menolak atau membatasi penggunaan data tertentu
 
-Untuk menggunakan hak ini, pengguna dapat menghubungi kami melalui halaman kontak di **DonghuaBatch**.
+Kalau ingin menggunakan hak ini, hubungi kami lewat halaman Kontak.
 
-## 7. Perubahan Kebijakan Privasi
+## 7. Perubahan Kebijakan
 
-Kami dapat memperbarui Kebijakan Privasi ini sewaktu-waktu untuk mencerminkan perubahan dalam operasional situs atau peraturan yang berlaku. Pengguna disarankan untuk memeriksa halaman ini secara berkala untuk mengetahui pembaruan terbaru.
+Kami bisa memperbarui Kebijakan Privasi ini kapan saja. Kamu disarankan untuk memeriksa halaman ini secara berkala.
 
-Dengan mengakses **DonghuaBatch**, Anda dianggap telah menyetujui kebijakan privasi ini. Jika ada pertanyaan lebih lanjut, silakan hubungi kami melalui halaman kontak yang tersedia.
+Dengan mengakses DonghuaBatch, kamu dianggap sudah menyetujui kebijakan privasi ini. Kalau ada pertanyaan, silakan hubungi kami lewat halaman Kontak.
 
-Terima kasih telah mempercayai **DonghuaBatch** sebagai sumber download batch donghua terlengkap subtitle Indonesia!
+Terima kasih sudah menggunakan DonghuaBatch.

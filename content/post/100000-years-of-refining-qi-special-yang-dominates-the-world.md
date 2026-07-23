@@ -11,7 +11,7 @@ genre :
     - 'Fantasy'
     - 'Historical'
     - 'Martial Arts'
-type : 'Donghua'
+type : 'Donghua Movie'
 status : 'Completed'
 sub : 'Anichin'
 durasi : '1 Jam'

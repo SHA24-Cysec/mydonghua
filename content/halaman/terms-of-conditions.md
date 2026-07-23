@@ -1,55 +1,44 @@
 ---
-date : '2025-02-22T21:02:11+07:00'
+date : '2026-07-23T10:30:00+07:00'
 draft : false
-title : 'Syarat dan Ketentuan DonghuaBatch'
-deskripsi : 'Pelajari syarat dan ketentuan penggunaan layanan, konten, serta tanggung jawab pengguna DonghuaBatch.'
+title : 'Syarat dan Ketentuan'
+deskripsi : 'Baca syarat dan ketentuan penggunaan DonghuaBatch.'
 layout : halaman
 url : terms-of-conditions
 ---
 
-Selamat datang di **DonghuaBatch**! Dengan mengakses dan menggunakan situs ini, Anda dianggap telah membaca, memahami, dan menyetujui Syarat dan Ketentuan yang berlaku. DonghuaBatch adalah platform tempat download batch donghua terlengkap dengan subtitle Indonesia. Mohon membaca ketentuan berikut dengan saksama sebelum menggunakan layanan kami.
+# Syarat dan Ketentuan
+
+Dengan menggunakan DonghuaBatch, kamu dianggap sudah setuju dengan semua ketentuan di halaman ini. Mohon baca dengan seksama.
 
 ## 1. Ketentuan Umum
 
-- DonghuaBatch menyediakan konten dalam bentuk batch download donghua dengan subtitle Indonesia yang telah diterjemahkan secara akurat dan mudah dipahami.
-- Pengguna bertanggung jawab atas penggunaan layanan dan wajib mematuhi semua peraturan yang berlaku.
-- Kami berhak mengubah, menambah, atau menghapus ketentuan dalam dokumen ini kapan saja tanpa pemberitahuan sebelumnya. Perubahan akan mulai berlaku setelah diperbarui di halaman ini.
+DonghuaBatch adalah situs untuk download batch donghua subtitle Indonesia. Kami menyediakan konten yang sudah diterjemahkan untuk keperluan pribadi. Kamu bertanggung jawab penuh atas penggunaan layanan ini. Kami berhak mengubah ketentuan kapan saja tanpa pemberitahuan sebelumnya.
 
 ## 2. Penggunaan Layanan
 
-- Pengguna dilarang menyalahgunakan layanan kami untuk tujuan ilegal, termasuk tetapi tidak terbatas pada penyebaran konten yang melanggar hak cipta, pornografi, atau aktivitas berbahaya lainnya.
-- Konten yang tersedia di DonghuaBatch hanya untuk keperluan pribadi dan non-komersial. Pengguna tidak diperbolehkan untuk memperjualbelikan atau mendistribusikan ulang konten tanpa izin.
-- Kami tidak bertanggung jawab atas penggunaan konten yang melanggar peraturan di wilayah hukum pengguna.
+Kamu boleh menggunakan situs ini untuk keperluan pribadi dan non-komersial. Dilarang menyalahgunakan layanan untuk tujuan ilegal, menyebarkan konten berbahaya, atau melanggar hak cipta. Kamu tidak boleh menjual atau mendistribusikan ulang konten tanpa izin. Kami tidak bertanggung jawab jika kamu melanggar hukum di wilayahmu.
 
-## 3. Hak Cipta dan Kepemilikan Konten
+## 3. Hak Cipta
 
-- Semua donghua yang tersedia di DonghuaBatch adalah hasil kurasi dan terjemahan dari tim kami dengan tujuan memberikan pengalaman terbaik bagi pengguna.
-- Kami tidak mengklaim kepemilikan atas hak cipta asli dari donghua yang tersedia. Hak cipta tetap menjadi milik pembuat dan pemegang lisensi resmi.
-- Jika ada pihak yang merasa hak ciptanya dilanggar, silakan hubungi kami melalui halaman kontak agar kami dapat meninjau dan mengambil tindakan yang diperlukan.
+DonghuaBatch hanya mengumpulkan dan menyediakan file batch. Subtitle Indonesia yang digunakan berasal dari Anichin dan penerjemah lainnya. Kami tidak melakukan terjemahan sendiri. Hak cipta donghua tetap milik pembuat dan pemegang lisensi resmi. Kalau ada yang merasa hak ciptanya dilanggar, silakan hubungi kami lewat halaman Kontak.
 
-## 4. Tanggung Jawab Pengguna
+## 4. Tanggung Jawab Kamu
 
-- Pengguna bertanggung jawab penuh atas aktivitas yang dilakukan di DonghuaBatch.
-- Dilarang melakukan tindakan yang dapat merusak atau mengganggu operasional situs, seperti peretasan, penyalahgunaan sistem, atau tindakan lain yang dapat membahayakan keamanan website.
-- Kami berhak untuk menangguhkan atau menghentikan akses pengguna yang melanggar ketentuan ini tanpa pemberitahuan sebelumnya.
+Kamu bertanggung jawab atas semua aktivitas yang kamu lakukan di situs ini. Dilarang merusak atau mengganggu operasional situs, termasuk mencoba meretas atau menyalahgunakan sistem. Kami berhak menangguhkan akses pengguna yang melanggar ketentuan ini.
 
-## 5. Pembaruan dan Perubahan Layanan
+## 5. Perubahan Layanan
 
-- Kami berusaha memberikan layanan terbaik dengan selalu memperbarui dan meningkatkan fitur serta koleksi donghua yang tersedia.
-- DonghuaBatch berhak untuk mengubah atau menghentikan sebagian atau seluruh layanan tanpa pemberitahuan terlebih dahulu.
-- Kami tidak bertanggung jawab atas kehilangan data atau gangguan layanan yang mungkin terjadi akibat perubahan sistem atau faktor teknis lainnya.
+Kami selalu berusaha memberikan layanan terbaik. Kami berhak mengubah atau menghentikan sebagian layanan kapan saja tanpa pemberitahuan. Kami tidak bertanggung jawab atas kehilangan data atau gangguan yang terjadi karena perubahan sistem.
 
 ## 6. Batasan Tanggung Jawab
 
-- DonghuaBatch tidak bertanggung jawab atas segala kerugian atau kerusakan yang terjadi akibat penggunaan layanan, baik secara langsung maupun tidak langsung.
-- Kami tidak menjamin bahwa situs akan selalu tersedia tanpa gangguan, bebas dari virus, atau sepenuhnya aman dari ancaman keamanan digital.
-- Pengguna memahami bahwa semua penggunaan layanan dilakukan atas risiko sendiri.
+DonghuaBatch tidak bertanggung jawab atas kerugian yang terjadi akibat penggunaan layanan ini. Kamu menggunakan situs ini atas risiko sendiri. Kami tidak menjamin situs akan selalu bebas dari gangguan atau ancaman keamanan.
 
-## 7. Hukum dan Yurisdiksi
+## 7. Hukum yang Berlaku
 
-- Syarat dan Ketentuan ini diatur dan ditafsirkan sesuai dengan hukum yang berlaku di Indonesia.
-- Jika terjadi perselisihan, kedua belah pihak sepakat untuk menyelesaikannya secara musyawarah terlebih dahulu sebelum menempuh jalur hukum lebih lanjut.
+Syarat dan Ketentuan ini diatur oleh hukum Indonesia. Kalau terjadi perselisihan, kami mengajak menyelesaikannya secara musyawarah dulu sebelum melangkah ke jalur hukum.
 
-Dengan mengakses dan menggunakan **DonghuaBatch**, Anda dianggap telah menyetujui semua ketentuan yang telah ditetapkan. Jika Anda memiliki pertanyaan lebih lanjut mengenai Syarat dan Ketentuan ini, silakan hubungi kami melalui halaman kontak yang tersedia di website.
+Dengan mengakses dan menggunakan DonghuaBatch, kamu sudah menyetujui semua ketentuan di atas. Kalau ada pertanyaan, silakan hubungi kami lewat halaman Kontak.
 
-Terima kasih telah menggunakan **DonghuaBatch** sebagai sumber terpercaya untuk download batch donghua subtitle Indonesia!
+Terima kasih sudah menggunakan DonghuaBatch.
