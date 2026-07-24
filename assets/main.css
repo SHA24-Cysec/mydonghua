@@ -1045,6 +1045,10 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
           user-select: none;
 }
 
+.resize {
+  resize: both;
+}
+
 .scroll-mt-20 {
   scroll-margin-top: 5rem;
 }
@@ -1725,6 +1729,20 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   --donghua-card-min: 9.25rem;
 }
 
+/* Beranda dan daftar favorit memakai lebar kolom dasar. Kelas ini dipertahankan
+   sebagai kait eksplisit supaya markup tidak memakai kelas tanpa definisi. */
+
+.donghua-card-grid-main {
+  --donghua-card-min: 8.75rem;
+}
+
+/* Grid "Terakhir Dilihat" dan "Donghua Terbaru" sedikit lebih lega agar poster
+   tetap terbaca pada baris tunggal. */
+
+.donghua-card-grid-latest {
+  --donghua-card-min: 9.25rem;
+}
+
 /* Kontrol watchlist memerlukan ruang ekstra agar label tidak terpotong. */
 
 #fav-grid {
@@ -1755,13 +1773,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   transition: box-shadow 0.2s ease;
-}
-
-/* Frame dekoratif dari desain lama tidak lagi dipakai.
-   Tetap di-display:none agar template JS lama aman. */
-
-.donghua-card-frame {
-  display: none;
 }
 
 .donghua-card-poster {
@@ -1816,13 +1827,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Badge "Sub" sudah dihapus dari template;
-   disembunyikan juga sebagai pengaman bila ada template lama. */
-
-.donghua-card-badge.sub {
-  display: none;
 }
 
 /* Body: judul + meta + rating di atas poster (scrim tipis) */
@@ -1898,13 +1902,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   font-size: 0.68rem;
   font-weight: 800;
   line-height: 1;
-}
-
-/* Konsep simpel: tombol "Detail" disembunyikan,
-   seluruh kartu tetap menjadi tautan ke halaman detail. */
-
-.donghua-card-cta {
-  display: none;
 }
 
 .donghua-card-search-meta {
@@ -4465,25 +4462,28 @@ html body .site-random-error[hidden],
    BOOKMARK BUTTON (Card)
    ============================ */
 
+/* ==========================================================
+   BOOKMARK CARD — BLOK KANONIK
+   Sebelumnya properti tombol ini tersebar di 10 blok dengan
+   spesifisitas bertingkat (.donghua-card-bookmark, body ...,
+   html body ...) sehingga ukuran ditetapkan tiga kali dengan
+   nilai berbeda. Semua digabung di sini.
+
+   Ukuran memakai --bookmark-size (lihat blok state di bawah)
+   dan dijaga minimal 44px sesuai WCAG 2.5.5.
+   ========================================================== */
+
 body .donghua-card-bookmark {
   position: absolute;
-  top: 0.56rem;
-  right: 0.56rem;
   z-index: 5;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(6, 8, 22, 0.95);
-  /* SCROLL PERF: backdrop-filter:blur(8px) removed — solid bg. */
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   display: grid;
   place-items: center;
+  padding: 0;
   cursor: pointer;
-  color: #94a3b8;
   font-size: 0.72rem;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+  /* SCROLL PERF: backdrop-filter:blur(8px) dilepas — background solid. */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   transition:
     transform 0.2s ease,
     background 0.2s ease,
@@ -4492,7 +4492,6 @@ body .donghua-card-bookmark {
     box-shadow 0.2s ease;
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  padding: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -4871,20 +4870,6 @@ body .post-bookmark-btn.is-pulsing {
 /* ============================
    RESPONSIVE
    ============================ */
-
-@media (max-width: 340px) {
-  .donghua-card-bookmark {
-    width: 1.8rem;
-    height: 1.8rem;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-
-  .donghua-card-bookmark svg {
-    width: 0.8rem;
-    height: 0.8rem;
-  }
-}
 
 /* ===== Source: layouts/partials/season.html (style block 1) ===== */
 
@@ -7216,19 +7201,6 @@ body .pagination-dock-status,
 }
 
 @media (max-width: 639px) {
-  body .donghua-card-bookmark {
-    top: 0.56rem;
-    right: 0.56rem;
-    width: 2.75rem;
-    height: 2.75rem;
-    font-size: 0.82rem;
-  }
-
-  body .donghua-card-bookmark svg {
-    width: 0.96rem;
-    height: 0.96rem;
-  }
-
   .post-genre-link {
     min-height: 44px;
     min-width: 44px;
@@ -7718,7 +7690,6 @@ html body :is(
   .genre-apply-button,
   .post-bookmark-btn,
   .post-genre-link,
-  .donghua-card-cta,
   .donghua-card-bookmark,
   .site-navbar-action,
   .site-navbar-toggle,
@@ -7789,13 +7760,6 @@ html body :is(
 
 .pagination-aurora-button.is-disabled {
   pointer-events: none;
-}
-
-.donghua-card-bookmark {
-  border-radius: 999px;
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(2, 6, 23, 0.72);
-  color: #d8e9ff;
 }
 
 html body .share-premium-button i,
@@ -8018,8 +7982,7 @@ html body :is(
   .notfound-dock-btn.primary,
   .pagination-aurora-page.is-active,
   .pagination-dock-status,
-  .post-bookmark-btn,
-  .donghua-card-cta
+  .post-bookmark-btn
 ) {
   border-color: var(--btn-hybrid-primary-border);
   background: var(--btn-hybrid-primary-bg);
@@ -8063,8 +8026,7 @@ html body :is(
     .genre-apply-button,
     .notfound-dock-btn.primary,
     .pagination-aurora-page.is-active,
-    .post-bookmark-btn,
-    .donghua-card-cta
+    .post-bookmark-btn
   ):hover {
     filter: brightness(1.055);
     box-shadow: var(--btn-hybrid-primary-shadow-hover);
@@ -8751,13 +8713,7 @@ html body .site-navbar {
 
 /* Card badges and save buttons can occur dozens of times in one viewport. */
 
-html body .donghua-card-badge,
-html body .donghua-card-bookmark {
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-}
-
-html body .donghua-card-badge:not(.sub) {
+html body .donghua-card-badge {
   background-color: rgba(2, 6, 23, 0.8);
 }
 
@@ -10341,7 +10297,9 @@ html body .genre-sheet-actions > :is(.genre-clear-button, .genre-apply-button):a
 /* Bookmark card: mobile-first, compact neon, consistent touch target. */
 
 html body .donghua-card-bookmark {
-  --bookmark-size: clamp(2.25rem, 11vw, 2.75rem);
+  /* Target sentuh dijaga minimal 44px (WCAG 2.5.5). Batas bawah clamp
+     sebelumnya 2.25rem (36px) sehingga menyusut di viewport sempit. */
+  --bookmark-size: clamp(2.75rem, 11vw, 2.75rem);
   --bookmark-offset: clamp(0.42rem, 2vw, 0.62rem);
   width: var(--bookmark-size);
   height: var(--bookmark-size);
@@ -10381,7 +10339,7 @@ html body .donghua-card-bookmark.is-saved {
 
 @media (min-width: 640px) {
   html body .donghua-card-bookmark {
-    --bookmark-size: 2.5rem;
+    --bookmark-size: 2.75rem;
     --bookmark-offset: 0.56rem;
   }
 }

@@ -2,8 +2,18 @@
 {{- $counter := 0 -}}
 
 {{- range where .Site.RegularPages "Layout" "postingan-donghua" -}}
-  {{/* Semua UI dinamis memakai URL berkas thumbnail sumber, tanpa varian resize. */}}
+  {{/* UI dinamis (search, favorit, filter genre, recently viewed) memakai varian
+       400x600 Smart yang sama dengan partial donghua-card, supaya poster tampil
+       identik di card statis maupun card hasil render JS. */}}
   {{- $thumb := .Params.thumbnail | default "" -}}
+  {{- with $thumb -}}
+    {{- $clean := strings.TrimPrefix "/" . -}}
+    {{- with resources.Get $clean -}}
+      {{- with try (.Fill "400x600 Smart webp") -}}
+        {{- with .Err -}}{{- warnf "index.json: gagal resize %q (%s)" $clean . -}}{{- else -}}{{- $thumb = .Value.RelPermalink -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
   {{- $item := dict
       "objectID" $counter
       "title" .Title

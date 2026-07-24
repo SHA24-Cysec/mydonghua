@@ -1,11 +1,22 @@
 {{/* Data aman untuk disimpan secara lokal ketika halaman detail donghua dibuka. */}}
+{{/* Thumbnail memakai varian 400x600 Smart agar kartu "Terakhir Dilihat"
+     tampil sama dengan kartu lain di beranda. */}}
+{{ $thumb := .Params.thumbnail | default .Params.image | default "" }}
+{{ with $thumb }}
+  {{ $clean := strings.TrimPrefix "/" . }}
+  {{ with resources.Get $clean }}
+    {{ with try (.Fill "400x600 Smart webp") }}
+      {{ with .Err }}{{ warnf "recently-viewed: gagal resize %q (%s)" $clean . }}{{ else }}{{ $thumb = .Value.RelPermalink }}{{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 <div
   id="recently-viewed-current"
   hidden
   data-id="{{ .Params.permalink | default .Permalink }}"
   data-title="{{ .Title }}"
   data-url="{{ .Permalink }}"
-  data-thumbnail="{{ .Params.thumbnail | default .Params.image | default "" }}"
+  data-thumbnail="{{ $thumb }}"
   data-type="{{ .Params.type | default "Donghua" }}"
   data-episode="{{ .Params.episode | default "" }}"
   data-status="{{ .Params.status | default "" }}"

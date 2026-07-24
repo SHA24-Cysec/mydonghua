@@ -1,46 +1,66 @@
 {{ $page := .page }}
 {{ $headingLevel := .headingLevel | default 3 }}
+{{ $eager := .eager | default false }}
 {{ $cardType := $page.Params.type | default "Donghua" }}
 {{ if eq (lower $cardType) "donghua movie" }}{{ $cardType = "Movie" }}{{ end }}
 
+{{/* Judul card dibersihkan dari boilerplate agar nama seri tidak habis dimakan
+     clamp 2 baris. Judul penuh tetap dipakai pada atribut title= dan tidak
+     mengubah front matter, <title>, maupun JSON-LD. */}}
+{{ $judulPenuh := $page.Title }}
+{{ $judulCard := $judulPenuh }}
+{{ $judulCard = strings.TrimPrefix "Download Batch " $judulCard }}
+{{ $judulCard = strings.TrimSuffix " Subtitle Indonesia" $judulCard }}
+{{ if eq (trim $judulCard " ") "" }}{{ $judulCard = $judulPenuh }}{{ end }}
+
 <article class="donghua-card">
-    <button class="donghua-card-bookmark{{ if false }} is-saved{{ end }}" data-fav-id="{{ $page.Params.permalink | default $page.Permalink }}" type="button" aria-label="Simpan ke favorit" title="Simpan">
+    {{/* Status favorit tersimpan di localStorage, jadi HTML statis selalu dirender
+         dalam keadaan belum tersimpan. site-favorites.js akan mengoreksi
+         aria-pressed, kelas is-saved, dan label lewat syncAllButtons(). */}}
+    <button class="donghua-card-bookmark" data-fav-id="{{ $page.Params.permalink | default $page.Permalink }}" type="button" aria-pressed="false" aria-label="Tambah ke daftar favorit" title="Simpan ke favorit">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
             <path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z"/>
         </svg>
     </button>
-    <a class="donghua-card-link" title="{{ $page.Title }}" href="{{ $page.Permalink }}">
+    <a class="donghua-card-link" title="{{ $judulPenuh }}" href="{{ $page.Permalink }}">
         <div class="donghua-card-poster">
-{{/* Berkas thumbnail sumber dipakai apa adanya; CSS hanya menjaga ukuran layout card. */}}
+{{/* Poster sumber punya rasio beragam (0,50–0,855) sedangkan card mengunci 2:3.
+     .Fill "400x600 Smart" menyeragamkannya lewat deteksi entropi sehingga crop
+     tidak lagi memotong dari atas secara buta. */}}
 {{ $thumbSrc := $page.Params.thumbnail | default "" }}
-{{ $thumbAlt := $page.Params.alt | default $page.Title }}
+{{ $thumbAlt := $page.Params.alt | default $judulPenuh }}
 {{ $imgRes := "" }}
 {{ with $thumbSrc }}
   {{ $clean := strings.TrimPrefix "/" . }}
-  {{ with resources.Get $clean }}{{ $imgRes = . }}{{ end }}
+  {{ with resources.Get $clean }}
+    {{/* Kegagalan resize (format tidak didukung/berkas rusak) tidak boleh
+         menggagalkan build; card jatuh ke berkas sumber apa adanya. */}}
+    {{ with try (.Fill "400x600 Smart webp") }}
+      {{ with .Err }}{{ warnf "donghua-card: gagal resize %q (%s)" $clean . }}{{ $imgRes = resources.Get $clean }}{{ else }}{{ $imgRes = .Value }}{{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}
 {{ if $imgRes }}
-            <img loading="lazy" decoding="async"
+            <img loading="{{ if $eager }}eager{{ else }}lazy{{ end }}" decoding="async"{{ if $eager }} fetchpriority="high"{{ end }}
                  src="{{ $imgRes.RelPermalink }}"
                  width="{{ $imgRes.Width }}" height="{{ $imgRes.Height }}"
                  alt="{{ $thumbAlt }}">
 {{ else if $thumbSrc }}
-            <img loading="lazy" decoding="async" width="200" height="300" src='{{ $thumbSrc | relURL }}' alt="{{ $thumbAlt }}">
+            <img loading="{{ if $eager }}eager{{ else }}lazy{{ end }}" decoding="async"{{ if $eager }} fetchpriority="high"{{ end }} width="400" height="600" src='{{ $thumbSrc | relURL }}' alt="{{ $thumbAlt }}">
 {{ else }}
             <div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true">
               <i class="fa-solid fa-film text-6xl"></i>
             </div>
 {{ end }}
         </div>
-        <div class="donghua-card-frame" aria-hidden="true"></div>
         <div class="donghua-card-badges">
             <span class="donghua-card-badge">{{ $cardType }}</span>
         </div>
         <div class="donghua-card-body">
             {{ if eq $headingLevel 2 }}
-                <h2 class="donghua-card-title">{{ $page.Title }}</h2>
+                <h2 class="donghua-card-title" title="{{ $judulPenuh }}">{{ $judulCard }}</h2>
             {{ else }}
-                <h3 class="donghua-card-title">{{ $page.Title }}</h3>
+                <h3 class="donghua-card-title" title="{{ $judulPenuh }}">{{ $judulCard }}</h3>
             {{ end }}
             <div class="donghua-card-meta">
                 {{ with $page.Params.episode }}<span class="donghua-card-chip" title="{{ . }}">{{ . }}</span>{{ end }}
@@ -52,7 +72,6 @@
                 {{ else }}
                     <span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>
                 {{ end }}
-                <span class="donghua-card-cta">Detail</span>
             </div>
         </div>
     </a>

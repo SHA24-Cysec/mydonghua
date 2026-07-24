@@ -108,6 +108,16 @@ const searchInput = document.getElementById("search-input");
       return label.toLowerCase() === "donghua movie" ? "Movie" : label;
     }
 
+    // Judul card dibersihkan dari boilerplate "Download Batch ... Subtitle
+    // Indonesia" supaya nama seri tidak habis dimakan clamp 2 baris.
+    // getTitleSearchSource() sudah mengenali pola yang sama untuk pencarian,
+    // jadi dipakai ulang di sini agar aturannya tidak bercabang.
+    function cardTitleLabel(value) {
+      const source = toText(value);
+      if (!source) return "";
+      return getTitleSearchSource(source).core || source;
+    }
+
     function normalizeForSearch(value) {
       return toText(value)
         .toLowerCase()
@@ -328,7 +338,10 @@ const searchInput = document.getElementById("search-input");
       const status = escapeHTML(item.status);
       const rating = escapeHTML(item.rating);
       const permalink = escapeHTML(item.permalink);
+      // title  = judul penuh, dipakai untuk tooltip/alt supaya konteks utuh.
+      // titleShort = judul inti tanpa boilerplate, dipakai sebagai teks card.
       const title = escapeHTML(item.title);
+      const titleShort = escapeHTML(cardTitleLabel(item.title)) || title;
 
       // Thumbnail asli tunggal — tanpa srcset atau varian hasil resize.
       const thumbSrc = escapeHTML(item.thumbnail || "");
@@ -359,7 +372,9 @@ const searchInput = document.getElementById("search-input");
         }
       } catch(e) {}
       const bookmarkClass = saved ? "donghua-card-bookmark is-saved" : "donghua-card-bookmark";
-      const bookmarkLabel = saved ? "Hapus dari favorit" : "Simpan ke favorit";
+      // Label disamakan dengan syncButton() di site-favorites.js supaya teks
+      // tidak berubah sendiri setelah script favorit selesai sinkronisasi.
+      const bookmarkLabel = saved ? "Hapus dari daftar favorit" : "Tambah ke daftar favorit";
       const bookmarkIcon = saved
         ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
         : '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
@@ -368,30 +383,30 @@ const searchInput = document.getElementById("search-input");
       if (thumbSrc) {
         /* Hasil pencarian sering berubah; hindari skeleton wrapper yang membuat
            poster fade-in lagi pada setiap query. */
-        imgTag = `<img data-no-loader="true" loading="lazy" decoding="async" src="${thumbSrc}" alt="${title}"`;
-        imgTag += ` width="200" height="300">`;
+        /* 400x600 = rasio 2:3, sama dengan kotak yang dikunci .donghua-card-link
+           dan dengan hasil .Fill di partial Hugo. */
+        imgTag = `<img loading="lazy" decoding="async" src="${thumbSrc}" alt="${title}"`;
+        imgTag += ` width="400" height="600">`;
       }
 
       return `
         <article class="donghua-card">
-          <button class="${bookmarkClass}" data-fav-id="${permalink}" type="button" aria-label="${bookmarkLabel}" title="${saved ? "Hapus" : "Simpan"}">
+          <button class="${bookmarkClass}" data-fav-id="${permalink}" type="button" aria-pressed="${saved ? "true" : "false"}" aria-label="${bookmarkLabel}" title="${saved ? "Hapus dari favorit" : "Simpan ke favorit"}">
             <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">${bookmarkIcon}</svg>
           </button>
           <a class="donghua-card-link" title="${title}" href="${permalink}">
             <div class="donghua-card-poster">
               ${imgTag}
             </div>
-            <div class="donghua-card-frame" aria-hidden="true"></div>
             <div class="donghua-card-badges">
               <span class="donghua-card-badge">${type}</span>
             </div>
             <div class="donghua-card-body">
-              <${headingTag} class="donghua-card-title">${titleHTML || title}</${headingTag}>
+              <${headingTag} class="donghua-card-title" title="${title}">${titleHTML || titleShort}</${headingTag}>
               ${extraMeta}
               <div class="donghua-card-meta">${metaChips}</div>
               <div class="donghua-card-footer">
                 ${ratingHTML}
-                <span class="donghua-card-cta">Detail</span>
               </div>
             </div>
           </a>
@@ -708,7 +723,21 @@ const searchInput = document.getElementById("search-input");
         const rawSeason = toText(item.season);
         const rawGenre = toText(item.genre);
 
-        const title = highlightText(item.title, matches, "title");
+        // Indeks highlight dihitung terhadap judul penuh, sedangkan card
+        // menampilkan judul inti. Offset digeser agar <mark> tetap jatuh
+        // pada karakter yang benar setelah boilerplate dipangkas.
+        const titleSource = getTitleSearchSource(item.title);
+        const titleMatches = (matches || []).map(match => (
+          match.key === "title"
+            ? {
+                ...match,
+                indices: (match.indices || [])
+                  .map(([from, to]) => [from - titleSource.start, to - titleSource.start])
+                  .filter(([from, to]) => from >= 0 && to >= from && from < titleSource.core.length)
+              }
+            : match
+        ));
+        const title = highlightText(titleSource.core || item.title, titleMatches, "title");
         const studio = rawStudio && rawStudio !== "-" ? highlightText(rawStudio, matches, "studio") : "";
         const season = rawSeason && rawSeason !== "-" ? highlightText(rawSeason, matches, "season") : "";
         const genre = rawGenre && rawGenre !== "-" ? highlightText(rawGenre, matches, "genre") : "";

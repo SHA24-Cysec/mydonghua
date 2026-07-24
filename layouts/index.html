@@ -20,8 +20,11 @@
                         </div>
                     </div>
                     <div class="donghua-card-grid donghua-card-grid-main p-0">
-                        {{ range .Paginator.Pages }}
-                            {{ partial "donghua-card" (dict "page" . "headingLevel" 3) }}
+                        {{/* Empat poster pertama menutup baris teratas pada grid 2 kolom
+                             (mobile) maupun 4 kolom (desktop), jadi dimuat eager agar
+                             tidak menunda LCP. */}}
+                        {{ range $index, $page := .Paginator.Pages }}
+                            {{ partial "donghua-card" (dict "page" $page "headingLevel" 3 "eager" (lt $index 4)) }}
                         {{ end }}
                     </div>
                     {{ partial "pagination-option11" . }}

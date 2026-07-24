@@ -32,8 +32,10 @@
 {{- template "minjs" "js/site-floating-ad.js" -}}
 {{- template "minjs" "js/site-ad-fallback.js" -}}
 
-{{/* Search menyediakan data/card helper untuk halaman Search dan Filter Genre. */}}
-{{ if or $isSearch $isFilterGenre }}
+{{/* Search menyediakan donghuaCardTemplate, getIndexData, dan getPerPage yang
+     dipakai site-genre-filter.js. Keduanya harus dimuat berpasangan: tanpa
+     site-search.js, card factory tidak tersedia dan render hasil filter batal. */}}
+{{ if or $isSearch (or $isFilterGenre $hasSidebar) }}
 {{- template "minjs" "js/site-search.js" -}}
 {{ end }}
 

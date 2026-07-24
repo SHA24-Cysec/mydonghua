@@ -13,6 +13,19 @@
     return label.toLowerCase() === 'donghua movie' ? 'Movie' : label;
   }
 
+  // Pangkas boilerplate judul agar nama seri tidak terpotong clamp 2 baris.
+  // Pola disamakan dengan getTitleSearchSource() di site-search.js.
+  function cardTitleLabel(value) {
+    var source = asText(value);
+    if (!source) return '';
+    var core = source
+      .replace(/^download\s+batch\s+/i, '')
+      .replace(/\s+subtitle\s+indonesia\s*$/i, '')
+      .replace(/\s+sub\s+indo(?:nesia)?\s*$/i, '')
+      .trim();
+    return core || source;
+  }
+
   function escapeHTML(value) {
     return asText(value)
       .replace(/&/g, '&amp;')
@@ -88,6 +101,7 @@
 
   function cardTemplate(item) {
     var title = escapeHTML(item.title);
+    var titleShort = escapeHTML(cardTitleLabel(item.title)) || title;
     var type = escapeHTML(cardTypeLabel(item.type || 'Donghua'));
     var episode = escapeHTML(item.episode);
     var status = escapeHTML(item.status);
@@ -101,18 +115,17 @@
       ? '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ' + rating + '/10</span>'
       : '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>';
     var poster = thumbnail
-      ? '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="200" height="300">'
+      ? '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="400" height="600">'
       : '<div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true"><i class="fa-solid fa-film text-6xl"></i></div>';
 
     return '<article class="donghua-card">' +
       favoriteButton(item) +
       '<a class="donghua-card-link" title="' + title + '" href="' + escapeHTML(item.url) + '">' +
         '<div class="donghua-card-poster">' + poster + '</div>' +
-        '<div class="donghua-card-frame" aria-hidden="true"></div>' +
         '<div class="donghua-card-badges"><span class="donghua-card-badge">' + type + '</span></div>' +
-        '<div class="donghua-card-body"><h3 class="donghua-card-title">' + title + '</h3>' +
+        '<div class="donghua-card-body"><h3 class="donghua-card-title" title="' + title + '">' + titleShort + '</h3>' +
           '<div class="donghua-card-meta">' + meta + '</div>' +
-          '<div class="donghua-card-footer">' + ratingHTML + '<span class="donghua-card-cta">Detail</span></div>' +
+          '<div class="donghua-card-footer">' + ratingHTML + '</div>' +
         '</div>' +
       '</a>' +
     '</article>';
