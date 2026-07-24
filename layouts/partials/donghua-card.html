@@ -1,8 +1,13 @@
 {{ $page := .page }}
 {{ $headingLevel := .headingLevel | default 3 }}
 {{ $eager := .eager | default false }}
-{{ $cardType := $page.Params.type | default "Donghua" }}
-{{ if eq (lower $cardType) "donghua movie" }}{{ $cardType = "Movie" }}{{ end }}
+
+{{/* === FORCE UNIFORM BADGE (Opsi 1 - Seragam Total) === */}}
+{{ $rawType := lower ($page.Params.type | default "Donghua") }}
+{{ $cardType := "Donghua" }}
+{{ if or (eq $rawType "movie") (eq $rawType "donghua movie") (strings.Contains $rawType "movie") }}
+  {{ $cardType = "Movie" }}
+{{ end }}
 
 {{/* Judul card dibersihkan dari boilerplate agar nama seri tidak habis dimakan
      clamp 2 baris. Judul penuh tetap dipakai pada atribut title= dan tidak
@@ -24,28 +29,9 @@
     </button>
     <a class="donghua-card-link" title="{{ $judulPenuh }}" href="{{ $page.Permalink }}">
         <div class="donghua-card-poster">
-{{/* Poster sumber punya rasio beragam (0,50–0,855) sedangkan card mengunci 2:3.
-     .Fill "400x600 Smart" menyeragamkannya lewat deteksi entropi sehingga crop
-     tidak lagi memotong dari atas secara buta. */}}
 {{ $thumbSrc := $page.Params.thumbnail | default "" }}
 {{ $thumbAlt := $page.Params.alt | default $judulPenuh }}
-{{ $imgRes := "" }}
-{{ with $thumbSrc }}
-  {{ $clean := strings.TrimPrefix "/" . }}
-  {{ with resources.Get $clean }}
-    {{/* Kegagalan resize (format tidak didukung/berkas rusak) tidak boleh
-         menggagalkan build; card jatuh ke berkas sumber apa adanya. */}}
-    {{ with try (.Fill "400x600 Smart webp") }}
-      {{ with .Err }}{{ warnf "donghua-card: gagal resize %q (%s)" $clean . }}{{ $imgRes = resources.Get $clean }}{{ else }}{{ $imgRes = .Value }}{{ end }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-{{ if $imgRes }}
-            <img loading="{{ if $eager }}eager{{ else }}lazy{{ end }}" decoding="async"{{ if $eager }} fetchpriority="high"{{ end }}
-                 src="{{ $imgRes.RelPermalink }}"
-                 width="{{ $imgRes.Width }}" height="{{ $imgRes.Height }}"
-                 alt="{{ $thumbAlt }}">
-{{ else if $thumbSrc }}
+{{ if $thumbSrc }}
             <img loading="{{ if $eager }}eager{{ else }}lazy{{ end }}" decoding="async"{{ if $eager }} fetchpriority="high"{{ end }} width="400" height="600" src='{{ $thumbSrc | relURL }}' alt="{{ $thumbAlt }}">
 {{ else }}
             <div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true">

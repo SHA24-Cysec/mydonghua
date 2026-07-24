@@ -213,7 +213,7 @@
 
 .donghua-card-grid {
   --donghua-grid-gap: clamp(0.6rem, 2.5vw, 1rem);
-  --donghua-card-min: 8.75rem;
+  --donghua-card-min: 9.25rem;
   --donghua-card-fourth: calc((100% - var(--donghua-grid-gap) - var(--donghua-grid-gap) - var(--donghua-grid-gap)) / 4);
   display: grid;
   grid-template-columns: repeat(
@@ -228,27 +228,12 @@
   contain: layout style;
 }
 
-/* Grid lebar membutuhkan card sedikit lebih lega. Jumlah kolom tetap
-   mengikuti lebar container dan dibatasi maksimal empat kolom. */
-.donghua-card-grid-wide {
-  --donghua-card-min: 9.25rem;
-}
-
-/* Beranda dan daftar favorit memakai lebar kolom dasar. Kelas ini dipertahankan
-   sebagai kait eksplisit supaya markup tidak memakai kelas tanpa definisi. */
-.donghua-card-grid-main {
-  --donghua-card-min: 8.75rem;
-}
-
-/* Grid "Terakhir Dilihat" dan "Donghua Terbaru" sedikit lebih lega agar poster
-   tetap terbaca pada baris tunggal. */
-.donghua-card-grid-latest {
-  --donghua-card-min: 9.25rem;
-}
-
-/* Kontrol watchlist memerlukan ruang ekstra agar label tidak terpotong. */
+/* Semua varian grid kini menggunakan ukuran yang sama agar layout card donghua 100% seragam */
+.donghua-card-grid-wide,
+.donghua-card-grid-main,
+.donghua-card-grid-latest,
 #fav-grid {
-  --donghua-card-min: 10.625rem;
+  --donghua-card-min: 9.25rem;
 }
 
 .donghua-card-grid > li,

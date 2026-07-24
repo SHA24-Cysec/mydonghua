@@ -15,10 +15,13 @@
             </div>
             <div class="panel-neon p-3 sm:p-5 min-h-screen">
                 <div class="flex flex-wrap flex-col gap-4">
-                    <div class="donghua-card-grid donghua-card-grid-wide p-0 mt-4">
-                        {{ range .Paginator.Pages }}
-                            {{ partial "donghua-card" (dict "page" . "headingLevel" 2) }}
-                        {{ end }}
+                    <!-- Wrapper agar lebar grid sama persis dengan area utama di beranda (ada sidebar) -->
+                    <div class="max-w-[1080px] mx-auto w-full">
+                        <div class="donghua-card-grid donghua-card-grid-main p-0 mt-4">
+                            {{ range .Paginator.Pages }}
+                                {{ partial "donghua-card" (dict "page" . "headingLevel" 2) }}
+                            {{ end }}
+                        </div>
                     </div>
                     {{ partial "pagination-option11" . }}
                 </div>
