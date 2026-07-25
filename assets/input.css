@@ -5106,6 +5106,27 @@ body .post-bookmark-btn.is-pulsing {
   --site-transition-med: 0.22s ease;
   --site-focus-ring: 3px solid rgba(255, 255, 255, 0.56);
   --site-focus-offset: 3px;
+
+  /* Lebar area konten. Beranda membagi shell dengan sidebar, jadi grid
+     kartunya lebih sempit dari shell. Halaman tanpa sidebar memakai token
+     ini supaya lebarnya ikut bergerak saat sidebar berubah, bukan mengejar
+     angka tetap. min(80rem, 100vw) menjaga hitungan tetap benar di 1024px
+     saat shell belum mencapai lebar maksimum. Padding panel (sm:p-5) dan
+     border ikut dikurangi karena grid berada di dalam panel. */
+  --site-shell-max: 80rem;
+  --site-shell-gap: 1rem;
+  --site-sidebar-w: clamp(280px, 28vw, 380px);
+  --site-panel-inset: 2.625rem;
+  --site-content-max: calc(min(var(--site-shell-max), 100vw) - var(--site-sidebar-w) - var(--site-shell-gap) - var(--site-panel-inset));
+}
+
+/* Pembungkus grid kartu di halaman tanpa sidebar (list dan filter-genre).
+   Di bawah 1024px sidebar beranda menumpuk ke bawah sehingga ketiga halaman
+   sudah sama lebar, jadi pembatas hanya aktif mulai 1024px. */
+@media (min-width: 1024px) {
+  .site-content-shell {
+    max-width: var(--site-content-max);
+  }
 }
 
 /* Compatibility normalization for existing main components.
@@ -8602,6 +8623,10 @@ html body .donghua-card-bookmark.is-saved {
 }
 
 /* Unified button system: existing component classes keep their behaviour. */
+/* Icon-only controls: square box, no label. .pagination-dock-button is
+   excluded on purpose — Prev/Next carry an icon plus a text label, so a
+   fixed square width clipped that label from 521px upward. Its sizing
+   comes from the labelled-control group above. */
 :where(
   .site-navbar-toggle,
   .site-nav-close,
@@ -8611,8 +8636,7 @@ html body .donghua-card-bookmark.is-saved {
   .genre-sheet-close,
   .site-floating-ad__close,
   .btt-btn,
-  .donghua-card-bookmark,
-  .pagination-dock-button
+  .donghua-card-bookmark
 ) {
   width: clamp(2.25rem, 11vw, 2.75rem);
   min-width: clamp(2.25rem, 11vw, 2.75rem);
@@ -8632,8 +8656,7 @@ html body .donghua-card-bookmark.is-saved {
   .genre-sheet-close,
   .site-floating-ad__close,
   .btt-btn,
-  .donghua-card-bookmark,
-  .pagination-dock-button
+  .donghua-card-bookmark
 ) svg,
 :where(
   .site-navbar-toggle,
@@ -8643,12 +8666,18 @@ html body .donghua-card-bookmark.is-saved {
   .genre-sheet-close,
   .site-floating-ad__close,
   .btt-btn,
-  .donghua-card-bookmark,
-  .pagination-dock-button
+  .donghua-card-bookmark
 ) i {
   width: clamp(0.9rem, 4vw, 1.1rem);
   height: clamp(0.9rem, 4vw, 1.1rem);
   flex: 0 0 auto;
+}
+
+/* Pagination chevrons scale with the label instead of the icon-box scale. */
+:where(.pagination-dock-button) i {
+  flex: 0 0 auto;
+  font-size: 0.85em;
+  line-height: 1;
 }
 
 :where(
@@ -8727,8 +8756,7 @@ html body .donghua-card-bookmark.is-saved {
     .genre-sheet-close,
     .site-floating-ad__close,
     .btt-btn,
-    .donghua-card-bookmark,
-    .pagination-dock-button
+    .donghua-card-bookmark
   ) {
     width: 2.5rem;
     min-width: 2.5rem;

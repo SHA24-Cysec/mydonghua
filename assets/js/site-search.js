@@ -78,11 +78,16 @@ const searchInput = document.getElementById("search-input");
     let searchHistoryTimer = null;
     let searchRequestId = 0;
 
+    // Jumlah kartu per halaman dibuat kelipatan jumlah kolom grid supaya
+    // baris terakhir selalu terisi penuh. Grid berganti kolom di 356px,
+    // 520px, dan 708px (lihat --donghua-card-min di input.css), bukan di
+    // 640px/700px/1024px seperti asumsi lama. Angka 16 menyamai per-page
+    // paginator Hugo di beranda dan halaman list.
     function getSearchPerPage() {
-      if (window.matchMedia('(min-width: 1024px)').matches) return 15;
-      if (window.matchMedia('(min-width: 700px)').matches) return 12;
-      if (window.matchMedia('(min-width: 640px)').matches) return 12;
-      return 10;
+      if (window.matchMedia('(min-width: 708px)').matches) return 16; // 4 kolom
+      if (window.matchMedia('(min-width: 520px)').matches) return 12; // 3 kolom
+      if (window.matchMedia('(min-width: 356px)').matches) return 10; // 2 kolom
+      return 8;                                                       // 1 kolom
     }
 
     function toText(value) {

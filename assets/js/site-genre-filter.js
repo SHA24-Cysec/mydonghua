@@ -38,15 +38,17 @@ let genrePage = 1;
 let genreResults = [];
 let genreResizeTimer = null;
 
-// Jumlah item per halaman adaptif
+// Jumlah item per halaman adaptif. Nilai cadangan di bawah harus sama persis
+// dengan getSearchPerPage() di site-search.js: kelipatan jumlah kolom grid,
+// yang berganti di 356px, 520px, dan 708px.
 function getGenrePerPage() {
   if (window.DonghuaSearch && typeof window.DonghuaSearch.getPerPage === "function") {
     return window.DonghuaSearch.getPerPage();
   }
-  if (window.matchMedia('(min-width: 1024px)').matches) return 15;
-  if (window.matchMedia('(min-width: 700px)').matches) return 12;
-  if (window.matchMedia('(min-width: 640px)').matches) return 12;
-  return 10;
+  if (window.matchMedia('(min-width: 708px)').matches) return 16; // 4 kolom
+  if (window.matchMedia('(min-width: 520px)').matches) return 12; // 3 kolom
+  if (window.matchMedia('(min-width: 356px)').matches) return 10; // 2 kolom
+  return 8;                                                       // 1 kolom
 }
 
 function renderGenreResults() {
