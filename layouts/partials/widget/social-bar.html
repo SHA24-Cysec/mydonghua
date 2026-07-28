@@ -1,0 +1,35 @@
+{{/*
+  Social Bar Adsterra — overlay yang dirender sendiri oleh jaringan iklan.
+
+  Aturan render (dikunci di sini, bukan di JS):
+  - Production saja, sejalan dengan floating-ad, ads-native, dan safelinku.
+  - Dilewati pada halaman 404 dan halaman kebijakan (params.socialBar.excludePaths).
+  - Script dimuat lazy oleh js/site-social-bar.js: idle callback, interaksi
+    pertama, atau timeout params.socialBar.delayMs — mana yang lebih dulu.
+
+  Partial ini hanya menanam konfigurasi. Pemuatan script ada di
+  assets/js/site-social-bar.js supaya CSP dan minifikasi tetap satu jalur.
+*/}}
+{{- $cfg := .Site.Params.socialBar -}}
+{{- if and hugo.IsProduction $cfg -}}
+  {{- if and $cfg.enabled $cfg.src -}}
+    {{- $path := .RelPermalink -}}
+    {{- $skip := eq .Kind "404" -}}
+    {{- range $cfg.excludePaths -}}
+      {{- if hasPrefix $path . }}{{ $skip = true }}{{ end -}}
+    {{- end -}}
+    {{- if not $skip -}}
+      {{- $delay := default 3500 $cfg.delayMs -}}
+      {{- $offset := default 56 $cfg.offsetPx -}}
+<div
+  class="site-social-bar-config"
+  data-social-bar
+  data-social-bar-src="{{ $cfg.src }}"
+  data-social-bar-delay="{{ $delay }}"
+  data-social-bar-offset="{{ $offset }}"
+  hidden
+  aria-hidden="true"
+></div>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

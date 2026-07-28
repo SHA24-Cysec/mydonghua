@@ -23,6 +23,19 @@ uglyURLs = false
     author = 'Admin'
     img = '/img/DonghuaBatch.webp'
 
+# Social Bar Adsterra — overlay yang dirender sendiri oleh jaringan iklan.
+# src        : URL script Social Bar dari dashboard Adsterra
+# enabled    : matikan cepat tanpa menghapus partial
+# delayMs    : jeda maksimal sebelum script dimuat (fallback dari idle callback)
+# offsetPx   : perkiraan tinggi overlay, dipakai menaikkan Back to Top + floating ad
+# excludePaths: awalan path halaman yang tidak memuat Social Bar
+[params.socialBar]
+    enabled = true
+    src = 'https://bendspecimen.com/ac/c8/ec/acc8ecf445c142c2f16e5d0ab706e492.js'
+    delayMs = 3500
+    offsetPx = 56
+    excludePaths = ['/privacy-policy/', '/terms-of-conditions/', '/about/', '/cara-melewati-safelinku/']
+
 [sitemap]
     changeFreq = 'weekly'
     priority = 0.8

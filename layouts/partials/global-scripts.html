@@ -32,6 +32,11 @@
 {{- template "minjs" "js/site-floating-ad.js" -}}
 {{- template "minjs" "js/site-ad-fallback.js" -}}
 
+{{/* Social Bar Adsterra: markup config hanya dirender di production dan di luar
+     halaman 404 serta halaman kebijakan. Script keluar tanpa syarat karena
+     berhenti sendiri saat [data-social-bar] tidak ada. */}}
+{{- template "minjs" "js/site-social-bar.js" -}}
+
 {{/* Search menyediakan donghuaCardTemplate, getIndexData, dan getPerPage yang
      dipakai site-genre-filter.js. Keduanya harus dimuat berpasangan: tanpa
      site-search.js, card factory tidak tersedia dan render hasil filter batal. */}}

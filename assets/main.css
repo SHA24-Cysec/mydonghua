@@ -10632,6 +10632,46 @@ html body .site-floating-ad__close svg {
   height: clamp(0.9rem, 4vw, 1.1rem);
 }
 
+/* ===== Source: layouts/partials/widget/social-bar.html ===== */
+
+/* ============================
+   SOCIAL BAR ADSTERRA — RUANG BAWAH LAYAR
+   Overlay dirender oleh script jaringan iklan, jadi situs hanya menyediakan
+   ruang: Back to Top dan floating ad naik setinggi --social-bar-height.
+   ============================ */
+
+body.has-social-bar .btt-wrapper {
+  bottom: calc(
+    var(--btt-base-bottom) + var(--btt-ad-height, 0px) +
+    var(--social-bar-height, 0px) + env(safe-area-inset-bottom)
+  );
+}
+
+body.has-social-bar .site-floating-ad {
+  bottom: var(--social-bar-height, 0px);
+  transition:
+    opacity 0.24s ease,
+    visibility 0.24s ease,
+    bottom 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.has-social-bar .site-floating-ad__panel {
+  padding-bottom: 0.48rem;
+}
+
+/* Sisakan ruang agar footer tidak tertutup overlay pada layar sempit. */
+
+body.has-social-bar .site-footer {
+  padding-bottom: calc(var(--social-bar-height, 0px) + env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.has-social-bar .site-floating-ad {
+    transition: none;
+  }
+}
+
 .selection\:bg-cyan-500 *::-moz-selection {
   --tw-bg-opacity: 1;
   background-color: rgb(6 182 212 / var(--tw-bg-opacity, 1));
