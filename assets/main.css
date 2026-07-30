@@ -1774,7 +1774,26 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   -o-object-position: center top;
      object-position: center top;
   display: block;
-  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, opacity 0.28s ease;
+  background-color: #0b1120;
+  opacity: 1;
+}
+
+/* SCROLL-FLASH FIX: class .is-loaded dipasang oleh site-image-loader.js
+   setelah image selesai decode. Transisi opacity 0 -> 1 menyembunyikan
+   background gradient .donghua-card-poster yang hitam pekat ketika
+   decode dibatalkan oleh scroll cepat. */
+
+.donghua-card-poster img.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .donghua-card-poster img,
+  .donghua-card-poster img.is-loaded {
+    transition: none;
+    opacity: 1;
+  }
 }
 
 /* Badge tipe — pill kecil di kiri-atas poster */

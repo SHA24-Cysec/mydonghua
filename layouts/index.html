@@ -20,11 +20,14 @@
                         </div>
                     </div>
                     <div class="donghua-card-grid donghua-card-grid-main p-0">
-                        {{/* Empat poster pertama menutup baris teratas pada grid 2 kolom
-                             (mobile) maupun 4 kolom (desktop), jadi dimuat eager agar
-                             tidak menunda LCP. */}}
+                        {{/* SCROLL-FLASH FIX: delapan poster pertama dimuat eager. Pada
+                             grid 2 kolom (mobile), delapan = empat baris; pada grid
+                             4 kolom (desktop), delapan = dua baris. Ini menutup
+                             viewport pendek setelah satu kali scroll sehingga
+                             pembatalan decode async tidak lagi menampilkan
+                             background hitam di card yang baru masuk viewport. */}}
                         {{ range $index, $page := .Paginator.Pages }}
-                            {{ partial "donghua-card" (dict "page" $page "headingLevel" 3 "eager" (lt $index 4)) }}
+                            {{ partial "donghua-card" (dict "page" $page "headingLevel" 3 "eager" (lt $index 8)) }}
                         {{ end }}
                     </div>
                     {{ partial "pagination-option11" . }}
