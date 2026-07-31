@@ -140,6 +140,9 @@
 
     button.setAttribute('aria-pressed', saved ? 'true' : 'false');
     button.setAttribute('aria-label', saved ? 'Hapus dari daftar favorit' : 'Tambah ke daftar favorit');
+    // Tooltip ikut disinkronkan agar teksnya sama dengan aria-label dan
+    // konsisten dengan renderer JS (search/favorit/recently-viewed).
+    button.setAttribute('title', saved ? 'Hapus dari favorit' : 'Simpan ke favorit');
   }
 
   function pulsePostButton(button) {
