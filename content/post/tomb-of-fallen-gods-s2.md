@@ -36,7 +36,7 @@ image : /img/post/tomb-of-fallen-gods-s2.webp
 alt : 'Tomb of Fallen Gods Season 2'
 url: 'tomb-of-fallen-gods-s2'
 layout : postingan-donghua
-sinopsis : 'Pada musim kedua "Tomb of Fallen Gods", Chen Nan melanjutkan pencariannya untuk menemukan kekasihnya, Yuxin, yang telah hilang selama 10.000 tahun. Dalam perjalanannya, ia mengungkap rahasia di balik kehancuran para dewa dan iblis, serta perubahan besar yang terjadi di dunia selama milenium terakhir. Petualangan ini tidak hanya menguji kekuatan dan keberanian Chen Nan, tetapi juga menggali lebih dalam tentang sifat manusia, struktur sosial, dan makna kehidupan itu sendiri.'
+sinopsis : 'Pada musim kedua "Tomb of Fallen Gods", Chen Nan melanjutkan pencariannya untuk menemukan kekasihnya, Yuxin, yang telah hilang selama 10.000 tahun. Dalam perjalanannya, ia mengungkap rahasia di balik kehancuran para dewa dan iblis, serta perubahan besar yang terjadi di dunia selama milenium terakhir. Petualangan ini menggali lebih dalam tentang sifat manusia, struktur sosial, dan makna kehidupan itu sendiri.'
 deskripsi : 'Download Batch Tomb of Fallen Gods Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Tomb of Fallen Gods Season 2 Subtitle Indonesia'
 

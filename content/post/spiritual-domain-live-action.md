@@ -36,7 +36,7 @@ image : /img/post/spiritual-domain-live-action.webp
 alt : 'Spiritual Domain Live Action'
 url: 'spiritual-domain-live-action'
 layout : postingan-donghua
-sinopsis : 'Spiritual Domain (Live Action) mengisahkan dunia kultivasi di mana kekuatan spiritual menentukan status dan nasib seseorang. Cerita berpusat pada seorang pemuda berbakat yang terlahir dengan latar belakang misterius dan masa lalu yang penuh rahasia. Meski awalnya diremehkan, ia perlahan menunjukkan potensi luar biasa melalui latihan keras, kecerdikan, dan tekad yang kuat. Dalam perjalanannya, ia terlibat dalam konflik antar sekte, perebutan kekuatan kuno, serta konspirasi yang mengancam keseimbangan dunia spiritual. Pertemanan, pengkhianatan, dan pertarungan sengit menjadi bagian dari proses pendewasaannya, sekaligus membuka kebenaran tentang asal-usul kekuatannya yang sebenarnya.'
+sinopsis : 'Spiritual Domain (Live Action) mengisahkan dunia kultivasi di mana kekuatan spiritual menentukan status dan nasib seseorang. Cerita berpusat pada seorang pemuda berbakat yang terlahir dengan latar belakang misterius dan masa lalu. Meski awalnya diremehkan, ia perlahan menunjukkan potensi luar biasa melalui latihan keras, kecerdikan, dan tekad yang kuat. Dalam perjalanannya, ia terlibat dalam konflik antar sekte, perebutan kekuatan kuno, serta konspirasi yang mengancam keseimbangan dunia spiritual. Pertemanan, pengkhianatan, dan pertarungan sengit menjadi bagian dari proses pendewasaannya, sekaligus membuka kebenaran tentang asal-usul kekuatannya yang sebenarnya.'
 deskripsi : 'Download Batch Spiritual Domain Live Action Subtitle Indonesia'
 keywords : 'Download Batch Spiritual Domain Live Action Subtitle Indonesia'
 

@@ -28,7 +28,7 @@ image : /img/post/ling-feng-zhe.webp
 alt : 'Ling Feng Zhe'
 url: 'ling-feng-zhe'
 layout : postingan-donghua
-sinopsis : 'Ling Feng Zhe bercerita tentang perjalanan seorang pemuda bernama Ling Feng, yang awalnya hanyalah manusia biasa tanpa kekuatan berarti. Hidupnya berubah drastis setelah ia mengalami kejadian misterius yang membangkitkan kekuatan tersembunyi dalam dirinya. Dengan kemampuan baru tersebut, Ling Feng terlibat dalam dunia penuh pertarungan antar sekte, intrik politik, dan ancaman dari kekuatan gelap yang mengintai. Di tengah perjalanan, ia harus berjuang bukan hanya untuk melindungi dirinya, tetapi juga orang-orang yang ia sayangi. Setiap langkah yang ditempuh membawa Ling Feng lebih dekat pada takdirnya sebagai sosok yang dapat mengguncang keseimbangan dunia—antara kehancuran atau penyelamatan.'
+sinopsis : 'Ling Feng Zhe perjalanan seorang pemuda bernama Ling Feng, yang awalnya hanyalah manusia biasa tanpa kekuatan berarti. Hidupnya berubah drastis setelah ia mengalami kejadian misterius yang membangkitkan kekuatan tersembunyi dalam dirinya. Ling Feng terlibat dalam dunia penuh pertarungan antar sekte, intrik politik, dan ancaman dari kekuatan gelap yang mengintai. Di tengah perjalanan, ia harus berjuang orang-orang yang ia sayangi. Setiap langkah yang ditempuh membawa Ling Feng lebih dekat pada takdirnya sebagai sosok yang dapat mengguncang keseimbangan dunia. antara kehancuran atau penyelamatan.'
 deskripsi : 'Download Batch Ling Feng Zhe Subtitle Indonesia'
 keywords : 'Download Batch Ling Feng Zhe Subtitle Indonesia'
 

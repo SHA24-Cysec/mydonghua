@@ -34,7 +34,7 @@ image : /img/post/legend-of-exorcism-s2.webp
 alt : 'Legend of Exorcism Season 2'
 url: 'legend-of-exorcism-season-2'
 layout : postingan-donghua
-sinopsis : "Musim kedua Legend of Exorcism melanjutkan kisah Hongjun dan para penjaga iblis di kota Chang’an, yang kini menghadapi ancaman baru yang lebih berbahaya. Setelah berbagai pertempuran di musim pertama, kedamaian yang sempat tercipta mulai terguncang oleh kekuatan misterius dari masa lalu yang perlahan bangkit. Dalam perjalanan barunya, Hongjun tidak hanya harus melawan iblis dan kekacauan yang ditimbulkan, tetapi juga menghadapi konflik batin terkait identitasnya dan rahasia kelam yang tersembunyi. Dengan persahabatan, pengkhianatan, dan pertarungan spiritual yang semakin intens, musim ini menghadirkan kisah yang lebih dalam dan emosional, penuh intrik dan aksi magis khas dunia Xianxia."
+sinopsis : 'Musim kedua Legend of Exorcism melanjutkan kisah Hongjun dan para penjaga iblis di kota Chang’an, yang kini menghadapi ancaman baru yang lebih berbahaya. Setelah berbagai pertempuran di musim pertama, kedamaian yang sempat tercipta mulai terguncang oleh dari masa lalu yang perlahan bangkit. Dalam perjalanan barunya, Hongjun menghadapi konflik batin terkait identitasnya dan rahasia kelam yang tersembunyi. pengkhianatan, dan pertarungan spiritual yang semakin intens, musim ini menghadirkan kisah yang lebih dalam dan emosional, dan aksi magis khas dunia Xianxia.'
 deskripsi : 'Download Batch Legend of Exorcism Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Legend of Exorcism Season 2 Subtitle Indonesia'
 

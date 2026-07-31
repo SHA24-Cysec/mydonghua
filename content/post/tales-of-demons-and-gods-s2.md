@@ -37,7 +37,7 @@ image : /img/post/tales-of-demons-and-gods-s2.webp
 alt : 'Tales of Demons and Gods S2'
 url: 'tales-of-demons-and-gods-s2'
 layout : postingan-donghua
-sinopsis : '"Tales of Demons and Gods Season 2" melanjutkan perjalanan Nie Li, seorang ahli spiritual yang bereinkarnasi ke masa remajanya setelah tewas dalam pertempuran melawan Kaisar Sage. Dengan pengetahuan dari kehidupan sebelumnya, Nie Li bertekad untuk melindungi orang-orang yang dicintainya dan membangun kembali Kota Glory yang terancam oleh serangan iblis. Di musim kedua ini, Nie Li semakin mendalami teknik kultivasi dan memperkuat ikatan dengan teman-temannya. Dia juga harus menghadapi intrik politik dan persaingan antar sekte, sambil menyusun strategi untuk menghadapi musuh yang semakin kuat. Dengan kecerdasannya dan pengalaman masa lalu, Nie Li berusaha mengubah takdir dan membawa kedamaian ke dunia.'
+sinopsis : '"Tales of Demons and Gods Season 2" melanjutkan perjalanan Nie Li, seorang ahli spiritual yang bereinkarnasi ke masa remajanya setelah tewas dalam pertempuran melawan Kaisar Sage. Nie Li bertekad untuk melindungi orang-orang yang dicintainya dan membangun kembali Kota Glory yang terancam oleh serangan iblis. Di musim kedua ini, Nie Li semakin mendalami teknik kultivasi dan memperkuat ikatan dengan teman-temannya. Dia juga harus menghadapi intrik politik dan persaingan antar sekte, sambil menyusun strategi untuk menghadapi musuh. Nie Li berusaha mengubah takdir dan membawa kedamaian ke dunia.'
 deskripsi : 'Download Batch Tales of Demons and Gods S2 Subtitle Indonesia'
 keywords : 'Download Batch Tales of Demons and Gods S2 Subtitle Indonesia'
 

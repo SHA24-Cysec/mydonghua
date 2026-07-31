@@ -36,7 +36,7 @@ image : /img/post/the-young-imperial-guards-season-2.webp
 alt : 'The Young Imperial Guards Season 2'
 url: 'the-young-imperial-guards-season-2'
 layout : postingan-donghua
-sinopsis : 'Berlatar zaman awal Dinasti Ming, setelah Zhu Yuanzhang mendirikan biro Jinyiwei  (Pengawal Emas), konflik internal mulai memuncak. Dua faksi besar—Penjaga Utara dan Selatan—bersaing satu sama lain, sementara ancaman dari luar dan kriminal merajalela. Di tengah kekacauan ini, Yuan Xiaotang, putra pemimpin Penjaga Utara, yang bercita-cita membanggakan keluarga dan melewati bayang-bayang ayahnya, nekat membuktikan dirinya. Ia menjalani misi penuh intrik istana, peperangan, dan persekongkolan para pejabat. Dengan tekadnya, ia berusaha menegakkan keadilan, menyatukan dua fraksi, dan melindungi negeri dari keruntuhan'
+sinopsis : 'Berlatar zaman awal Dinasti Ming, setelah Zhu Yuanzhang mendirikan biro Jinyiwei (Pengawal Emas), konflik internal mulai memuncak. Dua faksi besar. Penjaga Utara dan Selatan. bersaing satu sama lain, sementara ancaman dari luar dan kriminal merajalela. Di tengah kekacauan ini, Yuan Xiaotang, putra pemimpin Penjaga Utara, yang bercita-cita membanggakan keluarga dan melewati bayang-bayang ayahnya, nekat membuktikan dirinya. Ia menjalani misi istana, peperangan, dan persekongkolan para pejabat. ia berusaha menegakkan keadilan, menyatukan dua fraksi, dan melindungi negeri dari keruntuhan.'
 deskripsi : 'Download Batch The Young Imperial Guards Season 2 Subtitle Indonesia'
 keywords : 'Download Batch The Young Imperial Guards Season 2 Subtitle Indonesia'
 

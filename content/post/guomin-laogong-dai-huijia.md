@@ -34,7 +34,7 @@ image : /img/post/guomin-laogong-dai-huijia.webp
 alt : 'Guomin Laogong Dai Huijia'
 url: 'guomin-laogong-dai-huijia'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan tentang perjalanan cinta antara Qiao Anhao dan Lu Jinnian. Qiao Anhao adalah seorang aktris muda yang telah lama memendam perasaan pada Lu Jinnian, seorang aktor terkenal yang tampak dingin dan misterius. Meskipun mereka terikat dalam pernikahan kontrak karena alasan keluarga, hubungan mereka dipenuhi dengan kesalahpahaman, luka masa lalu, dan perasaan yang terpendam. Seiring berjalannya waktu, cinta yang awalnya hanya sebatas kewajiban mulai tumbuh menjadi sesuatu yang tulus. Namun, mereka harus menghadapi berbagai rintangan dan intrik di dunia hiburan yang penuh dengan persaingan dan skandal sebelum akhirnya menemukan kebahagiaan sejati.'
+sinopsis : 'Perjalanan cinta antara Qiao Anhao dan Lu Jinnian. Qiao Anhao adalah seorang aktris muda yang telah lama memendam perasaan pada Lu Jinnian, seorang aktor terkenal yang tampak dingin dan misterius. Meskipun mereka terikat dalam pernikahan kontrak karena alasan keluarga, hubungan mereka dipenuhi luka masa lalu, dan perasaan yang terpendam. Seiring berjalannya waktu, cinta yang awalnya hanya sebatas kewajiban mulai tumbuh menjadi sesuatu yang tulus. Namun, mereka harus menghadapi dan intrik di dunia hiburan yang penuh dengan persaingan dan skandal sebelum akhirnya menemukan kebahagiaan sejati.'
 deskripsi : 'Download Batch Guomin Laogong Dai Huijia Subtitle Indonesia'
 keywords : 'Download Batch Guomin Laogong Dai Huijia Subtitle Indonesia'
 

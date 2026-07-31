@@ -26,7 +26,7 @@ image : /img/post/leveling-up-in-a-fantasy-world.webp
 alt : 'Leveling Up in a Fantasy World'
 url: 'leveling-up-in-a-fantasy-world'
 layout : postingan-donghua
-sinopsis : 'Leveling Up In A Fantasy World mengisahkan seorang pemuda dari dunia biasa yang secara tak terduga terlempar ke dunia fantasi penuh monster, sihir, dan hukum kekuatan yang kejam. Berbeda dari orang lain, ia mendapatkan kemampuan langka: sistem leveling yang memungkinkannya berkembang jauh lebih cepat melalui pertarungan, misi, dan pilihan berisiko. Dari sosok lemah yang diremehkan, ia perlahan menapaki jalan kekuatan, menghadapi musuh berbahaya, intrik antar faksi, dan rahasia dunia yang tak sesederhana kelihatannya. Setiap level yang naik bukan hanya soal kekuatan, tapi juga keputusan yang menentukan nasibnya sendiri.'
+sinopsis : 'Leveling Up In A Fantasy World mengisahkan seorang pemuda dari dunia biasa yang secara tak terduga terlempar ke dunia fantasi penuh monster, sihir, dan hukum kekuatan yang kejam. Berbeda dari orang lain, ia mendapatkan kemampuan langka: sistem leveling yang memungkinkannya berkembang jauh lebih cepat melalui pertarungan, misi, dan pilihan berisiko. Dari sosok lemah yang diremehkan, ia perlahan menapaki jalan kekuatan, menghadapi musuh berbahaya, intrik antar faksi, dan rahasia dunia yang tak sesederhana kelihatannya. Setiap level yang naik keputusan yang menentukan nasibnya sendiri.'
 deskripsi : 'Download Batch Leveling Up in a Fantasy World Subtitle Indonesia'
 keywords : 'Download Batch Leveling Up in a Fantasy World Subtitle Indonesia'
 

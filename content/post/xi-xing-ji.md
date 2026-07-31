@@ -36,7 +36,7 @@ image : /img/post/xi-xing-ji.webp
 alt : 'Xi Xing Ji'
 url: 'xi-xing-ji'
 layout : postingan-donghua
-sinopsis : 'Donghua ini mengikuti perjalanan Tang Sanzang, seorang biksu muda, bersama tiga muridnya: Sun Wukong (Raja Kera), Zhu Bajie (Babi Sakti), dan Sha Wujing (Pendeta Pasir). Mereka berangkat menuju Barat untuk mencari kitab suci demi menyelamatkan dunia dari kehancuran. Namun, perjalanan mereka tidak mudah karena banyak dewa, iblis, dan makhluk gaib yang menghalangi jalan mereka. Berbeda dari kisah klasiknya, Sun Wukong dalam versi ini memiliki latar belakang yang lebih kompleks, penuh dengan pengkhianatan dan luka batin. Rahasia masa lalu para tokoh dan motif tersembunyi dari para dewa membuat perjalanan ini tidak sekadar mencari kitab suci, tetapi juga menjadi ajang untuk menemukan kebenaran dan menghadapi nasib yang telah ditakdirkan.'
+sinopsis : 'Perjalanan Tang Sanzang, seorang biksu muda, bersama tiga muridnya: Sun Wukong (Raja Kera), Zhu Bajie (Babi Sakti), dan Sha Wujing (Pendeta Pasir). Mereka berangkat menuju Barat untuk mencari kitab suci demi menyelamatkan dunia dari kehancuran. Namun, perjalanan mereka tidak mudah karena banyak dewa, iblis, dan makhluk gaib yang menghalangi jalan mereka. Berbeda dari kisah klasiknya, Sun Wukong dalam versi ini memiliki latar belakang yang lebih kompleks, penuh dengan pengkhianatan dan luka batin. Rahasia masa lalu para tokoh dan motif tersembunyi dari para dewa membuat perjalanan ini tidak sekadar mencari kitab suci, tetapi juga menjadi ajang untuk menemukan kebenaran dan menghadapi nasib yang telah ditakdirkan.'
 deskripsi : 'Download Batch Xi Xing Ji Subtitle Indonesia'
 keywords : 'Download Batch Xi Xing Ji Subtitle Indonesia'
 

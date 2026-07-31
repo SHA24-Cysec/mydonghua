@@ -26,7 +26,7 @@ image : /img/post/god-of-deception.webp
 alt : 'God of Deception'
 url: 'god-of-deception'
 layout : postingan-donghua
-sinopsis : 'Di dunia modern yang dipenuhi dewa dan makhluk mitologi yang hidup berdampingan dengan manusia, muncul sosok misterius bernama Bai Ze, yang dikenal sebagai "Dewa Penipu". Namun, alih-alih menjadi penjahat, ia justru menggunakan tipu dayanya untuk mengungkap kebohongan dan menyingkap kebenaran tersembunyi di balik wajah-wajah penuh topeng. Dengan kecerdikannya, Bai Ze membantu menyelesaikan kasus-kasus aneh dan rumit yang tak bisa dijelaskan oleh logika biasa. Tapi semakin dalam ia menyelidiki, semakin dekat pula ia pada rahasia besar yang bisa mengguncang tatanan dunia para dewa.'
+sinopsis : 'Di dunia modern yang dipenuhi dewa dan makhluk mitologi yang hidup berdampingan muncul sosok misterius bernama Bai Ze, yang dikenal sebagai "Dewa Penipu". Namun, alih-alih menjadi penjahat, ia justru menggunakan tipu dayanya untuk mengungkap kebohongan dan menyingkap kebenaran tersembunyi di balik wajah-wajah penuh topeng. Bai Ze membantu menyelesaikan kasus-kasus aneh dan rumit yang tak bisa dijelaskan oleh logika biasa. Tapi semakin dalam ia menyelidiki semakin dekat pula ia pada rahasia besar yang bisa mengguncang tatanan dunia para dewa.'
 deskripsi : 'Download Batch God of Deception Subtitle Indonesia'
 keywords : 'Download Batch God of Deception Subtitle Indonesia'
 

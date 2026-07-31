@@ -27,7 +27,7 @@ image : /img/post/kai-feng-qitan-zhege-baogong-bu-taixing.webp
 alt : 'Kai Feng Qitan Zhege Baogong Bu Taixing'
 url: 'kai-feng-qitan-zhege-baogong-bu-taixing'
 layout : postingan-donghua
-sinopsis : 'Donghua ini mengisahkan kehidupan sehari-hari Bao Zheng (Baogong), seorang hakim terkenal dari Dinasti Song, namun dengan sentuhan komedi dan penuh parodi. Alih-alih selalu tampil serius, tegas, dan penuh wibawa sebagaimana legenda klasik menggambarkannya, di sini Baogong diperlihatkan dalam sisi yang kocak, kikuk, bahkan kadang tidak seperti yang dibayangkan orang. Bersama para bawahan setianya, ia menghadapi berbagai kasus aneh, penuh teka-teki, sekaligus lucu.'
+sinopsis : 'Kehidupan sehari-hari Bao Zheng (Baogong), seorang hakim terkenal dari Dinasti Song, namun dengan sentuhan komedi dan penuh parodi. Alih-alih selalu tampil serius, tegas, dan penuh wibawa sebagaimana legenda klasik menggambarkannya, di sini Baogong diperlihatkan dalam sisi yang kocak, kikuk, bahkan kadang tidak seperti yang dibayangkan orang. Bersama para bawahan setianya, ia menghadapi aneh, misterius, sekaligus lucu.'
 deskripsi : 'Download Batch Kai Feng Qitan Zhege Baogong Bu Taixing Subtitle Indonesia'
 keywords : 'Download Batch Kai Feng Qitan Zhege Baogong Bu Taixing Subtitle Indonesia'
 

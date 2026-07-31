@@ -37,7 +37,7 @@ image : /img/post/wu-dong-qian-kun-s2.webp
 alt : 'Wu Dong Qian Kun Season 2'
 url: 'wu-dong-qian-kun-season-2'
 layout : postingan-donghua
-sinopsis : '"Wu Dong Qian Kun Season 2" melanjutkan perjalanan Lin Dong dalam dunia kultivasi yang penuh tantangan. Setelah berhasil memperoleh Simbol Kuno dan meningkatkan kekuatannya, Lin Dong menghadapi musuh yang semakin kuat dan konspirasi yang lebih rumit. Di musim ini, Lin Dong berusaha memperkuat aliansi dengan teman-temannya, termasuk Xiaoyan dan Qingzhu, sambil berjuang melindungi keluarganya dari ancaman sekte gelap dan kekuatan jahat kuno. Dengan tekad yang semakin kuat dan teknik kultivasi yang terus berkembang, Lin Dong harus menemukan keseimbangan antara kekuatan dan tanggung jawab demi mengungkap misteri besar yang tersembunyi di balik dunia kultivasi.'
+sinopsis : '"Wu Dong Qian Kun Season 2" melanjutkan perjalanan Lin Dong dalam dunia kultivasi. Setelah berhasil memperoleh Simbol Kuno dan meningkatkan kekuatannya, Lin Dong menghadapi musuh dan konspirasi yang lebih rumit. Di musim ini, Lin Dong berusaha memperkuat aliansi dengan teman-temannya, termasuk Xiaoyan dan Qingzhu, sambil berjuang melindungi keluarganya dari ancaman sekte gelap dan kekuatan jahat kuno. Lin Dong harus menemukan keseimbangan antara kekuatan dan tanggung jawab demi mengungkap misteri besar yang tersembunyi di balik dunia kultivasi.'
 deskripsi : 'Download Batch Wu Dong Qian Kun Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Wu Dong Qian Kun Season 2 Subtitle Indonesia'
 

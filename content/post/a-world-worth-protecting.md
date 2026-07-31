@@ -26,7 +26,7 @@ image : /img/post/a-world-worth-protecting.webp
 alt : 'A World Worth Protecting'
 url: 'a-world-worth-protecting'
 layout : postingan-donghua
-sinopsis : 'Di dunia futuristik yang bercampur dengan elemen kultivasi, Wang Baole adalah seorang pemuda ambisius yang bercita-cita menjadi pejabat tinggi di Federasi. Dengan tubuhnya yang sedikit gemuk namun penuh semangat, ia masuk ke Akademi Dao untuk mempelajari seni kultivasi dan teknologi spirit. Namun, jalannya penuh tantangan dari ujian akademi yang ketat hingga konspirasi yang mengancam dunia. Dengan kecerdikan, keberuntungan, dan sedikit kelicikan, Wang Baole berusaha mengatasi rintangan demi mencapai impiannya, tanpa menyadari bahwa takdirnya jauh lebih besar dari yang ia bayangkan.'
+sinopsis : 'Di dunia futuristik yang bercampur Wang Baole adalah seorang pemuda ambisius yang bercita-cita menjadi pejabat tinggi di Federasi. Dengan tubuhnya yang sedikit gemuk namun, ia masuk ke Akademi Dao untuk mempelajari seni kultivasi dan teknologi spirit. Namun, jalannya dari ujian akademi yang ketat hingga konspirasi yang mengancam dunia. Wang Baole berusaha mengatasi rintangan demi mencapai impiannya, tanpa menyadari bahwa.'
 deskripsi : 'Download Batch A World Worth Protecting Subtitle Indonesia'
 keywords : 'Download Batch A World Worth Protecting Subtitle Indonesia'
 

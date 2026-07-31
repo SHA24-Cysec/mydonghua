@@ -35,7 +35,7 @@ image : /img/post/btth-s2.webp
 alt : 'Battle Through the Heavens S2'
 url: 'battle-through-the-heavens-s2'
 layout : postingan-donghua
-sinopsis : 'Setelah meninggalkan klan Xiao, Xiao Yan memulai perjalanannya menuju Akademi Jianan, tempat para ahli muda berkumpul untuk mengasah kemampuan mereka. Di sana, ia menghadapi berbagai tantangan, termasuk pertarungan sengit dengan murid berbakat dan konspirasi yang melibatkan sekte kuat. Dengan bimbingan Yao Lao, Xiao Yan terus meningkatkan kekuatannya, menguasai teknik bertarung yang lebih hebat, dan menemukan sekutu serta musuh baru. Di tengah perjalanan, ia juga semakin dekat dengan rahasia keluarganya dan tujuan sebenarnya dalam dunia persilatan.'
+sinopsis : 'Setelah meninggalkan klan Xiao, Xiao Yan memulai perjalanannya menuju Akademi Jianan, tempat para ahli muda berkumpul untuk mengasah kemampuan mereka. Di sana, ia menghadapi termasuk pertarungan sengit dengan murid berbakat dan konspirasi yang melibatkan sekte kuat. Xiao Yan terus meningkatkan kekuatannya, menguasai teknik bertarung yang lebih hebat. Di tengah perjalanan, ia juga semakin dekat dengan rahasia keluarganya dan tujuan sebenarnya dalam dunia persilatan.'
 deskripsi : 'Download Batch Battle Through the Heavens S2 Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens S2 Subtitle Indonesia'
 

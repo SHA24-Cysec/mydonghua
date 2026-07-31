@@ -30,7 +30,7 @@ image : /img/post/reversal-dimension-the-rise-of-ai.webp
 alt : 'Reversal Dimension Ai Rise'
 url: 'reversal-dimension-ai-rise'
 layout : postingan-donghua
-sinopsis : 'mengisahkan perjalanan seorang pemuda bernama Jiang Li. Ia adalah seorang siswa biasa yang tanpa sengaja terlibat dalam konflik antara kecerdasan buatan (AI) canggih dan kekuatan misterius yang ingin menguasainya. Dalam dunia yang semakin maju dengan teknologi AI, Jiang Li menemukan sebuah kacamata pintar yang memberinya akses ke dimensi tersembunyi. Di dalamnya, ia bertemu dengan seorang gadis AI bernama Anji, yang memiliki kesadaran sendiri dan sedang diburu oleh pihak-pihak yang ingin mengeksploitasinya. Seiring waktu, Jiang Li terjebak dalam pertarungan antara manusia, AI, dan organisasi rahasia yang berusaha mengendalikan teknologi ini demi kepentingan mereka sendiri.'
+sinopsis : 'Seorang pemuda bernama Jiang Li. Ia adalah seorang siswa biasa yang tanpa sengaja terlibat dalam konflik antara kecerdasan buatan (AI) canggih dan yang ingin menguasainya. Dalam dunia yang semakin maju Jiang Li menemukan sebuah kacamata pintar yang memberinya akses ke dimensi tersembunyi. Di dalamnya, ia bertemu dengan seorang gadis AI bernama Anji, yang memiliki kesadaran sendiri dan sedang diburu oleh pihak-pihak yang ingin mengeksploitasinya. Seiring waktu, Jiang Li terjebak dalam pertarungan antara manusia, AI, dan organisasi rahasia yang berusaha mengendalikan teknologi ini demi kepentingan mereka sendiri.'
 deskripsi : 'Download Batch Reversal Dimension Ai Rise Subtitle Indonesia'
 keywords : 'Download Batch Reversal Dimension Ai Rise Subtitle Indonesia'
 

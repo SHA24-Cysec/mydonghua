@@ -28,7 +28,7 @@ image : /img/post/my-journey-to-another-world.webp
 alt : 'My Journey to Another World'
 url: 'my-journey-to-another-world'
 layout : postingan-donghua
-sinopsis : 'My Journey to Another World mengisahkan seorang pemuda biasa yang hidupnya berubah drastis setelah terlempar ke dunia lain yang penuh kekuatan spiritual, makhluk misterius, dan aturan hidup yang jauh berbeda dari dunia asalnya. Tanpa bekal kekuatan luar biasa di awal, ia dipaksa belajar bertahan hidup sambil memahami rahasia dunia baru yang kejam namun menantang. Perjalanan ini bukan hanya tentang menjadi lebih kuat, tetapi juga tentang pilihan, pengorbanan, dan konflik batin ketika ambisi bertabrakan dengan nilai kemanusiaan. Seiring waktu, sang tokoh utama perlahan membangun jalannya sendiri, menghadapi musuh yang semakin berbahaya, sekaligus mengungkap kebenaran di balik alasan dirinya dipanggil ke dunia tersebut.'
+sinopsis : 'My Journey to Another World mengisahkan seorang pemuda biasa yang hidupnya berubah drastis setelah terlempar ke dunia lain yang spiritual, makhluk misterius, dan aturan hidup yang jauh berbeda dari dunia asalnya. Tanpa bekal di awal, ia dipaksa belajar bertahan hidup sambil memahami rahasia dunia baru yang kejam namun menantang. Perjalanan ini tentang pilihan, pengorbanan, dan konflik batin ketika ambisi bertabrakan dengan nilai kemanusiaan. Seiring waktu, sang tokoh utama perlahan membangun jalannya sendiri, menghadapi musuh yang semakin berbahaya, sekaligus mengungkap kebenaran di balik alasan dirinya dipanggil ke dunia tersebut.'
 deskripsi : 'Download Batch My Journey to Another World Subtitle Indonesia'
 keywords : 'Download Batch My Journey to Another World Subtitle Indonesia'
 

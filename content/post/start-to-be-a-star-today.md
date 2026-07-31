@@ -25,7 +25,7 @@ image : /img/post/start-to-be-a-star-today.webp
 alt : 'Start to Be a Star Today'
 url: 'start-to-be-a-star-today'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan tentang Qin Ze, seorang mahasiswa baru yang memiliki bakat musik luar biasa sejak kecil. Meskipun sering tampil dan berkompetisi, sebuah kegagalan besar membuatnya trauma dan kehilangan kepercayaan diri untuk bernyanyi di depan umum. Saudara kembarnya, Qin Ya, adalah seorang penyanyi populer dengan citra ceria dan menarik. Kehidupan Qin Ze berubah ketika Qin Ya memintanya untuk menggantikannya di atas panggung, memaksanya menghadapi ketakutannya dan menemukan kembali hasratnya terhadap musik.'
+sinopsis : 'Qin Ze, seorang mahasiswa baru yang memiliki bakat musik luar biasa sejak kecil. Meskipun sering tampil dan berkompetisi, sebuah kegagalan besar membuatnya trauma dan kehilangan kepercayaan diri untuk bernyanyi di depan umum. Saudara kembarnya, Qin Ya, adalah seorang penyanyi populer dengan citra ceria dan menarik. Kehidupan Qin Ze berubah ketika Qin Ya memintanya untuk menggantikannya di atas panggung, memaksanya menghadapi ketakutannya dan menemukan kembali hasratnya terhadap musik.'
 deskripsi : 'Download Batch Start to Be a Star Today Subtitle Indonesia'
 keywords : 'Download Batch Start to Be a Star Today Subtitle Indonesia'
 

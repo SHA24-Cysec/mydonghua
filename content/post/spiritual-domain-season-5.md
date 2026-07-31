@@ -32,7 +32,7 @@ image : /img/post/spiritual-domain-season-5.webp
 alt : 'Spiritual Domain Season 5'
 url: 'spiritual-domain-season-5'
 layout : postingan-donghua
-sinopsis : 'Season ke-5 dari Donghua Spiritual Domain'
+sinopsis : 'Season ke-5 dari Donghua Spiritual Domain.'
 deskripsi : 'Download Batch Spiritual Domain Season 5 Subtitle Indonesia'
 keywords : 'Download Batch Spiritual Domain Season 5 Subtitle Indonesia'
 

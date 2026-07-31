@@ -28,7 +28,7 @@ image : /img/post/a-portrait-of-jianghu-spirit-master.webp
 alt : 'A Portrait of Jianghu Spirit Master'
 url: 'a-portrait-of-jianghu-spirit-master'
 layout : postingan-donghua
-sinopsis : 'Cerita mengikuti perjalanan seorang pemuda bernama Qin Hu, yang awalnya hanya seorang pelukis biasa tetapi tanpa sengaja terlibat dalam konflik antara berbagai faksi kuat. Saat ia menemukan bakat tersembunyinya dalam mengendalikan kekuatan spiritual melalui lukisannya, Qin Hu mulai mengungkap rahasia di balik dunia roh dan pertarungan antara klan-klan besar. Dengan tekad yang kuat, ia harus menghadapi tantangan berbahaya, bertemu sekutu tak terduga, dan menguak konspirasi yang mengancam keseimbangan dunia Jianghu.'
+sinopsis : 'Perjalanan seorang pemuda bernama Qin Hu, yang awalnya hanya seorang pelukis biasa tetapi tanpa sengaja terlibat dalam konflik antara faksi kuat. Saat ia menemukan bakat tersembunyinya dalam mengendalikan kekuatan spiritual melalui lukisannya, Qin Hu mulai mengungkap rahasia di balik dunia roh dan pertarungan antara klan-klan besar. ia harus menghadapi tantangan berbahaya, dan menguak konspirasi yang mengancam keseimbangan dunia Jianghu.'
 deskripsi : 'Download Batch A Portrait of Jianghu Spirit Master Subtitle Indonesia'
 keywords : 'Download Batch A Portrait of Jianghu Spirit Master Subtitle Indonesia'
 

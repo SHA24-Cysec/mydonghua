@@ -37,7 +37,7 @@ image : /img/post/mo-dao-zu-shi.webp
 alt : 'Mo Dao Zu Shi'
 url: 'mo-dao-zu-shi'
 layout : postingan-donghua
-sinopsis : 'Mo Dao Zu Shi (Grandmaster of Demonic Cultivation) mengisahkan Wei Wuxian, seorang kultivator berbakat yang dulu terkenal karena kekuatannya namun jatuh dari kehormatan akibat mengembangkan jalur kultivasi terlarang, yakni "Demonic Path". Setelah kematiannya dalam kekacauan dunia kultivator, ia dihidupkan kembali di tubuh orang lain yang penuh dendam. Bersama Lan Wangji, seorang kultivator terkenal dari klan Gusu Lan, Wei Wuxian menyelidiki misteri kelam yang mengancam dunia. Dalam perjalanannya, masa lalu yang tersembunyi, persahabatan, dan kebenaran yang terlupakan perlahan terungkap. Donghua ini menggabungkan petualangan, intrik, drama, dan ikatan emosional yang kuat dalam dunia penuh sihir dan seni bela diri.'
+sinopsis : 'Wei Wuxian, kultivator berbakat yang jatuh dari kehormatan akibat mengembangkan jalur kultivasi terlarang "Demonic Path", mati dalam kekacauan dunia kultivator. Ia dihidupkan kembali di tubuh orang lain yang pendendam. Bersama Lan Wangji, kultivator terkenal dari klan Gusu Lan, Wei Wuxian menyelidiki misteri kelam yang mengancam dunia. Masa lalu yang tersembunyi, persahabatan, dan kebenaran yang terlupakan terungkap.'
 deskripsi : 'Download Batch Mo Dao Zu Shi Subtitle Indonesia'
 keywords : 'Download Batch Mo Dao Zu Shi Subtitle Indonesia'
 

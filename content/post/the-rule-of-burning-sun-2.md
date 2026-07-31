@@ -36,7 +36,7 @@ image : /img/post/the-rule-of-burning-sun-2.webp
 alt : 'The Rule of Burning Sun 2'
 url: 'the-rule-of-burning-sun-2'
 layout : postingan-donghua
-sinopsis : 'Setelah melalui berbagai pertempuran sengit di musim pertama, perjalanan Qin Huai berlanjut dalam "The Rule of Burning Sun II". Dengan kekuatan yang semakin berkembang, ia harus menghadapi musuh yang lebih kuat dan rahasia besar tentang dunia yang mulai terungkap. Di tengah konspirasi yang mengancam keseimbangan kekuatan, Qin Huai berusaha melindungi orang-orang terdekatnya sekaligus mencari kebenaran tentang takdirnya. Mampukah ia menguasai kekuatan sejati dan bertahan di tengah badai pertempuran yang tak berkesudahan?'
+sinopsis : 'Setelah melalui berbagai pertempuran sengit di musim pertama, perjalanan Qin Huai berlanjut dalam "The Rule of Burning Sun II". ia harus menghadapi musuh yang lebih kuat dan rahasia besar tentang dunia. Di tengah konspirasi yang mengancam keseimbangan kekuatan, Qin Huai berusaha melindungi orang-orang terdekatnya sekaligus mencari kebenaran tentang takdirnya. Mampukah ia menguasai kekuatan sejati dan bertahan di tengah badai pertempuran yang tak berkesudahan?.'
 deskripsi : 'Download Batch The Rule of Burning Sun 2 Subtitle Indonesia'
 keywords : 'Download Batch The Rule of Burning Sun 2 Subtitle Indonesia'
 

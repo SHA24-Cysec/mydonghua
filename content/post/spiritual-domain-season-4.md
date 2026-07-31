@@ -32,7 +32,7 @@ image : /img/post/spiritual-domain-season-4.webp
 alt : 'Spiritual Domain Season 4'
 url: 'spiritual-domain-season-4'
 layout : postingan-donghua
-sinopsis : 'Season ke-4 dari Donghua Spiritual Domain'
+sinopsis : 'Season ke-4 dari Donghua Spiritual Domain.'
 deskripsi : 'Download Batch Spiritual Domain Season 4 Subtitle Indonesia'
 keywords : 'Download Batch Spiritual Domain Season 4 Subtitle Indonesia'
 

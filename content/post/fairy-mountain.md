@@ -25,7 +25,7 @@ image : /img/post/fairy-mountain.webp
 alt : 'Fairy Mountain'
 url: 'fairy-mountain'
 layout : postingan-donghua
-sinopsis : 'mengisahkan perjalanan seorang pemuda bernama Brahma dari Kerajaan Timur ke Dataran Tengah dengan misi rahasia. Setelah kehilangan sebagian ingatannya akibat kecelakaan kapal, Brahma diselamatkan oleh Gongliangchen, seorang gadis dengan masalah pada kakinya. Sebagai bentuk terima kasih, Brahma setuju membantu Gongliangchen mencari pulau abadi yang tercatat dalam sebuah buku ajaib, dengan harapan dapat menyembuhkan kakinya. Dalam perjalanan, mereka bertemu dengan Li Mao, seorang jenderal yang ditugaskan oleh Ratu untuk mencari kaisar yang hilang, serta Zong Sheng, seorang seniman bela diri muda yang berubah menjadi anak kecil saat menangis. Bersama-sama, mereka menghadapi berbagai tantangan yang mengarah ke misteri Gunung Peri dan rahasia keabadian.'
+sinopsis : 'Seorang pemuda bernama Brahma dari Kerajaan Timur ke Dataran Tengah dengan misi rahasia. Setelah kehilangan sebagian ingatannya akibat kecelakaan kapal, Brahma diselamatkan oleh Gongliangchen, seorang gadis dengan masalah pada kakinya. Sebagai bentuk terima kasih, Brahma setuju membantu Gongliangchen mencari pulau abadi yang tercatat dalam sebuah buku ajaib, dengan harapan dapat menyembuhkan kakinya. Dalam perjalanan, mereka bertemu seorang jenderal yang ditugaskan oleh Ratu untuk mencari kaisar yang hilang, serta Zong Sheng, seorang seniman bela diri muda yang berubah menjadi anak kecil saat menangis. Bersama-sama, mereka menghadapi yang mengarah ke misteri Gunung Peri dan rahasia keabadian.'
 deskripsi : 'Download Batch Fairy Mountain Subtitle Indonesia'
 keywords : 'Download Batch Fairy Mountain Subtitle Indonesia'
 

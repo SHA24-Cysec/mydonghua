@@ -34,7 +34,7 @@ image : /img/post/the-shape-of-the-wind-1-galaxy-arc.webp
 alt : 'The Shape of the Wind 1: Galaxy Arc'
 url: 'the-shape-of-the-wind-1-galaxy-arc'
 layout : postingan-donghua
-sinopsis : 'Di tengah luasnya galaksi yang dipenuhi konflik dan rahasia kuno, seorang pemuda berbakat harus menghadapi takdir yang jauh lebih besar dari dirinya sendiri. The Shape of the Wind 1: Galaxy Arc menghadirkan kisah petualangan penuh aksi tentang perjalanan menuju kekuatan sejati, persahabatan, dan pengorbanan. Saat berbagai faksi mulai berebut kekuasaan demi menguasai energi misterius yang dapat mengubah keseimbangan alam semesta, sang tokoh utama terlibat dalam rangkaian pertempuran berbahaya yang menguji keberanian dan keyakinannya. Di balik pertarungan spektakuler dan dunia futuristik yang megah, tersimpan rahasia besar yang perlahan mengungkap asal-usul kekuatan angin yang legendaris.'
+sinopsis : 'Di tengah luasnya galaksi yang dipenuhi konflik dan rahasia kuno, seorang pemuda berbakat harus menghadapi dari dirinya sendiri. The Shape of the Wind 1: Galaxy Arc menghadirkan kisah petualangan penuh aksi tentang perjalanan menuju kekuatan sejati, persahabatan, dan pengorbanan. Saat mulai berebut kekuasaan demi menguasai energi misterius yang dapat mengubah keseimbangan alam semesta, sang tokoh utama terlibat dalam rangkaian pertempuran berbahaya yang menguji keberanian dan keyakinannya. Di balik pertarungan spektakuler dan dunia futuristik yang megah, tersimpan rahasia besar yang perlahan mengungkap asal-usul kekuatan angin yang legendaris.'
 deskripsi : 'Download Batch The Shape of the Wind 1: Galaxy Arc Subtitle Indonesia'
 keywords : 'Download Batch The Shape of the Wind 1: Galaxy Arc Subtitle Indonesia'
 

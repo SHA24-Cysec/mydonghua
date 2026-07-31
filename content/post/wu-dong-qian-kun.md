@@ -37,7 +37,7 @@ image : /img/post/wu-dong-qian-kun.webp
 alt : 'Wu Dong Qian Kun'
 url: 'wu-dong-qian-kun'
 layout : postingan-donghua
-sinopsis : 'Mengikuti kisah Lin Dong, seorang pemuda dari keluarga Lin yang mengalami kehancuran akibat pengkhianatan dan kekalahan ayahnya di tangan seorang anggota keluarga cabang yang kuat. Lin Dong tumbuh dengan tekad untuk membalas dendam dan memulihkan kehormatan keluarganya. Suatu hari, Lin Dong menemukan batu misterius yang ternyata menyimpan kekuatan kuno. Batu itu membimbingnya ke jalan kultivasi yang penuh tantangan dan pertempuran sengit melawan klan-klan kuat dan makhluk iblis. Dalam perjalanannya, Lin Dong bertemu dengan sekutu dan musuh yang membentuk kekuatannya, serta mengungkap rahasia di balik dunia kultivasi dan artefak kuno. Dengan semangat pantang menyerah dan kekuatan dari batu misterius, Lin Dong berjuang untuk menjadi kultivator terkuat dan membalas kehormatan keluarganya, sembari menghadapi ancaman besar yang dapat menghancurkan dunia.'
+sinopsis : 'Lin Dong, pemuda dari keluarga Lin yang hancur akibat pengkhianatan dan kekalahan ayahnya di tangan anggota keluarga cabang yang kuat. Lin Dong tumbuh ia menemukan batu misterius yang menyimpan kekuatan kuno. Batu itu membimbingnya ke jalan kultivasi dan pertempuran sengit melawan klan-klan kuat dan makhluk iblis. Dalam perjalanannya, Lin Dong bertemu sekutu dan musuh yang membentuk kekuatannya, serta mengungkap rahasia di balik dunia kultivasi dan artefak kuno. Lin Dong berjuang menjadi kultivator terkuat dan membalas kehormatan keluarganya, sembari menghadapi ancaman besar yang dapat menghancurkan dunia.'
 deskripsi : 'Download Batch Wu Dong Qian Kun Subtitle Indonesia'
 keywords : 'Download Batch Wu Dong Qian Kun Subtitle Indonesia'
 

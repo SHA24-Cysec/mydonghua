@@ -25,7 +25,7 @@ image : /img/post/ancient-lords.webp
 alt : 'Ancient Lords'
 url: 'ancient-lords'
 layout : postingan-donghua
-sinopsis : '"Ancient Lords" atau "Yishi Zhi Zun" adalah sebuah donghua yang mengisahkan perjalanan Lin Yun, seorang pemuda yang bereinkarnasi sebagai budak pedang di Sekte Qing Yun di Kerajaan Tian Shui. Setelah kelahirannya kembali, kemampuan Lin Yun yang sebelumnya biasa saja mengalami perubahan drastis. Dengan menguasai teknik Tinju Harimau, ia berhasil mencapai tingkat ketiga seni bela diri, yang memungkinkannya menjadi murid luar di sekte tersebut. Cerita ini mengikuti perjalanan Lin Yun dalam mengasah kemampuannya, menghadapi berbagai tantangan, dan mengejar pencerahan dalam dunia seni bela diri yang penuh intrik dan persaingan. '
+sinopsis : 'Lin Yun, seorang pemuda yang bereinkarnasi sebagai budak pedang di Sekte Qing Yun di Kerajaan Tian Shui. Setelah kelahirannya kembali, kemampuan Lin Yun yang sebelumnya biasa saja mengalami perubahan drastis. ia berhasil mencapai tingkat ketiga seni bela diri, yang memungkinkannya menjadi murid luar di sekte tersebut. perjalanan Lin Yun dalam mengasah kemampuannya, menghadapi dan mengejar pencerahan dalam dunia seni bela diri.'
 deskripsi : 'Download Batch Ancient Lords Subtitle Indonesia'
 keywords : 'Download Batch Ancient Lords Subtitle Indonesia'
 

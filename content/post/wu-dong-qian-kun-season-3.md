@@ -34,7 +34,7 @@ image : /img/post/wu-dong-qian-kun-season-3.webp
 alt : 'Wu Dong Qian Kun Season 3'
 url: 'wu-dong-qian-kun-season-3'
 layout : postingan-donghua
-sinopsis : 'Melanjutkan perjalanan epik Lin Dong, musim ketiga Wu Dong Qian Kun membawa penonton ke tahap yang lebih menegangkan dalam usahanya menjadi lebih kuat. Setelah melalui banyak ujian, Lin Dong kini harus menghadapi ancaman dari sekte-sekte besar dan makhluk iblis yang berambisi menguasai dunia. Dengan tekad yang semakin matang, ia terus berlatih seni rahasia dan memperkuat ikatannya dengan para sahabat serta sekutunya. Namun, jalan menuju puncak kekuatan bukanlah hal mudah. Intrik antar klan, pertempuran sengit, hingga rahasia besar tentang dunia mulai terungkap.'
+sinopsis : 'Melanjutkan Lin Dong, musim ketiga Wu Dong Qian Kun membawa penonton ke tahap yang lebih menegangkan dalam usahanya menjadi lebih kuat. Setelah melalui banyak ujian, Lin Dong kini harus menghadapi ancaman dari sekte-sekte besar dan makhluk iblis yang berambisi menguasai dunia. ia terus berlatih seni rahasia dan memperkuat ikatannya dengan para sahabat serta sekutunya. Namun, jalan menuju puncak kekuatan bukanlah hal mudah. Intrik antar klan, pertempuran sengit, hingga rahasia besar tentang dunia.'
 deskripsi : 'Download Batch Wu Dong Qian Kun Season 3 Subtitle Indonesia'
 keywords : 'Download Batch Wu Dong Qian Kun Season 3 Subtitle Indonesia'
 

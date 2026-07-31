@@ -25,7 +25,7 @@ image : /img/post/long-sword.webp
 alt : 'Long Sword'
 url: 'long-sword'
 layout : postingan-donghua
-sinopsis : '-'
+sinopsis : 'Kerusakan lingkungan memicu bencana alam, dan tatanan dunia runtuh. He Jiang mengikuti ayahnya, He Changfeng, mengemudi truk di Kota New Sacco untuk mencari nafkah. Para pengungsi Dongbang hidup menderita di bawah tekanan organisasi terror Youren. He Jiang tidak tahan lagi. Ia mengumpulkan Qiao Qi, Liu Zhan, dan teman-teman lain di East City untuk melawan.'
 deskripsi : 'Download Batch Long Sword Subtitle Indonesia'
 keywords : 'Download Batch Long Sword Subtitle Indonesia'
 

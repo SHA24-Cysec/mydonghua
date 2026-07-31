@@ -33,7 +33,7 @@ image : /img/post/master-of-the-star-origin.webp
 alt : 'Master of the Star Origin'
 url: 'master-of-the-star-origin'
 layout : postingan-donghua
-sinopsis : 'Master of the Star Origin mengisahkan perjalanan seorang pemuda berbakat yang terlahir di dunia penuh kekuatan spiritual dan rahasia kuno. Di tengah persaingan antar klan serta ancaman dari kekuatan gelap, ia berusaha menguasai energi bintang yang dipercaya mampu mengubah nasib seseorang. Perjalanannya tidak mudah. Ia harus menghadapi pengkhianatan, pertarungan brutal, dan ujian yang mengancam nyawanya. Dengan tekad kuat dan kemampuan yang terus berkembang, sang tokoh utama mulai membuka misteri besar tentang asal usul kekuatan bintang serta takdir dunia tempat ia hidup.'
+sinopsis : 'Seorang pemuda berbakat yang terlahir di dunia spiritual dan rahasia kuno. Di tengah persaingan antar klan serta ancaman dari kekuatan gelap, ia berusaha menguasai energi bintang yang dipercaya mampu mengubah nasib seseorang. Perjalanannya tidak mudah. Ia harus menghadapi pengkhianatan, pertarungan brutal, dan ujian yang mengancam nyawanya. sang tokoh utama mulai membuka misteri besar tentang asal usul kekuatan bintang serta takdir dunia tempat ia hidup.'
 deskripsi : 'Download Batch Master of the Star Origin Subtitle Indonesia'
 keywords : 'Download Batch Master of the Star Origin Subtitle Indonesia'
 

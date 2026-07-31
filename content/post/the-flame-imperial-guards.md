@@ -33,7 +33,7 @@ image : /img/post/the-flame-imperial-guards.webp
 alt : 'The Flame Imperial Guards'
 url: 'the-flame-imperial-guards'
 layout : postingan-donghua
-sinopsis : 'Donghua The Flame Imperial Guards bercerita tentang sekelompok penjaga kekaisaran elit yang memiliki tugas melindungi kerajaan dari berbagai ancaman, baik dari musuh luar maupun pengkhianatan di dalam istana. Mereka bukan hanya ahli bertarung, tetapi juga terlibat dalam intrik politik yang penuh bahaya. Di tengah konflik perebutan kekuasaan, para penjaga ini harus menghadapi musuh kuat, mengungkap konspirasi tersembunyi, dan menjaga kesetiaan mereka kepada kerajaan. Dengan pertarungan penuh aksi dan ketegangan politik, kisah ini menampilkan perjuangan para penjaga dalam mempertahankan kehormatan serta kestabilan kekaisaran.'
+sinopsis : 'Tentang sekelompok penjaga kekaisaran elit yang memiliki tugas melindungi kerajaan dari berbagai ancaman, baik dari musuh luar maupun pengkhianatan di dalam istana. Mereka terlibat dalam intrik politik. Di tengah konflik perebutan kekuasaan, para penjaga ini harus menghadapi musuh kuat, mengungkap konspirasi tersembunyi, dan menjaga kesetiaan mereka kepada kerajaan. Dengan pertarungan penuh aksi dan ketegangan politik, kisah ini menampilkan perjuangan para penjaga dalam mempertahankan kehormatan serta kestabilan kekaisaran.'
 deskripsi : 'Download Batch The Flame Imperial Guards Subtitle Indonesia'
 keywords : 'Download Batch The Flame Imperial Guards Subtitle Indonesia'
 

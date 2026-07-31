@@ -35,7 +35,7 @@ image : /img/post/tales-of-demons-of-gods-season-7.webp
 alt : 'Tales of Demons and Gods Season 7'
 url: 'tales-of-demons-and-gods-season-7'
 layout : postingan-donghua
-sinopsis : 'Di musim ketujuh ini, perjalanan Nie Li semakin menegangkan setelah berhasil memperkuat posisinya di Kota Glory. Dengan pengetahuan dari kehidupan sebelumnya, ia kembali berusaha menuntun para sahabat dan muridnya untuk menjadi lebih kuat demi menghadapi ancaman besar yang perlahan mendekat. Konflik antar sekte kian memanas, dan rahasia dunia yang lebih luas mulai terungkap. Nie Li tidak hanya ditantang oleh musuh dari luar, tetapi juga oleh intrik dan persaingan di dalam sektenya sendiri. Setiap langkah yang ia ambil penuh perhitungan, sebab satu kesalahan saja bisa mengulang tragedi masa lalu. Dengan kecerdasannya, ia membimbing teman-teman seperjuangan menuju kekuatan yang lebih tinggi, sembari menjaga agar sejarah kelam tidak terulang.'
+sinopsis : 'Di musim ketujuh ini, perjalanan Nie Li semakin menegangkan setelah berhasil memperkuat posisinya di Kota Glory. ia kembali berusaha menuntun para sahabat dan muridnya untuk menjadi lebih kuat demi menghadapi ancaman besar yang perlahan mendekat. Konflik antar sekte kian memanas, dan rahasia dunia yang lebih luas. Nie Li oleh intrik dan persaingan di dalam sektenya sendiri. Setiap langkah yang ia ambil penuh perhitungan, sebab satu kesalahan saja bisa mengulang tragedi masa lalu. ia membimbing teman-teman seperjuangan menuju kekuatan yang lebih tinggi, sembari menjaga agar sejarah kelam tidak terulang.'
 deskripsi : 'Download Batch Tales of Demons and Gods Season 7 Subtitle Indonesia'
 keywords : 'Download Batch Tales of Demons and Gods Season 7 Subtitle Indonesia'
 

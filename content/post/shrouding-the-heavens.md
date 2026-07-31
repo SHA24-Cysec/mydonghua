@@ -31,7 +31,7 @@ image : /img/post/shrouding-the-heavens.webp
 alt : 'Shrouding the Heavens'
 url: 'shrouding-the-heavens'
 layout : postingan-donghua
-sinopsis : 'Shrouding the Heavens mengisahkan Ye Fan, seorang pemuda dari era modern yang hidupnya berubah drastis setelah sebuah kejadian misterius menyeretnya ke dunia kultivasi kuno. Terpisah dari kehidupan lamanya, Ye Fan harus bertahan di alam yang dipenuhi makhluk kuat, sekte besar, serta hukum rimba yang kejam. Tanpa latar belakang istimewa, ia menapaki jalan kultivasi dengan tekad, kecerdikan, dan keteguhan hati. Dalam perjalanannya, Ye Fan mengungkap rahasia kuno tentang para kaisar besar, teknik abadi, dan kebenaran di balik langit dan bumi yang seolah menutupi takdir semua makhluk. Pertarungan sengit, intrik kekuasaan, serta pencarian makna keabadian menjadi bagian tak terpisahkan dari langkahnya menuju puncak.'
+sinopsis : 'Shrouding the Heavens mengisahkan Ye Fan, seorang pemuda dari era modern yang hidupnya berubah drastis setelah sebuah kejadian misterius menyeretnya ke dunia kultivasi kuno. Terpisah dari kehidupan lamanya, Ye Fan harus bertahan di alam yang dipenuhi makhluk kuat, sekte besar, serta hukum rimba yang kejam. Tanpa latar belakang istimewa, ia menapaki jalan kultivasi kecerdikan, dan keteguhan hati. Dalam perjalanannya, Ye Fan mengungkap rahasia kuno tentang para kaisar besar, teknik abadi, dan kebenaran di balik langit dan bumi yang seolah menutupi takdir semua makhluk. Pertarungan sengit, intrik kekuasaan, serta pencarian makna keabadian menjadi bagian tak terpisahkan dari langkahnya menuju puncak.'
 deskripsi : 'Download Batch Shrouding the Heavens Subtitle Indonesia'
 keywords : 'Download Batch Shrouding the Heavens Subtitle Indonesia'
 

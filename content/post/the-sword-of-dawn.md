@@ -26,7 +26,7 @@ image : /img/post/the-sword-of-dawn.webp
 alt : 'The Sword of Dawn'
 url: 'the-sword-of-dawn'
 layout : postingan-donghua
-sinopsis : 'Cerita ini mengikuti petualangan seorang pahlawan muda yang berusaha melindungi dunia dari kegelapan yang mengancam. Dengan bantuan pedang legendaris, ia menghadapi berbagai rintangan dan musuh untuk mengembalikan kedamaian. Donghua ini menawarkan animasi yang memukau dan alur cerita yang menarik bagi para penggemar genre fantasi dan petualangan.'
+sinopsis : 'Petualangan seorang pahlawan muda yang berusaha melindungi dunia dari kegelapan yang mengancam. ia menghadapi dan musuh untuk mengembalikan kedamaian.'
 deskripsi : 'Download Batch The Sword of Dawn Subtitle Indonesia'
 keywords : 'Download Batch The Sword of Dawn Subtitle Indonesia'
 

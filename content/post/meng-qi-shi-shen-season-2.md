@@ -37,7 +37,7 @@ image : /img/post/meng-qi-shi-shen-s2.webp
 alt : 'Meng Qi Shi Shen Season 2'
 url: 'meng-qi-shi-shen-season-2'
 layout : postingan-donghua
-sinopsis : 'Meng Qi Shi Shen Season 2 melanjutkan kisah Ye Jiayao, seorang koki berbakat dari dunia modern yang terlempar ke masa lalu dan terperangkap dalam tubuh Ye Jinxuan. Di musim kedua ini, Jiayao menghadapi tantangan baru dalam mempertahankan bisnis kuliner dan memperkenalkan masakan inovatif di era kuno. Sementara itu, hubungannya dengan Xia Chunyu semakin dalam, namun mereka harus menghadapi intrik politik dan persaingan bisnis yang semakin sengit. Dengan kecerdikan dan keterampilannya dalam memasak, Jiayao berusaha mengatasi setiap rintangan demi melindungi orang-orang yang dicintainya dan mewujudkan impiannya di dunia baru ini.'
+sinopsis : 'Meng Qi Shi Shen Season 2 melanjutkan kisah Ye Jiayao, seorang koki berbakat dari dunia modern yang terlempar ke masa lalu dan terperangkap dalam tubuh Ye Jinxuan. Di musim kedua ini, Jiayao menghadapi tantangan baru dalam mempertahankan bisnis kuliner dan memperkenalkan masakan inovatif di era kuno. Sementara itu, hubungannya namun mereka harus menghadapi intrik politik dan persaingan bisnis yang semakin sengit. Jiayao berusaha mengatasi setiap rintangan demi melindungi orang-orang yang dicintainya dan mewujudkan impiannya di dunia baru ini.'
 deskripsi : 'Download Batch Meng Qi Shi Shen Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Meng Qi Shi Shen Season 2 Subtitle Indonesia'
 

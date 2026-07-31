@@ -34,7 +34,7 @@ image : /img/post/hitori-no-shita-the-outcast-season-2.webp
 alt : 'Hitori No Shita the Outcast Season 2'
 url: 'hitori-no-shita-the-outcast-season-2'
 layout : postingan-donghua
-sinopsis : 'Pada musim kedua Hitori no Shita: The Outcast, kisah Chou Soran berlanjut setelah ia terlibat lebih jauh dalam dunia para pengguna kekuatan khusus yang dikenal sebagai Outcast. Rahasia mengenai masa lalunya semakin terungkap, terutama tentang identitas keluarganya yang ternyata memiliki hubungan erat dengan kekuatan besar yang tengah diperebutkan banyak pihak. Soran harus berhadapan dengan organisasi misterius serta individu kuat yang mengincar kemampuan unik yang diwarisinya. Di tengah pertempuran dan intrik, ia juga perlahan memahami tanggung jawab yang datang bersama kekuatan tersebut. Musim ini menampilkan konflik yang lebih intens, pengembangan karakter yang lebih dalam, serta pertarungan spektakuler yang semakin mempertaruhkan nyawa.'
+sinopsis : 'Pada musim kedua Hitori no Shita: The Outcast, kisah Chou Soran berlanjut setelah ia terlibat lebih jauh dalam dunia para pengguna kekuatan khusus yang dikenal sebagai Outcast. Rahasia mengenai masa lalunya semakin terungkap, terutama tentang identitas keluarganya yang ternyata memiliki hubungan erat ia juga perlahan memahami tanggung jawab yang datang bersama kekuatan tersebut. Musim ini menampilkan konflik yang lebih intens, pengembangan karakter yang lebih dalam, serta pertarungan spektakuler yang semakin mempertaruhkan nyawa.'
 deskripsi : 'Download Batch Hitori No Shita the Outcast Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Hitori No Shita the Outcast Season 2 Subtitle Indonesia'
 

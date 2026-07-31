@@ -36,7 +36,7 @@ image : /img/post/wu-geng-ji-season-3.webp
 alt : 'Wu Geng Ji Season 3'
 url: 'wu-geng-ji-season-3'
 layout : postingan-donghua
-sinopsis : 'Di musim ketiga ini, perjalanan Wu Geng memasuki tahap yang lebih gelap dan penuh intrik. Setelah menyatu dengan kekuatan White Tiger, ia semakin dekat untuk menyingkap rahasia para Dewa Langit yang selama ribuan tahun menindas umat manusia. Wu Geng kini memimpin kelompok pemberontak dengan tekad lebih keras, namun semakin kuat pula musuh yang menghadang. Di tengah usaha membangkitkan kembali semangat perlawanan, Wu Geng harus berhadapan dengan para jenderal Dewa yang memiliki kekuatan ilahi jauh di atas manusia biasa. Pertarungan besar pun tak terhindarkan, terutama ketika rahasia masa lalu keluarga kerajaan Shenyin perlahan terbuka—membuat Wu Geng harus memilih antara kebenaran pahit atau jalan balas dendam.'
+sinopsis : 'Di musim ketiga ini, perjalanan Wu Geng memasuki tahap yang lebih gelap. Setelah menyatu ia semakin dekat untuk menyingkap rahasia para Dewa Langit yang selama ribuan tahun menindas umat manusia. Wu Geng kini memimpin kelompok pemberontak namun semakin kuat pula musuh yang menghadang. Di tengah usaha membangkitkan kembali semangat perlawanan, Wu Geng harus berhadapan dengan para jenderal Dewa yang memiliki kekuatan ilahi jauh di atas manusia biasa. Pertarungan besar pun tak terhindarkan, terutama ketika rahasia masa lalu keluarga kerajaan Shenyin perlahan terbuka. membuat Wu Geng harus memilih antara kebenaran pahit atau jalan balas dendam.'
 deskripsi : 'Download Batch Wu Geng Ji Season 3 Subtitle Indonesia'
 keywords : 'Download Batch Wu Geng Ji Season 3 Subtitle Indonesia'
 

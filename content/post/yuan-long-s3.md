@@ -34,7 +34,7 @@ image : /img/post/yuan-long-3.webp
 alt : 'Yuan Long S3'
 url: 'yuan-long-s3'
 layout : postingan-donghua
-sinopsis : 'Musim ketiganya melanjutkan kisah Wang Sheng, seorang prajurit yang terlempar ke dunia paralel yang penuh dengan kultivasi dan sihir. Di musim ini, Wang Sheng menghadapi tantangan baru dalam usahanya untuk kembali ke dunianya, sambil mengungkap rahasia di balik identitasnya dan kekuatan misterius yang dimilikinya.'
+sinopsis : 'Musim ketiganya melanjutkan kisah Wang Sheng, seorang prajurit yang terlempar ke dunia paralel yang penuh dengan kultivasi dan sihir. Di musim ini, Wang Sheng menghadapi tantangan baru dalam usahanya untuk kembali ke dunianya, sambil mengungkap rahasia di balik identitasnya dan yang dimilikinya.'
 deskripsi : 'Download Batch Yuan Long S3 Subtitle Indonesia'
 keywords : 'Download Batch Yuan Long S3 Subtitle Indonesia'
 

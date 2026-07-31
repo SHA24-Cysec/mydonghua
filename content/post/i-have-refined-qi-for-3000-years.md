@@ -25,7 +25,7 @@ image : /img/post/qi-refining-for-3000-years.webp
 alt : 'I Have Refined Qi for 3000 Years'
 url: 'i-have-refined-qi-for-3000-years'
 layout : postingan-donghua
-sinopsis : 'Bai Qiuran adalah seorang kultivator yang telah berlatih menyerap Qi selama 3000 tahun, namun anehnya ia masih terjebak di tahap awal kultivasi, tahap Penyempurnaan Qi (Qi Refining). Meskipun begitu, kekuatan sejati Bai Qiuran sudah melampaui para kultivator tingkat tinggi, menjadikannya sosok yang tak tertandingi. Ketika dunia kultivasi dihadapkan pada ancaman besar, Bai Qiuran mulai meninggalkan kehidupan tenangnya dan berusaha memecahkan misteri di balik kebuntuan kultivasinya. Dengan pengetahuan dan kekuatan yang telah ia kumpulkan selama ribuan tahun, Bai Qiuran memulai perjalanan penuh petualangan, menghadapi musuh kuat, dan mengungkap rahasia tersembunyi dalam dunia kultivasi.'
+sinopsis : 'Bai Qiuran adalah seorang kultivator yang telah berlatih menyerap Qi selama 3000 tahun, namun anehnya ia masih terjebak di tahap awal kultivasi, tahap Penyempurnaan Qi (Qi Refining). Meskipun begitu, kekuatan sejati Bai Qiuran sudah melampaui para kultivator tingkat tinggi, menjadikannya sosok yang tak tertandingi. Ketika dunia kultivasi dihadapkan pada ancaman besar, Bai Qiuran mulai meninggalkan kehidupan tenangnya dan berusaha memecahkan misteri di balik kebuntuan kultivasinya. Bai Qiuran memulai petualangan, menghadapi musuh kuat, dan mengungkap rahasia tersembunyi dalam dunia kultivasi.'
 deskripsi : 'Download Batch I Have Refined Qi for 3000 Years Subtitle Indonesia'
 keywords : 'Download Batch I Have Refined Qi for 3000 Years Subtitle Indonesia'
 

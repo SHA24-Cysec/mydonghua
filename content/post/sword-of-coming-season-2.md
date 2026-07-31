@@ -34,7 +34,7 @@ image : /img/post/sword-of-coming-season-2.webp
 alt : 'Sword of Coming Season 2'
 url: 'sword-of-coming-season-2'
 layout : postingan-donghua
-sinopsis : "Setelah melewati berbagai ujian dan pertempuran yang mengubah hidupnya, Chen Ping'an melanjutkan perjalanannya untuk memperkuat diri sekaligus memahami dunia kultivasi yang penuh intrik. Di musim kedua, ia menghadapi tantangan yang jauh lebih besar ketika konflik antar kekuatan mulai memengaruhi keseimbangan berbagai wilayah. Dalam perjalanannya, Chen Ping'an bertemu dengan sekutu baru, menghadapi musuh yang semakin kuat, serta mengungkap rahasia yang berkaitan dengan masa lalu dan takdirnya. Di tengah persaingan para pendekar, kultivator, dan tokoh berpengaruh, ia harus mempertahankan prinsip hidup yang selama ini menjadi pegangan utamanya."
+sinopsis : "Setelah melewati berbagai ujian dan pertempuran yang mengubah hidupnya, Chen Ping'an melanjutkan perjalanannya untuk memperkuat diri sekaligus memahami dunia kultivasi. Di musim kedua, ia menghadapi tantangan ketika konflik antar kekuatan mulai memengaruhi keseimbangan berbagai wilayah. Dalam perjalanannya, Chen Ping'an bertemu menghadapi musuh, serta mengungkap rahasia yang berkaitan dengan masa lalu dan takdirnya. Di tengah persaingan para pendekar, kultivator, dan tokoh berpengaruh, ia harus mempertahankan prinsip hidup yang selama ini menjadi pegangan utamanya."
 deskripsi : 'Download Batch Sword of Coming Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Sword of Coming Season 2 Subtitle Indonesia'
 

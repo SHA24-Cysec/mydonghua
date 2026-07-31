@@ -32,7 +32,7 @@ image : /img/post/wei-wo-du-shen.webp
 alt : 'Wei Wo Du Shen'
 url: 'wei-wo-du-shen'
 layout : postingan-donghua
-sinopsis : 'Donghua Wei Wo Du Shen menceritakan perjalanan seorang pemuda yang hidup di dunia penuh pertarungan dan kekuatan spiritual, di mana hanya mereka yang kuat yang mampu bertahan. Tokoh utamanya berjuang menembus batas kemampuannya sambil menghadapi berbagai musuh, intrik, dan persaingan antar ahli kultivasi. Dalam proses itu, ia terus berkembang, mencari kekuatan tertinggi, dan membuktikan dirinya di tengah dunia yang keras dan penuh ambisi. Cerita ini menonjolkan perjuangan tanpa henti, pertumbuhan karakter, serta pertempuran sengit dalam perjalanan menuju puncak kekuatan.'
+sinopsis : 'Seorang pemuda hidup di dunia pertarungan dan kekuatan spiritual, di mana hanya yang kuat mampu bertahan. Ia berjuang menembus batas kemampuannya sambil menghadapi intrik dan persaingan antar ahli kultivasi. Ia terus berkembang, mencari kekuatan tertinggi, dan membuktikan dirinya di tengah dunia yang keras dan berambisi.'
 deskripsi : 'Download Batch Wei Wo Du Shen Subtitle Indonesia'
 keywords : 'Download Batch Wei Wo Du Shen Subtitle Indonesia'
 

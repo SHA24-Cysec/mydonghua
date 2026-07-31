@@ -35,7 +35,7 @@ image : /img/post/soul-land-movie-sword-dao-chen-xin.webp
 alt : 'Soul Land Movie Sword Dao Chen Xin'
 url: 'soul-land-movie-sword-dao-chen-xin'
 layout : postingan-donghua
-sinopsis : 'Film animasi Soul Land Movie: Sword Dao Chen Xin menyoroti kisah Chen Xin, seorang pendekar pedang legendaris dari Tujuh Sekte Harta Karun. Terkenal dengan gelar Sword Douluo, ia menempuh perjalanan panjang dalam mendalami seni pedang hingga mencapai tingkat kekuatan yang nyaris tak tertandingi. Namun, di balik ketenaran dan kemampuannya yang menakutkan, tersimpan perjalanan batin penuh ujian—antara menjaga kehormatan sektenya, mengatasi ambisi kekuatan, serta memahami arti sejati dari jalan pedang yang ia pilih.'
+sinopsis : 'Film animasi Soul Land Movie: Sword Dao Chen Xin menyoroti kisah Chen Xin, seorang pendekar pedang legendaris dari Tujuh Sekte Harta Karun. Terkenal ia menempuh perjalanan panjang dalam mendalami seni pedang hingga mencapai tingkat kekuatan yang nyaris tak tertandingi. Namun, di balik ketenaran dan kemampuannya yang menakutkan, tersimpan perjalanan batin penuh ujian. antara menjaga kehormatan sektenya, mengatasi ambisi kekuatan, serta memahami arti sejati dari jalan pedang yang ia pilih.'
 deskripsi : 'Download Batch Soul Land Movie Sword Dao Chen Xin Subtitle Indonesia'
 keywords : 'Download Batch Soul Land Movie Sword Dao Chen Xin Subtitle Indonesia'
 

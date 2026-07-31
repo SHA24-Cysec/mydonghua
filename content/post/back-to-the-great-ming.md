@@ -28,7 +28,7 @@ image : /img/post/back-to-the-great-ming.webp
 alt : 'Back to the Great Ming'
 url: 'back-to-the-great-ming'
 layout : postingan-donghua
-sinopsis : 'Setelah mengalami kecelakaan misterius, seorang pemuda dari era modern tiba-tiba terbangun di tubuh seorang sarjana muda pada masa Dinasti Ming. Tanpa pengetahuan sejarah yang lengkap namun dibekali kecerdasan dan cara berpikir praktis ala zaman modern, ia harus menavigasi intrik istana, tekanan keluarga, hingga kerumitan politik yang mengancam nyawanya. Di tengah kehidupan masyarakat Ming yang keras dan penuh aturan, ia memanfaatkan pengetahuan masa kini untuk mengubah nasibnya—mulai dari inovasi sederhana, strategi bisnis, hingga taktik diplomasi. Namun semakin dalam ia terlibat dalam urusan negara, semakin besar pula risiko yang harus ditanggung. Pilihannya hanya dua: bertahan dan mengukir masa depan baru… atau tenggelam dalam arus sejarah yang kejam.'
+sinopsis : 'Seorang pemuda dari era modern terbangun di tubuh seorang sarjana muda pada masa Dinasti Ming. Tanpa pengetahuan sejarah yang lengkap namun dibekali kecerdasan dan cara berpikir praktis ala zaman modern, ia harus menavigasi intrik istana, tekanan keluarga, hingga kerumitan politik yang mengancam nyawanya. Ia memanfaatkan pengetahuan masa kini untuk mengubah nasibnya, mulai dari inovasi sederhana, strategi bisnis, hingga taktik diplomasi. Semakin dalam ia terlibat dalam urusan negara, semakin besar pula risiko yang harus ditanggung. Ia harus memilih: bertahan dan mengukir masa depan baru, atau tenggelam dalam arus sejarah yang kejam.'
 deskripsi : 'Download Batch Back to the Great Ming Subtitle Indonesia'
 keywords : 'Download Batch Back to the Great Ming Subtitle Indonesia'
 

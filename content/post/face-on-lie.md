@@ -26,7 +26,7 @@ image : /img/post/face-on-lie.webp
 alt : 'Face on Lie'
 url: 'face-on-lie'
 layout : postingan-donghua
-sinopsis : '"Face on Lie" (Huang Yan) adalah sebuah donghua yang menceritakan kisah Han Yuxi, seorang wanita muda yang merasa tidak percaya diri dengan penampilannya. Setelah mengetahui bahwa pacarnya berselingkuh, Yuxi memutuskan untuk menjalani operasi plastik dengan harapan mendapatkan kehidupan yang lebih baik. Di klinik bedah plastik, ia bertemu dengan Ling Huantao, seorang dokter bedah yang terobsesi untuk menciptakan kembali wajah istrinya yang berada dalam kondisi vegetatif. Ling menawarkan Yuxi kesempatan untuk menjadi cantik, namun perubahan fisik ini membawa Yuxi ke dalam serangkaian peristiwa yang tidak terduga, mempertanyakan apakah kecantikan luar dapat memberikan kebahagiaan sejati.'
+sinopsis : '"Face on Lie" (Huang Yan) adalah sebuah donghua yang menceritakan kisah Han Yuxi, seorang wanita muda yang merasa tidak percaya diri dengan penampilannya. Setelah mengetahui bahwa pacarnya berselingkuh, Yuxi memutuskan untuk menjalani operasi plastik dengan harapan mendapatkan kehidupan yang lebih baik. Di klinik bedah plastik, ia bertemu seorang dokter bedah yang terobsesi untuk menciptakan kembali wajah istrinya yang berada dalam kondisi vegetatif. Ling menawarkan Yuxi kesempatan untuk menjadi cantik, namun perubahan fisik ini membawa Yuxi ke dalam serangkaian peristiwa yang tidak terduga, mempertanyakan apakah kecantikan luar dapat memberikan kebahagiaan sejati.'
 deskripsi : 'Download Batch Face on Lie Subtitle Indonesia'
 keywords : 'Download Batch Face on Lie Subtitle Indonesia'
 

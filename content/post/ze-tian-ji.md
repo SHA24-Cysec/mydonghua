@@ -34,7 +34,7 @@ image : /img/post/ze-tian-ji.webp
 alt : 'Ze Tian Ji'
 url: 'ze-tian-ji'
 layout : postingan-donghua
-sinopsis : 'Ze Tian Ji (Way of Choices) menceritakan kisah Chen Changsheng, seorang pemuda yang ditakdirkan memiliki umur pendek karena penyakit bawaan. Demi mengubah takdirnya, ia meninggalkan rumah dan memulai perjalanan menuju ibu kota, berharap menemukan cara untuk memperpanjang hidup. Dalam perjalanannya, Chen Changsheng menghadapi berbagai ujian di dunia kultivasi, membentuk persahabatan, menemukan cinta, dan mengungkap rahasia besar tentang dirinya dan dunia. Dengan tekad kuat dan kecerdasan, ia perlahan mengukir jalannya sendiri menuju takdir yang baru.'
+sinopsis : 'Ze Tian Ji (Way of Choices) menceritakan kisah Chen Changsheng, seorang pemuda yang ditakdirkan memiliki umur pendek karena penyakit bawaan. Demi mengubah takdirnya, ia meninggalkan rumah dan memulai perjalanan menuju ibu kota, berharap menemukan cara untuk memperpanjang hidup. Dalam perjalanannya, Chen Changsheng menghadapi ujian di dunia kultivasi, membentuk persahabatan, menemukan cinta, dan mengungkap rahasia besar tentang dirinya dan dunia. ia perlahan mengukir jalannya sendiri menuju takdir yang baru.'
 deskripsi : 'Download Batch Ze Tian Ji Subtitle Indonesia'
 keywords : 'Download Batch Ze Tian Ji Subtitle Indonesia'
 

@@ -35,7 +35,7 @@ image : /img/post/quanzhi-fashi-s4.webp
 alt : 'Quanzhi Fashi Season 4'
 url: 'quanzhi-fashi-season-4'
 layout : postingan-donghua
-sinopsis : 'Mo Fan kembali melanjutkan perjalanannya sebagai penyihir berbakat dengan kemampuan unik menguasai banyak elemen. Di season keempat ini, ia menghadapi tantangan baru di kota yang penuh konflik antara penyihir dan monster. Bersama teman-temannya, Mo Fan berjuang mempertahankan kedamaian, sekaligus mengungkap konspirasi berbahaya yang mengancam dunia sihir. Pertarungan demi pertarungan semakin memperlihatkan kekuatan sejati Mo Fan, sambil menguji keteguhan hatinya dalam melindungi orang-orang yang ia sayangi.'
+sinopsis : 'Mo Fan kembali melanjutkan perjalanannya sebagai penyihir berbakat dengan kemampuan unik menguasai banyak elemen. Di season keempat ini, ia menghadapi tantangan baru di kota yang antara penyihir dan monster. Bersama teman-temannya, Mo Fan berjuang mempertahankan kedamaian, sekaligus mengungkap konspirasi berbahaya yang mengancam dunia sihir. Pertarungan demi pertarungan semakin memperlihatkan kekuatan sejati Mo Fan, sambil menguji keteguhan hatinya dalam melindungi orang-orang yang ia sayangi.'
 deskripsi : 'Download Batch Quanzhi Fashi Season 4 Subtitle Indonesia'
 keywords : 'Download Batch Quanzhi Fashi Season 4 Subtitle Indonesia'
 

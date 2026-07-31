@@ -25,7 +25,7 @@ image : /img/post/deep-sea.webp
 alt : 'Deep Sea'
 url: 'deep-sea'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan perjalanan emosional seorang gadis bernama Shenxiu. Terjebak dalam kesedihan dan kesepian setelah keluarganya berantakan, ia tanpa sengaja terseret ke dunia laut misterius yang penuh warna dan makhluk ajaib. Di sana, ia bertemu Nanhe, seorang koki eksentrik yang membantunya menghadapi ketakutannya dan menemukan makna baru dalam hidupnya. Dengan visual yang memukau dan penuh metafora, "Deep Sea" membawa penonton dalam petualangan yang tidak hanya menakjubkan secara visual, tetapi juga menyentuh hati dengan kisah pencarian jati diri dan harapan.'
+sinopsis : 'Shenxiu lari dari rumah setelah keluarganya berantakan. Ia terseret ke dunia laut misterius penuh makhluk ajaib. Di sana ia bertemu Nanhe, koki eksentrik yang membantunya menghadapi ketakutannya dan menemukan makna baru dalam hidupnya. Visual film ini memukau, setiap lapisan lautan menyimpan memori yang harus Shenxiu hadapi sebelum bisa kembali ke permukaan.'
 deskripsi : 'Download Batch Deep Sea Subtitle Indonesia'
 keywords : 'Download Batch Deep Sea Subtitle Indonesia'
 

@@ -33,7 +33,7 @@ image : /img/post/ni-zhenshi-ge-tiancai.webp
 alt : 'Ni Zhenshi Ge Tiancai'
 url: 'ni-zhenshi-ge-tiancai'
 layout : postingan-donghua
-sinopsis : "You're A Genius! mengisahkan seorang pemuda jenius yang memiliki kemampuan luar biasa dalam strategi, teknologi, dan pertarungan. Di balik kecerdasannya, ia harus menghadapi dunia yang penuh intrik, persaingan kekuatan, dan organisasi rahasia yang mengincar bakatnya. Perjalanan hidupnya berubah saat ia mulai terlibat dalam konflik besar yang menguji kecerdasan sekaligus emosinya. Dengan kemampuan analisis yang tajam dan cara berpikir yang tidak biasa, ia perlahan membangun pengaruh, mencari sekutu, dan mengungkap rahasia yang selama ini tersembunyi."
+sinopsis : "You're A Genius! mengisahkan seorang pemuda jenius yang memiliki dalam strategi, teknologi, dan pertarungan. Di balik kecerdasannya, ia harus menghadapi dunia yang, persaingan kekuatan, dan organisasi rahasia yang mengincar bakatnya. Perjalanan hidupnya berubah saat ia mulai terlibat dalam konflik besar yang menguji kecerdasan sekaligus emosinya. ia perlahan membangun pengaruh, mencari sekutu, dan mengungkap rahasia yang selama ini tersembunyi."
 deskripsi : 'Download Batch Ni Zhenshi Ge Tiancai Subtitle Indonesia'
 keywords : 'Download Batch Ni Zhenshi Ge Tiancai Subtitle Indonesia'
 

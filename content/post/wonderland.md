@@ -37,7 +37,7 @@ image : /img/post/wonderland.webp
 alt : 'Wonderland'
 url: 'wonderland'
 layout : postingan-donghua
-sinopsis : 'Wonderland Season 1 menceritakan kisah Ye Xingyun, seorang keturunan dari klan Ye yang telah jatuh. Setelah klannya dihancurkan, Ye Xingyun bertekad untuk membangun kembali kehormatan keluarganya. Dia bergabung dengan Sekte Tianyuan, di mana dia mulai mengasah kekuatan dan kemampuannya sebagai seorang kultivator. Dalam perjalanannya, Ye Xingyun menghadapi berbagai rintangan, termasuk konspirasi dan pertarungan dengan klan dan sekte lain. Dengan kecerdasan, kekuatan, dan tekadnya, Ye Xingyun berusaha menyingkap rahasia di balik kehancuran klannya serta menemukan takdir sejatinya di dunia kultivasi yang penuh intrik dan bahaya.'
+sinopsis : 'Wonderland Season 1 menceritakan kisah Ye Xingyun, seorang keturunan dari klan Ye yang telah jatuh. Setelah klannya dihancurkan, Ye Xingyun bertekad untuk membangun kembali kehormatan keluarganya. Dia bergabung di mana dia mulai mengasah kekuatan dan kemampuannya sebagai seorang kultivator. Dalam perjalanannya, Ye Xingyun menghadapi termasuk konspirasi dan pertarungan dengan klan dan sekte lain. kekuatan, dan tekadnya, Ye Xingyun berusaha menyingkap rahasia di balik kehancuran klannya serta menemukan takdir sejatinya di dunia kultivasi yang berbahaya.'
 deskripsi : 'Download Batch Wonderland Subtitle Indonesia'
 keywords : 'Download Batch Wonderland Subtitle Indonesia'
 

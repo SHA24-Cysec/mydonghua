@@ -33,7 +33,7 @@ image : /img/post/spirit-guardian-s3.webp
 alt : 'Spirit Guardian Season 3'
 url: 'spirit-guardian-season-3'
 layout : postingan-donghua
-sinopsis : 'Kelanjutan dari seri Spirit Guardian'
+sinopsis : 'Zhang Shan terlibat dalam konflik antara kekuatan spiritual dan ajaran gelap Luosha. Pedang Xuan Huang yang disegel sejak zaman kuno mulai terkikis oleh keserakahan manusia. Zhang Shan membangkitkan kekuatan jiwa dalam tubuhnya untuk menyelamatkan Moon Shang Devil dari ancaman kekuatan gelap. Di musim ketiga, konflik antara Douhunwei dan ajaran Luosha semakin memanas, dan rahasia di balik pedang Xuan Huang mulai terungkap.'
 deskripsi : 'Download Batch Spirit Guardian Season 3 Subtitle Indonesia'
 keywords : 'Download Batch Spirit Guardian Season 3 Subtitle Indonesia'
 

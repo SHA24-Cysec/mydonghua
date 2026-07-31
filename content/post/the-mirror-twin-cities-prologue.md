@@ -34,7 +34,7 @@ image : /img/post/the-mirror-twin-cities-prologue.webp
 alt : 'The Mirror Twin Cities Prologue'
 url: 'the-mirror-twin-cities-prologue'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan awal mula legenda dua kota kembar yang terhubung oleh takdir dan konflik kuno. Cerita berfokus pada seorang gadis bernama Bai Ying, pewaris kerajaan Klan Bai, yang terjebak di tengah pertarungan politik dan kekuatan magis antara dua dunia yang berlawanan. Ketika dia bertemu Su Mo, seorang pangeran dari suku laut yang memiliki kekuatan misterius, takdir keduanya mulai terjalin dalam sebuah perjalanan penuh pengorbanan, cinta, dan pengkhianatan. Prolog ini mengungkap asal-usul konflik antar klan dan rahasia tersembunyi yang akan menentukan masa depan kedua kota tersebut'
+sinopsis : 'Mengisahkan awal mula legenda dua kota kembar yang terhubung oleh takdir dan konflik kuno. Cerita berfokus pada seorang gadis bernama Bai Ying, pewaris kerajaan Klan Bai, yang terjebak di tengah pertarungan politik dan kekuatan magis antara dua dunia yang berlawanan. Ketika dia bertemu Su Mo, seorang pangeran dari suku laut yang memiliki, takdir keduanya mulai terjalin dalam sebuah pengorbanan, cinta, dan pengkhianatan. Prolog ini mengungkap asal-usul konflik antar klan dan rahasia tersembunyi yang akan menentukan masa depan kedua kota tersebut.'
 deskripsi : 'Download Batch The Mirror: Twin Cities Prologue Subtitle Indonesia'
 keywords : 'Download Batch The Mirror: Twin Cities Prologue Subtitle Indonesia'
 

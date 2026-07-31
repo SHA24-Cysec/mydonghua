@@ -38,7 +38,7 @@ image : /img/post/fox-spirit-matchmaker-season-9.webp
 alt : 'Fox Spirit Matchmaker Season 9'
 url: 'fox-spirit-matchmaker-season-9'
 layout : postingan-donghua
-sinopsis : 'Di Season 9, kisah kembali berpusat pada misi para matchmaker rubah dari klan Tushan. Mereka mendapat tugas untuk menyatukan sepasang jiwa dari dua dunia – manusia dan yaoguai – yang cinta lamanya terpecah akibat ingatan masa lalu yang hilang. Sementara itu, Bai Yuechu dan Tushan Susu menghadapi tantangan baru: mengurai misteri yang mengancam keseimbangan antara kedua dunia.'
+sinopsis : 'Di Season 9, kisah kembali berpusat pada misi para matchmaker rubah dari klan Tushan. Mereka mendapat tugas untuk menyatukan sepasang jiwa dari dua dunia. manusia dan yaoguai. yang cinta lamanya terpecah akibat ingatan masa lalu yang hilang. Sementara itu, Bai Yuechu dan Tushan Susu menghadapi tantangan baru: mengurai misteri yang mengancam keseimbangan antara kedua dunia.'
 deskripsi : 'Download Batch Fox Spirit Matchmaker Season 9 Subtitle Indonesia'
 keywords : 'Download Batch Fox Spirit Matchmaker Season 9 Subtitle Indonesia'
 

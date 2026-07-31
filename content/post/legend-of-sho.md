@@ -26,7 +26,7 @@ image : /img/post/legend-of-sho.webp
 alt : 'Legend of Sho'
 url: 'legend-of-sho'
 layout : postingan-donghua
-sinopsis : 'Legend of Sho bercerita tentang perjalanan Sho, seorang pemuda pemberani yang hidup di dunia yang penuh dengan sihir dan makhluk mistis. Setelah desanya dihancurkan oleh kekuatan gelap yang misterius, Sho bertekad untuk mencari kebenaran dan membalas dendam. Dalam perjalanannya, Sho bertemu dengan sekutu yang memiliki kekuatan unik, termasuk seorang penyihir muda dan seorang pendekar yang tangguh. Bersama-sama, mereka menghadapi berbagai rintangan, mengungkap rahasia masa lalu Sho, dan menghadapi musuh yang jauh lebih kuat daripada yang mereka bayangkan. Dengan tekad dan keberanian, Sho berusaha mengembalikan kedamaian di dunia yang hampir terjerumus dalam kegelapan.'
+sinopsis : 'Legend of Sho perjalanan Sho, seorang pemuda pemberani yang hidup di dunia yang penuh dengan sihir dan makhluk mistis. Setelah desanya dihancurkan oleh kekuatan gelap yang misterius, Sho bertekad untuk mencari kebenaran dan membalas dendam. Dalam perjalanannya, Sho bertemu dengan sekutu yang memiliki kekuatan unik, termasuk seorang penyihir muda dan seorang pendekar yang tangguh. Bersama-sama, mereka menghadapi mengungkap rahasia masa lalu Sho, dan menghadapi musuh daripada yang mereka bayangkan. Sho berusaha mengembalikan kedamaian di dunia yang hampir terjerumus dalam kegelapan.'
 deskripsi : 'Download Batch Legend of Sho Subtitle Indonesia'
 keywords : 'Download Batch Legend of Sho Subtitle Indonesia'
 

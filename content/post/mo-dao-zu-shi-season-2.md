@@ -39,7 +39,7 @@ image : /img/post/mo-dao-zu-shi-season-2.webp
 alt : 'Mo Dao Zu Shi Season 2'
 url: 'mo-dao-zu-shi-season-2'
 layout : postingan-donghua
-sinopsis : 'Donghua Mo Dao Zu Shi Season 2 melanjutkan perjalanan Wei Wuxian dan Lan Wangji dalam mengungkap misteri di balik potongan tubuh misterius yang mereka temukan. Penyelidikan membawa mereka ke berbagai tempat dan membuka kembali rahasia kelam yang melibatkan banyak klan besar. Di tengah pencarian itu, masa lalu Wei Wuxian mulai terungkap, termasuk konflik yang pernah menyeretnya ke jalan kultivasi iblis dan membuat namanya dipenuhi kontroversi.'
+sinopsis : 'Donghua Mo Dao Zu Shi Season 2 melanjutkan perjalanan Wei Wuxian dan Lan Wangji dalam mengungkap misteri di balik potongan tubuh misterius yang mereka temukan. Penyelidikan membawa mereka ke berbagai tempat dan membuka kembali rahasia kelam yang melibatkan banyak klan besar. Di tengah pencarian itu, masa lalu Wei Wuxian, termasuk konflik yang pernah menyeretnya ke jalan kultivasi iblis dan membuat namanya dipenuhi kontroversi.'
 deskripsi : 'Download Batch Mo Dao Zu Shi Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Mo Dao Zu Shi Season 2 Subtitle Indonesia'
 

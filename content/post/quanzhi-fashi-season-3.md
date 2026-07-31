@@ -35,7 +35,7 @@ image : /img/post/quanzhi-fashi-s3.webp
 alt : 'Quanzhi Fashi Season 3'
 url: 'quanzhi-fashi-season-3'
 layout : postingan-donghua
-sinopsis : 'Setelah berhasil menguasai sihir api dan petir, Mo Fan melanjutkan perjalanannya untuk menjadi penyihir sejati. Di musim ketiga ini, ia kembali ke kota kelahirannya, Bo City, yang kini hancur akibat serangan monster. Bersama teman-temannya, Mo Fan bergabung dalam misi berbahaya untuk melindungi kota-kota manusia dari ancaman sihir gelap dan serangan para monster. Namun, tantangan baru muncul saat rahasia tentang kekuatan spesial Mo Fan perlahan terungkap, membuatnya menjadi target kelompok misterius yang kuat. Di tengah konflik dan pertarungan sengit, Mo Fan harus mempertaruhkan segalanya demi melindungi orang-orang yang ia sayangi.'
+sinopsis : 'Setelah berhasil menguasai sihir api dan petir, Mo Fan melanjutkan perjalanannya untuk menjadi penyihir sejati. Di musim ketiga ini, ia kembali ke kota kelahirannya, Bo City, yang kini hancur akibat serangan monster. Bersama teman-temannya, Mo Fan bergabung dalam misi berbahaya untuk melindungi kota-kota manusia dari ancaman sihir gelap dan serangan para monster. Namun, tantangan baru muncul saat rahasia tentang kekuatan spesial Mo Fan, membuatnya menjadi target kelompok misterius yang kuat. Di tengah konflik dan pertarungan sengit, Mo Fan harus mempertaruhkan segalanya demi melindungi orang-orang yang ia sayangi.'
 deskripsi : 'Download Batch Quanzhi Fashi Season 3 Subtitle Indonesia'
 keywords : 'Download Batch Quanzhi Fashi Season 3 Subtitle Indonesia'
 

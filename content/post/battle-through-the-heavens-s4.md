@@ -37,7 +37,7 @@ image : /img/post/btth-s4.webp
 alt : 'Battle Through the Heavens S4'
 url: 'battle-through-the-heavens-s4'
 layout : postingan-donghua
-sinopsis : 'Setelah perjalanan panjangnya untuk menjadi lebih kuat, Xiao Yan akhirnya tiba di Akademi Jianan. Di sana, ia bertemu kembali dengan teman-temannya dan terus mengasah kemampuannya. Namun, perjalanannya tidak mudah, karena ancaman dari sekte-sekte kuat dan musuh lamanya terus mengintai. Di season ini, Xiao Yan semakin mendekati tujuannya untuk membalas dendam terhadap keluarga Misty Cloud dan menemukan rahasia yang lebih dalam tentang api surgawi. Dengan kekuatan yang terus berkembang, pertarungan-pertarungan epik pun tak terhindarkan. Akankah Xiao Yan mampu mengatasi rintangan dan mencapai puncak kekuatannya?'
+sinopsis : 'Setelah perjalanan panjangnya untuk menjadi lebih kuat, Xiao Yan akhirnya tiba di Akademi Jianan. Di sana, ia bertemu kembali dengan teman-temannya dan terus mengasah kemampuannya. Namun, perjalanannya tidak mudah, karena ancaman dari sekte-sekte kuat dan musuh lamanya terus mengintai. Di season ini, Xiao Yan semakin mendekati tujuannya untuk membalas dendam terhadap keluarga Misty Cloud dan menemukan rahasia yang lebih dalam tentang api surgawi. pertarungan-pertarungan epik pun tak terhindarkan.'
 deskripsi : 'Download Batch Battle Through the Heavens S4 Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens S4 Subtitle Indonesia'
 

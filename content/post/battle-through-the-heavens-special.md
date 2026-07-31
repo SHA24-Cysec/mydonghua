@@ -36,7 +36,7 @@ image : /img/post/btth-special.webp
 alt : 'Battle Through the Heavens Special'
 url: 'battle-through-the-heavens-special'
 layout : postingan-donghua
-sinopsis : 'Battle Through the Heavens Special menceritakan fase penting perjalanan Xiao Yan di luar cerita utama. Kisah ini fokus pada konflik besar yang membentuk kekuatannya, termasuk pertarungan hidup mati dan keputusan berisiko tinggi. Xiao Yan menghadapi musuh yang jauh lebih kuat, sambil belajar mengendalikan teknik dan api legendaris. Hubungannya dengan sekutu dan gurunya diuji dalam tekanan nyata. Special ini menonjolkan proses pendewasaan Xiao Yan sebelum ia melangkah ke level pertarungan yang lebih brutal.'
+sinopsis : 'Battle Through the Heavens Special menceritakan fase penting perjalanan Xiao Yan di luar cerita utama. Kisah ini fokus pada konflik besar yang membentuk kekuatannya, termasuk pertarungan hidup mati dan keputusan berisiko tinggi. Xiao Yan menghadapi musuh, sambil belajar mengendalikan teknik dan api legendaris. Hubungannya dengan sekutu dan gurunya diuji dalam tekanan nyata. Special ini menonjolkan proses pendewasaan Xiao Yan sebelum ia melangkah ke level pertarungan yang lebih brutal.'
 deskripsi : 'Download Batch Battle Through the Heavens Special Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens Special Subtitle Indonesia'
 

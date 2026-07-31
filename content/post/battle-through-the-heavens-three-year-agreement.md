@@ -34,7 +34,7 @@ image : /img/post/battle-through-the-heavens-three-year-agreement.webp
 alt : 'Battle Through the Heavens: Three Year Agreement'
 url: 'battle-through-the-heavens-three-year-agreement'
 layout : postingan-donghua
-sinopsis : 'Battle Through the Heavens: Three Year Agreement menceritakan Xiao Yan yang kembali ke Yun Lan Sect untuk menepati janji tiga tahun yang pernah ia buat. Dulu ia dipandang lemah dan dihina. Kini ia datang dengan kekuatan dan mental yang jauh berbeda. Xiao Yan menghadapi Nalan Yanran dalam duel terbuka. Pertarungan ini bukan soal menang atau kalah. Ini tentang harga diri, tekad, dan pembuktian jalan hidup yang ia pilih. Di balik duel, konflik antar sekte mulai terlihat. Ancaman baru muncul. Masa lalu, ambisi, dan kekuasaan saling bertabrakan.'
+sinopsis : 'Battle Through the Heavens: Three Year Agreement menceritakan Xiao Yan yang kembali ke Yun Lan Sect untuk menepati janji tiga tahun yang pernah ia buat. Dulu ia dipandang lemah dan dihina. Kini ia datang tekad, dan pembuktian jalan hidup yang ia pilih. Di balik duel, konflik antar sekte mulai terlihat. Ancaman baru muncul. Masa lalu, ambisi, dan kekuasaan saling bertabrakan.'
 deskripsi : 'Download Batch Battle Through the Heavens: Three Year Agreement Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens: Three Year Agreement Subtitle Indonesia'
 

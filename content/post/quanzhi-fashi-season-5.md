@@ -35,7 +35,7 @@ image : /img/post/quanzhi-fashi-s5.webp
 alt : 'Quanzhi Fashi Season 5'
 url: 'quanzhi-fashi-season-5'
 layout : postingan-donghua
-sinopsis : 'Musim kelima dari Quanzhi Fashi melanjutkan kisah Mo Fan, seorang penyihir dengan kekuatan ganda yang langka. Kali ini, ia menghadapi ancaman yang lebih berbahaya dari sebelumnya, ketika kekuatan jahat mulai mengguncang dunia sihir. Di tengah pelatihan intens dan misi penyelamatan, Mo Fan harus melindungi orang-orang terdekatnya sambil terus mengembangkan sihir api dan petir miliknya. Pertarungan semakin intens, aliansi terbentuk, dan rahasia besar tentang dunia sihir mulai terungkap. Musim ini menghadirkan aksi yang lebih seru, strategi yang lebih kompleks, dan perkembangan karakter yang makin matang.'
+sinopsis : 'Musim kelima dari Quanzhi Fashi melanjutkan kisah Mo Fan, seorang penyihir ia menghadapi ancaman yang lebih berbahaya dari sebelumnya, ketika kekuatan jahat mulai mengguncang dunia sihir. Di tengah pelatihan intens dan misi penyelamatan, Mo Fan harus melindungi orang-orang terdekatnya sambil terus mengembangkan sihir api dan petir miliknya. Pertarungan semakin intens, aliansi terbentuk, dan rahasia besar tentang dunia sihir. Musim ini menghadirkan aksi yang lebih seru, strategi yang lebih kompleks, dan perkembangan karakter yang makin matang.'
 deskripsi : 'Download Batch Quanzhi Fashi Season 5 Subtitle Indonesia'
 keywords : 'Download Batch Quanzhi Fashi Season 5 Subtitle Indonesia'
 

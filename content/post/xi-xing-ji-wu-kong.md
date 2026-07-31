@@ -34,7 +34,7 @@ image : /img/post/xi-xing-ji-wu-kong.webp
 alt : 'Xi Xing Ji: Wu Kong'
 url: 'xi-xing-ji-wu-kong'
 layout : postingan-donghua
-sinopsis : 'Xi Xing Ji: Wu Kong adalah kelanjutan dari kisah perjalanan epik Sun Wu Kong, Sang Raja Kera, yang kali ini menyingkap sisi lain dari petualangan klasiknya. Cerita berfokus pada kebangkitan Wu Kong setelah melalui berbagai penderitaan dan pengkhianatan. Ia bukan sekadar pahlawan, melainkan sosok yang penuh luka batin, amarah, sekaligus tekad untuk mencari kebebasan sejati. Dalam perjalanan ini, Wu Kong tidak hanya harus menghadapi musuh-musuh kuat dari dunia para dewa dan iblis, tetapi juga melawan nasib yang seolah sudah ditentukan baginya. Perjalanannya menjadi simbol perlawanan terhadap takdir, di mana keberanian, persahabatan, dan pengorbanan menjadi inti dari kisah.'
+sinopsis : 'Xi Xing Ji: Wu Kong adalah kelanjutan dari kisah Sun Wu Kong, Sang Raja Kera, yang kali ini menyingkap sisi lain dari petualangan klasiknya. Cerita berfokus pada kebangkitan Wu Kong setelah melalui berbagai penderitaan dan pengkhianatan. Ia bukan sekadar pahlawan, melainkan sosok yang penuh luka batin, amarah, sekaligus tekad untuk mencari kebebasan sejati. Dalam perjalanan ini, Wu Kong melawan nasib yang seolah sudah ditentukan baginya. Perjalanannya menjadi simbol perlawanan terhadap takdir, di mana keberanian, persahabatan, dan pengorbanan menjadi inti dari kisah.'
 deskripsi : 'Download Batch Xi Xing Ji: Wu Kong Subtitle Indonesia'
 keywords : 'Download Batch Xi Xing Ji: Wu Kong Subtitle Indonesia'
 

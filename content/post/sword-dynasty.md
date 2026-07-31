@@ -25,7 +25,7 @@ image : /img/post/sword-dynasty.webp
 alt : 'Sword Dynasty'
 url: 'sword-dynasty'
 layout : postingan-donghua
-sinopsis : 'Sword Dynasty mengisahkan tentang Ding Ning, seorang pemuda yang tampak biasa namun menyimpan tekad besar untuk menjatuhkan Dinasti Qin yang kejam dan menindas. Di balik wajah tenangnya, tersembunyi ambisi kuat untuk menantang para ahli pedang ternama dan mengubah tatanan dunia persilatan. Dengan latar penuh intrik politik dan pertarungan pedang yang memukau, Ding Ning menapaki jalan balas dendam dan keadilan sambil mengungkap rahasia besar tentang dirinya dan masa lalu kelam yang ia warisi.'
+sinopsis : 'Ding Ning, seorang pemuda yang tampak biasa namun menyimpan tekad besar untuk menjatuhkan Dinasti Qin yang kejam dan menindas. Di balik wajah tenangnya, tersembunyi ambisi kuat untuk menantang para ahli pedang ternama dan mengubah tatanan dunia persilatan. Dengan latar politik dan pertarungan pedang yang memukau, Ding Ning menapaki jalan balas dendam dan keadilan sambil mengungkap rahasia besar tentang dirinya dan masa lalu kelam yang ia warisi.'
 deskripsi : 'Download Batch Sword Dynasty Subtitle Indonesia'
 keywords : 'Download Batch Sword Dynasty Subtitle Indonesia'
 

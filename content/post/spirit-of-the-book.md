@@ -26,7 +26,7 @@ image : /img/post/spirit-of-the-book.webp
 alt : 'Spirit of the Book'
 url: 'spirit-of-the-book'
 layout : postingan-donghua
-sinopsis : 'Spirit of the Book (书灵记) bercerita tentang Yang Shu, seorang pemuda biasa yang hidupnya berubah drastis setelah menemukan sebuah buku misterius yang dihuni oleh roh bernama Shu Ling. Shu Ling adalah roh yang cerdas dan memiliki kekuatan magis yang terikat pada buku tersebut. Dengan bantuan Shu Ling, Yang Shu mulai mengembangkan kemampuannya dalam seni bela diri dan ilmu sihir untuk menghadapi berbagai ancaman dan misteri yang muncul. Sepanjang perjalanannya, Yang Shu bertemu dengan teman dan musuh yang memperkuat tekadnya untuk melindungi dunia dari kekuatan jahat yang ingin merebut kekuatan buku tersebut. Kisah ini dipenuhi dengan elemen petualangan, persahabatan, dan pertarungan epik yang membentuk perjalanan Yang Shu menjadi seorang pahlawan sejati.'
+sinopsis : 'Spirit of the Book (书灵记) Yang Shu, seorang pemuda biasa yang hidupnya berubah drastis setelah menemukan sebuah buku misterius yang dihuni oleh roh bernama Shu Ling. Shu Ling adalah roh yang cerdas dan memiliki kekuatan magis yang terikat pada buku tersebut. Yang Shu mulai mengembangkan kemampuannya dalam seni bela diri dan ilmu sihir untuk menghadapi ancaman dan misteri yang muncul. Sepanjang perjalanannya, Yang Shu bertemu dengan teman dan musuh yang memperkuat tekadnya untuk melindungi dunia dari kekuatan jahat yang ingin merebut kekuatan buku tersebut. Kisah ini dipenuhi persahabatan, dan pertarungan epik yang membentuk perjalanan Yang Shu menjadi seorang pahlawan sejati.'
 deskripsi : 'Download Batch Spirit of the Book Subtitle Indonesia'
 keywords : 'Download Batch Spirit of the Book Subtitle Indonesia'
 

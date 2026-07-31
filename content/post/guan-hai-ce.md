@@ -28,7 +28,7 @@ image : /img/post/guan-hai-ce.webp
 alt : 'Guan Hai Ce'
 url: 'guan-hai-ce'
 layout : postingan-donghua
-sinopsis : 'Cerita ini mengikuti petualangan Ling Yao, seorang penjaga hutan, dan Ji Kuang, seorang tuan muda petani. Mereka ditugaskan oleh Mu Xun, tuan dari Xu Guguan, untuk menerobos pengepungan yang dilakukan oleh jenderal musuh, Yan Shituo. Dalam perjalanan mereka menuju kerajaan untuk meminta bantuan, Ling Yao dan Ji Kuang menghadapi berbagai rintangan dan tantangan yang menguji keberanian serta ketangguhan mereka. Melalui misi ini, karakter mereka berkembang; Ling Yao yang awalnya ceria menjadi lebih dewasa, sementara Ji Kuang yang serius belajar untuk lebih peduli terhadap orang lain.'
+sinopsis : 'Petualangan Ling Yao, seorang penjaga hutan, dan Ji Kuang, seorang tuan muda petani. Mereka ditugaskan oleh Mu Xun, tuan dari Xu Guguan, untuk menerobos pengepungan yang dilakukan oleh jenderal musuh, Yan Shituo. Dalam perjalanan mereka menuju kerajaan untuk meminta bantuan, Ling Yao dan Ji Kuang menghadapi dan tantangan yang menguji keberanian serta ketangguhan mereka. Melalui misi ini, karakter mereka berkembang; Ling Yao yang awalnya ceria menjadi lebih dewasa, sementara Ji Kuang yang serius belajar untuk lebih peduli terhadap orang lain.'
 deskripsi : 'Download Batch Guan Hai Ce Subtitle Indonesia'
 keywords : 'Download Batch Guan Hai Ce Subtitle Indonesia'
 

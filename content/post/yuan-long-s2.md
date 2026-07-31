@@ -35,7 +35,7 @@ image : /img/post/yuan-long.s2.webp
 alt : 'Yuan Long S2'
 url: 'yuan-long-s2'
 layout : postingan-donghua
-sinopsis : 'Setelah berhasil bertahan di dunia yang penuh bahaya, Wang Sheng, seorang prajurit pasukan khusus yang terjebak dalam dunia kultivasi, terus berusaha mencari jalan pulang. Namun, perjalanannya semakin sulit ketika ia harus menghadapi musuh yang lebih kuat dan konspirasi yang mengancam keseimbangan dunia. Dengan kecerdasan dan keterampilan tempurnya, Wang Sheng menemukan sekutu baru sekaligus menghadapi tantangan yang menguji batas kekuatannya. Di musim kedua ini, misteri di balik dunia Yuan Long semakin terungkap, membawa Wang Sheng lebih dekat ke rahasia yang bisa menentukan nasibnya. Apakah dia mampu bertahan dan menemukan jalan kembali, atau justru semakin terikat dengan takdir dunia kultivasi?'
+sinopsis : 'Setelah berhasil bertahan di dunia yang, Wang Sheng, seorang prajurit pasukan khusus yang terjebak dalam dunia kultivasi, terus berusaha mencari jalan pulang. Namun, perjalanannya semakin sulit ketika ia harus menghadapi musuh yang lebih kuat dan konspirasi yang mengancam keseimbangan dunia. Wang Sheng sekaligus menghadapi tantangan yang menguji batas kekuatannya. Di musim kedua ini, misteri di balik dunia Yuan Long semakin terungkap, membawa Wang Sheng lebih dekat ke rahasia yang bisa menentukan nasibnya.'
 deskripsi : 'Download Batch Yuan Long S2 Subtitle Indonesia'
 keywords : 'Download Batch Yuan Long S2 Subtitle Indonesia'
 

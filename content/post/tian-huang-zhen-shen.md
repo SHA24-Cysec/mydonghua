@@ -33,7 +33,7 @@ image : /img/post/tian-huang-zhen-shen.webp
 alt : 'Tian Huang Zhen Shen'
 url: 'tian-huang-zhen-shen'
 layout : postingan-donghua
-sinopsis : 'Donghua Tian Huang Zhen Shen mengisahkan perjalanan seorang kultivator muda yang berjuang menembus batas kekuatannya di dunia yang dipenuhi persaingan antar klan, rahasia kuno, dan perebutan kekuasaan. Dengan tekad kuat dan bakat yang terus berkembang, ia menghadapi berbagai musuh tangguh serta rintangan berbahaya demi mencapai puncak kekuatan sejati. Dalam prosesnya, ia tidak hanya mencari kekuasaan, tetapi juga mengungkap misteri besar yang dapat mengubah keseimbangan dunia kultivasi.'
+sinopsis : 'Perjalanan seorang kultivator muda yang berjuang menembus batas kekuatannya di dunia yang dipenuhi persaingan antar klan, rahasia kuno, dan perebutan kekuasaan. ia menghadapi tangguh serta rintangan berbahaya demi mencapai puncak kekuatan sejati. Dalam prosesnya, ia mengungkap misteri besar yang dapat mengubah keseimbangan dunia kultivasi.'
 deskripsi : 'Download Batch Tian Huang Zhen Shen Subtitle Indonesia'
 keywords : 'Download Batch Tian Huang Zhen Shen Subtitle Indonesia'
 

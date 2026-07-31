@@ -34,7 +34,7 @@ image : /img/post/make-money-to-be-king.webp
 alt : 'Make Money to Be King'
 url: 'make-money-to-be-king'
 layout : postingan-donghua
-sinopsis : 'Make Money To Be King mengisahkan perjalanan seorang pemuda yang menyadari bahwa kekuatan dan status tidak selalu menjadi penentu kesuksesan. Dengan kecerdasan bisnis, keberanian mengambil risiko, dan kemampuan membaca peluang, ia berusaha membangun kekayaannya dari nol di dunia yang penuh persaingan. Dalam perjalanannya, ia menghadapi berbagai tantangan, mulai dari intrik para pesaing, konflik kepentingan, hingga ancaman dari pihak yang ingin menggagalkan ambisinya. Namun, setiap rintangan justru menjadi pelajaran berharga yang membantunya berkembang menjadi sosok yang lebih tangguh.'
+sinopsis : 'Seorang pemuda yang menyadari bahwa kekuatan dan status tidak selalu menjadi penentu kesuksesan. keberanian mengambil risiko, dan kemampuan membaca peluang, ia berusaha membangun kekayaannya dari nol di dunia yang penuh persaingan. Dalam perjalanannya, ia menghadapi mulai dari intrik para pesaing, konflik kepentingan, hingga ancaman dari pihak yang ingin menggagalkan ambisinya. Namun, setiap rintangan justru menjadi pelajaran berharga yang membantunya berkembang menjadi sosok yang lebih tangguh.'
 deskripsi : 'Download Batch Make Money to Be King Subtitle Indonesia'
 keywords : 'Download Batch Make Money to Be King Subtitle Indonesia'
 

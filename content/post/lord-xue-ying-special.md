@@ -37,7 +37,7 @@ image : /img/post/lord-xue-ying.webp
 alt : 'Lord Xue Ying Special'
 url: 'lord-xue-ying-special'
 layout : postingan-donghua
-sinopsis : 'Donghua "Lord Xue Ying Spesial" melanjutkan kisah Xue Ying, seorang pemuda berbakat yang berjuang melewati berbagai rintangan demi melindungi orang-orang yang ia cintai dan mencapai puncak kekuatan. Setelah melewati banyak pertarungan sengit, Xue Ying kini menghadapi musuh yang lebih kuat serta rahasia yang mengancam dunia. Dengan tekad baja dan keinginan untuk mengungkap kebenaran, ia terus melangkah di jalur kultivasi, menghadapi pertempuran yang akan menguji batas kemampuannya.'
+sinopsis : 'Donghua "Lord Xue Ying Spesial" melanjutkan kisah Xue Ying, seorang pemuda berbakat yang berjuang melewati demi melindungi orang-orang yang ia cintai dan mencapai puncak kekuatan. Setelah melewati banyak pertarungan sengit, Xue Ying kini menghadapi musuh yang lebih kuat serta rahasia yang mengancam dunia. ia terus melangkah di jalur kultivasi, menghadapi pertempuran yang akan menguji batas kemampuannya.'
 deskripsi : 'Download Batch Lord Xue Ying Special Subtitle Indonesia'
 keywords : 'Download Batch Lord Xue Ying Special Subtitle Indonesia'
 

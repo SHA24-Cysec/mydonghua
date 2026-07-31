@@ -34,7 +34,7 @@ image : /img/post/millenniums-of-warring-states.webp
 alt : 'Millenniums of Warring States'
 url: 'millenniums-of-warring-states'
 layout : postingan-donghua
-sinopsis : 'Donghua Millenniums of Warring States mengisahkan pergolakan besar di daratan Tiongkok kuno saat berbagai negara saling berebut kekuasaan. Di tengah kekacauan perang dan intrik politik, muncul tokoh-tokoh dengan ambisi besar yang berjuang demi kejayaan negeri mereka. Pertarungan strategi, perebutan wilayah, dan konflik antar kerajaan menjadi inti cerita, memperlihatkan bagaimana kecerdikan dan kekuatan menentukan nasib sebuah bangsa. Donghua ini menghadirkan kisah sejarah yang dipadukan dengan drama peperangan, menampilkan perjalanan penuh konflik menuju penyatuan wilayah yang penuh pengorbanan.'
+sinopsis : 'Pergolakan besar di daratan Tiongkok kuno saat berbagai negara saling berebut kekuasaan. Di tengah kekacauan perang dan intrik politik, muncul tokoh-tokoh perebutan wilayah, dan konflik antar kerajaan menjadi inti cerita, memperlihatkan bagaimana kecerdikan dan kekuatan menentukan nasib sebuah bangsa.'
 deskripsi : 'Download Batch Millenniums of Warring States Subtitle Indonesia'
 keywords : 'Download Batch Millenniums of Warring States Subtitle Indonesia'
 

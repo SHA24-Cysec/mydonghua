@@ -26,7 +26,7 @@ image : /img/post/law-of-the-devil.webp
 alt : 'Law of the Devil'
 url: 'law-of-the-devil'
 layout : postingan-donghua
-sinopsis : 'Law of the Devil mengisahkan perjalanan seorang pria modern bernama Chen Rui, yang tanpa sengaja terjerat dalam ritual misterius dan terlempar ke dunia lain. Dunia tersebut penuh dengan sihir, iblis, dan intrik kekuasaan. Namun, nasib memberinya kejutan besar: roh dari seorang iblis kuno ikut menyatu dengannya, membuat Chen Rui memperoleh kekuatan yang berada di luar nalar manusia biasa. Berbekal pengetahuan modern, kecerdikan, serta kekuatan baru yang bersemayam di dalam dirinya, Chen Rui harus beradaptasi dengan lingkungan yang keras. Ia berhadapan dengan para bangsawan, penyihir, hingga ras-ras magis yang menyimpan ambisi masing-masing. Perlahan, identitasnya sebagai "iblis" yang berbeda dari legenda membuat banyak pihak tertarik sekaligus takut.'
+sinopsis : 'Seorang pria modern bernama Chen Rui, yang tanpa sengaja terjerat dalam ritual misterius dan terlempar ke dunia lain. Dunia tersebut penuh iblis, dan intrik kekuasaan. Namun, nasib memberinya kejutan besar: roh dari seorang iblis kuno ikut menyatu dengannya, membuat Chen Rui memperoleh kekuatan yang berada di luar nalar manusia biasa. Berbekal pengetahuan modern, kecerdikan, serta kekuatan baru yang bersemayam di dalam dirinya, Chen Rui harus beradaptasi dengan lingkungan yang keras. Ia berhadapan penyihir, hingga ras-ras magis yang menyimpan ambisi masing-masing. Perlahan, identitasnya sebagai "iblis" yang berbeda dari legenda membuat banyak pihak tertarik sekaligus takut.'
 deskripsi : 'Download Batch Law of the Devil Subtitle Indonesia'
 keywords : 'Download Batch Law of the Devil Subtitle Indonesia'
 

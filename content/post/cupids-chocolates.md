@@ -35,7 +35,7 @@ image : /img/post/cupids-chocolates.webp
 alt : 'Cupids Chocolates'
 url: 'cupids-chocolates'
 layout : postingan-donghua
-sinopsis : 'Kisah Jiang Hao Yi, seorang siswa biasa yang tiba-tiba menjadi pusat perhatian di sekolahnya. Suatu hari, tanpa alasan yang jelas, ia mendadak dikelilingi oleh gadis-gadis cantik yang mengklaim sebagai pacarnya atau memiliki hubungan masa lalu dengannya. Kebingungan, Jiang Hao Yi segera mengetahui bahwa semua ini terjadi akibat "Cokelat Cupid", sebuah fenomena misterius yang membuat para gadis memiliki kenangan cinta dengannya—meskipun ia sama sekali tidak mengingatnya. Kini, ia harus mencari cara untuk mengungkap rahasia di balik kejadian aneh ini, sambil berusaha bertahan dari berbagai situasi romantis dan kocak yang terjadi di sekelilingnya.'
+sinopsis : 'Kisah Jiang Hao Yi, seorang siswa biasa yang tiba-tiba menjadi pusat perhatian di sekolahnya. Suatu hari, tanpa alasan yang jelas, ia mendadak dikelilingi oleh gadis-gadis cantik yang mengklaim sebagai pacarnya atau memiliki hubungan masa lalu dengannya. Kebingungan, Jiang Hao Yi segera mengetahui bahwa semua ini terjadi akibat "Cokelat Cupid", sebuah fenomena misterius yang membuat para gadis memiliki kenangan cinta dengannya. meskipun ia sama sekali tidak mengingatnya. Kini, ia harus mencari cara untuk mengungkap rahasia di balik kejadian aneh ini, sambil berusaha bertahan dari berbagai situasi romantis dan kocak yang terjadi di sekelilingnya.'
 deskripsi : 'Download Batch Cupids Chocolates Subtitle Indonesia'
 keywords : 'Download Batch Cupids Chocolates Subtitle Indonesia'
 

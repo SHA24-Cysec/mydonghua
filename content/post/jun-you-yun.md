@@ -27,7 +27,7 @@ image : /img/post/jun-you-yun.webp
 alt : 'Jun You Yun'
 url: 'jun-you-yun'
 layout : postingan-donghua
-sinopsis : 'Donghua Jun You Yun mengisahkan perjalanan sekelompok pemuda yang berasal dari latar belakang berbeda namun memiliki cita-cita besar di dunia persilatan. Mereka dipertemukan oleh takdir, lalu menapaki jalan penuh intrik, persahabatan, dan pertarungan demi membangun nama mereka sendiri di jianghu.'
+sinopsis : 'Perjalanan sekelompok pemuda yang berasal dari latar belakang berbeda namun memiliki cita-cita besar di dunia persilatan. Mereka dipertemukan oleh takdir, lalu menapaki jalan, persahabatan, dan pertarungan demi membangun nama mereka sendiri di jianghu.'
 deskripsi : 'Download Batch Jun You Yun Subtitle Indonesia'
 keywords : 'Download Batch Jun You Yun Subtitle Indonesia'
 

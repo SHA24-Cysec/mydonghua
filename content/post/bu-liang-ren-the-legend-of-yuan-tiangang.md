@@ -26,7 +26,7 @@ image : /img/post/bu-liang-ren-the-legend-of-yuan-tiangang.webp
 alt : 'Bu Liang Ren the Legend of Yuan Tiangang'
 url: 'bu-liang-ren-the-legend-of-yuan-tiangang'
 layout : postingan-donghua
-sinopsis : 'Cerita ini mengikuti Yuan Tiangang, seorang ahli ramalan dan pemecah misteri, yang terlibat dalam konspirasi gelap yang menyelimuti dunia manusia dan roh. Dalam perjalanan membongkar rahasia-rahasia tersembunyi, Yuan Tiangang berhadapan dengan berbagai makhluk mistis, intrik politik, dan konflik antar sekte. Dengan kecerdasan dan kemampuannya, ia berusaha menyeimbangkan dunia manusia dan dunia spiritual, sekaligus mengungkap kebenaran di balik kekacauan yang terjadi.'
+sinopsis : 'Yuan Tiangang, seorang ahli ramalan dan pemecah misteri, yang terlibat dalam konspirasi gelap yang menyelimuti dunia manusia dan roh. Dalam perjalanan membongkar rahasia-rahasia tersembunyi, Yuan Tiangang berhadapan intrik politik, dan konflik antar sekte. ia berusaha menyeimbangkan dunia manusia dan dunia spiritual, sekaligus mengungkap kebenaran di balik kekacauan yang terjadi.'
 deskripsi : 'Download Batch Bu Liang Ren the Legend of Yuan Tiangang Subtitle Indonesia'
 keywords : 'Download Batch Bu Liang Ren the Legend of Yuan Tiangang Subtitle Indonesia'
 

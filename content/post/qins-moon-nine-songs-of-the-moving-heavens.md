@@ -27,7 +27,7 @@ image : /img/post/qins-moon-nine-songs-of-the-moving-heavens.webp
 alt : 'Qins Moon Nine Songs of the Moving Heavens'
 url: 'qins-moon-nine-songs-of-the-moving-heavens'
 layout : postingan-donghua
-sinopsis : 'Qin’s Moon: Nine Songs of the Moving Heavens adalah prekuel dari seri utama Qin’s Moon (The Legend of Qin) yang berfokus pada masa awal Dinasti Qin ketika negara-negara di Tiongkok masih saling bersaing memperebutkan kekuasaan. Cerita ini menyoroti perjalanan dan intrik politik di Kerajaan Han, terutama kisah tentang Han Fei—pangeran yang cerdas, berwawasan luas, namun terjebak dalam konflik istana. Di sisi lain, muncul tokoh-tokoh penting dari organisasi rahasia Yin-Yang Clan yang memainkan peran besar dalam pergulatan politik dan strategi. Pertarungan tidak hanya terjadi melalui pedang, tetapi juga lewat tipu daya, aliansi tersembunyi, dan perebutan pengaruh di balik layar.'
+sinopsis : 'Qin’s Moon: Nine Songs of the Moving Heavens adalah prekuel dari seri utama Qin’s Moon (The Legend of Qin) yang berfokus pada masa awal Dinasti Qin ketika negara-negara di Tiongkok masih saling bersaing memperebutkan kekuasaan. Cerita ini menyoroti perjalanan dan intrik politik di Kerajaan Han, terutama kisah tentang Han Fei. pangeran yang cerdas, berwawasan luas, namun terjebak dalam konflik istana. Di sisi lain, muncul tokoh-tokoh penting dari organisasi rahasia Yin-Yang Clan yang memainkan peran besar dalam pergulatan politik dan strategi. Pertarungan lewat tipu daya, aliansi tersembunyi, dan perebutan pengaruh di balik layar.'
 deskripsi : 'Download Batch Qins Moon Nine Songs of the Moving Heavens Subtitle Indonesia'
 keywords : 'Download Batch Qins Moon Nine Songs of the Moving Heavens Subtitle Indonesia'
 

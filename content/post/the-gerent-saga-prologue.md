@@ -26,7 +26,7 @@ image : /img/post/the-gerent-saga-prologue.webp
 alt : 'The Gerent Saga Prologue'
 url: 'the-gerent-saga-prologue'
 layout : postingan-donghua
-sinopsis : 'Di dunia yang penuh intrik kekuasaan dan warisan kuno, The Gerent Saga: Prologue membuka kisah epik tentang kebangkitan seorang pemimpin takdir. Ketika kerajaan-kerajaan besar terancam oleh kekuatan gelap yang terlupakan, seorang pemuda dari latar belakang biasa tiba-tiba terlibat dalam konflik yang akan menentukan masa depan dunia. Dibekali artefak misterius dan penglihatan dari masa lalu, ia harus memilih antara tetap hidup dalam bayang-bayang atau melangkah menjadi pemimpin sejati seorang Gerent. Prolog ini menyuguhkan awal yang intens dan penuh misteri, memperkenalkan karakter-karakter penting serta konflik yang akan membentuk jalannya saga besar ke depan.'
+sinopsis : 'Di dunia yang kekuasaan dan warisan kuno, The Gerent Saga: Prologue membuka kisah epik tentang kebangkitan seorang pemimpin takdir. Ketika kerajaan-kerajaan besar terancam oleh kekuatan gelap yang terlupakan, seorang pemuda dari latar belakang biasa tiba-tiba terlibat dalam konflik yang akan menentukan masa depan dunia. Dibekali artefak misterius dan penglihatan dari masa lalu, ia harus memilih antara tetap hidup dalam bayang-bayang atau melangkah menjadi pemimpin sejati seorang Gerent. Prolog ini menyuguhkan awal yang intens dan, memperkenalkan karakter-karakter penting serta konflik yang akan membentuk jalannya saga besar ke depan.'
 deskripsi : 'Download Batch The Gerent Saga Prologue Subtitle Indonesia'
 keywords : 'Download Batch The Gerent Saga Prologue Subtitle Indonesia'
 

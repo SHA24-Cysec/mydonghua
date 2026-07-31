@@ -34,7 +34,7 @@ image : /img/post/ze-tian-ji-s2.webp
 alt : 'Ze Tian Ji Season 2'
 url: 'ze-tian-ji-season-2'
 layout : postingan-donghua
-sinopsis : 'Setelah melewati berbagai ujian berat, Chen Changsheng melanjutkan perjalanannya untuk mengubah takdir hidupnya yang pendek. Dalam musim kedua ini, ia semakin matang sebagai seorang pejuang sekaligus calon pemimpin, menghadapi intrik politik, pertarungan antar sekte, dan ancaman dari ras iblis yang mengintai dunia manusia. Bersama teman-temannya, termasuk Xu Yourong yang semakin dekat dengannya, Chen Changsheng berusaha menemukan jawaban tentang asal-usulnya dan kunci untuk menyelamatkan dirinya. Namun, setiap langkah yang ia ambil mendekatkannya pada rahasia besar yang bisa mengguncang seluruh dunia.'
+sinopsis : 'Setelah melewati berbagai ujian berat, Chen Changsheng melanjutkan perjalanannya untuk mengubah takdir hidupnya yang pendek. Dalam musim kedua ini, ia semakin matang sebagai seorang pejuang sekaligus calon pemimpin, menghadapi intrik politik, pertarungan antar sekte, dan ancaman dari ras iblis yang mengintai dunia manusia. Bersama teman-temannya, termasuk Xu Yourong dengannya, Chen Changsheng berusaha menemukan jawaban tentang asal-usulnya dan kunci untuk menyelamatkan dirinya. Namun, setiap langkah yang ia ambil mendekatkannya pada rahasia besar yang bisa mengguncang seluruh dunia.'
 deskripsi : 'Download Batch Ze Tian Ji Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Ze Tian Ji Season 2 Subtitle Indonesia'
 

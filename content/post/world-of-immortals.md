@@ -25,7 +25,7 @@ image : /img/post/world-of-immortals.webp
 alt : 'World of Immortal'
 url: 'world-of-immortal'
 layout : postingan-donghua
-sinopsis : 'World of Immortals menceritakan perjalanan Xiao Chen, seorang pemuda yang secara tak terduga terjebak di dunia para dewa dan iblis setelah insiden misterius. Di dunia ini, kekuatan spiritual dan seni bela diri menjadi kunci untuk bertahan hidup dan mencapai puncak kekuasaan. Xiao Chen, yang awalnya dianggap lemah, mulai menemukan potensi tersembunyinya setelah mendapatkan warisan kuno yang luar biasa. Dengan kecerdasan dan tekadnya, ia menghadapi berbagai rintangan, melawan musuh kuat, dan membangun hubungan dengan sekutu yang setia. Dalam perjalanannya, Xiao Chen berusaha mengungkap rahasia dunia ini dan menemukan jalan menuju keabadian.'
+sinopsis : 'World of Immortals Xiao Chen, seorang pemuda yang secara tak terduga terjebak di dunia para dewa dan iblis setelah insiden misterius. Di dunia ini, kekuatan spiritual dan seni bela diri menjadi kunci untuk bertahan hidup dan mencapai puncak kekuasaan. Xiao Chen, yang awalnya dianggap lemah, mulai menemukan potensi tersembunyinya setelah mendapatkan warisan kuno yang luar biasa. ia menghadapi melawan musuh kuat, dan membangun hubungan dengan sekutu yang setia. Dalam perjalanannya, Xiao Chen berusaha mengungkap rahasia dunia ini dan menemukan jalan menuju keabadian.'
 deskripsi : 'Download Batch World of Immortal Subtitle Indonesia'
 keywords : 'Download Batch World of Immortal Subtitle Indonesia'
 

@@ -24,7 +24,7 @@ image : /img/post/demigod-realm.webp
 alt : 'Demigod Realm'
 url: 'demigod-realm'
 layout : postingan-donghua
-sinopsis : 'Demigod Realm mengisahkan dunia kultivasi yang berada di ambang kekacauan, tempat manusia, dewa, dan iblis hidup dalam keseimbangan yang rapuh. Tokoh utamanya adalah seorang pemuda biasa yang tanpa sengaja terseret ke dalam konflik besar antar-kekuatan kuno setelah kebangkitannya memicu perubahan pada hukum langit dan bumi. Dengan bakat tersembunyi dan tekad yang terus ditempa oleh pengkhianatan, pertempuran, serta kehilangan, ia perlahan menapaki jalan menuju ranah setengah dewa. Setiap langkahnya bukan hanya soal kekuatan, tetapi juga pilihan moral yang menentukan nasib dunia. Di tengah intrik sekte, rahasia darah keturunan, dan ancaman dari alam lain, sang protagonis harus membuktikan bahwa takdir bisa dilawan—bahkan oleh mereka yang lahir tanpa keistimewaan.'
+sinopsis : 'Demigod Realm mengisahkan dunia kultivasi yang berada di ambang kekacauan, tempat manusia, dewa, dan iblis hidup dalam keseimbangan yang rapuh. Tokoh utamanya adalah seorang pemuda biasa yang tanpa sengaja terseret ke dalam konflik besar antar-kekuatan kuno setelah kebangkitannya memicu perubahan pada hukum langit dan bumi. pertempuran, serta kehilangan, ia perlahan menapaki jalan menuju ranah setengah dewa. Setiap langkahnya pilihan moral yang menentukan nasib dunia. Di tengah intrik sekte, rahasia darah keturunan, dan ancaman dari alam lain, sang protagonis harus membuktikan bahwa takdir bisa dilawan. bahkan oleh mereka yang lahir tanpa keistimewaan.'
 deskripsi : 'Download Batch Demigod Realm Subtitle Indonesia'
 keywords : 'Download Batch Demigod Realm Subtitle Indonesia'
 

@@ -37,7 +37,7 @@ image : /img/post/beyond-times-gaze.webp
 alt : 'Beyond Time’s Gaze'
 url: 'beyond-times-gaze'
 layout : postingan-donghua
-sinopsis : 'Di dunia tempat batas antara masa lalu dan masa depan mulai runtuh, seorang pemuda bernama Kai memiliki kemampuan langka untuk melihat “jejak waktu” yang tersembunyi di balik setiap kejadian. Saat sebuah artefak kuno membangkitkan kekuatan misterius yang mampu mengubah takdir dunia, Kai terjebak dalam konflik besar antara para penjaga waktu dan kelompok rahasia yang ingin menguasai sejarah. Dalam perjalanannya, Kai harus menghadapi pengkhianatan, misteri lintas era, serta kenyataan bahwa setiap pilihan memiliki konseensi yang dapat mengubah hidup banyak orang. Dengan kekuatan yang terus berkembang, ia berusaha mencari jawaban tentang asal-usul kemampuannya sebelum dunia tenggelam dalam kekacauan waktu yang tak bisa diperbaiki.'
+sinopsis : 'Di dunia tempat batas antara masa lalu dan masa depan mulai runtuh, seorang pemuda bernama Kai memiliki kemampuan langka untuk melihat “jejak waktu” yang tersembunyi di balik setiap kejadian. Saat sebuah artefak kuno membangkitkan yang mampu mengubah takdir dunia, Kai terjebak dalam konflik besar antara para penjaga waktu dan kelompok rahasia yang ingin menguasai sejarah. Dalam perjalanannya, Kai harus menghadapi pengkhianatan, misteri lintas era, serta kenyataan bahwa setiap pilihan memiliki konsekuensi yang dapat mengubah hidup banyak orang. ia berusaha mencari jawaban tentang asal-usul kemampuannya sebelum dunia tenggelam dalam kekacauan waktu yang tak bisa diperbaiki.'
 deskripsi : 'Download Batch Beyond Time’s Gaze Subtitle Indonesia'
 keywords : 'Download Batch Beyond Time’s Gaze Subtitle Indonesia'
 

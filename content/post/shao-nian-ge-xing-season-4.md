@@ -27,7 +27,7 @@ image : /img/post/shao-nian-ge-xing-season-4.webp
 alt : 'Shao Nian Ge Xing Season 4'
 url: 'shao-nian-ge-xing-season-4'
 layout : postingan-donghua
-sinopsis : 'Lanjutan dari Donghua Shao Nian Ge Xing'
+sinopsis : 'Lanjutan dari Donghua Shao Nian Ge Xing.'
 deskripsi : 'Download Batch Shao Nian Ge Xing Season 4 Subtitle Indonesia'
 keywords : 'Download Batch Shao Nian Ge Xing Season 4 Subtitle Indonesia'
 

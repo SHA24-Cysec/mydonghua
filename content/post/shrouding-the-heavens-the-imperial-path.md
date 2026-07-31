@@ -35,7 +35,7 @@ image : /img/post/shrouding-the-heavens-the-imperial-path.webp
 alt : 'Shrouding the Heavens: the Imperial Path'
 url: 'shrouding-the-heavens-the-imperial-path'
 layout : postingan-donghua
-sinopsis : 'Donghua Shrouding the Heavens: The Imperial Path mengikuti perjalanan Ye Fan, seorang pemuda biasa yang terseret ke dunia kultivasi setelah fenomena misterius mengubah hidupnya. Ia memasuki alam yang dipenuhi kekuatan kuno, teknik rahasia, dan persaingan brutal antar praktisi. Ye Fan tidak memiliki bakat luar biasa sejak awal. Ia bertahan dengan kecerdikan, keberanian, dan tekad kuat. Dalam perjalanannya, ia menemukan rahasia besar tentang tubuh dan asal-usul kekuatan yang ia miliki. Ia juga harus menghadapi musuh kuat, sekte besar, dan intrik yang melibatkan warisan para kaisar masa lalu.'
+sinopsis : 'Donghua Shrouding the Heavens: The Imperial Path mengikuti perjalanan Ye Fan, seorang pemuda biasa yang terseret ke dunia kultivasi setelah fenomena misterius mengubah hidupnya. Ia memasuki alam yang dipenuhi kekuatan kuno, teknik rahasia, dan persaingan brutal antar praktisi. Ye Fan tidak memiliki bakat luar biasa sejak awal. Ia bertahan keberanian, dan tekad kuat. Dalam perjalanannya, ia menemukan rahasia besar tentang tubuh dan asal-usul kekuatan yang ia miliki. Ia juga harus menghadapi musuh kuat, sekte besar, dan intrik yang melibatkan warisan para kaisar masa lalu.'
 deskripsi : 'Download Batch Shrouding the Heavens: the Imperial Path Subtitle Indonesia'
 keywords : 'Download Batch Shrouding the Heavens: the Imperial Path Subtitle Indonesia'
 

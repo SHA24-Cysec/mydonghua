@@ -32,7 +32,7 @@ image : /img/post/the-lord-of-rogue-devil.webp
 alt : 'The Lord of Rogue Devil'
 url: 'the-lord-of-rogue-devil'
 layout : postingan-donghua
-sinopsis : 'Donghua The Lord of Rogue Devil mengisahkan perjalanan seorang tokoh utama yang terlahir di dunia penuh konflik, di mana kekuatan iblis dan kekuatan spiritual saling bertarung untuk memperebutkan kekuasaan. Dalam situasi penuh bahaya itu, ia tumbuh menjadi sosok yang cerdas, licik, dan memiliki ambisi besar untuk menguasai kekuatan tertinggi. Dengan kemampuan luar biasa dan tekad kuat, ia menghadapi berbagai musuh dari klan besar, para kultivator kuat, hingga kekuatan gelap yang mengancam dunia. Di tengah perjalanan, ia tidak hanya berjuang untuk bertahan hidup, tetapi juga menantang aturan dunia yang penuh tipu daya dan perebutan kekuasaan.'
+sinopsis : 'Tokoh utama terlahir di dunia di mana kekuatan iblis dan kekuatan spiritual saling bertarung memperebutkan kekuasaan. Ia tumbuh menjadi sosok cerdas, licik, dan ambisius. Ia menghadapi klan besar, kultivator kuat, hingga kekuatan gelap yang mengancam dunia. Di tengah perjalanan, ia menantang aturan dunia yang penuh tipu daya dan perebutan kekuasaan.'
 deskripsi : 'Download Batch The Lord of Rogue Devil Subtitle Indonesia'
 keywords : 'Download Batch The Lord of Rogue Devil Subtitle Indonesia'
 

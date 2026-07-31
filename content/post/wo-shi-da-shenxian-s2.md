@@ -37,7 +37,7 @@ image : /img/post/wo-shi-da-shenxian-s2.webp
 alt : 'Wo Shi Da Shenxian S2'
 url: 'wo-shi-da-shenxian-s2'
 layout : postingan-donghua
-sinopsis : 'Pada musim kedua, Shi Jiang melanjutkan perjalanannya di dunia abadi, menghadapi tantangan baru dan musuh yang lebih kuat. Dengan tekad dan keterampilan yang terus berkembang, ia berusaha mencapai keabadian sejati dan mengatasi rintangan yang menghalangi jalannya menuju status dewa legendaris.'
+sinopsis : 'Pada musim kedua, Shi Jiang melanjutkan perjalanannya di dunia abadi, menghadapi tantangan baru dan musuh yang lebih kuat. ia berusaha mencapai keabadian sejati dan mengatasi rintangan yang menghalangi jalannya menuju status dewa legendaris.'
 deskripsi : 'Download Batch Wo Shi Da Shenxian S2 Subtitle Indonesia'
 keywords : 'Download Batch Wo Shi Da Shenxian S2 Subtitle Indonesia'
 

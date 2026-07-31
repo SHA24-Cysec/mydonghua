@@ -26,7 +26,7 @@ image : /img/post/everlasting-god-of-sword.webp
 alt : 'Everlasting God of Sword'
 url: 'everlasting-god-of-sword'
 layout : postingan-donghua
-sinopsis : 'Perjalanan seorang pendekar pedang jenius yang menentang takdirnya. Di dunia yang dikuasai oleh para ahli pedang dan sekte kuat, protagonis kita, yang awalnya diremehkan, menemukan rahasia pedang kuno yang membawanya ke jalan keabadian. Dengan tekad baja dan keterampilan yang terus berkembang, ia menghadapi berbagai musuh, mengungkap misteri dunia, serta menantang batas kekuatan sejati. Namun, dalam perjalanannya, ia harus memilih antara balas dendam dan tanggung jawab yang lebih besar sebagai pemegang kekuatan legendaris.'
+sinopsis : 'Perjalanan seorang pendekar pedang jenius yang menentang takdirnya. Di dunia yang dikuasai oleh para ahli pedang dan sekte kuat, protagonis kita, yang awalnya diremehkan, menemukan rahasia pedang kuno yang membawanya ke jalan keabadian. ia menghadapi mengungkap misteri dunia, serta menantang batas kekuatan sejati. Namun, dalam perjalanannya, ia harus memilih antara balas dendam dan tanggung jawab yang lebih besar sebagai pemegang kekuatan legendaris.'
 deskripsi : 'Download Batch Everlasting God of Sword Subtitle Indonesia'
 keywords : 'Download Batch Everlasting God of Sword Subtitle Indonesia'
 

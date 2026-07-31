@@ -36,7 +36,7 @@ image : /img/post/yi-nian-yong-heng-season-2.webp
 alt : 'Yi Nian Yong Heng Season 2'
 url: 'yi-nian-yong-heng-season-2'
 layout : postingan-donghua
-sinopsis : 'Kisah berlanjut dengan Bai Xiaochun, seorang kultivator eksentrik yang dikenal karena kelucuannya sekaligus ambisinya untuk hidup abadi. Setelah perjalanan panjang di season pertama, kini ia harus menghadapi dunia kultivasi yang lebih keras dan penuh intrik. Di season kedua, Bai Xiaochun tidak hanya berhadapan dengan lawan-lawan yang lebih kuat, tetapi juga semakin menyadari tanggung jawab besar yang datang bersama kekuatannya. Meski sering bertingkah konyol, kecerdikan dan tekadnya membuatnya mampu keluar dari berbagai situasi sulit. Di balik komedi yang khas, donghua ini tetap menampilkan pertarungan epik, perkembangan karakter, dan drama emosional yang memperdalam jalan cerita.'
+sinopsis : 'Kisah berlanjut seorang kultivator eksentrik yang dikenal karena kelucuannya sekaligus ambisinya untuk hidup abadi. Setelah perjalanan panjang di season pertama, kini ia harus menghadapi dunia kultivasi yang lebih keras. Di season kedua, Bai Xiaochun semakin menyadari tanggung jawab besar yang datang bersama kekuatannya. Meski sering bertingkah konyol, kecerdikan dan tekadnya membuatnya mampu keluar dari berbagai situasi sulit. Di balik komedi yang khas, donghua ini tetap menampilkan pertarungan epik, perkembangan karakter, dan drama emosional yang memperdalam jalan cerita.'
 deskripsi : 'Download Batch Yi Nian Yong Heng Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Yi Nian Yong Heng Season 2 Subtitle Indonesia'
 

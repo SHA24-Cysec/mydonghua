@@ -25,7 +25,7 @@ image : /img/post/age-of-gunslingers.webp
 alt : 'Age of Gunslingers'
 url: 'age-of-gunslingers'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan tentang teknologi super mutakhir bernama "kunci gen" yang mampu meningkatkan kemampuan fisik manusia secara signifikan, termasuk kecepatan, kekuatan, dan indra. Mereka yang berhasil membuka kunci gen ini disebut sebagai "agen" era baru, dan agen terbaik dikenal sebagai "dewa senjata". Berbagai kekuatan bersaing untuk menguasai teknologi ini, mendirikan akademi untuk melatih para agen. Setelah perang besar melawan ras misterius berakhir, organisasi mata-mata yang tersisa, "Deep Sea" dan "Dead Snake", memindahkan markas mereka ke dasar laut dan bawah tanah. Meskipun dunia tampak damai, ancaman tersembunyi masih mengintai, dan roda sejarah terus berputar.'
+sinopsis : 'Teknologi "kunci gen" meningkatkan kemampuan fisik manusia: kecepatan, kekuatan, dan indra. Mereka yang membuka kunci gen disebut "agen" era baru, dan agen terbaik dikenal sebagai "dewa senjata". Kekuatan-kekuatan besar bersaing menguasai teknologi ini, mendirikan akademi untuk melatih para agen. Setelah perang besar melawan ras misterius berakhir, organisasi mata-mata "Deep Sea" dan "Dead Snake" memindahkan markas ke dasar laut dan bawah tanah. Ancaman tersembunyi masih mengintai.'
 deskripsi : 'Download Batch Age of Gunslingers Subtitle Indonesia'
 keywords : 'Download Batch Age of Gunslingers Subtitle Indonesia'
 

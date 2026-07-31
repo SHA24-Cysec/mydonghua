@@ -35,7 +35,7 @@ image : /img/post/quanzhi-fashi.webp
 alt : 'Quanzhi Fashi'
 url: 'quanzhi-fashi'
 layout : postingan-donghua
-sinopsis : 'Mo Fan, seorang remaja biasa, tiba-tiba terbangun di dunia paralel yang mirip dengan Bumi, tetapi di mana sihir telah menggantikan sains sebagai kekuatan utama. Di dunia baru ini, semua orang berusaha menguasai elemen sihir untuk bertahan hidup. Meski awalnya diremehkan karena latar belakangnya yang sederhana, Mo Fan mengejutkan semua orang ketika ia mampu menguasai lebih dari satu elemen, sebuah bakat yang sangat langka. Dengan kekuatan ganda dalam api dan petir, Mo Fan berjuang melindungi keluarganya, menghadapi monster, dan bersaing dengan para penyihir hebat di jalannya menjadi seorang magus sejati.'
+sinopsis : 'Mo Fan, seorang remaja biasa, tiba-tiba terbangun di dunia paralel yang mirip tetapi di mana sihir telah menggantikan sains sebagai kekuatan utama. Di dunia baru ini, semua orang berusaha menguasai elemen sihir untuk bertahan hidup. Meski awalnya diremehkan karena latar belakangnya yang sederhana, Mo Fan mengejutkan semua orang ketika ia mampu menguasai lebih dari satu elemen, sebuah bakat yang langka. Mo Fan berjuang melindungi keluarganya, menghadapi monster, dan bersaing dengan para penyihir hebat di jalannya menjadi seorang magus sejati.'
 deskripsi : 'Download Batch Quanzhi Fashi Subtitle Indonesia'
 keywords : 'Download Batch Quanzhi Fashi Subtitle Indonesia'
 

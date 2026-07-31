@@ -33,7 +33,7 @@ image : /img/post/supreme-galaxy-season-2.webp
 alt : 'Supreme Galaxy Season 2'
 url: 'supreme-galaxy-season-2'
 layout : postingan-donghua
-sinopsis : 'Supreme Galaxy melanjutkan perjalanan penuh tantangan dari sang protagonis yang terus berusaha mencapai puncak kekuatan di alam semesta kultivasi yang dipenuhi konflik antar klan, sekte, dan kekuatan misterius. Setelah melewati berbagai pertarungan besar di musim sebelumnya, Season 2 menghadirkan ancaman yang jauh lebih berbahaya, di mana musuh-musuh baru mulai muncul untuk memperebutkan artefak kuno serta kekuatan legendaris yang mampu mengubah keseimbangan dunia. '
+sinopsis : 'Supreme Galaxy melanjutkan dari sang protagonis yang terus berusaha mencapai puncak kekuatan di alam semesta kultivasi yang dipenuhi konflik antar klan, sekte. Setelah melewati berbagai pertarungan besar di musim sebelumnya, Season 2 menghadirkan ancaman yang jauh lebih berbahaya, di mana musuh-musuh baru mulai muncul untuk memperebutkan artefak kuno serta kekuatan legendaris yang mampu mengubah keseimbangan dunia.'
 deskripsi : 'Download Batch Supreme Galaxy Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Supreme Galaxy Season 2 Subtitle Indonesia'
 

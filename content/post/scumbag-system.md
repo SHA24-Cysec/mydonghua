@@ -27,7 +27,7 @@ image : /img/post/scumbag-system.webp
 alt : 'Scumbag System'
 url: 'scumbag-system'
 layout : postingan-donghua
-sinopsis : 'Ceritanya mengikuti Shen Yuan, seorang penggemar novel kultivasi yang mendadak terbangun dalam tubuh Shen Qingqiu, karakter antagonis kejam di novel favoritnya, Proud Immortal Demon Way. Masalahnya, Shen Qingqiu memiliki nasib tragis: dia akan mati di tangan muridnya sendiri, Luo Binghe, setelah menyiksanya. Untuk menghindari akhir yang tragis, Shen Yuan berusaha mengubah alur cerita dengan memperlakukan Luo Binghe dengan lebih baik. Namun, sistem yang mengatur dunia tersebut memaksanya untuk tetap berperan sebagai penjahat sesuai dengan naskah asli. Shen Yuan pun harus mencari cara untuk bertahan hidup sambil menjaga hubungannya dengan Luo Binghe, yang perlahan mulai menunjukkan sisi gelapnya.'
+sinopsis : 'Ceritanya mengikuti Shen Yuan, seorang penggemar novel kultivasi yang mendadak terbangun dalam tubuh Shen Qingqiu, karakter antagonis kejam di novel favoritnya, Proud Immortal Demon Way. Masalahnya, Shen Qingqiu memiliki nasib tragis: dia akan mati di tangan muridnya sendiri, Luo Binghe, setelah menyiksanya. Untuk menghindari akhir yang tragis, Shen Yuan berusaha mengubah alur cerita dengan memperlakukan Luo Binghe dengan lebih baik. Namun, sistem yang mengatur dunia tersebut memaksanya untuk tetap berperan sebagai penjahat sesuai dengan naskah asli. Shen Yuan pun harus mencari cara untuk bertahan hidup sambil menjaga hubungannya yang perlahan mulai menunjukkan sisi gelapnya.'
 deskripsi : 'Download Batch Scumbag System Subtitle Indonesia'
 keywords : 'Download Batch Scumbag System Subtitle Indonesia'
 

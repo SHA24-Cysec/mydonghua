@@ -28,7 +28,7 @@ image : /img/post/the-path-toward-heaven.webp
 alt : 'The Path Toward Heaven'
 url: 'the-path-toward-heaven'
 layout : postingan-donghua
-sinopsis : '"The Path Toward Heaven (Xian Tian Jian)" menceritakan perjalanan Jing Jiu, seorang pemuda jenius yang hidup di dunia penuh sekte dan kultivasi. Meskipun terlihat lemah dan pemalas, Jing Jiu menyimpan kekuatan luar biasa dan rahasia besar tentang reinkarnasi dan masa lalunya. Dalam perjalanannya, ia bergabung dengan Sekte Qing Shan, salah satu sekte terkuat, dan mulai menapaki jalannya menuju keabadian. Dengan kecerdasan, ketenangan, dan kekuatan yang tersembunyi, Jing Jiu menghadapi berbagai tantangan, persaingan antar sekte, dan rahasia dunia kultivasi yang mulai terungkap. Kisah ini menggambarkan perjalanan menuju pencerahan dan perjuangan melawan takdir yang telah ditentukan.'
+sinopsis : '"The Path Toward Heaven (Xian Tian Jian)" Jing Jiu, seorang pemuda jenius yang hidup di dunia penuh sekte dan kultivasi. Meskipun terlihat lemah dan pemalas, Jing Jiu menyimpan dan rahasia besar tentang reinkarnasi dan masa lalunya. Dalam perjalanannya, ia bergabung salah satu sekte terkuat, dan mulai menapaki jalannya menuju keabadian. ketenangan, dan kekuatan yang tersembunyi, Jing Jiu menghadapi persaingan antar sekte, dan rahasia dunia kultivasi. Kisah ini menggambarkan perjalanan menuju pencerahan dan perjuangan melawan takdir yang telah ditentukan.'
 deskripsi : 'Download Batch The Path Toward Heaven Subtitle Indonesia'
 keywords : 'Download Batch The Path Toward Heaven Subtitle Indonesia'
 

@@ -37,7 +37,7 @@ image : /img/post/wonderland-s2.webp
 alt : 'Wonderland Season 2'
 url: 'wonderland-season-2'
 layout : postingan-donghua
-sinopsis : 'Wonderland Season 2 melanjutkan petualangan Ye Xingyun, seorang murid dari Klan Ye yang harus menghadapi berbagai tantangan dalam dunia kultivasi. Setelah melewati banyak rintangan di musim pertama, Xingyun semakin kuat dan mulai mengungkap rahasia besar di balik konflik antar klan dan kekuatan misterius yang mengancam dunia. Dalam perjalanan ini, ia bertemu dengan teman dan musuh baru, memperdalam teknik kultivasinya, dan berusaha melindungi orang-orang yang ia cintai. Dengan ketekunan dan kecerdasannya, Ye Xingyun bertekad untuk mencapai puncak kekuatan dan membawa kedamaian ke dunia yang penuh intrik dan pengkhianatan.'
+sinopsis : 'Wonderland Season 2 melanjutkan petualangan Ye Xingyun, murid dari Klan Ye yang harus menghadapi tantangan dalam dunia kultivasi. Setelah melewati banyak rintangan di musim pertama, Xingyun semakin kuat dan mulai mengungkap rahasia di balik konflik antar klan dan ancaman yang mengancam dunia. Ia bertemu teman dan musuh baru, memperdalam teknik kultivasinya, dan berusaha melindungi orang-orang yang ia cintai. Ye Xingyun bertekan mencapai puncak kekuatan dan membawa kedamaian ke dunia yang penuh pengkhianatan.'
 deskripsi : 'Download Batch Wonderland Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Wonderland Season 2 Subtitle Indonesia'
 

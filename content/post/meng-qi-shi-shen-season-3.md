@@ -37,7 +37,7 @@ image : /img/post/meng-qi-shi-shen-season-3.webp
 alt : 'Meng Qi Shi Shen Season 3'
 url: 'meng-qi-shi-shen-season-3'
 layout : postingan-donghua
-sinopsis : 'Cerita berlanjut dengan petualangan Ye Jiayao, seorang koki selebriti dari zaman modern yang terlempar ke masa lalu dan mengambil identitas Ye Jinxuan. Dengan keahliannya dalam memasak dan kecerdasan modern, Ye Jiayao terus menghadapi berbagai tantangan dan intrik di dunia kuno, sambil memperkuat hubungannya dengan Xia Chunyu, seorang bangsawan yang awalnya menyamar sebagai pemimpin bandit. Musim ini menampilkan perkembangan karakter yang lebih dalam dan konflik yang lebih kompleks, sambil tetap menonjolkan elemen kuliner yang menjadi ciri khas serial ini.'
+sinopsis : 'Cerita berlanjut seorang koki selebriti dari zaman modern yang terlempar ke masa lalu dan mengambil identitas Ye Jinxuan. Ye Jiayao terus menghadapi dan intrik di dunia kuno, sambil memperkuat hubungannya seorang bangsawan yang awalnya menyamar sebagai pemimpin bandit. Musim ini menampilkan perkembangan karakter yang lebih dalam dan konflik yang lebih kompleks, sambil tetap menonjolkan elemen kuliner yang menjadi ciri khas serial ini.'
 deskripsi : 'Download Batch Meng Qi Shi Shen Season 3 Subtitle Indonesia'
 keywords : 'Download Batch Meng Qi Shi Shen Season 3 Subtitle Indonesia'
 

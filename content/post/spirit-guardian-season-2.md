@@ -33,7 +33,7 @@ image : /img/post/Spirit-Guardians-Season-2.webp
 alt : 'Spirit Guardian Season 2'
 url: 'spirit-guardian-season-2'
 layout : postingan-donghua
-sinopsis : 'Melanjutkan kisah Zhang Shan, seorang pemuda yang tanpa sengaja terlibat dalam konflik antara manusia dan kekuatan spiritual jahat. Di musim kedua ini, setelah peristiwa di musim pertama, Zhang Shan terus berusaha melindungi dunia dari ancaman kekuatan gelap yang ingin menghancurkan umat manusia. Dengan kemampuan roh yang dimilikinya, ia berjuang untuk menyelamatkan Yue Shang, seorang iblis bulan yang berada dalam bahaya. Petualangan Zhang Shan penuh dengan tantangan dan pertarungan yang menegangkan saat ia menghadapi musuh-musuh kuat yang berusaha menguasai dunia.'
+sinopsis : 'Melanjutkan kisah Zhang Shan, seorang pemuda yang tanpa sengaja terlibat dalam konflik antara manusia dan kekuatan spiritual jahat. Di musim kedua ini, setelah peristiwa di musim pertama, Zhang Shan terus berusaha melindungi dunia dari ancaman kekuatan gelap yang ingin menghancurkan umat manusia. ia berjuang untuk menyelamatkan Yue Shang, seorang iblis bulan yang berada dalam bahaya. Petualangan Zhang Shan penuh dengan tantangan dan pertarungan yang menegangkan saat ia menghadapi musuh-musuh kuat yang berusaha menguasai dunia.'
 deskripsi : 'Download Batch Spirit Guardian Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Spirit Guardian Season 2 Subtitle Indonesia'
 

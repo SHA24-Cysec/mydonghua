@@ -36,7 +36,7 @@ image : /img/post/shao-nian-ge-xing.webp
 alt : 'Shao Nian Ge Xing'
 url: 'shao-nian-ge-xing'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan perjalanan seorang pemuda bernama Lei Wujie. Ia adalah murid muda yang bersemangat namun kurang pengalaman dalam seni bela diri. Saat dalam perjalanan ke Kota Xue Yue, ia tanpa sengaja terlibat dalam konflik besar di dunia persilatan. Dalam perjalanannya, Lei Wujie bertemu dengan Xiao Se, seorang pemilik penginapan misterius yang ternyata memiliki masa lalu yang kelam dan kemampuan luar biasa. Bersama dengan teman-teman yang mereka temui di sepanjang jalan, mereka menghadapi berbagai pertarungan sengit, intrik antar sekte, dan rahasia besar yang dapat mengguncang dunia persilatan.'
+sinopsis : 'Seorang pemuda bernama Lei Wujie. Ia adalah murid muda yang bersemangat namun kurang pengalaman dalam seni bela diri. Saat dalam perjalanan ke Kota Xue Yue, ia tanpa sengaja terlibat dalam konflik besar di dunia persilatan. Dalam perjalanannya, Lei Wujie bertemu seorang pemilik penginapan misterius yang ternyata memiliki masa lalu yang kelam. Bersama dengan teman-teman yang mereka temui di sepanjang jalan, mereka menghadapi pertarungan sengit, intrik antar sekte, dan rahasia besar yang dapat mengguncang dunia persilatan.'
 deskripsi : 'Download Batch Shao Nian Ge Xing Subtitle Indonesia'
 keywords : 'Download Batch Shao Nian Ge Xing Subtitle Indonesia'
 

@@ -33,7 +33,7 @@ image : /img/post/quanzhi-gaoshou-movie-for-the-glory.webp
 alt : 'Quanzhi Gaoshou Movie for the Glory'
 url: 'quanzhi-gaoshou-movie-for-the-glory'
 layout : postingan-donghua
-sinopsis : 'Menceritakan awal perjalanan Ye Xiu dalam dunia e-sports. Film ini berfokus pada bagaimana Ye Xiu, seorang pemain berbakat, memasuki dunia profesional dan menjadi pilar utama tim Excellent Era. Dengan bakat luar biasa dan kerja kerasnya, ia membawa tim menuju kejayaan dalam kompetisi Glory, meskipun menghadapi berbagai tantangan dan persaingan sengit. Film ini menampilkan perjuangan Ye Xiu sebelum ia dikenal sebagai "Dewa Glory", memperlihatkan dinamika tim, persahabatan, serta pengorbanan yang harus dilakukan demi meraih kemenangan.'
+sinopsis : 'Menceritakan awal perjalanan Ye Xiu dalam dunia e-sports ia membawa tim menuju kejayaan dalam kompetisi Glory, meskipun menghadapi dan persaingan sengit.'
 deskripsi : 'Download Batch Quanzhi Gaoshou Movie for the Glory Subtitle Indonesia'
 keywords : 'Download Batch Quanzhi Gaoshou Movie for the Glory Subtitle Indonesia'
 

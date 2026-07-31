@@ -26,7 +26,7 @@ image : /img/post/swarm.webp
 alt : 'Swarm'
 url: 'swarm'
 layout : postingan-donghua
-sinopsis : '"Swarm" atau "Hei Men" adalah donghua fiksi ilmiah yang berlatar di Kota Baiyang, Provinsi Hebei, Tiongkok, pada tahun 2056. Kemajuan teknologi memungkinkan manusia menjelajahi pikiran mereka sendiri. Donghua ini mengeksplorasi tema-tema seperti evolusi manusia, moralitas, dan filosofi, serta menceritakan awal era baru yang dimulai dengan cara yang tak terduga.'
+sinopsis : 'Donghua fiksi ilmiah berlatar di Kota Baiyang, Provinsi Hebei, Tiongkok, tahun 2056. Kemajuan teknologi memungkinkan manusia menjelajahi pikiran mereka sendiri. Donghua ini mengeksplorasi evolusi manusia, moralitas, dan filosofi, serta menceritakan dimulainya era baru.'
 deskripsi : 'Download Batch Swarm Subtitle Indonesia'
 keywords : 'Download Batch Swarm Subtitle Indonesia'
 

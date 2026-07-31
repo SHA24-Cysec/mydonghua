@@ -26,7 +26,7 @@ image : /img/post/prince-dont-do-this.webp
 alt : 'Prince,dont Do This'
 url: 'prince-dont-do-this'
 layout : postingan-donghua
-sinopsis : "Setelah mengalami kecelakaan, seorang wanita modern tanpa sengaja terbangun di tubuh seorang gadis bangsawan di dunia kuno. Di tengah upaya memahami lingkungan barunya, ia justru menarik perhatian pangeran kerajaan yang terkenal licik dan tak terkendali. Bukannya menjadi kisah cinta biasa, hubungan mereka dipenuhi dengan intrik, tipu daya, dan kejadian kocak. Dalam upaya bertahan hidup di istana yang penuh persaingan, sang gadis harus menggunakan kecerdasannya demi menghindari bahaya, sekaligus berurusan dengan pangeran yang tak pernah mau melepaskannya. Prince, Don’t Do This! menawarkan kisah romantis yang ringan, penuh humor, serta bumbu politik istana yang menarik"
+sinopsis : 'Setelah mengalami kecelakaan, seorang wanita modern tanpa sengaja terbangun di tubuh seorang gadis bangsawan di dunia kuno. Di tengah upaya memahami lingkungan barunya, ia justru menarik perhatian pangeran kerajaan yang terkenal licik dan tak terkendali. hubungan mereka dipenuhi tipu daya, dan kejadian kocak. Dalam upaya bertahan hidup di istana yang penuh persaingan, sang gadis harus menggunakan kecerdasannya demi menghindari bahaya, sekaligus berurusan dengan pangeran yang tak pernah mau melepaskannya. Prince, Don’t Do This! menawarkan kisah romantis yang ringan, penuh humor, serta bumbu politik istana yang menarik.'
 deskripsi : 'Download Batch Prince,dont Do This Subtitle Indonesia'
 keywords : 'Download Batch Prince,dont Do This Subtitle Indonesia'
 

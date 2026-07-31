@@ -24,7 +24,7 @@ image : /img/post/left-hand-layup.webp
 alt : 'Left Hand Layup'
 url: 'left-hand-layup'
 layout : postingan-donghua
-sinopsis : 'Mengikuti perjalanan Xu Xing Ze, seorang remaja yang sangat mencintai olahraga basket. Berbeda dari pemain lain, Xu Xing Ze memiliki gaya bermain unik dengan dominasi tangan kiri, yang membuatnya menonjol di antara rekan-rekannya. Dengan semangat tinggi dan kerja keras, ia berusaha mengembangkan kemampuannya dan membuktikan bahwa ia bisa bersaing di level yang lebih tinggi. Dalam perjalanannya, ia bertemu dengan teman-teman yang memiliki ambisi serupa, menghadapi rival tangguh, serta mengalami berbagai tantangan yang menguji ketekunan dan persahabatannya. Donghua ini menyajikan aksi basket yang dinamis, dikombinasikan dengan kisah persahabatan dan semangat pantang menyerah.'
+sinopsis : 'Mengikuti perjalanan Xu Xing Ze, seorang remaja yang sangat mencintai olahraga basket. Berbeda dari pemain lain, Xu Xing Ze memiliki gaya bermain unik yang membuatnya menonjol di antara rekan-rekannya. ia berusaha mengembangkan kemampuannya dan membuktikan bahwa ia bisa bersaing di level yang lebih tinggi. Dalam perjalanannya, ia bertemu dengan teman-teman yang memiliki ambisi serupa, menghadapi rival tangguh, serta mengalami yang menguji ketekunan dan persahabatannya.'
 deskripsi : 'Download Batch Left Hand Layup Subtitle Indonesia'
 keywords : 'Download Batch Left Hand Layup Subtitle Indonesia'
 

@@ -31,7 +31,7 @@ image : /img/post/killer-seven.webp
 alt : 'Killer Seven'
 url: 'killer-seven'
 layout : postingan-donghua
-sinopsis : 'Di balik profesinya sebagai tukang potong rambut, Seven menyimpan identitas ganda sebagai pembunuh bayaran amatir. Namun, karena kehilangan ingatannya, ia sering gagal menjalankan misi dengan benar. Dengan gaya komedi yang khas dan kemampuan unik dalam mengendalikan gunting telekinetik, Seven terjebak dalam konflik antar faksi pembunuh elit dan dunia bawah yang penuh intrik. Dalam pencariannya akan jati diri, ia menghadapi masa lalu yang misterius dan tantangan yang menguji batas kekuatannya.'
+sinopsis : 'Di balik profesinya sebagai tukang potong rambut, Seven menyimpan identitas ganda sebagai pembunuh bayaran amatir. Namun, karena kehilangan ingatannya, ia sering gagal menjalankan misi dengan benar. Seven terjebak dalam konflik antar faksi pembunuh elit dan dunia bawah. Dalam pencariannya akan jati diri, ia menghadapi masa lalu yang misterius dan tantangan yang menguji batas kekuatannya.'
 deskripsi : 'Download Batch Killer Seven Subtitle Indonesia'
 keywords : 'Download Batch Killer Seven Subtitle Indonesia'
 

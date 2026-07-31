@@ -29,7 +29,7 @@ image : /img/post/hitori-no-shita-the-return-of-tetsumaru-movie.webp
 alt : 'Hitori No Shita: the Return of Tetsumaru Movie'
 url: 'hitori-no-shita-the-return-of-tetsumaru-movie'
 layout : postingan-donghua
-sinopsis : 'Zhang Chulan dan Feng Baobao kembali terjebak dalam pusaran konflik dunia pengguna qi ketika sosok legendaris bernama Tetsumaru bangkit dari bayangan masa lalu. Kehadiran Tetsumaru mengguncang keseimbangan kekuatan antar organisasi, membuka rahasia kelam yang selama ini tersembunyi. Saat berbagai pihak berusaha merebut kendali, Chulan harus mengandalkan kecerdasannya, sementara Baobao dengan kekuatan uniknya menjadi penopang utama. Bersama, keduanya menghadapi pertarungan sengit yang bukan hanya menguji kemampuan, tetapi juga kepercayaan satu sama lain.'
+sinopsis : 'Zhang Chulan dan Feng Baobao kembali terjebak dalam pusaran konflik dunia pengguna qi ketika sosok legendaris bernama Tetsumaru bangkit dari bayangan masa lalu. Kehadiran Tetsumaru mengguncang keseimbangan kekuatan antar organisasi, membuka rahasia kelam yang selama ini tersembunyi. Saat berusaha merebut kendali, Chulan harus mengandalkan kecerdasannya, sementara Baobao keduanya menghadapi pertarungan sengit yang kepercayaan satu sama lain.'
 deskripsi : 'Download Batch Hitori No Shita: the Return of Tetsumaru Movie Subtitle Indonesia'
 keywords : 'Download Batch Hitori No Shita: the Return of Tetsumaru Movie Subtitle Indonesia'
 

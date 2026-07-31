@@ -29,7 +29,7 @@ image : /img/post/ne-zha-mo-tong-jiang-shi.webp
 alt : 'Ne Zha: Mo Tong Jiang Shi'
 url: 'ne-zha-mo-tong-jiang-shi'
 layout : postingan-donghua
-sinopsis : 'Ne Zha: Mo Tong Jiang Shi menceritakan kembali kisah legendaris Ne Zha, seorang anak yang lahir bukan sebagai titisan pahlawan, melainkan sebagai "Mata Iblis" yang membawa kutukan besar. Sejak kecil, ia dianggap ancaman bagi dunia, bahkan sebelum mampu memahami siapa dirinya sendiri. Namun di balik takdir kelam itu, Ne Zha memiliki tekad kuat untuk melawan nasib yang sudah ditentukan para dewa. Kisah ini menyoroti pergulatan Ne Zha antara menjadi perwujudan kehancuran atau membuktikan bahwa ia bisa memilih jalan hidupnya sendiri. Dengan keberanian, pengorbanan, dan pencarian jati diri, Ne Zha berhadapan dengan dewa, iblis, dan bahkan dirinya sendiri, dalam perjalanan epik penuh aksi dan emosi.'
+sinopsis : 'Ne Zha: Mo Tong Jiang Shi menceritakan kembali kisah legendaris Ne Zha, seorang anak yang lahir bukan sebagai titisan pahlawan, melainkan sebagai "Mata Iblis" yang membawa kutukan besar. Sejak kecil, ia dianggap ancaman bagi dunia, bahkan sebelum mampu memahami siapa dirinya sendiri. Namun di balik takdir kelam itu, Ne Zha memiliki tekad kuat untuk melawan nasib yang sudah ditentukan para dewa. Kisah ini menyoroti pergulatan Ne Zha antara menjadi perwujudan kehancuran atau membuktikan bahwa ia bisa memilih jalan hidupnya sendiri. pengorbanan, dan, Ne Zha berhadapan iblis, dan bahkan dirinya sendiri, dalam penuh aksi dan emosi.'
 deskripsi : 'Download Batch Ne Zha: Mo Tong Jiang Shi Subtitle Indonesia'
 keywords : 'Download Batch Ne Zha: Mo Tong Jiang Shi Subtitle Indonesia'
 

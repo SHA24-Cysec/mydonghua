@@ -25,7 +25,7 @@ image : /img/post/space-time-rift.webp
 alt : 'Space Time Rift'
 url: 'space-time-rift'
 layout : postingan-donghua
-sinopsis : 'Space Time Rift mengisahkan tentang seorang pemuda bernama Li Yun, yang hidup di era futuristik di mana teknologi dan kekuatan spiritual saling terhubung. Suatu hari, Li Yun tanpa sengaja terjebak dalam sebuah celah ruang-waktu (Space Time Rift) yang misterius, yang membawanya ke dunia paralel yang penuh dengan makhluk kuno dan energi spiritual yang kuat. Di dunia ini, Li Yun harus menghadapi berbagai tantangan, termasuk pertempuran melawan klan kuno dan monster dimensi, sembari mengungkap rahasia tersembunyi di balik celah ruang-waktu tersebut. Dengan kekuatan baru yang terbangkitkan dalam dirinya, Li Yun bertekad untuk menemukan jalan pulang, sambil melindungi dunia dari kehancuran akibat ketidakstabilan dimensi.'
+sinopsis : 'Seorang pemuda bernama Li Yun, yang hidup di era futuristik di mana teknologi dan kekuatan spiritual saling terhubung. Suatu hari, Li Yun tanpa sengaja terjebak dalam sebuah celah ruang-waktu (Space Time Rift) yang misterius, yang membawanya ke dunia paralel yang penuh dengan makhluk kuno dan energi spiritual yang kuat. Di dunia ini, Li Yun harus menghadapi termasuk pertempuran melawan klan kuno dan monster dimensi, sembari mengungkap rahasia tersembunyi di balik celah ruang-waktu tersebut. Li Yun bertekad untuk menemukan jalan pulang, sambil melindungi dunia dari kehancuran akibat ketidakstabilan dimensi.'
 deskripsi : 'Download Batch Space Time Rift Subtitle Indonesia'
 keywords : 'Download Batch Space Time Rift Subtitle Indonesia'
 

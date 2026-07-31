@@ -32,7 +32,7 @@ image : /img/post/spiritual-domain.webp
 alt : 'Spiritual Domain'
 url: 'spiritual-domain'
 layout : postingan-donghua
-sinopsis : 'Spiritual Domain menceritakan perjalanan Qin Lie, seorang pemuda yang awalnya tampak biasa namun menyimpan rahasia besar dalam dirinya. Ia tumbuh di sebuah kota kecil dengan ingatan yang kabur tentang masa lalunya. Seiring berjalannya waktu, Qin Lie menemukan bahwa dirinya memiliki hubungan dengan kekuatan roh yang sangat misterius dan berbahaya. Dalam dunia yang dipenuhi sekte-sekte kuat, pertempuran antar keluarga, dan perebutan sumber daya spiritual, Qin Lie perlahan menguak potensi sejati yang tersembunyi di dalam tubuhnya. Dengan bimbingan serta pengalaman pahit dari berbagai konflik, ia menapaki jalan kultivasi untuk menjadi lebih kuat. Namun, semakin tinggi ia melangkah, semakin besar pula rahasia dan konspirasi yang terungkap di balik asal-usulnya.'
+sinopsis : 'Spiritual Domain Qin Lie, seorang pemuda yang awalnya tampak biasa namun menyimpan rahasia besar dalam dirinya. Ia tumbuh di sebuah kota kecil dengan ingatan yang kabur tentang masa lalunya. Seiring berjalannya waktu, Qin Lie menemukan bahwa dirinya memiliki hubungan pertempuran antar keluarga, dan perebutan sumber daya spiritual, Qin Lie perlahan menguak potensi sejati yang tersembunyi di dalam tubuhnya. ia menapaki jalan kultivasi untuk menjadi lebih kuat. Namun, semakin tinggi ia melangkah, semakin besar pula rahasia dan konspirasi yang terungkap di balik asal-usulnya.'
 deskripsi : 'Download Batch Spiritual Domain Subtitle Indonesia'
 keywords : 'Download Batch Spiritual Domain Subtitle Indonesia'
 

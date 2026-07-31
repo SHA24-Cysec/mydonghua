@@ -30,7 +30,7 @@ image : /img/post/beyond-the-ocean-s2.webp
 alt : 'Beyond the Ocean S2'
 url: 'beyond-the-ocean-s2'
 layout : postingan-donghua
-sinopsis : 'Pada musim kedua dari donghua "Beyond the Ocean," Pangeran Mahkota Jianwen menghadapi pengkhianatan yang mengguncang kehidupannya. Saat kaisar melakukan patroli di lautan, Jianwen menyaksikan gurunya yang terpercaya, Laksamana Zheng, tiba-tiba membunuh sang kaisar. Lebih parah lagi, Jianwen difitnah oleh istana sebagai dalang di balik pembunuhan ayahnya sendiri dalam upaya kudeta. Laksamana Zheng, kini di bawah perintah Pangeran Bupati Yan, ditugaskan untuk menangkap Jianwen. Menyadari jebakan ini, Jianwen memulai pelarian, sementara berbagai kekuatan di dalam dan luar istana bergerak dengan agenda masing-masing. Di tengah ketidakpercayaan yang semakin dalam terhadap Laksamana Zheng, Jianwen berusaha mengungkap kebenaran di balik kematian misterius sang kaisar.'
+sinopsis : 'Pangeran Mahkota Jianwen menghadapi pengkhianatan yang mengguncang kehidupannya. Saat kaisar melakukan patroli di lautan, Jianwen menyaksikan Laksamana Zheng, guru yang ia percaya, tiba-tiba membunuh sang kaisar. Istana lalu menfitnah Jianwen sebagai dalang kudeta yang membunuh ayahnya sendiri. Laksamana Zheng, kini di bawah perintah Pangeran Bupati Yan, ditugaskan menangkap Jianwen. Jianwen memulai pelarian, sementara berbagai kekuatan di dalam dan luar istana bergerak dengan agenda masing-masing. Jianwen berusaha mengungkap kebenaran di balik kematian sang kaisar.'
 deskripsi : 'Download Batch Beyond the Ocean S2 Subtitle Indonesia'
 keywords : 'Download Batch Beyond the Ocean S2 Subtitle Indonesia'
 

@@ -33,7 +33,7 @@ image : /img/post/rakshasa-street.webp
 alt : 'Rakshasa Street'
 url: 'rakshasa-street'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan tentang Xia Ling, seorang gadis biasa yang tiba-tiba terjebak di dunia misterius bernama Rakshasa Street, tempat roh dan manusia hidup berdampingan. Di dunia ini, hanya mereka yang memiliki Guardian Spirit yang bisa bertahan hidup. Xia Ling tanpa sadar membangkitkan kekuatan tersembunyi dalam dirinya dan bertemu dengan Kakak Beradik Cao. Cao Yan Bing dan Cao Xuan Liang yang menjadi pelindungnya. Mereka bersama-sama menghadapi ancaman dari roh-roh jahat dan mengungkap rahasia kelam di balik Rakshasa Street. Di tengah pertempuran sengit dan pengkhianatan, Xia Ling mulai memahami takdirnya dan arti sebenarnya dari kekuatan serta persahabatan.'
+sinopsis : 'Xia Ling, seorang gadis biasa yang tiba-tiba terjebak di dunia misterius bernama Rakshasa Street, tempat roh dan manusia hidup berdampingan. Di dunia ini, hanya mereka yang memiliki Guardian Spirit yang bisa bertahan hidup. Xia Ling tanpa sadar membangkitkan kekuatan tersembunyi dalam dirinya dan bertemu dengan Kakak Beradik Cao. Cao Yan Bing dan Cao Xuan Liang yang menjadi pelindungnya. Mereka bersama-sama menghadapi ancaman dari roh-roh jahat dan mengungkap rahasia kelam di balik Rakshasa Street. Di tengah pertempuran sengit dan pengkhianatan, Xia Ling mulai memahami takdirnya dan arti sebenarnya dari kekuatan serta persahabatan.'
 deskripsi : 'Download Batch Rakshasa Street Subtitle Indonesia'
 keywords : 'Download Batch Rakshasa Street Subtitle Indonesia'
 

@@ -92,6 +92,11 @@
       "source": "/tales-of-demons-of-gods-season-7/",
       "destination": "/tales-of-demons-and-gods-season-7/",
       "permanent": true
+    },
+    {
+      "source": "/chinesse-mystery-man/",
+      "destination": "/chinese-mystery-man/",
+      "permanent": true
     }
   ]
 }

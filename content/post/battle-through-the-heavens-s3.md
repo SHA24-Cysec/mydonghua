@@ -38,7 +38,7 @@ image : /img/post/battle-through-the-heavens-s3.webp
 alt : 'Battle Through the Heavens S3'
 url: 'battle-through-the-heavens-s3'
 layout : postingan-donghua
-sinopsis : 'Setelah meninggalkan Akademi Jianan, Xiao Yan memulai perjalanannya ke wilayah Black-Corner Region, tempat yang penuh dengan bahaya dan kekuatan jahat. Dalam usahanya untuk menjadi lebih kuat, ia bergabung dengan Sekte Jianan dan berusaha mendapatkan kembali api surgawi yang sangat langka. Di tengah perjalanannya, Xiao Yan menghadapi musuh yang semakin kuat, termasuk sekte-sekte jahat dan para ahli yang mengincar kekuatannya. Dengan bimbingan Yao Lao dan tekad yang tak tergoyahkan, ia terus mengasah kemampuannya, bertemu sekutu baru, serta menghadapi berbagai konspirasi yang dapat mengancam hidupnya.'
+sinopsis : 'Setelah meninggalkan Akademi Jianan, Xiao Yan memulai perjalanannya ke wilayah Black-Corner Region, tempat yang penuh dengan bahaya dan kekuatan jahat. Dalam usahanya untuk menjadi lebih kuat, ia bergabung dengan Sekte Jianan dan berusaha mendapatkan kembali api surgawi yang langka. Di tengah perjalanannya, Xiao Yan menghadapi musuh, termasuk sekte-sekte jahat dan para ahli yang mengincar kekuatannya. ia terus mengasah kemampuannya, serta menghadapi konspirasi yang dapat mengancam hidupnya.'
 deskripsi : 'Download Batch Battle Through the Heavens S3 Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens S3 Subtitle Indonesia'
 

@@ -39,7 +39,7 @@ image : /img/post/the-rule-of-burning-sun.webp
 alt : 'The Rule of Burning Sun'
 url: 'the-rule-of-burning-sun'
 layout : postingan-donghua
-sinopsis : '"The Rule of Burning Sun" adalah film animasi Tiongkok yang merupakan bagian dari seri "The Black Troop". Dalam film ini, Sun Wukong, dikenal sebagai Raja Kera, muncul sebagai Buddha yang gemar bertarung dan mengalahkan musuh. Cerita berfokus pada konfrontasi antara peradaban modern dan alien, menampilkan duel puncak antara peradaban Lieyang dan Di Lena.'
+sinopsis : 'Film animasi Tiongkok dari seri "The Black Troop". Sun Wukong, dikenal sebagai Raja Kera, muncul sebagai Buddha yang gemar bertarung dan mengalahkan musuh. Cerita berfokus pada konfrontasi antara peradaban modern dan alien, menampilkan duel puncak antara peradaban Lieyang dan Di Lena.'
 deskripsi : 'Download Batch The Rule of Burning Sun Subtitle Indonesia'
 keywords : 'Download Batch The Rule of Burning Sun Subtitle Indonesia'
 

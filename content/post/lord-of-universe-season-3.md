@@ -33,7 +33,7 @@ image : /img/post/lord-of-universe-season-3.webp
 alt : 'Lord of Universe Season 3'
 url: 'lord-of-universe-season-3'
 layout : postingan-donghua
-sinopsis : 'Pada Season 3, perjalanan sang tokoh utama memasuki fase yang jauh lebih berbahaya. Setelah kekuatannya berkembang pesat, ia mulai terlibat langsung dalam konflik antar kekuatan besar di dunia kultivasi. Rahasia masa lalu, teknik terlarang, dan keberadaan musuh lama perlahan terungkap, memaksanya mengambil keputusan sulit demi bertahan hidup. Di tengah pertarungan sengit dan intrik tanpa henti, ambisinya untuk mencapai puncak kekuasaan semakin menguat, membuka jalan menuju tingkat kultivasi yang belum pernah ia capai sebelumnya.'
+sinopsis : 'Pada Season 3, perjalanan sang tokoh utama memasuki fase yang jauh lebih berbahaya. Setelah kekuatannya berkembang pesat, ia mulai terlibat langsung dalam konflik antar kekuatan besar di dunia kultivasi. Rahasia masa lalu, teknik terlarang, dan keberadaan musuh lama, memaksanya mengambil keputusan sulit demi bertahan hidup. Di tengah pertarungan sengit dan intrik tanpa henti, ambisinya untuk mencapai puncak kekuasaan semakin menguat, membuka jalan menuju tingkat kultivasi yang belum pernah ia capai sebelumnya.'
 deskripsi : 'Download Batch Lord of Universe Season 3 Subtitle Indonesia'
 keywords : 'Download Batch Lord of Universe Season 3 Subtitle Indonesia'
 

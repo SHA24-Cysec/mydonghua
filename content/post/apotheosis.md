@@ -29,7 +29,7 @@ image : /img/post/apotheosis.webp
 alt : 'Apotheosis'
 url: 'apotheosis'
 layout : postingan-donghua
-sinopsis : 'Luo Zheng dulunya adalah pewaris keluarga bangsawan yang kaya dan berkuasa. Namun, setelah kejatuhan keluarganya dan hilangnya status sosial, ia dipaksa menjadi budak di rumah yang pernah ia miliki. Dalam penderitaan dan hinaan, Luo Zheng menemukan sebuah kitab misterius peninggalan ayahnya yang mengubah tubuhnya menjadi alat pelatihan spiritual yang sempurna—sebuah jalan rahasia menuju puncak kekuatan. Dengan tekad yang tak tergoyahkan dan rahasia besar dalam dirinya, Luo Zheng memulai perjalanan menembus batas dunia kultivasi, menghadapi musuh-musuh kuat, rahasia klan-klan besar, hingga ancaman dari dunia para dewa. Ia berjuang bukan hanya demi kekuatan, tapi juga untuk membalas dendam dan mengungkap kebenaran yang tersembunyi jauh di balik runtuhnya keluarganya.'
+sinopsis : 'Luo Zheng dulunya adalah pewaris keluarga bangsawan yang kaya dan berkuasa. Namun, setelah kejatuhan keluarganya dan hilangnya status sosial, ia dipaksa menjadi budak di rumah yang pernah ia miliki. Dalam penderitaan dan hinaan, Luo Zheng menemukan sebuah kitab misterius peninggalan ayahnya yang mengubah tubuhnya menjadi alat pelatihan spiritual yang sempurna. sebuah jalan rahasia menuju puncak kekuatan. dan rahasia besar dalam dirinya, Luo Zheng memulai perjalanan menembus batas dunia kultivasi, menghadapi musuh-musuh kuat, rahasia klan-klan besar, hingga ancaman dari dunia para dewa. Ia berjuang untuk membalas dendam dan mengungkap kebenaran yang tersembunyi jauh di balik runtuhnya keluarganya.'
 deskripsi : 'Download Batch Apotheosis Subtitle Indonesia'
 keywords : 'Download Batch Apotheosis Subtitle Indonesia'
 

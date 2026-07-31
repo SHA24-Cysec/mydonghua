@@ -28,7 +28,7 @@ image : /img/post/qin-xia.webp
 alt : 'Qin Xia'
 url: 'qin-xia'
 layout : postingan-donghua
-sinopsis : 'Mo Xiaoyu membuat pengorbanan besar demi melindungi adik dan saudara iparnya: ia menyelimuti dirinya dengan tanah liat, menjadi salah satu prajurit terakota dalam pasukan kekaisaran Qin. Ribuan tahun kemudian, patungnya retak dan hidup kembali... di dunia modern. Saat terbangun, ia menemukan seorang gadis yang identik dengan Xin Er, saudara iparnya dahulu. Perbedaan zaman tidak menghalangi mereka untuk menjalin ikatan yang cepat terwujud. Berbekal keahlian bela diri dari era Qin dan moralitas Mohisme (aliran filsafat cinta universal), Mo Xiaoyu dan gadis tersebut bekerja sama menumpas kejahatan modern. Mereka membawa kembali keadilan sambil mencari jejak masa lalunya.'
+sinopsis : 'Mo Xiaoyu membuat pengorbanan besar demi melindungi adik dan saudara iparnya: ia menyelimuti dirinya menjadi salah satu prajurit terakota dalam pasukan kekaisaran Qin. Ribuan tahun kemudian, patungnya retak dan hidup kembali. di dunia modern. Saat terbangun, ia menemukan seorang gadis yang identik saudara iparnya dahulu. Perbedaan zaman tidak menghalangi mereka untuk menjalin ikatan yang cepat terwujud. Berbekal keahlian bela diri dari era Qin dan moralitas Mohisme (aliran filsafat cinta universal), Mo Xiaoyu dan gadis tersebut bekerja sama menumpas kejahatan modern. Mereka membawa kembali keadilan sambil mencari jejak masa lalunya.'
 deskripsi : 'Download Batch Qin Xia Subtitle Indonesia'
 keywords : 'Download Batch Qin Xia Subtitle Indonesia'
 

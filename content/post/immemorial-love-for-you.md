@@ -27,7 +27,7 @@ image : /img/post/immemorial-love-for-you.webp
 alt : 'Immemorial Love for You'
 url: 'immemorial-love-for-you'
 layout : postingan-donghua
-sinopsis : 'Dalam dunia yang dipenuhi sihir dan konflik antar klan, Immemorial Love For You menceritakan kisah cinta abadi antara dua jiwa yang telah terikat takdir sejak ribuan tahun lalu. Tokoh utama, seorang pria kuat dari zaman kuno yang terbangun di era modern, berusaha menemukan kembali wanita yang pernah ia cintai dan terlindungi dalam kehidupannya yang lampau. Namun, dunia telah berubah, dan kekuatan gelap yang dulu memisahkan mereka kembali mengancam. Dengan campuran aksi, fantasi, dan romansa, donghua ini menggambarkan perjuangan cinta yang melintasi waktu, reinkarnasi, dan takdir.'
+sinopsis : 'Dalam dunia yang dipenuhi sihir dan konflik antar klan, Immemorial Love For You menceritakan kisah cinta abadi antara dua jiwa yang telah terikat takdir sejak ribuan tahun lalu. Tokoh utama, seorang pria kuat dari zaman kuno yang terbangun di era modern, berusaha menemukan kembali wanita yang pernah ia cintai dan terlindungi dalam kehidupannya yang lampau. Namun, dunia telah berubah, dan kekuatan gelap yang dulu memisahkan mereka kembali mengancam. fantasi, dan romansa, donghua ini menggambarkan perjuangan cinta yang melintasi waktu, reinkarnasi, dan takdir.'
 deskripsi : 'Download Batch Immemorial Love for You Subtitle Indonesia'
 keywords : 'Download Batch Immemorial Love for You Subtitle Indonesia'
 

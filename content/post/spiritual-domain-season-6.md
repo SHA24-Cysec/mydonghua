@@ -32,7 +32,7 @@ image : /img/post/spiritual-domain-season-6.webp
 alt : 'Spiritual Domain Season 6'
 url: 'spiritual-domain-season-6'
 layout : postingan-donghua
-sinopsis : 'Season ke-6 Donghua Spiritual Domain'
+sinopsis : 'Season ke-6 mengungkap cinta, kebencian, dan dendam antara Akasaka, Kaisar, Qin Lie, Ling Yushi, dan Liang Shaoyang. Jiwa Qin Lie mulai bangkit. Tekanan aura magis di Serial Ling Yu menguat. Gao Yu menghilang tanpa jejak. Dari sudut yang berbeda, musim ini menampilkan sisi gelap kultivasi dan konsekuensi dari kekuatan yang selama ini diperebutkan.'
 deskripsi : 'Download Batch Spiritual Domain Season 6 Subtitle Indonesia'
 keywords : 'Download Batch Spiritual Domain Season 6 Subtitle Indonesia'
 

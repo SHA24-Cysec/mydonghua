@@ -37,7 +37,7 @@ image : /img/post/soul-land-movie.webp
 alt : 'Soul Land Movie Battle of the Gods'
 url: 'soul-land-movie-battle-of-the-gods'
 layout : postingan-donghua
-sinopsis : '"Soul Land Movie: The Battle of Two Gods" adalah klimaks epik dari seri Soul Land. Film ini menampilkan Tang San, yang telah memperoleh dua kekuatan ilahi sebagai Dewa Laut dan Dewa Asura, menghadapi aliansi Bibi Dong, yang telah menjadi Dewa Rakshasa, dan Qian Renxue, yang telah menjadi Dewa Malaikat. Pertarungan monumental ini menggambarkan konfrontasi antara kekuatan-kekuatan ilahi yang menentukan nasib dunia mereka. '
+sinopsis : '"Soul Land Movie: The Battle of Two Gods" adalah klimaks epik dari seri Soul Land Pertarungan monumental ini menggambarkan konfrontasi antara kekuatan-kekuatan ilahi yang menentukan nasib dunia mereka.'
 deskripsi : 'Download Batch Soul Land Movie Battle of the Gods Subtitle Indonesia'
 keywords : 'Download Batch Soul Land Movie Battle of the Gods Subtitle Indonesia'
 

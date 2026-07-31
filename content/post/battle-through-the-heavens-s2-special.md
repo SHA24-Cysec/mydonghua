@@ -35,7 +35,7 @@ image : /img/post/btth-s2-special.webp
 alt : 'Battle Through the Heavens S2 Special'
 url: 'battle-through-the-heavens-s2-special'
 layout : postingan-donghua
-sinopsis : 'Setelah melalui berbagai tantangan, Xiao Yan terus meningkatkan kekuatannya di bawah bimbingan Yao Lao. Dalam "Battle Through the Heavens Season 2 Special", Xiao Yan memulai perjalanan baru ke Wilayah Black-Corner, tempat di mana hukum rimba berlaku dan hanya yang terkuat yang bertahan. Di sana, ia menghadapi musuh-musuh yang lebih kuat, menemukan sekutu tak terduga, dan mengungkap rahasia yang dapat mengubah masa depannya. Dengan tekad membara dan keterampilan yang semakin berkembang, Xiao Yan berusaha membalas dendam dan membuktikan dirinya sebagai pejuang sejati.'
+sinopsis : 'Setelah melalui, Xiao Yan terus meningkatkan kekuatannya di bawah bimbingan Yao Lao. Dalam "Battle Through the Heavens Season 2 Special", Xiao Yan memulai perjalanan baru ke Wilayah Black-Corner, tempat di mana hukum rimba berlaku dan hanya yang terkuat yang bertahan. Di sana, ia menghadapi musuh-musuh yang lebih kuat, yang dapat mengubah masa depannya. dan keterampilan semakin berkembang, Xiao Yan berusaha membalas dendam dan membuktikan dirinya sebagai pejuang sejati.'
 deskripsi : 'Download Batch Battle Through the Heavens S2 Special Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens S2 Special Subtitle Indonesia'
 

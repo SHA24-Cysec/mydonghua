@@ -37,7 +37,7 @@ image : /img/post/hitori-no-shita-the-outcast-s5.webp
 alt : 'Hitori No Shita the Outcast Season 5'
 url: 'hitori-no-shita-the-outcast-season-5'
 layout : postingan-donghua
-sinopsis : 'Musim kelima dari donghua "Hitori no Shita: The Outcast" melanjutkan petualangan Chou Soran, seorang mahasiswa yang terlibat dalam dunia seni bela diri dan kekuatan supranatural. Setelah menghadapi berbagai ancaman dan mengungkap rahasia masa lalunya, Soran kini harus berhadapan dengan musuh-musuh baru yang lebih kuat dan misterius. Dengan bantuan teman-temannya, ia berusaha melindungi dunia dari kekuatan gelap yang mengancam keselamatan umat manusia.'
+sinopsis : 'Musim kelima dari donghua "Hitori no Shita: The Outcast" melanjutkan petualangan Chou Soran, seorang mahasiswa yang terlibat dalam dunia seni bela diri dan kekuatan supranatural. Setelah menghadapi ancaman dan mengungkap rahasia masa lalunya, Soran kini harus berhadapan dengan musuh-musuh baru yang lebih kuat dan misterius. ia berusaha melindungi dunia dari kekuatan gelap yang mengancam keselamatan umat manusia.'
 deskripsi : 'Download Batch Hitori No Shita the Outcast Season 5 Subtitle Indonesia'
 keywords : 'Download Batch Hitori No Shita the Outcast Season 5 Subtitle Indonesia'
 

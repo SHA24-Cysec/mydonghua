@@ -33,7 +33,7 @@ image : /img/post/spirit-guardian-s4.webp
 alt : 'Spirit Guardian Season 4'
 url: 'spirit-guardian-season-4'
 layout : postingan-donghua
-sinopsis : 'Kelanjutan dari Spirit Guardian Season 3'
+sinopsis : 'Kelanjutan dari Spirit Guardian Season 3.'
 deskripsi : 'Download Batch Spirit Guardian Season 4 Subtitle Indonesia'
 keywords : 'Download Batch Spirit Guardian Season 4 Subtitle Indonesia'
 

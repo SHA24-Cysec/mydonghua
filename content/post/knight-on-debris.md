@@ -25,7 +25,7 @@ image : /img/post/knight-on-debris.webp
 alt : 'Knight on Debris'
 url: 'knight-on-debris'
 layout : postingan-donghua
-sinopsis : '"Knights on Debris (Xing Hai Qishi)" adalah donghua bergenre sci-fi dan mecha yang berlatar di masa depan. Ceritanya mengikuti Jiang Li, seorang komandan luar angkasa yang kapalnya hancur dan terdampar di sebuah planet asing penuh bahaya. Berusaha bertahan hidup, ia menemukan bahwa planet tersebut dihuni oleh makhluk alien mematikan dan rahasia teknologi canggih yang bisa menjadi kunci penyelamatannya. Dengan kecerdasan dan keterampilan bertarungnya, Jiang Li harus melawan ancaman luar angkasa, mencari cara untuk kembali ke Bumi, dan mengungkap konspirasi besar yang mengancam umat manusia.'
+sinopsis : '"Knights on Debris (Xing Hai Qishi)" adalah donghua bergenre sci-fi dan mecha yang berlatar di masa depan. Ceritanya mengikuti Jiang Li, seorang komandan luar angkasa yang kapalnya hancur dan terdampar di sebuah planet asing. Berusaha bertahan hidup, ia menemukan bahwa planet tersebut dihuni oleh makhluk alien mematikan dan rahasia teknologi canggih yang bisa menjadi kunci penyelamatannya. Jiang Li harus melawan ancaman luar angkasa, mencari cara untuk kembali ke Bumi, dan mengungkap konspirasi besar yang mengancam umat manusia.'
 deskripsi : 'Download Batch Knight on Debris Subtitle Indonesia'
 keywords : 'Download Batch Knight on Debris Subtitle Indonesia'
 

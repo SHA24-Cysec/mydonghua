@@ -27,7 +27,7 @@ image : /img/post/jade-dynasty.webp
 alt : 'Jade Dynasty'
 url: 'jade-dynasty'
 layout : postingan-donghua
-sinopsis : 'Jade Dynasty bercerita tentang seorang pemuda bernama Zhang Xiaofan, yatim piatu yang hidup sederhana di sebuah desa kecil setelah tragedi pembantaian misterius menimpa keluarganya dan seluruh penduduk desanya. Bersama sahabatnya, Lin Jingyu, ia kemudian diterima sebagai murid di sekte besar Qing Yun Sect, tempat para kultivator berlatih untuk mencapai keabadian dan menumpas kekuatan jahat. Namun, perjalanan Xiaofan tidaklah mudah. Ia sering diremehkan karena bakat spiritualnya yang lemah, hingga takdir membawanya menemukan senjata kuno berisi kekuatan iblis yang mengubah segalanya. Seiring waktu, Xiaofan terjebak di antara dua dunia — kebaikan dan kegelapan — serta dihadapkan pada pilihan sulit antara cinta, kepercayaan, dan jalan takdirnya sendiri.'
+sinopsis : 'Jade Dynasty seorang pemuda bernama Zhang Xiaofan, yatim piatu yang hidup sederhana di sebuah desa kecil setelah tragedi pembantaian misterius menimpa keluarganya dan seluruh penduduk desanya. Bersama sahabatnya, Lin Jingyu, ia kemudian diterima sebagai murid di sekte besar Qing Yun Sect, tempat para kultivator berlatih untuk mencapai keabadian dan menumpas kekuatan jahat. Namun, perjalanan Xiaofan tidaklah mudah. Ia sering diremehkan karena bakat spiritualnya yang lemah, hingga takdir membawanya menemukan senjata kuno berisi kekuatan iblis yang mengubah segalanya. Seiring waktu, Xiaofan terjebak di antara dua dunia. kebaikan dan kegelapan. serta dihadapkan pada pilihan sulit antara cinta, kepercayaan, dan jalan takdirnya sendiri.'
 deskripsi : 'Download Batch Jade Dynasty Subtitle Indonesia'
 keywords : 'Download Batch Jade Dynasty Subtitle Indonesia'
 

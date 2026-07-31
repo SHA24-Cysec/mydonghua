@@ -29,7 +29,7 @@ image : /img/post/the-richest-man-in-game.webp
 alt : 'The Richest Man in Game'
 url: 'the-richest-man-in-game'
 layout : postingan-donghua
-sinopsis : 'Donghua ini mengisahkan seorang pemain biasa yang awalnya tidak memiliki keistimewaan dalam permainan realitas virtual berskala besar. Namun, melalui kecerdikan, strategi unik, serta keberuntungan yang tak terduga, ia berhasil membalikkan keadaan. Alih-alih mengejar kekuatan tempur semata, ia memilih jalan berbeda: membangun kekayaan dan jaringan dalam game. Perlahan, ia menguasai pasar, menjadi penguasa ekonomi dunia virtual, hingga dijuluki sebagai "orang terkaya di dalam permainan." Perjalanan ini bukan hanya tentang harta, tetapi juga tentang bagaimana ia menghadapi persaingan, tipu daya, dan tantangan yang datang dari pemain lain maupun sistem permainan itu sendiri.'
+sinopsis : 'Seorang pemain biasa yang awalnya tidak memiliki keistimewaan dalam permainan realitas virtual berskala besar. Namun, melalui kecerdikan, strategi unik, serta keberuntungan, ia berhasil membalikkan keadaan. Alih-alih mengejar kekuatan tempur semata, ia memilih jalan berbeda: membangun kekayaan dan jaringan dalam game. Perlahan, ia menguasai pasar, menjadi penguasa ekonomi dunia virtual, hingga dijuluki sebagai "orang terkaya di dalam permainan." Perjalanan ini tentang bagaimana ia menghadapi persaingan, tipu daya, dan tantangan yang datang dari pemain lain maupun sistem permainan itu sendiri.'
 deskripsi : 'Download Batch The Richest Man in Game Subtitle Indonesia'
 keywords : 'Download Batch The Richest Man in Game Subtitle Indonesia'
 

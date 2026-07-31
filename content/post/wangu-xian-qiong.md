@@ -28,7 +28,7 @@ image : /img/post/wangu-xian-qiong.webp
 alt : 'Wangu Xian Qiong'
 url: 'wangu-xian-qiong'
 layout : postingan-donghua
-sinopsis : 'Gu Hai, seorang pria dari abad ke-21, secara misterius terlempar ke dunia lain di mana Heavenly Dao dan politik kerajaan mendominasi kehidupan. Mengusung kecerdikannya, ia awalnya unggul dalam perdagangan, bahkan menjadi penasehat pintar bagi Kekaisaran Chen. Saat konflik berkecamuk antara Kerajaan Chen dan Song, strategi perang Gu Hai membantu membalikkan keadaan. Namun, bukan hanya intrik kerajaan yang menanti. Seorang peri surgawi tertarik padanya dan memberikan misi penting—misi yang ternyata bisa mengundang peperangan dan kekacauan dunia . Sepanjang 12 episode berdurasi sekitar 15 menit ini, kita akan disuguhi perpaduan antara perencanaan strategi militer, perdagangan cerdik, intrik politik, serta elemen fantasi wuxia yang memikat.'
+sinopsis : 'Gu Hai, seorang pria dari abad ke-21, terlempar ke dunia lain di mana Heavenly Dao dan politik kerajaan mendominasi kehidupan. Mengusung kecerdikannya, ia awalnya unggul dalam perdagangan, bahkan menjadi penasehat pintar bagi Kekaisaran Chen. Saat konflik berkecamuk antara Kerajaan Chen dan Song, strategi perang Gu Hai membantu membalikkan keadaan. Namun, bukan hanya intrik kerajaan yang menanti. Seorang peri surgawi tertarik padanya dan memberikan misi penting. misi yang ternyata bisa mengundang peperangan dan kekacauan dunia. Sepanjang 12 episode berdurasi sekitar 15 menit ini, kita akan disuguhi perpaduan antara perencanaan strategi militer, perdagangan cerdik, intrik politik, serta elemen fantasi wuxia yang memikat.'
 deskripsi : 'Download Batch Wangu Xian Qiong Subtitle Indonesia'
 keywords : 'Download Batch Wangu Xian Qiong Subtitle Indonesia'
 

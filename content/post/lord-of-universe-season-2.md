@@ -33,7 +33,7 @@ image : /img/post/lord-of-universe-season-2.webp
 alt : 'Lord of Universe Season 2'
 url: 'lord-of-universe-season-2'
 layout : postingan-donghua
-sinopsis : 'Season 2 Lord of the Universe melanjutkan perjalanan Luo Feng setelah kekuatannya meningkat pesat. Ia menghadapi ancaman baru dari faksi kuat di alam semesta dan konflik yang lebih terbuka antar ras. Luo Feng tidak hanya bertarung dengan musuh dari luar, tetapi juga diuji oleh ambisi, pengkhianatan, dan pilihan sulit yang menentukan masa depan umat manusia. Skala cerita melebar, pertarungan lebih intens, dan arah hidup Luo Feng mulai mengarah pada peran besar di panggung kosmik.'
+sinopsis : 'Season 2 Lord of the Universe melanjutkan perjalanan Luo Feng setelah kekuatannya meningkat pesat. Ia menghadapi ancaman baru dari faksi kuat di alam semesta dan konflik yang lebih terbuka antar ras. Luo Feng diuji oleh ambisi, pengkhianatan, dan pilihan sulit yang menentukan masa depan umat manusia. Skala cerita melebar, pertarungan lebih intens, dan arah hidup Luo Feng mulai mengarah pada peran besar di panggung kosmik.'
 deskripsi : 'Download Batch Lord of Universe Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Lord of Universe Season 2 Subtitle Indonesia'
 

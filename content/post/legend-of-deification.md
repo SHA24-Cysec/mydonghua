@@ -26,7 +26,7 @@ image : /img/post/legend-of-deification.webp
 alt : 'Legend of Deification'
 url: 'legend-of-deification'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan perjalanan Jiang Ziya, seorang jenderal perkasa yang diasingkan setelah gagal dalam tugasnya. Setelah kemenangan dalam perang besar melawan klan iblis, Jiang Ziya diberikan tugas untuk mengeksekusi Rubah Ekor Sembilan, roh iblis yang mengancam dunia manusia. Namun, ketika ia menyadari bahwa jiwa seorang gadis kecil terikat pada iblis tersebut, Jiang Ziya mulai mempertanyakan perintah yang diterimanya. Demi mencari kebenaran, ia melakukan perjalanan ke dunia yang terpecah antara para dewa dan manusia, menghadapi ujian berat yang menguji kesetiaan, keyakinan, dan pengorbanannya. Dalam usahanya menemukan takdir sejatinya, Jiang Ziya harus memilih antara mengikuti aturan surgawi atau menyelamatkan yang tak berdosa.'
+sinopsis : 'Jiang Ziya, seorang jenderal perkasa yang diasingkan setelah gagal dalam tugasnya. Setelah kemenangan dalam perang besar melawan klan iblis, Jiang Ziya diberikan tugas untuk mengeksekusi Rubah Ekor Sembilan, roh iblis yang mengancam dunia manusia. Namun, ketika ia menyadari bahwa jiwa seorang gadis kecil terikat pada iblis tersebut, Jiang Ziya mulai mempertanyakan perintah yang diterimanya. Demi mencari kebenaran, ia melakukan perjalanan ke dunia yang terpecah antara para dewa dan manusia, menghadapi ujian berat yang menguji kesetiaan, keyakinan, dan pengorbanannya. Dalam usahanya menemukan takdir sejatinya, Jiang Ziya harus memilih antara mengikuti aturan surgawi atau menyelamatkan yang tak berdosa.'
 deskripsi : 'Download Batch Legend of Deification Subtitle Indonesia'
 keywords : 'Download Batch Legend of Deification Subtitle Indonesia'
 

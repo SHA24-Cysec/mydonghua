@@ -37,7 +37,7 @@ image : /img/post/tales-of-demons-and-gods-s3.webp
 alt : 'Tales of Demons and Gods S3'
 url: 'tales-of-demons-and-gods-s3'
 layout : postingan-donghua
-sinopsis : '"Tales of Demons and Gods Season 3" melanjutkan kisah Nie Li, seorang ahli bela diri yang bereinkarnasi setelah kematiannya akibat serangan oleh Raja Iblis. Dengan ingatan dari kehidupan sebelumnya, Nie Li bertekad untuk melindungi orang-orang yang ia cintai dan mencegah kehancuran kotanya, Glory City. Di musim ketiga ini, Nie Li semakin mendalami kekuatan spiritualnya dan menghadapi musuh yang lebih kuat, termasuk persaingan sengit di sekte-sekte besar. Sambil memperkuat sekutunya dan mengungkap rahasia masa lalu, Nie Li harus menggunakan kecerdasannya untuk mengatasi berbagai rintangan dan membangun fondasi kekuatan yang kokoh demi masa depan yang lebih baik.'
+sinopsis : '"Tales of Demons and Gods Season 3" melanjutkan kisah Nie Li, seorang ahli bela diri yang bereinkarnasi setelah kematiannya akibat serangan oleh Raja Iblis. Nie Li bertekad untuk melindungi orang-orang yang ia cintai dan mencegah kehancuran kotanya, Glory City. Di musim ketiga ini, Nie Li semakin mendalami kekuatan spiritualnya dan menghadapi musuh yang lebih kuat, termasuk persaingan sengit di sekte-sekte besar. Sambil memperkuat sekutunya dan mengungkap rahasia masa lalu, Nie Li harus menggunakan kecerdasannya untuk mengatasi dan membangun fondasi kekuatan yang kokoh demi masa depan yang lebih baik.'
 deskripsi : 'Download Batch Tales of Demons and Gods Season 3 Subtitle Indonesia'
 keywords : 'Download Batch Tales of Demons and Gods Season 3 Subtitle Indonesia'
 

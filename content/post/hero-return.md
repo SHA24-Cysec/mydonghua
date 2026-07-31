@@ -27,7 +27,7 @@ image : /img/post/hero-return.webp
 alt : 'Hero Return'
 url: 'hero-return'
 layout : postingan-donghua
-sinopsis : 'Hero Return mengisahkan tentang Zero, pahlawan super pertama umat manusia yang menginspirasi kemunculan banyak pahlawan lainnya. Setelah lima tahun memimpin pertempuran melawan kejahatan, Zero tiba-tiba menghilang tanpa jejak. Beberapa tahun kemudian, seorang pemuda bernama Lin Jie muncul dan mendaftar untuk menjadi pahlawan. Meskipun terlihat biasa-biasa saja dan gagal dalam ujian tertulis, Lin Jie menyimpan kekuatan luar biasa yang mengingatkan pada Zero. Kehadirannya mengguncang dunia pahlawan yang kini lebih berorientasi pada sistem dan popularitas.'
+sinopsis : 'Zero, pahlawan super pertama umat manusia yang menginspirasi kemunculan banyak pahlawan lainnya. Setelah lima tahun memimpin pertempuran melawan kejahatan, Zero tiba-tiba menghilang tanpa jejak. Beberapa tahun kemudian, seorang pemuda bernama Lin Jie muncul dan mendaftar untuk menjadi pahlawan. Meskipun terlihat biasa-biasa saja dan gagal dalam ujian tertulis, Lin Jie menyimpan kekuatan yang mengingatkan pada Zero. Kehadirannya mengguncang dunia pahlawan yang kini lebih berorientasi pada sistem dan popularitas.'
 deskripsi : 'Download Batch Hero Return Subtitle Indonesia'
 keywords : 'Download Batch Hero Return Subtitle Indonesia'
 

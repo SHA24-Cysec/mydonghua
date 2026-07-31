@@ -33,7 +33,7 @@ image : /img/post/100000-years-of-refining-qi.webp
 alt : '100000 Years of Refining Qi'
 url: '100000-years-of-refining-qi'
 layout : postingan-donghua
-sinopsis : '100,000 Years of Refining Qi mengisahkan perjalanan Xu Yang, seorang kultivator legendaris yang telah berlatih selama seratus ribu tahun namun tetap berada di tahap Refining Qi, level paling dasar dalam dunia kultivasi. Saat sekte tempatnya berasal mulai mengalami kemunduran dan ancaman dari berbagai kekuatan lain bermunculan, Xu Yang kembali untuk membimbing generasi baru murid-muridnya. Di balik penampilannya yang tenang dan sederhana, Xu Yang sebenarnya memiliki kekuatan yang jauh melampaui para kultivator biasa. Dengan pengalaman ribuan tahun, ia menghadapi berbagai pertarungan, intrik antar sekte, hingga rahasia kuno dunia kultivasi. Donghua ini memadukan aksi, fantasi, dan humor ringan, dengan fokus pada karakter utama yang sangat overpower namun tetap bijaksana dalam menghadapi setiap konflik.'
+sinopsis : '100,000 Years of Refining Qi Xu Yang, seorang kultivator legendaris yang telah berlatih selama seratus ribu tahun namun tetap berada di tahap Refining Qi, level paling dasar dalam dunia kultivasi. Saat sekte tempatnya berasal mulai mengalami kemunduran dan ancaman dari kekuatan lain bermunculan, Xu Yang kembali untuk membimbing generasi baru murid-muridnya. Di balik penampilannya yang tenang dan sederhana, Xu Yang sebenarnya memiliki kekuatan melebihi para kultivator biasa. ia menghadapi pertarungan, intrik antar sekte, hingga rahasia kuno dunia kultivasi.'
 deskripsi : 'Download Batch 100000 Years of Refining Qi Subtitle Indonesia'
 keywords : 'Download Batch 100000 Years of Refining Qi Subtitle Indonesia'
 

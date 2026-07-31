@@ -27,7 +27,7 @@ image : /img/post/sage-ancestor.webp
 alt : 'Sage Ancestor'
 url: 'sage-ancestor'
 layout : postingan-donghua
-sinopsis : 'Di dunia kultivasi yang penuh persaingan, Bai Chen, seorang pemuda jenius dari klan Bai, dikhianati dan hampir kehilangan nyawanya dalam sebuah konspirasi. Namun, takdir membawanya menemukan warisan kuno dari seorang leluhur bijak seorang kultivator tertinggi yang pernah mengguncang dunia. Dengan bimbingan warisan ini, Bai Chen bangkit kembali, mengasah kekuatannya, dan melampaui batas yang pernah ia bayangkan. Saat musuh-musuh lamanya terkejut dengan kemunculannya yang baru, Bai Chen bersumpah untuk menegakkan keadilan, membalas dendam, dan mengungkap rahasia besar di balik kehancuran keluarganya. Dengan setiap langkahnya, ia semakin dekat menuju puncak dunia kultivasi, menjadi legenda yang dikenal sebagai "Sage Ancestor".'
+sinopsis : 'Di dunia kultivasi yang penuh persaingan, Bai Chen, seorang pemuda jenius dari klan Bai, dikhianati dan hampir kehilangan nyawanya dalam sebuah konspirasi. Namun, takdir membawanya menemukan warisan kuno dari seorang leluhur bijak seorang kultivator tertinggi yang pernah mengguncang dunia. Bai Chen bangkit kembali, mengasah kekuatannya, dan melampaui batas yang pernah ia bayangkan. Saat musuh-musuh lamanya terkejut Bai Chen bersumpah untuk menegakkan keadilan, membalas dendam, dan mengungkap rahasia besar di balik kehancuran keluarganya. ia semakin dekat menuju puncak dunia kultivasi, menjadi legenda yang dikenal sebagai "Sage Ancestor".'
 deskripsi : 'Download Batch Sage Ancestor Subtitle Indonesia'
 keywords : 'Download Batch Sage Ancestor Subtitle Indonesia'
 

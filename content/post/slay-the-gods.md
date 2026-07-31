@@ -26,7 +26,7 @@ image : /img/post/slay-the-gods.webp
 alt : 'Slay the Gods'
 url: 'slay-the-gods'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan tentang Lin Qiye, seorang siswa SMA yang buta. Secara tak terduga, ia memperoleh kekuatan sebagai "Penjaga Malam" dengan tanggung jawab melindungi negaranya dari makhluk mitos yang muncul di dunia modern. Perjalanan Lin Qiye dimulai dari melindungi keluarganya hingga menghadapi dewa-dewa yang mengancam umat manusia, sambil menguasai kemampuan barunya dan mengungkap misteri masa lalunya.'
+sinopsis : 'Lin Qiye, seorang siswa SMA yang buta. Secara tak terduga, ia memperoleh kekuatan sebagai "Penjaga Malam" dengan tanggung jawab melindungi negaranya dari makhluk mitos yang muncul di dunia modern. Perjalanan Lin Qiye dimulai dari melindungi keluarganya hingga menghadapi dewa-dewa yang mengancam umat manusia, sambil menguasai kemampuan barunya dan mengungkap misteri masa lalunya.'
 deskripsi : 'Download Batch Slay the Gods Subtitle Indonesia'
 keywords : 'Download Batch Slay the Gods Subtitle Indonesia'
 

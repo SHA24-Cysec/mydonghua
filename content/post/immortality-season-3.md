@@ -36,7 +36,7 @@ image : /img/post/immortality-season-3.webp
 alt : 'Immortality Season 3'
 url: 'immortality-season-3'
 layout : postingan-donghua
-sinopsis : 'Musim ketiga Immortality melanjutkan kisah Fang Han, seorang pemuda biasa yang bertekad menembus jalan panjang menuju keabadian. Setelah melalui berbagai ujian hidup dan pertempuran sengit di musim sebelumnya, Fang Han kini menghadapi tantangan yang lebih besar. Ia bukan hanya harus memperkuat kultivasi dan tekniknya, tetapi juga berhadapan dengan sekte-sekte kuat, rahasia dunia kultivasi, serta intrik yang menguji kesetiaan dan ambisinya. Dalam perjalanan ini, Fang Han semakin menyadari bahwa keabadian tidak hanya soal kekuatan, melainkan juga pilihan moral, pengorbanan, dan harga yang harus dibayar.'
+sinopsis : 'Musim ketiga Immortality melanjutkan kisah Fang Han, seorang pemuda biasa yang bertekad menembus jalan panjang menuju keabadian. Setelah melalui berbagai ujian hidup dan pertempuran sengit di musim sebelumnya, Fang Han kini menghadapi tantangan yang lebih besar. Ia berhadapan dengan sekte-sekte kuat, rahasia dunia kultivasi, serta intrik yang menguji kesetiaan dan ambisinya. Dalam perjalanan ini, Fang Han semakin menyadari bahwa keabadian pilihan moral, pengorbanan, dan harga yang harus dibayar.'
 deskripsi : 'Download Batch Immortality Season 3 Subtitle Indonesia'
 keywords : 'Download Batch Immortality Season 3 Subtitle Indonesia'
 

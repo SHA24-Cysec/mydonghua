@@ -29,7 +29,7 @@ image : /img/post/heaven-official-blessing-special.webp
 alt : 'Heaven Official Blessing Special'
 url: 'heaven-official-blessing-special'
 layout : postingan-donghua
-sinopsis : 'Setelah ratusan tahun menjadi dewa buangan, Xie Lian kembali naik ke Surga untuk ketiga kalinya. Dalam episode spesial ini, kisah berfokus pada momen-momen ringan dan mendalam yang tidak ditampilkan dalam seri utama. Melalui interaksi hangat antara Xie Lian dan Hua Cheng, sang Raja Iblis yang setia padanya, kita melihat sisi lain hubungan mereka—penuh kepercayaan, godaan halus, dan humor. Spesial ini menyuguhkan nuansa romantis yang lembut, dibalut dengan sentuhan fantasi, serta memperdalam ikatan antara dua tokoh utama di tengah dunia para dewa dan siluman.'
+sinopsis : 'Setelah ratusan tahun menjadi dewa buangan, Xie Lian kembali naik ke Surga untuk ketiga kalinya. Dalam episode spesial ini, kisah berfokus pada momen-momen ringan dan mendalam yang tidak ditampilkan dalam seri utama. Melalui interaksi hangat antara Xie Lian dan Hua Cheng, sang Raja Iblis yang setia padanya, kita melihat sisi lain hubungan mereka. penuh kepercayaan, godaan halus, dan humor. Spesial ini menyuguhkan nuansa romantis yang lembut, dibalut serta memperdalam ikatan antara dua tokoh utama di tengah dunia para dewa dan siluman.'
 deskripsi : 'Download Batch Heaven Official Blessing Special Subtitle Indonesia'
 keywords : 'Download Batch Heaven Official Blessing Special Subtitle Indonesia'
 

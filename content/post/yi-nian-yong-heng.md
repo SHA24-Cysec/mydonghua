@@ -36,7 +36,7 @@ image : /img/post/yi-nian-yong-heng.webp
 alt : 'Yi Nian Yong Heng'
 url: 'yi-nian-yong-heng'
 layout : postingan-donghua
-sinopsis : 'Yi Nian Yong Heng menceritakan perjalanan Bai Xiaochun, seorang pemuda yang penuh rasa takut akan kematian, tetapi juga memiliki hati yang tulus. Walau dikenal penakut dan kerap menghindari bahaya, ia justru terus terseret ke dalam berbagai peristiwa besar yang menentukan nasib sekte, bangsa, bahkan dunia. Dengan sifat kocaknya yang sering menimbulkan kekacauan, Bai Xiaochun perlahan menunjukkan kecerdasannya dalam seni alkimia, teknik kultivasi, hingga strategi perang. Rasa cintanya terhadap kehidupan dan orang-orang di sekitarnya menjadikannya tokoh yang tak mudah dilupakan. Seiring waktu, perjalanannya dari seorang pemula yang lugu menuju kultivator kuat membawa banyak kisah penuh humor, persahabatan, serta tragedi yang menguji hati.'
+sinopsis : 'Yi Nian Yong Heng Bai Xiaochun, seorang pemuda yang penuh rasa takut akan kematian, tetapi juga memiliki hati yang tulus. Walau dikenal penakut dan kerap menghindari bahaya, ia justru terus terseret ke dalam berbagai peristiwa besar yang menentukan nasib sekte, bangsa, bahkan dunia. Bai Xiaochun perlahan menunjukkan kecerdasannya dalam seni alkimia, teknik kultivasi, hingga strategi perang. Rasa cintanya terhadap kehidupan dan orang-orang di sekitarnya menjadikannya tokoh yang tak mudah dilupakan. Seiring waktu, perjalanannya dari seorang pemula yang lugu menuju kultivator kuat membawa banyak kisah penuh humor, persahabatan, serta tragedi yang menguji hati.'
 deskripsi : 'Download Batch Yi Nian Yong Heng Subtitle Indonesia'
 keywords : 'Download Batch Yi Nian Yong Heng Subtitle Indonesia'
 

@@ -34,7 +34,7 @@ image : /img/post/ancient-myth.webp
 alt : 'Ancient Myth'
 url: 'ancient-myth'
 layout : postingan-donghua
-sinopsis : 'Ancient Myth mengisahkan perjalanan seorang pemuda yang terlahir di dunia penuh kekuatan kuno, di mana manusia, dewa, dan makhluk legendaris hidup berdampingan dalam konflik yang tak pernah benar-benar berakhir. Di tengah perebutan kekuasaan dan rahasia artefak kuno, ia harus menghadapi takdir besar yang perlahan mulai terungkap. Berawal dari sosok yang dianggap biasa, protagonis utama perlahan menemukan kemampuan luar biasa yang berkaitan dengan mitos kuno yang telah lama terlupakan. Dalam prosesnya, ia bertemu berbagai sekutu dan musuh kuat, memasuki dunia kultivasi yang keras, serta menghadapi pertarungan yang menentukan nasib banyak kerajaan.'
+sinopsis : 'Seorang pemuda yang terlahir di dunia kuno, di mana manusia, dewa, dan makhluk legendaris hidup berdampingan dalam konflik. Di tengah perebutan kekuasaan dan rahasia artefak kuno, ia harus menghadapi. Berawal dari sosok yang dianggap biasa, protagonis utama perlahan menemukan kemampuan yang berkaitan dengan mitos kuno yang telah lama terlupakan. Dalam prosesnya, ia bertemu sekutu dan musuh kuat, memasuki dunia kultivasi yang keras, serta menghadapi pertarungan yang menentukan nasib banyak kerajaan.'
 deskripsi : 'Download Batch Ancient Myth Subtitle Indonesia'
 keywords : 'Download Batch Ancient Myth Subtitle Indonesia'
 

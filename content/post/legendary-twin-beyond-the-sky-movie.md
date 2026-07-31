@@ -34,7 +34,7 @@ image : /img/post/legendary-twin-beyond-the-sky-movie.webp
 alt : 'Legendary Twins: Beyond the Sky Movie'
 url: 'legendary-twin-beyond-the-sky-movie'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan dua saudara kembar yang terpisah sejak kecil akibat konflik besar di dunia persilatan. Tumbuh di lingkungan yang berbeda, keduanya berkembang dengan kepribadian, cara berpikir, dan jalan hidup yang bertolak belakang. Tanpa mengetahui ikatan darah di antara mereka, takdir perlahan mempertemukan keduanya di tengah intrik, ambisi, dan pertarungan antar kekuatan besar. Seiring terungkapnya masa lalu, kedua kembar ini harus menghadapi pilihan sulit: saling menjatuhkan demi tujuan masing-masing, atau bersatu untuk menembus batas langit dan mengubah nasib dunia yang kejam.'
+sinopsis : 'Mengisahkan dua saudara kembar yang terpisah sejak kecil akibat konflik besar di dunia persilatan. Tumbuh di lingkungan yang berbeda, keduanya berkembang cara berpikir, dan jalan hidup yang bertolak belakang. Tanpa mengetahui ikatan darah di antara mereka, takdir perlahan mempertemukan keduanya di tengah intrik, ambisi, dan pertarungan antar kekuatan besar. Seiring terungkapnya masa lalu, kedua kembar ini harus menghadapi pilihan sulit: saling menjatuhkan demi tujuan masing-masing, atau bersatu untuk menembus batas langit dan mengubah nasib dunia yang kejam.'
 deskripsi : 'Download Batch Legendary Twins: Beyond the Sky Movie Subtitle Indonesia'
 keywords : 'Download Batch Legendary Twins: Beyond the Sky Movie Subtitle Indonesia'
 

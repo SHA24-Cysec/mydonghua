@@ -25,7 +25,7 @@ image : /img/post/agents-in-otherworld.webp
 alt : 'Agents in Otherworld'
 url: 'agents-in-otherworld'
 layout : postingan-donghua
-sinopsis : 'Serial ini mengisahkan petualangan agen-agen khusus yang beroperasi di dunia lain, menghadapi berbagai tantangan dan makhluk supranatural. Dengan perpaduan aksi, fantasi, dan elemen misteri, "Agents in Otherworld" menawarkan pengalaman menonton yang menarik bagi para penggemar genre tersebut.'
+sinopsis : 'Agen-agen khusus beroperasi di dunia lain, menghadapi tantangan dan makhluk supranatural. Aksi, fantasi, dan misteri bercampur dalam misi mereka.'
 deskripsi : 'Download Batch Agents in Otherworld Subtitle Indonesia'
 keywords : 'Download Batch Agents in Otherworld Subtitle Indonesia'
 

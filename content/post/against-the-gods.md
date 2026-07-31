@@ -26,7 +26,7 @@ image : /img/post/against-the-gods.webp
 alt : 'Against the Gods'
 url: 'against-the-gods'
 layout : postingan-donghua
-sinopsis : 'Cerita ini mengikuti Yun Che, seorang pemuda yang membawa rahasia besar dalam dirinya. Setelah dikejar oleh musuh-musuhnya, ia memilih bunuh diri dengan melompat dari tebing, tetapi tak disangka, ia bereinkarnasi ke dunia lain dengan kekuatan misterius. Di kehidupan barunya, Yun Che menemukan Poison Heavenly Pearl, artefak kuat yang membantunya berkembang pesat dalam kultivasi. Dengan tekad membara, ia menantang para ahli terkuat, melawan takdir, dan mencari keadilan atas kehidupan masa lalunya. Dalam perjalanannya, ia menghadapi musuh-musuh tangguh, menemukan sekutu setia, serta terlibat dalam intrik dunia kultivasi yang penuh pengkhianatan dan kekuatan luar biasa. Dengan kemampuannya yang unik dan tekad tak tergoyahkan, Yun Che berusaha mencapai puncak kekuatan dan melindungi orang-orang yang ia cintai.'
+sinopsis : 'Yun Che membawa rahasia besar dalam dirinya. Setelah dikejar musuh-musuhnya, ia melompat dari tebing. Alih-alih mati, ia bereinkarnasi ke dunia lain. Di kehidupan barunya, ia menemukan Poison Heavenly Pearl, artefak yang mempercepat kultivasinya. Yun Che menantang para ahli terkuat, melawan takdir, dan membalas dendam atas kehidupan masa lalunya. Ia menembus intrik dunia kultivasi demi mencapai puncak kekuatan dan melindungi orang-orang yang ia cintai.'
 deskripsi : 'Download Batch Against the Gods Subtitle Indonesia'
 keywords : 'Download Batch Against the Gods Subtitle Indonesia'
 

@@ -36,7 +36,7 @@ image : /img/post/manual-of-hundred-demons.webp
 alt : 'Manual of Hundred Demons'
 url: 'manual-of-hundred-demons'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan perjalanan seorang gadis muda bernama Tao Yao, seorang tabib iblis yang memiliki kemampuan untuk menyembuhkan luka fisik dan emosional para iblis. Bersama dua pengikut setianya, Mo Ya (seorang iblis kucing) dan Liu Gongzi (seorang roh pohon), Tao Yao berkelana dari satu tempat ke tempat lain, membantu iblis dan manusia yang terluka karena konflik atau kesalahpahaman. Dalam perjalanannya, Tao Yao tidak hanya menyelesaikan masalah, tetapi juga mengungkap berbagai rahasia dan kisah tragis yang tersembunyi di balik kehidupan para iblis.'
+sinopsis : 'Seorang gadis muda bernama Tao Yao, seorang tabib iblis yang memiliki kemampuan untuk menyembuhkan luka fisik dan emosional para iblis. Bersama dua pengikut setianya, Mo Ya (seorang iblis kucing) dan Liu Gongzi (seorang roh pohon), Tao Yao berkelana dari satu tempat ke tempat lain, membantu iblis dan manusia yang terluka karena konflik atau kesalahpahaman. Dalam perjalanannya, Tao Yao mengungkap dan kisah tragis yang tersembunyi di balik kehidupan para iblis.'
 deskripsi : 'Download Batch Manual of Hundred Demons Subtitle Indonesia'
 keywords : 'Download Batch Manual of Hundred Demons Subtitle Indonesia'
 

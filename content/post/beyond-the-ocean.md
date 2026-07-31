@@ -30,7 +30,7 @@ image : /img/post/beyond-the-ocean.webp
 alt : 'Beyond the Ocean'
 url: 'beyond-the-ocean'
 layout : postingan-donghua
-sinopsis : '"Beyond the Ocean" adalah serial animasi Tiongkok (donghua) yang mengisahkan perjalanan Pangeran Mahkota Jianwen setelah menyaksikan pembunuhan kaisar oleh Laksamana Zheng, yang selama ini dianggapnya sebagai guru dan sahabat dekat. Setelah kejadian tersebut, Jianwen difitnah oleh istana sebagai pelaku kudeta yang membunuh ayahnya sendiri. Laksamana Zheng, atas perintah Pangeran Bupati Yan, kembali ke Quanzhou untuk menangkap Jianwen. Menyadari rencana tersebut, Jianwen memulai perjalanan pelariannya.'
+sinopsis : 'Pangeran Mahkota Jianwen menyaksikan pembunuhan kaisar oleh Laksamana Zheng, yang selama ini ia anggap guru dan sahabat dekat. Istana lalu menfitnah Jianwen sebagai pelaku kudeta yang membunuh ayahnya sendiri. Laksamana Zheng, atas perintah Pangeran Bupati Yan, kembali ke Quanzhou untuk menangkap Jianwen. Menyadari rencana tersebut, Jianwen memulai pelarian.'
 deskripsi : 'Download Batch Beyond the Ocean Subtitle Indonesia'
 keywords : 'Download Batch Beyond the Ocean Subtitle Indonesia'
 

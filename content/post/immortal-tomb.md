@@ -25,7 +25,7 @@ image : /img/post/immortal-tomb.webp
 alt : 'Immortal Tomb'
 url: 'immortal-tomb'
 layout : postingan-donghua
-sinopsis : 'Immortal Tomb mengisahkan dunia kultivasi yang menyimpan rahasia besar tentang makam para makhluk abadi. Di balik legenda Immortal Tomb, tersembunyi kekuatan kuno yang mampu mengubah nasib siapa pun yang menemukannya. Cerita berfokus pada seorang kultivator muda yang tanpa sengaja terseret ke dalam konflik besar antara sekte, klan, dan kekuatan misterius yang mengincar rahasia makam tersebut. Perjalanan yang awalnya demi bertahan hidup perlahan berubah menjadi pencarian jati diri, kekuatan sejati, dan kebenaran tentang masa lalu dunia kultivasi. Di tengah pertarungan sengit, intrik, dan pengkhianatan, Immortal Tomb menjadi simbol harapan sekaligus kehancuran tempat di mana hanya mereka yang kuat, cerdas, dan berani yang bisa melangkah lebih jauh.'
+sinopsis : 'Immortal Tomb mengisahkan dunia kultivasi yang menyimpan rahasia besar tentang makam para makhluk abadi. Di balik legenda Immortal Tomb, tersembunyi kekuatan kuno yang mampu mengubah nasib siapa pun yang menemukannya. Cerita berfokus pada seorang kultivator muda yang tanpa sengaja terseret ke dalam konflik besar antara sekte, klan, dan yang mengincar rahasia makam tersebut. Perjalanan yang awalnya demi bertahan hidup perlahan berubah menjadi, kekuatan sejati, dan kebenaran tentang masa lalu dunia kultivasi. Di tengah pertarungan sengit, intrik, dan pengkhianatan, Immortal Tomb menjadi simbol harapan sekaligus kehancuran tempat di mana hanya mereka yang kuat, cerdas, dan berani yang bisa melangkah lebih jauh.'
 deskripsi : 'Download Batch Immortal Tomb Subtitle Indonesia'
 keywords : 'Download Batch Immortal Tomb Subtitle Indonesia'
 

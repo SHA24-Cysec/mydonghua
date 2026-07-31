@@ -33,7 +33,7 @@ image : /img/post/legend-of-exorcism.webp
 alt : 'Legend of Exorcism'
 url: 'legend-of-exorcism'
 layout : postingan-donghua
-sinopsis : "Ceritanya mengikuti Kong Hongjun, seorang pemuda yang tumbuh di Gunung Yao dan membawa pusaka penting untuk melindungi dunia dari iblis. Setelah kematian ayahnya, Kong Hongjun bergabung dengan Divisi Pengusiran Iblis (Exorcism Division) di Chang'an, ibu kota kekaisaran, untuk melanjutkan misi ayahnya. Namun, pertemuannya dengan Li Jinglong, pemimpin divisi yang karismatik dan memiliki kekuatan Cahaya Terang (Light of Exorcism), membuat perjalanannya penuh tantangan dan persahabatan. Bersama tim pengusir iblis lainnya, mereka berjuang menghadapi berbagai ancaman supranatural dan konspirasi di balik kekacauan yang melanda ibu kota. Dalam prosesnya, Kong Hongjun menemukan kebenaran tentang masa lalunya dan takdir yang harus dihadapinya."
+sinopsis : "Kong Hongjun, pemuda yang tumbuh di Gunung Yao dan membawa pusaka penting untuk melindungi dunia dari iblis. Setelah kematian ayahnya, ia bergabung dengan Divisi Pengusiran Iblis (Exorcism Division) di Chang'an, ibu kota kekaisaran, untuk melanjutkan misi ayahnya. Pertemuannya dengan Li Jinglong, pemimpin divisi yang karismatik dan memiliki kekuatan Cahaya Terang (Light of Exorcism), mengubah perjalanannya. Bersama tim pengusir iblis lainnya, mereka berjuang menghadapi ancaman supranatural dan konspirasi di balik kekacauan yang melanda ibu kota. Kong Hongjun menemukan kebenaran tentang masa lalunya dan takdir yang harus dihadapinya."
 deskripsi : 'Download Batch Legend of Exorcism Subtitle Indonesia'
 keywords : 'Download Batch Legend of Exorcism Subtitle Indonesia'
 

@@ -24,7 +24,7 @@ image : /img/post/mofa-gongzhu-de-xiao-fannao.webp
 alt : 'Mofa Gongzhu De Xiao Fannao'
 url: 'mofa-gongzhu-de-xiao-fannao'
 layout : postingan-donghua
-sinopsis : 'Mofa Gongzhu De Xiao Fannao mengisahkan kehidupan seorang putri iblis kecil yang memiliki kekuatan sihir luar biasa, namun justru sering terjebak dalam masalah sehari-hari yang konyol dan tak terduga. Di balik statusnya sebagai putri dunia iblis, ia hanyalah gadis ceria, keras kepala, dan penuh rasa ingin tahu. Setiap harinya dipenuhi kejadian unik akibat sifat isengnya, mulai dari kesalahpahaman dengan para pelayan, konflik kecil di istana iblis, hingga interaksi lucu dengan karakter lain yang berusaha mengendalikan kekacauan yang ia buat. Alih-alih kisah pertarungan besar, donghua ini lebih menyoroti dinamika hubungan, emosi sederhana, serta sisi manusiawi dari dunia fantasi iblis. (Dub Jepang)'
+sinopsis : 'Mofa Gongzhu De Xiao Fannao mengisahkan kehidupan seorang putri iblis kecil yang memiliki kekuatan sihir luar biasa, namun justru sering terjebak dalam masalah sehari-hari yang konyol dan tak terduga. Di balik statusnya sebagai putri dunia iblis, ia hanyalah gadis ceria, keras kepala, dan penuh rasa ingin tahu. Setiap harinya dipenuhi kejadian unik akibat sifat isengnya, mulai dari kesalahpahaman konflik kecil di istana iblis, hingga interaksi lucu dengan karakter lain yang berusaha mengendalikan kekacauan yang ia buat. Alih-alih kisah pertarungan besar, donghua ini lebih menyoroti dinamika hubungan, emosi sederhana, serta sisi manusiawi dari dunia fantasi iblis. (Dub Jepang).'
 deskripsi : 'Download Batch Mofa Gongzhu De Xiao Fannao Subtitle Indonesia'
 keywords : 'Download Batch Mofa Gongzhu De Xiao Fannao Subtitle Indonesia'
 

@@ -34,7 +34,7 @@ image : /img/post/the-shape-of-the-wind-2-siam-era.webp
 alt : 'The Shape of the Wind 2 Siam Era'
 url: 'the-shape-of-the-wind-2-siam-era'
 layout : postingan-donghua
-sinopsis : 'The Shape of the Wind 2: Siam Era melanjutkan kisah petualangan penuh aksi dan strategi dari musim pertamanya. Setelah melewati berbagai ujian berat, protagonis utama kembali menghadapi tantangan baru di era Siam, sebuah periode penuh intrik politik dan konflik antar klan. Dalam upayanya untuk melindungi orang-orang yang dicintainya dan mengungkap rahasia di balik kekuatan angin, ia harus membangun aliansi baru dan menghadapi musuh yang lebih kuat. Dengan latar budaya dan sejarah yang kaya, donghua ini menyajikan perpaduan epik antara seni bela diri, strategi perang, dan persahabatan yang teruji oleh waktu.'
+sinopsis : 'The Shape of the Wind 2: Siam Era melanjutkan kisah petualangan penuh aksi dan strategi dari musim pertamanya. Setelah melewati berbagai ujian berat, protagonis utama kembali menghadapi tantangan baru di era Siam, sebuah periode politik dan konflik antar klan. Dalam upayanya untuk melindungi orang-orang yang dicintainya dan mengungkap rahasia di balik kekuatan angin, ia harus membangun aliansi baru dan menghadapi musuh yang lebih kuat. Dengan latar budaya dan sejarah yang kaya.'
 deskripsi : 'Download Batch The Shape of the Wind 2 Siam Era Subtitle Indonesia'
 keywords : 'Download Batch The Shape of the Wind 2 Siam Era Subtitle Indonesia'
 

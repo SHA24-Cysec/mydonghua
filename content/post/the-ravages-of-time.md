@@ -35,7 +35,7 @@ image : /img/post/the-ravages-of-time.webp
 alt : 'The Ravages of Time'
 url: 'the-ravages-of-time'
 layout : postingan-donghua
-sinopsis : 'The Ravages of Time adalah donghua bertema sejarah dan strategi yang mengambil latar akhir Dinasti Han, masa ketika peperangan dan perebutan kekuasaan mulai mengguncang Tiongkok. Ceritanya mengikuti berbagai tokoh ambisius, ahli strategi, serta kelompok bayangan yang bergerak di balik konflik besar era Tiga Kerajaan. Fokus utama cerita berada pada intrik politik, taktik perang, dan permainan kecerdasan antar faksi yang saling berebut pengaruh. Di tengah kekacauan tersebut, muncul para jenderal legendaris dan penasihat licik yang menggunakan segala cara demi mencapai tujuan mereka. Setiap pertempuran bukan hanya soal kekuatan militer, tetapi juga manipulasi, pengkhianatan, dan strategi yang rumit.'
+sinopsis : 'The Ravages of Time adalah donghua bertema sejarah dan strategi yang mengambil latar akhir Dinasti Han, masa ketika peperangan dan perebutan kekuasaan mulai mengguncang Tiongkok. Ceritanya mengikuti berbagai tokoh ambisius, ahli strategi, serta kelompok bayangan yang bergerak di balik konflik besar era Tiga Kerajaan. Fokus utama cerita berada pada intrik politik, taktik perang, dan permainan kecerdasan antar faksi yang saling berebut pengaruh. Di tengah kekacauan tersebut, muncul para jenderal legendaris dan penasihat licik yang menggunakan segala cara demi mencapai tujuan mereka. Setiap pertempuran manipulasi, pengkhianatan, dan strategi yang rumit.'
 deskripsi : 'Download Batch The Ravages of Time Subtitle Indonesia'
 keywords : 'Download Batch The Ravages of Time Subtitle Indonesia'
 

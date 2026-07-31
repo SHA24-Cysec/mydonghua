@@ -24,7 +24,7 @@ image : /img/post/time-prisoner.webp
 alt : 'Time Prisoner'
 url: 'time-prisoner'
 layout : postingan-donghua
-sinopsis : 'Time Prisoner bercerita tentang Tang Qian, seorang pria yang memiliki kemampuan untuk memanipulasi waktu. Setelah mengalami tragedi yang menimpa keluarganya, Tang Qian terjebak dalam konspirasi besar yang melibatkan organisasi rahasia dan kekuatan misterius. Dengan keahlian uniknya, Tang Qian berusaha mengungkap kebenaran di balik kematian keluarganya, melawan musuh-musuh kuat, dan membebaskan dirinya dari penjara waktu. Perjalanan penuh aksi dan teka-teki ini menguji ketangguhan serta kecerdasannya dalam menghadapi masa lalu dan masa depan yang terus membayangi hidupnya.'
+sinopsis : 'Tang Qian bisa memanipulasi waktu. Setelah tragedi menimpa keluarganya, ia terjebak dalam konspirasi besar yang melibatkan organisasi rahasia. Tang Qian berusaha mengungkap kebenaran di balik kematian keluarganya, melawan musuh-musuh kuat, dan membebaskan dirinya dari penjara waktu. Aksi dan teka-teki menguji ketangguhan serta kecerdasannya dalam menghadapi masa lalu dan masa depan yang membayangi hidupnya.'
 deskripsi : 'Download Batch Time Prisoner Subtitle Indonesia'
 keywords : 'Download Batch Time Prisoner Subtitle Indonesia'
 

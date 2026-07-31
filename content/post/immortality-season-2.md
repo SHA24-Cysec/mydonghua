@@ -35,7 +35,7 @@ image : /img/post/immortality-season-2.webp
 alt : 'Immortality Season 2'
 url: 'immortality-season-2'
 layout : postingan-donghua
-sinopsis : 'Immortality Season 2 melanjutkan perjalanan Fang Han setelah kekuatannya meningkat dan posisinya mulai diperhitungkan di dunia kultivasi. Di musim ini, Fang Han menghadapi tekanan dari sekte besar, konflik kepentingan, dan musuh yang lebih berbahaya. Ia tidak lagi hanya bertahan hidup. Ia mulai mengambil keputusan besar yang menentukan arah jalannya sendiri. Rahasia masa lalu perlahan terungkap, termasuk hubungan kekuatan kuno yang bersemayam dalam dirinya. Pertarungan menjadi lebih strategis. Taruhannya lebih tinggi. Kesetiaan, ambisi, dan pengkhianatan saling berbenturan. Fang Han dipaksa tumbuh lebih cepat, atau hancur oleh sistem kultivasi yang kejam.'
+sinopsis : 'Immortality Season 2 melanjutkan perjalanan Fang Han setelah kekuatannya meningkat dan posisinya mulai diperhitungkan di dunia kultivasi. Di musim ini, Fang Han menghadapi tekanan dari sekte besar, konflik kepentingan, dan musuh yang lebih berbahaya. Ia tidak lagi hanya bertahan hidup. Ia mulai mengambil keputusan besar yang menentukan arah jalannya sendiri. Rahasia masa lalu, termasuk hubungan kekuatan kuno yang bersemayam dalam dirinya. Pertarungan menjadi lebih strategis. Taruhannya lebih tinggi. Kesetiaan, ambisi, dan pengkhianatan saling berbenturan. Fang Han dipaksa tumbuh lebih cepat, atau hancur oleh sistem kultivasi yang kejam.'
 deskripsi : 'Download Batch Immortality Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Immortality Season 2 Subtitle Indonesia'
 

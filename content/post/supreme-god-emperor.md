@@ -26,7 +26,7 @@ image : /img/post/supreme-god-emperor.webp
 alt : 'Supreme God Emperor'
 url: 'supreme-god-emperor'
 layout : postingan-donghua
-sinopsis : 'Supreme God Emperor menceritakan Mu Yun, seorang alkemis dan kultivator tertinggi di dunia para dewa. Ia dikhianati dan dibunuh oleh orang terdekatnya. Jiwanya bereinkarnasi ke tubuh Mu Yun lain, seorang murid lemah di dunia kultivasi tingkat rendah. Mu Yun bangkit dengan ingatan, pengalaman, dan teknik dari kehidupan sebelumnya. Ia memperbaiki tubuhnya, melatih kembali kekuatannya, dan menantang orang yang meremehkannya. Setiap konflik membuka rahasia masa lalu dan konspirasi para dewa.'
+sinopsis : 'Supreme God Emperor menceritakan Mu Yun, seorang alkemis dan kultivator tertinggi di dunia para dewa. Ia dikhianati dan dibunuh oleh orang terdekatnya. Jiwanya bereinkarnasi ke tubuh Mu Yun lain, seorang murid lemah di dunia kultivasi tingkat rendah. Mu Yun bangkit pengalaman, dan teknik dari kehidupan sebelumnya. Ia memperbaiki tubuhnya, melatih kembali kekuatannya, dan menantang orang yang meremehkannya. Setiap konflik membuka rahasia masa lalu dan konspirasi para dewa.'
 deskripsi : 'Download Batch Supreme God Emperor Subtitle Indonesia'
 keywords : 'Download Batch Supreme God Emperor Subtitle Indonesia'
 

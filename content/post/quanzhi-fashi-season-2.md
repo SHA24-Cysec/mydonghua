@@ -35,7 +35,7 @@ image : /img/post/quanzhi-fashi-s2.webp
 alt : 'Quanzhi Fashi Season 2'
 url: 'quanzhi-fashi-season-2'
 layout : postingan-donghua
-sinopsis : 'Setelah berhasil membangkitkan dua elemen sihir, petir dan api, Mo Fan terus berjuang mengukir namanya di dunia para penyihir. Musim kedua ini membawa Mo Fan menghadapi tantangan baru di Kota Bo, termasuk ancaman dari monster iblis yang kian mengganas. Dengan kekuatan yang masih berkembang dan identitasnya yang mulai menarik perhatian, Mo Fan harus menjaga rahasia kekuatan gandanya sambil melindungi orang-orang terdekatnya. Di tengah pertarungan sengit dan intrik dunia sihir, Mo Fan membuktikan bahwa keberanian dan tekad bisa mengalahkan batas-batas takdir.'
+sinopsis : 'Setelah berhasil membangkitkan dua elemen sihir, petir dan api, Mo Fan terus berjuang mengukir namanya di dunia para penyihir. Musim kedua ini membawa Mo Fan menghadapi tantangan baru di Kota Bo, termasuk ancaman dari monster iblis yang kian mengganas. Mo Fan harus menjaga rahasia kekuatan gandanya sambil melindungi orang-orang terdekatnya. Di tengah pertarungan sengit dan intrik dunia sihir, Mo Fan membuktikan bahwa keberanian dan tekad bisa mengalahkan batas-batas takdir.'
 deskripsi : 'Download Batch Quanzhi Fashi Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Quanzhi Fashi Season 2 Subtitle Indonesia'
 

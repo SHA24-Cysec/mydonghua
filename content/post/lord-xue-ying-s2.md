@@ -35,7 +35,7 @@ image : /img/post/lord-xue-ying-s2.webp
 alt : 'Lord Xue Ying S2'
 url: 'lord-xue-ying-s2'
 layout : postingan-donghua
-sinopsis : 'Setelah melewati berbagai tantangan di Season 1, Dong Bo Xue Ying semakin mendalami kekuatannya sebagai seorang prajurit dan kultivator. Dalam perjalanan barunya, ia menghadapi musuh yang lebih kuat, rahasia dari masa lalu yang mulai terungkap, serta ancaman yang bisa mengguncang dunia. Xue Ying harus mengasah teknik bertarungnya, menjalin aliansi dengan sekutu baru, dan menghadapi cobaan yang menguji tekadnya demi menyelamatkan orang-orang yang ia cintai. Akankah ia berhasil melampaui batas dirinya dan mencapai puncak kekuatan sejati?'
+sinopsis : 'Setelah melewati di Season 1, Dong Bo Xue Ying semakin mendalami kekuatannya sebagai seorang prajurit dan kultivator. Dalam perjalanan barunya, ia menghadapi musuh yang lebih kuat, rahasia dari masa lalu yang, serta ancaman yang bisa mengguncang dunia. Xue Ying harus mengasah teknik bertarungnya, menjalin aliansi dan menghadapi cobaan yang menguji tekadnya demi menyelamatkan orang-orang yang ia cintai.'
 deskripsi : 'Download Batch Lord Xue Ying S2 Subtitle Indonesia'
 keywords : 'Download Batch Lord Xue Ying S2 Subtitle Indonesia'
 

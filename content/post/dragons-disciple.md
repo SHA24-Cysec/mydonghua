@@ -26,7 +26,7 @@ image : /img/post/dragon-disciple.webp
 alt : "Dragon's Disciple"
 url: 'dragons-disciple'
 layout : postingan-donghua
-sinopsis : "Kisah ini berpusat pada seorang pemuda lemah namun memiliki rasa keadilan yang kuat. Di bawah bimbingan Tang Zichen, seorang master seni bela diri Tiongkok, ia memulai perjalanan untuk mempelajari seni bela diri tradisional. Melalui pelatihan ini, ia belajar untuk mengatasi keterbatasan dirinya dan memahami esensi sejati dari seni bela diri, termasuk prinsip menggunakan kekuatan untuk mencegah konflik dan meyakinkan orang lain melalui moralitas. Serial ini menonjolkan semangat para praktisi seni bela diri yang berusaha mewariskan tradisi dan mempromosikan kebenaran."
+sinopsis : 'Kisah ini berpusat pada seorang pemuda lemah namun memiliki rasa keadilan yang kuat. Di bawah bimbingan Tang Zichen, seorang master seni bela diri Tiongkok, ia memulai perjalanan untuk mempelajari seni bela diri tradisional. Melalui pelatihan ini, ia belajar untuk mengatasi keterbatasan dirinya dan memahami esensi sejati dari seni bela diri, termasuk prinsip menggunakan kekuatan untuk mencegah konflik dan meyakinkan orang lain melalui moralitas.'
 deskripsi : "Download Batch Dragon's Disciple Subtitle Indonesia"
 keywords : "Download Batch Dragon's Disciple Subtitle Indonesia"
 

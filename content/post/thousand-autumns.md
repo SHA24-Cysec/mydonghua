@@ -26,7 +26,7 @@ image : /img/post/thousand-autumns.webp
 alt : 'Thousand Autumns'
 url: 'thousand-autumns'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan perjalanan Shen Qiao, seorang pemimpin sekte Daois yang diserang dan hampir kehilangan nyawanya. Dalam keadaan terluka parah dan kehilangan ingatannya, ia diselamatkan oleh Yan Wushi, seorang ahli bela diri yang licik dan berhati dingin. Berbeda dengan Shen Qiao yang berpegang teguh pada prinsip moralnya, Yan Wushi memandang dunia dengan penuh kecurigaan dan kejam. Ia melihat Shen Qiao sebagai sosok yang menarik untuk diuji—apakah keyakinannya akan tetap teguh di tengah kerasnya dunia persilatan? Seiring waktu, hubungan mereka berkembang dari sekadar permainan manipulasi menjadi sesuatu yang lebih dalam, di tengah konflik antar sekte dan perebutan kekuasaan.'
+sinopsis : 'Shen Qiao, seorang pemimpin sekte Daois yang diserang dan hampir kehilangan nyawanya. Dalam keadaan terluka parah dan kehilangan ingatannya, ia diselamatkan oleh Yan Wushi, seorang ahli bela diri yang licik dan berhati dingin. Berbeda dengan Shen Qiao yang berpegang teguh pada prinsip moralnya, Yan Wushi memandang dunia kecurigaan dan kejam. Ia melihat Shen Qiao sebagai sosok yang menarik untuk diuji. apakah keyakinannya akan tetap teguh di tengah kerasnya dunia persilatan? Seiring waktu, hubungan mereka berkembang dari sekadar permainan manipulasi menjadi sesuatu yang lebih dalam, di tengah konflik antar sekte dan perebutan kekuasaan.'
 deskripsi : 'Download Batch Thousand Autumns Subtitle Indonesia'
 keywords : 'Download Batch Thousand Autumns Subtitle Indonesia'
 

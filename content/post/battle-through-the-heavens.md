@@ -36,7 +36,7 @@ image : /img/post/btth.webp
 alt : 'Battle Through the Heavens'
 url: 'battle-through-the-heavens'
 layout : postingan-donghua
-sinopsis : 'Di dunia di mana kekuatan menentukan segalanya, Xiao Yan, seorang jenius muda dari klan Xiao, kehilangan seluruh talentanya secara misterius. Setelah bertahun-tahun dianggap sampah oleh orang-orang di sekitarnya, ia menemukan bahwa cincin misterius peninggalan ibunya menyimpan rahasia besar. Dengan bimbingan seorang guru kuat yang tersembunyi dalam cincin tersebut, Xiao Yan memulai perjalanan epik untuk mengembalikan kekuatannya, membalas dendam, dan menantang batas dunia bela diri. Petualangannya membawanya ke pertempuran sengit, sekte-sekte kuat, serta rahasia-rahasia yang dapat mengguncang dunia.'
+sinopsis : 'Di dunia di mana kekuatan menentukan segalanya, Xiao Yan, jenius muda dari klan Xiao, kehilangan seluruh talentanya. Setelah bertahun-tahun dianggap sampah oleh orang-orang di sekitarnya, ia menemukan bahwa cincin peninggalan ibunya menyimpan rahasia besar. Di dalam cincin itu bersembunyi seorang guru kuat yang membimbingnya. Xiao Yan memulai perjalanan untuk mengembalikan kekuatannya, membalas dendam, dan menantang batas dunia bela diri. Petualangannya membawanya ke pertempuran sengit, sekte-sekte kuat, serta rahasia-rahasia yang dapat mengguncang dunia.'
 deskripsi : 'Download Batch Battle Through the Heavens Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens Subtitle Indonesia'
 

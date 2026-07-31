@@ -29,7 +29,7 @@ image : /img/post/demon-spirit-seed-manual.webp
 alt : 'Demon Spirit Seed Manual'
 url: 'demon-spirit-seed-manual'
 layout : postingan-donghua
-sinopsis : 'Berkisah tentang Yuan Ding, seorang pemuda dari dunia modern yang secara misterius terlempar ke dunia fantasi di mana manusia bisa membentuk kontrak dengan roh iblis untuk meningkatkan kekuatan mereka. Tanpa kemampuan khusus pada awalnya, Yuan Ding menemukan sebuah buku kuno yang berisi rahasia tentang roh iblis dan cara membudidayakannya. Dengan kecerdasannya dan pengetahuan dari dunia lama, ia mulai menempuh jalan untuk menjadi ahli roh iblis, menghadapi berbagai tantangan, musuh kuat, serta mengungkap rahasia di balik dunia baru tempatnya berada.'
+sinopsis : 'Yuan Ding, seorang pemuda dari dunia modern yang terlempar ke dunia fantasi di mana manusia bisa membentuk kontrak dengan roh iblis untuk meningkatkan kekuatan mereka. Tanpa kemampuan khusus pada awalnya, Yuan Ding menemukan sebuah buku kuno yang berisi rahasia tentang roh iblis dan cara membudidayakannya. ia mulai menempuh jalan untuk menjadi ahli roh iblis, menghadapi musuh kuat, serta mengungkap rahasia di balik dunia baru tempatnya berada.'
 deskripsi : 'Download Batch Demon Spirit Seed Manual Subtitle Indonesia'
 keywords : 'Download Batch Demon Spirit Seed Manual Subtitle Indonesia'
 

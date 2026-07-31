@@ -31,7 +31,7 @@ image : /img/post/the-great-ruler.webp
 alt : 'The Great Ruler'
 url: 'the-great-ruler'
 layout : postingan-donghua
-sinopsis : 'Di dunia luas yang dipenuhi berbagai wilayah dan klan kuat, hanya mereka yang benar-benar unggul dalam kekuatan spiritual yang dapat mencapai puncak kejayaan. Mu Chen, seorang pemuda berbakat dari Wilayah Utara, memulai perjalanan penuh tantangan untuk menjadi penguasa sejati. Dengan tekad, kecerdasan, dan semangat pantang menyerah, ia menantang batas kekuatan, menghadapi musuh kuat, dan mengungkap rahasia dunia yang tersembunyi. Perjalanan Mu Chen bukan hanya tentang menjadi kuat, tapi juga tentang membuktikan bahwa takdir bisa ditulis ulang oleh kehendak sendiri.'
+sinopsis : 'Di dunia luas yang dipenuhi berbagai wilayah dan klan kuat, hanya mereka yang benar-benar unggul dalam kekuatan spiritual yang dapat mencapai puncak kejayaan. Mu Chen, seorang pemuda berbakat dari Wilayah Utara, memulai untuk menjadi penguasa sejati. kecerdasan, dan semangat pantang menyerah, ia menantang batas kekuatan, menghadapi musuh kuat, dan mengungkap rahasia dunia yang tersembunyi. Perjalanan Mu Chen tentang membuktikan bahwa takdir bisa ditulis ulang oleh kehendak sendiri.'
 deskripsi : 'Download Batch The Great Ruler Subtitle Indonesia'
 keywords : 'Download Batch The Great Ruler Subtitle Indonesia'
 

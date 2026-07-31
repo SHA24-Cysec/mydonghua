@@ -36,7 +36,7 @@ image : /img/post/manual-of-hundred-demons-season-2.webp
 alt : 'Manual of Hundred Demons Season 2'
 url: 'manual-of-hundred-demons-season-2'
 layout : postingan-donghua
-sinopsis : 'Mengisahkan petualangan Tao Yao, seorang dokter roh yang ahli dalam menyembuhkan makhluk supranatural. Dalam musim kedua, Tao Yao melanjutkan perjalanannya bersama Mo Ya, seorang biksu muda, dan Liu Gongzi, seekor iblis ular yang menjadi tetangga lama mereka. Mereka bertiga menjelajahi dunia, membantu roh-roh yang mereka temui dengan menyembuhkan penyakit dan memecahkan masalah yang disebabkan oleh makhluk supranatural. Selama perjalanan ini, mereka bertemu dengan berbagai roh, termasuk Ying Sheng, Hua Snake, Nenek Ji, dan Shou Hai. Tao Yao dan rekan-rekannya berusaha menyembuhkan penyakit-penyakit sulit yang dialami oleh para roh tersebut, sambil terus mencari "Manual of Hundred Demons" yang hilang.'
+sinopsis : 'Tao Yao, seorang dokter roh yang ahli dalam menyembuhkan makhluk supranatural. Dalam musim kedua, Tao Yao melanjutkan perjalanannya bersama Mo Ya, seorang biksu muda, dan Liu Gongzi, seekor iblis ular yang menjadi tetangga lama mereka. Mereka bertiga menjelajahi dunia, membantu roh-roh yang mereka temui dengan menyembuhkan penyakit dan memecahkan masalah yang disebabkan oleh makhluk supranatural. Selama perjalanan ini, mereka bertemu termasuk Ying Sheng, Hua Snake, Nenek Ji, dan Shou Hai. Tao Yao dan rekan-rekannya berusaha menyembuhkan penyakit-penyakit sulit yang dialami oleh para roh tersebut, sambil terus mencari "Manual of Hundred Demons" yang hilang.'
 deskripsi : 'Download Batch Manual of Hundred Demons Season 2 Subtitle Indonesia'
 keywords : 'Download Batch Manual of Hundred Demons Season 2 Subtitle Indonesia'
 

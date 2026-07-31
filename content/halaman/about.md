@@ -2,54 +2,38 @@
 date : '2026-07-23T10:15:00+07:00'
 draft : false
 title : 'Tentang DonghuaBatch'
-deskripsi : 'Kenali DonghuaBatch, situs download batch donghua subtitle Indonesia yang ramah dan lengkap.'
+deskripsi : 'Kenali DonghuaBatch, situs download batch donghua subtitle Indonesia yang lengkap.'
 layout : halaman
 url : about
 ---
 
-# Selamat Datang di DonghuaBatch!
+# Tentang DonghuaBatch
 
-Hai pecinta donghua.
+Kami penggemar donghua yang bosan cari subtitle Indonesia satu per satu. Jadi kami bikin situs ini.
 
-Kalau kamu lagi cari tempat yang nyaman buat download batch donghua subtitle Indonesia, berarti kamu sudah di tempat yang tepat. DonghuaBatch dibuat oleh penggemar untuk penggemar. Bukan cuma situs download biasa. Kami ingin bikin pengalaman yang enak dan tanpa ribet.
+## Awal Mula
 
-## Kisah Kami
+Dulu kami nonton bareng, kumpul file batch di folder pribadi. Teman-teman terus minta link. Foldernya makin besar, makin berantakan. Kami putuskan: bikin situs rapi, buka buat semua orang.
 
-Semuanya mulai dari kebiasaan nonton bareng teman-teman. Sering kali susah cari subtitle Indonesia yang bagus dan file batch yang lengkap. Awalnya cuma kumpulan file pribadi. Lama-lama banyak yang minta dibagikan. Dari situ kami putuskan buat bikin situs yang lebih rapi, cepat, dan gampang dipakai siapa saja.
+Sekarang ribuan pengunjung tiap bulan cari donghua di sini.
 
-Sekarang ribuan orang tiap bulan nemu donghua favorit mereka di sini.
+## Apa yang Kami Lakukan
 
-## Visi & Misi Kami
+- Kumpulkan donghua batch lengkap dengan subtitle Indonesia
+- Download satu klik, pilih resolusi 360p sampai 1080p
+- Update di hari rilis resmi
+- Tampilan simpel, nyaman di HP maupun laptop
 
-Kami ingin jadi rumah utama buat pecinta donghua di Indonesia. Tempat di mana orang bisa menikmati tontonan berkualitas dengan cara yang mudah dan menyenangkan.
+## Koleksi
 
-Misi kami cukup sederhana:
+Ratusan judul dari action, fantasy, romance, comedy, sampai slice of life. Tiap judul pakai subtitle Indonesia. File diatur per batch, jadi kamu tidak perlu download episode satu per satu.
 
-- Kasih koleksi donghua yang lengkap dengan subtitle Indonesia yang akurat
-- Bikin proses download cepat dan nyaman, baik di HP maupun komputer
-- Bangun komunitas yang hangat dan saling berbagi rekomendasi
-- Selalu update cepat tiap ada rilisan baru
+## Kenapa Pengunjung Balik Lagi
 
-## Apa yang Kami Sediakan
+Judul baru ada di hari yang sama dengan rilis resmi. Subtitle konsisten. Iklan tidak menghalangi. Tampilan tetap enak di layar kecil. Kami baca tiap masukan dan perbaiki yang bisa diperbaiki.
 
-Di DonghuaBatch kamu bakal nemu ratusan judul dari berbagai genre. Action, fantasy, romance, comedy, sampai slice of life. Semua pakai subtitle Indonesia yang diterjemahin dengan teliti. Bisa download sekaligus dalam bentuk batch. Pilih resolusi mulai dari 360p sampai 1080p. Update tiap hari. Tampilan simpel dan enak dipakai di ponsel.
+## Ikut Serta
 
-Kami atur semua file dengan rapi supaya kamu tidak perlu repot cari episode satu per satu.
+Simpan judul favorit di halaman Favorit. Kasih rekomendasi di komentar. Atau laporkan kalau ada link mati. Semua kontribusi membantu pengunjung lain nemu donghua bagus.
 
-## Kenapa Banyak Orang Pilih DonghuaBatch
-
-Update cepat. Kadang judul baru sudah tersedia di hari yang sama dengan rilis resminya. Kualitas subtitle konsisten. Iklan tidak mengganggu. Komunitas aktif, banyak yang saling kasih rekomendasi judul bagus. Tampilan tetap nyaman di layar kecil. Kami terus dengar masukan dari pengguna supaya situs ini makin baik dari waktu ke waktu.
-
-## Yuk Ikut Komunitas
-
-Kamu tidak sendirian di sini. Banyak penggemar lain yang aktif berkomentar, berbagi rekomendasi, dan saling membantu. Kamu juga bisa ikut serta. Cukup buka halaman favorit, simpan judul yang kamu suka, atau ceritakan pengalamanmu di komentar.
-
-## Makasih Sudah Mampir
-
-Kami senang kamu sudah datang ke DonghuaBatch. Semoga kamu nemu banyak donghua seru dan menikmati setiap ceritanya.
-
-Ada saran atau kritik? Jangan ragu hubungi kami lewat halaman Kontak.
-
-Selamat menonton!
-
-DonghuaBatch. Tempatnya Download Batch Donghua Subtitle Indonesia.
+Punya saran? Hubungi kami lewat halaman Kontak.

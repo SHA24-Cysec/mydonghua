@@ -35,7 +35,7 @@ image : /img/post/perfect-world-ashes-of-fire.webp
 alt : 'Perfect World Ashes of Fire'
 url: 'perfect-world-ashes-of-fire'
 layout : postingan-donghua
-sinopsis : "Film ini menghadirkan narasi orisinal yang berfokus pada karakter Huo Ling'er. Cerita ini menggali lebih dalam latar belakang Huo Ling'er, menampilkan perjuangannya melawan stigma 'darah dosa' yang melekat pada keluarganya, serta upayanya untuk membebaskan kotanya dari belenggu masa lalu. Melalui perjalanan ini, Huo Ling'er menghadapi berbagai tantangan yang menguji keberanian dan tekadnya, sambil berusaha menemukan jati dirinya dan tempatnya di dunia."
+sinopsis : "Cerita ini menggali lebih dalam latar belakang Huo Ling'er, menampilkan perjuangannya melawan stigma 'darah dosa' yang melekat pada keluarganya, serta upayanya untuk membebaskan kotanya dari belenggu masa lalu. Melalui perjalanan ini, Huo Ling'er menghadapi yang menguji keberanian dan tekadnya, sambil berusaha menemukan jati dirinya dan tempatnya di dunia."
 deskripsi : 'Download Batch Perfect World Ashes of Fire Subtitle Indonesia'
 keywords : 'Download Batch Perfect World Ashes of Fire Subtitle Indonesia'
 

@@ -36,7 +36,7 @@ image : /img/post/btth-special-origin.webp
 alt : 'Battle Through the Heavens the Origin'
 url: 'battle-through-the-heavens-the-origin'
 layout : postingan-donghua
-sinopsis : '"Battle Through the Heavens: The Origin" merupakan remake dari seri "Battle Through the Heavens", yang mengisahkan perjalanan Xiao Yan, seorang jenius muda dari klan Xiao yang kehilangan kekuatannya secara misterius. Setelah bertahun-tahun mengalami penghinaan, ia menemukan bahwa cincin warisan ibunya menyimpan jiwa seorang ahli alkimia legendaris, Yao Lao. Dengan bimbingan Yao Lao, Xiao Yan kembali menapaki jalan kultivasi untuk membalas dendam, melindungi orang-orang yang dicintainya, dan mengungkap rahasia besar yang mengelilingi dirinya. Dalam perjalanannya, ia menghadapi berbagai tantangan, musuh kuat, dan misteri dunia kultivasi yang semakin dalam.'
+sinopsis : '"Battle Through the Heavens: The Origin" merupakan remake dari seri "Battle Through the Heavens", yang Xiao Yan, seorang jenius muda dari klan Xiao yang kehilangan kekuatannya. Setelah bertahun-tahun mengalami penghinaan, ia menemukan bahwa cincin warisan ibunya menyimpan jiwa seorang ahli alkimia legendaris, Yao Lao. Xiao Yan kembali menapaki jalan kultivasi untuk membalas dendam, melindungi orang-orang yang dicintainya, dan mengungkap rahasia besar yang mengelilingi dirinya. Dalam perjalanannya, ia menghadapi musuh kuat, dan misteri dunia kultivasi.'
 deskripsi : 'Download Batch Battle Through the Heavens the Origin Subtitle Indonesia'
 keywords : 'Download Batch Battle Through the Heavens the Origin Subtitle Indonesia'
 

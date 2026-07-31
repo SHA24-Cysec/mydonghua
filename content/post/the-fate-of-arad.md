@@ -27,7 +27,7 @@ image : /img/post/the-fate-of-arad.webp
 alt : 'The Fate of Arad'
 url: 'the-fate-of-arad'
 layout : postingan-donghua
-sinopsis : 'Cerita berfokus pada seorang pemuda bernama Jin, seorang pejuang berbakat yang kehilangan keluarganya karena serangan iblis. Didorong oleh rasa balas dendam dan keinginan untuk melindungi orang-orang yang ia cintai, Jin bergabung dengan kelompok petarung untuk menghadapi ancaman dari kegelapan. Sepanjang perjalanannya, Jin dan rekan-rekannya menghadapi berbagai musuh kuat, mengungkap rahasia tersembunyi di balik kegelapan Arad, dan menemukan arti sejati dari kekuatan dan pengorbanan.'
+sinopsis : 'Cerita berfokus pada seorang pemuda bernama Jin, seorang pejuang berbakat yang kehilangan keluarganya karena serangan iblis. Didorong oleh rasa balas dendam dan keinginan untuk melindungi orang-orang yang ia cintai, Jin bergabung dengan kelompok petarung untuk menghadapi ancaman dari kegelapan. Sepanjang perjalanannya, Jin dan rekan-rekannya menghadapi kuat, mengungkap rahasia tersembunyi di balik kegelapan Arad, dan menemukan arti sejati dari kekuatan dan pengorbanan.'
 deskripsi : 'Download Batch The Fate of Arad Subtitle Indonesia'
 keywords : 'Download Batch The Fate of Arad Subtitle Indonesia'
 

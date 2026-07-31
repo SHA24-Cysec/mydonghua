@@ -35,7 +35,7 @@ image : /img/post/cupids-chocolates-s2.webp
 alt : 'Cupids Chocolates S2'
 url: 'cupids-chocolates-s2'
 layout : postingan-donghua
-sinopsis : 'Jiang Hao Yi, seorang siswa SMA biasa yang tidak suka menarik perhatian, kembali menghadapi masalah besar setelah kejadian aneh di musim pertama. Kali ini, lebih banyak gadis mengklaim memiliki hubungan dengannya karena efek cokelat cinta misterius yang membuat mereka jatuh hati padanya. Di musim kedua ini, Jiang Hao Yi harus menghadapi situasi yang semakin kacau dengan berbagai intrik romantis dan kejutan yang melibatkan teman-teman barunya. Sambil mencari cara untuk menghilangkan efek cokelat ajaib itu, ia juga mulai memahami perasaan sebenarnya terhadap orang-orang di sekitarnya. Dengan campuran komedi, romansa, dan sedikit drama, perjalanan cinta yang penuh kekacauan pun kembali dimulai!'
+sinopsis : 'Jiang Hao Yi, seorang siswa SMA biasa yang tidak suka menarik perhatian, kembali menghadapi masalah besar setelah kejadian aneh di musim pertama. Kali ini, lebih banyak gadis mengklaim memiliki hubungan dengannya karena efek cokelat cinta misterius yang membuat mereka jatuh hati padanya. Di musim kedua ini, Jiang Hao Yi harus menghadapi situasi yang semakin kacau dengan romantis dan kejutan yang melibatkan teman-teman barunya. Sambil mencari cara untuk menghilangkan efek cokelat ajaib itu, ia juga mulai memahami perasaan sebenarnya terhadap orang-orang di sekitarnya. romansa, dan sedikit drama, perjalanan cinta yang penuh kekacauan pun kembali dimulai!.'
 deskripsi : 'Download Batch Cupids Chocolates S2 Subtitle Indonesia'
 keywords : 'Download Batch Cupids Chocolates S2 Subtitle Indonesia'
 

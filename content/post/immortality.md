@@ -35,7 +35,7 @@ image : /img/post/immortality.webp
 alt : 'Immortality'
 url: 'immortality'
 layout : postingan-donghua
-sinopsis : 'Immortality menceritakan perjalanan Fang Han, seorang pemuda biasa dari keluarga miskin yang hidupnya penuh penderitaan. Demi bertahan hidup, ia bekerja keras tanpa arah dan tujuan, hingga suatu hari takdir mempertemukannya dengan dunia kultivasi. Dari titik nol tanpa kekuatan, Fang Han mulai menapaki jalan penuh rintangan untuk menguasai seni abadi. Berbekal tekad baja, kecerdikan, serta semangat pantang menyerah, Fang Han menolak tunduk pada nasib. Ia berambisi menembus keterbatasan manusia, melampaui batas umur, dan mengejar satu tujuan tertinggi: keabadian. Dalam perjalanannya, ia menghadapi pengkhianatan, pertarungan antar sekte, serta rahasia-rahasia dunia yang kelam.'
+sinopsis : 'Immortality Fang Han, seorang pemuda biasa dari keluarga miskin yang hidupnya penuh penderitaan. Demi bertahan hidup, ia bekerja keras tanpa arah dan tujuan, hingga suatu hari takdir mempertemukannya dengan dunia kultivasi. Dari titik nol tanpa kekuatan, Fang Han mulai menapaki jalan penuh rintangan untuk menguasai seni abadi. Berbekal tekad baja, kecerdikan, serta semangat pantang menyerah, Fang Han menolak tunduk pada nasib. Ia berambisi menembus keterbatasan manusia, melampaui batas umur, dan mengejar satu tujuan tertinggi: keabadian. Dalam perjalanannya, ia menghadapi pengkhianatan, pertarungan antar sekte, serta rahasia-rahasia dunia yang kelam.'
 deskripsi : 'Download Batch Immortality Subtitle Indonesia'
 keywords : 'Download Batch Immortality Subtitle Indonesia'
 

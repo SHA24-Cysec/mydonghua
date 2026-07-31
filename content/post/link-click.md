@@ -34,7 +34,7 @@ image : /img/post/link-click.webp
 alt : 'Link Click'
 url: 'link-click'
 layout : postingan-donghua
-sinopsis : 'Berkisah tentang Cheng Xiaoshi dan Lu Guang, dua pemuda yang menjalankan sebuah studio bernama Time Photo Studio. Mereka memiliki kemampuan unik untuk masuk ke dalam foto masa lalu. Cheng Xiaoshi bisa merasuki tubuh orang dalam foto tersebut, sementara Lu Guang bertindak sebagai pemandu yang mengarahkan tindakan Cheng Xiaoshi agar tidak mengubah masa depan. Setiap klien yang datang membawa foto memiliki harapan untuk mengubah atau memahami kejadian di masa lalu. Namun, seiring mereka menjalankan misi, keduanya mulai menyadari bahwa setiap keputusan yang diambil di masa lalu dapat membawa konsekuensi tak terduga di masa kini. Rahasia dan konflik emosional pun muncul, menguji ikatan persahabatan dan kepercayaan di antara mereka.'
+sinopsis : 'Cheng Xiaoshi dan Lu Guang, dua pemuda yang menjalankan sebuah studio bernama Time Photo Studio. Mereka memiliki kemampuan unik untuk masuk ke dalam foto masa lalu. Cheng Xiaoshi bisa merasuki tubuh orang dalam foto tersebut, sementara Lu Guang bertindak sebagai pemandu yang mengarahkan tindakan Cheng Xiaoshi agar tidak mengubah masa depan. Setiap klien yang datang membawa foto memiliki harapan untuk mengubah atau memahami kejadian di masa lalu. Namun, seiring mereka menjalankan misi, keduanya mulai menyadari bahwa setiap keputusan yang diambil di masa lalu dapat membawa konsekuensi tak terduga di masa kini. Rahasia dan konflik emosional pun muncul, menguji ikatan persahabatan dan kepercayaan di antara mereka.'
 deskripsi : 'Download Batch Link Click Subtitle Indonesia'
 keywords : 'Download Batch Link Click Subtitle Indonesia'
 

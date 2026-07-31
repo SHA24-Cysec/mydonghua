@@ -33,7 +33,7 @@ image : /img/post/lord-of-the-universe.webp
 alt : 'Lord of the Universe'
 url: 'lord-of-the-universe'
 layout : postingan-donghua
-sinopsis : 'Lord of the Universe mengisahkan perjalanan seorang pemuda jenius yang terlahir di dunia kultivasi penuh hukum rimba, di mana kekuatan menentukan segalanya. Dari kondisi yang dianggap biasa, ia perlahan bangkit melalui latihan keras, pemahaman hukum alam semesta, dan pertempuran hidup-mati melawan musuh yang jauh lebih kuat. Dalam perjalanannya, ia mengungkap rahasia besar tentang asal-usul kekuatan kosmik, dunia yang saling terhubung, serta eksistensi para penguasa tertinggi alam semesta. Setiap langkah maju menuntut pengorbanan, kecerdikan, dan tekad baja untuk bertahan di tengah konspirasi, perang antar ras, dan hukum langit yang kejam.'
+sinopsis : 'Seorang pemuda jenius yang terlahir di dunia kultivasi penuh hukum rimba, di mana kekuatan menentukan segalanya. Dari kondisi yang dianggap biasa, ia perlahan bangkit melalui latihan keras, pemahaman hukum alam semesta, dan pertempuran hidup-mati melawan musuh. Dalam perjalanannya, ia mengungkap rahasia besar tentang asal-usul kekuatan kosmik, dunia yang saling terhubung, serta eksistensi para penguasa tertinggi alam semesta. Setiap langkah maju menuntut pengorbanan, kecerdikan, dan tekad baja untuk bertahan di tengah konspirasi, perang antar ras, dan hukum langit yang kejam.'
 deskripsi : 'Download Batch Lord of the Universe Subtitle Indonesia'
 keywords : 'Download Batch Lord of the Universe Subtitle Indonesia'
 

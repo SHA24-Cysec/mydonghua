@@ -33,7 +33,7 @@ image : /img/post/langlang-shan-xiao-yaoguai.webp
 alt : 'Langlang Shan Xiao Yaoguai'
 url: 'langlang-shan-xiao-yaoguai'
 layout : postingan-donghua
-sinopsis : 'Langlang Shan Xiao Yaoguai bercerita tentang kehidupan makhluk kecil di Gunung Langlang yang sering diremehkan karena ukuran dan kekuatannya. Tokoh utamanya adalah yaoguai muda yang ingin membuktikan dirinya punya arti di dunia yang keras dan penuh aturan tidak adil. Cerita fokus pada perjuangan bertahan hidup, hubungan antar makhluk, dan konflik dengan kekuatan yang lebih besar. Setiap kejadian mendorong karakter utama untuk belajar, beradaptasi, dan perlahan menemukan jati dirinya.'
+sinopsis : 'Langlang Shan Xiao Yaoguai kehidupan makhluk kecil di Gunung Langlang yang sering diremehkan karena ukuran dan kekuatannya. Tokoh utamanya adalah yaoguai muda yang ingin membuktikan dirinya punya arti di dunia yang keras dan penuh aturan tidak adil. Cerita fokus pada perjuangan bertahan hidup, hubungan antar makhluk, dan konflik beradaptasi, dan perlahan menemukan jati dirinya.'
 deskripsi : 'Download Batch Langlang Shan Xiao Yaoguai Subtitle Indonesia'
 keywords : 'Download Batch Langlang Shan Xiao Yaoguai Subtitle Indonesia'
 

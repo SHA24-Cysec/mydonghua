@@ -26,7 +26,7 @@ image : /img/post/heaven-official-blessing.webp
 alt : 'Heaven Official Blessing'
 url: 'heaven-official-blessing'
 layout : postingan-donghua
-sinopsis : "Heaven Official's Blessing menceritakan kisah Xie Lian, mantan pangeran dari kerajaan Xian Le yang pernah naik ke alam Surga sebagai dewa muda yang dipuja. Namun, nasib berkata lain—ia diusir dari Surga dua kali dan menjadi bahan olok-olok di kalangan dewa dan manusia. Delapan ratus tahun kemudian, Xie Lian naik ke Surga untuk ketiga kalinya, kini tanpa pengikut dan tanpa kehormatan. Di tengah tugasnya membasmi roh jahat dan menyelidiki fenomena aneh di dunia fana, Xie Lian bertemu dengan sosok misterius dan kuat bernama Hua Cheng, Raja Iblis yang ditakuti oleh para dewa. Namun, bukannya bertarung, hubungan keduanya justru berkembang menjadi ikatan yang dalam dan penuh misteri."
+sinopsis : 'Xie Lian, mantan pangeran kerajaan Xian Le, pernah naik ke alam Surga sebagai dewa muda yang dipuja. Ia diusir dari Surga dua kali dan menjadi bahan olok-olok di kalangan dewa dan manusia. Delapan ratus tahun kemudian, Xie Lian naik ke Surga untuk ketiga kalinya, kini tanpa pengikut dan tanpa kehormatan. Di tengah tugasnya membasmi roh jahat dan menyelidiki fenomena aneh di dunia fana, Xie Lian bertemu Hua Cheng, Raja Iblis yang ditakuti para dewa. Hubungan keduanya berkembang menjadi ikatan yang dalam dan penuh misteri.'
 deskripsi : 'Download Batch Heaven Official Blessing Subtitle Indonesia'
 keywords : 'Download Batch Heaven Official Blessing Subtitle Indonesia'
 

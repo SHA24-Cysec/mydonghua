@@ -26,7 +26,7 @@ image : /img/post/the-last-summoner.webp
 alt : 'The Last Summoner'
 url: 'the-last-summoner'
 layout : postingan-donghua
-sinopsis : 'The Last Summoner bercerita tentang Ajie, seorang koki muda berbakat yang hidupnya berubah drastis setelah tanpa sengaja memanggil seorang roh pemanggil bernama Dora. Dora adalah roh kuat yang terikat pada Ajie setelah dia memanggilnya secara tidak sengaja melalui makanan. Awalnya Ajie menolak takdir sebagai seorang Summoner, namun seiring waktu, dia mulai memahami tanggung jawab dan kekuatan yang dimilikinya. Bersama Dora, Ajie terlibat dalam berbagai pertempuran melawan roh jahat dan pemanggil lain yang memiliki niat tersembunyi. Perjalanan ini membawanya untuk menggali rahasia dunia pemanggil dan menemukan arti sejati dari kekuatan serta ikatan yang dimilikinya dengan Dora.'
+sinopsis : 'The Last Summoner Ajie, seorang koki muda berbakat yang hidupnya berubah drastis setelah tanpa sengaja memanggil seorang roh pemanggil bernama Dora. Dora adalah roh kuat yang terikat pada Ajie setelah dia memanggilnya secara tidak sengaja melalui makanan. Awalnya Ajie menolak takdir sebagai seorang Summoner, namun seiring waktu, dia mulai memahami tanggung jawab dan kekuatan yang dimilikinya. Bersama Dora, Ajie terlibat dalam berbagai pertempuran melawan roh jahat dan pemanggil lain yang memiliki niat tersembunyi. Perjalanan ini membawanya untuk menggali rahasia dunia pemanggil dan menemukan arti sejati dari kekuatan serta ikatan yang dimilikinya dengan Dora.'
 deskripsi : 'Download Batch The Last Summoner Subtitle Indonesia'
 keywords : 'Download Batch The Last Summoner Subtitle Indonesia'
 

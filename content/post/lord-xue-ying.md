@@ -37,7 +37,7 @@ image : /img/post/lord-xue-ying.webp
 alt : 'Lord Xue Ying'
 url: 'lord-xue-ying'
 layout : postingan-donghua
-sinopsis : 'Di benua Xia Clan, Xue Ying lahir dalam keluarga bahagia hingga tragedi menimpa orang tuanya, yang ditangkap karena melanggar aturan kerajaan. Untuk menyelamatkan mereka, Xue Ying bertekad menjadi ahli bela diri terkuat. Dengan bakat luar biasa dan kerja kerasnya, ia menapaki jalan kultivasi, menghadapi berbagai tantangan, pertempuran sengit, dan musuh kuat yang menghalangi jalannya. Seiring waktu, ia mengungkap rahasia dunia yang lebih luas dan takdir besar yang menantinya.'
+sinopsis : 'Di benua Xia Clan, Xue Ying lahir dalam keluarga bahagia hingga tragedi menimpa orang tuanya, yang ditangkap karena melanggar aturan kerajaan. Untuk menyelamatkan mereka, Xue Ying bertekad menjadi ahli bela diri terkuat. ia menapaki jalan kultivasi, menghadapi pertempuran sengit, dan musuh kuat yang menghalangi jalannya. Seiring waktu, ia mengungkap rahasia dunia yang lebih luas dan takdir yang menantinya.'
 deskripsi : 'Download Batch Lord Xue Ying Subtitle Indonesia'
 keywords : 'Download Batch Lord Xue Ying Subtitle Indonesia'
 

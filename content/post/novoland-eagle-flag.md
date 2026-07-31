@@ -35,7 +35,7 @@ image : /img/post/novoland-eagle-flag.webp
 alt : 'Novoland Eagle Flag'
 url: 'novoland-eagle-flag'
 layout : postingan-donghua
-sinopsis : 'Donghua Novoland Eagle Flag mengisahkan perjalanan tiga anak muda dari latar belakang berbeda yang terikat oleh persahabatan di tengah konflik besar dunia Novoland. Lü Guichen, pewaris suku nomaden Qingyang, dikirim ke wilayah timur sebagai sandera politik. Di sana ia bertemu Ji Ye, pemuda miskin yang bercita-cita menjadi pejuang hebat, dan Yu Ran, putri kerajaan yang cerdas serta berjiwa bebas. Persahabatan mereka tumbuh di tengah perebutan kekuasaan, intrik kerajaan, dan ancaman perang antar bangsa. Masing-masing harus menghadapi takdir, ambisi, serta pilihan sulit yang menguji kesetiaan mereka. Di balik perjalanan itu, mereka perlahan berubah dari remaja biasa menjadi sosok penting yang menentukan masa depan Novoland.'
+sinopsis : 'Perjalanan tiga anak muda dari latar belakang berbeda yang terikat oleh persahabatan di tengah konflik besar dunia Novoland. Lü Guichen, pewaris suku nomaden Qingyang, dikirim ke wilayah timur sebagai sandera politik. Di sana ia bertemu Ji Ye, pemuda miskin yang bercita-cita menjadi pejuang hebat, dan Yu Ran, putri kerajaan yang cerdas serta berjiwa bebas. Persahabatan mereka tumbuh di tengah perebutan kekuasaan, intrik kerajaan, dan ancaman perang antar bangsa. Masing-masing harus menghadapi takdir, ambisi, serta pilihan sulit yang menguji kesetiaan mereka. Di balik perjalanan itu, mereka perlahan berubah dari remaja biasa menjadi sosok penting yang menentukan masa depan Novoland.'
 deskripsi : 'Download Batch Novoland Eagle Flag Subtitle Indonesia'
 keywords : 'Download Batch Novoland Eagle Flag Subtitle Indonesia'
 

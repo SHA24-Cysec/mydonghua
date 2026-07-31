@@ -27,7 +27,7 @@ image : /img/post/spare-me-great-lord.webp
 alt : 'Spare Me Great Lord'
 url: 'spare-me-great-lord'
 layout : postingan-donghua
-sinopsis : 'Bercerita tentang Lu Shu, seorang yatim piatu yang memiliki kekuatan spiritual unik setelah dunia tiba-tiba mengalami kebangkitan energi misterius. Bersama adik perempuannya, Lu Xiaoyu, Lu Shu berusaha bertahan di dunia yang kini dipenuhi dengan individu berbakat dan kekuatan supranatural. Dengan kemampuan untuk mengumpulkan "poin negatif" dari emosi orang lain, Lu Shu memanfaatkan keahliannya untuk memperkuat dirinya sendiri. Namun, di tengah perjalanan untuk menguasai kekuatannya, dia harus menghadapi berbagai ancaman, intrik, dan pertempuran sengit. Meski terlihat santai dan licik, Lu Shu memiliki tujuan besar untuk melindungi adiknya dan menemukan tempat mereka di dunia yang sedang kacau.'
+sinopsis : 'Lu Shu, seorang yatim piatu yang memiliki kekuatan spiritual unik setelah dunia tiba-tiba mengalami kebangkitan energi misterius. Bersama adik perempuannya, Lu Xiaoyu, Lu Shu berusaha bertahan di dunia yang kini dipenuhi dengan individu berbakat dan kekuatan supranatural. Lu Shu memanfaatkan keahliannya untuk memperkuat dirinya sendiri. Namun, di tengah perjalanan untuk menguasai kekuatannya, dia harus menghadapi ancaman, intrik, dan pertempuran sengit. Meski terlihat santai dan licik, Lu Shu memiliki tujuan besar untuk melindungi adiknya dan menemukan tempat mereka di dunia yang sedang kacau.'
 deskripsi : 'Download Batch Spare Me Great Lord Subtitle Indonesia'
 keywords : 'Download Batch Spare Me Great Lord Subtitle Indonesia'
 

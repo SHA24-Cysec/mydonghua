@@ -37,7 +37,7 @@ image : /img/post/tales-of-demons-and-gods.webp
 alt : 'Tales of Demons and Gods'
 url: 'tales-of-demons-and-gods'
 layout : postingan-donghua
-sinopsis : '"Tales of Demons and Gods" bercerita tentang "Nie Li", seorang ahli spiritual yang sangat kuat di kehidupan sebelumnya, tetapi tewas dalam pertempuran melawan Kaisar Sage dan ras iblis. Namun, setelah kematiannya, jiwanya justru terlahir kembali ke masa remajanya, saat dia masih lemah dan belum memiliki kekuatan. Dengan ingatan dan pengetahuan dari kehidupan sebelumnya, Nie Li bertekad untuk memperbaiki kesalahan masa lalu, melindungi teman-temannya, dan menyelamatkan kotanya, "Glory City", dari kehancuran yang dulu tidak bisa ia cegah. Dalam perjalanan ini, Nie Li berusaha meningkatkan kekuatannya, menguasai teknik spiritual yang langka, dan membangun kekuatan untuk menghadapi ancaman besar yang akan datang.'
+sinopsis : '"Tales of Demons and Gods" "Nie Li", seorang ahli spiritual yang di kehidupan sebelumnya, tetapi tewas dalam pertempuran melawan Kaisar Sage dan ras iblis. Namun, setelah kematiannya, jiwanya justru terlahir kembali ke masa remajanya, saat dia masih lemah dan belum memiliki kekuatan. Dengan ingatan dan pengetahuan dari kehidupan sebelumnya, Nie Li bertekad untuk memperbaiki kesalahan masa lalu, melindungi teman-temannya, dan menyelamatkan kotanya, "Glory City", dari kehancuran yang dulu tidak bisa ia cegah. Dalam perjalanan ini, Nie Li berusaha meningkatkan kekuatannya, menguasai teknik spiritual yang langka, dan membangun kekuatan untuk menghadapi ancaman besar yang akan datang.'
 deskripsi : 'Download Batch Tales of Demons and Gods Subtitle Indonesia'
 keywords : 'Download Batch Tales of Demons and Gods Subtitle Indonesia'
 

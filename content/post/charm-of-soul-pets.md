@@ -27,7 +27,7 @@ image : /img/post/charm-of-soul-pets.webp
 alt : 'Charm of Soul Pets'
 url: 'charm-of-soul-pets'
 layout : postingan-donghua
-sinopsis : 'Charm of Soul Pets mengisahkan dunia di mana manusia hidup berdampingan dengan makhluk jiwa yang dikenal sebagai soul pets. Di tengah kerasnya persaingan dan bahaya dari dunia ini, seorang pemuda bernama Chu Mu harus menghadapi pengkhianatan dan penderitaan sejak usia muda. Namun, semangatnya tidak padam. Dengan kekuatan tekad dan hubungan yang mendalam dengan soul pet-nya, ia berjuang untuk bangkit, membalas dendam, dan menaklukkan dunia yang telah membuangnya. Seiring perjalanan, Chu Mu membentuk ikatan yang tak tergoyahkan dengan makhluk-makhluk jiwa, sambil mengungkap rahasia gelap yang tersembunyi di balik kekuatan mereka.'
+sinopsis : 'Charm of Soul Pets mengisahkan dunia di mana manusia hidup berdampingan dengan makhluk jiwa yang dikenal sebagai soul pets. Di tengah kerasnya persaingan dan bahaya dari dunia ini, seorang pemuda bernama Chu Mu harus menghadapi pengkhianatan dan penderitaan sejak usia muda. Namun, semangatnya tidak padam. ia berjuang untuk bangkit, membalas dendam, dan menaklukkan dunia yang telah membuangnya. Seiring perjalanan, Chu Mu membentuk ikatan dengan makhluk-makhluk jiwa, sambil mengungkap rahasia gelap yang tersembunyi di balik kekuatan mereka.'
 deskripsi : 'Download Batch Charm of Soul Pets Subtitle Indonesia'
 keywords : 'Download Batch Charm of Soul Pets Subtitle Indonesia'
 
