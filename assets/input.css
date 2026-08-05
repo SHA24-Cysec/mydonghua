@@ -8864,3 +8864,49 @@ body.has-social-bar .site-footer {
     transition: none;
   }
 }
+
+/* ==========================================================
+   HALAMAN KONTAK — Split layout, neon consistency
+   Kiri: deskripsi + info singkat. Kanan: form kontak.
+   Mobile-first, stack vertikal di bawah lg breakpoint.
+   ========================================================== */
+.kontak-page,
+.kontak-page * {
+  box-sizing: border-box;
+}
+
+.kontak-info,
+.kontak-form {
+  animation: kontakFadeUp 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.kontak-form {
+  animation-delay: 0.06s;
+}
+
+.kontak-icon-wrap {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+@media (hover: hover) {
+  .kontak-icon-wrap:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.14);
+  }
+}
+
+@keyframes kontakFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 420px) {
+  .kontak-page .panel-neon {
+    border-radius: var(--site-radius-lg);
+  }
+
+  .kontak-info,
+  .kontak-form {
+    padding: 0.85rem !important;
+  }
+}

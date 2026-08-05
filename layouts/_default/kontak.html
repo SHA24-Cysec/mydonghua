@@ -1,19 +1,73 @@
 {{ define "main" }}
-    <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4 mb-0">
-    <div class="panel-neon p-3 sm:p-5 w-full min-h-screen flex flex-col items-center justify-center">
-        <h1 class="heading-neon text-3xl text-center mb-4"><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i>{{ .Title }}</h1>
-        <form class="panel-neon-inset flex justify-center items-center flex-col gap-4 w-full max-w-md p-4 sm:p-5 shadow-neon-cyan-sm" action="https://formspree.io/f/xregejlg" method="POST">
-            <label class="flex flex-col gap-2 text-left w-full">
-              <span class="text-cyan-300 font-bold text-sm uppercase tracking-wider">Alamat Email</span>
-              <input required placeholder="xiaoxiao@email.com" class="cyber-input-search" type="email" name="email">
-            </label>
-            <label class="flex flex-col gap-2 text-left w-full">
-              <span class="text-purple-300 font-bold text-sm uppercase tracking-wider">Pesan Kamu</span>
-              <textarea required rows="4" placeholder="Tulis pesan atau saran kamu di sini..." class="cyber-textarea-message" name="message"></textarea>
-            </label>
-            <!-- your other form fields go here -->
-            <button class="cyber-button cursor-pointer w-full rounded-xl p-3.5 transition-transform duration-200 hover:scale-[1.02] uppercase tracking-wider" type="submit"><i class="fa-solid fa-paper-plane mr-2"></i>Kirim Pesan</button>
+<div class="kontak-page w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4 mb-0">
+
+  <div class="panel-neon p-3 sm:p-5 w-full">
+
+    {{/* ===== Header ===== */}}
+    <div class="text-center mb-5 sm:mb-6">
+      <span class="badge-neon text-xs inline-flex"><i class="fa-solid fa-satellite-dish text-cyan-400"></i> Kontak</span>
+      <h1 class="heading-neon text-2xl sm:text-3xl mt-3">{{ .Title }}</h1>
+    </div>
+
+    {{/* ===== Split Layout ===== */}}
+    <div class="kontak-grid grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
+
+      {{/* ---------- Kiri: Deskripsi ---------- */}}
+      <div class="lg:col-span-5">
+        <div class="kontak-info panel-neon-inset p-4 sm:p-5 h-full flex flex-col justify-center">
+
+          {{/* Accent bar */}}
+          <div class="kontak-accent w-12 h-[3px] rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-purple-500 border border-cyan-400/30 mb-5"></div>
+
+          {{/* Ikon */}}
+          <div class="kontak-icon-wrap flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/15 to-purple-500/15 border border-cyan-500/20 mb-4 shadow-[0_0_18px_rgba(34,211,238,0.08)]">
+            <i class="fa-solid fa-headset text-2xl text-cyan-400"></i>
+          </div>
+
+          <h2 class="text-white font-extrabold text-lg sm:text-xl mb-2 leading-tight tracking-tight">Punya pertanyaan atau laporan?</h2>
+
+          <p class="text-[#9fb1c9] text-sm leading-relaxed mb-4">
+            Sampaikan pertanyaan, masukan, atau laporan link mati lewat form di samping. Setiap pesan yang masuk kami baca.
+          </p>
+
+          {{/* Info singkat */}}
+          <div class="kontak-meta flex flex-col gap-2.5 mt-auto pt-3 border-t border-white/5">
+            <div class="flex items-center gap-2.5 text-xs text-[#8899b0]">
+              <i class="fa-solid fa-clock text-cyan-500/70 w-4 text-center"></i>
+              <span>Respons dalam 1×24 jam</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-xs text-[#8899b0]">
+              <i class="fa-solid fa-shield-halved text-purple-400/70 w-4 text-center"></i>
+              <span>Data kamu tidak dibagikan ke pihak lain</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {{/* ---------- Kanan: Form ---------- */}}
+      <div class="lg:col-span-7">
+        <form class="kontak-form panel-neon-inset p-4 sm:p-5 flex flex-col gap-4" action="https://formspree.io/f/xregejlg" method="POST">
+
+          <label class="flex flex-col gap-2 w-full">
+            <span class="text-cyan-300 font-bold text-sm uppercase tracking-wider">Alamat Email</span>
+            <input required placeholder="xiaoxiao@email.com" class="cyber-input-search" type="email" name="email" autocomplete="email">
+          </label>
+
+          <label class="flex flex-col gap-2 w-full">
+            <span class="text-purple-300 font-bold text-sm uppercase tracking-wider">Pesan Kamu</span>
+            <textarea required rows="5" placeholder="Tulis pesan atau saran kamu di sini..." class="cyber-textarea-message" name="message"></textarea>
+          </label>
+
+          <button class="cyber-button cursor-pointer w-full rounded-xl p-3.5 uppercase tracking-wider font-extrabold text-sm" type="submit">
+            <i class="fa-solid fa-paper-plane mr-2"></i>Kirim Pesan
+          </button>
+
         </form>
+      </div>
+
     </div>
-    </div>
+  </div>
+
+</div>
 {{ end }}
