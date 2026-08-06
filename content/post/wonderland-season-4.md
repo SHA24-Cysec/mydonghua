@@ -24,8 +24,8 @@ release : 'Sep 14, 2020'
 rating : 8
 
 # Jika ada Season selanjutnya, hilangkan komentar
-# linkSeasonSelanjutnya : ''
-# judulSeasonSelanjutnya : ''
+linkSeasonSelanjutnya : '/wonderland-season-5/'
+judulSeasonSelanjutnya : 'Wonderland Season 5 Subtitle Indonesia'
 
 # Jika ada Season sebelumnya, hilangkan komentar
 linkSeasonSebelumnya : '/wonderland-season-3'

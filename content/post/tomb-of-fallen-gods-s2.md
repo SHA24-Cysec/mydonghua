@@ -22,8 +22,8 @@ release : 'Aug 10, 2024'
 rating : 8.83
 
 # Jika ada Season selanjutnya, hilangkan komentar
-# linkSeasonSelanjutnya : ''
-# judulSeasonSelanjutnya : ''
+linkSeasonSelanjutnya : '/tomb-of-fallen-gods-season-3/'
+judulSeasonSelanjutnya : 'Tomb of Fallen Gods Season 3 Subtitle Indonesia'
 
 # Jika ada Season sebelumnya, hilangkan komentar
 linkSeasonSebelumnya : '/tomb-of-fallen-gods'

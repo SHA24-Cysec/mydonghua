@@ -22,11 +22,11 @@ release : '2022'
 rating : 8
 
 # Jika ada Season selanjutnya, hilangkan komentar
-# linkSeasonSelanjutnya : ''
-# judulSeasonSelanjutnya : ''
+linkSeasonSelanjutnya : '/yi-nian-yong-heng-season-3/'
+judulSeasonSelanjutnya : 'Yi Nian Yong Heng Season 3'
 
 # Jika ada Season sebelumnya, hilangkan komentar
-linkSeasonSebelumnya : '/yi-nian-yong-heng'
+linkSeasonSebelumnya : '/yi-nian-yong-heng/'
 judulSeasonSebelumnya : 'Yi Nian Yong Heng Subtitle Indonesia'
 
 # Gambar width: 200, height : 300

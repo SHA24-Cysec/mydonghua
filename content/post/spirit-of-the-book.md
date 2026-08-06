@@ -19,6 +19,10 @@ release : '2019'
 # Rating 1-10
 rating : 7.5
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/spirit-of-the-book-season-2/'
+judulSeasonSelanjutnya : 'Spirit of the Book Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spirit-of-the-book.webp
 image : /img/post/spirit-of-the-book.webp
