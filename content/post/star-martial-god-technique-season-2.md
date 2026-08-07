@@ -23,8 +23,8 @@ rating : 8
 # judulSeasonSelanjutnya : ''
 
 # Jika ada Season sebelumnya, hilangkan komentar
-# linkSeasonSebelumnya : ''
-# judulSeasonSebelumnya : ''
+linkSeasonSebelumnya : '/star-martial-god-technique/'
+judulSeasonSebelumnya : 'Star Martial God Technique Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/star-martial-god-technique-season-2.webp

@@ -30,8 +30,8 @@ rating : 9
 # judulSeasonSelanjutnya : ''
 
 # Jika ada Season sebelumnya, hilangkan komentar
-# linkSeasonSebelumnya : ''
-# judulSeasonSebelumnya : ''
+linkSeasonSebelumnya : '/wu-geng-ji-season-3/'
+judulSeasonSebelumnya : 'Wu Geng Ji Season 3 Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/wu-geng-ji-season-4.webp
