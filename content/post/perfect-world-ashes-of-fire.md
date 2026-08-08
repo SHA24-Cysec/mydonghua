@@ -3,7 +3,7 @@ date : '2025-03-01T07:49:36+07:00'
 draft : false
 title : 'Download Batch Perfect World: Ashes of Fire Subtitle Indonesia'
 studio :
-    - 'Shanghai Foch Film'
+    - 'Shanghai Foch Film Culture Investment'
 season : '2024'
 genre :
     - Action
