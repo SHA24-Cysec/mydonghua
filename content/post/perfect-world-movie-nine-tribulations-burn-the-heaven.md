@@ -85,7 +85,7 @@ downloadGroups:
       size: '1.76 GB'
     
     - quality: '4K'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/pdtr9WWD'
+      button: 'Download'
+      size: '5.81 GB'
 ---
