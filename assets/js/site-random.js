@@ -65,6 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function closeMobileNavIfOpen() {
+      if (window.DonghuaNavbar && typeof window.DonghuaNavbar.close === 'function') {
+        window.DonghuaNavbar.close(false);
+        return;
+      }
+
       const container = document.querySelector('[data-site-nav-container]');
       const toggleButton = container ? container.querySelector('[data-nav-open]') : null;
       const toggleIcon = toggleButton ? toggleButton.querySelector('i') : null;

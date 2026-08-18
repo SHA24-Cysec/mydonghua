@@ -1,6 +1,7 @@
 (function () {
   'use strict';
 
+const focusManager = window.DonghuaFocusManager;
 const searchInput = document.getElementById("search-input");
     const resultsList = document.getElementById("search-results");
     const emptyState = document.getElementById("search-empty-state");
@@ -60,6 +61,7 @@ const searchInput = document.getElementById("search-input");
     let currentResults = [];
     let activeSort = "relevance";
     let activeFilters = { status: "", type: "", genre: "", studio: "", season: "" };
+    let filterPreviousFocus = null;
     const SEARCH_DEBOUNCE_MS = 180;
     const SEARCH_HISTORY_KEY = "donghuabatch_search_history";
     const SEARCH_HISTORY_LIMIT = 8;
@@ -605,28 +607,44 @@ const searchInput = document.getElementById("search-input");
     }
 
     function openFilterDialog() {
-      if (!filterDialog) return;
+      if (!filterDialog || !filterDialog.hidden) return;
+      filterPreviousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : filterOpenButton;
+
       ensureSearchIndexReady().then(function () {
         populateFilterOptions();
         syncFilterControls();
         filterDialog.hidden = false;
-        filterDialog.setAttribute("aria-hidden", "false");
+        if (focusManager) {
+          focusManager.setInteractive(filterDialog, true);
+        } else {
+          filterDialog.inert = false;
+          filterDialog.setAttribute("aria-hidden", "false");
+        }
         document.body.classList.add("search-filter-lock");
         if (filterOpenButton) filterOpenButton.setAttribute("aria-expanded", "true");
-        const firstControl = filterForm && filterForm.querySelector("select");
-        if (firstControl) firstControl.focus();
+
+        if (focusManager) {
+          focusManager.scheduleFocus(filterDialog, '[data-search-filter="status"]');
+        }
       });
     }
 
     function closeFilterDialog() {
-      if (!filterDialog) return;
-      filterDialog.hidden = true;
-      filterDialog.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("search-filter-lock");
-      if (filterOpenButton) {
-        filterOpenButton.setAttribute("aria-expanded", "false");
-        filterOpenButton.focus();
+      if (!filterDialog || filterDialog.hidden) return;
+      if (focusManager) {
+        focusManager.setInteractive(filterDialog, false);
+      } else {
+        filterDialog.inert = true;
+        filterDialog.setAttribute("aria-hidden", "true");
       }
+      filterDialog.hidden = true;
+      document.body.classList.remove("search-filter-lock");
+      if (filterOpenButton) filterOpenButton.setAttribute("aria-expanded", "false");
+
+      if (focusManager) {
+        focusManager.restoreFocus(filterPreviousFocus, '#search-filter-open');
+      }
+      filterPreviousFocus = null;
     }
 
     function readFiltersFromControls() {
@@ -941,9 +959,15 @@ const searchInput = document.getElementById("search-input");
       }
 
       document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && filterDialog && !filterDialog.hidden) {
+        if (!filterDialog || filterDialog.hidden) return;
+
+        if (event.key === "Escape") {
+          event.preventDefault();
           closeFilterDialog();
+          return;
         }
+
+        if (focusManager) focusManager.trapFocus(event, filterDialog);
       });
 
       document.getElementById("prev-page").addEventListener("click", () => {

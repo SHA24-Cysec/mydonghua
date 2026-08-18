@@ -7,8 +7,6 @@ layout : halaman
 url : about
 ---
 
-# Tentang DonghuaBatch
-
 Kami penggemar donghua yang bosan cari subtitle Indonesia satu per satu. Jadi kami bikin situs ini.
 
 ## Awal Mula

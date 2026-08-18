@@ -17,6 +17,9 @@
   {{- end -}}
 {{- end -}}
 
+{{/* Global: pengelola fokus harus tersedia sebelum drawer dan dialog diinisialisasi. */}}
+{{- template "minjs" "js/site-focus-manager.js" -}}
+
 {{/* Global: markup tersedia dari baseof/navbar pada seluruh halaman HTML. */}}
 {{- template "minjs" "js/site-navbar.js" -}}
 {{- template "minjs" "js/site-random.js" -}}

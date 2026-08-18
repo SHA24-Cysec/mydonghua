@@ -5,11 +5,24 @@
     const container = document.querySelector('[data-site-nav-container]');
     if (!container) return;
 
+    const focusManager = window.DonghuaFocusManager;
     const toggleButton = container.querySelector('[data-nav-open]');
     const toggleIcon = toggleButton ? toggleButton.querySelector('i') : null;
+    const navSheet = container.querySelector('.site-nav-sheet');
+    let previousFocus = null;
 
     function isOpen() {
       return container.classList.contains('is-open');
+    }
+
+    function setSheetInteractive(interactive) {
+      if (!navSheet) return;
+      if (focusManager) {
+        focusManager.setInteractive(navSheet, interactive);
+      } else {
+        navSheet.inert = !interactive;
+        navSheet.setAttribute('aria-hidden', interactive ? 'false' : 'true');
+      }
     }
 
     function syncToggleButton(open) {
@@ -23,19 +36,33 @@
     }
 
     function openNav() {
+      if (isOpen()) return;
+      previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : toggleButton;
+      setSheetInteractive(true);
       container.classList.add('is-open');
       document.body.classList.add('site-nav-lock');
       syncToggleButton(true);
+
+      if (focusManager) {
+        focusManager.scheduleFocus(navSheet, '.site-nav-close');
+      }
     }
 
-    function closeNav() {
+    function closeNav(restoreFocus) {
+      const wasOpen = isOpen();
       container.classList.remove('is-open');
       document.body.classList.remove('site-nav-lock');
+      setSheetInteractive(false);
       syncToggleButton(false);
+
+      if (wasOpen && restoreFocus !== false && focusManager) {
+        focusManager.restoreFocus(previousFocus, '[data-nav-open]');
+      }
+      previousFocus = null;
     }
 
     function toggleNav() {
-      isOpen() ? closeNav() : openNav();
+      isOpen() ? closeNav(true) : openNav();
     }
 
     if (toggleButton) {
@@ -46,19 +73,36 @@
     }
 
     container.addEventListener('click', function (event) {
-      const isBackdrop = event.target.closest('[data-nav-close]');
-      const isNavLink = event.target.closest('[data-nav-link]');
+      const closeControl = event.target.closest('[data-nav-close]');
+      const navLink = event.target.closest('[data-nav-link]');
 
-      if (isBackdrop || isNavLink) {
-        closeNav();
+      if (closeControl || navLink) {
+        closeNav(true);
       }
     });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && isOpen()) closeNav();
+      if (!isOpen()) return;
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeNav(true);
+        return;
+      }
+
+      if (focusManager) focusManager.trapFocus(event, navSheet);
     });
 
-    window.addEventListener('beforeunload', closeNav);
-    syncToggleButton(false);
+    window.addEventListener('beforeunload', function () {
+      closeNav(false);
+    });
+
+    window.DonghuaNavbar = {
+      close: closeNav,
+      open: openNav,
+      isOpen: isOpen
+    };
+
+    closeNav(false);
   });
 })();

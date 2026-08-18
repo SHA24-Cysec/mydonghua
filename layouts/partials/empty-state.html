@@ -1,0 +1,13 @@
+<div{{ with .id }} id="{{ . }}"{{ end }} class="site-empty-state{{ with .class }} {{ . }}{{ end }}{{ if .hiddenClass }} hidden{{ end }}"{{ if .hidden }} hidden{{ end }}>
+  <div class="site-empty-state-icon" aria-hidden="true">
+    <i class="{{ .icon | default "fa-solid fa-circle-info" }}"></i>
+  </div>
+  <strong class="site-empty-state-title">{{ .title }}</strong>
+  {{ with .description }}<p class="site-empty-state-description">{{ . }}</p>{{ end }}
+  {{ with .actionURL }}
+    <a class="site-empty-state-action" href="{{ . }}">
+      {{ with $.actionIcon }}<i class="{{ . }}" aria-hidden="true"></i>{{ end }}
+      <span>{{ $.actionLabel | default "Kembali" }}</span>
+    </a>
+  {{ end }}
+</div>

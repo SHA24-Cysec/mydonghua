@@ -4,9 +4,14 @@
   <div class="panel-neon p-3 sm:p-5 w-full">
 
     {{/* ===== Header ===== */}}
-    <div class="text-center mb-5 sm:mb-6">
-      <span class="badge-neon text-xs inline-flex"><i class="fa-solid fa-satellite-dish text-cyan-400"></i> Kontak</span>
-      <h1 class="heading-neon text-2xl sm:text-3xl mt-3">{{ .Title }}</h1>
+    <div class="mb-5 sm:mb-6">
+      {{ partial "page-header" (dict
+        "context" .
+        "title" .Title
+        "align" "center"
+        "kicker" "Kontak"
+        "kickerIcon" "fa-solid fa-satellite-dish text-cyan-400"
+      ) }}
     </div>
 
     {{/* ===== Split Layout ===== */}}

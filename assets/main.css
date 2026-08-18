@@ -1055,10 +1055,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   flex-shrink: 0;
 }
 
-.basis-full {
-  flex-basis: 100%;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1121,15 +1117,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   gap: 1rem;
 }
 
-.gap-x-3 {
-  -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
-}
-
-.gap-y-2 {
-  row-gap: 0.5rem;
-}
-
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1168,10 +1155,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
 
 .text-wrap {
   text-wrap: wrap;
-}
-
-.break-words {
-  overflow-wrap: break-word;
 }
 
 .rounded-2xl {
@@ -1238,10 +1221,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   border-color: rgb(168 85 247 / 0.3);
 }
 
-.border-red-500\/50 {
-  border-color: rgb(239 68 68 / 0.5);
-}
-
 .border-slate-800 {
   --tw-border-opacity: 1;
   border-color: rgb(30 41 59 / var(--tw-border-opacity, 1));
@@ -1275,10 +1254,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
 
 .bg-purple-500\/20 {
   background-color: rgb(168 85 247 / 0.2);
-}
-
-.bg-red-900\/80 {
-  background-color: rgb(127 29 29 / 0.8);
 }
 
 .bg-gradient-to-br {
@@ -1455,10 +1430,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.pb-4 {
-  padding-bottom: 1rem;
 }
 
 .pt-3 {
@@ -1708,12 +1679,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
 .shadow-neon-pink-lg {
   --tw-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
   --tw-shadow-colored: 0 0 20px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-neon-red {
-  --tw-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
-  --tw-shadow-colored: 0 0 15px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -2091,7 +2056,7 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem 1rem 1.5rem;
+  padding: 1rem 0.75rem 1.5rem;
   color: #eef7ff;
 }
 
@@ -3994,7 +3959,6 @@ body.site-nav-lock,
   inset: 0;
   z-index: 2000;
   pointer-events: none;
-  background: rgba(2, 6, 23, 0.96);
   opacity: 0;
   /* SCROLL PERF: backdrop-filter:blur(7px) removed — solid bg, hidden by default. */
   backdrop-filter: none;
@@ -4226,7 +4190,6 @@ body.site-nav-lock,
 .site-random-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(2, 6, 23, 0.96);
   /* SCROLL PERF: backdrop-filter:blur(8px) removed — solid bg. */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -4900,7 +4863,6 @@ body .post-bookmark-btn.is-pulsing {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: rgba(2, 6, 23, 0.96);
   /* SCROLL PERF: backdrop-filter:blur(8px) removed — modal hidden by default, solid bg when open. */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -5647,7 +5609,6 @@ body.genre-sheet-lock {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: rgba(2, 6, 23, 0.96);
   opacity: 0;
   /* SCROLL PERF: backdrop-filter:blur(7px) removed — solid bg, hidden by default. */
   backdrop-filter: none;
@@ -9107,7 +9068,7 @@ body.search-filter-lock {
   width: 100%;
   border: 0;
   padding: 0;
-  background: rgba(2, 6, 23, 0.78);
+  --site-overlay-backdrop-bg: rgba(2, 6, 23, 0.78);
   cursor: default;
 }
 
@@ -9991,19 +9952,13 @@ body.search-filter-lock {
   }
 }
 
-/* Filter sheet actions: subtle native-theme motion for hover, focus, and touch. */
+/* Search filter action internals. Warna dan state berada pada blok kanonik di bawah. */
 
 .search-filter-reset,
 .search-filter-apply {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  transition:
-    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background-position 0.34s ease,
-    filter 0.2s ease;
 }
 
 .search-filter-reset::after,
@@ -10013,9 +9968,8 @@ body.search-filter-lock {
   inset: 0;
   z-index: 0;
   opacity: 0;
-  background: linear-gradient(105deg, transparent 25%, rgba(255, 255, 255, 0.2) 48%, transparent 70%);
   transform: translateX(-120%);
-  transition: transform 0.42s ease, opacity 0.2s ease;
+  transition: transform 0.42s ease, opacity var(--site-transition-fast);
   pointer-events: none;
 }
 
@@ -10023,101 +9977,6 @@ body.search-filter-lock {
 .search-filter-apply > * {
   position: relative;
   z-index: 1;
-}
-
-.search-filter-reset {
-  background:
-    linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(139, 92, 246, 0.075)),
-    rgba(2, 6, 23, 0.54);
-}
-
-.search-filter-apply {
-  background: linear-gradient(105deg, #22d3ee 0%, #38bdf8 44%, #8b5cf6 72%, #c026d3 100%);
-  background-size: 160% 100%;
-  background-position: 0 0;
-  box-shadow: 0 8px 20px rgba(34, 211, 238, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.24);
-}
-
-.search-filter-reset i,
-.search-filter-apply i {
-  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@media (hover: hover) {
-  .search-filter-reset:hover,
-  .search-filter-apply:hover {
-    transform: translateY(-2px);
-  }
-
-  .search-filter-reset:hover {
-    border-color: rgba(103, 232, 249, 0.58);
-    box-shadow: 0 8px 18px rgba(34, 211, 238, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  }
-
-  .search-filter-apply:hover {
-    background-position: 100% 0;
-    filter: brightness(1.06);
-    box-shadow: 0 12px 25px rgba(34, 211, 238, 0.26), 0 0 18px rgba(139, 92, 246, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  }
-
-  .search-filter-reset:hover::after,
-  .search-filter-apply:hover::after {
-    opacity: 1;
-    transform: translateX(120%);
-  }
-
-  .search-filter-reset:hover i {
-    transform: rotate(-100deg);
-  }
-
-  .search-filter-apply:hover i {
-    transform: translateX(2px) scale(1.08);
-  }
-}
-
-.search-filter-reset:active,
-.search-filter-apply:active {
-  transform: translateY(0) scale(0.975);
-}
-
-/* Reset action intentionally matches the established Genre Filter reset control. */
-
-.search-filter-reset {
-  min-height: 2.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.055);
-  color: #d8e9ff;
-  box-shadow: none;
-  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
-}
-
-.search-filter-reset::after {
-  display: none;
-}
-
-.search-filter-reset i {
-  transform: none;
-  transition: none;
-}
-
-.search-filter-reset:focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.58);
-  outline-offset: 3px;
-}
-
-@media (hover: hover) {
-  .search-filter-reset:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.07);
-    border-color: rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.055);
-    box-shadow: none;
-  }
-}
-
-.search-filter-reset:active {
-  transform: translateY(0);
 }
 
 /* Search toolbar controls share the same compact hover language. */
@@ -10489,96 +10348,6 @@ html body .donghua-card-bookmark.is-saved {
   }
 }
 
-/* Site-wide controls: mobile-first compact sizing with consistent neon states. */
-
-:where(
-  .notfound-dock-btn,
-  .site-home-hero-button,
-  .site-navbar-action,
-  .site-random-action,
-  .pagination-dock-button,
-  .pagination-aurora-button,
-  .fav-watch-filter,
-  .fav-clear-btn,
-  .fav-confirm-btn,
-  .search-filter-trigger,
-  .search-filter-reset,
-  .search-filter-apply,
-  .genre-sheet-trigger,
-  .genre-clear-button,
-  .genre-apply-button,
-  .taxonomy-tab-button,
-  .share-premium-button,
-  .db-button,
-  .ad-fallback-cta
-) {
-  min-height: clamp(2.5rem, 10vw, 2.75rem);
-  padding-block: clamp(0.58rem, 2.2vw, 0.72rem);
-  padding-inline: clamp(0.78rem, 3.2vw, 1.05rem);
-  border-radius: clamp(0.65rem, 2.5vw, 0.85rem);
-  font-size: clamp(0.75rem, 2.1vw, 0.875rem);
-  line-height: 1.2;
-  -webkit-tap-highlight-color: transparent;
-}
-
-:where(
-  .notfound-dock-btn,
-  .site-home-hero-button,
-  .site-navbar-action,
-  .site-random-action,
-  .pagination-dock-button,
-  .pagination-aurora-button,
-  .fav-watch-filter,
-  .fav-clear-btn,
-  .fav-confirm-btn,
-  .search-filter-trigger,
-  .search-filter-reset,
-  .search-filter-apply,
-  .genre-sheet-trigger,
-  .genre-clear-button,
-  .genre-apply-button,
-  .taxonomy-tab-button,
-  .share-premium-button,
-  .db-button,
-  .ad-fallback-cta
-):focus-visible {
-  outline: 2px solid rgba(34, 211, 238, 0.72);
-  outline-offset: 3px;
-}
-
-@media (min-width: 640px) {
-  :where(
-      .notfound-dock-btn,
-    .site-home-hero-button,
-    .site-navbar-action,
-    .site-random-action,
-    .pagination-dock-button,
-    .pagination-aurora-button,
-    .fav-watch-filter,
-    .fav-clear-btn,
-    .fav-confirm-btn,
-    .search-filter-trigger,
-    .search-filter-reset,
-    .search-filter-apply,
-    .genre-sheet-trigger,
-    .genre-clear-button,
-    .genre-apply-button,
-    .taxonomy-tab-button,
-    .share-premium-button,
-    .db-button,
-    .ad-fallback-cta
-  ) {
-    min-height: 2.75rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  :where(button, a) {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-}
-
 /* Unified button system: existing component classes keep their behaviour. */
 
 /* Icon-only controls: square box, no label. .pagination-dock-button is
@@ -10644,6 +10413,8 @@ html body .donghua-card-bookmark.is-saved {
   .site-navbar-action,
   .site-nav-random-btn,
   .site-random-action,
+  .pagination-dock-button,
+  .pagination-aurora-button,
   .notfound-dock-btn,
   .site-home-hero-button,
   .cyber-button,
@@ -10666,6 +10437,7 @@ html body .donghua-card-bookmark.is-saved {
   min-height: clamp(2.5rem, 10vw, 2.75rem);
   padding-block: clamp(0.58rem, 2.2vw, 0.72rem);
   padding-inline: clamp(0.78rem, 3.2vw, 1.05rem);
+  border-radius: clamp(0.65rem, 2.5vw, 0.85rem);
   font-size: clamp(0.75rem, 2.1vw, 0.875rem);
   line-height: 1.2;
   -webkit-tap-highlight-color: transparent;
@@ -10681,6 +10453,7 @@ html body .donghua-card-bookmark.is-saved {
   .btt-btn,
   .donghua-card-bookmark,
   .pagination-dock-button,
+  .pagination-aurora-button,
   .site-navbar-action,
   .site-nav-random-btn,
   .site-random-action,
@@ -10747,22 +10520,6 @@ html body .donghua-card-bookmark.is-saved {
     transition: none !important;
     animation: none !important;
   }
-}
-
-/* Floating-ad close control: explicit override keeps the component in the shared icon scale. */
-
-html body .site-floating-ad__close {
-  width: clamp(2.25rem, 11vw, 2.75rem);
-  min-width: clamp(2.25rem, 11vw, 2.75rem);
-  height: clamp(2.25rem, 11vw, 2.75rem);
-  min-height: clamp(2.25rem, 11vw, 2.75rem);
-  padding: 0;
-  border-radius: var(--btn-radius);
-}
-
-html body .site-floating-ad__close svg {
-  width: clamp(0.9rem, 4vw, 1.1rem);
-  height: clamp(0.9rem, 4vw, 1.1rem);
 }
 
 /* ===== Source: layouts/partials/widget/social-bar.html ===== */
@@ -10856,6 +10613,371 @@ body.has-social-bar .site-footer {
   .kontak-info,
   .kontak-form {
     padding: 0.85rem !important;
+  }
+}
+
+/* ==========================================================
+   TAHAP 1 — AKSESIBILITAS INTERAKSI
+   Target adaptif dan fokus tabel tanpa mengubah bahasa visual.
+   ========================================================== */
+
+.site-navbar-brand {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.site-footer-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding-block: 0.2rem;
+}
+
+.site-footer-social-link {
+  width: 44px;
+  height: 44px;
+}
+
+html body .site-floating-ad__close {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+}
+
+.post-info-table-scroll:focus-visible {
+  outline: 3px solid rgba(34, 211, 238, 0.72);
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.18),
+    0 0 20px rgba(34, 211, 238, 0.12);
+}
+
+@media (max-width: 1023px), (pointer: coarse) {
+  .site-footer-link {
+    min-height: 44px;
+    padding-block: 0.45rem;
+  }
+}
+
+/* ==========================================================
+   TAHAP 2 — SISTEM SHELL HALAMAN
+   Header, empty state, landing taxonomy, dan kolom baca.
+   ========================================================== */
+
+.site-page-header {
+  min-width: 0;
+}
+
+.site-page-header-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.site-page-header-icon {
+  flex: 0 0 auto;
+  color: var(--site-cyan);
+  font-size: 0.9em;
+}
+
+.site-page-header-title-text {
+  min-width: 0;
+}
+
+.site-page-header-detail {
+  min-width: 0;
+  flex-basis: 100%;
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  overflow-wrap: anywhere;
+}
+
+.site-page-header-description {
+  max-width: 48rem;
+  margin: 0.45rem 0 0;
+  color: var(--site-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.site-page-header-kicker {
+  margin-bottom: 0.75rem;
+}
+
+.site-page-header--center {
+  text-align: center;
+}
+
+.site-page-header--center .site-page-header-title {
+  justify-content: center;
+}
+
+.site-page-header--center .site-page-header-description {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.site-page-header--center .site-page-header-kicker {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.site-page-header--divider {
+  margin-bottom: 1rem;
+}
+
+.site-page-header--divider .site-page-header-title {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.30);
+}
+
+.site-page-header--spaced {
+  margin-top: 1rem;
+}
+
+.site-prose-shell {
+  width: 100%;
+  max-width: 72ch;
+}
+
+.site-empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 44rem;
+  margin: 0.5rem auto;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid rgba(125, 211, 252, 0.20);
+  border-radius: var(--site-radius-lg);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.10), transparent 34%),
+    radial-gradient(circle at 92% 100%, rgba(139, 92, 246, 0.09), transparent 38%),
+    linear-gradient(135deg, rgba(14, 18, 40, 0.96), rgba(7, 10, 24, 0.98));
+  color: var(--site-soft);
+  text-align: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+html body .site-empty-state.hidden,
+html body .site-empty-state[hidden] {
+  display: none;
+}
+
+.site-empty-state-icon {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 0.2rem;
+  border: 1px solid rgba(34, 211, 238, 0.24);
+  border-radius: var(--site-radius-md);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(139, 92, 246, 0.13));
+  color: #67e8f9;
+  font-size: 1.15rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.site-empty-state-title {
+  color: var(--site-title);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.site-empty-state-description {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--site-muted);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.site-empty-state-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  margin-top: 0.45rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--btn-hybrid-primary-border);
+  border-radius: var(--btn-radius);
+  background: var(--btn-hybrid-primary-bg);
+  color: var(--btn-hybrid-primary-text);
+  box-shadow: var(--btn-hybrid-primary-shadow);
+  font-size: 0.84rem;
+  font-weight: 850;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform var(--site-transition-fast), border-color var(--site-transition-fast), box-shadow var(--site-transition-fast), filter var(--site-transition-fast);
+}
+
+.site-empty-state-action:focus-visible {
+  outline: var(--btn-focus-ring);
+  outline-offset: var(--site-focus-offset);
+}
+
+.taxonomy-landing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 0.75rem;
+}
+
+.taxonomy-landing-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  min-height: 4.25rem;
+  padding: 0.7rem;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  border-radius: var(--site-radius-md);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(34, 211, 238, 0.07), transparent 42%),
+    rgba(255, 255, 255, 0.03);
+  color: var(--site-soft);
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  transition: transform var(--site-transition-fast), border-color var(--site-transition-fast), background var(--site-transition-fast), box-shadow var(--site-transition-fast);
+}
+
+.taxonomy-landing-icon,
+.taxonomy-landing-arrow {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.taxonomy-landing-icon {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.8rem;
+  background: rgba(34, 211, 238, 0.08);
+}
+
+.taxonomy-landing-copy {
+  min-width: 0;
+}
+
+.taxonomy-landing-copy strong,
+.taxonomy-landing-copy small {
+  display: block;
+}
+
+.taxonomy-landing-copy strong {
+  color: #eef7ff;
+  font-size: 0.88rem;
+  font-weight: 900;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.taxonomy-landing-copy small {
+  margin-top: 0.18rem;
+  color: #8ea2ba;
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.taxonomy-landing-count {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  border-radius: var(--site-radius-pill);
+  background: rgba(139, 92, 246, 0.08);
+  color: #d8ccff;
+  font-size: 0.68rem;
+  font-weight: 850;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.taxonomy-landing-arrow {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #9fb1c9;
+  font-size: 0.7rem;
+}
+
+.taxonomy-landing-item:focus-visible {
+  outline: var(--btn-focus-ring);
+  outline-offset: var(--site-focus-offset);
+}
+
+@media (hover: hover) {
+  .site-empty-state-action:hover {
+    transform: translateY(-2px);
+    border-color: rgba(103, 232, 249, 0.40);
+    box-shadow: var(--btn-hybrid-primary-shadow-hover);
+    filter: brightness(1.05);
+  }
+
+  .taxonomy-landing-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.34);
+    background:
+      radial-gradient(circle at 100% 0%, rgba(34, 211, 238, 0.11), transparent 44%),
+      rgba(255, 255, 255, 0.045);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+}
+
+@media (min-width: 640px) {
+  .site-page-header-detail {
+    flex-basis: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-page-header-title {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .taxonomy-landing-item {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .taxonomy-landing-count {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .taxonomy-landing-arrow {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
+
+/* ==========================================================
+   TAHAP 3 — KONSOLIDASI AMAN
+   Backdrop bersama dan alignment 404 mengikuti shell global.
+   ========================================================== */
+
+.site-overlay-backdrop {
+  background: var(--site-overlay-backdrop-bg, rgba(2, 6, 23, 0.96));
+}
+
+@media (min-width: 1024px) {
+  .notfound-dock-page {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
@@ -11007,10 +11129,6 @@ body.has-social-bar .site-footer {
     display: none;
   }
 
-  .sm\:basis-auto {
-    flex-basis: auto;
-  }
-
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -11048,11 +11166,6 @@ body.has-social-bar .site-footer {
     padding-right: 0.5rem;
   }
 
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -11084,11 +11197,6 @@ body.has-social-bar .site-footer {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .md\:text-base {

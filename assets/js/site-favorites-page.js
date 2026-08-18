@@ -2,6 +2,7 @@
   'use strict';
 
   const favoriteCore = window.DonghuaFav;
+  const focusManager = window.DonghuaFocusManager;
   if (!favoriteCore) {
     console.error('[Fav] Core module tidak tersedia.');
     return;
@@ -76,42 +77,6 @@
   function getWatchStatus(id) {
     const status = favoriteCore.getWatchStatus ? favoriteCore.getWatchStatus(id) : 'belum';
     return WATCH_STATUS[status] ? status : 'belum';
-  }
-
-  function isFocusableVisible(element) {
-    return !!(element && typeof element.focus === 'function' && !element.disabled && (element.offsetParent !== null || element === document.activeElement));
-  }
-
-  function focusFirst(container, preferredSelector) {
-    if (!container) return false;
-    const target = preferredSelector ? container.querySelector(preferredSelector) : null;
-    if (isFocusableVisible(target)) {
-      target.focus();
-      return true;
-    }
-
-    const focusable = container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
-    for (let i = 0; i < focusable.length; i += 1) {
-      if (isFocusableVisible(focusable[i])) {
-        focusable[i].focus();
-        return true;
-      }
-    }
-
-    if (isFocusableVisible(container)) {
-      container.focus();
-      return true;
-    }
-    return false;
-  }
-
-  function restoreFocus(target, fallbackSelector) {
-    if (isFocusableVisible(target)) {
-      target.focus();
-      return;
-    }
-    const fallback = fallbackSelector ? document.querySelector(fallbackSelector) : null;
-    if (isFocusableVisible(fallback)) fallback.focus();
   }
 
   function statusControlHTML(id, status) {
@@ -312,19 +277,33 @@
 
   function openConfirm(trigger) {
     const dialog = document.getElementById('fav-confirm');
-    if (!dialog) return;
+    if (!dialog || dialog.classList.contains('is-open')) return;
     lastConfirmTrigger = trigger || document.activeElement;
+
+    if (focusManager) {
+      focusManager.setInteractive(dialog, true);
+    } else {
+      dialog.inert = false;
+      dialog.setAttribute('aria-hidden', 'false');
+    }
     dialog.classList.add('is-open');
-    dialog.setAttribute('aria-hidden', 'false');
-    window.setTimeout(function () { focusFirst(dialog, '#fav-cancel-btn'); }, 0);
+
+    if (focusManager) {
+      focusManager.scheduleFocus(dialog, '#fav-cancel-btn');
+    }
   }
 
   function closeConfirm() {
     const dialog = document.getElementById('fav-confirm');
-    if (!dialog) return;
+    if (!dialog || !dialog.classList.contains('is-open')) return;
     dialog.classList.remove('is-open');
-    dialog.setAttribute('aria-hidden', 'true');
-    restoreFocus(lastConfirmTrigger, '#fav-clear-all, .fav-empty-cta');
+    if (focusManager) {
+      focusManager.setInteractive(dialog, false);
+      focusManager.restoreFocus(lastConfirmTrigger, '#fav-clear-all, .fav-empty-cta');
+    } else {
+      dialog.inert = true;
+      dialog.setAttribute('aria-hidden', 'true');
+    }
     lastConfirmTrigger = null;
   }
 
@@ -385,7 +364,15 @@
 
   document.addEventListener('keydown', function (event) {
     const dialog = document.getElementById('fav-confirm');
-    if (event.key === 'Escape' && dialog && dialog.classList.contains('is-open')) closeConfirm();
+    if (!dialog || !dialog.classList.contains('is-open')) return;
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeConfirm();
+      return;
+    }
+
+    if (focusManager) focusManager.trapFocus(event, dialog);
   });
 
   document.addEventListener('DOMContentLoaded', renderFavoritesPage);

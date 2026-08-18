@@ -7,8 +7,6 @@ layout : halaman
 url : privacy-policy
 ---
 
-# Kebijakan Privasi
-
 Halaman ini menjelaskan data apa yang kami kumpulkan dan bagaimana kami menggunakannya.
 
 ## 1. Data yang Kami Kumpulkan

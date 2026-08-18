@@ -7,8 +7,6 @@ layout : halaman
 url : terms-of-conditions
 ---
 
-# Syarat dan Ketentuan
-
 Menggunakan DonghuaBatch berarti menyetujui semua ketentuan di halaman ini.
 
 ## 1. Ketentuan Umum

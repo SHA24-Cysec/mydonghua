@@ -9,7 +9,7 @@
                     <div class="panel-neon p-3 sm:p-5">
                         <span class="badge-neon w-fit"><i class="fa-solid fa-user text-cyan-400"></i>Posted by <strong class="text-cyan-300">{{ .Site.Params.author }}</strong><i class="fa-solid fa-circle-check text-green-400 drop-shadow-neon-green"></i></span>
                         <hr class="mt-4 border-cyan-500/30">
-                        <h1 class="text-2xl md:text-3xl mt-4 heading-neon"><strong>{{ .Title }}</strong></h1>
+                        {{ partial "page-header" (dict "context" . "title" .Title "spaced" true) }}
                         <div class="flex flex-col md:flex-row gap-4 mt-4">
                             <div class="w-full md:w-[220px] shrink-0">
                                 <div class="w-[clamp(130px,35vw,200px)] aspect-[2/3] mb-3 mx-auto rounded-xl overflow-hidden border border-cyan-500/40 shadow-neon-cyan-md">
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <!-- Desktop: Table view -->
-                        <div class="hidden sm:block panel-neon-inset overflow-x-auto w-full mx-auto max-w-full select-none mt-4 shadow-neon-cyan-sm">
+                        <div class="post-info-table-scroll hidden sm:block panel-neon-inset overflow-x-auto w-full mx-auto max-w-full select-none mt-4 shadow-neon-cyan-sm" role="region" tabindex="0" aria-label="Tabel informasi donghua. Geser horizontal untuk melihat semua kolom.">
                             <table class="w-full mx-auto text-sm md:text-base">
                                 <thead>
                                     <tr class="bg-gradient-to-r from-cyan-600/30 via-blue-600/30 to-purple-600/30 text-cyan-300 font-extrabold border-b border-cyan-500/40">

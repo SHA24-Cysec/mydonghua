@@ -8,13 +8,12 @@
     <div class="flex-1 min-w-0">
       <div class="panel-neon p-3 sm:p-5">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-          <div>
-            <h1 class="text-2xl md:text-3xl heading-neon mb-2">
-              <i class="fa-solid fa-bookmark text-cyan-400 mr-2"></i>
-              <strong>Daftar Favorit</strong>
-            </h1>
-            <p class="text-sm text-slate-400">Donghua yang kamu simpan untuk akses cepat</p>
-          </div>
+          {{ partial "page-header" (dict
+            "context" .
+            "title" "Daftar Favorit"
+            "icon" "fa-solid fa-bookmark text-cyan-400"
+            "description" "Donghua yang kamu simpan untuk akses cepat"
+          ) }}
           <button class="fav-clear-btn" type="button" id="fav-clear-all">
             <i class="fa-solid fa-trash-can fav-clear-icon" aria-hidden="true"></i>
             <span>Hapus Semua</span>
@@ -45,11 +44,14 @@
 
         <ul id="fav-grid" class="donghua-card-grid donghua-card-grid-main hidden mt-4"></ul>
 
-        <div id="fav-watch-empty" class="fav-watch-empty" hidden>
-          <i class="fa-solid fa-filter-circle-xmark" aria-hidden="true"></i>
-          <strong>Belum ada favorit pada status ini</strong>
-          <span>Pilih status lain atau ubah status tontonan pada card favoritmu.</span>
-        </div>
+        {{ partial "empty-state" (dict
+          "id" "fav-watch-empty"
+          "class" "fav-watch-empty"
+          "hidden" true
+          "icon" "fa-solid fa-filter-circle-xmark"
+          "title" "Belum ada favorit pada status ini"
+          "description" "Pilih status lain atau ubah status tontonan pada card favoritmu."
+        ) }}
 
         <div id="fav-empty" class="fav-empty-state hidden">
           <div class="fav-empty-card">

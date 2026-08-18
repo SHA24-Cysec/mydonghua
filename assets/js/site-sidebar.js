@@ -1,82 +1,166 @@
 (function () {
   'use strict';
 
-document.addEventListener('DOMContentLoaded', function () {
-                const shell = document.querySelector('[data-genre-filter]');
-                if (!shell) return;
+  document.addEventListener('DOMContentLoaded', function () {
+    const shell = document.querySelector('[data-genre-filter]');
+    if (!shell) return;
 
-                const trigger = shell.querySelector('.genre-sheet-trigger');
-                const closeButtons = shell.querySelectorAll('[data-genre-close]');
-                const clearButton = shell.querySelector('[data-genre-clear]');
-                const tray = shell.querySelector('[data-genre-tray]');
-                const triggerCount = shell.querySelector('[data-genre-trigger-count]');
-                const applyButton = shell.querySelector('.genre-apply-button');
-                const inputs = Array.from(shell.querySelectorAll('input[name="genre"]'));
+    const focusManager = window.DonghuaFocusManager;
+    const desktopMedia = window.matchMedia('(min-width: 768px)');
+    const trigger = shell.querySelector('.genre-sheet-trigger');
+    const panel = shell.querySelector('.genre-sheet-panel');
+    const closeButtons = shell.querySelectorAll('[data-genre-close]');
+    const clearButton = shell.querySelector('[data-genre-clear]');
+    const tray = shell.querySelector('[data-genre-tray]');
+    const triggerCount = shell.querySelector('[data-genre-trigger-count]');
+    const applyButton = shell.querySelector('.genre-apply-button');
+    const inputs = Array.from(shell.querySelectorAll('input[name="genre"]'));
+    let previousFocus = null;
 
-                function selectedInputs() {
-                    return inputs.filter(function (input) { return input.checked; });
-                }
+    function selectedInputs() {
+      return inputs.filter(function (input) { return input.checked; });
+    }
 
-                function updateSelectedUI() {
-                    const selected = selectedInputs();
-                    if (triggerCount) {
-                        triggerCount.textContent = selected.length + ' dipilih';
-                    }
-                    if (applyButton) {
-                        applyButton.disabled = selected.length === 0;
-                    }
-                    if (!tray) return;
+    function isOverlayMode() {
+      return !desktopMedia.matches;
+    }
 
-                    if (!selected.length) {
-                        tray.innerHTML = '<span class="genre-selected-empty">Belum ada genre dipilih</span>';
-                        return;
-                    }
+    function isOpen() {
+      return shell.classList.contains('is-open');
+    }
 
-                    tray.innerHTML = selected.map(function (input) {
-                        const label = input.getAttribute('data-genre-label') || input.value;
-                        return '<span class="genre-selected-pill">' + label + ' <i class="fa-solid fa-check" aria-hidden="true"></i></span>';
-                    }).join('');
-                }
+    function setPanelInteractive(interactive) {
+      if (!panel) return;
+      if (focusManager) {
+        focusManager.setInteractive(panel, interactive);
+      } else {
+        panel.inert = !interactive;
+        panel.setAttribute('aria-hidden', interactive ? 'false' : 'true');
+      }
+    }
 
-                function openSheet() {
-                    shell.classList.add('is-open');
-                    document.body.classList.add('genre-sheet-lock');
-                    if (trigger) trigger.setAttribute('aria-expanded', 'true');
-                }
+    function setDialogSemantics(enabled) {
+      if (!panel) return;
+      if (enabled) {
+        panel.setAttribute('role', 'dialog');
+        panel.setAttribute('aria-modal', 'true');
+      } else {
+        panel.removeAttribute('role');
+        panel.removeAttribute('aria-modal');
+      }
+    }
 
-                function closeSheet() {
-                    shell.classList.remove('is-open');
-                    document.body.classList.remove('genre-sheet-lock');
-                    if (trigger) trigger.setAttribute('aria-expanded', 'false');
-                }
+    function updateSelectedUI() {
+      const selected = selectedInputs();
+      if (triggerCount) triggerCount.textContent = selected.length + ' dipilih';
+      if (applyButton) applyButton.disabled = selected.length === 0;
+      if (!tray) return;
 
-                if (trigger) {
-                    trigger.addEventListener('click', openSheet);
-                }
+      if (!selected.length) {
+        tray.innerHTML = '<span class="genre-selected-empty">Belum ada genre dipilih</span>';
+        return;
+      }
 
-                closeButtons.forEach(function (button) {
-                    button.addEventListener('click', closeSheet);
-                });
+      tray.innerHTML = selected.map(function (input) {
+        const label = input.getAttribute('data-genre-label') || input.value;
+        return '<span class="genre-selected-pill">' + label + ' <i class="fa-solid fa-check" aria-hidden="true"></i></span>';
+      }).join('');
+    }
 
-                if (clearButton) {
-                    clearButton.addEventListener('click', function () {
-                        inputs.forEach(function (input) { input.checked = false; });
-                        updateSelectedUI();
-                    });
-                }
+    function openSheet() {
+      if (!isOverlayMode() || isOpen()) return;
+      previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : trigger;
+      setPanelInteractive(true);
+      setDialogSemantics(true);
+      shell.classList.add('is-open');
+      document.body.classList.add('genre-sheet-lock');
+      if (trigger) trigger.setAttribute('aria-expanded', 'true');
 
-                inputs.forEach(function (input) {
-                    input.addEventListener('change', updateSelectedUI);
-                });
+      if (focusManager) {
+        focusManager.scheduleFocus(panel, '.genre-sheet-close');
+      }
+    }
 
-                document.addEventListener('keydown', function (event) {
-                    if (event.key === 'Escape') closeSheet();
-                });
+    function closeSheet(restoreFocus) {
+      const wasOpen = isOpen();
+      shell.classList.remove('is-open');
+      document.body.classList.remove('genre-sheet-lock');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
 
-                updateSelectedUI();
-            });
+      if (isOverlayMode()) {
+        setPanelInteractive(false);
+        setDialogSemantics(false);
+      } else {
+        setPanelInteractive(true);
+        setDialogSemantics(false);
+      }
 
-document.addEventListener('DOMContentLoaded', function () {
+      if (wasOpen && restoreFocus !== false && focusManager) {
+        focusManager.restoreFocus(previousFocus, '.genre-sheet-trigger');
+      }
+      previousFocus = null;
+    }
+
+    function syncResponsiveState() {
+      const wasOpen = isOpen();
+      const focusWasInside = panel && panel.contains(document.activeElement);
+
+      if (isOverlayMode()) {
+        closeSheet(false);
+        if (focusWasInside && focusManager) {
+          focusManager.restoreFocus(trigger, '.genre-sheet-trigger');
+        }
+        return;
+      }
+
+      closeSheet(false);
+      if (wasOpen && focusManager) {
+        focusManager.scheduleFocus(panel, 'input[name="genre"]');
+      }
+    }
+
+    if (trigger) trigger.addEventListener('click', openSheet);
+
+    closeButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        closeSheet(true);
+      });
+    });
+
+    if (clearButton) {
+      clearButton.addEventListener('click', function () {
+        inputs.forEach(function (input) { input.checked = false; });
+        updateSelectedUI();
+      });
+    }
+
+    inputs.forEach(function (input) {
+      input.addEventListener('change', updateSelectedUI);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (!isOverlayMode() || !isOpen()) return;
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeSheet(true);
+        return;
+      }
+
+      if (focusManager) focusManager.trapFocus(event, panel);
+    });
+
+    if (typeof desktopMedia.addEventListener === 'function') {
+      desktopMedia.addEventListener('change', syncResponsiveState);
+    } else {
+      desktopMedia.addListener(syncResponsiveState);
+    }
+
+    updateSelectedUI();
+    syncResponsiveState();
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('[data-taxonomy-tabs]').forEach(function (widget) {
                     const buttons = Array.from(widget.querySelectorAll('[data-taxonomy-tab]'));
                     const panels = Array.from(widget.querySelectorAll('[data-taxonomy-panel]'));

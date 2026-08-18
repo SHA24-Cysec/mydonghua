@@ -1,0 +1,22 @@
+{{- $context := .context -}}
+{{- $title := .title -}}
+{{- if and (not $title) $context -}}{{- $title = $context.Title -}}{{- end -}}
+{{- $align := .align | default "left" -}}
+<header class="site-page-header site-page-header--{{ $align }}{{ if .divider }} site-page-header--divider{{ end }}{{ if .spaced }} site-page-header--spaced{{ end }}">
+  {{- with .kicker }}
+    <span class="badge-neon site-page-header-kicker">
+      {{- with $.kickerIcon }}<i class="{{ . }}" aria-hidden="true"></i>{{ end -}}
+      <span>{{ . }}</span>
+    </span>
+  {{- end }}
+
+  <h1 class="heading-neon site-page-header-title">
+    {{- with .icon }}<i class="site-page-header-icon {{ . }}" aria-hidden="true"></i>{{ end -}}
+    <span class="site-page-header-title-text">{{ $title }}</span>
+    {{- with .detail }}<span class="site-page-header-detail">{{ . }}</span>{{ end -}}
+  </h1>
+
+  {{- with .description }}
+    <p class="site-page-header-description">{{ . }}</p>
+  {{- end }}
+</header>

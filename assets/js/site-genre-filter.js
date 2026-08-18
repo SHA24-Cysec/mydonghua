@@ -34,6 +34,7 @@ function getGenresFromHash() {
 }
 
 const resultsContainer = document.getElementById("genre-results");
+const genrePrompt = document.getElementById("genre-prompt");
 let genrePage = 1;
 let genreResults = [];
 let genreResizeTimer = null;
@@ -56,6 +57,7 @@ function renderGenreResults() {
   const pagination = document.getElementById("genre-pagination");
 
   resultsContainer.innerHTML = "";
+  if (genrePrompt) genrePrompt.classList.add("hidden");
 
   if (!genreResults.length) {
     alertBox.classList.remove("hidden");
@@ -134,11 +136,20 @@ window.addEventListener("resize", function() {
 window.addEventListener("DOMContentLoaded", function() {
   if (!resultsContainer) return;
 
+  const alertBox = document.getElementById("genre-alert");
+  const pagination = document.getElementById("genre-pagination");
   const selectedGenres = getGenresFromHash();
-  if (!selectedGenres.length) return;
 
-  const sourcePromise = (window.DonghuaBatchData && window.DonghuaBatchData.getIndexData) 
-    ? window.DonghuaBatchData.getIndexData() 
+  if (!selectedGenres.length) {
+    if (genrePrompt) genrePrompt.classList.remove("hidden");
+    if (alertBox) alertBox.classList.add("hidden");
+    if (pagination) pagination.classList.add("hidden");
+    return;
+  }
+
+  if (genrePrompt) genrePrompt.classList.add("hidden");
+  const sourcePromise = (window.DonghuaBatchData && window.DonghuaBatchData.getIndexData)
+    ? window.DonghuaBatchData.getIndexData()
     : fetch('/index.json').then(function(res) { return res.json(); });
 
   sourcePromise.then(function(data) {
@@ -147,6 +158,7 @@ window.addEventListener("DOMContentLoaded", function() {
     renderGenreResults();
   }).catch(function(err) {
     console.error("[Genre Filter] index.json gagal dimuat", err);
+    if (alertBox) alertBox.classList.remove("hidden");
   });
 });
 

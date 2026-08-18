@@ -1,32 +1,88 @@
 {{ define "main" }}
+    {{- $taxonomyLabel := "Koleksi" -}}
+    {{- $taxonomyIcon := "fa-solid fa-layer-group text-cyan-400" -}}
+    {{- $taxonomyDescription := "Pilih kategori untuk membuka daftar donghua yang tersedia." -}}
+    {{- if eq .Type "genre" -}}
+        {{- $taxonomyLabel = "Genre" -}}
+        {{- $taxonomyIcon = "fa-solid fa-folder text-cyan-400" -}}
+        {{- $taxonomyDescription = "Pilih genre untuk menemukan donghua berdasarkan tema yang kamu suka." -}}
+    {{- else if eq .Type "studio" -}}
+        {{- $taxonomyLabel = "Studio" -}}
+        {{- $taxonomyIcon = "fa-solid fa-microchip text-purple-400" -}}
+        {{- $taxonomyDescription = "Pilih studio untuk melihat semua donghua yang mereka produksi." -}}
+    {{- else if eq .Type "season" -}}
+        {{- $taxonomyLabel = "Season" -}}
+        {{- $taxonomyIcon = "fa-solid fa-calendar-days text-pink-400" -}}
+        {{- $taxonomyDescription = "Pilih season atau tahun rilis untuk menjelajahi koleksi donghua." -}}
+    {{- end -}}
+
     <div class="mt-4 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
         <div class="w-full flex flex-col gap-4">
-            {{/*  Main Content  */}}
-            <div class="panel-neon p-3 sm:p-5">
-                {{ if eq .Type "genre" }}
-                    <h1 class="text-2xl md:text-3xl heading-neon flex flex-wrap items-center gap-x-3 gap-y-2"><i class="fa-solid fa-folder text-cyan-400 shrink-0"></i><span>Daftar Donghua Berdasarkan Genre:</span> <span class="text-white min-w-0 basis-full break-words sm:basis-auto">{{ .Title }}</span></h1>
-                {{ else if eq .Type "studio" }}
-                    <h1 class="text-2xl md:text-3xl heading-neon flex flex-wrap items-center gap-x-3 gap-y-2"><i class="fa-solid fa-microchip text-purple-400 shrink-0"></i><span>Daftar Donghua Berdasarkan Studio:</span> <span class="text-white min-w-0 basis-full break-words sm:basis-auto">{{ .Title }}</span></h1>
-                {{ else if eq .Type "season" }}
-                    <h1 class="text-2xl md:text-3xl heading-neon flex flex-wrap items-center gap-x-3 gap-y-2"><i class="fa-solid fa-calendar-days text-pink-400 shrink-0"></i><span>Daftar Donghua Berdasarkan Season:</span> <span class="text-white min-w-0 basis-full break-words sm:basis-auto">{{ .Title }}</span></h1>
-                {{ else if eq .Type "post" }}
-                    <h1 class="text-2xl md:text-3xl heading-neon flex flex-wrap items-center gap-x-3 gap-y-2"><i class="fa-solid fa-film text-cyan-400 shrink-0"></i><span>Daftar Post Donghua</span></h1>
-                {{ end }}
-            </div>
-            <div class="panel-neon p-3 sm:p-5 min-h-screen">
-                <div class="flex flex-wrap flex-col gap-4">
-                    <!-- Lebar grid mengikuti area konten beranda lewat token --site-content-max,
-                         supaya ikut menyesuaikan saat lebar sidebar berubah. -->
-                    <div class="site-content-shell mx-auto w-full">
-                        <div class="donghua-card-grid donghua-card-grid-main p-0 mt-4">
-                            {{ range .Paginator.Pages }}
-                                {{ partial "donghua-card" (dict "page" . "headingLevel" 2) }}
-                            {{ end }}
-                        </div>
-                    </div>
-                    {{ partial "pagination-option11" . }}
+            {{ if eq .Kind "taxonomy" }}
+                <div class="panel-neon p-3 sm:p-5">
+                    {{ partial "page-header" (dict
+                        "context" .
+                        "title" (printf "Jelajahi %s" $taxonomyLabel)
+                        "icon" $taxonomyIcon
+                        "description" $taxonomyDescription
+                    ) }}
                 </div>
-            </div>
+
+                <div class="panel-neon p-3 sm:p-5">
+                    {{- $terms := .Data.Terms.Alphabetical -}}
+                    {{ if $terms }}
+                        <nav class="taxonomy-landing-grid" aria-label="Daftar {{ lower $taxonomyLabel }}">
+                            {{ range $terms }}
+                                <a class="taxonomy-landing-item" href="{{ .Page.RelPermalink }}">
+                                    <span class="taxonomy-landing-icon"><i class="{{ $taxonomyIcon }}" aria-hidden="true"></i></span>
+                                    <span class="taxonomy-landing-copy">
+                                        <strong>{{ .Page.Title }}</strong>
+                                        <small>Buka koleksi {{ lower $taxonomyLabel }}</small>
+                                    </span>
+                                    <span class="taxonomy-landing-count">{{ .Count }} judul</span>
+                                    <span class="taxonomy-landing-arrow" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                                </a>
+                            {{ end }}
+                        </nav>
+                    {{ else }}
+                        {{ partial "empty-state" (dict
+                            "icon" "fa-solid fa-folder-open"
+                            "title" (printf "Belum ada %s" (lower $taxonomyLabel))
+                            "description" "Kategori akan muncul setelah koleksi tersedia."
+                            "actionURL" "/"
+                            "actionLabel" "Kembali ke Beranda"
+                            "actionIcon" "fa-solid fa-house"
+                        ) }}
+                    {{ end }}
+                </div>
+            {{ else }}
+                {{/*  Main Content  */}}
+                <div class="panel-neon p-3 sm:p-5">
+                    {{ if eq .Type "genre" }}
+                        {{ partial "page-header" (dict "context" . "title" "Daftar Donghua Berdasarkan Genre:" "detail" .Title "icon" $taxonomyIcon) }}
+                    {{ else if eq .Type "studio" }}
+                        {{ partial "page-header" (dict "context" . "title" "Daftar Donghua Berdasarkan Studio:" "detail" .Title "icon" $taxonomyIcon) }}
+                    {{ else if eq .Type "season" }}
+                        {{ partial "page-header" (dict "context" . "title" "Daftar Donghua Berdasarkan Season:" "detail" .Title "icon" $taxonomyIcon) }}
+                    {{ else if eq .Type "post" }}
+                        {{ partial "page-header" (dict "context" . "title" "Daftar Post Donghua" "icon" "fa-solid fa-film text-cyan-400") }}
+                    {{ end }}
+                </div>
+                <div class="panel-neon p-3 sm:p-5 min-h-screen">
+                    <div class="flex flex-wrap flex-col gap-4">
+                        <!-- Lebar grid mengikuti area konten beranda lewat token --site-content-max,
+                             supaya ikut menyesuaikan saat lebar sidebar berubah. -->
+                        <div class="site-content-shell mx-auto w-full">
+                            <div class="donghua-card-grid donghua-card-grid-main p-0 mt-4">
+                                {{ range .Paginator.Pages }}
+                                    {{ partial "donghua-card" (dict "page" . "headingLevel" 2) }}
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ partial "pagination-option11" . }}
+                    </div>
+                </div>
+            {{ end }}
         </div>
     </div>
 {{ end }}

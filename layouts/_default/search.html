@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4 mb-0">
 <div class="panel-neon flex flex-col w-full h-full min-h-screen p-3 sm:p-5">
-    <h1 class="heading-neon text-2xl md:text-3xl text-center">{{ .Title }}</h1>
+    {{ partial "page-header" (dict "context" . "title" .Title "align" "center") }}
     <span class="badge-neon mt-4 mx-auto"><i class="fa-solid fa-info-circle mr-2 text-cyan-400"></i>Ketik minimal 3 huruf. Pisahkan genre dengan koma.</span>
     <div class="w-full max-w-[900px] mx-auto mt-4">
         <div class="aurora-search-container mb-4" role="search">
@@ -50,15 +50,18 @@
         {{/*  Elemen Postingan Pencarian  */}}
         <ul class="donghua-card-grid donghua-card-grid-wide h-full max-h-max" id="search-results"></ul>
 
-        <div id="search-empty-state" class="search-empty-state" hidden>
-            <div class="search-empty-icon"><i class="fa-solid fa-satellite-dish" aria-hidden="true"></i></div>
-            <strong>Tidak ada hasil ditemukan</strong>
-            <p>Coba kata kunci lain, ubah filter, atau gunakan judul yang lebih pendek.</p>
-        </div>
+        {{ partial "empty-state" (dict
+            "id" "search-empty-state"
+            "class" "search-empty-state"
+            "hidden" true
+            "icon" "fa-solid fa-satellite-dish"
+            "title" "Tidak ada hasil ditemukan"
+            "description" "Coba kata kunci lain, ubah filter, atau gunakan judul yang lebih pendek."
+        ) }}
 
-        <div id="search-filter-dialog" class="search-filter-dialog" hidden>
-            <button class="search-filter-backdrop" type="button" data-search-filter-close aria-label="Tutup filter"></button>
-            <section class="search-filter-sheet site-feature-sheet" role="dialog" aria-modal="true" aria-labelledby="search-filter-title">
+        <div id="search-filter-dialog" class="search-filter-dialog" aria-hidden="true" hidden inert>
+            <button class="search-filter-backdrop site-overlay-backdrop" type="button" data-search-filter-close aria-label="Tutup filter" tabindex="-1"></button>
+            <section class="search-filter-sheet site-feature-sheet" role="dialog" aria-modal="true" aria-labelledby="search-filter-title" tabindex="-1">
                 <div class="search-filter-handle" aria-hidden="true"></div>
                 <div class="search-filter-head">
                     <div>

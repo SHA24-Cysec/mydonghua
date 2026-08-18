@@ -1,8 +1,8 @@
 {{ define "main" }}
     <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4 mb-0">
     <div class="panel-neon p-3 sm:p-5 w-full">
-        <h1 class="heading-neon text-2xl md:text-3xl border-b border-cyan-500/30 pb-4 mb-4">{{ .Title }}</h1>
-        <div class="prose-neon font-sans">
+        {{ partial "page-header" (dict "context" . "title" .Title "divider" true) }}
+        <div class="prose-neon site-prose-shell font-sans">
             {{ .Content }}
         </div>
     </div>
