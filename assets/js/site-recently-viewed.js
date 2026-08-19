@@ -115,7 +115,7 @@
       ? '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> ' + rating + '/10</span>'
       : '<span class="donghua-card-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> Donghua</span>';
     var poster = thumbnail
-      ? '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="400" height="600">'
+      ? '<img class="donghua-card-img" loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="400" height="600">'
       : '<div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true"><i class="fa-solid fa-film text-6xl"></i></div>';
 
     return '<article class="donghua-card">' +

@@ -1,6 +1,7 @@
 {{ $page := .page }}
 {{ $headingLevel := .headingLevel | default 3 }}
 {{ $eager := .eager | default false }}
+{{ $priority := .priority | default false }}
 {{/* SCROLL-FLASH FIX: tampilkan 8 poster pertama dengan eager + decoding=auto
      pada grid utama. Penyebab gambar hitam saat scroll di mobile adalah
      pembatalan decode async ketika viewport berubah cepat. Empat poster
@@ -38,7 +39,7 @@
 {{ $thumbSrc := $page.Params.thumbnail | default "" }}
 {{ $thumbAlt := $page.Params.alt | default $judulPenuh }}
 {{ if $thumbSrc }}
-            <img loading="{{ if $eager }}eager{{ else }}lazy{{ end }}" decoding="{{ if $eager }}auto{{ else }}async{{ end }}"{{ if $eager }} fetchpriority="high"{{ end }} width="400" height="600" src='{{ $thumbSrc | relURL }}' alt="{{ $thumbAlt }}">
+            <img class="donghua-card-img" loading="{{ if $eager }}eager{{ else }}lazy{{ end }}" decoding="{{ if $eager }}auto{{ else }}async{{ end }}"{{ if $priority }} fetchpriority="high"{{ end }} width="400" height="600" src='{{ $thumbSrc | relURL }}' alt="{{ $thumbAlt }}">
 {{ else }}
             <div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true">
               <i class="fa-solid fa-film text-6xl"></i>

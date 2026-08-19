@@ -27,7 +27,7 @@
                              pembatalan decode async tidak lagi menampilkan
                              background hitam di card yang baru masuk viewport. */}}
                         {{ range $index, $page := .Paginator.Pages }}
-                            {{ partial "donghua-card" (dict "page" $page "headingLevel" 3 "eager" (lt $index 8)) }}
+                            {{ partial "donghua-card" (dict "page" $page "headingLevel" 3 "eager" (lt $index 8) "priority" (lt $index 2)) }}
                         {{ end }}
                     </div>
                     {{ partial "pagination-option11" . }}

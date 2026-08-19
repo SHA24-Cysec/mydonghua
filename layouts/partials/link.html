@@ -9,18 +9,16 @@
 {{ end }}
 {{- $pagination := partial "pagination-context" . -}}
 <link rel="canonical" href="{{ $pagination.canonicalURL }}">
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 <link rel="dns-prefetch" href="https://mydonghua.disqus.com">
-{{/*  Font Awesome 6.7.2 – CDN full – rollback 2026-07-09
-      FA Kit 40c8dc61cd menyebabkan ikon rusak / missing,
-      kembali ke CDN cdnjs non-blocking, aman untuk semua ikon.
-*/}}
-<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous"></noscript>
+{{/*  Font Awesome 6.7.2 subset lokal. Kit 40c8dc61cd merusak ikon;
+      subset ini memakai class yang sama dengan CDN free, tanpa all.min.css. */}}
+{{ with resources.Get "fa-subset.css" }}
+    {{ $fa := . | minify | fingerprint "sha256" }}
+    <link rel="stylesheet" href="{{ $fa.RelPermalink }}" integrity="{{ $fa.Data.Integrity }}">
+{{ end }}
 {{/* Homepage LCP: preload hanya gambar hero utama. */}}
 {{ if .IsHome }}
   <link rel="preload" as="image" type="image/webp" fetchpriority="high" href='{{ "img/Huo-Linger.webp" | relURL }}'>

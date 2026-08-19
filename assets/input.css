@@ -872,19 +872,6 @@
         }
     }
 
-    @keyframes notfoundAuroraFlow {
-        0% { transform: rotate(0deg) scale(1); }
-        100% { transform: rotate(8deg) scale(1.08); }
-    }
-
-    @keyframes notfoundSpin {
-        to { transform: rotate(376deg); }
-    }
-
-    @keyframes notfoundSpinReverse {
-        to { transform: rotate(-378deg); }
-    }
-
     @keyframes notfoundPanelIn {
         from { opacity: 0; transform: translateY(14px); }
         to { opacity: 1; transform: translateY(0); }
@@ -1983,17 +1970,6 @@ body.has-floating-ad .btt-wrapper {
         to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes dbSheen {
-        0%, 58% { left: -58%; opacity: 0; }
-        68% { opacity: 1; }
-        100% { left: 132%; opacity: 0; }
-    }
-
-    @keyframes dbOrbFloat {
-        0%, 100% { transform: translate3d(0, 0, 0); }
-        50% { transform: translate3d(-18px, 18px, 0); }
-    }
-
     @keyframes dbReportPulse {
         0%, 100% { box-shadow: 0 0 0 rgba(236, 72, 153, 0), inset 0 1px 0 rgba(255, 255, 255, 0.18); }
         50% { box-shadow: 0 0 0 6px rgba(236, 72, 153, 0.16), 0 0 22px rgba(236, 72, 153, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.22); }
@@ -2754,10 +2730,6 @@ body.has-floating-ad .btt-wrapper {
     .site-random-poster {
       width: min(100%, clamp(13.5rem, 70vw, 18rem));
     }
-  }
-
-  @keyframes siteRandomSpin {
-    to { transform: rotate(360deg); }
   }
 
   @keyframes siteRandomIn {
@@ -4268,11 +4240,6 @@ body .post-bookmark-btn.is-pulsing {
                 }
             }
 
-            @keyframes genreAuroraFlow {
-                0% { transform: rotate(0deg) scale(1); }
-                100% { transform: rotate(10deg) scale(1.08); }
-            }
-
             @keyframes genreOptionIn {
                 from { opacity: 0; transform: translateY(8px); }
                 to { opacity: 1; transform: translateY(0); }
@@ -4609,11 +4576,6 @@ body .post-bookmark-btn.is-pulsing {
                 .taxonomy-tabs-counter {
                     width: fit-content;
                 }
-            }
-
-            @keyframes taxonomyAuroraFlow {
-                0% { transform: rotate(0deg) scale(1); }
-                100% { transform: rotate(10deg) scale(1.08); }
             }
 
             @keyframes taxonomyItemIn {
@@ -5025,16 +4987,6 @@ body .post-bookmark-btn.is-pulsing {
         color: #cffafe;
         font-size: 0.92rem;
         margin-bottom: 0.22rem;
-    }
-
-    @keyframes adNeonFlow {
-        0% { transform: rotate(0deg) scale(1); }
-        100% { transform: rotate(8deg) scale(1.08); }
-    }
-
-    @keyframes adDotPulse {
-        0%, 100% { opacity: 0.55; transform: scale(0.92); }
-        50% { opacity: 1; transform: scale(1.06); }
     }
 
     @media (max-width: 767px) {
@@ -5941,12 +5893,6 @@ html body .site-home-hero-button.secondary {
   }
 }
 
-
-
-@keyframes siteHeroMoonlitZoom {
-  from { transform: scale(1.01) translate3d(0, 0, 0); }
-  to { transform: scale(1.04) translate3d(-0.5%, 0.2%, 0); }
-}
 /* ==========================================================
    PHASE 9 — UNIFIED NEON BUTTON COLOR SYSTEM
    Advanced audit implementation. All major buttons/CTAs are
@@ -6810,25 +6756,6 @@ html body .site-footer {
 /* Final reduced-motion guard — must stay after Button System rules. */
 
 /* ==========================================================
-   SCROLL PERFORMANCE — Pause off-screen infinite animations
-   Animasi infinite yang kecil (dot pulse, orb float, sheen)
-   tetap berjalan tapi di-pause saat elemen off-screen.
-   ========================================================== */
-@supports (content-visibility: auto) {
-  /* Orbit animations di halaman 404 — hanya aktif saat terlihat */
-  .notfound-dock-orbit,
-  /* Download batch orb float — hanya aktif saat terlihat */
-  .db-shell::before,
-  /* Ad dot pulse — hanya aktif saat terlihat */
-  .ad-neon-head::before,
-  .ad-neon-head::after {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 1rem;
-  }
-}
-
-
-/* ==========================================================
    AD WIDGET FALLBACK SYSTEM
    Jika unit gagal dimuat: shell di-hide total (tanpa teks
    "Iklan belum tersedia"). Unit & fallback saling eksklusif.
@@ -7007,8 +6934,6 @@ html body .notfound-dock-panel {
 
   /* Card donghua tetap dirender normal agar outer glow hover tidak dipotong
      oleh paint containment dari content-visibility. */
-
-  /* Slider rail cards */
 }
 
 

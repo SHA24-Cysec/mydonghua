@@ -1,4 +1,10 @@
 <div class="hidden lg:flex lg:justify-between lg:fixed lg:bottom-0 w-full -z-50" aria-hidden="true">
-    <img loading="eager" decoding="async" width="250" class="site-bg-character w-[250px] h-auto object-cover opacity-[0.95] pointer-events-none" src='{{ "img/cailin-btth.webp" | relURL }}' alt="">
-    <img loading="eager" decoding="async" width="250" class="site-bg-character w-[250px] h-auto object-cover opacity-[0.95] pointer-events-none" src='{{ "img/linger-pic.webp" | relURL }}' alt="">
+    <picture>
+        <source media="(min-width: 1024px)" srcset='{{ "img/cailin-btth.webp" | relURL }}'>
+        <img loading="lazy" decoding="async" width="250" class="site-bg-character w-[250px] h-auto object-cover opacity-[0.95] pointer-events-none" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+    </picture>
+    <picture>
+        <source media="(min-width: 1024px)" srcset='{{ "img/linger-pic.webp" | relURL }}'>
+        <img loading="lazy" decoding="async" width="250" class="site-bg-character w-[250px] h-auto object-cover opacity-[0.95] pointer-events-none" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+    </picture>
 </div>

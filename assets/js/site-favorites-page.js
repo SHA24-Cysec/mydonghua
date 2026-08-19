@@ -115,7 +115,7 @@
       ? '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>'
       : '<path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
     const thumbnailHTML = thumbnail
-      ? '<img loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="400" height="600">'
+      ? '<img class="donghua-card-img" loading="lazy" decoding="async" src="' + thumbnail + '" alt="' + title + '" width="400" height="600">'
       : '<div class="w-full h-full flex items-center justify-center bg-cyber-dark/80 text-cyan-400/40" aria-hidden="true"><i class="fa-solid fa-film text-6xl"></i></div>';
 
     return '<li class="donghua-card-item">' +

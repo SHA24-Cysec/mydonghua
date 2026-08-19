@@ -39,10 +39,12 @@
      (bendspecimen.com, dimuat di baseof.html). Rujukan js/site-social-bar.js
      dihapus: file tidak tersedia sehingga tag script-nya selalu 404. */}}
 
-{{/* Search menyediakan donghuaCardTemplate, getIndexData, dan getPerPage yang
-     dipakai site-genre-filter.js. Keduanya harus dimuat berpasangan: tanpa
-     site-search.js, card factory tidak tersedia dan render hasil filter batal. */}}
-{{ if or $isSearch (or $isFilterGenre $hasSidebar) }}
+{{/* Kartu JS terpisah dari mesin pencarian. Halaman search dan filter-genre
+     butuh factory kartu; beranda/post/favorit cukup form sidebar. */}}
+{{ if or $isSearch $isFilterGenre }}
+{{- template "minjs" "js/site-donghua-card.js" -}}
+{{ end }}
+{{ if $isSearch }}
 {{- template "minjs" "js/site-search.js" -}}
 {{ end }}
 

@@ -1,0 +1,19 @@
+/*!
+ * Font Awesome Free 6.7.2 subset for DonghuaBatch.
+ * Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT.
+ * Copyright 2024 Fonticons, Inc.
+ * fa-sparkles (Pro) memakai glif wand-magic-sparkles agar kicker footer tetap tampil.
+ */
+:root{--fa-style-family-classic:"Font Awesome 6 Free";--fa-font-solid:normal 900 1em/1 "Font Awesome 6 Free";--fa-font-regular:normal 400 1em/1 "Font Awesome 6 Free";--fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands"}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url("/fonts/fa-solid-900.woff2") format("woff2")}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url("/fonts/fa-regular-400.woff2") format("woff2")}
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url("/fonts/fa-brands-400.woff2") format("woff2")}
+.fa{font-family:var(--fa-style-family,"Font Awesome 6 Free");font-weight:var(--fa-style,900)}
+.fas,.far,.fab,.fa-solid,.fa-regular,.fa-brands,.fa{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fas::before,.far::before,.fab::before,.fa-solid::before,.fa-regular::before,.fa-brands::before,.fa::before{content:var(--fa)}
+.fa-classic,.fas,.fa-solid,.far,.fa-regular{font-family:"Font Awesome 6 Free"}
+.fa-brands,.fab{font-family:"Font Awesome 6 Brands"}
+.fas,.fa-solid{font-weight:900}
+.far,.fa-regular{font-weight:400}
+.fab,.fa-brands{font-weight:400}
+.fa-angles-left{--fa:"\f100"}.fa-angles-right{--fa:"\f101"}.fa-arrow-down-wide-short{--fa:"\f160"}.fa-arrow-left-long{--fa:"\f177"}.fa-arrow-right{--fa:"\f061"}.fa-arrow-right-long{--fa:"\f178"}.fa-arrow-up-right-from-square{--fa:"\f08e"}.fa-bars{--fa:"\f0c9"}.fa-bolt{--fa:"\f0e7"}.fa-bookmark{--fa:"\f02e"}.fa-bullhorn{--fa:"\f0a1"}.fa-calendar-days{--fa:"\f073"}.fa-chart-simple{--fa:"\e473"}.fa-check{--fa:"\f00c"}.fa-chevron-left{--fa:"\f053"}.fa-chevron-right{--fa:"\f054"}.fa-circle-check{--fa:"\f058"}.fa-circle-info{--fa:"\f05a"}.fa-clock{--fa:"\f017"}.fa-clock-rotate-left{--fa:"\f1da"}.fa-close{--fa:"\f00d"}.fa-cloud-arrow-down{--fa:"\f0ed"}.fa-comments{--fa:"\f086"}.fa-compass{--fa:"\f14e"}.fa-copy{--fa:"\f0c5"}.fa-envelope{--fa:"\f0e0"}.fa-envelope-open-text{--fa:"\f658"}.fa-eye{--fa:"\f06e"}.fa-facebook-f{--fa:"\f39e"}.fa-file-zipper{--fa:"\f1c6"}.fa-film{--fa:"\f008"}.fa-filter{--fa:"\f0b0"}.fa-filter-circle-xmark{--fa:"\e17b"}.fa-fire{--fa:"\f06d"}.fa-flag{--fa:"\f024"}.fa-folder{--fa:"\f07b"}.fa-folder-open{--fa:"\f07c"}.fa-hashtag{--fa:"\23"}.fa-headset{--fa:"\f590"}.fa-house{--fa:"\f015"}.fa-info-circle{--fa:"\f05a"}.fa-instagram{--fa:"\f16d"}.fa-layer-group{--fa:"\f5fd"}.fa-leaf{--fa:"\f06c"}.fa-link{--fa:"\f0c1"}.fa-lock{--fa:"\f023"}.fa-magnifying-glass{--fa:"\f002"}.fa-microchip{--fa:"\f2db"}.fa-paper-plane{--fa:"\f1d8"}.fa-phone{--fa:"\f095"}.fa-play{--fa:"\f04b"}.fa-rotate-left{--fa:"\f2ea"}.fa-satellite-dish{--fa:"\f7c0"}.fa-shield-halved{--fa:"\f3ed"}.fa-shuffle{--fa:"\f074"}.fa-sliders{--fa:"\f1de"}.fa-sparkles{--fa:"\e2ca"}.fa-star{--fa:"\f005"}.fa-telegram{--fa:"\f2c6"}.fa-trash-can{--fa:"\f2ed"}.fa-triangle-exclamation{--fa:"\f071"}.fa-user{--fa:"\f007"}.fa-video{--fa:"\f03d"}.fa-wand-magic-sparkles{--fa:"\e2ca"}.fa-whatsapp{--fa:"\f232"}.fa-x-twitter{--fa:"\e61b"}.fa-xmark{--fa:"\f00d"}
