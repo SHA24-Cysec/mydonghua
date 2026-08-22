@@ -7,6 +7,8 @@
 {{ with resources.Get "favicon.ico" }}
 <link rel="shortcut icon" href='{{ .RelPermalink }}' type="image/x-icon">
 {{ end }}
+<link rel="manifest" href='{{ relURL "manifest.webmanifest" }}'>
+<link rel="apple-touch-icon" sizes="180x180" href='{{ relURL "icons/apple-touch-icon.png" }}'>
 {{- $pagination := partial "pagination-context" . -}}
 <link rel="canonical" href="{{ $pagination.canonicalURL }}">
 <link rel="dns-prefetch" href="https://www.google.com">

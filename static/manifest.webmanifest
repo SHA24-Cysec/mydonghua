@@ -1,0 +1,47 @@
+{
+  "id": "/",
+  "name": "DonghuaBatch",
+  "short_name": "DonghuaBatch",
+  "description": "Katalog batch donghua subtitle Indonesia yang dapat dipasang di perangkat.",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#060816",
+  "theme_color": "#060816",
+  "categories": ["entertainment", "lifestyle"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/icon-192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Cari Donghua",
+      "short_name": "Cari",
+      "description": "Cari judul dalam katalog DonghuaBatch.",
+      "url": "/search/",
+      "icons": [{ "src": "/icons/icon-192.webp", "sizes": "192x192", "type": "image/webp" }]
+    },
+    {
+      "name": "Daftar Favorit",
+      "short_name": "Favorit",
+      "description": "Buka daftar donghua yang kamu simpan.",
+      "url": "/favorit/",
+      "icons": [{ "src": "/icons/icon-192.webp", "sizes": "192x192", "type": "image/webp" }]
+    }
+  ]
+}

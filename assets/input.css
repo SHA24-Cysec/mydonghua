@@ -5294,7 +5294,29 @@ html body .site-random-result {
   .home-section-divider-label { display: inline-flex; }
 }
 .post-rating-star { color: #facc15; }
-.site-bg-character { filter: none; }
+
+/* Dekorasi karakter desktop memakai tinggi visual yang sama. Lebar mengikuti
+   rasio gambar masing-masing agar figur tidak terpotong atau terdistorsi. */
+.site-bg-character-stage,
+.site-bg-character-frame {
+  align-items: flex-end;
+}
+
+.site-bg-character-frame {
+  display: flex;
+  min-width: 0;
+}
+
+.site-bg-character {
+  display: block;
+  width: min(33.6vh, 16.32rem);
+  height: min(70vh, 34rem);
+  max-height: calc(100vh - 5rem);
+  object-fit: fill;
+  object-position: center bottom;
+  filter: none;
+}
+
 @layer components {
   /* ============================================================
      AURORA SEARCH SYSTEM — UNIFIED v2
@@ -8543,6 +8565,38 @@ html body .donghua-card-bookmark.is-saved {
   ) {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* ==========================================================
+   PWA INSTALL CONTROL
+   Tombol mengikuti kartu navigasi dan hanya muncul saat browser
+   mengirim beforeinstallprompt.
+   ========================================================== */
+html body [data-pwa-install][hidden] {
+  display: none;
+}
+
+html body .site-nav-grid .site-pwa-install {
+  border-color: rgba(34, 211, 238, 0.24);
+  background:
+    radial-gradient(circle at 82% 0%, rgba(34, 211, 238, 0.14), transparent 44%),
+    linear-gradient(145deg, rgba(34, 211, 238, 0.08), rgba(139, 92, 246, 0.08));
+  color: #e8fbff;
+}
+
+html body .site-nav-grid .site-pwa-install i {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.16));
+  color: #a5f3fc;
+}
+
+@media (hover: hover) {
+  html body .site-nav-grid .site-pwa-install:hover {
+    border-color: rgba(103, 232, 249, 0.46);
+    background:
+      radial-gradient(circle at 82% 0%, rgba(34, 211, 238, 0.2), transparent 46%),
+      linear-gradient(145deg, rgba(34, 211, 238, 0.12), rgba(139, 92, 246, 0.11));
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.2), 0 0 18px rgba(34, 211, 238, 0.1);
   }
 }
 

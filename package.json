@@ -6,11 +6,12 @@
     "dev:all": "./dev.sh",
     "build:css": "tailwindcss -i ./assets/input.css -o ./assets/main.css",
     "build:hugo": "hugo --gc --minify",
-    "build": "npm run check:content && npm run build:css && npm run build:hugo && npm run audit:build",
+    "build": "npm run check:content && npm run build:css && npm run build:hugo && npm run audit:pwa && npm run audit:build",
     "check:content": "node ./scripts/validate-content.mjs",
     "check:css": "node ./scripts/check-css.mjs",
+    "audit:pwa": "node ./scripts/audit-pwa.mjs",
     "audit:build": "node ./scripts/audit-build.mjs",
-    "check": "npm run check:content && npm run check:css"
+    "check": "npm run check:content && npm run check:css && npm run audit:pwa"
   },
   "engines": {
     "node": "24.x"

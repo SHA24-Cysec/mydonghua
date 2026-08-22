@@ -53,6 +53,11 @@
 {{- template "minjs" "js/site-genre-filter.js" -}}
 {{ end }}
 
+{{/* PWA production: service worker, instalasi aplikasi, dan pembaruan otomatis. */}}
+{{ if hugo.IsProduction }}
+{{- template "minjs" "js/site-pwa.js" -}}
+{{ end }}
+
 {{/* Global core: storage, badge navbar, dan bookmark card/post. */}}
 {{- template "minjs" "js/site-favorites.js" -}}
 {{ if $isFavorite }}
