@@ -1632,6 +1632,171 @@ body.has-floating-ad .btt-wrapper {
         line-height: 1.6;
     }
 
+    .db-pass {
+        display: grid;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding: clamp(0.8rem, 3vw, 1rem);
+        border: 1px solid rgba(251, 191, 36, 0.22);
+        border-radius: var(--site-radius-lg);
+        background:
+            radial-gradient(circle at 10% 0%, rgba(251, 191, 36, 0.10), transparent 38%),
+            linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(7, 10, 24, 0.92));
+        box-shadow:
+            0 14px 30px rgba(0, 0, 0, 0.20),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .db-pass-head {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        min-width: 0;
+    }
+
+    .db-pass-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid rgba(251, 191, 36, 0.28);
+        border-radius: var(--site-radius-pill);
+        background: rgba(251, 191, 36, 0.11);
+        color: var(--site-amber, #fcd34d);
+        font-size: 0.82rem;
+    }
+
+    .db-pass-body {
+        display: grid;
+        gap: 0.2rem;
+        min-width: 0;
+    }
+
+    .db-pass-label {
+        color: var(--site-amber, #fcd34d);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    .db-pass-note {
+        margin: 0;
+        color: var(--site-muted);
+        font-size: 0.8rem;
+        line-height: 1.5;
+        text-wrap: pretty;
+    }
+
+    .db-pass-action {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .db-pass-value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+        min-height: 44px;
+        padding: 0.5rem 0.85rem;
+        overflow-x: auto;
+        border: 1px dashed rgba(251, 191, 36, 0.38);
+        border-radius: var(--site-radius-md);
+        background: rgba(2, 6, 23, 0.55);
+        color: #fde68a;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        white-space: nowrap;
+        -webkit-user-select: all;
+        user-select: all;
+    }
+
+    .db-pass-copy {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        min-height: 44px;
+        padding: 0.55rem 0.95rem;
+        border: 1px solid rgba(251, 191, 36, 0.34);
+        border-radius: var(--site-radius-md);
+        outline: none;
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.92), rgba(217, 119, 6, 0.92));
+        color: #1a1206;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.82rem;
+        font-weight: 850;
+        line-height: 1;
+        white-space: nowrap;
+        transition: transform var(--site-transition-med), filter 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .db-pass-copy:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.06);
+    }
+
+    .db-pass-copy:active {
+        transform: translateY(0);
+    }
+
+    .db-pass-copy.is-copied {
+        border-color: rgba(52, 211, 153, 0.44);
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.92), rgba(5, 150, 105, 0.92));
+        color: #04150f;
+    }
+
+    .db-pass-copy:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.55);
+        outline-offset: 3px;
+    }
+
+    @media (min-width: 480px) {
+        .db-pass-action {
+            grid-template-columns: minmax(6rem, max-content) auto;
+            justify-content: start;
+        }
+
+        .db-pass-value {
+            justify-content: flex-start;
+            padding-inline: 1rem;
+        }
+    }
+
+    @media (min-width: 640px) {
+        .db-pass {
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 1rem;
+            padding-inline: 1.1rem;
+        }
+
+        .db-pass-action {
+            justify-content: end;
+        }
+
+        .db-pass-note {
+            font-size: 0.84rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .db-pass-value {
+            font-size: 1.15rem;
+        }
+    }
+
     .db-groups {
         display: grid;
         grid-template-columns: 1fr;

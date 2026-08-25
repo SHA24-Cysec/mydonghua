@@ -4,6 +4,8 @@
         <strong>Pilih batch dan resolusi yang kamu inginkan</strong>
     </div>
 
+    {{ partial "password-batch" . }}
+
     <div class="db-groups">
     {{ range $gi, $group := .Params.downloadGroups }}
         <article class="db-group">

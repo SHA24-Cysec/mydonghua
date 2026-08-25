@@ -25,6 +25,13 @@ episode : ' Episode'
 # - Rentang batch seperti Episode 1-20 ditulis pada downloadGroups, bukan di sini.
 # episodeCount : 15
 
+# password bersifat opsional, dipakai jika arsip batch dikunci.
+# - Isi persis seperti yang tertulis di sumber, termasuk huruf besar/kecil.
+#   Contoh: password : 'kf'
+# - Kotak password otomatis muncul di atas daftar batch saat field ini terisi.
+# - Jika arsip tidak dikunci, biarkan baris ini tetap dikomentari.
+# password : ''
+
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : ''
 # Rating 1-10

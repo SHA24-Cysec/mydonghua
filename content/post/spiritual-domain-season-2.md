@@ -12,6 +12,9 @@ status : 'Completed'
 sub : 'Anichin'
 durasi : '15 Menit'
 episode : '10 Episode'
+
+# Password arsip batch. Kosongkan atau hapus baris ini jika file tidak dikunci.
+password : 'kf'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : '2015'
 # Rating 1-10
