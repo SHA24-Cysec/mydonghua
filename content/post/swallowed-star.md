@@ -433,4 +433,120 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 181-190'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/AkpG3AmW'
+      button: 'Download'
+      size: '2.54 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/JpKiLzhq'
+      button: 'Download'
+      size: '4.67 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/sUSCF2Ge'
+      button: 'Download'
+      size: '7.79 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 191-200'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/3d6P3s7K'
+      button: 'Download'
+      size: '2.56 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/pfsVBatb'
+      button: 'Download'
+      size: '4.72 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/dtQwqDLX'
+      button: 'Download'
+      size: '7.85 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 201-210'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/U4EAsKPc'
+      button: 'Download'
+      size: '2.63 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/nMWmZ54Q'
+      button: 'Download'
+      size: '4.77 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/WYmTbNHd'
+      button: 'Download'
+      size: '7.91 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 211-220'
+  
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/f1iqFsGG'
+      button: 'Download'
+      size: '2.63 GB'
+    
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/vsFXZDQX'
+      button: 'Download'
+      size: '4.85 GB'
+    
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/cM1AGiFr'
+      button: 'Download'
+      size: '7.93 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
