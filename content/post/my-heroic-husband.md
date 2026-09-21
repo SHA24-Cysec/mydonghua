@@ -57,9 +57,9 @@ downloadGroups:
       size: '3.70 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/h1WoMf8z'
-      button: 'Download'
-      size: '6.19 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''

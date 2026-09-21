@@ -64,7 +64,7 @@ downloadGroups:
       size: '5.20 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1nDOf4xB0mSKrFG2s2dJBQvbeG7PlvVyK&export=download&authuser=0'
+      link: 'https://acefile.co/f/57186620'
       button: 'Download'
       size: '7.48 GB'
     

@@ -73,29 +73,59 @@ downloadGroups:
       size: ''
 
   # Batch 2
-  - title: 'Ancient Myth Batch Subtitle Indonesia Episode 41-80'
+  - title: 'Ancient Myth Batch Subtitle Indonesia Episode 41-60'
     
     downloads:
     
     - quality: '360p'
+      link: 'https://lbx.to/f/Op6JhiR'
+      button: 'Download'
+      size: '534.29 MB'
+    
+    - quality: '480p'
+      link: 'https://lbx.to/f/iAJ78YT'
+      button: 'Download'
+      size: '998.21 MB'
+    
+    - quality: '720p'
+      link: 'https://lbx.to/f/478PEB3'
+      button: 'Download'
+      size: '2.42 GB'
+    
+    - quality: '1080p'
+      link: 'https://lbx.to/f/p45QXLX'
+      button: 'Download'
+      size: '8 GB'
+    
+    - quality: '4K'
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 3
+  - title: 'Ancient Myth Batch Subtitle Indonesia Episode 61-80'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: 'https://lbx.to/f/1xa0Y2E'
+      button: 'Download'
+      size: '420.39 MB'
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/KHVFDxtH'
+      link: 'https://lbx.to/f/ExONCdu'
       button: 'Download'
-      size: '1.86 GB'
+      size: '782.78 MB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/ASEBGp2T'
+      link: 'https://lbx.to/f/DzNpjH8'
       button: 'Download'
-      size: '5 GB'
+      size: '2.23 GB'
     
     - quality: '1080p'
-      link: 'https://www.mediafire.com/file/dro9oa3t0o6jyf5/Anichin.best_Anc.Myt.Ep41-80_1080p.zip/file'
+      link: 'https://lbx.to/f/XnggvBT'
       button: 'Download'
-      size: '8 GB'
+      size: '3.85 GB'
     
     - quality: '4K'
       link: ''
