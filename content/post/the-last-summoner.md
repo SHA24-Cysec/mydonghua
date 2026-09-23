@@ -39,24 +39,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/dbVCWCzD#Fjh_oxmDdSmcWPWBD47h8VTu0SUJi7NNPJz-neGvtZY'
+      link: 'https://www.terabox.com/sharing/link?surl=5NQao2HfER7MgRdqLCD5rQ'
       button: 'Download'
       size: '623.8 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/JbF2VKyJ#ap82CgOvxgQtKZqsgiXxp3ems8_ftQa18xLD5qbAXTo'
+      link: 'https://www.terabox.com/sharing/link?surl=5NQao2HfER7MgRdqLCD5rQ'
       button: 'Download'
-      size: '1.18 GB'
+      size: '1.2 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/AC8mFYBa#1Sq-Oz5FtjhbM67NjLIGm6OGH4dFiRRKuGc-blPkD2A'
+      link: 'https://www.terabox.com/sharing/link?surl=5NQao2HfER7MgRdqLCD5rQ'
       button: 'Download'
-      size: '2.35 GB'
+      size: '2.4 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/ZKFwTbhL#5KchT4QYhvJwXNNljVGBOqAtLmddeetLYVu0t6fJO24'
-      button: 'Download'
-      size: '4.06 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''

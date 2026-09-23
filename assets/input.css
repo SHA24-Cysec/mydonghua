@@ -8849,6 +8849,105 @@ body.has-social-bar .site-footer {
 }
 
 /* ==========================================================
+   KONTAK — Validasi email (inline feedback)
+   State input: is-invalid (merah), is-checking (biru),
+   is-valid (cyan). Feedback tampil di bawah kolom email.
+   ========================================================== */
+.kontak-form .cyber-input-search.is-invalid {
+  border-color: rgba(244, 63, 94, 0.65);
+  box-shadow: 0 0 14px rgba(244, 63, 94, 0.16);
+}
+
+.kontak-form .cyber-input-search.is-invalid:focus {
+  border-color: rgba(244, 63, 94, 0.8);
+}
+
+.kontak-form .cyber-input-search.is-checking {
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.kontak-form .cyber-input-search.is-valid {
+  border-color: rgba(34, 211, 238, 0.55);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.12);
+}
+
+.kontak-email-feedback {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+  animation: kontakFadeUp 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.kontak-email-feedback[hidden] {
+  display: none;
+}
+
+.kontak-email-feedback--error {
+  color: #fda4af;
+}
+
+.kontak-email-feedback--error i {
+  color: #f43f5e;
+}
+
+.kontak-email-feedback--checking {
+  color: #7dd3fc;
+}
+
+.kontak-email-feedback--valid {
+  color: #67e8f9;
+}
+
+.kontak-email-feedback--valid i {
+  color: #22d3ee;
+}
+
+.kontak-email-suggest {
+  cursor: pointer;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 9999px;
+  background: rgba(34, 211, 238, 0.08);
+  color: #67e8f9;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  transition: background var(--site-transition-med), border-color var(--site-transition-med);
+}
+
+.kontak-email-suggest:hover,
+.kontak-email-suggest:focus-visible {
+  background: rgba(34, 211, 238, 0.16);
+  border-color: rgba(34, 211, 238, 0.55);
+  outline: none;
+}
+
+.kontak-email-spinner {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex: none;
+  border-radius: 9999px;
+  border: 2px solid rgba(56, 189, 248, 0.25);
+  border-top-color: #38bdf8;
+  animation: kontakEmailSpin 0.7s linear infinite;
+}
+
+@keyframes kontakEmailSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kontak-email-spinner {
+    animation: none;
+  }
+}
+
+/* ==========================================================
    TAHAP 1 — AKSESIBILITAS INTERAKSI
    Target adaptif dan fokus tabel tanpa mengubah bahasa visual.
    ========================================================== */

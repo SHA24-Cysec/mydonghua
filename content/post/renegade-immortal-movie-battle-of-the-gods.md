@@ -23,8 +23,8 @@ release : 'May 30, 2025'
 rating : 9.8
 
 # Jika ada Season selanjutnya, hilangkan komentar
-# linkSeasonSelanjutnya : ''
-# judulSeasonSelanjutnya : ''
+# linkSeasonSelanjutnya : '/renegade-immortal-movie-battle-against-the-immortals'
+# judulSeasonSelanjutnya : 'Renegade Immortal Movie Battle Against the Immortals Subtitle Indonesia'
 
 # Jika ada Season sebelumnya, hilangkan komentar
 linkSeasonSebelumnya : '/renegade-immortal'

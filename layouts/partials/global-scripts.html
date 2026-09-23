@@ -1,5 +1,6 @@
 {{/* Conditional component scripts — page matrix audited in Stage 6. */}}
 {{- $isPost := eq .Layout "postingan-donghua" -}}
+{{- $isKontak := eq .Layout "kontak" -}}
 {{- $isSearch := eq .Layout "search" -}}
 {{- $isFilterGenre := eq .Layout "filter-genre" -}}
 {{- $isFavorite := eq .Layout "favorit" -}}
@@ -79,6 +80,11 @@
 
 {{ if $isPost }}
 {{- template "minjs" "js/site-disqus.js" -}}
+{{ end }}
+
+{{/* Kontak-only: validasi email terdaftar/aktif (format, disposable, DNS MX). */}}
+{{ if $isKontak }}
+{{- template "minjs" "js/site-kontak-email.js" -}}
 {{ end }}
 
 {{/* Efek loading gambar dinonaktifkan: placeholder statis disediakan oleh CSS. */}}

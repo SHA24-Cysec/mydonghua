@@ -56,7 +56,8 @@
 
           <label class="flex flex-col gap-2 w-full">
             <span class="text-cyan-300 font-bold text-sm uppercase tracking-wider">Alamat Email</span>
-            <input required placeholder="xiaoxiao@email.com" class="cyber-input-search" type="email" name="email" autocomplete="email">
+            <input required placeholder="xiaoxiao@email.com" class="cyber-input-search" type="email" name="email" autocomplete="email" spellcheck="false" aria-describedby="kontakEmailFeedback">
+            <span id="kontakEmailFeedback" class="kontak-email-feedback" role="status" aria-live="polite" hidden></span>
           </label>
 
           <label class="flex flex-col gap-2 w-full">
