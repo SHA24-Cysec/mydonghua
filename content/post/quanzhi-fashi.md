@@ -48,24 +48,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/OpAkGTiQ#pbKclQybNm93scs5ABNbimbCJjq099t1gsU-7N2_hkU'
+      link: 'https://acefile.co/f/100194378'
       button: 'Download'
-      size: '603 MB'
+      size: '380.40 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/60YgFDST#MFmagFr9XDxmB9YWC-gCp3UxV3yohjalJJJ_TQsOopI'
+      link: 'https://acefile.co/f/100194379'
       button: 'Download'
-      size: '860 MB'
+      size: '696.62 MB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/75Jk0bIA#Cb2S0VcKo2CYn6LNx6yk15dO77GoazWvzwT8jY5jh1o'
+      link: 'https://acefile.co/f/100194381'
       button: 'Download'
-      size: '1.58 GB'
+      size: '1.53 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://acefile.co/f/100194577'
+      button: 'Download'
+      size: '2.55 GB'
     
     - quality: '4K'
       link: ''

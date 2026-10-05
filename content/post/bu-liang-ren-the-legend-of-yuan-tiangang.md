@@ -39,24 +39,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://send.now/ockd8p3mwze2'
+      link: 'https://www.1024tera.com/sharing/link?surl=8b-QCQS2CEMErQJ_jou0AQ'
       button: 'Download'
-      size: '264 MB'
+      size: '263.6 MB'
     
     - quality: '480p'
-      link: 'https://send.now/jvk8svtpgnqw'
+      link: 'https://www.1024tera.com/sharing/link?surl=8b-QCQS2CEMErQJ_jou0AQ'
       button: 'Download'
       size: '598.7 MB'
     
     - quality: '720p'
-      link: 'https://send.now/8k0y2hf44cr7'
+      link: 'https://www.1024tera.com/sharing/link?surl=8b-QCQS2CEMErQJ_jou0AQ'
       button: 'Download'
       size: '993.1 MB'
     
     - quality: '1080p'
-      link: 'https://send.now/6g03tgfn2435'
+      link: 'https://www.1024tera.com/sharing/link?surl=8b-QCQS2CEMErQJ_jou0AQ'
       button: 'Download'
-      size: '1.77 GB'
+      size: '1.8GB'
     
     - quality: '4K'
       link: ''

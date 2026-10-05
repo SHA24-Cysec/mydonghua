@@ -50,22 +50,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://lbx.to/f/91eA4eD'
+      link: 'https://acefile.co/f/96676643'
       button: 'Download'
-      size: '422.90 MB'
+      size: '412.42 MB'
     
     - quality: '480p'
-      link: 'https://lbx.to/f/0YBUs7J'
+      link: 'https://acefile.co/f/96676644'
       button: 'Download'
-      size: '710.94 MB'
+      size: '701.27 MB'
     
     - quality: '720p'
-      link: 'https://lbx.to/f/EelsHJD'
+      link: 'https://acefile.co/f/96676646'
       button: 'Download'
-      size: '1.20 GB'
+      size: '1.19 GB'
     
     - quality: '1080p'
-      link: 'https://lbx.to/f/1MDQZsJ'
+      link: 'https://acefile.co/f/96676648'
       button: 'Download'
       size: '1.84 GB'
     

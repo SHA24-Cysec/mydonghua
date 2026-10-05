@@ -40,24 +40,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://dm.terabox.com/indonesian/sharing/link?surl=QJpbl56v_SOULnHlZ46twA&clearCache=1'
+      link: 'https://lbx.to/f/85LwRnn'
       button: 'Download'
-      size: '484.2 MB'
+      size: '484.20 MB'
     
     - quality: '480p'
-      link: 'https://dm.terabox.com/indonesian/sharing/link?surl=QJpbl56v_SOULnHlZ46twA&clearCache=1'
+      link: 'https://lbx.to/f/vNJVl7O'
       button: 'Download'
-      size: '895.5 MB'
+      size: '895.52 MB'
     
     - quality: '720p'
-      link: 'https://dm.terabox.com/indonesian/sharing/link?surl=QJpbl56v_SOULnHlZ46twA&clearCache=1'
+      link: 'https://lbx.to/f/wephgY4'
       button: 'Download'
       size: '1.65 GB'
     
     - quality: '1080p'
-      link: 'https://dm.terabox.com/indonesian/sharing/link?surl=QJpbl56v_SOULnHlZ46twA&clearCache=1'
+      link: 'https://lbx.to/f/7leSLs4'
       button: 'Download'
-      size: '2.6 GB'
+      size: '2.55 GB'
     
     - quality: '4K'
       link: ''
@@ -70,24 +70,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=HC-oP9BsTWiFqqr22cHjxA'
+      link: 'https://lbx.to/f/anF7sKb'
       button: 'Download'
-      size: '467.9 MB'
+      size: '467.88 MB'
     
     - quality: '480p'
-      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=HC-oP9BsTWiFqqr22cHjxA'
+      link: 'https://lbx.to/f/Aucnr3r'
       button: 'Download'
-      size: '901.8 MB'
+      size: '901.79 MB'
     
     - quality: '720p'
-      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=HC-oP9BsTWiFqqr22cHjxA'
+      link: 'https://lbx.to/f/eeZUKsC'
       button: 'Download'
-      size: '1.8 GB'
+      size: '1.77 GB'
     
     - quality: '1080p'
-      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=HC-oP9BsTWiFqqr22cHjxA'
+      link: 'https://lbx.to/f/BuplrgC'
       button: 'Download'
-      size: '2.8 GB'
+      size: '2.82 GB'
     
     - quality: '4K'
       link: ''
@@ -100,24 +100,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=W8wSb__SjhJ1I49L3BalHw'
+      link: 'https://lbx.to/f/s0xbenv'
       button: 'Download'
-      size: '185.5 MB'
+      size: '185.55 MB'
     
     - quality: '480p'
-      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=W8wSb__SjhJ1I49L3BalHw'
+      link: 'https://lbx.to/f/k7ICV2E'
       button: 'Download'
-      size: '340.4 MB'
+      size: '340.37 MB'
     
     - quality: '720p'
-      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=W8wSb__SjhJ1I49L3BalHw'
+      link: 'https://lbx.to/f/mJecGXX'
       button: 'Download'
-      size: '801.6 MB'
+      size: '801.64 MB'
     
     - quality: '1080p'
-      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=W8wSb__SjhJ1I49L3BalHw'
+      link: 'https://lbx.to/f/MuusBO7'
       button: 'Download'
-      size: '1.3 GB'
+      size: '1.27 GB'
     
     - quality: '4K'
       link: ''

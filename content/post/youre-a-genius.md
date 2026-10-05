@@ -52,7 +52,7 @@ downloadGroups:
       size: '-'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/sgJAnKJL#gmJgoKJHJaOUmZuFwei9nxIOAuaOP3T3Wte3agqmVh4'
+      link: 'https://www.terabox.com/sharing/link?surl=rJNsDaYsifrJfeVG5oVYzg'
       button: 'Download'
       size: '1.42 GB'
     
@@ -62,9 +62,9 @@ downloadGroups:
       size: '-'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/h4g1XQqZ#3oEPBKc_M6kUbU3WhZ4DeAxxsz3lt91eth1ofLiiE-k'
-      button: 'Download'
-      size: '4.65 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''

@@ -67,7 +67,7 @@ downloadGroups:
       size: '1 GB'
     
     - quality: '4K'
-      link: 'https://1024terabox.com/s/1bMBy67ejIN2oeI8vKlSzeg'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=mFWhQJVvUNUd54CkLVTf2Q'
       button: 'Download'
       size: '3 GB'
 ---

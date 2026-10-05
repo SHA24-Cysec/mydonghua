@@ -48,9 +48,9 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://pixeldrain.com/u/8mev9mgW'
+      link: 'https://acefile.co/f/58841658'
       button: 'Download'
-      size: '1.76 GB'
+      size: '868.41 MB'
     
     - quality: '480p'
       link: 'https://pixeldrain.com/u/N6przY52'
@@ -63,9 +63,9 @@ downloadGroups:
       size: '3.86 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://acefile.co/f/58841666'
+      button: 'Download'
+      size: '4.59 GB'
     
     - quality: '4K'
       link: ''

@@ -49,24 +49,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://lbx.to/f/qvWwUtt'
+      link: 'https://drive.usercontent.google.com/download?id=1RuTAKbsVNGTn1Vs54Dlmx-HeRIHmo8yC&export=download&authuser=0'
       button: 'Download'
-      size: '618.16 MB'
+      size: '609 MB'
     
     - quality: '480p'
-      link: 'https://lbx.to/f/R1JaZ6M'
+      link: 'https://drive.usercontent.google.com/download?id=1Jn1jLa98xf8x9v6WO894vT3yRLlQSUnV&export=download&authuser=0'
       button: 'Download'
       size: '1.02 GB'
     
     - quality: '720p'
-      link: 'https://lbx.to/f/uq56SNg'
+      link: 'https://drive.usercontent.google.com/download?id=1VGdflXFIxnHbY60eMVwaSaf_x_pOoH3A&export=download&authuser=0'
       button: 'Download'
       size: '1.73 GB'
     
     - quality: '1080p'
-      link: 'https://lbx.to/f/H5Y3SJm'
+      link: 'https://drive.usercontent.google.com/download?id=1HH56mheq_3T3ZpQDluTWEqgKwn5yr7_n&export=download&authuser=0'
       button: 'Download'
-      size: '2.58 GB'
+      size: '2.60 GB'
     
     - quality: '4K'
       link: ''

@@ -39,12 +39,12 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/vyYhiBLI#gPhrIZjbTUK299HU9JbF0nyU7btpL8c5e65WTLl1ekU'
-      button: 'Download'
-      size: '1.08 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '480p'
-      link: 'https://mega.nz/file/oBwzjYYZ#8P6tig2wC-OHLJyzSatqlXoXcsoqhIMyJB4xQwS9_J0'
+      link: 'https://lbx.to/f/ZxQZbOK'
       button: 'Download'
       size: '2.14 GB'
     

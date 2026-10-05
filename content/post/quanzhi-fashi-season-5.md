@@ -63,9 +63,9 @@ downloadGroups:
       size: '1.77 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://acefile.co/f/53957168'
+      button: 'Download'
+      size: '2,52 GB'
     
     - quality: '4K'
       link: ''

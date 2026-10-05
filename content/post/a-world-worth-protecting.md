@@ -39,24 +39,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
+      link: 'https://lbx.to/f/vBdBKCI'
       button: 'Download'
-      size: '776.1 MB'
+      size: '776.13 MB'
     
     - quality: '480p'
-      link: 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
+      link: 'https://lbx.to/f/RPTIB15'
       button: 'Download'
-      size: '1.4 GB'
+      size: '1.37 GB'
     
     - quality: '720p'
-      link: 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
+      link: 'https://lbx.to/f/TFfRYaK'
       button: 'Download'
-      size: '3 GB'
+      size: '3.02 GB'
     
     - quality: '1080p'
-      link: 'https://www.terabox.com/indonesian/sharing/link?surl=XNceF-h0ttlNn2vKM4EgCA'
+      link: 'https://lbx.to/f/v49TI5C'
       button: 'Download'
-      size: '3 GB++'
+      size: '4.81 GB'
     
     - quality: '4K'
       link: ''

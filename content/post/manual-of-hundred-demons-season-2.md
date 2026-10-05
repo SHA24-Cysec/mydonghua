@@ -49,24 +49,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1CpdH4jgtMlOqY5e2W_QdXgfTkFKB01JE&export=download&authuser=0'
+      button: 'Download'
+      size: '612 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/FjY2kChI#ZuhWPZL-u78vjjjpt395PZ9ByJKuQuvagm89OdcqMeo'
+      link: 'https://drive.usercontent.google.com/download?id=1vrjeaydClVD_-ezPEtlqmvDtp1y8xwMq&export=download&authuser=0'
       button: 'Download'
       size: '1.03 GB'
     
     - quality: '720p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1HWkWen48yIBloJXMxdH2oRx3EECOoO1R&export=download&authuser=0'
+      button: 'Download'
+      size: '2.50 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=11Y0ry8VVu0Q40BBylZtUmSUeoydPFpKE&export=download&authuser=0'
+      button: 'Download'
+      size: '3.70 GB'
     
     - quality: '4K'
       link: ''

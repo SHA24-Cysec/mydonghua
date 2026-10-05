@@ -48,24 +48,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://acefile.co/f/103893559'
+      button: 'Download'
+      size: '242.10 MB'
     
     - quality: '480p'
-      link: 'https://sharer.pw/file/R-jRm28NRTb'
+      link: 'https://pixeldrain.com/u/NNkJ8xsW'
       button: 'Download'
-      size: '400.64 MB'
+      size: '439 MB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1qqLmFz-dQ_KLDWhNy7xSvrHZh5J-M-sc&export=download'
+      link: 'https://pixeldrain.com/u/V4sdHZtQ'
       button: 'Download'
-      size: '631.97 MB'
+      size: '662 MB'
     
     - quality: '1080p'
-      link: 'https://sharer.pw/file/Ym9s-WSaa9z'
+      link: 'https://acefile.co/f/103893565'
       button: 'Download'
-      size: '1.70 GB'
+      size: '1.98 GB'
     
     - quality: '4K'
       link: ''

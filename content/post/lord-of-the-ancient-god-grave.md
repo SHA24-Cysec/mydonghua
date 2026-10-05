@@ -107,24 +107,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/81EiXBQT#NWXZAi90lwZou5IvSXtH-BITURJoQO1O35-mMrTskjU'
+      link: 'https://lbx.to/f/CRL5RwT'
       button: 'Download'
       size: '622.44 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/gklAGQJY#KnoYaPpmU1siyUDRstDuUNJkz1STAkIMcf-yrtdQg8I'
+      link: 'https://lbx.to/f/mBIjes3'
       button: 'Download'
       size: '1.16 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/Z8M3zRxL#HTD72SbBHAAQNT3DfnMmRnsVgcKj7lFA_d00hGFOeRs'
+      link: 'https://lbx.to/f/6nJ9r0X'
       button: 'Download'
       size: '2.22 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/g1MnACLD#uGJKN1KLUc8SpskYEWBzrovc8c6SINuv_Xe1JIgBJwQ'
-      button: 'Download'
-      size: '3.4 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''
@@ -137,22 +137,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/okcEDDiI#1iPxjehZTfEDv2mwoYcTOzPn0ua8VpasIBFrLTmTpWg'
+      link: 'https://lbx.to/f/MLQUS1s'
       button: 'Download'
       size: '623.99 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/QklCVS4K#90G0RCV7MSRyDGAuN9uTmF83D38V9S5KVi2bezSOT7g'
+      link: 'https://lbx.to/f/gGnHIch'
       button: 'Download'
       size: '1.15 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/4wNwxKYB#F36XobEBsI78bo4tA-XAysGhkOQ_em_Q4lV2U9w4BSo'
+      link: 'https://lbx.to/f/PquSrwi'
       button: 'Download'
       size: '2.13 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/MpEDRbKA#iNmeuW7dgnOSkml2AFRIUfdQvNKnM9t7GD43d5HFC3E'
+      link: 'https://lbx.to/f/YwXmiIX'
       button: 'Download'
       size: '3.25 GB'
     
@@ -167,24 +167,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/CiZyABBJ#4vsZLBZRwj8znmkOwZEhLAn_8grfprbcxi-g5RUxRUw'
+      link: 'https://lbx.to/f/dSdTpNW'
       button: 'Download'
       size: '490.10 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/zqYT0ZTK#wydkJND8vg99M0ThgtDSC3FTim96NSVnBZep9iyoa2E'
+      link: 'https://lbx.to/f/SFVYCBD'
       button: 'Download'
       size: '888.03 MB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/Gv5yhKaa#3cSa1PUUllIFXZG9pIWHKNj0Y7qmACUM73DQboCQJmA'
+      link: 'https://lbx.to/f/IS90mEQ'
       button: 'Download'
       size: '2.03 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/qqZnwQKL#lvo8f5NbMQhQEzpLk_FPyDjoLQciUMO3JvUq-0Dp8wE'
+      link: 'https://lbx.to/f/jqflNMK'
       button: 'Download'
-      size: '3.5 GB'
+      size: '3.50 GB'
     
     - quality: '4K'
       link: ''

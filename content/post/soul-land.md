@@ -61,9 +61,9 @@ downloadGroups:
       size: '2 GB'
     
     - quality: '720p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://acefile.co/f/36937558'
+      button: 'Download'
+      size: '3.83 GB'
     
     - quality: '1080p'
       link: ''
@@ -381,24 +381,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/db8QmRZA#Hf6opE1hC_4biREGSrAWSesznOpjJEEoI81DSc8kR6Y'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=RX9au7d3szeSp9kPfO5q8Q'
       button: 'Download'
       size: '706.0 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/YKNGALDS#ra0ywLQVcL-HU55RWR9GtGjBgPJtmcQSZTKyf4vCPPY'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=RX9au7d3szeSp9kPfO5q8Q'
       button: 'Download'
       size: '1.26 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/AGcXVSjY#q7gUkCIV0-TkL_n5yYltBdgEUiwZ4IOrIjJ8iezf82o'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=RX9au7d3szeSp9kPfO5q8Q'
       button: 'Download'
       size: '2.71 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/MGFHhBLR#GQ3ciC2FFvjnafdjStcYBT4qGvAGOa59VW-xwzkkEPU'
-      button: 'Download'
-      size: '4.03 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''
@@ -441,22 +441,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mega.nz/file/JzYHBTqT#X-g6Dn3mK--WFS8OHhHMWAo6e-_CMz8E-6n_9tw42AE'
+      link: 'https://lbx.to/f/EKxqHoS'
       button: 'Download'
-      size: '841.2 MB'
+      size: '841.25 MB'
     
     - quality: '480p'
-      link: 'https://mega.nz/file/dv5VAbbK#jJEQfkFeQFHnCKfpvovnIuDPropFrQv1RL5RgWGRRuk'
+      link: 'https://lbx.to/f/AOGCiyD'
       button: 'Download'
       size: '1.55 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/BmwWTKTK#-1GQiURCwdrtVwlG_8JMGsDU-Ontc8s15Ko1pI8DZMo'
+      link: 'https://lbx.to/f/2LNb5G4'
       button: 'Download'
       size: '3.10 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/UrhU2SID#CkKY3Pfycg0_7Mvj_RiYYoAmBr9-n-Day-c-gbNRHOQ'
+      link: 'https://lbx.to/f/KhJYJaS'
       button: 'Download'
       size: '4.52 GB'
     

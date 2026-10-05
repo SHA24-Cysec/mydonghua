@@ -69,7 +69,7 @@ downloadGroups:
       size: '1 GB'
     
     - quality: '4K'
-      link: 'https://mega.nz/file/yEVHWDKB#MxldQ6WP_Zbi-80BTm6AVR8sDFTV6TluQymFNUQKBhE'
+      link: 'https://www.terabox.com/indonesian/sharing/link?surl=j8sNcn7wpx5enTyXlI5zJA'
       button: 'Download'
       size: '1.71 GB'
 ---

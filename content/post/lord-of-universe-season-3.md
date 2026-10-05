@@ -152,9 +152,9 @@ downloadGroups:
       size: '2.17 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/shMkQLgR#kjn5Qc2GO9SRe3kx6xU0x8uLGe9sUGX8oJFgSia2FQw/09/9F/94/D8c/BDI/B7/93/B1SL/7C/B8/B1/9E/F6/C5_/CA/09/A2kaP'
-      button: 'Download'
-      size: '3.43 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''

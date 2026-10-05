@@ -49,24 +49,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://pixeldrain.com/u/3P93iFFj'
+      link: 'https://dm.terabox.app/sharing/link?surl=ezRE0t7DxL7i9WK193-1VA'
       button: 'Download'
-      size: '667 MB'
+      size: '636.3 MB'
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/LFHNb5vQ'
+      link: 'https://dm.terabox.app/sharing/link?surl=ezRE0t7DxL7i9WK193-1VA'
       button: 'Download'
       size: '1.26 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/a4HZKwjb'
+      link: 'https://dm.terabox.app/sharing/link?surl=ezRE0t7DxL7i9WK193-1VA'
       button: 'Download'
-      size: '2.04 GB'
+      size: '1.90 GB'
     
     - quality: '1080p'
-      link: 'https://mitedrive.com/view/WvzN3L'
+      link: 'https://dm.terabox.app/sharing/link?surl=ezRE0t7DxL7i9WK193-1VA'
       button: 'Download'
-      size: '3 GB'
+      size: '2.90 GB'
     
     - quality: '4K'
       link: ''
@@ -104,29 +104,29 @@ downloadGroups:
       size: ''
 
   # Batch 3
-  - title: 'Tales of Demons and Gods Season 5 Batch Subtitle Indonesia Episode 41-52 dan Season 6 Episode 53-60'
+  - title: 'Tales of Demons and Gods Season 5 Batch Subtitle Indonesia Episode 41-60'
     
     downloads:
     
     - quality: '360p'
-      link: 'https://mitedrive.com/view/adq9Ha'
+      link: 'https://dm.terabox.app/sharing/link?surl=ft7dT_zS5KQgGg4H5Jmr4A'
       button: 'Download'
-      size: '542 MB'
+      size: '542.4 MB'
     
     - quality: '480p'
-      link: 'https://mitedrive.com/view/fa0Ld7'
+      link: 'https://dm.terabox.app/sharing/link?surl=ft7dT_zS5KQgGg4H5Jmr4A'
       button: 'Download'
-      size: '962 MB'
+      size: '961.5 MB'
     
     - quality: '720p'
-      link: 'https://mitedrive.com/view/38MYnR'
+      link: 'https://dm.terabox.app/sharing/link?surl=ft7dT_zS5KQgGg4H5Jmr4A'
       button: 'Download'
-      size: '2 GB'
+      size: '1.90 GB'
     
     - quality: '1080p'
-      link: 'https://mitedrive.com/view/mwBvEh'
+      link: 'https://dm.terabox.app/sharing/link?surl=ft7dT_zS5KQgGg4H5Jmr4A'
       button: 'Download'
-      size: '3 GB'
+      size: '2.90 GB'
     
     - quality: '4K'
       link: ''
@@ -139,24 +139,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://lbx.to/f/wZtLJVV'
+      link: 'https://dm.terabox.app/sharing/link?surl=CF2QFSYfj5zHvfC1QkOdMQ'
       button: 'Download'
-      size: '461.72 MB'
+      size: '483 MB'
     
     - quality: '480p'
-      link: 'https://lbx.to/f/VoFOM1d'
+      link: 'https://dm.terabox.app/sharing/link?surl=CF2QFSYfj5zHvfC1QkOdMQ'
       button: 'Download'
-      size: '912.47 MB'
+      size: '961.5 MB'
     
     - quality: '720p'
-      link: 'https://lbx.to/f/Ic36K7G'
+      link: 'https://dm.terabox.app/sharing/link?surl=CF2QFSYfj5zHvfC1QkOdMQ'
       button: 'Download'
-      size: '1.49 GB'
+      size: '1.60 GB'
     
     - quality: '1080p'
-      link: 'https://mitedrive.com/view/Kx1vBX'
+      link: 'https://dm.terabox.app/sharing/link?surl=CF2QFSYfj5zHvfC1QkOdMQ'
       button: 'Download'
-      size: '3 GB'
+      size: '2.60 GB'
     
     - quality: '4K'
       link: ''
@@ -169,24 +169,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://mitedrive.com/view/eUfntt'
+      link: 'https://dm.terabox.app/sharing/link?surl=TwAwE6marvcStMvyAT3LVQ'
       button: 'Download'
-      size: '620 MB'
+      size: '619.6 MB'
     
     - quality: '480p'
-      link: 'https://mitedrive.com/view/sVmMH0'
+      link: 'https://dm.terabox.app/sharing/link?surl=TwAwE6marvcStMvyAT3LVQ'
       button: 'Download'
-      size: '1 GB'
+      size: '1.20 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/hbgSDBAg'
+      link: 'https://dm.terabox.app/sharing/link?surl=TwAwE6marvcStMvyAT3LVQ'
       button: 'Download'
-      size: '2.35 GB'
+      size: '2.20 GB'
     
     - quality: '1080p'
-      link: 'https://mitedrive.com/view/OfThZy'
+      link: 'https://dm.terabox.app/sharing/link?surl=TwAwE6marvcStMvyAT3LVQ'
       button: 'Download'
-      size: '3 GB'
+      size: '3.30 GB'
     
     - quality: '4K'
       link: ''

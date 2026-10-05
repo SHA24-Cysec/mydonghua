@@ -110,14 +110,14 @@ downloadGroups:
       size: '1 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/p8RzkCiB#7SlZoS5b5sFYsf90d8ruhMQTBD1NuGe7fJUPTAZ9OGA'
-      button: 'Download'
-      size: '2 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/59QxVRSA#E0RhZEFiO7_ziDu0d-JLgE3z2hJKaozA5jQ9_DE3EjI'
-      button: 'Download'
-      size: '4.08 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''

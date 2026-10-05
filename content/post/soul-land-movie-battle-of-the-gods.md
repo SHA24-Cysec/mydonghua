@@ -65,7 +65,7 @@ downloadGroups:
       size: '2 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/hEkQzKZL#NwTLOVpMTwAz0NKsT12ruKzxIFFlIl0d4jly8rkdi1k'
+      link: 'https://acefile.co/f/100296836'
       button: 'Download'
       size: '2.19 GB'
     

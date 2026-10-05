@@ -53,12 +53,12 @@ downloadGroups:
       size: '2 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/wO9k0BQQ#0K_Y5lubr8Dul2ubAv8kBjNr_nJR-BUO9LJmTx4rJQc'
+      link: 'https://www.mediafire.com/file/sgyou1qj7ubzgok/%255BAnichin%255D%255BDeep_Sea%255D%255B2023%255D.%255B1080p%255D.mp4/file'
       button: 'Download'
       size: '2.34 GB'
     
     - quality: '4K'
-      link: 'https://mega.nz/file/96UB0ZCC#DVd3zSdvrBfjnPKNVRArrgt5OpWS_hN4GLfNPDhgg4Y'
+      link: 'https://www.mediafire.com/file/77pxioyi6vt7u1x/%255BAnichin%255D%255BDeep_Sea%255D%255B2023%255D.%255B4K%255D.mp4/file'
       button: 'Download'
       size: '3.19 GB'
 ---

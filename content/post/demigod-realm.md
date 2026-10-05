@@ -43,9 +43,9 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/Ay6nLYeW'
+      link: 'https://www.mediafire.com/file/q7s0riekyy48y9b/Anichin.best_Dem.Real.Ep1-20_480p.zip/file'
       button: 'Download'
-      size: '1.21 GB'
+      size: '1.13 GB'
     
     - quality: '720p'
       link: 'https://www.mediafire.com/file/m5ede3v4brmknwu/Anichin.best_Dem.Real.Ep1-20_720p.zip/file'
