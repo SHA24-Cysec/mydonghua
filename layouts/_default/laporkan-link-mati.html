@@ -1,0 +1,199 @@
+{{ define "main" }}
+{{- $subject := "[DonghuaBatch] Laporan Link Mati: {{ judul_donghua }}" -}}
+<div class="laporkan-page w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4 mb-0">
+
+  <div class="panel-neon p-3 sm:p-5 w-full">
+
+    {{/* ===== Header ===== */}}
+    <div class="mb-5 sm:mb-6">
+      {{ partial "page-header" (dict
+        "context" .
+        "title" .Title
+        "align" "center"
+        "kicker" "Laporan Link Mati"
+        "kickerIcon" "fa-solid fa-triangle-exclamation text-amber-400"
+      ) }}
+    </div>
+
+    {{/* ===== Split Layout ===== */}}
+    <div class="laporkan-grid grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
+
+      {{/* ---------- Kiri: Panduan ---------- */}}
+      <div class="lg:col-span-5">
+        <div class="laporkan-info panel-neon-inset p-4 sm:p-5 h-full flex flex-col justify-center">
+
+          {{/* Accent bar */}}
+          <div class="laporkan-accent w-12 h-[3px] rounded-full bg-gradient-to-r from-amber-400 via-rose-400 to-purple-500 border border-amber-400/30 mb-5"></div>
+
+          {{/* Ikon */}}
+          <div class="laporkan-icon-wrap flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/15 to-rose-500/15 border border-amber-500/20 mb-4 shadow-[0_0_18px_rgba(251,191,36,0.08)]">
+            <i class="fa-solid fa-link text-2xl text-amber-300" aria-hidden="true"></i>
+          </div>
+
+          <h2 class="text-white font-extrabold text-lg sm:text-xl mb-2 leading-tight tracking-tight">Link download rusak? Kabari kami lewat form ini.</h2>
+
+          <p class="text-[#9fb1c9] text-sm leading-relaxed mb-4">
+            Isi data seadanya saja. Kolom yang ditandai tanda bintang wajib diisi, sisanya bisa dilewati.
+          </p>
+
+          {{/* Checklist data laporan */}}
+          <ul class="laporkan-checklist flex flex-col gap-2.5 mb-4">
+            <li>
+              <i class="fa-solid fa-circle-check text-cyan-400/80" aria-hidden="true"></i>
+              <span>Judul donghua yang dilaporkan</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check text-cyan-400/80" aria-hidden="true"></i>
+              <span>Tautan halaman tempat link rusak</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check text-cyan-400/80" aria-hidden="true"></i>
+              <span>Resolusi atau bagian link yang bermasalah</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check text-cyan-400/80" aria-hidden="true"></i>
+              <span>Jenis masalah dan kronologi singkat</span>
+            </li>
+          </ul>
+
+          {{/* Info singkat */}}
+          <div class="laporkan-meta flex flex-col gap-2.5 mt-auto pt-3 border-t border-white/5">
+            <div class="flex items-center gap-2.5 text-xs text-[#8899b0]">
+              <i class="fa-solid fa-clock text-cyan-500/70 w-4 text-center" aria-hidden="true"></i>
+              <span>Laporan dicek dalam 1 kali 24 jam</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-xs text-[#8899b0]">
+              <i class="fa-solid fa-shield-halved text-purple-400/70 w-4 text-center" aria-hidden="true"></i>
+              <span>Email hanya dipakai untuk membalas laporanmu</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {{/* ---------- Kanan: Form laporan ---------- */}}
+      <div class="lg:col-span-7">
+        <form class="laporkan-form panel-neon-inset p-4 sm:p-5 flex flex-col gap-4"
+              action="https://formspree.io/f/xregejlg"
+              method="POST"
+              data-laporkan-form>
+
+          {{/* Field tersembunyi: penanda jenis laporan dan subjek email */}}
+          <input type="hidden" name="jenis_laporan" value="Laporan Link Mati">
+          <input type="hidden" name="subject" value="{{ $subject }}">
+
+          {{/* Honeypot Formspree: diisi bot, dibiarkan kosong oleh manusia */}}
+          <div class="laporkan-honeypot" aria-hidden="true">
+            <label for="laporanKolomTambahan">Kolom tambahan</label>
+            <input id="laporanKolomTambahan" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="laporkan-field" for="laporanJudul">
+            <span class="laporkan-label laporkan-label--cyan">
+              Judul Donghua <span class="laporkan-required" aria-hidden="true">*</span>
+            </span>
+            <input id="laporanJudul" name="judul_donghua" type="text" required maxlength="120"
+                   class="cyber-input-search" placeholder="Contoh: Against the Gods"
+                   autocomplete="off" spellcheck="false"
+                   aria-describedby="laporanJudulHint laporanJudulError" data-laporkan-field>
+            <span id="laporanJudulHint" class="laporkan-hint">Tulis judul persis seperti yang tampil di situs.</span>
+            <span id="laporanJudulError" class="laporkan-field-error" data-laporkan-error="judul_donghua" hidden></span>
+          </label>
+
+          <label class="laporkan-field" for="laporanUrl">
+            <span class="laporkan-label laporkan-label--cyan">
+              URL Halaman Donghua <span class="laporkan-required" aria-hidden="true">*</span>
+            </span>
+            <input id="laporanUrl" name="url_halaman" type="text" required maxlength="300"
+                   class="cyber-input-search" placeholder="https://donghuabatch.com/nama-donghua/"
+                   autocomplete="off" spellcheck="false" inputmode="url"
+                   aria-describedby="laporanUrlHint laporanUrlError laporanPrefillNote" data-laporkan-field>
+            <span id="laporanUrlHint" class="laporkan-hint">Tempel tautan halaman yang link downloadnya rusak.</span>
+            <span id="laporanPrefillNote" class="laporkan-prefill-note" role="status" aria-live="polite" hidden></span>
+            <span id="laporanUrlError" class="laporkan-field-error" data-laporkan-error="url_halaman" hidden></span>
+          </label>
+
+          <div class="laporkan-field-grid">
+            <label class="laporkan-field" for="laporanBagian">
+              <span class="laporkan-label laporkan-label--purple">
+                Bagian atau Link yang Rusak <span class="laporkan-required" aria-hidden="true">*</span>
+              </span>
+              <input id="laporanBagian" name="bagian_link" type="text" required maxlength="160"
+                     class="cyber-input-search" placeholder="Batch 1080p episode 1 sampai 12"
+                     autocomplete="off" aria-describedby="laporanBagianError" data-laporkan-field>
+              <span id="laporanBagianError" class="laporkan-field-error" data-laporkan-error="bagian_link" hidden></span>
+            </label>
+
+            <label class="laporkan-field" for="laporanJenis">
+              <span class="laporkan-label laporkan-label--purple">
+                Jenis Masalah <span class="laporkan-required" aria-hidden="true">*</span>
+              </span>
+              <select id="laporanJenis" name="jenis_masalah" required class="cyber-select"
+                      aria-describedby="laporanJenisError" data-laporkan-field>
+                <option value="" selected disabled>Pilih jenis masalah</option>
+                <option value="Link download mati (404 atau tidak bisa dibuka)">Link download mati (404 atau tidak bisa dibuka)</option>
+                <option value="Link mengarah ke donghua lain">Link mengarah ke donghua lain</option>
+                <option value="Shortlink tidak bisa dilewati">Shortlink tidak bisa dilewati</option>
+                <option value="Password batch tidak berfungsi">Password batch tidak berfungsi</option>
+                <option value="File rusak atau gagal diekstrak">File rusak atau gagal diekstrak</option>
+                <option value="Halaman donghua error">Halaman donghua error</option>
+                <option value="Masalah lain">Masalah lain</option>
+              </select>
+              <span id="laporanJenisError" class="laporkan-field-error" data-laporkan-error="jenis_masalah" hidden></span>
+            </label>
+          </div>
+
+          <label class="laporkan-field" for="laporanKeterangan">
+            <span class="laporkan-label laporkan-label--purple">
+              Keterangan Tambahan <span class="laporkan-required" aria-hidden="true">*</span>
+            </span>
+            <textarea id="laporanKeterangan" name="keterangan" required rows="5" maxlength="1000"
+                      class="cyber-textarea-message"
+                      placeholder="Ceritakan singkat: link mana yang dibuka, apa yang muncul di layar, sejak kapan."
+                      aria-describedby="laporanKeteranganHint laporanKeteranganError" data-laporkan-field></textarea>
+            <span id="laporanKeteranganHint" class="laporkan-hint">
+              Minimal 10 karakter. <span data-laporkan-counter>0</span>/1000 karakter terpakai.
+            </span>
+            <span id="laporanKeteranganError" class="laporkan-field-error" data-laporkan-error="keterangan" hidden></span>
+          </label>
+
+          <label class="laporkan-field" for="laporanEmail">
+            <span class="laporkan-label laporkan-label--cyan">Email (opsional)</span>
+            <input id="laporanEmail" name="email" type="email" class="cyber-input-search"
+                   placeholder="nama@email.com" autocomplete="email" spellcheck="false"
+                   aria-describedby="laporanEmailFeedback laporanEmailHint">
+            <span id="laporanEmailHint" class="laporkan-hint">Isi kalau kamu ingin dibalas setelah link diperbaiki.</span>
+            <span id="laporanEmailFeedback" class="form-email-feedback" role="status" aria-live="polite"
+                  data-email-feedback hidden></span>
+          </label>
+
+          {{/* Kotak status: sukses atau gagal kirim laporan */}}
+          <div id="laporanStatus" class="laporkan-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+
+          <button class="cyber-button cursor-pointer w-full rounded-xl p-3.5 uppercase tracking-wider font-extrabold text-sm"
+                  type="submit" data-laporkan-submit>
+            <i class="fa-solid fa-paper-plane mr-2" aria-hidden="true"></i>
+            <span data-laporkan-submit-label>Kirim Laporan</span>
+          </button>
+
+          <p class="laporkan-note">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Laporan dikirim lewat Formspree dan langsung masuk ke inbox admin.</span>
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+
+    {{/* ===== Panduan tambahan dari konten halaman ===== */}}
+    {{ with .Content }}
+    <div class="prose-neon site-prose-shell font-sans mt-5">
+      {{ . }}
+    </div>
+    {{ end }}
+
+  </div>
+
+</div>
+{{ end }}

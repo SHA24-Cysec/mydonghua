@@ -59,8 +59,9 @@
     {{ end }}
     </div>
 
-    <button title="Laporkan Link Download Mati" id="reportButton" class="db-report" type="button" data-report-trigger data-report-endpoint="https://script.google.com/macros/s/AKfycbzUgz8gd9WRDuGmuPPs5WBHIgZ0L3T1tJLwdtL_RLQW7Rb5e7wu6mJZa9cP3w1mEKnbxw/exec">
+    {{- $laporanHref := printf "%s?judul=%s&url=%s" (relURL "laporkan-link-mati/") (.Title | urlquery) (.RelPermalink | urlquery) -}}
+    <a title="Laporkan Link Download Mati" id="reportButton" class="db-report" href="{{ $laporanHref }}" data-report-trigger>
         <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
         <span>Laporkan Link Mati</span>
-    </button>
+    </a>
 </section>

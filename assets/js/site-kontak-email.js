@@ -2,15 +2,29 @@
   'use strict';
 
   /* ==========================================================
-     KONTAK — Validasi email terdaftar/aktif (tanpa API key)
+     FORM EMAIL GUARD
+     Validasi email terdaftar dan aktif tanpa API key.
      Lapisan cek:
      1. Format ketat (RFC-lite, lebih ketat dari type="email")
      2. Blokir domain email sekali-pakai (disposable)
-     3. Saran koreksi typo domain populer (gmial.com -> gmail.com)
-     4. Cek domain aktif via DNS-over-HTTPS (MX, fallback A/AAAA)
-        Provider: Cloudflare, fallback Google. Gagal jaringan = lolos
-        (fail-open) supaya form tetap bisa dipakai.
-     Timing: blur + jeda ketik (debounce) + dicek ulang saat submit.
+     3. Saran koreksi typo domain populer (gmial.com jadi gmail.com)
+     4. Cek domain aktif via DNS-over-HTTPS (MX, cadangan A/AAAA).
+        Gagal jaringan dianggap lolos (fail-open) supaya form
+        tetap bisa dipakai walau DoH tidak terjangkau.
+
+     Dipakai dua halaman:
+     - Halaman Kontak: email wajib, form dikirim native ke Formspree.
+     - Halaman Laporkan Link Mati: email opsional, pengiriman lewat
+       fetch dan ditangani site-laporan-link-mati.js.
+
+     API publik:
+       window.SiteEmailGuard.attach(form, options)
+         options.emailOptional     : email boleh dikosongkan
+         options.submitHandler     : dijalankan setelah email valid
+         options.feedbackSelector  : pemilih elemen umpan balik
+         returns { validate, clear, isInvalid, setState }
+       window.SiteEmailGuard.init()
+         Memasang otomatis ke semua form[data-email-guard].
      ========================================================== */
 
   var STRICT_EMAIL_RE = /^[A-Za-z0-9](?:[A-Za-z0-9._%+-]{0,62}[A-Za-z0-9])?@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
@@ -43,6 +57,8 @@
     'https://cloudflare-dns.com/dns-query',
     'https://dns.google/resolve'
   ];
+
+  var FEEDBACK_BASE_CLASS = 'form-email-feedback';
 
   var MESSAGES = {
     format: 'Format email tidak valid. Periksa lagi penulisannya, contoh: nama@gmail.com.',
@@ -149,14 +165,25 @@
     return promise;
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
-    var form = document.querySelector('.kontak-form');
-    if (!form) return;
+  /* ----------------------------------------------------------
+     attach(form, options)
+     Memasang validasi email pada satu form dan mengembalikan API
+     kecil untuk dipakai halaman lain (misalnya setelah kirim
+     laporan berhasil, umpan balik email dibersihkan).
+     ---------------------------------------------------------- */
+  function attach(form, options) {
+    if (!form) return null;
+    if (form.__emailGuard) return form.__emailGuard;
+
+    var settings = options || {};
+    var emailOptional = settings.emailOptional === true || form.hasAttribute('data-email-optional');
+    var submitHandler = typeof settings.submitHandler === 'function' ? settings.submitHandler : null;
+    var feedbackSelector = settings.feedbackSelector || '[data-email-feedback]';
 
     var emailInput = form.querySelector('input[name="email"]');
-    var feedback = document.getElementById('kontakEmailFeedback');
+    var feedback = form.querySelector(feedbackSelector);
     var submitButton = form.querySelector('button[type="submit"]');
-    if (!emailInput || !feedback || !submitButton) return;
+    if (!emailInput || !feedback) return null;
 
     /* Validasi custom mengambil alih dari validasi bawaan browser. */
     form.setAttribute('novalidate', '');
@@ -164,9 +191,15 @@
     var debounceTimer = null;
     var checkSeq = 0; /* pembatal hasil async yang basi */
 
+    function setBusy(busy) {
+      if (!submitButton) return;
+      submitButton.disabled = busy;
+      submitButton.setAttribute('aria-busy', busy ? 'true' : 'false');
+    }
+
     function setState(state, message, suggestion) {
       emailInput.classList.remove('is-invalid', 'is-checking', 'is-valid');
-      feedback.className = 'kontak-email-feedback';
+      feedback.className = FEEDBACK_BASE_CLASS;
       feedback.innerHTML = '';
 
       if (!state) {
@@ -176,7 +209,7 @@
       }
 
       feedback.hidden = false;
-      feedback.classList.add('kontak-email-feedback--' + state);
+      feedback.classList.add(FEEDBACK_BASE_CLASS + '--' + state);
       emailInput.classList.add(
         state === 'error' ? 'is-invalid' : state === 'checking' ? 'is-checking' : 'is-valid'
       );
@@ -185,7 +218,7 @@
       if (state === 'checking') {
         /* Spinner CSS murni: fa-circle-notch tidak ada di subset ikon situs. */
         var spinner = document.createElement('span');
-        spinner.className = 'kontak-email-spinner';
+        spinner.className = 'form-email-spinner';
         spinner.setAttribute('aria-hidden', 'true');
         feedback.appendChild(spinner);
       } else {
@@ -201,10 +234,10 @@
       text.textContent = message;
       feedback.appendChild(text);
 
-      if (suggestion) {
+      if (suggestion && message !== MESSAGES.disposable) {
         var btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'kontak-email-suggest';
+        btn.className = 'form-email-suggest';
         btn.textContent = 'Maksudnya @' + suggestion + '?';
         btn.addEventListener('click', function () {
           var local = emailInput.value.split('@')[0];
@@ -222,12 +255,12 @@
       var email = emailInput.value.trim();
 
       if (!email) {
-        if (fromSubmit) {
+        if (fromSubmit && !emailOptional) {
           setState('error', 'Alamat email wajib diisi.');
-        } else {
-          setState(null);
+          return Promise.resolve(false);
         }
-        return Promise.resolve(false);
+        setState(null);
+        return Promise.resolve(true);
       }
 
       if (!STRICT_EMAIL_RE.test(email)) {
@@ -254,7 +287,7 @@
           return false;
         }
 
-        /* 'active' atau 'unknown' (DoH tak terjangkau -> jangan blokir). */
+        /* 'active' atau 'unknown' (DoH tak terjangkau, jangan blokir). */
         if (suggestion) {
           setState('valid', MESSAGES.valid, suggestion);
         } else {
@@ -266,11 +299,23 @@
 
     emailInput.addEventListener('blur', function () {
       clearTimeout(debounceTimer);
-      if (emailInput.value.trim()) validate(false);
+      if (emailInput.value.trim()) {
+        validate(false);
+      } else {
+        /* Kolom dikosongkan: umpan balik lama ikut dibersihkan. */
+        setState(null);
+      }
     });
 
     emailInput.addEventListener('input', function () {
       clearTimeout(debounceTimer);
+
+      if (!emailInput.value.trim()) {
+        /* Dikosongkan sepenuhnya: jangan biarkan status lama menggantung. */
+        setState(null);
+        return;
+      }
+
       if (emailInput.classList.contains('is-invalid')) setState(null);
       debounceTimer = setTimeout(function () {
         if (emailInput.value.trim()) validate(false);
@@ -281,25 +326,69 @@
       event.preventDefault();
       clearTimeout(debounceTimer);
 
+      /* Form Kontak memakai textarea bernama message sebagai pesan wajib. */
       var message = form.querySelector('textarea[name="message"]');
       if (message && !message.value.trim()) {
         message.focus();
-        message.reportValidity ? message.reportValidity() : null;
+        if (typeof message.reportValidity === 'function') message.reportValidity();
         return;
       }
 
-      submitButton.disabled = true;
-      submitButton.setAttribute('aria-busy', 'true');
+      setBusy(true);
 
       validate(true).then(function (ok) {
-        submitButton.disabled = false;
-        submitButton.removeAttribute('aria-busy');
-        if (ok) {
-          form.submit();
-        } else {
+        setBusy(false);
+        if (!ok) {
           emailInput.focus();
+          return;
         }
+        if (submitHandler) {
+          submitHandler();
+        } else {
+          form.submit();
+        }
+      }).catch(function () {
+        setBusy(false);
+        emailInput.focus();
       });
     });
-  });
+
+    var api = {
+      form: form,
+      input: emailInput,
+      validate: validate,
+      isInvalid: function () {
+        return emailInput.classList.contains('is-invalid');
+      },
+      clear: function () {
+        checkSeq += 1;
+        setState(null);
+      }
+    };
+
+    form.__emailGuard = api;
+    return api;
+  }
+
+  function init() {
+    var forms = document.querySelectorAll('form[data-email-guard]');
+    Array.prototype.forEach.call(forms, function (form) {
+      if (form.__emailGuard) return;
+      attach(form, { emailOptional: form.hasAttribute('data-email-optional') });
+    });
+  }
+
+  window.SiteEmailGuard = {
+    attach: attach,
+    init: init,
+    isStrictEmail: function (value) {
+      return STRICT_EMAIL_RE.test(String(value || '').trim());
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

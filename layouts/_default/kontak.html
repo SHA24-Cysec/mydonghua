@@ -52,12 +52,12 @@
 
       {{/* ---------- Kanan: Form ---------- */}}
       <div class="lg:col-span-7">
-        <form class="kontak-form panel-neon-inset p-4 sm:p-5 flex flex-col gap-4" action="https://formspree.io/f/xregejlg" method="POST">
+        <form class="kontak-form panel-neon-inset p-4 sm:p-5 flex flex-col gap-4" action="https://formspree.io/f/xregejlg" method="POST" data-email-guard>
 
           <label class="flex flex-col gap-2 w-full">
             <span class="text-cyan-300 font-bold text-sm uppercase tracking-wider">Alamat Email</span>
             <input required placeholder="xiaoxiao@email.com" class="cyber-input-search" type="email" name="email" autocomplete="email" spellcheck="false" aria-describedby="kontakEmailFeedback">
-            <span id="kontakEmailFeedback" class="kontak-email-feedback" role="status" aria-live="polite" hidden></span>
+            <span id="kontakEmailFeedback" class="form-email-feedback" role="status" aria-live="polite" data-email-feedback hidden></span>
           </label>
 
           <label class="flex flex-col gap-2 w-full">

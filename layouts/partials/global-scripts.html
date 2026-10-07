@@ -1,6 +1,7 @@
 {{/* Conditional component scripts — page matrix audited in Stage 6. */}}
 {{- $isPost := eq .Layout "postingan-donghua" -}}
 {{- $isKontak := eq .Layout "kontak" -}}
+{{- $isLaporkan := eq .Layout "laporkan-link-mati" -}}
 {{- $isSearch := eq .Layout "search" -}}
 {{- $isFilterGenre := eq .Layout "filter-genre" -}}
 {{- $isFavorite := eq .Layout "favorit" -}}
@@ -82,9 +83,17 @@
 {{- template "minjs" "js/site-disqus.js" -}}
 {{ end }}
 
-{{/* Kontak-only: validasi email terdaftar/aktif (format, disposable, DNS MX). */}}
-{{ if $isKontak }}
+{{/* Guard email (format, disposable, DNS MX) dipakai halaman Kontak dan
+     halaman Laporkan Link Mati. Dimuat lebih dulu supaya halaman laporan
+     bisa memasangnya lewat window.SiteEmailGuard.attach(). */}}
+{{ if or $isKontak $isLaporkan }}
 {{- template "minjs" "js/site-kontak-email.js" -}}
+{{ end }}
+
+{{/* Laporan Link Mati-only: validasi kolom, prefill dari tombol halaman
+     donghua, dan pengiriman AJAX ke Formspree. */}}
+{{ if $isLaporkan }}
+{{- template "minjs" "js/site-laporan-link-mati.js" -}}
 {{ end }}
 
 {{/* Efek loading gambar dinonaktifkan: placeholder statis disediakan oleh CSS. */}}

@@ -596,6 +596,40 @@ body {
   border: 1px solid rgba(168, 85, 247, 0.4);
 }
 
+/* Dropdown pilihan: bentuk dan warna mengikuti input gelap situs. */
+
+.cyber-select {
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.7rem 2.2rem 0.7rem 1rem;
+  border: 1px solid rgba(30, 41, 59, 1);
+  border-radius: 0.9rem;
+  background:
+      linear-gradient(45deg, transparent 50%, #67e8f9 50%) calc(100% - 1.05rem) 50% / 0.38rem 0.38rem no-repeat,
+      linear-gradient(135deg, #67e8f9 50%, transparent 50%) calc(100% - 0.75rem) 50% / 0.38rem 0.38rem no-repeat,
+      rgba(15, 23, 42, 0.85);
+  color: var(--site-text);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  outline: none;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  transition: border-color var(--site-transition-med), box-shadow var(--site-transition-med);
+}
+
+.cyber-select:focus {
+  border-color: #A855F7;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.cyber-select option {
+  background: #0f172a;
+  color: var(--site-text);
+}
+
 /* ==========================================================
      UNIFIED PANEL & TYPOGRAPHY SYSTEM
      Acuan: gaya panel halaman utama (index.html)
@@ -1181,6 +1215,14 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   border-top-width: 1px;
 }
 
+.border-amber-400\/30 {
+  border-color: rgb(251 191 36 / 0.3);
+}
+
+.border-amber-500\/20 {
+  border-color: rgb(245 158 11 / 0.2);
+}
+
 .border-amber-500\/30 {
   border-color: rgb(245 158 11 / 0.3);
 }
@@ -1252,6 +1294,18 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
+.from-amber-400 {
+  --tw-gradient-from: #fbbf24 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(251 191 36 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-amber-500\/15 {
+  --tw-gradient-from: rgb(245 158 11 / 0.15) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(245 158 11 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-cyan-400 {
   --tw-gradient-from: #22d3ee var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(34 211 238 / 0) var(--tw-gradient-to-position);
@@ -1297,6 +1351,11 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   --tw-gradient-stops: var(--tw-gradient-from), #ef4444 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
+.via-rose-400 {
+  --tw-gradient-to: rgb(251 113 133 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #fb7185 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 .via-sky-400 {
   --tw-gradient-to: rgb(56 189 248 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #38bdf8 var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -1320,6 +1379,10 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
 
 .to-purple-600\/30 {
   --tw-gradient-to: rgb(147 51 234 / 0.3) var(--tw-gradient-to-position);
+}
+
+.to-rose-500\/15 {
+  --tw-gradient-to: rgb(244 63 94 / 0.15) var(--tw-gradient-to-position);
 }
 
 .object-cover {
@@ -1518,6 +1581,11 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   color: rgb(159 177 201 / var(--tw-text-opacity, 1));
 }
 
+.text-amber-300 {
+  --tw-text-opacity: 1;
+  color: rgb(252 211 77 / var(--tw-text-opacity, 1));
+}
+
 .text-amber-400 {
   --tw-text-opacity: 1;
   color: rgb(251 191 36 / var(--tw-text-opacity, 1));
@@ -1535,6 +1603,10 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
 
 .text-cyan-400\/40 {
   color: rgb(34 211 238 / 0.4);
+}
+
+.text-cyan-400\/80 {
+  color: rgb(34 211 238 / 0.8);
 }
 
 .text-cyan-500\/70 {
@@ -1626,6 +1698,12 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
 
 .opacity-\[0\.95\] {
   opacity: 0.95;
+}
+
+.shadow-\[0_0_18px_rgba\(251\2c 191\2c 36\2c 0\.08\)\] {
+  --tw-shadow: 0 0 18px rgba(251,191,36,0.08);
+  --tw-shadow-colored: 0 0 18px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-\[0_0_18px_rgba\(34\2c 211\2c 238\2c 0\.08\)\] {
@@ -3675,6 +3753,7 @@ body.has-floating-ad .btt-wrapper {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+  text-decoration: none;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
@@ -10654,11 +10733,14 @@ body.has-social-bar .site-footer {
 }
 
 .kontak-info,
-.kontak-form {
+.kontak-form,
+.laporkan-info,
+.laporkan-form {
   animation: kontakFadeUp 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.kontak-form {
+.kontak-form,
+.laporkan-form {
   animation-delay: 0.06s;
 }
 
@@ -10686,12 +10768,15 @@ body.has-social-bar .site-footer {
 }
 
 @media (max-width: 420px) {
-  .kontak-page .panel-neon {
+  .kontak-page .panel-neon,
+  .laporkan-page .panel-neon {
     border-radius: var(--site-radius-lg);
   }
 
   .kontak-info,
-  .kontak-form {
+  .kontak-form,
+  .laporkan-info,
+  .laporkan-form {
     padding: 0.85rem !important;
   }
 }
@@ -10702,25 +10787,25 @@ body.has-social-bar .site-footer {
    is-valid (cyan). Feedback tampil di bawah kolom email.
    ========================================================== */
 
-.kontak-form .cyber-input-search.is-invalid {
+:is(.kontak-form, .laporkan-form) .cyber-input-search.is-invalid {
   border-color: rgba(244, 63, 94, 0.65);
   box-shadow: 0 0 14px rgba(244, 63, 94, 0.16);
 }
 
-.kontak-form .cyber-input-search.is-invalid:focus {
+:is(.kontak-form, .laporkan-form) .cyber-input-search.is-invalid:focus {
   border-color: rgba(244, 63, 94, 0.8);
 }
 
-.kontak-form .cyber-input-search.is-checking {
+:is(.kontak-form, .laporkan-form) .cyber-input-search.is-checking {
   border-color: rgba(56, 189, 248, 0.45);
 }
 
-.kontak-form .cyber-input-search.is-valid {
+:is(.kontak-form, .laporkan-form) .cyber-input-search.is-valid {
   border-color: rgba(34, 211, 238, 0.55);
   box-shadow: 0 0 14px rgba(34, 211, 238, 0.12);
 }
 
-.kontak-email-feedback {
+.form-email-feedback {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -10732,31 +10817,31 @@ body.has-social-bar .site-footer {
   animation: kontakFadeUp 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.kontak-email-feedback[hidden] {
+.form-email-feedback[hidden] {
   display: none;
 }
 
-.kontak-email-feedback--error {
+.form-email-feedback--error {
   color: #fda4af;
 }
 
-.kontak-email-feedback--error i {
+.form-email-feedback--error i {
   color: #f43f5e;
 }
 
-.kontak-email-feedback--checking {
+.form-email-feedback--checking {
   color: #7dd3fc;
 }
 
-.kontak-email-feedback--valid {
+.form-email-feedback--valid {
   color: #67e8f9;
 }
 
-.kontak-email-feedback--valid i {
+.form-email-feedback--valid i {
   color: #22d3ee;
 }
 
-.kontak-email-suggest {
+.form-email-suggest {
   cursor: pointer;
   border: 1px solid rgba(34, 211, 238, 0.35);
   border-radius: 9999px;
@@ -10769,31 +10854,31 @@ body.has-social-bar .site-footer {
   transition: background var(--site-transition-med), border-color var(--site-transition-med);
 }
 
-.kontak-email-suggest:hover,
-.kontak-email-suggest:focus-visible {
+.form-email-suggest:hover,
+.form-email-suggest:focus-visible {
   background: rgba(34, 211, 238, 0.16);
   border-color: rgba(34, 211, 238, 0.55);
   outline: none;
 }
 
-.kontak-email-spinner {
+.form-email-spinner {
   width: 0.85rem;
   height: 0.85rem;
   flex: none;
   border-radius: 9999px;
   border: 2px solid rgba(56, 189, 248, 0.25);
   border-top-color: #38bdf8;
-  animation: kontakEmailSpin 0.7s linear infinite;
+  animation: formEmailSpin 0.7s linear infinite;
 }
 
-@keyframes kontakEmailSpin {
+@keyframes formEmailSpin {
   to {
     transform: rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .kontak-email-spinner {
+  .form-email-spinner {
     animation: none;
   }
 }
@@ -11160,6 +11245,322 @@ html body .site-empty-state[hidden] {
   .notfound-dock-page {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+/* ==========================================================
+   HALAMAN LAPORKAN LINK MATI
+   Split layout seperti halaman Kontak: panduan di kiri, form
+   laporan di kanan. Pengiriman ke Formspree ditangani oleh
+   assets/js/site-laporan-link-mati.js.
+   ========================================================== */
+
+.laporkan-page,
+.laporkan-page * {
+  box-sizing: border-box;
+}
+
+.laporkan-icon-wrap {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+@media (hover: hover) {
+  .laporkan-icon-wrap:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 0 24px rgba(251, 191, 36, 0.14);
+  }
+}
+
+/* ---------- Checklist panduan ---------- */
+
+.laporkan-checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.laporkan-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #cbd8ea;
+}
+
+.laporkan-checklist i {
+  flex: none;
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+}
+
+/* ---------- Kolom form ---------- */
+
+.laporkan-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.laporkan-field-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.laporkan-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.laporkan-label--cyan {
+  color: #67e8f9;
+}
+
+.laporkan-label--purple {
+  color: #d8b4fe;
+}
+
+.laporkan-required {
+  color: #f472b6;
+}
+
+.laporkan-hint {
+  padding: 0 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #7d8ea8;
+}
+
+.laporkan-field-error {
+  padding: 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fda4af;
+}
+
+.laporkan-field-error[hidden] {
+  display: none;
+}
+
+.laporkan-prefill-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 0.3rem 0.35rem 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #67e8f9;
+}
+
+.laporkan-prefill-note[hidden] {
+  display: none;
+}
+
+.laporkan-prefill-note i {
+  flex: none;
+  margin-top: 0.1rem;
+  color: #22d3ee;
+}
+
+/* Catatan oranye saat sebagian data dari halaman donghua tidak terbaca. */
+
+.laporkan-prefill-note--warning {
+  color: #fcd34d;
+}
+
+.laporkan-prefill-note--warning i {
+  color: #f59e0b;
+}
+
+/* Sorot singkat kolom yang baru terisi otomatis. */
+
+.laporkan-form .cyber-input-search.is-prefilled,
+.laporkan-form .cyber-textarea-message.is-prefilled {
+  border-color: rgba(34, 211, 238, 0.75);
+  animation: laporkanPrefillPulse 1.6s cubic-bezier(0.22, 1, 0.36, 1) 1;
+}
+
+@keyframes laporkanPrefillPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.38);
+  }
+
+  100% {
+    box-shadow: 0 0 0 14px rgba(34, 211, 238, 0);
+  }
+}
+
+/* Kolom URL yang terisi otomatis dikunci: nilai tetap terkirim,
+   tetapi tidak bisa diketik ulang oleh pengunjung. */
+
+.laporkan-form .cyber-input-search.is-readonly {
+  background-color: rgba(15, 23, 42, 0.55);
+  border: 1px dashed rgba(34, 211, 238, 0.4);
+  color: #bcd3e6;
+  cursor: default;
+}
+
+.laporkan-form .cyber-input-search.is-readonly:focus {
+  border: 1px dashed rgba(34, 211, 238, 0.6);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+}
+
+.laporkan-hint--locked {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #7dd3fc;
+}
+
+.laporkan-hint--locked i {
+  font-size: 0.7rem;
+  color: #38bdf8;
+}
+
+/* Honeypot Formspree: tak terlihat pengunjung, tetap terbaca
+   bot pengisi form otomatis supaya laporan sampah tersaring. */
+
+.laporkan-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Kotak status pengiriman ---------- */
+
+.laporkan-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: var(--site-radius-md);
+  background: rgba(15, 23, 42, 0.7);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  animation: kontakFadeUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.laporkan-status[hidden] {
+  display: none;
+}
+
+.laporkan-status > i {
+  flex: none;
+  margin-top: 0.15rem;
+  font-size: 1rem;
+}
+
+.laporkan-status-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.laporkan-status-body strong {
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.laporkan-status-body p {
+  margin: 0;
+  color: #a7b6cc;
+}
+
+.laporkan-status--success {
+  border-color: rgba(34, 211, 238, 0.4);
+  background: rgba(8, 30, 38, 0.78);
+  color: #a5f3fc;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.12);
+}
+
+.laporkan-status--success > i {
+  color: #22d3ee;
+}
+
+.laporkan-status--error {
+  border-color: rgba(244, 63, 94, 0.42);
+  background: rgba(38, 9, 16, 0.78);
+  color: #fecdd3;
+  box-shadow: 0 0 18px rgba(244, 63, 94, 0.12);
+}
+
+.laporkan-status--error > i {
+  color: #f43f5e;
+}
+
+.laporkan-status--warning {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: rgba(38, 27, 6, 0.78);
+  color: #fde68a;
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.12);
+}
+
+.laporkan-status--warning > i {
+  color: #fbbf24;
+}
+
+.laporkan-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #7d8ea8;
+}
+
+.laporkan-note i {
+  flex: none;
+  color: #8b5cf6;
+}
+
+@media (min-width: 640px) {
+  .laporkan-field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* State kolom laporan: merah saat isian belum benar. */
+
+.laporkan-form .cyber-input-search.is-invalid,
+.laporkan-form .cyber-textarea-message.is-invalid,
+.laporkan-form .cyber-select.is-invalid {
+  border-color: rgba(244, 63, 94, 0.65);
+  box-shadow: 0 0 14px rgba(244, 63, 94, 0.16);
+}
+
+.laporkan-form .cyber-input-search.is-invalid:focus,
+.laporkan-form .cyber-textarea-message.is-invalid:focus,
+.laporkan-form .cyber-select.is-invalid:focus {
+  border-color: rgba(244, 63, 94, 0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laporkan-info,
+  .laporkan-form,
+  .laporkan-status {
+    animation: none;
+  }
+
+  .laporkan-form .cyber-input-search.is-prefilled,
+  .laporkan-form .cyber-textarea-message.is-prefilled {
+    animation: none;
   }
 }
 
