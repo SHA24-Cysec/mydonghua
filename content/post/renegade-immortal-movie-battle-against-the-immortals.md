@@ -1,7 +1,7 @@
 ---
 date : '2026-09-21T22:45:34+07:00'
-draft : true
-title : 'Download Batch Renegade Immortal Movie Battle Against the Immortals Subtitle Indonesia'
+draft : false
+title : 'Download Batch Renegade Immortal Movie: Slaying The Blood Progenitor Subtitle Indonesia'
 studio :
     - 'Build Dream'
 season : 'Summer 2026'
@@ -49,47 +49,47 @@ linkSeasonSebelumnya : '/renegade-immortal-movie-battle-of-the-gods'
 judulSeasonSebelumnya : 'Renegade Immortal Movie: Battle of the Gods Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
-thumbnail : /img/post/renegade-immortal-movie-battle-against-the-immortals.webp
-image : /img/post/renegade-immortal-movie-battle-against-the-immortals.webp
+thumbnail : /img/post/renegade-immortal-movie-slaying-the-blood-progenitor.webp
+image : /img/post/renegade-immortal-movie-slaying-the-blood-progenitor.webp
 
-alt : 'Renegade Immortal Movie Battle Against the Immortals'
-url: 'renegade-immortal-movie-battle-against-the-immortals'
+alt : 'Renegade Immortal Movie: Slaying The Blood Progenitor'
+url: 'renegade-immortal-movie-slaying-the-blood-progenitor'
 layout : postingan-donghua
 sinopsis : 'Wang Lin, kultivator yang sudah lama menapaki jalan penuh darah dan pengkhianatan, kini menjejakkan kaki di Alam Abadi Petir. Di sana, ia tidak disambut sebagai tamu, melainkan sebagai buruan. Para musuh lama dan deretan kultivator tingkat tinggi mengepungnya dari segala arah, dan tidak ada tempat yang aman untuk bersembunyi. Terpojok dalam situasi hidup dan mati, Wang Lin memilih melawan balik. Berbekal tubuh perkasa warisan Dewa Kuno dan pemahamannya soal Jalan Pembantaian, ia menghadapi lawan yang kekuatannya jauh di atasnya. Pertanyaannya, sejauh apa seorang kultivator bisa melampaui batasnya demi bertahan hidup, dan apa harga dari gelar yang selama ini dianggap mustahil?'
-deskripsi : 'Download Batch Renegade Immortal Movie Battle Against the Immortals Subtitle Indonesia'
-keywords : 'Download Batch Renegade Immortal Movie Battle Against the Immortals Subtitle Indonesia'
+deskripsi : 'Download Batch Renegade Immortal Movie: Slaying The Blood Progenitor Subtitle Indonesia'
+keywords : 'Download Batch Renegade Immortal Movie: Slaying The Blood Progenitor Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
 downloadGroups:
   
   # Batch 1
-  - title: 'Renegade Immortal Movie Battle Against the Immortals Batch Subtitle Indonesia'
+  - title: 'Renegade Immortal Movie: Slaying The Blood Progenitor Batch Subtitle Indonesia'
     
     downloads:
     
     - quality: '360p'
-      link: ''
-      button: ''
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1CPW6zVuuuS7gNedPCjsNSTg3Lp_fBxMT&export=download&authuser=0'
+      button: 'Download'
+      size: '550 MB'
     
     - quality: '480p'
-      link: ''
-      button: ''
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1ZhekSZU9YUQv46M6BwueU2_1_1cyNocK&export=download&authuser=0'
+      button: 'Download'
+      size: '1.0 GB'
     
     - quality: '720p'
-      link: ''
-      button: ''
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1wU5tOutcHcUab6MbImanF57LYZ5N-nzP&export=download&authuser=0'
+      button: 'Download'
+      size: '1.50 GB'
     
     - quality: '1080p'
-      link: ''
-      button: ''
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1jNnmQPWUwikoOU3cdkBizlP71Vko1fBP&export=download&authuser=0'
+      button: 'Download'
+      size: '2.50 GB'
     
     - quality: '4K'
-      link: ''
-      button: ''
-      size: ''
+      link: 'https://pixeldrain.com/u/zzBQTHfc'
+      button: 'Download'
+      size: '5.46 GB'
 ---
