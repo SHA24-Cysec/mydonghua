@@ -316,31 +316,25 @@
 
   /* ---------- Prefill dari tombol di halaman donghua ---------- */
 
-  /* Kolom URL dikunci saat terisi otomatis dari tombol halaman donghua.
+  /* Kolom yang terisi otomatis dari tombol halaman donghua dikunci.
      Memakai readonly, bukan disabled, karena kolom disabled tidak ikut
      terkirim ke Formspree. Jadi nilainya tetap terkirim utuh, tetapi
-     tidak bisa diketik ulang oleh pengunjung. */
-  function kunciKolomUrl(form, input) {
+     tidak bisa diketik ulang oleh pengunjung. Petunjuk kolom sengaja
+     tidak diubah supaya tidak ada teks tambahan di bawah kolom. */
+  function kunciKolom(input, pesanAlat) {
     input.readOnly = true;
     input.setAttribute('readonly', 'readonly');
     input.setAttribute('aria-readonly', 'true');
     input.classList.add('is-readonly');
-    input.title = 'Terisi otomatis dan dikunci agar tetap menunjuk halaman yang benar.';
+    input.title = pesanAlat;
+  }
 
-    var hint = form.querySelector('#laporanUrlHint');
-    if (hint) {
-      hint.classList.add('laporkan-hint--locked');
-      hint.innerHTML = '';
+  function kunciKolomJudul(input) {
+    kunciKolom(input, 'Terisi otomatis dan dikunci agar tetap sesuai halaman donghua yang kamu buka.');
+  }
 
-      var icon = document.createElement('i');
-      icon.className = 'fa-solid fa-lock';
-      icon.setAttribute('aria-hidden', 'true');
-      hint.appendChild(icon);
-
-      var text = document.createElement('span');
-      text.textContent = 'Terkunci karena terisi otomatis dari halaman donghua.';
-      hint.appendChild(text);
-    }
+  function kunciKolomUrl(input) {
+    kunciKolom(input, 'Terisi otomatis dan dikunci agar tetap menunjuk halaman yang benar.');
   }
 
   /* Sorot singkat kolom yang baru terisi supaya pengunjung sadar
@@ -352,23 +346,17 @@
     }, 2200);
   }
 
-  function setPrefillNote(form, type, message) {
+  /* Catatan peringatan saat sebagian data dari tombol donghua tidak
+     terbaca. Kasus normal tidak memakai catatan apa pun. */
+  function showPrefillWarning(form, message) {
     var note = form.querySelector('#laporanPrefillNote');
     if (!note) return;
 
-    if (!type) {
-      note.hidden = true;
-      note.textContent = '';
-      return;
-    }
-
-    note.className = 'laporkan-prefill-note' + (type === 'warning' ? ' laporkan-prefill-note--warning' : '');
+    note.className = 'laporkan-prefill-note laporkan-prefill-note--warning';
     note.innerHTML = '';
 
     var icon = document.createElement('i');
-    icon.className = type === 'warning'
-      ? 'fa-solid fa-triangle-exclamation'
-      : 'fa-solid fa-wand-magic-sparkles';
+    icon.className = 'fa-solid fa-triangle-exclamation';
     icon.setAttribute('aria-hidden', 'true');
     note.appendChild(icon);
 
@@ -384,41 +372,33 @@
 
     var judulParam = getParam('judul');
     var urlParam = getParam('url');
-    var adaParameter = !!(judulParam || urlParam);
 
     var judul = limitText(judulParam, 120);
     var tautan = normalizeUrl(urlParam);
-    var dariHalamanDonghua = false;
-    var urlTerkunci = false;
 
+    /* Judul dan URL yang terisi otomatis dikunci dengan perilaku sama:
+       terkunci saat terisi otomatis, tetap bisa diisi manual bila
+       parameter tidak ada atau rusak. */
     if (judulInput && judul && !judulInput.value) {
       judulInput.value = judul;
       tandaiTerisi(judulInput);
-      dariHalamanDonghua = true;
+      kunciKolomJudul(judulInput);
     }
     if (urlInput && tautan.ok && !urlInput.value) {
       urlInput.value = tautan.value;
       tandaiTerisi(urlInput);
-      kunciKolomUrl(form, urlInput);
-      urlTerkunci = true;
-      dariHalamanDonghua = true;
+      kunciKolomUrl(urlInput);
     }
 
-    /* Ada parameter yang dikirim tombol, tetapi isinya tidak bisa
-       dipakai. Kasus ini lebih penting diberitahukan daripada pesan
-       sukses, supaya pengunjung tidak mengira semua sudah terisi. */
+    /* Catatan hanya muncul untuk kasus data rusak. Saat semua kolom
+       terisi otomatis, kolom yang terkunci sudah cukup jelas sendiri
+       sehingga tidak perlu teks tambahan di bawahnya. */
     var adaYangTidakTerbaca = (!!urlParam && !tautan.ok) || (!!judulParam && !judul);
 
     if (adaYangTidakTerbaca) {
-      setPrefillNote(form, 'warning',
+      showPrefillWarning(form,
         'Sebagian data dari halaman donghua tidak bisa dibaca. Isi kolom yang masih kosong secara manual.');
-    } else if (dariHalamanDonghua) {
-      setPrefillNote(form, 'success', urlTerkunci
-        ? 'URL halaman terisi otomatis dan dikunci supaya laporannya tetap menunjuk halaman yang benar. Judul masih bisa kamu ubah.'
-        : 'Terisi otomatis dari halaman donghua yang kamu buka. Periksa dulu sebelum kirim.');
     }
-
-    return dariHalamanDonghua;
   }
 
   /* ---------- Interaksi kolom ---------- */

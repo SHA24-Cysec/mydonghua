@@ -11397,8 +11397,8 @@ html body .site-empty-state[hidden] {
   }
 }
 
-/* Kolom URL yang terisi otomatis dikunci: nilai tetap terkirim,
-   tetapi tidak bisa diketik ulang oleh pengunjung. */
+/* Kolom judul dan URL yang terisi otomatis dikunci: nilai tetap
+   terkirim, tetapi tidak bisa diketik ulang oleh pengunjung. */
 
 .laporkan-form .cyber-input-search.is-readonly {
   background-color: rgba(15, 23, 42, 0.55);
@@ -11410,18 +11410,6 @@ html body .site-empty-state[hidden] {
 .laporkan-form .cyber-input-search.is-readonly:focus {
   border: 1px dashed rgba(34, 211, 238, 0.6);
   box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
-}
-
-.laporkan-hint--locked {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: #7dd3fc;
-}
-
-.laporkan-hint--locked i {
-  font-size: 0.7rem;
-  color: #38bdf8;
 }
 
 /* Honeypot Formspree: tak terlihat pengunjung, tetap terbaca
