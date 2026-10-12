@@ -38,7 +38,7 @@
                 </select>
             </label>
 
-            <button id="search-filter-open" class="search-filter-trigger" type="button" aria-expanded="false" aria-controls="search-filter-dialog">
+            <button id="search-filter-open" class="search-filter-trigger btn btn--sekunder btn--sedang" type="button" aria-expanded="false" aria-controls="search-filter-dialog">
                 <i class="fa-solid fa-sliders" aria-hidden="true"></i>
                 <span>Filter</span>
                 <span id="search-filter-active-count" class="search-filter-active-count" hidden>0</span>
@@ -69,7 +69,7 @@
                         <h2 id="search-filter-title">Saring Hasil Pencarian</h2>
                         <p>Pilih kriteria yang sesuai. Semua filter aktif digabungkan.</p>
                     </div>
-                    <button class="search-filter-close" type="button" data-search-filter-close aria-label="Tutup filter">
+                    <button class="search-filter-close btn btn--ikon btn--sedang" type="button" data-search-filter-close aria-label="Tutup filter">
                         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -99,8 +99,8 @@
                     </div>
 
                     <div class="search-filter-actions">
-                        <button id="search-filter-reset" class="search-filter-reset" type="button"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i><span>Reset</span></button>
-                        <button class="search-filter-apply" type="submit"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Terapkan</span></button>
+                        <button id="search-filter-reset" class="search-filter-reset btn btn--sekunder btn--sedang" type="button"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i><span>Reset</span></button>
+                        <button class="search-filter-apply btn btn--utama btn--besar" type="submit"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Terapkan</span></button>
                     </div>
                 </form>
             </section>
@@ -108,9 +108,9 @@
 
         {{/*  Pagination  */}}
         <div id="search-pagination" class="pagination-dock mt-4 text-slate-200" role="navigation" aria-label="Navigasi halaman hasil pencarian">
-            <button class="pagination-dock-button" id="prev-page" type="button" disabled aria-label="Halaman sebelumnya" aria-disabled="true"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Prev</button>
+            <button class="pagination-dock-button btn btn--sekunder btn--sedang" id="prev-page" type="button" disabled aria-label="Halaman sebelumnya" aria-disabled="true"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Prev</button>
             <span class="pagination-dock-status" id="page-info" aria-live="polite"></span>
-            <button class="pagination-dock-button" id="next-page" type="button" disabled aria-label="Halaman berikutnya" aria-disabled="true">Next <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+            <button class="pagination-dock-button btn btn--sekunder btn--sedang" id="next-page" type="button" disabled aria-label="Halaman berikutnya" aria-disabled="true">Next <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
         </div>
         
     </div>

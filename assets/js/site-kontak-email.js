@@ -237,7 +237,7 @@
       if (suggestion && message !== MESSAGES.disposable) {
         var btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'form-email-suggest';
+        btn.className = 'form-email-suggest btn btn--sekunder btn--kecil';
         btn.textContent = 'Maksudnya @' + suggestion + '?';
         btn.addEventListener('click', function () {
           var local = emailInput.value.split('@')[0];

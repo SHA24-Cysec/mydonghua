@@ -239,11 +239,6 @@
     fallback.hidden = false;
     fallback.setAttribute('aria-hidden', 'false');
 
-    // RESPONSIF ke-34: tandai panel sedang menampilkan kartu fallback.
-    // CSS memakai penanda ini untuk membuang penanda AD dan teks placeholder
-    // pengembangan, yang kalau tidak dibuang memaksa lebar min-content slot.
-    ad.classList.add('has-fallback');
-
     if (ad.classList.contains('is-visible')) {
       window.requestAnimationFrame(function () {
         syncBackToTopOffset(ad);

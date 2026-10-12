@@ -13,7 +13,7 @@
 
         <div class="site-navbar-actions" role="group" aria-label="Aksi cepat navbar">
           <button
-            class="site-navbar-action site-nav-random-btn"
+            class="site-navbar-action site-nav-random-btn btn btn--sekunder btn--sedang"
             type="button"
             data-random-open
             aria-label="Acak donghua"
@@ -34,7 +34,7 @@
           </a>
         </div>
 
-        <button class="site-navbar-toggle" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNavSheet" aria-expanded="false" data-nav-open>
+        <button class="site-navbar-toggle btn btn--ikon btn--sedang" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNavSheet" aria-expanded="false" data-nav-open>
           <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
       </div>
@@ -53,7 +53,7 @@
         <strong>Jelajahi DonghuaBatch</strong>
         <p>Akses cepat ke halaman utama, genre, studio, season, dan pencarian.</p>
       </div>
-      <button class="site-nav-close" type="button" data-nav-close aria-label="Tutup menu navigasi">
+      <button class="site-nav-close btn btn--ikon btn--sedang" type="button" data-nav-close aria-label="Tutup menu navigasi">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
     </div>
@@ -67,7 +67,7 @@
       <a rel="noopener noreferrer" target="_blank" href="https://saweria.co/DonghuaBatch" data-nav-link><i class="fa-solid fa-leaf" aria-hidden="true"></i><span>Support</span></a>
       <a href='{{ relURL "search/" }}' data-nav-link><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Cari</span></a>
       <a href='{{ relURL "kontak/" }}' data-nav-link><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Kontak</span></a>
-      <button class="site-pwa-install" type="button" data-pwa-install hidden>
+      <button class="site-pwa-install btn btn--utama btn--sedang" type="button" data-pwa-install hidden>
         <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
         <span>Pasang Aplikasi</span>
       </button>
@@ -79,7 +79,7 @@
   <div id="siteRandomModal" class="site-random-modal" aria-hidden="true" data-random-modal hidden>
     <div class="site-random-backdrop site-overlay-backdrop" data-random-close aria-hidden="true"></div>
     <section id="siteRandomDialog" class="site-random-dialog" role="dialog" aria-modal="true" aria-labelledby="siteRandomTitle" tabindex="-1" data-random-dialog>
-      <button class="site-random-close" type="button" data-random-close aria-label="Tutup preview donghua acak">
+      <button class="site-random-close btn btn--ikon btn--sedang" type="button" data-random-close aria-label="Tutup preview donghua acak">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
 
@@ -110,7 +110,7 @@
           <div class="site-random-meta" data-random-meta></div>
           <div class="site-random-genres" data-random-genres></div>
           <div class="site-random-actions">
-            <button class="site-random-action secondary" type="button" data-random-reroll>
+            <button class="site-random-action secondary btn btn--sekunder btn--sedang" type="button" data-random-reroll>
               <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
               Acak Lagi
             </button>
