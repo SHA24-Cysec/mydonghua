@@ -19,7 +19,7 @@
             aria-label="Acak donghua"
             title="Acak"
             aria-haspopup="dialog"
-            aria-controls="siteRandomModal"
+            aria-controls="siteRandomDialog"
           >
             <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
           </button>
@@ -78,7 +78,7 @@
 
   <div id="siteRandomModal" class="site-random-modal" aria-hidden="true" data-random-modal hidden>
     <div class="site-random-backdrop site-overlay-backdrop" data-random-close aria-hidden="true"></div>
-    <section class="site-random-dialog" role="dialog" aria-modal="true" aria-labelledby="siteRandomTitle" tabindex="-1" data-random-dialog>
+    <section id="siteRandomDialog" class="site-random-dialog" role="dialog" aria-modal="true" aria-labelledby="siteRandomTitle" tabindex="-1" data-random-dialog>
       <button class="site-random-close" type="button" data-random-close aria-label="Tutup preview donghua acak">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>

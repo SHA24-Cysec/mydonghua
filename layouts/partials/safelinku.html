@@ -1,8 +1,24 @@
+{{/*
+  Catatan kebijakan tautan unduhan (12 Oktober 2026).
+  Larik di bawah bukan daftar "domain apa pun yang mengandung teks ini".
+  Skrip vendor memakai dua jalur: kecocokan penuh nama host terhadap anggota larik,
+  atau kecocokan akhiran nama untuk anggota yang berawalan "*." (mis. "*.google.com").
+  Akibatnya anggota tanpa bintang hanya bekerja untuk host yang sama persis.
+  Sejak 12 Oktober 2026 (Paket B) seluruh pola penyimpanan memakai bentuk bintang, sehingga
+  semua 2.432 tautan unduhan melewati Safelinku, termasuk 333 tautan www.mediafire.com dan
+  12 tautan www.linkbox.to yang sebelumnya lolos, serta empat tautan bit.ly yang sudah
+  diganti tautan Terabox aslinya di content/post/wonderland-season-5.md.
+  Rinciannya di audit/KEBIJAKAN-TAUTAN-UNDUHAN-12-10.md.
+  Jangan ubah larik ini tanpa memutuskan lebih dulu apakah tautan itu memang harus melewati
+  Safelinku, karena perubahan satu baris mengubah pengalaman semua pengunjung.
+  Catatan: uji akhir nama tanpa batas titik, jadi host yang BERAKHIR dengan teks pola ikut
+  terjaring (mis. "notmediafire.com" akan cocok dengan "*.mediafire.com").
+*/}}
 {{ if hugo.IsProduction }}
     <script type="text/javascript">
         var go_url = 'https://sfl.gl/';
         var api = 'a596ecd25509759a515c4273ac4311ee535b942b';
-        var shorten_includ = ["mega.nz","*.google.com","*.terabox.com","mediafire.com","lbx.to","1024terabox.com","sharer.pw","teraboxapp.com","pixeldrain.com","send.now","acefile.co","linkbox.to"];
+        var shorten_includ = ["mega.nz","*.google.com","*.terabox.com","*.mediafire.com","lbx.to","1024terabox.com","sharer.pw","teraboxapp.com","pixeldrain.com","send.now","acefile.co","*.linkbox.to","*.terabox.app","*.1024tera.com","*.4funbox.com"];
     </script>
     <script src="//safelinku.com/js/web-script.js" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src=this.src.split('?')[0]+'?r='+Date.now()}"></script>
 {{ end }}

@@ -34,6 +34,13 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
+  // SEC-19: escaping HTML saja tidak menahan skema javascript: pada href/src.
+  // Terima hanya URL http(s) atau jalur dalam situs; selain itu "#".
+  function safeUrl(value) {
+    var url = asText(value).trim();
+    if (!url) return "";
+    return /^(https?:\/\/|\/)/i.test(url) ? escapeHTML(url) : "#";
+  }
 
   function loadItems() {
     try {
@@ -106,7 +113,7 @@
     var episode = escapeHTML(item.episode);
     var status = escapeHTML(item.status);
     var rating = escapeHTML(item.rating);
-    var thumbnail = escapeHTML(item.thumbnail);
+    var thumbnail = safeUrl(item.thumbnail);
     var meta = [episode, status]
       .filter(function (value) { return value && value !== '-'; })
       .map(function (value) { return '<span class="donghua-card-chip">' + value + '</span>'; })
@@ -120,7 +127,7 @@
 
     return '<article class="donghua-card">' +
       favoriteButton(item) +
-      '<a class="donghua-card-link" title="' + title + '" href="' + escapeHTML(item.url) + '">' +
+      '<a class="donghua-card-link" title="' + title + '" href="' + safeUrl(item.url) + '">' +
         '<div class="donghua-card-poster">' + poster + '</div>' +
         '<div class="donghua-card-badges"><span class="donghua-card-badge">' + type + '</span></div>' +
         '<div class="donghua-card-body"><h3 class="donghua-card-title" title="' + title + '">' + titleShort + '</h3>' +

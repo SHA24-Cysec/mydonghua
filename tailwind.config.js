@@ -1,14 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./layouts/**/*.{html,js}", "./content/**/*.md"],
-  // Safelist only state classes that may be toggled by JS / Hugo without
-  // a static full class string in layouts. Legacy Hugo pagination classes
-  // (page-item, page-link, pagination-default, page-item-*) and cyber-pill-nav
-  // were removed — pagination now uses custom pagination-aurora / pagination-dock.
-  safelist: [
-    "active",
-    "disabled",
-  ],
+  // Safelist dihapus: dua entri lamanya ("active", "disabled") tidak pernah
+  // menghasilkan aturan di CSS hasil build. Kelas state yang dipakai
+  // (.is-active, .is-saved, .is-loaded, .is-open) ditulis tangan di input.css.
   theme: {
     extend: {
       colors: {

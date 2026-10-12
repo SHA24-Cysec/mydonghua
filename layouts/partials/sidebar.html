@@ -99,7 +99,7 @@
 
             <div class="taxonomy-tabs-search-aurora">
                 <div class="aurora-search-container aurora-search-compact">
-                    <input required type="search" data-taxonomy-search placeholder="Cari studio..." autocomplete="off" class="aurora-search-input">
+                    <input required type="search" data-taxonomy-search placeholder="Cari studio..." autocomplete="off" class="aurora-search-input" aria-label="Cari studio atau season">
                     <i class="fa-solid fa-magnifying-glass aurora-search-icon" aria-hidden="true"></i>
                 </div>
             </div>
@@ -124,7 +124,6 @@
                                         <strong>{{ $name }}</strong>
                                         <small>Studio donghua</small>
                                     </span>
-                                    <span class="taxonomy-item-arrow"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
                                 </a>
                             {{ end }}
                         {{ end }}
@@ -142,7 +141,6 @@
                                         <strong>{{ $name | title }}</strong>
                                         <small>Season archive</small>
                                     </span>
-                                    <span class="taxonomy-item-arrow"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
                                 </a>
                             {{ end }}
                         {{ end }}

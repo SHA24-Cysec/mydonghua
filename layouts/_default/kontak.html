@@ -65,6 +65,13 @@
             <textarea required rows="5" placeholder="Tulis pesan atau saran kamu di sini..." class="cyber-textarea-message" name="message"></textarea>
           </label>
 
+          {{/* SEC-09: Honeypot Formspree. Bot mengisinya, manusia tidak.
+               Formspree mengabaikan kiriman yang field _gotcha-nya terisi. */}}
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="kontakKolomTambahan">Kolom tambahan</label>
+            <input id="kontakKolomTambahan" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
           <button class="cyber-button cursor-pointer w-full rounded-xl p-3.5 uppercase tracking-wider font-extrabold text-sm" type="submit">
             <i class="fa-solid fa-paper-plane mr-2"></i>Kirim Pesan
           </button>

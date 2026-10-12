@@ -2,6 +2,20 @@
   'use strict';
 
   var MOBILE_MAX = 767;
+  // SEC-02 lanjutan: dokumen iklan ber-origin buram, jadi induk tidak bisa
+  // lagi mengintip isinya. Probe ini ikut ditulis ke dalam srcdoc dan
+  // melapor lewat postMessage begitu kreatif benar-benar muncul.
+  var AD_PROBE =
+    '<script>(function(){' +
+    'var terisi=function(){var d=document.body;if(!d)return false;var k=d.children,n=0,i;' +
+    'for(i=0;i<k.length;i++){if(k[i].tagName!=="SCRIPT")n++;}' +
+    'return n>0||d.scrollHeight>12;};' +
+    'var lapor=function(){try{if(terisi())parent.postMessage({sumber:"iklan-probe",status:"terisi"},"*");}catch(e){}};' +
+    'lapor();' +
+    'try{new MutationObserver(lapor).observe(document.documentElement,{childList:true,subtree:true,attributes:true,characterData:true});}catch(e){}' +
+    'var n=0,t=setInterval(function(){lapor();if(++n>60)clearInterval(t);},250);' +
+    '})();<' + '/script>';
+
   var AD_INSPECT_TIMEOUT = 7000; // Tunggu ~7 dtk sebelum memutuskan iklan gagal.
   var loadQueue = [];
   var queueRunning = false;
@@ -50,6 +64,19 @@
     if (!unit || !invokeUrl) return null;
 
     var iframe = document.createElement('iframe');
+    // SEC-02: sandbox tanpa allow-same-origin membuat iframe menjadi origin
+    // buram, sehingga skrip iklan pihak ketiga tidak bisa membaca DOM, cookie,
+    // maupun localStorage halaman induk. allow-scripts wajib agar kreatif tetap
+    // dirender. allow-popups dan allow-popups-to-escape-sandbox menjaga klik
+    // iklan tetap membuka tab baru yang tidak ikut ter-sandbox.
+    // allow-top-navigation-by-user-activation dipakai agar kreatif yang
+    // menavigasi halaman atas saat diklik tetap berfungsi. Bila ingin lebih
+    // ketat, token terakhir ini yang pertama boleh dilepas.
+    iframe.setAttribute(
+      'sandbox',
+      'allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
+    );
+    iframe.setAttribute('data-iklan-probe', '1');
     iframe.setAttribute('scrolling', 'no');
     iframe.setAttribute('frameborder', '0');
     iframe.setAttribute('title', 'Advertisement');
@@ -61,8 +88,16 @@
     iframe.style.maxWidth = '100%';
     unit.appendChild(iframe);
 
-    var doc = iframe.contentWindow && iframe.contentWindow.document;
-    if (!doc) return iframe;
+    // SEC-02 lanjutan: terima laporan probe dari dalam iframe. Induk tidak
+    // pernah membaca isi dokumen iklan, hanya menerima pesan dari window
+    // yang memang dipasang di iframe ini.
+    window.addEventListener('message', function (ev) {
+      if (ev.source !== iframe.contentWindow) return;
+      var pesan = ev.data;
+      if (pesan && pesan.sumber === 'iklan-probe' && pesan.status === 'terisi') {
+        iframe.setAttribute('data-iklan-terisi', 'ya');
+      }
+    });
 
     var atOptionsJson = JSON.stringify({
       key: key,
@@ -70,17 +105,19 @@
       height: height,
       width: width,
       params: {}
-    });
+    }).replace(/</g, '\\u003c');
 
-    doc.open();
-    doc.write(
+    // SEC-02: srcdoc dipakai menggantikan document.write. Setelah sandbox
+    // tanpa allow-same-origin aktif, iframe.contentWindow.document tidak lagi
+    // bisa diakses dan melempar SecurityError, sehingga document.write gagal.
+    // srcdoc tetap diizinkan pada iframe yang di-sandbox.
+    iframe.srcdoc =
       '<!doctype html><html><head><style>html,body{margin:0;padding:0;overflow:hidden;background:transparent;}</style></head>' +
       '<body>' +
       '<script>window.atOptions = ' + atOptionsJson + ';<' + '/script>' +
       '<script src="' + invokeUrl + '"><' + '/script>' +
-      '</body></html>'
-    );
-    doc.close();
+      AD_PROBE +
+      '</body></html>';
     return iframe;
   }
 
@@ -139,6 +176,11 @@
 
     // Unit berbasis iframe isolasi (300x250, banner).
     var iframe = unit.querySelector('iframe');
+    // SEC-02 lanjutan: iframe buatan sendiri dinilai dari laporan probe,
+    // bukan dari percobaan mengintip dokumen (yang kini selalu melempar).
+    if (iframe && iframe.getAttribute('data-iklan-probe') === '1') {
+      return iframe.getAttribute('data-iklan-terisi') === 'ya';
+    }
     if (iframe) {
       try {
         var idoc = iframe.contentWindow && iframe.contentWindow.document;

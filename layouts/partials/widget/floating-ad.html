@@ -36,7 +36,9 @@
     <div
       class="site-floating-ad__slot"
       {{ if hugo.IsProduction }}
-        aria-label="Advertisement responsif"
+        {{/* A11Y-01: tanpa role dan tanpa aria-label. Pembungkus luar
+             section.site-floating-ad sudah menjadi region berlabel "Iklan",
+             jadi label di sini hanya duplikat dan dulu tidak pernah dibacakan. */}}
       {{ else }}
         role="img"
         aria-label="Placeholder iklan responsif"

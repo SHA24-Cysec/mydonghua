@@ -173,22 +173,22 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://bit.ly/3NBTJY1'
+      link: 'https://terabox.com/s/1Qlebiv49vzJUFVxZPvBANg'
       button: 'Download'
       size: ''
     
     - quality: '480p'
-      link: 'https://bit.ly/39iQVA3'
+      link: 'https://terabox.com/s/1NB3QtMXjXiGCiPVPGAnEQQ'
       button: 'Download'
       size: ''
     
     - quality: '720p'
-      link: 'https://bit.ly/3Nzt3H7'
+      link: 'https://terabox.com/s/1CXrHNoMBcOMbfLog-9PnPw'
       button: 'Download'
       size: ''
     
     - quality: '1080p'
-      link: 'https://bit.ly/3H4hmpA'
+      link: 'https://terabox.com/s/1iABL7Yik9Gj0OBFYvqrQTg'
       button: 'Download'
       size: ''
     

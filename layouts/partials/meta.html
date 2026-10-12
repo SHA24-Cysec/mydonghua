@@ -4,6 +4,7 @@
 <meta name="google-site-verification" content="frhxc_MnIg6D9e_VKvjf8hsIhgQn9ULKrVoTi9HL0_8" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 {{/* SEO guard: archive internal dan page 2+ tidak ditujukan untuk index. */}}
+{{- $seoHalamanIndex := slice "halaman" "kontak" -}}
 {{- $pagination := partial "pagination-context" . -}}
 {{- $seoNoindexExact := slice "/post/" "/halaman/" "/genre/" "/studio/" "/season/" "/season/-/" "/studio/-/" "/genre/-/" "/season/2d-animation/" "/season/3d-animation/" -}}
 {{- $seoNoindexPrefix := or (strings.HasPrefix .RelPermalink "/post/page/") (strings.HasPrefix .RelPermalink "/halaman/page/") -}}
@@ -20,7 +21,14 @@
     <meta name="keywords" content="{{ .Site.Params.keywords }}">
     <meta name="robots" content="index, follow">
 {{ else if eq .Layout "postingan-donghua" }}
-    {{ $desc := .Params.deskripsi | default .Params.sinopsis | default .Summary | plainify | truncate 160 }}
+    {{/* SEO-04: ambil kandidat terpanjang dari deskripsi, sinopsis, dan intro,
+         supaya halaman yang deskripsi pendeknya hanya mengulang judul tetap
+         punya cuplikan yang informatif. */}}
+    {{ $desc := "" }}
+    {{ range slice .Params.deskripsi .Params.sinopsis .Summary }}
+      {{ with . }}{{ $x := . | plainify | truncate 160 }}{{ if gt (len $x) (len $desc) }}{{ $desc = $x }}{{ end }}{{ end }}
+    {{ end }}
+    {{ $desc = $desc | default (.Site.Params.deskripsi | plainify | truncate 160) }}
     <meta name="description" content="{{ $desc }}">
     {{ $kw := slice }}
     {{ with .Params.keywords }}{{ $kw = $kw | append . }}{{ end }}
@@ -39,6 +47,10 @@
 {{ else if .Data.Singular }}
     <meta name="description" content="Daftar donghua {{ .Data.Singular }} {{ .Title }} batch subtitle Indonesia.">
     <meta name="keywords" content="{{ .Title }}, {{ .Data.Singular }}, Donghua, Batch, Subtitle Indonesia">
+    <meta name="robots" content="index, follow">
+{{ else if in $seoHalamanIndex .Layout }}
+    {{ $desc := .Params.deskripsi | default .Site.Params.deskripsi | plainify | truncate 160 }}
+    <meta name="description" content="{{ $desc }}">
     <meta name="robots" content="index, follow">
 {{ else }}
     {{ $desc := .Params.deskripsi | default .Site.Params.deskripsi | plainify | truncate 160 }}

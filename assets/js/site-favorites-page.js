@@ -62,6 +62,13 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
+  // SEC-19: escaping HTML saja tidak menahan skema javascript: pada href/src.
+  // Terima hanya URL http(s) atau jalur dalam situs; selain itu "#".
+  function safeUrl(value) {
+    const url = toText(value).trim();
+    if (!url) return "";
+    return /^(https?:\/\/|\/)/i.test(url) ? escapeHTML(url) : "#";
+  }
 
   function itemId(item) {
     return item.id || item.permalink || item.objectID || '';
@@ -96,8 +103,8 @@
     const episode = escapeHTML(item.episode || '-');
     const status = escapeHTML(item.status || '-');
     const rating = escapeHTML(item.rating || '-');
-    const permalink = escapeHTML(item.permalink || '#');
-    const thumbnail = escapeHTML(item.thumbnail || '');
+    const permalink = safeUrl(item.permalink || '#');
+    const thumbnail = safeUrl(item.thumbnail || '');
     const title = escapeHTML(item.title || 'Donghua');
     const titleShort = escapeHTML(cardTitleLabel(item.title || 'Donghua')) || title;
     const rawId = itemId(item);

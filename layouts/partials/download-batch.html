@@ -38,15 +38,13 @@
                         <span>{{ $d.size }}</span>
                     </div>
 
-                    <div class="db-card-line" aria-hidden="true"></div>
-
                     {{ if $isUnavailable }}
                         <span class="db-button is-locked" aria-disabled="true">
                             <i class="fa-solid fa-lock" aria-hidden="true"></i>
                             <span>{{ $buttonLabel }}</span>
                         </span>
                     {{ else }}
-                        <a class="db-button" target="_blank" rel="nofollow noopener" href="{{ $d.link }}">
+                        <a class="db-button" target="_blank" rel="nofollow noopener noreferrer" href="{{ $d.link }}">
                             <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
                             <span>{{ $buttonLabel }}</span>
                             <i class="fa-solid fa-arrow-up-right-from-square db-open" aria-hidden="true"></i>

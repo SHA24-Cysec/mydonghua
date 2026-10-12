@@ -35,9 +35,9 @@
                                     <div class="bg-cyber-card px-2.5 py-1 rounded-lg flex-wrap flex items-center gap-1 border border-amber-500/30 shadow-neon-amber">
                                         {{ range seq 5 }}
                                             {{ if le . $stars }}
-                                                <i class="fa-solid fa-star post-rating-star drop-shadow-neon-gold"></i>
+                                                <i class="fa-solid fa-star post-rating-star drop-shadow-neon-gold" aria-hidden="true"></i>
                                             {{ else }}
-                                                <i class="fa-regular fa-star text-slate-600"></i>
+                                                <i class="fa-regular fa-star text-slate-400" aria-hidden="true"></i>
                                             {{ end }}
                                         {{ end }}
                                     </div>

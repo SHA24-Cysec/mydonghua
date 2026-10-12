@@ -16,6 +16,13 @@
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
   }
+  // SEC-19: escaping HTML saja tidak menahan skema javascript: pada href/src.
+  // Terima hanya URL http(s) atau jalur dalam situs; selain itu "#".
+  function safeUrl(value) {
+    const url = toText(value).trim();
+    if (!url) return "";
+    return /^(https?:\/\/|\/)/i.test(url) ? escapeHTML(url) : "#";
+  }
 
   function cardTypeLabel(value) {
     const label = toText(value).trim();
@@ -71,14 +78,14 @@
     const episode = escapeHTML(item.episode);
     const status = escapeHTML(item.status);
     const rating = escapeHTML(item.rating);
-    const permalink = escapeHTML(item.permalink);
+    const permalink = safeUrl(item.permalink);
     // title  = judul penuh, dipakai untuk tooltip/alt supaya konteks utuh.
     // titleShort = judul inti tanpa boilerplate, dipakai sebagai teks card.
     const title = escapeHTML(item.title);
     const titleShort = escapeHTML(cardTitleLabel(item.title)) || title;
 
     // Thumbnail asli tunggal — tanpa srcset atau varian hasil resize.
-    const thumbSrc = escapeHTML(item.thumbnail || "");
+    const thumbSrc = safeUrl(item.thumbnail || "");
 
     const metaChips = [episode, status]
       .filter(value => value && value !== "-")

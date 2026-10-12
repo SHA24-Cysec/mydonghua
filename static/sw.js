@@ -1,7 +1,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'donghuabatch-pwa';
-const CACHE_VERSION = '2026-10-07-4';
+const CACHE_VERSION = '2026-10-12-10';
 const SHELL_CACHE = `${CACHE_PREFIX}-shell-${CACHE_VERSION}`;
 const PAGE_CACHE = `${CACHE_PREFIX}-pages-${CACHE_VERSION}`;
 const ASSET_CACHE = `${CACHE_PREFIX}-assets-${CACHE_VERSION}`;
@@ -18,7 +18,6 @@ const APP_SHELL = [
   '/search/',
   '/favorit/',
   '/filter-genre/',
-  '/index.json',
   '/offline/',
   '/manifest.webmanifest',
   '/icons/icon-192.webp',
@@ -29,13 +28,19 @@ const APP_SHELL = [
   '/img/Huo-Linger.webp'
 ];
 
-const DISCOVERABLE_ASSET = /\.(?:css|js|woff2?|ico|png|webp)$/i;
+// SEC-03: hanya gaya, skrip, dan font yang dipanaskan saat instalasi.
+// Gambar tetap diambil saat diminta lewat strategi cacheFirst supaya
+// instalasi tidak menarik puluhan webp dari halaman katalog.
+const DISCOVERABLE_ASSET = /\.(?:css|js|mjs|woff2?)$/i;
 const CACHEABLE_ASSET = /\.(?:css|js|mjs|woff2?|ico|png|webp|jpe?g|svg)$/i;
 
 function sameOrigin(url) {
   return url.origin === self.location.origin;
 }
 
+// SEC-10: query string sengaja dibuang dari kunci cache navigasi.
+// Aman selama HTML statis dan parameter hanya diolah di sisi klien.
+// Bila kelak ada halaman yang isinya bergantung query di server, ubah ini.
 function navigationCacheKey(request) {
   const url = new URL(request.url);
   return new Request(`${url.origin}${url.pathname}`, {
@@ -70,11 +75,15 @@ async function fetchWithTimeout(request, timeoutMilliseconds) {
 }
 
 function collectDocumentAssets(documentUrl, html, output) {
-  const referencePattern = /(?:src|href)=["']([^"'#]+)["']/gi;
+  // SEC-03: Hugo --minify menghapus tanda kutip pada atribut tanpa spasi,
+  // jadi pola ini harus menerima nilai tanpa kutip juga.
+  const referencePattern = /(?:src|href)\s*=\s*(?:"([^"#]+)"|'([^'#]+)'|([^\s>]+))/gi;
   let match;
   while ((match = referencePattern.exec(html))) {
+    const reference = match[1] || match[2] || match[3] || '';
+    if (!reference) continue;
     try {
-      const assetUrl = new URL(match[1], documentUrl);
+      const assetUrl = new URL(reference, documentUrl);
       if (sameOrigin(assetUrl) && DISCOVERABLE_ASSET.test(assetUrl.pathname)) {
         output.add(assetUrl.href);
       }
@@ -178,6 +187,10 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (url.pathname === '/index.json') {
+    // PERF-08: angka 0 berarti tanpa batas entri, bukan jangan menyimpan.
+    // Hanya dipakai untuk satu URL tunggal, jadi batas entri tidak diperlukan.
+    // Berkas ini tidak ikut precache agar pemasangan PWA tidak mengunduhnya
+    // sebelum pengguna memakai pencarian.
     event.respondWith(staleWhileRevalidate(request, SHELL_CACHE, 0, event));
     return;
   }

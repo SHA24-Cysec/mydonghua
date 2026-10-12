@@ -1682,11 +1682,6 @@ html body .aurora-search-container.aurora-search-compact .aurora-search-icon {
   color: rgb(148 163 184 / var(--tw-text-opacity, 1));
 }
 
-.text-slate-600 {
-  --tw-text-opacity: 1;
-  color: rgb(71 85 105 / var(--tw-text-opacity, 1));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -3670,6 +3665,7 @@ body.has-floating-ad .btt-wrapper {
   position: relative;
   z-index: 1;
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.42rem;
   margin-top: 0.62rem;
@@ -3679,12 +3675,18 @@ body.has-floating-ad .btt-wrapper {
   line-height: 1.4;
 }
 
-.db-card-line {
+/* PERF-04: garis pemisah dipindah dari elemen div ke pseudo-elemen.
+       .db-size dibiarkan membungkus baris supaya garis turun ke baris kedua.
+       Jarak tetap sama: row-gap 0.42rem + margin 0.48rem = 0.9rem di atas,
+       dan 0.9rem di bawah seperti margin aslinya. */
+
+.db-size::after {
+  content: "";
   position: relative;
   z-index: 1;
-  width: 100%;
+  flex: 1 0 100%;
   height: 1px;
-  margin: 0.9rem 0;
+  margin: 0.48rem 0 0.9rem;
   background: linear-gradient(90deg, rgba(34, 211, 238, 0), rgba(34, 211, 238, 0.42), rgba(139, 92, 246, 0.35), rgba(34, 211, 238, 0));
 }
 
@@ -5118,6 +5120,115 @@ body .post-bookmark-btn.is-pulsing {
   background: rgba(239, 68, 68, 0.35);
 }
 
+/* SEC-06: panel Pengaturan Cookie. Struktur dan perilaku mengikuti dialog
+   fav-confirm; warna memakai token panel situs supaya konsisten. */
+
+.consent-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 2003;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.consent-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.consent-panel-box {
+  width: 100%;
+  max-width: 24rem;
+  padding: 1.2rem;
+  border-radius: var(--site-radius-lg);
+  border: 1px solid var(--site-line);
+  background: var(--site-gradient-panel);
+  box-shadow: var(--site-shadow-panel);
+  text-align: left;
+}
+
+.consent-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #67e8f9;
+  margin-bottom: 0.5rem;
+}
+
+.consent-panel-text {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.consent-panel-status {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  margin-bottom: 0.9rem;
+}
+
+.consent-panel-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.consent-panel-btn {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--site-transition-fast), border-color var(--site-transition-fast), color var(--site-transition-fast);
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.consent-panel-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.consent-panel-close {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.5rem;
+  border: 0;
+  background: none;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: color var(--site-transition-fast);
+}
+
+.consent-panel-close:hover {
+  color: #e2e8f0;
+}
+
+/* Tombol footer yang tampil seperti tautan, tanpa gaya bawaan peramban. */
+
+.site-footer-link-button {
+  background: none;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
 /* ============================
    RESPONSIVE
    ============================ */
@@ -6426,14 +6537,10 @@ body.genre-sheet-lock {
   display: none;
 }
 
-.taxonomy-item-icon,
-            .taxonomy-item-arrow {
+.taxonomy-item-icon {
   display: inline-grid;
   place-items: center;
   flex: 0 0 auto;
-}
-
-.taxonomy-item-icon {
   width: 2rem;
   height: 2rem;
   border-radius: 0.78rem;
@@ -6466,14 +6573,32 @@ body.genre-sheet-lock {
   line-height: 1;
 }
 
-.taxonomy-item-arrow {
+/* PERF-04: panah ditulis sebagai pseudo-elemen pada tautan chip.
+               Glyph dan keluarga font disalin dari assets/fa-subset.css
+               (.fa-solid dan .fa-arrow-up-right-from-square). Dua deklarasi
+               content dipakai supaya teks alternatif kosong dipakai bila
+               peramban mendukung, dan glyph tetap tampil bila tidak. */
+
+.taxonomy-item::after {
+  content: "\f08e";
+  content: "\f08e" / "";
+  display: inline-grid;
+  place-items: center;
   width: 1.65rem;
   height: 1.65rem;
   border-radius: 0.62rem;
   background: rgba(255,255,255,0.045);
   color: #cbd5e1;
+  font-family: "Font Awesome 6 Free";
   font-size: 0.72rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  line-height: 1;
   opacity: 0.82;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
 }
 
 .taxonomy-empty {
@@ -8509,6 +8634,50 @@ html body .site-floating-ad__close {
   font-size: 0.68rem;
 }
 
+/* RESPONSIF ke-34: elemen iklan melayang di layar sempit.
+   Kartu fallback tampil sendirian: penanda AD dan teks placeholder
+   pengembangan disembunyikan supaya slot tidak dipaksa selebar min-content
+   (dulu 324 px, lebih lebar dari layar 320 px, sehingga tombol tutup ikut
+   terpotong dan isi kartu lewat kotak). */
+
+.site-floating-ad.has-fallback .site-floating-ad__mark,
+.site-floating-ad.has-fallback .site-floating-ad__copy {
+  display: none;
+}
+
+/* Bilah alat dan slot adalah item grid panel; tanpa min-width:0 keduanya
+   menolak menyusut di bawah min-content dan panel melebihi lebar layar. */
+
+.site-floating-ad__panel > * {
+  min-width: 0;
+}
+
+/* Label "Advertisement" boleh dipotong elipsis saat ruang tersisa sempit. */
+
+.site-floating-ad__meta > span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Kartu fallback boleh membungkus ke baris kedua: tombol turun ke bawah
+   teks pada layar sempit supaya tidak menimpa tulisan. */
+
+.site-floating-ad__slot .ad-fallback-card {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+.site-floating-ad__slot .ad-fallback-text {
+  flex: 1 1 7rem;
+  min-width: 7rem;
+}
+
+.site-floating-ad__slot .ad-fallback-cta {
+  margin-inline-start: auto;
+}
+
 @media (max-width: 480px) {
   .site-floating-ad__slot .ad-fallback-text span {
     display: none;
@@ -9029,6 +9198,18 @@ html body .site-bg-character {
 }
 
 @media (max-width: 639px) {
+  /* Semua grid kartu donghua: dua kolom tetap di bawah 640px (pilihan pengguna,
+     12 Oktober 2026). Semula jumlah kolom mengikuti auto-fill, yaitu 1 kolom di
+     bawah 382px, 2 kolom di 382 sampai 547px, dan 3 kolom di 548 sampai 639px.
+     Dua kolom tetap dipilih agar seluruh kartu donghua tampil dengan ukuran yang
+     sama di semua bagian situs, bukan hanya di bagian Terakhir Dilihat. Dengan
+     dua kolom tetap, kartu terakhir pada aturan di bawah selalu selebar satu kolom
+     sehingga ukurannya seragam juga. Aturan di 640px ke atas tidak diubah. */
+
+  .donghua-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .recently-viewed-grid > li:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     width: calc((100% - var(--donghua-grid-gap)) / 2);
@@ -11415,6 +11596,9 @@ html body .site-empty-state[hidden] {
 /* Honeypot Formspree: tak terlihat pengunjung, tetap terbaca
    bot pengisi form otomatis supaya laporan sampah tersaring. */
 
+/* SEC-09: dipakai form kontak dan form laporan. */
+
+.form-honeypot,
 .laporkan-honeypot {
   position: absolute;
   width: 1px;
@@ -11549,6 +11733,167 @@ html body .site-empty-state[hidden] {
   .laporkan-form .cyber-input-search.is-prefilled,
   .laporkan-form .cyber-textarea-message.is-prefilled {
     animation: none;
+  }
+}
+
+/* R-01 (audit responsif 12 Oktober 2026, disempitkan 12 Oktober 2026 malam):
+   tabel di dalam isi halaman statis dibuat dapat digulir mendatar di layar
+   sempit. Sebelum perbaikan, tabel di halaman kebijakan privasi berukuran 315px
+   terpotong 20px pada viewport 320px dan 60px pada 280px, dan karena html serta
+   body memakai overflow-x: clip, bagian yang terpotong tidak bisa dijangkau
+   sama sekali. display: block diperlukan karena overflow-x tidak berlaku pada
+   display: table bawaan.
+
+   Usul menurunkan batas dari 640px ke 400px diuji berpasangan dan DITOLAK
+   dengan bukti: halaman kebijakan privasi ternyata memuat tiga tabel, bukan
+   satu. Tabel pertama 364px (muat di semua lebar uji), tetapi tabel kedua
+   459px dan tabel ketiga 509px. Pada 401px sampai 640px tabel kedua terpotong
+   di bawah 509px dan tabel ketiga di bawah 559px, dan karena html serta body
+   memakai overflow-x: clip, potongannya tidak dapat dijangkau. Batas 640px
+   karena itu dipertahankan supaya ketiga tabel tetap dapat digeser.
+
+   Sisa gulir 5px pada 360px bukan akibat batas itu, melainkan karena isi tabel
+   pertama (315px) sedikit lebih lebar dari wadahnya (310px). Aturan kedua di
+   bawah mengecilkan huruf tabel di 400px ke bawah: pada 360px isi turun ke
+   310px sehingga pas tanpa sisa gulir, pada 320px sisa gulir turun dari 45px
+   ke 27px, dan tinggi tabel justru berkurang. */
+
+@media (max-width: 640px) {
+  .prose-neon table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+}
+
+@media (max-width: 400px) {
+  .prose-neon table {
+    font-size: 0.94em;
+  }
+}
+
+/* Garis tabel halaman statis (12 Oktober 2026, pilihan pengguna: varian B).
+   Sebelumnya tabel di dalam isi halaman statis sama sekali tidak bergaris: reset
+   bawaan Tailwind memasang border-width 0 pada semua unsur, dan tidak ada satu
+   pun aturan di berkas ini yang memilih th atau td sehingga tidak pernah ada
+   yang memasang garis. Audit R-01 hanya memindahkan tabel keluar layar ke wadah
+   bergulir, jadi tampilan tanpa garis itu bukan akibat audit.
+
+   Lima varian diukur pada tabel ketiga halaman kebijakan privasi di viewport
+   1000px sebelum dipilih: tanpa garis 419px, garis tanpa ubah padding 426px,
+   garis ringan dengan padding 0.42rem 546px, garis dengan padding 0.5rem 568px,
+   dan kotak penuh per sel dengan kepala bertanda 598px. Varian terakhir yang
+   dipilih pengguna, jadi tabel bertambah tinggi sekitar 43 persen di halaman
+   itu. Gulir mendatar dokumen tetap 0px pada 280px sampai 1440px karena tabel
+   lebih lebar dari layar tetap berada di wadah bergulir R-01. */
+
+.prose-neon table th,
+.prose-neon table td {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  padding: 0.5rem 0.7rem;
+}
+
+.prose-neon table thead th {
+  border-color: rgba(34, 211, 238, 0.38);
+  background: rgba(34, 211, 238, 0.06);
+}
+
+/* R-02 (audit responsif 12 Oktober 2026): kolom isian memakai huruf 16px pada
+   peranti sentuh. Ukuran sebelumnya 0.82rem sampai 0.88rem (13,1px sampai 14,1px),
+   dan Safari iOS memperbesar tampilan saat kolom di bawah 16px difokuskan.
+   Syarat pointer: coarse dipakai supaya tampilan desktop tidak ikut berubah. */
+
+@media (pointer: coarse) {
+  html body .aurora-search-input,
+  html body .aurora-search-container.aurora-search-compact .aurora-search-input,
+  html body .notfound-dock-search-input,
+  html body .search-control-select {
+    font-size: 16px;
+  }
+}
+
+/* R-03 (audit responsif 12 Oktober 2026): lantai ukuran huruf mikro 12px. Audit
+   mencatat 228 unsur berteks di bawah 12px pada tujuh halaman uji, mulai 9,92px
+   (label kartu dan label iklan) sampai 11,84px (saran pencarian, penanda
+   taksonomi, kicker). Semua selektor di bawah ini dipakai apa adanya dan
+   diletakkan di ujung berkas supaya menang urutan sumber atas aturan asal yang
+   berkekhususan sama. Tiga kelas sekeluarga ikut disertakan walau tidak muncul di daftar
+   terukur: .donghua-card-search-meta pada hasil pencarian,
+   .search-filter-active-count pada penanda saringan aktif, dan
+   .home-section-divider-label yang baru ketahuan saat uji ulang karena
+   hanya tampil pada 768px ke atas. Kelas .kicker hanya dipakai halaman
+   luring, dan halaman itu tidak memuat berkas ini sama sekali, jadi perbaikannya
+   ada di static/offline/index.html. Ukuran 0.75rem dipilih tepat di ambang, bukan di atasnya, supaya
+   perubahan tampilan sekecil mungkin. */
+
+.donghua-card-badge,
+.donghua-card-chip,
+.donghua-card-rating,
+.donghua-card-search-meta,
+.ad-neon-head,
+.home-section-divider-label,
+.notfound-dock-kicker,
+.genre-sheet-kicker,
+.genre-filter-kicker,
+.taxonomy-tabs-kicker,
+.taxonomy-tabs-counter,
+.genre-sheet-trigger strong,
+.taxonomy-item-text small,
+.search-filter-active-count,
+.search-discovery-chip,
+.search-discovery-chip span,
+.search-discovery-head small,
+.search-sort-field > span,
+/* Tambahan 12 Oktober 2026 dari verifikasi ulang: iklan melayang baru tampil
+   sekitar 1,7 detik sesudah muat dan dialog Donghua Acak baru mengisi ukuran
+   setelah dibuka, sehingga ketiganya lolos dari pengukuran pertama.
+   .site-random-kicker sudah 0.75rem di layar sempit (baris 5926) tetapi belum
+   di layar lebar. */
+.site-floating-ad__meta,
+.site-floating-ad__demo,
+.site-random-type,
+.site-random-kicker,
+/* Kartu fallback iklan (tampil hanya saat script iklan gagal atau pemblokir
+   iklan aktif). Diukur dengan meniru showFallback() milik site-floating-ad.js:
+   ukuran huruf 0.66rem dan 0.68rem jadi 0.75rem, kartu tidak meluber pada
+   320px sampai 1440px, dan tinggi panel tidak bertambah. Dua selektor berawalan
+   .site-floating-ad__slot diperlukan karena aturan asalnya berkekhususan lebih
+   tinggi. */
+.ad-fallback-text span,
+.ad-fallback-cta,
+.site-floating-ad__slot .ad-fallback-text span,
+.site-floating-ad__slot .ad-fallback-cta {
+  font-size: 0.75rem;
+}
+
+/* R-04 (audit responsif 12 Oktober 2026): bilah navigasi dipadatkan pada layar
+   mendatar pendek. Pada 640x360 bilah setinggi 65px memakan 18,1 persen tinggi
+   layar. Dengan pengaturan di bawah, tinggi turun ke 56px atau 15,6 persen.
+   Sasaran sentuh tombol menu tetap 40px, di atas ambang 24px WCAG 2.5.8.
+   Jarak bilah ke konten justru sesuai niat rancangan: penyangga html body 72px
+   dikurangi bilah 56px menyisakan 16px. Layar tinggi seperti ponsel tegak dan
+   desktop tidak tersentuh karena syaratnya tinggi maksimal 430px. */
+
+@media (max-height: 430px) {
+  .site-navbar-inner {
+    padding: 0.34rem 1rem;
+  }
+
+  .site-navbar-brand {
+    min-height: 36px;
+  }
+
+  .site-navbar-logo {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .site-navbar-toggle,
+  .site-nav-close {
+    width: 40px;
+    height: 40px;
   }
 }
 

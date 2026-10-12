@@ -40,6 +40,10 @@
           <a class="site-footer-link" href='{{ relURL "about/" }}'>About Web</a>
           <a class="site-footer-link" href='{{ relURL "privacy-policy/" }}'>Privacy Policy</a>
           <a class="site-footer-link" href='{{ relURL "terms-of-conditions/" }}'>Terms of Conditions</a>
+          {{ if hugo.IsProduction }}
+          {{/* Tautan persisten untuk membuka panel Pengaturan Cookie (SEC-06). */}}
+          <button class="site-footer-link site-footer-link-button" id="consent-buka" type="button">Pengaturan Cookie</button>
+          {{ end }}
         </div>
       </section>
     </div>

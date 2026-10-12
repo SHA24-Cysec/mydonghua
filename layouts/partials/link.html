@@ -1,5 +1,12 @@
-{{ with resources.Get "main.css" }}
-    {{ $minified := . | minify | fingerprint "sha256" }}
+{{/* PERF-01: CSS ikon digabung ke CSS utama supaya cukup satu permintaan.
+     Urutan dipertahankan (main dulu, fa-subset sesudahnya) agar cascade tidak berubah.
+     Kedua berkas memakai jalur font absolut /fonts/..., jadi perpindahan lokasi aman. */}}
+{{ $main := resources.Get "main.css" }}
+{{ $fa := resources.Get "fa-subset.css" }}
+{{ with $main }}
+    {{ $gabung := $main }}
+    {{ with $fa }}{{ $gabung = slice $main $fa | resources.Concat "css/site-gabungan.css" }}{{ end }}
+    {{ $minified := $gabung | minify | fingerprint "sha256" }}
     {{/* Blocking stylesheet: pola media=print+onload sering gagal apply di production
          (minify HTML, adblock, atau JS disabled partial) dan membuat site unstyled. */}}
     <link rel="stylesheet" href="{{ $minified.RelPermalink }}" integrity="{{ $minified.Data.Integrity }}">
@@ -17,10 +24,7 @@
 <link rel="dns-prefetch" href="https://mydonghua.disqus.com">
 {{/*  Font Awesome 6.7.2 subset lokal. Kit 40c8dc61cd merusak ikon;
       subset ini memakai class yang sama dengan CDN free, tanpa all.min.css. */}}
-{{ with resources.Get "fa-subset.css" }}
-    {{ $fa := . | minify | fingerprint "sha256" }}
-    <link rel="stylesheet" href="{{ $fa.RelPermalink }}" integrity="{{ $fa.Data.Integrity }}">
-{{ end }}
+
 {{/* Homepage LCP: preload hanya gambar hero utama. */}}
 {{ if .IsHome }}
   <link rel="preload" as="image" type="image/webp" fetchpriority="high" href='{{ "img/Huo-Linger.webp" | relURL }}'>

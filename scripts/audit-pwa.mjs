@@ -1,8 +1,10 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { Script } from 'node:vm';
 
 const errors = [];
+const warnings = [];
 const root = process.cwd();
 
 function read(path) {
@@ -103,8 +105,11 @@ try {
 
 if (manifest) {
   const requiredValues = {
+    id: '/',
     name: 'DonghuaBatch',
     short_name: 'DonghuaBatch',
+    lang: 'id-ID',
+    dir: 'ltr',
     start_url: '/',
     scope: '/',
     display: 'standalone',
@@ -117,7 +122,7 @@ if (manifest) {
   }
 
   const icons = Array.isArray(manifest.icons) ? manifest.icons : [];
-  for (const requiredIcon of ['/icons/icon-192.webp', '/icons/icon-512.webp']) {
+  for (const requiredIcon of ['/icons/icon-192.webp', '/icons/icon-512.webp', '/icons/icon-512-maskable.webp']) {
     const icon = icons.find((item) => item.src === requiredIcon);
     if (!icon) {
       errors.push(`Manifest belum memuat ikon ${requiredIcon}.`);
@@ -126,13 +131,28 @@ if (manifest) {
     }
   }
 
-  if (icons.some((icon) => String(icon.src).endsWith('.png'))) {
-    errors.push('Ikon manifest masih memuat format PNG.');
+  // PERF-10: aturan lama melarang semua ikon PNG. Yang benar-benar dibutuhkan
+  // peramban adalah keterangan purpose yang sah, ditambah satu ikon maskable
+  // supaya Android tidak memangkas ikon biasa sampai terlihat kecil di tengah.
+  const purposeSah = ['any', 'maskable', 'monochrome'];
+  for (const icon of icons) {
+    const purpose = String(icon.purpose || '').trim();
+    if (!purpose) {
+      errors.push(`Manifest ${icon.src}: purpose belum dicantumkan.`);
+      continue;
+    }
+    for (const bagian of purpose.split(/\s+/)) {
+      if (!purposeSah.includes(bagian)) errors.push(`Manifest ${icon.src}: purpose tidak dikenal (${bagian}).`);
+    }
+  }
+  if (!icons.some((icon) => String(icon.purpose || '').split(/\s+/).includes('maskable'))) {
+    errors.push('Manifest belum memuat ikon dengan purpose maskable.');
   }
 }
 
 checkWebp('static/icons/icon-192.webp', 192, 192);
 checkWebp('static/icons/icon-512.webp', 512, 512);
+checkWebp('static/icons/icon-512-maskable.webp', 512, 512);
 checkPng('static/icons/apple-touch-icon.png', 180, 180);
 
 const serviceWorker = read('static/sw.js');
@@ -140,6 +160,67 @@ const clientScript = read('assets/js/site-pwa.js');
 const linkPartial = read('layouts/partials/link.html');
 const globalScripts = read('layouts/partials/global-scripts.html');
 const navbar = read('layouts/partials/navbar.html');
+
+// PERF-10: daftar precache diuji terhadap hasil build, bukan hanya dicocokkan
+// sebagai string. Sebelum ini hanya empat jalur yang diperiksa, padahal
+// APP_SHELL memuat 14 entri dan CATALOG_DOCUMENTS memuat tiga dokumen.
+function daftarArray(sumber, nama) {
+  const cocok = sumber.match(new RegExp(`${nama}\\s*=\\s*\\[([\\s\\S]*?)\\]`));
+  if (!cocok) {
+    errors.push(`Service worker: daftar ${nama} tidak ditemukan.`);
+    return [];
+  }
+  return [...cocok[1].matchAll(/'([^']+)'/g)].map((m) => m[1]);
+}
+
+const catalogDocuments = daftarArray(serviceWorker, 'CATALOG_DOCUMENTS');
+const appShell = daftarArray(serviceWorker, 'APP_SHELL');
+const jalurPrecache = [...new Set([...catalogDocuments, ...appShell])];
+if (jalurPrecache.length < 10) {
+  errors.push(`Service worker: daftar precache hanya ${jalurPrecache.length} entri, terlalu sedikit.`);
+}
+
+if (existsSync(resolve(root, 'public/index.html'))) {
+  let totalBita = 0;
+  for (const jalur of jalurPrecache) {
+    const relative = jalur.endsWith('/') ? `${jalur.slice(1)}index.html` : jalur.replace(/^\//, '');
+    const absolutePath = resolve(root, 'public', relative);
+    if (!existsSync(absolutePath)) {
+      errors.push(`Precache menunjuk berkas yang tidak ada di hasil build: ${jalur}`);
+      continue;
+    }
+    totalBita += statSync(absolutePath).size;
+  }
+  console.log(`Precache: ${jalurPrecache.length} entri, ${totalBita} byte mentah.`);
+}
+
+// PERF-10: versi cache harus lebih baru daripada perubahan terakhir pada sumber
+// yang ikut dipanaskan. Bila metadata git tidak tersedia, pemeriksaan dilewati
+// dengan catatan, bukan dianggap lulus.
+const versiCache = (serviceWorker.match(/CACHE_VERSION\s*=\s*'([^']+)'/) || [])[1];
+if (!versiCache) {
+  errors.push('Service worker: CACHE_VERSION tidak ditemukan.');
+} else {
+  const tanggalCache = versiCache.slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(tanggalCache)) {
+    errors.push(`Service worker: CACHE_VERSION tidak memuat tanggal (${versiCache}).`);
+  } else {
+    const hasilGit = spawnSync('git', ['log', '-1', '--format=%cs', '--', 'content', 'layouts', 'static', 'assets'], { cwd: root, encoding: 'utf8' });
+    const tanggalCommit = (hasilGit.stdout || '').trim();
+    if (hasilGit.status !== 0 || !tanggalCommit) {
+      warnings.push('Pemeriksaan CACHE_VERSION dilewati: metadata git tidak tersedia.');
+    } else if (tanggalCommit > tanggalCache) {
+      warnings.push(`CACHE_VERSION ${versiCache} lebih tua daripada perubahan terakhir ${tanggalCommit}; naikkan versi cache.`);
+    }
+  }
+}
+
+// PERF-10: theme_color manifest harus sama dengan warna latar situs.
+const inputCss = read('assets/input.css');
+const warnaSitus = (inputCss.match(/--site-bg:\s*([^;]+);/) || [])[1];
+if (warnaSitus && manifest && String(manifest.theme_color).toLowerCase() !== warnaSitus.trim().toLowerCase()) {
+  errors.push(`theme_color manifest (${manifest.theme_color}) tidak sama dengan --site-bg (${warnaSitus.trim()}).`);
+}
 
 for (const [label, source] of [['service worker', serviceWorker], ['client PWA', clientScript]]) {
   try {
@@ -167,10 +248,12 @@ if (existsSync(builtHome)) {
   for (const marker of ['manifest.webmanifest', 'apple-touch-icon.png', 'site-pwa.min.']) {
     if (!home.includes(marker)) errors.push(`Output beranda belum memuat ${marker}.`);
   }
-  for (const path of ['public/sw.js', 'public/manifest.webmanifest', 'public/offline/index.html', 'public/icons/icon-192.webp', 'public/icons/icon-512.webp']) {
+  for (const path of ['public/sw.js', 'public/manifest.webmanifest', 'public/offline/index.html', 'public/icons/icon-192.webp', 'public/icons/icon-512.webp', 'public/icons/icon-512-maskable.webp']) {
     if (!existsSync(resolve(root, path))) errors.push(`Output build tidak ditemukan: ${path}`);
   }
 }
+
+for (const warning of warnings) console.warn(`Peringatan audit PWA: ${warning}`);
 
 if (errors.length) {
   console.error(`Audit PWA gagal (${errors.length} masalah):`);
