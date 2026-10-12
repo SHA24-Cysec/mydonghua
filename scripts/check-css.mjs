@@ -1,11 +1,16 @@
 import { spawnSync } from 'node:child_process';
-import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 
 const temporaryDirectory = mkdtempSync(join(tmpdir(), 'mydonghua-css-'));
 const temporaryOutput = join(temporaryDirectory, 'main.css');
-const tailwindCli = resolve('node_modules/tailwindcss/lib/cli.js');
+// Tailwind v4 memindahkan CLI ke paket @tailwindcss/cli. Path lama
+// (tailwindcss/lib/cli.js) hanya berlaku untuk v3, jadi keduanya dicek
+// supaya skrip ini tidak lagi gagal MODULE_NOT_FOUND di instalasi v4.
+const cliV4 = resolve('node_modules/@tailwindcss/cli/dist/index.mjs');
+const cliV3 = resolve('node_modules/tailwindcss/lib/cli.js');
+const tailwindCli = existsSync(cliV4) ? cliV4 : cliV3;
 
 try {
   const result = spawnSync(

@@ -1,20 +1,16 @@
+{{ if hugo.IsProduction }}
 <div class="ad-neon-shell ad-300x250" role="region" aria-label="Sponsor 300x250" data-ad-widget data-ad-type="300x250">
     <div class="ad-neon-head">Sponsor</div>
     <div class="ad-neon-body ad-size-300">
-        {{ if hugo.IsProduction }}
-            <div
-                class="ad-neon-scroll"
-                data-ad-unit
-                data-ad-key="f7995a6dce010095a1c087975e306a0a"
-                data-ad-format="iframe"
-                data-ad-height="250"
-                data-ad-width="300"
-                data-ad-invoke="https://bendspecimen.com/f7995a6dce010095a1c087975e306a0a/invoke.js"
-            ></div>
-        {{ else }}
-            <div class="ad-neon-placeholder">
-                <span><strong>Advertisement</strong>300 × 250</span>
-            </div>
-        {{ end }}
+        <div
+            class="ad-neon-scroll"
+            data-ad-unit
+            data-ad-key="f7995a6dce010095a1c087975e306a0a"
+            data-ad-format="iframe"
+            data-ad-height="250"
+            data-ad-width="300"
+            data-ad-invoke="https://bendspecimen.com/f7995a6dce010095a1c087975e306a0a/invoke.js"
+        ></div>
     </div>
 </div>
+{{ end }}

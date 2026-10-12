@@ -1,19 +1,14 @@
+{{ if hugo.IsProduction }}
 <div class="ad-neon-shell ad-native mt-4" role="region" aria-label="Native Advertisement" data-ad-widget data-ad-type="native">
     <div class="ad-neon-head">Advertisement</div>
     <div class="ad-neon-body ad-size-native">
-        {{ if hugo.IsProduction }}
-            <div
-                class="ad-neon-scroll"
-                data-ad-unit
-                data-ad-invoke="https://bendspecimen.com/4aab23755134ef6ae6e4d517e0c554dc/invoke.js"
-            >
-                <div id="container-4aab23755134ef6ae6e4d517e0c554dc" data-ad-ignore></div>
-            </div>
-
-        {{ else }}
-            <div class="ad-neon-placeholder">
-                <span><strong>Native Advertisement</strong>Preview wrapper aktif, script iklan hanya production.</span>
-            </div>
-        {{ end }}
+        <div
+            class="ad-neon-scroll"
+            data-ad-unit
+            data-ad-invoke="https://bendspecimen.com/4aab23755134ef6ae6e4d517e0c554dc/invoke.js"
+        >
+            <div id="container-4aab23755134ef6ae6e4d517e0c554dc" data-ad-ignore></div>
+        </div>
     </div>
 </div>
+{{ end }}

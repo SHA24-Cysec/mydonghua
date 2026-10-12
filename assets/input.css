@@ -5091,18 +5091,12 @@ body .post-bookmark-btn.is-pulsing {
         transform-origin: top center;
     }
 
-    .ad-banner-placeholder-desktop { display: none; }
-    .ad-banner-placeholder-mobile { display: grid; }
-
     @media (min-width: 768px) {
         .ad-neon-body.ad-size-banner {
             --ad-min-height: 90px;
             --ad-creative-width: 728px;
             --ad-creative-height: 90px;
         }
-
-        .ad-banner-placeholder-desktop { display: grid; }
-        .ad-banner-placeholder-mobile { display: none; }
     }
 
     .ad-neon-body.ad-size-native {
@@ -5291,26 +5285,6 @@ body .post-bookmark-btn.is-pulsing {
     .ad-neon-body.ad-size-native img {
         max-width: 100%;
         height: auto;
-    }
-
-    .ad-neon-placeholder {
-        display: grid;
-        place-items: center;
-        width: 100%;
-        min-height: inherit;
-        padding: 1rem;
-        color: #7dd3fc;
-        text-align: center;
-        font-size: 0.78rem;
-        font-weight: 850;
-        line-height: 1.5;
-    }
-
-    .ad-neon-placeholder strong {
-        display: block;
-        color: #cffafe;
-        font-size: 0.92rem;
-        margin-bottom: 0.22rem;
     }
 
     @media (max-width: 767px) {
@@ -6577,7 +6551,7 @@ html body :is(
 }
 
 /* ==========================================================
-   FLOATING BOTTOM AD — PRODUCTION UNIT + DEVELOPMENT PLACEHOLDER
+   FLOATING BOTTOM AD — PRODUCTION UNIT
    Global, mobile-first, close state persisted per browser tab.
    ========================================================== */
 .site-floating-ad,
@@ -6660,40 +6634,14 @@ html body .site-floating-ad[hidden] {
   pointer-events: none;
 }
 
-/* Header menyatu: label iklan + tombol close di dalam panel. */
+/* Header menyatu: tombol close di dalam panel. */
 .site-floating-ad__toolbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.55rem;
   min-height: 2rem;
   padding: 0.05rem 0.1rem 0.05rem 0.28rem;
-}
-
-.site-floating-ad__meta {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-  gap: 0.42rem;
-  min-width: 0;
-  min-height: 1.45rem;
-  color: #91a4bd;
-  font-size: 0.57rem;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.site-floating-ad__demo {
-  flex: 0 0 auto;
-  padding: 0.2rem 0.34rem;
-  border: 1px solid rgba(139, 92, 246, 0.24);
-  border-radius: 999px;
-  background: rgba(139, 92, 246, 0.09);
-  color: #c4b5fd;
-  font-size: 0.48rem;
-  letter-spacing: 0.09em;
 }
 
 html body .site-floating-ad__close {
@@ -6803,28 +6751,10 @@ html body .site-floating-ad__close {
   font-size: 0.68rem;
 }
 
-/* RESPONSIF ke-34: elemen iklan melayang di layar sempit.
-   Kartu fallback tampil sendirian: penanda AD dan teks placeholder
-   pengembangan disembunyikan supaya slot tidak dipaksa selebar min-content
-   (dulu 324 px, lebih lebar dari layar 320 px, sehingga tombol tutup ikut
-   terpotong dan isi kartu lewat kotak). */
-.site-floating-ad.has-fallback .site-floating-ad__mark,
-.site-floating-ad.has-fallback .site-floating-ad__copy {
-  display: none;
-}
-
 /* Bilah alat dan slot adalah item grid panel; tanpa min-width:0 keduanya
    menolak menyusut di bawah min-content dan panel melebihi lebar layar. */
 .site-floating-ad__panel > * {
   min-width: 0;
-}
-
-/* Label "Advertisement" boleh dipotong elipsis saat ruang tersisa sempit. */
-.site-floating-ad__meta > span:first-child {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* Kartu fallback boleh membungkus ke baris kedua: tombol turun ke bawah
@@ -6905,59 +6835,6 @@ html body .site-floating-ad__unit > ins {
   pointer-events: none;
 }
 
-.site-floating-ad[data-ad-status="failed"] .site-floating-ad__demo {
-  border-color: rgba(148, 163, 184, 0.28);
-  background: rgba(148, 163, 184, 0.1);
-  color: #cbd5e1;
-}
-
-.site-floating-ad__mark {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid rgba(34, 211, 238, 0.3);
-  border-radius: 0.58rem;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(139, 92, 246, 0.15));
-  color: #67e8f9;
-  font-size: 0.62rem;
-  font-weight: 950;
-  letter-spacing: 0.08em;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-.site-floating-ad__copy {
-  display: grid;
-  gap: 0.16rem;
-  min-width: 0;
-}
-
-.site-floating-ad__copy strong {
-  overflow: hidden;
-  color: #eef8ff;
-  font-size: 0.72rem;
-  font-weight: 900;
-  line-height: 1.15;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.site-floating-ad__copy small {
-  overflow: hidden;
-  color: #91a4bd;
-  font-size: 0.6rem;
-  font-weight: 650;
-  line-height: 1.2;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.site-floating-ad__size-desktop {
-  display: none;
-}
-
 @media (hover: hover) {
   .site-floating-ad__close:hover {
     border-color: rgba(34, 211, 238, 0.5);
@@ -6983,11 +6860,6 @@ html body .site-floating-ad__unit > ins {
     min-height: 2.15rem;
   }
 
-  .site-floating-ad__meta {
-    min-height: 1.5rem;
-    font-size: 0.62rem;
-  }
-
   .site-floating-ad__close {
     width: 2.15rem;
     height: 2.15rem;
@@ -7001,27 +6873,6 @@ html body .site-floating-ad__unit > ins {
     border-radius: 0.82rem;
   }
 
-  .site-floating-ad__mark {
-    width: 2.55rem;
-    height: 2.55rem;
-    font-size: 0.72rem;
-  }
-
-  .site-floating-ad__copy strong {
-    font-size: 0.84rem;
-  }
-
-  .site-floating-ad__copy small {
-    font-size: 0.67rem;
-  }
-
-  .site-floating-ad__size-mobile {
-    display: none;
-  }
-
-  .site-floating-ad__size-desktop {
-    display: inline;
-  }
 }
 
 @media (min-width: 768px) {
@@ -9927,13 +9778,10 @@ html body .site-empty-state[hidden] {
 .search-discovery-chip span,
 .search-discovery-head small,
 .search-sort-field > span,
-/* Tambahan 12 Oktober 2026 dari verifikasi ulang: iklan melayang baru tampil
-   sekitar 1,7 detik sesudah muat dan dialog Donghua Acak baru mengisi ukuran
-   setelah dibuka, sehingga ketiganya lolos dari pengukuran pertama.
+/* Tambahan 12 Oktober 2026 dari verifikasi ulang: dialog Donghua Acak baru
+   mengisi ukuran setelah dibuka, sehingga lolos dari pengukuran pertama.
    .site-random-kicker sudah 0.75rem di layar sempit (baris 5926) tetapi belum
    di layar lebar. */
-.site-floating-ad__meta,
-.site-floating-ad__demo,
 .site-random-type,
 .site-random-kicker,
 /* Kartu fallback iklan (tampil hanya saat script iklan gagal atau pemblokir

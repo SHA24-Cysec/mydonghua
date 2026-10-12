@@ -12,13 +12,6 @@
 >
   <div class="site-floating-ad__panel">
     <div class="site-floating-ad__toolbar">
-      <div class="site-floating-ad__meta">
-        <span>Advertisement</span>
-        <span class="site-floating-ad__demo" data-floating-ad-status>
-          {{ if hugo.IsProduction }}Live{{ else }}Placeholder{{ end }}
-        </span>
-      </div>
-
       <button
         class="site-floating-ad__close"
         type="button"
@@ -33,17 +26,7 @@
       </button>
     </div>
 
-    <div
-      class="site-floating-ad__slot"
-      {{ if hugo.IsProduction }}
-        {{/* A11Y-01: tanpa role dan tanpa aria-label. Pembungkus luar
-             section.site-floating-ad sudah menjadi region berlabel "Iklan",
-             jadi label di sini hanya duplikat dan dulu tidak pernah dibacakan. */}}
-      {{ else }}
-        role="img"
-        aria-label="Placeholder iklan responsif"
-      {{ end }}
-    >
+    <div class="site-floating-ad__slot">
       {{ if hugo.IsProduction }}
         <!-- Desktop Unit (728x90) -->
         <div
@@ -70,14 +53,6 @@
           data-ad-invoke="https://bendspecimen.com/b4c00e77c26996f5f359cd13c19b7a85/invoke.js"
           hidden
         ></div>
-
-
-      {{ else }}
-        <span class="site-floating-ad__mark" aria-hidden="true">AD</span>
-        <span class="site-floating-ad__copy">
-          <strong>Responsive Advertisement</strong>
-          <small><span class="site-floating-ad__size-mobile">320 × 50</span><span class="site-floating-ad__size-desktop">728 × 90</span> · Development placeholder</small>
-        </span>
       {{ end }}
       {{ partial "widget/ad-fallback" . }}
     </div>

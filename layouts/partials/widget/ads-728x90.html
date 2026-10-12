@@ -4,6 +4,7 @@
   - Desktop (>=768px): 728x90
   Hanya SATU unit yang di-load (dipilih JS) agar tidak double request / race atOptions.
 */}}
+{{ if hugo.IsProduction }}
 <div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4" data-ad-banner-wrapper>
     <div
         class="ad-neon-shell ad-728x90 ad-banner-responsive"
@@ -15,36 +16,27 @@
     >
         <div class="ad-neon-head">Advertisement</div>
         <div class="ad-neon-body ad-size-banner" data-ad-banner-body>
-            {{ if hugo.IsProduction }}
-                <div
-                    class="ad-neon-scroll ad-banner-unit is-desktop-unit"
-                    data-ad-unit
-                    data-ad-variant="desktop"
-                    data-ad-key="ef733504b5b389474cecd0340f4fdae0"
-                    data-ad-format="iframe"
-                    data-ad-height="90"
-                    data-ad-width="728"
-                    data-ad-invoke="https://bendspecimen.com/ef733504b5b389474cecd0340f4fdae0/invoke.js"
-                ></div>
-                <div
-                    class="ad-neon-scroll ad-banner-unit is-mobile-unit"
-                    data-ad-unit
-                    data-ad-variant="mobile"
-                    data-ad-key="b4c00e77c26996f5f359cd13c19b7a85"
-                    data-ad-format="iframe"
-                    data-ad-height="50"
-                    data-ad-width="320"
-                    data-ad-invoke="https://bendspecimen.com/b4c00e77c26996f5f359cd13c19b7a85/invoke.js"
-                ></div>
-
-            {{ else }}
-                <div class="ad-neon-placeholder ad-banner-placeholder-desktop">
-                    <span><strong>Advertisement</strong>728 × 90 · Desktop</span>
-                </div>
-                <div class="ad-neon-placeholder ad-banner-placeholder-mobile">
-                    <span><strong>Advertisement</strong>320 × 50 · Mobile</span>
-                </div>
-            {{ end }}
+            <div
+                class="ad-neon-scroll ad-banner-unit is-desktop-unit"
+                data-ad-unit
+                data-ad-variant="desktop"
+                data-ad-key="ef733504b5b389474cecd0340f4fdae0"
+                data-ad-format="iframe"
+                data-ad-height="90"
+                data-ad-width="728"
+                data-ad-invoke="https://bendspecimen.com/ef733504b5b389474cecd0340f4fdae0/invoke.js"
+            ></div>
+            <div
+                class="ad-neon-scroll ad-banner-unit is-mobile-unit"
+                data-ad-unit
+                data-ad-variant="mobile"
+                data-ad-key="b4c00e77c26996f5f359cd13c19b7a85"
+                data-ad-format="iframe"
+                data-ad-height="50"
+                data-ad-width="320"
+                data-ad-invoke="https://bendspecimen.com/b4c00e77c26996f5f359cd13c19b7a85/invoke.js"
+            ></div>
         </div>
     </div>
 </div>
+{{ end }}
