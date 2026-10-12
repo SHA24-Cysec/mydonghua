@@ -7,7 +7,7 @@ layout : halaman
 url : privacy-policy
 ---
 
-Berlaku sejak 23 Juli 2026. Terakhir diperbarui 12 Oktober 2026.
+Berlaku sejak 23 Juli 2026. Terakhir diperbarui 13 Oktober 2026.
 
 Halaman ini menjelaskan data apa yang kami kumpulkan, siapa yang menerimanya, dan hak apa yang kamu punya. Kami berusaha menuliskannya secara konkret: setiap penyedia pihak ketiga disebut namanya, bukan disamarkan sebagai "pihak ketiga".
 
@@ -15,10 +15,10 @@ Halaman ini menjelaskan data apa yang kami kumpulkan, siapa yang menerimanya, da
 
 - Kami tidak menjual data pribadimu.
 - Formulir di situs ini dikirim lewat Formspree.
-- Statistik kunjungan memakai Google Analytics 4. Tag itu baru memuat cookie setelah kamu menyetujui lewat panel "Pengaturan Cookie" di footer.
+- Statistik kunjungan memakai Google Analytics 4 (GA4) pada halaman produksi. Tag GA4 dapat memakai cookie analitik pihak pertama untuk membedakan pengguna dan sesi. Saat ini situs tidak menampilkan panel persetujuan khusus untuk tag GA4.
 - Kolom email di formulir memicu pemeriksaan domain ke penyedia DNS publik. Yang dikirim hanya bagian domainnya, bukan alamat lengkapmu.
-- Situs ini tidak memasang cookie sendiri. Preferensi seperti favorit dan riwayat tontonan disimpan di penyimpanan lokal perambanmu.
-- Skrip iklan Adsterra dan skrip penulisan tautan Safelinku dimuat oleh layanan pihak ketiga dan tidak menunggu pilihan di panel cookie. Kami menyebutkannya supaya halaman ini jujur soal apa yang benar-benar terjadi.
+- Preferensi seperti favorit dan riwayat tontonan disimpan di penyimpanan lokal perambanmu. Tag Google Analytics dan jaringan iklan dapat memakai cookie atau pengenal mereka sendiri sesuai konfigurasi layanan tersebut.
+- Skrip iklan Adsterra dan skrip penulisan tautan Safelinku berasal dari layanan pihak ketiga. Pengaturan GA4 tidak mengendalikan skrip atau pengenal yang dipakai layanan tersebut.
 
 ## 2. Siapa pengendali data
 
@@ -31,7 +31,7 @@ Pengendali data untuk situs ini adalah pengelola DonghuaBatch. Saluran resmi unt
 | Alamat email dan isi pesan | Kamu, lewat formulir di halaman Kontak | Menjawab pesanmu |
 | Judul donghua, alamat halaman, bagian tautan, jenis masalah, keterangan, dan email (opsional) | Kamu, lewat formulir di halaman Laporkan Link Mati | Memperbaiki tautan unduhan yang rusak |
 | Nama domain email saja | Pemeriksaan otomatis saat kolom email kehilangan fokus | Memastikan domain email aktif dan menyarankan koreksi salah tulis |
-| Halaman yang dibuka, jenis peramban dan perangkat, perkiraan lokasi, waktu akses | Google Analytics 4, setelah kamu menyetujui | Statistik kunjungan dan perbaikan situs |
+| Halaman yang dibuka, jenis peramban dan perangkat, perkiraan lokasi, waktu akses | Google Analytics 4 pada halaman produksi | Statistik kunjungan dan perbaikan situs |
 | Pengenal perangkat dan interaksi dengan iklan | Jaringan iklan Adsterra | Menampilkan dan mengukur iklan |
 | Nama, isi komentar, dan waktu kirim | Disqus, hanya kalau kamu menekan tombol untuk membuka kolom komentar | Menampilkan diskusi di halaman donghua |
 
@@ -52,7 +52,7 @@ Kami memakai pemeriksaan ini untuk mencegah salah tulis domain dan email sekali-
 | Penyedia | Peran | Data yang diterima |
 |---|---|---|
 | Formspree (`formspree.io`) | Mengantar kiriman formulir Kontak dan Laporkan Link Mati ke kotak masuk kami | Seluruh isi formulir, ditambah alamat IP dan identitas peramban dari permintaan pengiriman |
-| Google Analytics 4 (`G-7B40JB824Z`) | Statistik kunjungan | Data kunjungan dan pengenal cookie, hanya setelah kamu menyetujui. Tanpa persetujuan, tag mengirim ping tanpa cookie |
+| Google Analytics 4 (`G-7B40JB824Z`) | Statistik kunjungan | Data kunjungan dan cookie analitik pihak pertama yang dapat dipakai GA4 untuk membedakan pengguna dan sesi pada halaman produksi |
 | Cloudflare (`cloudflare-dns.com`) | Pemeriksaan keberadaan domain email | Hanya domain email |
 | Google Public DNS (`dns.google`) | Cadangan pemeriksaan yang sama | Hanya domain email |
 | Adsterra | Jaringan iklan | Data perangkat dan pengenal yang dipasang jaringan itu sendiri. Kami tidak mengatur isi penyimpanannya, dan domain penyaji skripnya bisa berubah |
@@ -64,13 +64,12 @@ Beberapa tautan keluar mengarah ke layanan lain, misalnya Saweria untuk dukungan
 
 ## 6. Cookie dan penyimpanan di perangkatmu
 
-**Cookie milik situs ini: tidak ada.** Kami tidak memasang cookie sendiri.
+**Cookie analitik Google:** Tag JavaScript GA4 dapat menulis cookie pihak pertama pada domain situs ini, misalnya `_ga` untuk membedakan pengguna dan `_ga_<container-id>` untuk mempertahankan status sesi. Google menyatakan masa berlaku default masing-masing cookie adalah dua tahun; peramban dapat membatasi masa berlakunya. Baca [dokumentasi Google tentang cookie GA4](https://support.google.com/analytics/answer/11397207?hl=id). Tag GA4 pada template situs menghormati pengaturan Do Not Track peramban jika fitur itu tersedia dan dinyalakan. Jaringan iklan pihak ketiga juga dapat menggunakan pengenal mereka sendiri saat skrip iklan dimuat.
 
 Preferensi dan riwayat disimpan di penyimpanan lokal peramban (`localStorage` dan `sessionStorage`), yang isinya tidak dikirim ke server kami:
 
 | Kunci | Isinya | Kegunaan |
 |---|---|---|
-| `donghuabatch_consent` | Pilihan persetujuanmu | Mengingat apakah tag Google boleh menyala |
 | `donghuabatch_favorites` | Daftar id donghua | Daftar favoritmu |
 | `donghuabatch_watch_statuses` | Status tontonan per donghua | Menandai yang sedang atau sudah ditonton |
 | `donghuabatch_recently_viewed` | Daftar donghua terakhir dibuka | Rel "terakhir dibuka" di beranda |
@@ -78,17 +77,21 @@ Preferensi dan riwayat disimpan di penyimpanan lokal peramban (`localStorage` da
 | `donghuabatch:laporan-link-mati:terakhir` | Waktu kirim laporan terakhir | Membatasi kiriman laporan berulang |
 | `site_floating_ad_closed` | Penanda sesi | Menghindari menampilkan kembali iklan mengambang yang sudah kamu tutup |
 
-Semua itu bisa kamu hapus kapan saja lewat pengaturan situs di peramban (biasanya "Hapus data situs" atau "Cookie dan data situs"). Menghapusnya tidak menghilangkan isi laporan yang sudah kamu kirim.
+Versi situs sebelumnya menyimpan pilihan panel Google dengan kunci `donghuabatch_consent`. Versi saat ini tidak lagi membaca kunci itu. Jika nilainya masih ada di perambanmu, kamu bisa menghapusnya bersama data situs.
 
-Cookie pihak ketiga berasal dari layanan di bagian 5: Google Analytics setelah kamu menyetujui, Disqus setelah kamu membuka kolom komentar, dan Adsterra saat iklan ditampilkan. Panel "Pengaturan Cookie" di footer hanya mengatur tag Google; pilihan itu tidak mematikan skrip iklan Adsterra maupun skrip Safelinku.
+Semua penyimpanan lokal di atas bisa kamu hapus kapan saja lewat pengaturan situs di peramban (biasanya "Hapus data situs" atau "Cookie dan data situs"). Menghapusnya tidak menghilangkan isi laporan yang sudah kamu kirim.
+
+GA4 dapat menggunakan cookie pihak pertama pada halaman produksi. Disqus dimuat setelah kamu membuka kolom komentar, sedangkan skrip Adsterra dimuat untuk menampilkan iklan. Safelinku memproses tautan keluar yang cocok dengan aturannya. Situs ini tidak menyediakan satu panel yang mengatur atau menonaktifkan semua layanan tersebut; pengaturan GA4 tidak menghentikan skrip pihak ketiga.
 
 ## 7. Dasar hukum pemrosesan
 
-Kami memproses data dengan dasar berikut, mengacu pada Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi:
+Kami memproses data dengan dasar berikut, mengacu pada [Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi](https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang+nomor+27+tahun+2022):
 
-- **Persetujuanmu** untuk statistik kunjungan, iklan, dan komentar. Persetujuan ini bisa kamu tarik kapan saja lewat panel Pengaturan Cookie atau dengan menghapus data situs.
+- **Kepentingan sah lainnya** untuk statistik kunjungan Google Analytics 4, yaitu memahami halaman yang dibuka dan meningkatkan layanan. Dasar yang dipilih pengelola adalah Pasal 20 ayat (2) huruf f UU PDP, dengan mempertimbangkan tujuan, kebutuhan, keseimbangan kepentingan pengelola, dan hak Subjek Data Pribadi. Untuk menyampaikan pertanyaan atau keberatan atas pemrosesan, hubungi kami lewat halaman Kontak.
 - **Pelaksanaan permintaanmu** untuk data yang kamu kirim lewat formulir, karena kami memerlukannya untuk menjawab pesan atau memperbaiki tautan.
 - **Kepentingan yang sah** untuk keamanan situs, pencegahan spam, dan pemeliharaan tautan unduhan, misalnya memeriksa domain email sekali-pakai.
+
+Untuk Adsterra, Disqus, dan Safelinku, situs ini menjelaskan data dan pemicu pemuatan layanan di bagian 5 dan 6. Situs tidak menyediakan satu panel yang mengatur atau menonaktifkan semua layanan tersebut. Pengelola perlu meninjau ketentuan penyedia serta dasar pemrosesan yang sesuai untuk tiap integrasi pihak ketiga secara terpisah.
 
 ## 8. Masa simpan
 
@@ -117,4 +120,4 @@ Situs ini tidak ditujukan untuk anak-anak. Kami tidak dengan sengaja mengumpulka
 
 ## 11. Perubahan kebijakan
 
-Kalau ada perubahan penting, kami perbarui halaman ini dan mencantumkan tanggal berlaku serta tanggal pembaruan terakhir di bagian atas. Kami tidak mencantumkan bunyi "dengan mengakses situs ini kamu menyetujui kebijakan ini", karena persetujuan untuk statistik, iklan, dan komentar kami minta secara tegas lewat panel Pengaturan Cookie.
+Kalau ada perubahan penting, kami perbarui halaman ini dan mencantumkan tanggal berlaku serta tanggal pembaruan terakhir di bagian atas. Tag Google Analytics 4 berjalan pada halaman produksi sebagai bagian dari pengukuran statistik yang dijelaskan di bagian 7. Mengakses situs tidak kami nyatakan sebagai persetujuan.

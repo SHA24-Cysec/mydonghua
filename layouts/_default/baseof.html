@@ -15,9 +15,7 @@
     {{ partial "opengraph" . }}
     
     {{ if hugo.IsProduction }}
-        {{/* Consent Mode default wajib mendahului blok GA (SEC-06). */}}
-        {{ partial "consent-head" . }}
-        {{ template "_internal/google_analytics.html" . }}    
+        {{ template "_internal/google_analytics.html" . }}
     {{ end }}
     {{ if eq .Kind "404" }}
         <title>404 - Halaman Tidak Ditemukan | DonghuaBatch</title>
@@ -42,7 +40,6 @@
     {{ end }}
     </main>
     {{ partial "footer" . }}
-    {{ partial "consent-panel" . }}
     {{ partial "js" . }}
     {{/*  loading-screen dihapus: menghalangi konten dan menunda LCP/FCP  */}}
     {{ partial "safelinku" . }}

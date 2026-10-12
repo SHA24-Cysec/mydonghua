@@ -3181,58 +3181,6 @@
     display: flex;
     gap: 0.5rem;
   }
-  .consent-panel {
-    position: fixed;
-    inset: 0;
-    z-index: 2003;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-  }
-  .consent-panel.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-  .consent-panel-box {
-    width: 100%;
-    max-width: 24rem;
-    padding: 1.2rem;
-    border-radius: var(--site-radius-lg);
-    border: 1px solid var(--site-line);
-    background: var(--site-gradient-panel);
-    box-shadow: var(--site-shadow-panel);
-    text-align: left;
-  }
-  .consent-panel-title {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    font-weight: 900;
-    color: #67e8f9;
-    margin-bottom: 0.5rem;
-  }
-  .consent-panel-text {
-    font-size: 0.8rem;
-    color: #94a3b8;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-  }
-  .consent-panel-status {
-    font-size: 0.75rem;
-    color: #cbd5e1;
-    margin-bottom: 0.9rem;
-  }
-  .consent-panel-actions {
-    display: flex;
-    gap: 0.5rem;
-  }
   .season-nav-wrap, .season-nav-wrap * {
     box-sizing: border-box;
   }
@@ -7318,44 +7266,6 @@ body .post-bookmark-btn.is-pulsing {
 }
 .fav-confirm-btn.danger:hover {
   background: rgba(239, 68, 68, 0.35);
-}
-.consent-panel-btn {
-  flex: 1;
-  padding: 0.6rem;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  color: #e2e8f0;
-  font-size: 0.78rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background var(--site-transition-fast), border-color var(--site-transition-fast), color var(--site-transition-fast);
-  outline: none;
-  appearance: none;
-}
-.consent-panel-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-.consent-panel-close {
-  width: 100%;
-  margin-top: 0.6rem;
-  padding: 0.5rem;
-  border: 0;
-  background: none;
-  color: #94a3b8;
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: color var(--site-transition-fast);
-}
-.consent-panel-close:hover {
-  color: #e2e8f0;
-}
-.site-footer-link-button {
-  background: none;
-  border: 0;
-  font-family: inherit;
-  cursor: pointer;
-  text-align: left;
 }
 .share-premium-button {
   --share-accent: var(--site-sky);
