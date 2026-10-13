@@ -3,7 +3,8 @@
   - Mobile (<768px): 320x50
   - Desktop (>=768px): 728x90
   Hanya SATU unit yang di-load (dipilih JS) agar tidak double request / race atOptions.
-  Kartu fallback dipasang di dalam shell agar slot tidak pernah kosong tanpa keterangan.
+  Bila iklan tidak terisi (no-fill atau galat skrip), site-ads.js menutup
+  slot sekaligus pembungkusnya secara senyap, tanpa kartu pengganti.
 */}}
 {{ if hugo.IsProduction }}
 <div class="w-full max-w-7xl mx-auto px-3 lg:px-0 mt-4" data-ad-banner-wrapper>
@@ -36,7 +37,6 @@
                 data-ad-invoke="https://bendspecimen.com/b4c00e77c26996f5f359cd13c19b7a85/invoke.js"
             ></div>
         </div>
-        {{ partial "widget/ad-fallback" . }}
     </div>
 </div>
 {{ end }}

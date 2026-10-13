@@ -60,7 +60,8 @@
           hidden
         ></div>
       {{ end }}
-      {{ partial "widget/ad-fallback" . }}
+      {{/* Iklan gagal terisi: site-floating-ad.js menutup panel ini secara
+           senyap (tanpa kartu pengganti, tanpa sisa ruang layar). */}}
     </div>
   </div>
 </section>

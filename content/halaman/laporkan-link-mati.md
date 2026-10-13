@@ -26,7 +26,7 @@ Rata-rata laporan ditangani dalam 1 kali 24 jam. Isi kolom email kalau kamu ingi
 
 Sebagian link sebenarnya masih hidup, hanya butuh langkah ekstra:
 
-- Halaman shortlink yang tidak lanjut ke tujuan biasanya karena pemblokir iklan. Baca panduan di [cara melewati safelinku](/cara-melewati-safelinku/).
+- Halaman shortlink yang tidak lanjut ke tujuan biasanya karena ekstensi peramban atau pengaturan privasi yang ketat. Baca panduan di [cara melewati safelinku](/cara-melewati-safelinku/).
 - Link dari **acefile.co** kadang perlu refresh beberapa kali atau login akun Google dulu sampai tombol **Fast Download** muncul.
 - Tombol bertanda **Pending** berarti resolusi itu memang belum tersedia, jadi tidak perlu dilaporkan.
 

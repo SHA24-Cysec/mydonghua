@@ -1048,9 +1048,6 @@
   .focus\:left-4:focus {
     left: calc(var(--spacing) * 4);
   }
-  .focus\:z-\[9999\]:focus {
-    z-index: 9999;
-  }
   .focus\:rounded-lg:focus {
     border-radius: var(--radius-lg);
   }
@@ -4085,66 +4082,6 @@
     width: 100%;
     min-height: 170px;
   }
-  .ad-neon-fallback {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-  .ad-fallback-card {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    width: 100%;
-    min-height: inherit;
-    padding: 0.85rem 0.95rem;
-    border: 1px solid rgba(34, 211, 238, 0.24);
-    border-radius: 0.9rem;
-    background: radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.10), transparent 40%), radial-gradient(circle at 90% 10%, rgba(139, 92, 246, 0.10), transparent 42%), rgba(2, 6, 23, 0.55);
-    color: #dbeafe;
-    text-align: left;
-  }
-  .ad-fallback--adblock {
-    border-color: rgba(251, 146, 60, 0.30);
-    background: radial-gradient(circle at 12% 0%, rgba(251, 146, 60, 0.12), transparent 42%), rgba(2, 6, 23, 0.55);
-  }
-  .ad-fallback-icon {
-    display: grid;
-    place-items: center;
-    flex: 0 0 auto;
-    width: 2.35rem;
-    height: 2.35rem;
-    border-radius: 0.7rem;
-    border: 1px solid rgba(125, 211, 252, 0.22);
-    background: rgba(34, 211, 238, 0.08);
-    color: #67e8f9;
-  }
-  .ad-fallback--adblock .ad-fallback-icon {
-    border-color: rgba(251, 146, 60, 0.28);
-    background: rgba(251, 146, 60, 0.10);
-    color: #fdba74;
-  }
-  .ad-fallback-icon svg {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-  .ad-fallback-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-  .ad-fallback-text strong {
-    color: #f0f9ff;
-    font-size: 0.86rem;
-    font-weight: 850;
-    line-height: 1.2;
-  }
-  .ad-fallback-text span {
-    color: #94a3b8;
-    font-weight: 600;
-    line-height: 1.4;
-  }
   .ad-neon-body.ad-size-300 .ad-neon-scroll {
     --ad-creative-width: 300px;
     --ad-creative-height: 250px;
@@ -4815,42 +4752,8 @@
     color: #dcecff;
     text-align: left;
   }
-  .site-floating-ad__slot .ad-neon-fallback {
-    width: 100%;
-  }
-  .site-floating-ad__slot .ad-fallback-card {
-    padding: 0.35rem 0.45rem;
-    min-height: 0;
-    border-radius: 0.6rem;
-    gap: 0.55rem;
-  }
-  .site-floating-ad__slot .ad-fallback-icon {
-    width: 1.85rem;
-    height: 1.85rem;
-    border-radius: 0.55rem;
-  }
-  .site-floating-ad__slot .ad-fallback-icon svg {
-    width: 1.05rem;
-    height: 1.05rem;
-  }
-  .site-floating-ad__slot .ad-fallback-text strong {
-    font-size: 0.78rem;
-  }
   .site-floating-ad__panel > * {
     min-width: 0;
-  }
-  .site-floating-ad__slot .ad-fallback-card {
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-  }
-  .site-floating-ad__slot .ad-fallback-text {
-    flex: 1 1 7rem;
-    min-width: 7rem;
-  }
-  @media (max-width: 480px) {
-    .site-floating-ad__slot .ad-fallback-text span {
-      display: none;
-    }
   }
   .site-floating-ad__unit {
     --ad-creative-width: 320px;
@@ -7141,45 +7044,6 @@ body .post-bookmark-btn.is-pulsing {
     border: 1px solid rgba(34, 211, 238, 0.1);
   }
 }
-.ad-neon-fallback[hidden] {
-  display: none !important;
-}
-.ad-fallback-card[hidden] {
-  display: none !important;
-}
-.ad-fallback-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  flex: 0 0 auto;
-  padding: 0.5rem 0.85rem;
-  border: 1px solid rgba(34, 211, 238, 0.45);
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.18));
-  color: #e0f2fe;
-  font-weight: 850;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
-}
-.ad-fallback-cta svg {
-  width: 0.95rem;
-  height: 0.95rem;
-}
-.ad-fallback-cta:hover, .ad-fallback-cta:focus-visible {
-  transform: translateY(-1px);
-  border-color: rgba(103, 232, 249, 0.75);
-  box-shadow: 0 6px 18px rgba(34, 211, 238, 0.18);
-  outline: none;
-}
-.ad-fallback--adblock .ad-fallback-cta {
-  border-color: rgba(251, 146, 60, 0.5);
-  background: linear-gradient(135deg, rgba(251, 146, 60, 0.20), rgba(244, 114, 182, 0.16));
-  color: #fff7ed;
-}
 .ad-neon-shell[hidden] {
   margin: 0;
   padding: 0;
@@ -7469,10 +7333,6 @@ html body .site-floating-ad__close {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
-}
-.site-floating-ad__slot .ad-fallback-cta {
-  padding: 0.42rem 0.7rem;
-  margin-inline-start: auto;
 }
 .site-floating-ad__unit[hidden] {
   display: none;
@@ -8042,7 +7902,7 @@ html body .donghua-card-bookmark.is-saved {
   font-size: 0.85em;
   line-height: 1;
 }
-:where( .site-navbar-action, .site-nav-random-btn, .site-random-action, .pagination-dock-button, .pagination-aurora-button, .notfound-dock-btn, .site-home-hero-button, .cyber-button, .post-bookmark-btn, .db-report, .db-button, .share-premium-button, .fav-clear-btn, .fav-confirm-btn, .search-filter-trigger, .search-filter-reset, .search-filter-apply, .genre-sheet-trigger, .genre-clear-button, .genre-apply-button, .taxonomy-tab-button, .fav-watch-filter, .ad-fallback-cta ) {
+:where( .site-navbar-action, .site-nav-random-btn, .site-random-action, .pagination-dock-button, .pagination-aurora-button, .notfound-dock-btn, .site-home-hero-button, .cyber-button, .post-bookmark-btn, .db-report, .db-button, .share-premium-button, .fav-clear-btn, .fav-confirm-btn, .search-filter-trigger, .search-filter-reset, .search-filter-apply, .genre-sheet-trigger, .genre-clear-button, .genre-apply-button, .taxonomy-tab-button, .fav-watch-filter ) {
   min-height: clamp(2.5rem, 10vw, 2.75rem);
   padding-block: clamp(0.58rem, 2.2vw, 0.72rem);
   padding-inline: clamp(0.78rem, 3.2vw, 1.05rem);
@@ -8051,7 +7911,7 @@ html body .donghua-card-bookmark.is-saved {
   line-height: 1.2;
   -webkit-tap-highlight-color: transparent;
 }
-:where( .site-navbar-toggle, .site-nav-close, .site-random-close, .search-filter-close, .genre-sheet-close, .site-floating-ad__close, .btt-btn, .donghua-card-bookmark, .pagination-dock-button, .pagination-aurora-button, .site-navbar-action, .site-nav-random-btn, .site-random-action, .notfound-dock-btn, .site-home-hero-button, .cyber-button, .post-bookmark-btn, .db-report, .db-button, .share-premium-button, .fav-clear-btn, .fav-confirm-btn, .search-filter-trigger, .search-filter-reset, .search-filter-apply, .genre-sheet-trigger, .genre-clear-button, .genre-apply-button, .taxonomy-tab-button, .fav-watch-filter, .ad-fallback-cta ):focus-visible {
+:where( .site-navbar-toggle, .site-nav-close, .site-random-close, .search-filter-close, .genre-sheet-close, .site-floating-ad__close, .btt-btn, .donghua-card-bookmark, .pagination-dock-button, .pagination-aurora-button, .site-navbar-action, .site-nav-random-btn, .site-random-action, .notfound-dock-btn, .site-home-hero-button, .cyber-button, .post-bookmark-btn, .db-report, .db-button, .share-premium-button, .fav-clear-btn, .fav-confirm-btn, .search-filter-trigger, .search-filter-reset, .search-filter-apply, .genre-sheet-trigger, .genre-clear-button, .genre-apply-button, .taxonomy-tab-button, .fav-watch-filter ):focus-visible {
   outline: 2px solid rgba(34, 211, 238, 0.75);
   outline-offset: 3px;
 }
@@ -8146,7 +8006,7 @@ html body .site-empty-state.hidden, html body .site-empty-state[hidden] {
     font-size: 16px;
   }
 }
-.donghua-card-badge, .donghua-card-chip, .donghua-card-rating, .donghua-card-search-meta, .ad-neon-head, .home-section-divider-label, .notfound-dock-kicker, .genre-sheet-kicker, .genre-filter-kicker, .taxonomy-tabs-kicker, .taxonomy-tabs-counter, .genre-sheet-trigger strong, .taxonomy-item-text small, .search-filter-active-count, .search-discovery-chip, .search-discovery-chip span, .search-discovery-head small, .search-sort-field > span, .site-random-type, .site-random-kicker, .ad-fallback-text span, .ad-fallback-cta, .site-floating-ad__slot .ad-fallback-text span, .site-floating-ad__slot .ad-fallback-cta {
+.donghua-card-badge, .donghua-card-chip, .donghua-card-rating, .donghua-card-search-meta, .ad-neon-head, .home-section-divider-label, .notfound-dock-kicker, .genre-sheet-kicker, .genre-filter-kicker, .taxonomy-tabs-kicker, .taxonomy-tabs-counter, .genre-sheet-trigger strong, .taxonomy-item-text small, .search-filter-active-count, .search-discovery-chip, .search-discovery-chip span, .search-discovery-head small, .search-sort-field > span, .site-random-type, .site-random-kicker {
   font-size: 0.75rem;
 }
 @media (max-height: 430px) {

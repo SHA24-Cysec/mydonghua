@@ -1,6 +1,16 @@
 (function () {
   'use strict';
 
+  /* =========================================================
+     Floating bottom ad (728x90 desktop / 320x50 mobile).
+
+     Kartu fallback dan deteksi adblock sudah dihapus atas permintaan
+     pemilik situs. Iklan dianggap gagal hanya dari bukti nyata di
+     halaman: skrip vendor memicu error, atau tidak ada kreatif yang
+     terisi sampai batas waktu inspeksi. Perilaku saat gagal: panel
+     ditutup senyap, tanpa kartu pengganti, tanpa menyisakan ruang.
+     ========================================================= */
+
   var SESSION_KEY = 'site_floating_ad_closed';
   var MOBILE_MAX = 767;
   // Jendela inspeksi isi kreatif dengan polling (audit 2026-10-13).
@@ -16,44 +26,12 @@
     return window.matchMedia('(max-width: ' + MOBILE_MAX + 'px)').matches;
   }
 
-  // Deteksi adblock; pakai cache bersama dengan site-ad-fallback.js bila ada.
-  function detectAdBlock(cb) {
-    if (typeof window.__siteAdBlocked === 'boolean') {
-      cb(window.__siteAdBlocked);
-      return;
-    }
-    var bait = document.createElement('div');
-    bait.className = 'ad ads adsbox ad-banner ad-placement pub_300x250 text-ad textAd';
-    bait.style.cssText =
-      'position:absolute!important;left:-9999px!important;top:-9999px!important;' +
-      'width:1px!important;height:1px!important;pointer-events:none!important;';
-    bait.setAttribute('aria-hidden', 'true');
-    (document.body || document.documentElement).appendChild(bait);
-
-    window.setTimeout(function () {
-      var blocked;
-      try {
-        var cs = window.getComputedStyle ? window.getComputedStyle(bait) : null;
-        blocked =
-          bait.offsetParent === null ||
-          bait.offsetHeight === 0 ||
-          bait.clientHeight === 0 ||
-          (cs && (cs.display === 'none' || cs.visibility === 'hidden'));
-      } catch (e) {
-        blocked = false;
-      }
-      if (bait.parentNode) bait.parentNode.removeChild(bait);
-      window.__siteAdBlocked = !!blocked;
-      cb(window.__siteAdBlocked);
-    }, 130);
-  }
-
   /* =========================================================
      Pemuatan unit floating langsung di halaman (audit 2026-10-13,
      Opsi A). Iframe sandbox ber-origin buram dihapus karena skrip
      Adsterra tidak kompatibel dengan konteks itu; invoke.js kini
-     dijalankan di dokumen halaman. Lihat catatan di
-     site-ad-fallback.js untuk detail alasan dan atOptions.
+     dijalankan di dokumen halaman. Lihat catatan di site-ads.js
+     untuk detail alasan dan atOptions.
      ========================================================= */
   function injectAdScript(unit, key, format, width, height, invokeUrl) {
     if (!unit || !invokeUrl) return null;
@@ -119,9 +97,8 @@
     return false;
   }
 
-  function isFallbackShown(ad) {
-    var fallback = ad.querySelector('[data-ad-fallback]');
-    return !!(fallback && !fallback.hidden);
+  function isHidden(ad) {
+    return !!(ad && ad.hidden);
   }
 
   function syncBackToTopOffset(ad) {
@@ -169,30 +146,25 @@
     window.addEventListener('resize', bttResizeHandler, { passive: true });
   }
 
-  function showFallback(ad, kind) {
-    var fallback = ad.querySelector('[data-ad-fallback]');
-    if (!fallback) return false;
+  /* =========================================================
+     Iklan floating tidak terisi (no-fill atau galat skrip).
+     Panel ditutup senyap: unit gagal dibuang, kelas tampil dilepas,
+     bagian kembali tersembunyi, dan offset tombol back-to-top
+     dibersihkan supaya tidak ada sisa ruang di layar.
+     ========================================================= */
+  function dismiss(ad) {
+    if (!ad) return;
 
     var units = ad.querySelectorAll('[data-floating-ad-unit]');
     for (var i = 0; i < units.length; i++) {
       if (units[i].parentNode) units[i].parentNode.removeChild(units[i]);
     }
 
-    var variants = fallback.querySelectorAll('[data-ad-fallback-variant]');
-    for (var v = 0; v < variants.length; v++) {
-      var match = variants[v].getAttribute('data-ad-fallback-variant') === kind;
-      variants[v].hidden = !match;
-    }
-
-    fallback.hidden = false;
-    fallback.setAttribute('aria-hidden', 'false');
-
-    if (ad.classList.contains('is-visible')) {
-      window.requestAnimationFrame(function () {
-        syncBackToTopOffset(ad);
-      });
-    }
-    return true;
+    ad.classList.remove('is-visible');
+    ad.hidden = true;
+    ad.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('has-floating-ad');
+    clearBackToTopOffset();
   }
 
   function reveal(ad) {
@@ -203,12 +175,12 @@
   }
 
   // Pantau isi unit sampai AD_INSPECT_TIMEOUT. Bila kreatif terisi
-  // kapan pun dalam jendela itu, fallback dibatalkan. Bila tetap
-  // kosong sampai batas waktu, kartu fallback house ditampilkan.
+  // kapan pun dalam jendela itu, panel dipertahankan. Bila tetap
+  // kosong sampai batas waktu, panel ditutup senyap.
   function watchUnit(ad, unit) {
     var started = Date.now();
     var timer = window.setInterval(function () {
-      if (isFallbackShown(ad)) {
+      if (isHidden(ad)) {
         window.clearInterval(timer);
         return;
       }
@@ -218,54 +190,45 @@
       }
       if (Date.now() - started >= AD_INSPECT_TIMEOUT) {
         window.clearInterval(timer);
-        if (!isFallbackShown(ad)) {
-          showFallback(ad, 'house');
+        if (!isHidden(ad)) {
+          dismiss(ad);
         }
       }
     }, AD_POLL_INTERVAL);
   }
 
   function injectFloating(ad) {
-    detectAdBlock(function (blocked) {
-      if (blocked) {
-        showFallback(ad, 'adblock');
-        reveal(ad);
-        return;
-      }
+    var unit = pickResponsiveUnit(ad);
+    if (!unit) {
+      dismiss(ad);
+      return;
+    }
 
-      var unit = pickResponsiveUnit(ad);
-      if (!unit) {
-        showFallback(ad, 'house');
-        reveal(ad);
-        return;
-      }
+    var invoke = unit.getAttribute('data-ad-invoke');
+    var key = unit.getAttribute('data-ad-key');
+    var format = unit.getAttribute('data-ad-format') || 'iframe';
+    var height = parseInt(unit.getAttribute('data-ad-height') || '50', 10);
+    var width = parseInt(unit.getAttribute('data-ad-width') || '320', 10);
 
-      var invoke = unit.getAttribute('data-ad-invoke');
-      var key = unit.getAttribute('data-ad-key');
-      var format = unit.getAttribute('data-ad-format') || 'iframe';
-      var height = parseInt(unit.getAttribute('data-ad-height') || '50', 10);
-      var width = parseInt(unit.getAttribute('data-ad-width') || '320', 10);
+    unit.hidden = false;
 
-      unit.hidden = false;
+    if (!invoke) {
+      dismiss(ad);
+      return;
+    }
 
-      if (!invoke) {
-        showFallback(ad, 'house');
-        reveal(ad);
-        return;
-      }
+    var script = injectAdScript(unit, key, format, width, height, invoke);
+    if (script) {
+      script.addEventListener('error', function () {
+        dismiss(ad);
+      });
+    } else {
+      dismiss(ad);
+      return;
+    }
 
-      var script = injectAdScript(unit, key, format, width, height, invoke);
-      if (script) {
-        script.addEventListener('error', function () {
-          showFallback(ad, 'house');
-        });
-      } else {
-        showFallback(ad, 'house');
-      }
-
-      reveal(ad);
-      watchUnit(ad, unit);
-    });
+    reveal(ad);
+    watchUnit(ad, unit);
   }
 
   function initFloatingAd() {
