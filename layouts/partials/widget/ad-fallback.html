@@ -1,9 +1,11 @@
 {{/*
   Ad fallback (reusable)
+  Dipasang di semua widget iklan (300x250, 728x90, native, floating).
   Ditampilkan JS ketika unit iklan gagal tampil:
   - variant "adblock": terdeteksi pemblokir iklan -> ajakan sopan mendukung situs
   - variant "house"  : no-fill / jaringan bermasalah -> promosi internal (Donghua Acak)
-  Markup hidden secara default; script site-ad-fallback.js yang mengaktifkan.
+  Markup hidden secara default; site-ad-fallback.js / site-floating-ad.js
+  yang mengaktifkan, dan unit yang gagal dibuang agar kartu menggantikannya.
   Ikon memakai SVG yang ditulis langsung di markup agar tetap tampil walau FontAwesome ikut diblokir.
 */}}
 <div class="ad-neon-fallback" data-ad-fallback hidden aria-hidden="true">

@@ -2,21 +2,16 @@
   'use strict';
 
   var MOBILE_MAX = 767;
-  // Dokumen iklan ber-origin buram, jadi induk tidak bisa
-  // lagi mengintip isinya. Probe ini ikut ditulis ke dalam srcdoc dan
-  // melapor lewat postMessage begitu kreatif benar-benar muncul.
-  var AD_PROBE =
-    '<script>(function(){' +
-    'var terisi=function(){var d=document.body;if(!d)return false;var k=d.children,n=0,i;' +
-    'for(i=0;i<k.length;i++){if(k[i].tagName!=="SCRIPT")n++;}' +
-    'return n>0||d.scrollHeight>12;};' +
-    'var lapor=function(){try{if(terisi())parent.postMessage({sumber:"iklan-probe",status:"terisi"},"*");}catch(e){}};' +
-    'lapor();' +
-    'try{new MutationObserver(lapor).observe(document.documentElement,{childList:true,subtree:true,attributes:true,characterData:true});}catch(e){}' +
-    'var n=0,t=setInterval(function(){lapor();if(++n>60)clearInterval(t);},250);' +
-    '})();<' + '/script>';
+  // Jendela inspeksi isi kreatif. Polling dipakai agar kreatif yang
+  // terisi sedikit telat tetap dihormati sebelum dianggap gagal
+  // (audit 2026-10-13: dulu satu kali cek di 7 detik, lalu slot
+  // disembunyikan permanen walau kreatif datang belakangan).
+  var AD_INSPECT_TIMEOUT = 15000;
+  var AD_POLL_INTERVAL = 500;
+  // Jaring pengaman antrean: skrip vendor yang tidak memunculkan
+  // load/error tidak boleh menghentikan unit berikutnya.
+  var QUEUE_ADVANCE_TIMEOUT = 8000;
 
-  var AD_INSPECT_TIMEOUT = 7000; // Tunggu ~7 dtk sebelum memutuskan iklan gagal.
   var loadQueue = [];
   var queueRunning = false;
 
@@ -59,66 +54,37 @@
     }, 130);
   }
 
-  // Render satu unit iklan di dalam iframe terisolasi miliknya sendiri.
-  function injectAdIframe(unit, key, format, width, height, invokeUrl) {
+  /* =========================================================
+     Pemuatan unit iklan langsung di halaman (audit 2026-10-13,
+     Opsi A). Sebelumnya skrip dimuat di iframe sandbox ber-origin
+     buram; skrip Adsterra tidak kompatibel dengan konteks itu
+     (gate jendela atas, cookie, storage, anti-emulasi) sehingga
+     kreatif tidak pernah terisi. Sekarang invoke.js dijalankan di
+     dokumen halaman, sama seperti unit native dan social bar.
+
+     atOptions adalah variabel global, jadi unit dengan key
+     berbeda harus dimuat berurutan (lihat antrean di bawah).
+     ========================================================= */
+  function injectAdScript(unit, key, format, width, height, invokeUrl) {
     if (!unit || !invokeUrl) return null;
 
-    var iframe = document.createElement('iframe');
-    // Sandbox tanpa allow-same-origin membuat iframe menjadi origin
-    // buram, sehingga skrip iklan pihak ketiga tidak bisa membaca DOM, cookie,
-    // maupun localStorage halaman induk. allow-scripts wajib agar kreatif tetap
-    // dirender. allow-popups dan allow-popups-to-escape-sandbox menjaga klik
-    // iklan tetap membuka tab baru yang tidak ikut ter-sandbox.
-    // allow-top-navigation-by-user-activation dipakai agar kreatif yang
-    // menavigasi halaman atas saat diklik tetap berfungsi. Bila ingin lebih
-    // ketat, token terakhir ini yang pertama boleh dilepas.
-    iframe.setAttribute(
-      'sandbox',
-      'allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
-    );
-    iframe.setAttribute('data-iklan-probe', '1');
-    iframe.setAttribute('scrolling', 'no');
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('title', 'Advertisement');
-    iframe.style.border = '0';
-    iframe.style.display = 'block';
-    iframe.style.overflow = 'hidden';
-    iframe.style.width = (width || 300) + 'px';
-    iframe.style.height = (height || 250) + 'px';
-    iframe.style.maxWidth = '100%';
-    unit.appendChild(iframe);
+    if (key) {
+      window.atOptions = {
+        key: key,
+        format: format || 'iframe',
+        height: height,
+        width: width,
+        params: {}
+      };
+    }
 
-    // Terima laporan probe dari dalam iframe. Induk tidak
-    // pernah membaca isi dokumen iklan, hanya menerima pesan dari window
-    // yang memang dipasang di iframe ini.
-    window.addEventListener('message', function (ev) {
-      if (ev.source !== iframe.contentWindow) return;
-      var pesan = ev.data;
-      if (pesan && pesan.sumber === 'iklan-probe' && pesan.status === 'terisi') {
-        iframe.setAttribute('data-iklan-terisi', 'ya');
-      }
-    });
-
-    var atOptionsJson = JSON.stringify({
-      key: key,
-      format: format || 'iframe',
-      height: height,
-      width: width,
-      params: {}
-    }).replace(/</g, '\\u003c');
-
-    // srcdoc dipakai menggantikan document.write. Setelah sandbox
-    // tanpa allow-same-origin aktif, iframe.contentWindow.document tidak lagi
-    // bisa diakses dan melempar SecurityError, sehingga document.write gagal.
-    // srcdoc tetap diizinkan pada iframe yang di-sandbox.
-    iframe.srcdoc =
-      '<!doctype html><html><head><style>html,body{margin:0;padding:0;overflow:hidden;background:transparent;}</style></head>' +
-      '<body>' +
-      '<script>window.atOptions = ' + atOptionsJson + ';<' + '/script>' +
-      '<script src="' + invokeUrl + '"><' + '/script>' +
-      AD_PROBE +
-      '</body></html>';
-    return iframe;
+    var script = document.createElement('script');
+    script.src = invokeUrl;
+    script.async = false;
+    script.setAttribute('data-cfasync', 'false');
+    script.setAttribute('data-ad-script', '1');
+    unit.appendChild(script);
+    return script;
   }
 
   function applyBannerBodySize(widget, unit) {
@@ -165,115 +131,142 @@
   }
 
   /* =========================================================
-     Cek apakah unit iklan benar-benar terisi kreatif.
+     Cek apakah unit iklan benar-benar mulai terisi kreatif.
+     - Unit native/container: jaringan mengisi elemen container.
+     - Unit lain: skrip vendor menyisipkan node kreatif (iframe,
+       ins, img, atau wrapper) ke dalam unit di dekat tag skripnya.
+     Kehadiran node non-skrif dianggap render dimulai.
      ========================================================= */
   function adRendered(unit) {
     if (!unit) return false;
 
-    // Unit native/container-based (script langsung mengisi container).
     var container = unit.querySelector('[data-ad-ignore]');
     if (container && container.childElementCount > 0) return true;
 
-    // Unit berbasis iframe isolasi (300x250, banner).
-    var iframe = unit.querySelector('iframe');
-    // Iframe buatan sendiri dinilai dari laporan probe,
-    // bukan dari percobaan mengintip dokumen (yang kini selalu melempar).
-    if (iframe && iframe.getAttribute('data-iklan-probe') === '1') {
-      return iframe.getAttribute('data-iklan-terisi') === 'ya';
-    }
-    if (iframe) {
-      try {
-        var idoc = iframe.contentWindow && iframe.contentWindow.document;
-        if (idoc && idoc.body) {
-          var kids = idoc.body.children;
-          var real = 0;
-          for (var i = 0; i < kids.length; i++) {
-            if (kids[i].tagName !== 'SCRIPT') real++;
-          }
-          if (real > 0) return true;
-          if (idoc.body.scrollHeight > 12) return true;
-          return false;
-        }
-      } catch (e) {
-        // Tidak bisa diintip (cross-origin) => anggap iklan berhasil dimuat.
-        return true;
-      }
+    var kids = unit.children;
+    for (var i = 0; i < kids.length; i++) {
+      if (kids[i].tagName === 'SCRIPT') continue;
+      // Kontainer placeholder unit native (data-ad-ignore) sudah ada
+      // sejak awal dan bukan bukti kreatif terisi.
+      if (kids[i].getAttribute && kids[i].getAttribute('data-ad-ignore') !== null) continue;
+      return true;
     }
     return false;
   }
 
   /* =========================================================
-     Iklan gagal tampil pada widget (adblock/no-fill/jaringan).
-     Untuk unit non-floating: sembunyikan SELURUH widget (bingkai
-     neon ikut hilang lewat .ad-neon-shell[hidden]). Fallback kartu
-     hanya dipakai floating ad (ditangani site-floating-ad.js).
+     Iklan gagal tampil pada widget (adblock/no-fill/galat skrip).
+     Kartu fallback (varian adblock/house) ditampilkan menggantikan
+     unit, sehingga slot tidak pernah kosong tanpa keterangan
+     (audit 2026-10-13, sebelumnya widget disembunyikan total).
      ========================================================= */
   function showFallback(widget, kind) {
-    // Buang unit iklan & placeholder demo agar tidak menyisakan ruang.
+    // Buang unit iklan agar tidak menyisakan ruang kosong.
     var units = widget.querySelectorAll('[data-ad-unit]');
     for (var i = 0; i < units.length; i++) {
       if (units[i].parentNode) units[i].parentNode.removeChild(units[i]);
     }
 
+    var fallback = widget.querySelector('[data-ad-fallback]');
+    if (fallback) {
+      var variants = fallback.querySelectorAll('[data-ad-fallback-variant]');
+      for (var v = 0; v < variants.length; v++) {
+        var match = variants[v].getAttribute('data-ad-fallback-variant') === kind;
+        variants[v].hidden = !match;
+      }
+      fallback.hidden = false;
+      fallback.setAttribute('aria-hidden', 'false');
+      widget.setAttribute('data-ad-status', 'fallback-' + kind);
+      return;
+    }
+
+    // Widget lama tanpa markup kartu: sembunyikan total.
     widget.hidden = true;
     widget.setAttribute('aria-hidden', 'true');
     widget.setAttribute('data-ad-status', 'hidden-' + kind);
+  }
 
-    // Banner responsif punya wrapper luar (mt-4); sembunyikan juga
-    // supaya tidak menyisakan celah kosong.
-    var wrapper = widget.closest ? widget.closest('[data-ad-banner-wrapper]') : null;
-    if (wrapper) wrapper.hidden = true;
+  /* =========================================================
+     Pantau isi unit sampai AD_INSPECT_TIMEOUT. Selama status
+     masih "loading", kreatif yang terisi kapan pun akan
+     mengubah status menjadi "loaded" dan membatalkan fallback.
+     ========================================================= */
+  function watchUnit(widget, unit) {
+    var started = Date.now();
+    var timer = window.setInterval(function () {
+      if (widget.getAttribute('data-ad-status') !== 'loading') {
+        window.clearInterval(timer);
+        return;
+      }
+      if (adRendered(unit)) {
+        window.clearInterval(timer);
+        widget.setAttribute('data-ad-status', 'loaded');
+        return;
+      }
+      if (Date.now() - started >= AD_INSPECT_TIMEOUT) {
+        window.clearInterval(timer);
+        if (widget.getAttribute('data-ad-status') === 'loading') {
+          showFallback(widget, 'house');
+        }
+      }
+    }, AD_POLL_INTERVAL);
   }
 
   function injectWidget(widget, adBlocked, done) {
     // Adblock terdeteksi: jangan minta iklan, langsung fallback sopan.
     if (adBlocked) {
       showFallback(widget, 'adblock');
-      if (done) window.setTimeout(done, 60);
+      if (done) done();
       return;
     }
 
     var unit = pickResponsiveUnit(widget);
     if (!unit) {
       showFallback(widget, 'house');
-      if (done) window.setTimeout(done, 60);
+      if (done) done();
       return;
     }
 
     var invoke = unit.getAttribute('data-ad-invoke');
     var key = unit.getAttribute('data-ad-key');
-
-    if (invoke && key) {
-      var format = unit.getAttribute('data-ad-format') || 'iframe';
-      var height = parseInt(unit.getAttribute('data-ad-height') || '0', 10);
-      var width = parseInt(unit.getAttribute('data-ad-width') || '0', 10);
-      injectAdIframe(unit, key, format, width, height, invoke);
-    } else if (invoke) {
-      var script = document.createElement('script');
-      script.src = invoke;
-      script.async = true;
-      script.setAttribute('data-cfasync', 'false');
-      script.onerror = function () {
-        showFallback(widget, 'house');
-      };
-      unit.appendChild(script);
-    }
+    var format = unit.getAttribute('data-ad-format') || 'iframe';
+    var height = parseInt(unit.getAttribute('data-ad-height') || '0', 10);
+    var width = parseInt(unit.getAttribute('data-ad-width') || '0', 10);
 
     unit.hidden = false;
     widget.hidden = false;
     widget.setAttribute('data-ad-status', 'loading');
 
-    // Beri waktu network mengisi kreatif, lalu inspeksi.
-    window.setTimeout(function () {
-      if (widget.getAttribute('data-ad-status') === 'loading') {
-        if (adRendered(unit)) {
-          widget.setAttribute('data-ad-status', 'loaded');
-        } else {
-          showFallback(widget, 'house');
-        }
-      }
+    if (!invoke) {
+      showFallback(widget, 'house');
       if (done) done();
-    }, AD_INSPECT_TIMEOUT);
+      return;
+    }
+
+    var script = injectAdScript(unit, key, format, width, height, invoke);
+    if (!script) {
+      showFallback(widget, 'house');
+      if (done) done();
+      return;
+    }
+
+    // Antrean boleh lanjut setelah skrip dieksekusi (load/error),
+    // bukan menunggu inspeksi selesai, agar unit berikutnya tidak
+    // tertunda sampai 15 detik per slot.
+    var advanced = false;
+    function advance() {
+      if (advanced) return;
+      advanced = true;
+      if (done) done();
+    }
+    script.addEventListener('load', advance);
+    script.addEventListener('error', function () {
+      showFallback(widget, 'house');
+      advance();
+    });
+    window.setTimeout(advance, QUEUE_ADVANCE_TIMEOUT);
+
+    watchUnit(widget, unit);
   }
 
   function enqueueWidget(widget, adBlocked) {
@@ -288,15 +281,9 @@
       return;
     }
     queueRunning = true;
-    // Saat adblock, langsung lanjut (tanpa menunggu timeout penuh).
     injectWidget(next.widget, next.blocked, function () {
       pumpQueue();
     });
-    if (next.blocked) {
-      // Fallback adblock instan: jangan blok antrean menunggu timeout.
-      window.setTimeout(pumpQueue, 0);
-      queueRunning = false;
-    }
   }
 
   function initAdFallbacks() {
@@ -306,7 +293,7 @@
     detectAdBlock(function (blocked) {
       for (var i = 0; i < widgets.length; i++) {
         if (blocked) {
-          // Adblock: tampilkan fallback serentak, tak perlu antrean network.
+          // Adblock: tampilkan kartu fallback serentak, tanpa antrean network.
           showFallback(widgets[i], 'adblock');
         } else {
           enqueueWidget(widgets[i], false);

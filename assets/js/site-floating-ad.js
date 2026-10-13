@@ -3,21 +3,11 @@
 
   var SESSION_KEY = 'site_floating_ad_closed';
   var MOBILE_MAX = 767;
-  // Dokumen iklan ber-origin buram, jadi induk tidak bisa
-  // lagi mengintip isinya. Probe ini ikut ditulis ke dalam srcdoc dan
-  // melapor lewat postMessage begitu kreatif benar-benar muncul.
-  var AD_PROBE =
-    '<script>(function(){' +
-    'var terisi=function(){var d=document.body;if(!d)return false;var k=d.children,n=0,i;' +
-    'for(i=0;i<k.length;i++){if(k[i].tagName!=="SCRIPT")n++;}' +
-    'return n>0||d.scrollHeight>12;};' +
-    'var lapor=function(){try{if(terisi())parent.postMessage({sumber:"iklan-probe",status:"terisi"},"*");}catch(e){}};' +
-    'lapor();' +
-    'try{new MutationObserver(lapor).observe(document.documentElement,{childList:true,subtree:true,attributes:true,characterData:true});}catch(e){}' +
-    'var n=0,t=setInterval(function(){lapor();if(++n>60)clearInterval(t);},250);' +
-    '})();<' + '/script>';
-
-  var AD_INSPECT_TIMEOUT = 6500;
+  // Jendela inspeksi isi kreatif dengan polling (audit 2026-10-13).
+  // Dulu satu kali cek di 6,5 detik; kreatif yang terisi belakangan
+  // dianggap gagal. Sekarang dihormati sampai 15 detik.
+  var AD_INSPECT_TIMEOUT = 15000;
+  var AD_POLL_INTERVAL = 500;
   var BTT_OFFSET_PROPERTY = '--btt-ad-height';
   var bttResizeObserver = null;
   var bttResizeHandler = null;
@@ -58,66 +48,33 @@
     }, 130);
   }
 
-  // Render unit floating ad di dalam iframe terisolasi miliknya sendiri.
-  function injectAdIframe(unit, key, format, width, height, invokeUrl) {
+  /* =========================================================
+     Pemuatan unit floating langsung di halaman (audit 2026-10-13,
+     Opsi A). Iframe sandbox ber-origin buram dihapus karena skrip
+     Adsterra tidak kompatibel dengan konteks itu; invoke.js kini
+     dijalankan di dokumen halaman. Lihat catatan di
+     site-ad-fallback.js untuk detail alasan dan atOptions.
+     ========================================================= */
+  function injectAdScript(unit, key, format, width, height, invokeUrl) {
     if (!unit || !invokeUrl) return null;
 
-    var iframe = document.createElement('iframe');
-    // Sandbox tanpa allow-same-origin membuat iframe menjadi origin
-    // buram, sehingga skrip iklan pihak ketiga tidak bisa membaca DOM, cookie,
-    // maupun localStorage halaman induk. allow-scripts wajib agar kreatif tetap
-    // dirender. allow-popups dan allow-popups-to-escape-sandbox menjaga klik
-    // iklan tetap membuka tab baru yang tidak ikut ter-sandbox.
-    // allow-top-navigation-by-user-activation dipakai agar kreatif yang
-    // menavigasi halaman atas saat diklik tetap berfungsi. Bila ingin lebih
-    // ketat, token terakhir ini yang pertama boleh dilepas.
-    iframe.setAttribute(
-      'sandbox',
-      'allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
-    );
-    iframe.setAttribute('data-iklan-probe', '1');
-    iframe.setAttribute('scrolling', 'no');
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('title', 'Advertisement');
-    iframe.style.border = '0';
-    iframe.style.display = 'block';
-    iframe.style.overflow = 'hidden';
-    iframe.style.width = (width || 320) + 'px';
-    iframe.style.height = (height || 50) + 'px';
-    iframe.style.maxWidth = '100%';
-    unit.appendChild(iframe);
+    if (key) {
+      window.atOptions = {
+        key: key,
+        format: format || 'iframe',
+        height: height,
+        width: width,
+        params: {}
+      };
+    }
 
-    // Terima laporan probe dari dalam iframe. Induk tidak
-    // pernah membaca isi dokumen iklan, hanya menerima pesan dari window
-    // yang memang dipasang di iframe ini.
-    window.addEventListener('message', function (ev) {
-      if (ev.source !== iframe.contentWindow) return;
-      var pesan = ev.data;
-      if (pesan && pesan.sumber === 'iklan-probe' && pesan.status === 'terisi') {
-        iframe.setAttribute('data-iklan-terisi', 'ya');
-      }
-    });
-
-    var atOptionsJson = JSON.stringify({
-      key: key,
-      format: format || 'iframe',
-      height: height,
-      width: width,
-      params: {}
-    }).replace(/</g, '\\u003c');
-
-    // srcdoc dipakai menggantikan document.write. Setelah sandbox
-    // tanpa allow-same-origin aktif, iframe.contentWindow.document tidak lagi
-    // bisa diakses dan melempar SecurityError, sehingga document.write gagal.
-    // srcdoc tetap diizinkan pada iframe yang di-sandbox.
-    iframe.srcdoc =
-      '<!doctype html><html><head><style>html,body{margin:0;padding:0;overflow:hidden;background:transparent;}</style></head>' +
-      '<body>' +
-      '<script>window.atOptions = ' + atOptionsJson + ';<' + '/script>' +
-      '<script src="' + invokeUrl + '"><' + '/script>' +
-      AD_PROBE +
-      '</body></html>';
-    return iframe;
+    var script = document.createElement('script');
+    script.src = invokeUrl;
+    script.async = false;
+    script.setAttribute('data-cfasync', 'false');
+    script.setAttribute('data-ad-script', '1');
+    unit.appendChild(script);
+    return script;
   }
 
   function pickResponsiveUnit(ad) {
@@ -148,32 +105,23 @@
     return chosen;
   }
 
+  // Kreatif dianggap mulai terisi bila vendor menyisipkan node
+  // non-skrif (iframe/ins/img/wrapper) ke dalam unit. Node
+  // placeholder (data-ad-ignore) tidak dihitung.
   function adRendered(unit) {
     if (!unit) return false;
-    var iframe = unit.querySelector('iframe');
-    // Iframe buatan sendiri dinilai dari laporan probe,
-    // bukan dari percobaan mengintip dokumen (yang kini selalu melempar).
-    if (iframe && iframe.getAttribute('data-iklan-probe') === '1') {
-      return iframe.getAttribute('data-iklan-terisi') === 'ya';
-    }
-    if (!iframe) return false;
-    try {
-      var idoc = iframe.contentWindow && iframe.contentWindow.document;
-      if (idoc && idoc.body) {
-        var kids = idoc.body.children;
-        var real = 0;
-        for (var i = 0; i < kids.length; i++) {
-          if (kids[i].tagName !== 'SCRIPT') real++;
-        }
-        if (real > 0) return true;
-        if (idoc.body.scrollHeight > 12) return true;
-        return false;
-      }
-    } catch (e) {
-      // Cross-origin => anggap berhasil.
+    var kids = unit.children;
+    for (var i = 0; i < kids.length; i++) {
+      if (kids[i].tagName === 'SCRIPT') continue;
+      if (kids[i].getAttribute && kids[i].getAttribute('data-ad-ignore') !== null) continue;
       return true;
     }
     return false;
+  }
+
+  function isFallbackShown(ad) {
+    var fallback = ad.querySelector('[data-ad-fallback]');
+    return !!(fallback && !fallback.hidden);
   }
 
   function syncBackToTopOffset(ad) {
@@ -254,6 +202,29 @@
     watchBackToTopOffset(ad);
   }
 
+  // Pantau isi unit sampai AD_INSPECT_TIMEOUT. Bila kreatif terisi
+  // kapan pun dalam jendela itu, fallback dibatalkan. Bila tetap
+  // kosong sampai batas waktu, kartu fallback house ditampilkan.
+  function watchUnit(ad, unit) {
+    var started = Date.now();
+    var timer = window.setInterval(function () {
+      if (isFallbackShown(ad)) {
+        window.clearInterval(timer);
+        return;
+      }
+      if (adRendered(unit)) {
+        window.clearInterval(timer);
+        return;
+      }
+      if (Date.now() - started >= AD_INSPECT_TIMEOUT) {
+        window.clearInterval(timer);
+        if (!isFallbackShown(ad)) {
+          showFallback(ad, 'house');
+        }
+      }
+    }, AD_POLL_INTERVAL);
+  }
+
   function injectFloating(ad) {
     detectAdBlock(function (blocked) {
       if (blocked) {
@@ -275,25 +246,25 @@
       var height = parseInt(unit.getAttribute('data-ad-height') || '50', 10);
       var width = parseInt(unit.getAttribute('data-ad-width') || '320', 10);
 
-      if (invoke && key) {
-        injectAdIframe(unit, key, format, width, height, invoke);
-      } else if (invoke) {
-        var script = document.createElement('script');
-        script.src = invoke;
-        script.async = true;
-        script.setAttribute('data-cfasync', 'false');
-        script.onerror = function () { showFallback(ad, 'house'); };
-        unit.appendChild(script);
+      unit.hidden = false;
+
+      if (!invoke) {
+        showFallback(ad, 'house');
+        reveal(ad);
+        return;
+      }
+
+      var script = injectAdScript(unit, key, format, width, height, invoke);
+      if (script) {
+        script.addEventListener('error', function () {
+          showFallback(ad, 'house');
+        });
+      } else {
+        showFallback(ad, 'house');
       }
 
       reveal(ad);
-
-      // Inspeksi apakah kreatif benar-benar tampil; kalau tidak -> house ad.
-      window.setTimeout(function () {
-        if (!adRendered(unit)) {
-          showFallback(ad, 'house');
-        }
-      }, AD_INSPECT_TIMEOUT);
+      watchUnit(ad, unit);
     });
   }
 
@@ -306,7 +277,7 @@
       return;
     }
 
-    setTimeout(function() {
+    setTimeout(function () {
       injectFloating(ad);
     }, 1800);
 

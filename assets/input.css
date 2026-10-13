@@ -8227,8 +8227,10 @@ html body #main-content > :first-child {
 
 /* ==========================================================
    AD WIDGET FALLBACK SYSTEM
-   Jika unit gagal dimuat: shell di-hide total (tanpa teks
-   "Iklan belum tersedia"). Unit & fallback saling eksklusif.
+   Jika unit gagal dimuat, unit dibuang dan kartu fallback
+   (varian adblock/house) ditampilkan di dalam shell, sehingga
+   slot tidak pernah kosong tanpa keterangan. Unit & kartu
+   fallback saling eksklusif (audit 2026-10-13).
    ========================================================== */
 
 .ad-neon-scroll[hidden],

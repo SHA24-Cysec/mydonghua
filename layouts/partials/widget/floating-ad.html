@@ -1,7 +1,14 @@
 {{/* 
   Floating bottom ad: Responsive 728×90 (Desktop) / 320×50 (Mobile)
   Prioritas: Performa (hindari konflik dengan banner utama)
-  Menggunakan key berbeda dari banner 728x90 di halaman posting
+
+  PERHATIAN (audit 2026-10-13): nilai data-ad-key di bawah saat ini
+  SAMA dengan banner 728x90 di halaman posting (ef733504... untuk
+  desktop, b4c00e77... untuk mobile). Dua slot dengan key yang sama di
+  halaman yang sama rawan salah satu tidak terisi (deteksi duplikat
+  atau pembatasan frekuensi di sisi Adsterra). Agar keduanya berisi:
+  buat placement khusus floating di panel Adsterra, lalu ganti nilai
+  data-ad-key dan data-ad-invoke pada kedua unit di bawah.
 */}}
 <section
   class="site-floating-ad"
