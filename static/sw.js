@@ -1,7 +1,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'donghuabatch-pwa';
-const CACHE_VERSION = '2026-10-13-1';
+const CACHE_VERSION = '2026-10-13-2';
 const SHELL_CACHE = `${CACHE_PREFIX}-shell-${CACHE_VERSION}`;
 const PAGE_CACHE = `${CACHE_PREFIX}-pages-${CACHE_VERSION}`;
 const ASSET_CACHE = `${CACHE_PREFIX}-assets-${CACHE_VERSION}`;
@@ -28,7 +28,7 @@ const APP_SHELL = [
   '/img/Huo-Linger.webp'
 ];
 
-// SEC-03: hanya gaya, skrip, dan font yang dipanaskan saat instalasi.
+// Hanya gaya, skrip, dan font yang dipanaskan saat instalasi.
 // Gambar tetap diambil saat diminta lewat strategi cacheFirst supaya
 // instalasi tidak menarik puluhan webp dari halaman katalog.
 const DISCOVERABLE_ASSET = /\.(?:css|js|mjs|woff2?)$/i;
@@ -38,7 +38,7 @@ function sameOrigin(url) {
   return url.origin === self.location.origin;
 }
 
-// SEC-10: query string sengaja dibuang dari kunci cache navigasi.
+// Query string sengaja dibuang dari kunci cache navigasi.
 // Aman selama HTML statis dan parameter hanya diolah di sisi klien.
 // Bila kelak ada halaman yang isinya bergantung query di server, ubah ini.
 function navigationCacheKey(request) {
@@ -75,7 +75,7 @@ async function fetchWithTimeout(request, timeoutMilliseconds) {
 }
 
 function collectDocumentAssets(documentUrl, html, output) {
-  // SEC-03: Hugo --minify menghapus tanda kutip pada atribut tanpa spasi,
+  // Hugo --minify menghapus tanda kutip pada atribut tanpa spasi,
   // jadi pola ini harus menerima nilai tanpa kutip juga.
   const referencePattern = /(?:src|href)\s*=\s*(?:"([^"#]+)"|'([^'#]+)'|([^\s>]+))/gi;
   let match;
@@ -187,7 +187,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (url.pathname === '/index.json') {
-    // PERF-08: angka 0 berarti tanpa batas entri, bukan jangan menyimpan.
+    // Angka 0 berarti tanpa batas entri, bukan jangan menyimpan.
     // Hanya dipakai untuk satu URL tunggal, jadi batas entri tidak diperlukan.
     // Berkas ini tidak ikut precache agar pemasangan PWA tidak mengunduhnya
     // sebelum pengguna memakai pencarian.

@@ -18,7 +18,7 @@
     {{- end }}
 {{- end }}
 
-{{- $locale := or .Params.locale site.Language.Lang "id_ID" -}}
+{{- $locale := or .Params.locale "id_ID" -}}
 {{- with $locale | plainify }}
     <meta property="og:locale" content="{{ replace . `-` `_` }}">
 {{- end }}

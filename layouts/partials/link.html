@@ -1,4 +1,4 @@
-{{/* PERF-01: CSS ikon digabung ke CSS utama supaya cukup satu permintaan.
+{{/* CSS ikon digabung ke CSS utama supaya cukup satu permintaan.
      Urutan dipertahankan (main dulu, fa-subset sesudahnya) agar cascade tidak berubah.
      Kedua berkas memakai jalur font absolut /fonts/..., jadi perpindahan lokasi aman. */}}
 {{ $main := resources.Get "main.css" }}
@@ -22,8 +22,6 @@
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 <link rel="dns-prefetch" href="https://mydonghua.disqus.com">
-{{/*  Font Awesome 6.7.2 subset lokal. Kit 40c8dc61cd merusak ikon;
-      subset ini memakai class yang sama dengan CDN free, tanpa all.min.css. */}}
 
 {{/* Homepage LCP: preload hanya gambar hero utama. */}}
 {{ if .IsHome }}

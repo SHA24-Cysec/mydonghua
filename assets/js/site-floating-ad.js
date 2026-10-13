@@ -3,7 +3,7 @@
 
   var SESSION_KEY = 'site_floating_ad_closed';
   var MOBILE_MAX = 767;
-  // SEC-02 lanjutan: dokumen iklan ber-origin buram, jadi induk tidak bisa
+  // Dokumen iklan ber-origin buram, jadi induk tidak bisa
   // lagi mengintip isinya. Probe ini ikut ditulis ke dalam srcdoc dan
   // melapor lewat postMessage begitu kreatif benar-benar muncul.
   var AD_PROBE =
@@ -41,7 +41,7 @@
     (document.body || document.documentElement).appendChild(bait);
 
     window.setTimeout(function () {
-      var blocked = false;
+      var blocked;
       try {
         var cs = window.getComputedStyle ? window.getComputedStyle(bait) : null;
         blocked =
@@ -63,7 +63,7 @@
     if (!unit || !invokeUrl) return null;
 
     var iframe = document.createElement('iframe');
-    // SEC-02: sandbox tanpa allow-same-origin membuat iframe menjadi origin
+    // Sandbox tanpa allow-same-origin membuat iframe menjadi origin
     // buram, sehingga skrip iklan pihak ketiga tidak bisa membaca DOM, cookie,
     // maupun localStorage halaman induk. allow-scripts wajib agar kreatif tetap
     // dirender. allow-popups dan allow-popups-to-escape-sandbox menjaga klik
@@ -87,7 +87,7 @@
     iframe.style.maxWidth = '100%';
     unit.appendChild(iframe);
 
-    // SEC-02 lanjutan: terima laporan probe dari dalam iframe. Induk tidak
+    // Terima laporan probe dari dalam iframe. Induk tidak
     // pernah membaca isi dokumen iklan, hanya menerima pesan dari window
     // yang memang dipasang di iframe ini.
     window.addEventListener('message', function (ev) {
@@ -106,7 +106,7 @@
       params: {}
     }).replace(/</g, '\\u003c');
 
-    // SEC-02: srcdoc dipakai menggantikan document.write. Setelah sandbox
+    // srcdoc dipakai menggantikan document.write. Setelah sandbox
     // tanpa allow-same-origin aktif, iframe.contentWindow.document tidak lagi
     // bisa diakses dan melempar SecurityError, sehingga document.write gagal.
     // srcdoc tetap diizinkan pada iframe yang di-sandbox.
@@ -151,7 +151,7 @@
   function adRendered(unit) {
     if (!unit) return false;
     var iframe = unit.querySelector('iframe');
-    // SEC-02 lanjutan: iframe buatan sendiri dinilai dari laporan probe,
+    // Iframe buatan sendiri dinilai dari laporan probe,
     // bukan dari percobaan mengintip dokumen (yang kini selalu melempar).
     if (iframe && iframe.getAttribute('data-iklan-probe') === '1') {
       return iframe.getAttribute('data-iklan-terisi') === 'ya';

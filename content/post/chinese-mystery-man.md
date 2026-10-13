@@ -1,7 +1,7 @@
 ---
 date : '2025-08-17T18:21:26+07:00'
 draft : false
-title : 'Download Batch Chinesse Mystery Man Subtitle Indonesia'
+title : 'Download Batch Chinese Mystery Man Subtitle Indonesia'
 studio :
     - 'Haoliners Animation League'
     - 'PB Animation'
@@ -22,22 +22,22 @@ rating : 7
 
 
 # Gambar width: 200, height : 300
-thumbnail : /img/post/chinesse-mystery-man.webp
-image : /img/post/chinesse-mystery-man.webp
+thumbnail : /img/post/chinese-mystery-man.webp
+image : /img/post/chinese-mystery-man.webp
 
-alt : 'Chinesse Mystery Man'
-url: 'chinesse-mystery-man'
+alt : 'Chinese Mystery Man'
+url: 'chinese-mystery-man'
 layout : postingan-donghua
 sinopsis : 'Chinese Mystery Man adalah sebuah donghua bergenre aksi, misteri, dan supranatural yang mengisahkan tentang seorang pria misterius dengan kemampuan luar biasa yang muncul di tengah gejolak dunia modern. Identitas dan asal-usulnya penuh teka-teki, namun kehadirannya selalu berkaitan dengan kasus-kasus aneh, kekuatan tersembunyi, serta rahasia kelam yang melibatkan organisasi rahasia dan kekuatan kuno.'
-deskripsi : 'Download Batch Chinesse Mystery Man Subtitle Indonesia'
-keywords : 'Download Batch Chinesse Mystery Man Subtitle Indonesia'
+deskripsi : 'Download Batch Chinese Mystery Man Subtitle Indonesia'
+keywords : 'Download Batch Chinese Mystery Man Subtitle Indonesia'
 
 # Jika Link Download Belum Ada, Gunakan Tag "Belum Tersedia", Jika Ada Gunakan Tag "Download"
 
 downloadGroups:
   
   # Batch 1
-  - title: 'Chinesse Mystery Man Batch Subtitle Indonesia'
+  - title: 'Chinese Mystery Man Batch Subtitle Indonesia'
     
     downloads:
     

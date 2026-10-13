@@ -1,13 +1,10 @@
 baseURL = 'https://donghuabatch.com/'
 title = 'DonghuaBatch - Tempatnya Download Batch Donghua Subtitle Indonesia'
 defaultContentLanguage = 'id'
-uglyURLs = false
 
 [services]
     [services.googleAnalytics]
         id = 'G-7B40JB824Z'
-    [services.rss]
-        limit = -1
 
 [taxonomies]
     genres = 'genre'
@@ -36,35 +33,14 @@ uglyURLs = false
     taxonomy = ['HTML']
     term = ['HTML']
 
-# Hugo Modules – mount static/img to assets/img
-# Supaya resources.Get bisa proses thumbnail di static/img/post/
-# tanpa perlu copy manual ke assets/img/post/
+# Hugo Modules: static/img juga dibuka sebagai assets/img supaya resources.Get
+# bisa membaca gambar apa adanya (misalnya lebar dan tinggi) tanpa menyalin
+# berkas ke assets/. Mount untuk komponen assets menggantikan mount bawaan
+# assets, jadi folder assets ditulis ulang di sini. Mount bawaan lain tetap aktif.
 [module]
-  [[module.mounts]]
-    source = "content"
-    target = "content"
-  [[module.mounts]]
-    source = "layouts"
-    target = "layouts"
-  [[module.mounts]]
-    source = "static"
-    target = "static"
   [[module.mounts]]
     source = "assets"
     target = "assets"
   [[module.mounts]]
-    source = "data"
-    target = "data"
-  [[module.mounts]]
-    source = "i18n"
-    target = "i18n"
-  [[module.mounts]]
-    source = "archetypes"
-    target = "archetypes"
-  # Mount tambahan: expose static/img ke assets/img untuk Hugo Pipes
-  [[module.mounts]]
     source = "static/img"
     target = "assets/img"
-
-[minify]
-  disableJS = false

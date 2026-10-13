@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { basename, join, resolve } from 'node:path';
+import { join, resolve } from 'node:path';
 
 const contentDirectory = resolve('content/post');
 const invalidTaxonomyValues = new Set(['-', 'n/a', 'none', 'null']);

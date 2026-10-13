@@ -21,7 +21,7 @@
     <meta name="keywords" content="{{ .Site.Params.keywords }}">
     <meta name="robots" content="index, follow">
 {{ else if eq .Layout "postingan-donghua" }}
-    {{/* SEO-04: ambil kandidat terpanjang dari deskripsi, sinopsis, dan intro,
+    {{/* Ambil kandidat terpanjang dari deskripsi, sinopsis, dan intro,
          supaya halaman yang deskripsi pendeknya hanya mengulang judul tetap
          punya cuplikan yang informatif. */}}
     {{ $desc := "" }}

@@ -82,9 +82,8 @@ const searchInput = document.getElementById("search-input");
 
     // Jumlah kartu per halaman dibuat kelipatan jumlah kolom grid supaya
     // baris terakhir selalu terisi penuh. Grid berganti kolom di 356px,
-    // 520px, dan 708px (lihat --donghua-card-min di input.css), bukan di
-    // 640px/700px/1024px seperti asumsi lama. Angka 16 menyamai per-page
-    // paginator Hugo di beranda dan halaman list.
+    // 520px, dan 708px (lihat --donghua-card-min di input.css). Angka 16
+    // menyamai per-page paginator Hugo di beranda dan halaman list.
     function getSearchPerPage() {
       if (window.matchMedia('(min-width: 708px)').matches) return 16; // 4 kolom
       if (window.matchMedia('(min-width: 520px)').matches) return 12; // 3 kolom
@@ -100,7 +99,7 @@ const searchInput = document.getElementById("search-input");
     }
 
     // Escape HTML supaya nilai teks aman saat di-inject via innerHTML.
-    // Pola sama dengan escapeHTML() di site-favorites.js agar konsisten.
+    // Pola sama dengan escapeHTML() di site-favorites-page.js agar konsisten.
     function escapeHTML(value) {
       return toText(value)
         .replace(/&/g, "&amp;")
@@ -108,21 +107,6 @@ const searchInput = document.getElementById("search-input");
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
-    }
-
-    function cardTypeLabel(value) {
-      const label = toText(value).trim();
-      return label.toLowerCase() === "donghua movie" ? "Movie" : label;
-    }
-
-    // Judul card dibersihkan dari boilerplate "Download Batch ... Subtitle
-    // Indonesia" supaya nama seri tidak habis dimakan clamp 2 baris.
-    // getTitleSearchSource() sudah mengenali pola yang sama untuk pencarian,
-    // jadi dipakai ulang di sini agar aturannya tidak bercabang.
-    function cardTitleLabel(value) {
-      const source = toText(value);
-      if (!source) return "";
-      return getTitleSearchSource(source).core || source;
     }
 
     function normalizeForSearch(value) {
@@ -418,12 +402,7 @@ const searchInput = document.getElementById("search-input");
     }
 
     function getFilterValues(item, key) {
-      let raw = "";
-      if (key === "genre") raw = item.genre;
-      else if (key === "studio") raw = item.studio;
-      else raw = item[key];
-
-      return toText(raw)
+      return toText(item[key])
         .split(",")
         .map(function (value) { return value.trim(); })
         .filter(function (value) { return value && value !== "-"; });
@@ -697,7 +676,7 @@ const searchInput = document.getElementById("search-input");
       resultsList.setAttribute("aria-busy", "false");
 
       updatePagination();
-      // Sync bookmark buttons – sama seperti di halaman Favorit
+      // Sync bookmark buttons, sama seperti di halaman Favorit
       try {
         if (window.DonghuaFav && window.DonghuaFav.syncAllButtons) {
           window.DonghuaFav.syncAllButtons();
@@ -933,15 +912,4 @@ const searchInput = document.getElementById("search-input");
         }, 120);
       });
     }
-
-
-window.DonghuaBatchData = window.DonghuaBatchData || {};
-window.DonghuaBatchData.getIndexData = function () {
-  return searchIndexPromise || fetch('/index.json').then(function (res) { return res.json(); });
-};
-
-// Diekspos supaya halaman filter genre memakai jumlah item per halaman
-// yang sama persis (adaptif sesuai lebar layar) dengan halaman pencarian.
-window.DonghuaSearch = window.DonghuaSearch || {};
-window.DonghuaSearch.getPerPage = getSearchPerPage;
 })();

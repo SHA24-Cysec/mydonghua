@@ -166,16 +166,11 @@
 
   window.DonghuaFav = {
     isSaved: isSaved,
-    toggleSave: toggleSave,
     clearAll: clearAll,
     loadFavorites: loadFavIds,
     getWatchStatus: getWatchStatus,
     setWatchStatus: setWatchStatus,
-    loadWatchStatuses: loadWatchStatuses,
-    WATCH_STATUS_KEY: WATCH_STATUS_KEY,
-    WATCH_STATUSES: WATCH_STATUSES.slice(),
-    syncAllButtons: syncAllButtons,
-    STORAGE_KEY: STORAGE_KEY
+    syncAllButtons: syncAllButtons
   };
 
   // Escape key untuk tutup dialog konfirmasi hapus favorit

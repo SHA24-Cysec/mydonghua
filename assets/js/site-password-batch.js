@@ -33,7 +33,7 @@
     area.style.cssText = 'position:absolute;left:-9999px;top:0;opacity:0;';
     document.body.appendChild(area);
     area.select();
-    let copied = false;
+    let copied;
     try {
       copied = document.execCommand('copy');
     } catch (error) {

@@ -2,17 +2,17 @@
 {{ $headingLevel := .headingLevel | default 3 }}
 {{ $eager := .eager | default false }}
 {{ $priority := .priority | default false }}
-{{/* SCROLL-FLASH FIX: tampilkan 8 poster pertama dengan eager + decoding=auto
-     pada grid utama. Penyebab gambar hitam saat scroll di mobile adalah
-     pembatalan decode async ketika viewport berubah cepat. Empat poster
-     sudah eager untuk LCP; naik ke delapan agar baris kedua (yang
-     langsung terlihat setelah scroll pendek) tidak berkedip. Sisanya tetap
-     lazy. fetchpriority=high hanya untuk 2 teratas. */}}
+{{/* Tampilkan 8 poster pertama dengan eager + decoding=auto pada grid
+     utama. Penyebab gambar hitam saat scroll di mobile adalah pembatalan
+     decode async ketika viewport berubah cepat. Delapan poster mencakup
+     baris kedua (yang langsung terlihat setelah scroll pendek) supaya
+     tidak berkedip. Sisanya tetap lazy. fetchpriority=high hanya untuk
+     2 teratas. */}}
 
-{{/* === FORCE UNIFORM BADGE (Opsi 1 - Seragam Total) === */}}
+{{/* Badge tipe diseragamkan: hanya "Donghua" atau "Movie". */}}
 {{ $rawType := lower ($page.Params.type | default "Donghua") }}
 {{ $cardType := "Donghua" }}
-{{ if or (eq $rawType "movie") (eq $rawType "donghua movie") (strings.Contains $rawType "movie") }}
+{{ if strings.Contains $rawType "movie" }}
   {{ $cardType = "Movie" }}
 {{ end }}
 
@@ -29,7 +29,7 @@
     {{/* Status favorit tersimpan di localStorage, jadi HTML statis selalu dirender
          dalam keadaan belum tersimpan. site-favorites.js akan mengoreksi
          aria-pressed, kelas is-saved, dan label lewat syncAllButtons(). */}}
-    <button class="donghua-card-bookmark btn btn--ikon btn--kecil" data-fav-id="{{ $page.Params.permalink | default $page.Permalink }}" type="button" aria-pressed="false" aria-label="Tambah ke daftar favorit" title="Simpan ke favorit">
+    <button class="donghua-card-bookmark btn btn--ikon btn--kecil" data-fav-id="{{ $page.Permalink }}" type="button" aria-pressed="false" aria-label="Tambah ke daftar favorit" title="Simpan ke favorit">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
             <path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z"/>
         </svg>

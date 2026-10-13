@@ -41,7 +41,6 @@
     </main>
     {{ partial "footer" . }}
     {{ partial "js" . }}
-    {{/*  loading-screen dihapus: menghalangi konten dan menunda LCP/FCP  */}}
     {{ partial "safelinku" . }}
     {{ partial "background-pic" . }}
     {{ partial "back-to-top" . }}
@@ -54,13 +53,11 @@
         {{ partial "save-favorite" . }}
     {{ end }}
     {{ partial "global-scripts" . }}
-    {{/*  Social Bar Adsterra — overlay dirender sendiri oleh jaringan iklan,
+    {{/*  Social Bar Adsterra: overlay dirender sendiri oleh jaringan iklan,
           jadi tidak ada slot markup yang perlu disediakan.
           Production only, sejalan dengan safelinku dan floating-ad.  */}}
     {{ if hugo.IsProduction }}
         <script async data-cfasync="false" src="https://bendspecimen.com/ac/c8/ec/acc8ecf445c142c2f16e5d0ab706e492.js"></script>
     {{ end }}
-    {{/*  Scrollbar CSS dipindah ke main.css (assets/input.css) supaya
-          bisa di-cache terpisah dan mengurangi ukuran HTML  */}}
 </body>
 </html>

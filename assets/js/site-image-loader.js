@@ -19,9 +19,8 @@
   window.addEventListener('error', handleImageError, true);
 
   /*
-   * SCROLL-FLASH FIX:
    * Pasang class .is-loaded setelah image decode selesai. Pasangan CSS
-   * di main.css transisi opacity 0->1 sehingga background gradient
+   * di input.css transisi opacity 0->1 sehingga background gradient
    * .donghua-card-poster tidak langsung kelihatan "hitam" saat decode
    * dibatalkan oleh scroll cepat. Image yang sudah ada di cache
    * ditandai lewat 'complete' check; yang baru di-load lewat

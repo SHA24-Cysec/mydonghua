@@ -380,7 +380,6 @@
 
   window.SiteEmailGuard = {
     attach: attach,
-    init: init,
     isStrictEmail: function (value) {
       return STRICT_EMAIL_RE.test(String(value || '').trim());
     }

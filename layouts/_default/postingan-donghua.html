@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ partial "alert" . }}
     {{ partial "widget/ads-728x90" . }}
-    <div class="mt-4 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
+    <div class="mt-4 mb-0 mx-auto w-full max-w-7xl px-3 lg:px-0">
         <div class="flex gap-4 flex-col lg:flex-row lg:items-start">
             {{/*  Main Content  */}}
             <div class="flex-1 min-w-0">
@@ -41,7 +41,7 @@
                                             {{ end }}
                                         {{ end }}
                                     </div>
-                                    <button class="post-bookmark-btn mt-3" data-fav-id="{{ .Params.permalink | default .Permalink }}" type="button" aria-label="Tambah ke daftar favorit" aria-pressed="false">
+                                    <button class="post-bookmark-btn mt-3" data-fav-id="{{ .Permalink }}" type="button" aria-label="Tambah ke daftar favorit" aria-pressed="false">
                                         <i class="fa-solid fa-bookmark post-bookmark-icon" aria-hidden="true"></i>
                                         <span class="fav-label">Tambah ke Favorit</span>
                                         <i class="fa-solid fa-chevron-right fav-chevron" aria-hidden="true"></i>
@@ -61,7 +61,7 @@
                         <div class="post-info-table-scroll hidden sm:block panel-neon-inset overflow-x-auto w-full mx-auto max-w-full select-none mt-4 shadow-neon-cyan-sm" role="region" tabindex="0" aria-label="Tabel informasi donghua. Geser horizontal untuk melihat semua kolom.">
                             <table class="w-full mx-auto text-sm md:text-base">
                                 <thead>
-                                    <tr class="bg-gradient-to-r from-cyan-600/30 via-blue-600/30 to-purple-600/30 text-cyan-300 font-extrabold border-b border-cyan-500/40">
+                                    <tr class="bg-linear-to-r from-cyan-600/30 via-blue-600/30 to-purple-600/30 text-cyan-300 font-extrabold border-b border-cyan-500/40">
                                         <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-video text-cyan-400"></i>Studio</span></th>
                                         <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-flag text-pink-400"></i>Season</span></th>
                                         <th class="p-3.5 border-r border-cyan-500/20"><span class="flex items-center justify-center gap-2"><i class="fa-solid fa-clock text-amber-400"></i>Durasi</span></th>
@@ -88,7 +88,7 @@
                         </div>
                         <!-- Mobile: Card view -->
                         <div class="sm:hidden panel-neon-inset mt-4 shadow-neon-cyan-sm overflow-hidden">
-                            <div class="bg-gradient-to-r from-cyan-600/30 via-blue-600/30 to-purple-600/30 text-cyan-300 font-extrabold text-center p-3 border-b border-cyan-500/40">
+                            <div class="bg-linear-to-r from-cyan-600/30 via-blue-600/30 to-purple-600/30 text-cyan-300 font-extrabold text-center p-3 border-b border-cyan-500/40">
                                 <i class="fa-solid fa-circle-info text-cyan-400"></i> Info Donghua
                             </div>
                             <div class="divide-y divide-slate-800/60">

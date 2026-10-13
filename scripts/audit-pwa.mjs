@@ -131,9 +131,9 @@ if (manifest) {
     }
   }
 
-  // PERF-10: aturan lama melarang semua ikon PNG. Yang benar-benar dibutuhkan
-  // peramban adalah keterangan purpose yang sah, ditambah satu ikon maskable
-  // supaya Android tidak memangkas ikon biasa sampai terlihat kecil di tengah.
+  // Setiap ikon wajib punya keterangan purpose yang sah, dan minimal satu ikon
+  // maskable supaya Android tidak memangkas ikon biasa sampai terlihat kecil
+  // di tengah.
   const purposeSah = ['any', 'maskable', 'monochrome'];
   for (const icon of icons) {
     const purpose = String(icon.purpose || '').trim();
@@ -161,9 +161,8 @@ const linkPartial = read('layouts/partials/link.html');
 const globalScripts = read('layouts/partials/global-scripts.html');
 const navbar = read('layouts/partials/navbar.html');
 
-// PERF-10: daftar precache diuji terhadap hasil build, bukan hanya dicocokkan
-// sebagai string. Sebelum ini hanya empat jalur yang diperiksa, padahal
-// APP_SHELL memuat 14 entri dan CATALOG_DOCUMENTS memuat tiga dokumen.
+// Daftar precache diuji terhadap hasil build, bukan hanya dicocokkan
+// sebagai string.
 function daftarArray(sumber, nama) {
   const cocok = sumber.match(new RegExp(`${nama}\\s*=\\s*\\[([\\s\\S]*?)\\]`));
   if (!cocok) {
@@ -194,7 +193,7 @@ if (existsSync(resolve(root, 'public/index.html'))) {
   console.log(`Precache: ${jalurPrecache.length} entri, ${totalBita} byte mentah.`);
 }
 
-// PERF-10: versi cache harus lebih baru daripada perubahan terakhir pada sumber
+// Versi cache harus lebih baru daripada perubahan terakhir pada sumber
 // yang ikut dipanaskan. Bila metadata git tidak tersedia, pemeriksaan dilewati
 // dengan catatan, bukan dianggap lulus.
 const versiCache = (serviceWorker.match(/CACHE_VERSION\s*=\s*'([^']+)'/) || [])[1];
@@ -215,7 +214,7 @@ if (!versiCache) {
   }
 }
 
-// PERF-10: theme_color manifest harus sama dengan warna latar situs.
+// theme_color manifest harus sama dengan warna latar situs.
 const inputCss = read('assets/input.css');
 const warnaSitus = (inputCss.match(/--site-bg:\s*([^;]+);/) || [])[1];
 if (warnaSitus && manifest && String(manifest.theme_color).toLowerCase() !== warnaSitus.trim().toLowerCase()) {

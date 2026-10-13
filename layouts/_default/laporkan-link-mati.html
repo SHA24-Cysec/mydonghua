@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- $subject := "[DonghuaBatch] Laporan Link Mati: {{ judul_donghua }}" -}}
-<div class="laporkan-page w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4 mb-0">
+<div class="laporkan-page w-full max-w-7xl mx-auto px-3 lg:px-0 mt-4 mb-0">
 
   <div class="panel-neon p-3 sm:p-5 w-full">
 
@@ -23,10 +23,10 @@
         <div class="laporkan-info panel-neon-inset p-4 sm:p-5 h-full flex flex-col justify-center">
 
           {{/* Accent bar */}}
-          <div class="w-12 h-[3px] rounded-full bg-gradient-to-r from-amber-400 via-rose-400 to-purple-500 border border-amber-400/30 mb-5"></div>
+          <div class="w-12 h-[3px] rounded-full bg-linear-to-r from-amber-400 via-rose-400 to-purple-500 border border-amber-400/30 mb-5"></div>
 
           {{/* Ikon */}}
-          <div class="laporkan-icon-wrap flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/15 to-rose-500/15 border border-amber-500/20 mb-4 shadow-[0_0_18px_rgba(251,191,36,0.08)]">
+          <div class="laporkan-icon-wrap flex items-center justify-center w-14 h-14 rounded-2xl bg-linear-to-br from-amber-500/15 to-rose-500/15 border border-amber-500/20 mb-4 shadow-[0_0_18px_rgba(251,191,36,0.08)]">
             <i class="fa-solid fa-link text-2xl text-amber-300" aria-hidden="true"></i>
           </div>
 
@@ -95,7 +95,7 @@
             <input id="laporanJudul" name="judul_donghua" type="text" required maxlength="120"
                    class="cyber-input-search" placeholder="Contoh: Against the Gods"
                    autocomplete="off" spellcheck="false"
-                   aria-describedby="laporanJudulHint laporanJudulError" data-laporkan-field>
+                   aria-describedby="laporanJudulHint laporanJudulError">
             <span id="laporanJudulHint" class="laporkan-hint">Tulis judul persis seperti yang tampil di situs.</span>
             <span id="laporanJudulError" class="laporkan-field-error" data-laporkan-error="judul_donghua" hidden></span>
           </label>
@@ -107,7 +107,7 @@
             <input id="laporanUrl" name="url_halaman" type="text" required maxlength="300"
                    class="cyber-input-search" placeholder="https://donghuabatch.com/nama-donghua/"
                    autocomplete="off" spellcheck="false" inputmode="url"
-                   aria-describedby="laporanUrlHint laporanUrlError laporanPrefillNote" data-laporkan-field>
+                   aria-describedby="laporanUrlHint laporanUrlError laporanPrefillNote">
             <span id="laporanUrlHint" class="laporkan-hint">Tempel tautan halaman yang link downloadnya rusak.</span>
             <span id="laporanPrefillNote" class="laporkan-prefill-note" role="status" aria-live="polite" hidden></span>
             <span id="laporanUrlError" class="laporkan-field-error" data-laporkan-error="url_halaman" hidden></span>
@@ -120,7 +120,7 @@
               </span>
               <input id="laporanBagian" name="bagian_link" type="text" required maxlength="160"
                      class="cyber-input-search" placeholder="Batch 1080p episode 1 sampai 12"
-                     autocomplete="off" aria-describedby="laporanBagianError" data-laporkan-field>
+                     autocomplete="off" aria-describedby="laporanBagianError">
               <span id="laporanBagianError" class="laporkan-field-error" data-laporkan-error="bagian_link" hidden></span>
             </label>
 
@@ -129,7 +129,7 @@
                 Jenis Masalah <span class="laporkan-required" aria-hidden="true">*</span>
               </span>
               <select id="laporanJenis" name="jenis_masalah" required class="cyber-select"
-                      aria-describedby="laporanJenisError" data-laporkan-field>
+                      aria-describedby="laporanJenisError">
                 <option value="" selected disabled>Pilih jenis masalah</option>
                 <option value="Link download mati (404 atau tidak bisa dibuka)">Link download mati (404 atau tidak bisa dibuka)</option>
                 <option value="Link mengarah ke donghua lain">Link mengarah ke donghua lain</option>
@@ -150,7 +150,7 @@
             <textarea id="laporanKeterangan" name="keterangan" required rows="5" maxlength="1000"
                       class="cyber-textarea-message"
                       placeholder="Ceritakan singkat: link mana yang dibuka, apa yang muncul di layar, sejak kapan."
-                      aria-describedby="laporanKeteranganHint laporanKeteranganError" data-laporkan-field></textarea>
+                      aria-describedby="laporanKeteranganHint laporanKeteranganError"></textarea>
             <span id="laporanKeteranganHint" class="laporkan-hint">
               Minimal 10 karakter. <span data-laporkan-counter>0</span>/1000 karakter terpakai.
             </span>

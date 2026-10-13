@@ -3,8 +3,8 @@
 @font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url("/fonts/fa-brands-400.woff2") format("woff2")}
 
 /* Aturan ikon ditaruh di @layer base supaya utility Tailwind (mis. hidden,
-   block) tetap bisa menimpanya. Sebelumnya berkas ini berada di luar layer
-   sehingga selalu menang atas utility pada elemen ikon yang sama. */
+   block) tetap bisa menimpanya. Aturan di luar layer selalu menang atas
+   utility pada elemen ikon yang sama. */
 @layer base {
   /*!
    * Font Awesome Free 6.7.2 subset for DonghuaBatch.

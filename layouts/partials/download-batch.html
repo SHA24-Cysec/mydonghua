@@ -58,7 +58,7 @@
     </div>
 
     {{- $laporanHref := printf "%s?judul=%s&url=%s" (relURL "laporkan-link-mati/") (.Title | urlquery) (.RelPermalink | urlquery) -}}
-    <a title="Laporkan Link Download Mati" id="reportButton" class="db-report" href="{{ $laporanHref }}" data-report-trigger>
+    <a title="Laporkan Link Download Mati" id="reportButton" class="db-report" href="{{ $laporanHref }}">
         <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
         <span>Laporkan Link Mati</span>
     </a>

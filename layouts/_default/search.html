@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="w-full max-w-screen-xl mx-auto px-3 lg:px-0 mt-4 mb-0">
+<div class="w-full max-w-7xl mx-auto px-3 lg:px-0 mt-4 mb-0">
 <div class="panel-neon flex flex-col w-full h-full min-h-screen p-3 sm:p-5">
     {{ partial "page-header" (dict "context" . "title" .Title "align" "center") }}
     <span class="badge-neon mt-4 mx-auto"><i class="fa-solid fa-info-circle mr-2 text-cyan-400"></i>Ketik minimal 3 huruf. Pisahkan genre dengan koma.</span>
@@ -34,7 +34,7 @@
                     <option value="relevance">Paling Relevan</option>
                     <option value="newest">Terbaru</option>
                     <option value="rating">Rating Tertinggi</option>
-                    <option value="alphabetical">A–Z</option>
+                    <option value="alphabetical">A-Z</option>
                 </select>
             </label>
 

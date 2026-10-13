@@ -1,4 +1,4 @@
-// K4: build yang tidak meninggalkan assets/main.css setengah jadi.
+// Build yang tidak meninggalkan assets/main.css setengah jadi.
 // Alur: cadangkan CSS terlacak, validasi konten, bangun CSS, jalankan Hugo.
 // Bila Hugo gagal, CSS dikembalikan ke isi semula sebelum keluar dengan kode galat.
 import { spawnSync } from 'node:child_process';

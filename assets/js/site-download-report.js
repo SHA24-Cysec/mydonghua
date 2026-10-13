@@ -3,11 +3,10 @@
 
   /* ==========================================================
      TOMBOL LAPORKAN LINK MATI (halaman donghua)
-     Sejak revisi laporan link, tombol "Laporkan Link Mati" di
-     bawah daftar download adalah tautan biasa menuju halaman
-     /laporkan-link-mati/ dengan kolom judul dan URL halaman
-     yang sudah terisi otomatis. Pengiriman laporan ditangani
-     halaman tujuan lewat Formspree.
+     Tombol "Laporkan Link Mati" di bawah daftar download adalah
+     tautan biasa menuju halaman /laporkan-link-mati/ dengan
+     kolom judul dan URL halaman yang sudah terisi otomatis.
+     Pengiriman laporan ditangani halaman tujuan lewat Formspree.
 
      Skrip ini hanya menambah satu sentuhan: tautan pintas
      "laporkan link" pada baris informasi di bagian atas halaman

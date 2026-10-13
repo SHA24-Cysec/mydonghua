@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ partial "header" . }}
     {{ partial "alert" . }}
-    <div class="mt-4 mb-0 mx-auto w-full max-w-screen-xl px-3 lg:px-0">
+    <div class="mt-4 mb-0 mx-auto w-full max-w-7xl px-3 lg:px-0">
         <div class="flex gap-4 flex-col lg:flex-row lg:items-start">
             {{/*  Main Content  */}}
             <div class="panel-neon p-3 sm:p-5 flex-1 min-w-0">
@@ -20,12 +20,12 @@
                         </div>
                     </div>
                     <div class="donghua-card-grid donghua-card-grid-main p-0">
-                        {{/* SCROLL-FLASH FIX: delapan poster pertama dimuat eager. Pada
-                             grid 2 kolom (mobile), delapan = empat baris; pada grid
-                             4 kolom (desktop), delapan = dua baris. Ini menutup
-                             viewport pendek setelah satu kali scroll sehingga
-                             pembatalan decode async tidak lagi menampilkan
-                             background hitam di card yang baru masuk viewport. */}}
+                        {{/* Delapan poster pertama dimuat eager. Pada grid 2 kolom
+                             (mobile), delapan = empat baris; pada grid 4 kolom
+                             (desktop), delapan = dua baris. Ini menutup viewport
+                             pendek setelah satu kali scroll sehingga pembatalan
+                             decode async tidak menampilkan background hitam di
+                             card yang baru masuk viewport. */}}
                         {{ range $index, $page := .Paginator.Pages }}
                             {{ partial "donghua-card" (dict "page" $page "headingLevel" 3 "eager" (lt $index 8) "priority" (lt $index 2)) }}
                         {{ end }}

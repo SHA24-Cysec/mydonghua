@@ -102,9 +102,7 @@
   }
 
   window.DonghuaFocusManager = {
-    getFocusable: getFocusable,
     setInteractive: setInteractive,
-    focusFirst: focusFirst,
     scheduleFocus: scheduleFocus,
     restoreFocus: restoreFocus,
     trapFocus: trapFocus

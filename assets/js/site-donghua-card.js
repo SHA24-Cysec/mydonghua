@@ -16,7 +16,7 @@
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
   }
-  // SEC-19: escaping HTML saja tidak menahan skema javascript: pada href/src.
+  // Escaping HTML saja tidak menahan skema javascript: pada href/src.
   // Terima hanya URL http(s) atau jalur dalam situs; selain itu "#".
   function safeUrl(value) {
     const url = toText(value).trim();
@@ -84,7 +84,7 @@
     const title = escapeHTML(item.title);
     const titleShort = escapeHTML(cardTitleLabel(item.title)) || title;
 
-    // Thumbnail asli tunggal — tanpa srcset atau varian hasil resize.
+    // Thumbnail asli tunggal, tanpa srcset atau varian hasil resize.
     const thumbSrc = safeUrl(item.thumbnail || "");
 
     const metaChips = [episode, status]
@@ -98,7 +98,7 @@
 
     const extraMeta = extraMetaHTML ? `<div class="donghua-card-search-meta">${extraMetaHTML}</div>` : "";
 
-    // Bookmark – cek status favorit via DonghuaFav (kalau sudah load)
+    // Bookmark: cek status favorit via DonghuaFav (kalau sudah load)
     const favId = permalink;
     let saved = false;
     try {
@@ -125,7 +125,7 @@
       /* Hasil pencarian sering berubah; hindari skeleton wrapper yang membuat
          poster fade-in lagi pada setiap query. */
       /* 400x600 = rasio 2:3, sama dengan kotak yang dikunci .donghua-card-link
-         dan dengan hasil .Fill di partial Hugo. */
+         dan dengan atribut width/height di partial donghua-card.html. */
       imgTag = `<img class="donghua-card-img" loading="lazy" decoding="async" src="${thumbSrc}" alt="${title}"`;
       imgTag += ` width="400" height="600">`;
     }

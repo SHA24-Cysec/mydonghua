@@ -1,10 +1,8 @@
 {{- $index := slice -}}
-{{- $counter := 0 -}}
 
 {{- range where .Site.RegularPages "Layout" "postingan-donghua" -}}
   {{- $thumb := .Params.thumbnail | default "" -}}
   {{- $item := dict
-      "objectID" $counter
       "title" .Title
       "studio" .Params.studio
       "season" .Params.season
@@ -12,14 +10,12 @@
       "permalink" .Permalink
       "thumbnail" $thumb
       "type" (.Params.type | default "Donghua")
-      "sub" (.Params.sub | default "Sub")
       "episode" (.Params.episode | default "")
       "status" (.Params.status | default "")
       "rating" (.Params.rating | default "")
       "date" (.Date.Format "2006-01-02T15:04:05Z07:00")
   -}}
   {{- $index = $index | append $item -}}
-  {{- $counter = add $counter 1 -}}
 {{- end -}}
 
 {{- $index | jsonify -}}

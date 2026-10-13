@@ -98,9 +98,7 @@
     });
 
     window.DonghuaNavbar = {
-      close: closeNav,
-      open: openNav,
-      isOpen: isOpen
+      close: closeNav
     };
 
     closeNav(false);

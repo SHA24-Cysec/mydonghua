@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-// PERF-10 Paket 2: uji PWA dengan peramban sungguhan untuk CI.
+// Uji PWA dengan peramban sungguhan untuk CI.
 //
 // Cara pakai:
 //   npm run build          (wajib, harness memakai isi public/)
@@ -333,10 +333,6 @@ async function jalankanChrome() {
     },
     log: () => log.join('')
   };
-}
-
-function uji(hasil, nama, fn) {
-  return { nama, fn, hasil };
 }
 
 async function utama() {

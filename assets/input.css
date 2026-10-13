@@ -1,30 +1,33 @@
-/*! =====================================================================
+/* =====================================================================
     DonghuaBatch - Tailwind CSS v4 (konfigurasi CSS-first)
     ---------------------------------------------------------------------
     Urutan berkas:
-    1. @import "tailwindcss"  : tema bawaan, preflight, dan utility v4
-    2. @theme                 : token desain situs (pengganti tailwind.config.js)
+    1. @import dan @source    : Tailwind v4 serta daftar folder yang dipindai
+    2. @theme                 : token desain situs
     3. @layer base            : dasar dokumen dan koreksi preflight v4
-    4. @layer components      : seluruh gaya komponen situs
-    5. @keyframes             : animasi (di luar layer agar tidak ikut cascade)
+    4. @layer components      : gaya komponen situs
+    5. Aturan tombol          : sengaja di luar layer (lihat catatan di sana)
+    6. @keyframes             : animasi
 
-    Aturan pemindaian kelas pada v4:
-    Tailwind memindai SELURUH berkas proyek secara otomatis, kecuali berkas
-    yang tercantum di .gitignore (mis. public/, node_modules/) dan berkas .css.
-    Opsi `content` gaya v3 sudah tidak berpengaruh. Bila ingin mengunci
-    cakupan, pakai `@import "tailwindcss" source(none);` lalu daftarkan @source.
+    Pemindaian kelas:
+    source(none) mematikan deteksi otomatis, jadi Tailwind hanya membuat
+    utility untuk kelas yang ditemukan di folder @source: template Hugo
+    (layouts) dan konten Markdown (content). Bila nanti ada JavaScript yang
+    menambahkan kelas utility Tailwind, tambahkan juga @source "./js".
 
     Catatan layer:
-    Utility Tailwind berada di @layer utilities dan SENGAJA dapat menimpa gaya
-    komponen di @layer components. Seluruh gaya situs karena itu diletakkan di
-    dalam layer, bukan di luar layer seperti pada versi sebelumnya.
+    Utility Tailwind berada di @layer utilities sehingga dapat menimpa gaya
+    di @layer components. Aturan tombol berada di luar layer sehingga
+    utility biasa (tanpa !important) tidak bisa menimpanya.
     ===================================================================== */
 
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@source "../layouts";
+@source "../content";
 
-/* ================= Token desain (pengganti tailwind.config.js) =================
+/* ================= Token desain situs =================
    Hanya token yang benar-benar dipakai yang dipertahankan:
-   bg-cyber-dark, bg-cyber-card, shadow-neon-*, drop-shadow-neon-*            */
+   bg-cyber-dark, bg-cyber-card, shadow-neon-*, drop-shadow-neon-* */
 @theme {
   /* Warna situs */
   --color-cyber-dark: #060816;
@@ -73,8 +76,7 @@
 
 @layer components {
 /* ================= Gaya komponen situs =================
-   Disusun ulang dari CSS asli commit d3a628d oleh audit/tombol-balik3.py.
-   Urutan aturan sama dengan aslinya; seluruh gaya situs berada di layer ini. */
+   Utility Tailwind (@layer utilities) dapat menimpa gaya di layer ini. */
 /* Custom Neon Effects & Overrides */
 
   .cyber-input-search {
@@ -91,7 +93,6 @@
   }
 
   .cyber-input-search:focus {
-    border-color: #A855F7;
     border: 1px solid rgba(168, 85, 247, 0.4);
   }
 
@@ -110,7 +111,6 @@
   }
 
   .cyber-textarea-message:focus {
-    border-color: #A855F7;
     border: 1px solid rgba(168, 85, 247, 0.4);
   }
 
@@ -137,7 +137,6 @@
   }
 
   .cyber-select:focus {
-    border-color: #A855F7;
     border: 1px solid rgba(168, 85, 247, 0.4);
   }
 
@@ -152,26 +151,13 @@
      Dipakai di semua halaman agar tampilan seragam.
      ========================================================== */
   .panel-neon {
-    background:
-      radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.06), transparent 28%),
-      radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.05), transparent 30%),
-      linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(7, 10, 24, 0.99));
     border: 1px solid rgba(125, 211, 252, 0.18);
-    border-radius: var(--site-radius-lg);
-    box-shadow:
-      0 20px 48px rgba(0, 0, 0, 0.34),
-      0 0 20px rgba(34, 211, 238, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    /* SCROLL PERF: backdrop-filter:blur(14px) removed — 90→98% opaque gradient
-       looks identical without per-frame GPU blur. */
-    backdrop-filter: none;
   }
 
   .panel-neon-inset {
     background:
       linear-gradient(180deg, rgba(8, 12, 28, 0.9), rgba(6, 8, 22, 0.96));
     border: 1px solid rgba(125, 211, 252, 0.16);
-    border-radius: 1.05rem;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
   }
 
@@ -190,14 +176,13 @@
     gap: 0.5rem;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(125, 211, 252, 0.18);
-    border-radius: 9999px;
     padding: 0.42rem 0.92rem;
     font-size: 0.84rem;
     color: #d5e6f7;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
   }
 
-  /* Tipografi konten post/halaman statis (dulu tersebar sebagai <style> per-halaman) */
+  /* Tipografi konten post/halaman statis */
   .prose-neon {
     color: #e2e8f0;
     line-height: 1.8;
@@ -247,7 +232,7 @@
       0 12px 26px rgba(34, 211, 238, 0.16),
       inset 0 1px 0 rgba(255,255,255,0.18);
   }
-  
+
   .cyber-button:hover {
     box-shadow:
       0 16px 30px rgba(34, 211, 238, 0.22),
@@ -256,11 +241,9 @@
     filter: brightness(1.03);
   }
 
-  /* Model 2: Neon Holo-Overlay Title & Interactive Hover Button */
-
 /* ===============================
    GLOBAL SCROLLBAR
-   OPTION 11: AURORA THIN RAIL
+   AURORA THIN RAIL
    Scope: global • Size: thin • Intensity: vivid
    =============================== */
 
@@ -281,7 +264,6 @@
 ::-webkit-scrollbar-thumb {
   border-radius: var(--site-radius-pill);
   background: linear-gradient(180deg, var(--site-cyan) 0%, var(--site-sky) 46%, var(--site-purple) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.22);
 }
 
@@ -295,11 +277,10 @@
 }
 
 /* ===============================
-   DONGHUA CARD — MINIMAL OVERLAY
-   Redesain: simpel, mobile-first, satu aksen cyan.
-   Struktur HTML & nama class TIDAK berubah sehingga
-   template JS (favorit/filter-genre/search/recently-viewed)
-   tetap kompatibel tanpa modifikasi struktural.
+   DONGHUA CARD: MINIMAL OVERLAY
+   Simpel, mobile-first, satu aksen cyan. Nama class juga dipakai
+   template JS (favorit, filter-genre, search, recently-viewed),
+   jadi perubahan nama class harus diikuti di JS.
    =============================== */
 
 .donghua-card-grid,
@@ -320,8 +301,7 @@
   width: 100%;
   max-width: 100%;
   align-items: stretch;
-  /* SCROLL PERF: CSS containment — helps browser skip re-layout for off-screen rows. */
-  contain: layout style;
+  /* SCROLL PERF: CSS containment helps browser skip re-layout for off-screen rows. */
 }
 
 /* Semua varian grid kini menggunakan ukuran yang sama agar layout card donghua 100% seragam */
@@ -369,15 +349,13 @@
 .donghua-card-poster img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
   display: block;
   transition: transform 0.35s ease, opacity 0.28s ease;
   background-color: #0b1120;
   opacity: 1;
 }
 
-/* SCROLL-FLASH FIX: class .is-loaded dipasang oleh site-image-loader.js
+/* Class .is-loaded dipasang oleh site-image-loader.js
    setelah image selesai decode. Transisi opacity 0 -> 1 menyembunyikan
    background gradient .donghua-card-poster yang hitam pekat ketika
    decode dibatalkan oleh scroll cepat. */
@@ -393,7 +371,7 @@
   }
 }
 
-/* Badge tipe — pill kecil di kiri-atas poster */
+/* Badge tipe: pill kecil di kiri-atas poster */
 .donghua-card-badges {
   position: absolute;
   top: 0.5rem;
@@ -417,7 +395,6 @@
   border-radius: 999px;
   background: rgba(2, 6, 23, 0.82);
   color: #d9fbff;
-  font-size: 0.62rem;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: 0.03em;
@@ -474,7 +451,6 @@
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.72);
   color: #a9bcd6;
-  font-size: 0.64rem;
   font-weight: 650;
   line-height: 1.3;
   white-space: nowrap;
@@ -496,7 +472,6 @@
   gap: 0.28rem;
   min-width: 0;
   color: #facc15;
-  font-size: 0.68rem;
   font-weight: 800;
   line-height: 1;
 }
@@ -509,7 +484,6 @@
   margin-top: 0;
   min-width: 0;
   color: #cbd5e1;
-  font-size: 0.64rem;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -542,8 +516,6 @@
   }
 }
 
-/* Jumlah kolom dihitung dari lebar container melalui minmax() di atas. */
-
 .prose-neon a {
   color: var(--site-cyan);
   text-decoration: none;
@@ -561,12 +533,12 @@
 }
 
 /* ==========================================================
-   PHASE 3 EXTRACTED COMPONENT CSS
-   Moved from inline <style> blocks to global CSS for easier
-   maintenance and stronger design consistency.
+   GAYA KOMPONEN PER TEMPLATE
+   Setiap bagian di bawah diberi judul sesuai template Hugo yang
+   memakai class-nya.
    ========================================================== */
 
-/* ===== Source: layouts/404.html (style block 1) ===== */
+/* ===== Halaman 404 (layouts/404.html) ===== */
     .notfound-dock-page,
     .notfound-dock-page * {
         box-sizing: border-box;
@@ -589,17 +561,10 @@
         overflow: hidden;
         border: 1px solid rgba(34, 211, 238, 0.28);
         border-radius: clamp(1.35rem, 4vw, 2rem);
-        background:
-            radial-gradient(circle at 18% 8%, rgba(34, 211, 238, 0.24), transparent 34%),
-            radial-gradient(circle at 88% 16%, rgba(56, 189, 248, 0.18), transparent 34%),
-            linear-gradient(135deg, rgba(15, 23, 42, 0.99), rgba(2, 6, 23, 0.98));
         box-shadow:
             0 26px 80px rgba(0, 0, 0, 0.40),
             0 0 42px rgba(34, 211, 238, 0.15),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        /* SCROLL PERF: backdrop-filter:blur(14px) removed — 91→98% opaque. */
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
     }
 
     .notfound-dock-shell::before {
@@ -691,14 +656,10 @@
         padding: 1rem 0.9rem 1.1rem;
         border: 1px solid rgba(125, 211, 252, 0.24);
         border-radius: 1.55rem;
-        background: rgba(15, 23, 42, 0.99);
         box-shadow:
             0 -18px 48px rgba(0, 0, 0, 0.30),
             0 0 30px rgba(34, 211, 238, 0.13),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        /* SCROLL PERF: backdrop-filter:blur(16px) removed — 92→99% opaque. */
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
         animation: notfoundPanelIn 0.42s ease both;
     }
 
@@ -728,7 +689,6 @@
         border-radius: 999px;
         background: rgba(34, 211, 238, 0.09);
         color: #a5f3fc;
-        font-size: 0.70rem;
         font-weight: 950;
         letter-spacing: 0.12em;
         line-height: 1;
@@ -756,8 +716,6 @@
         font-size: clamp(0.86rem, 2.4vw, 0.98rem);
         line-height: 1.6;
     }
-
-    
 
     /* ==== 404 Quick Search (fixed for FA override, spacing konsisten) ==== */
     .notfound-dock-search {
@@ -815,17 +773,7 @@
         box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.14), 0 0 18px rgba(34, 211, 238, 0.12);
     }
 
-    
-
-    
-
-    
-
-    
-
     @media (min-width: 640px) {
-        
-
         .notfound-dock-panel {
             padding: 1.35rem 1.5rem 1.45rem;
             margin-bottom: 1.25rem;
@@ -834,8 +782,6 @@
         .notfound-dock-search {
             margin-top: 1.15rem;
         }
-
-        
     }
 
     @media (min-width: 920px) {
@@ -869,7 +815,6 @@
         }
 
         .notfound-dock-kicker {
-            font-size: 0.65rem;
             padding: 0.35rem 0.6rem;
         }
 
@@ -882,21 +827,12 @@
             margin-top: 0.85rem;
         }
 
-        .notfound-dock-search .notfound-dock-search-icon {
-            left: 0.9rem;
-            font-size: 0.8rem;
-        }
-
         .notfound-dock-search-input {
             min-height: 2.7rem;
             padding: 0 0.6rem 0 2.2rem;
             font-size: 0.82rem;
             border-radius: 0.85rem;
         }
-
-        
-
-        
 
         .notfound-dock-content h1 {
             margin: 0.6rem 0 0.35rem;
@@ -909,29 +845,11 @@
         }
     }
 
-    
-
-    
-
-      
-
-      
-
-      
-
       @media (max-width: 520px) {
-        
-
         body .pagination-aurora-pages {
           width: 100%;
           order: -1;
         }
-
-        
-
-        
-
-        
       }
 
 .fav-empty-state {
@@ -945,15 +863,6 @@
   max-width: 44rem;
   padding: 1.4rem;
   border: 1px solid rgba(125, 211, 252, 0.16);
-  border-radius: 1.4rem;
-  background:
-    radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.05), transparent 30%),
-    radial-gradient(circle at 88% 0%, rgba(168, 85, 247, 0.05), transparent 32%),
-    linear-gradient(135deg, rgba(14, 18, 40, 0.96), rgba(7, 10, 24, 0.98));
-  box-shadow:
-    0 20px 42px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255,255,255,0.05),
-    0 0 18px rgba(34, 211, 238, 0.05);
 }
 
 .fav-empty-layout {
@@ -977,7 +886,6 @@
   border: 1px solid rgba(125, 211, 252, 0.16);
   background: rgba(255,255,255,0.025);
   color: #ccefff;
-  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1049,28 +957,24 @@
   }
 }
 
-/* ===== Source: layouts/_default/filter-genre.html (style block 1) ===== */
+/* ===== Hasil filter genre (layouts/_default/filter-genre.html) ===== */
         #genre-results li {
             list-style: none;
         }
-    
 
-/* ===== Source: layouts/_default/search.html (style block 1) ===== */
+/* ===== Hasil pencarian (layouts/_default/search.html) ===== */
             #search-results li {
                 list-style: none;
             }
-            
-            
+
             .search-summary {
                 margin: -0.1rem 0 1rem;
                 padding: 0.78rem 1rem;
                 border: 1px solid rgba(125, 211, 252, 0.18);
-                border-radius: var(--site-radius-btn);
                 background:
                     radial-gradient(circle at 0% 0%, rgba(34, 211, 238, 0.08), transparent 24%),
                     linear-gradient(135deg, rgba(14, 18, 40, 0.92), rgba(7, 10, 24, 0.96));
                 color: #cfe8ff;
-                font-size: 0.84rem;
                 line-height: 1.55;
                 box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
             }
@@ -1082,24 +986,7 @@
                 margin-top: 1rem;
                 padding: 1.25rem;
                 border: 1px solid rgba(125, 211, 252, 0.22);
-                border-radius: var(--site-radius-md);
-                background:
-                    radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.10), transparent 30%),
-                    linear-gradient(180deg, rgba(15, 23, 42, 0.90), rgba(6, 8, 22, 0.94));
-                box-shadow: 0 0 22px rgba(34, 211, 238, 0.08);
                 text-align: center;
-            }
-            .search-empty-icon {
-                display: inline-grid;
-                place-items: center;
-                width: 3.1rem;
-                height: 3.1rem;
-                margin: 0 auto 0.85rem;
-                border-radius: var(--site-radius-pill);
-                background: rgba(34, 211, 238, 0.08);
-                color: #67e8f9;
-                font-size: 1.05rem;
-                border: 1px solid rgba(34, 211, 238, 0.12);
             }
             .search-empty-state strong {
                 display: block;
@@ -1122,9 +1009,8 @@
                 border-radius: 4px;
                 font-weight: bold;
             }
-        
 
-/* ===== Source: layouts/partials/alert.html (style block 1) ===== */
+/* ===== Alert (layouts/partials/alert.html) ===== */
     .alert-stack-shell,
     .alert-stack-shell * {
         box-sizing: border-box;
@@ -1139,15 +1025,6 @@
         margin-top: 1rem;
         padding: 1rem;
         border: 1px solid rgba(34, 211, 238, 0.22);
-        border-radius: var(--site-radius-xl);
-        background:
-            radial-gradient(circle at 10% 0%, rgba(34,211,238,0.14), transparent 32%),
-            radial-gradient(circle at 92% 12%, rgba(139,92,246,0.10), transparent 34%),
-            linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(6, 8, 22, 0.98));
-        box-shadow:
-            0 18px 44px rgba(0, 0, 0, 0.24),
-            0 0 20px rgba(34, 211, 238, 0.08),
-            inset 0 1px 0 rgba(255,255,255,0.06);
     }
 
     .alert-stack-row {
@@ -1158,7 +1035,6 @@
         align-items: flex-start;
         padding: 0.95rem;
         border: 1px solid rgba(255,255,255,0.06);
-        border-radius: 1.1rem;
         background:
             radial-gradient(circle at 100% 0%, var(--aa-glow), transparent 34%),
             rgba(255,255,255,0.03);
@@ -1198,15 +1074,11 @@
         line-height: 1.7;
     }
 
-    
-
     .alert-stack-link--pink {
         border-color: rgba(236,72,153,0.22);
         background: rgba(236,72,153,0.12);
         color: #ffd2ea;
     }
-
-    
 
     .alert-stack-highlight {
         color: #fef3c7;
@@ -1214,11 +1086,8 @@
     }
 
     @media (hover: hover) {
-        
-
         .alert-stack-link--pink:hover {
             background: rgba(236,72,153,0.16);
-            border-color: rgba(236,72,153,0.28);
             border: 1px solid rgba(236,72,153,0.12);
             color: #fff0f8;
         }
@@ -1227,7 +1096,6 @@
     @media (max-width: 520px) {
         .alert-stack-shell {
             padding: 0.85rem;
-            border-radius: var(--site-radius-lg);
         }
 
         .alert-stack-row {
@@ -1251,9 +1119,9 @@
         }
     }
 
-/* ===== Source: layouts/partials/back-to-top.html (style block 1) ===== */
 /* ============================
-   BACK TO TOP — FLOATING CONTROL
+   BACK TO TOP: FLOATING CONTROL
+   Markup: layouts/partials/back-to-top.html
    ============================ */
 .btt-wrapper {
   --btt-base-bottom: 1.5rem;
@@ -1301,10 +1169,6 @@ body.has-floating-ad .btt-wrapper {
     right: 1rem;
     margin-right: 16px;
   }
-
-  
-
-  
 }
 
 @media (max-width: 340px) {
@@ -1315,7 +1179,7 @@ body.has-floating-ad .btt-wrapper {
   }
 }
 
-/* ===== Source: layouts/partials/download-batch.html (style block 1) ===== */
+/* ===== Download batch (layouts/partials/download-batch.html) ===== */
     .db-shell,
     .db-shell * { box-sizing: border-box; }
 
@@ -1327,14 +1191,6 @@ body.has-floating-ad .btt-wrapper {
         margin-top: 1rem;
         padding: clamp(0.95rem, 3vw, 1.5rem);
         border: 1px solid rgba(125, 211, 252, 0.20);
-        border-radius: var(--site-radius-xl);
-        background:
-            radial-gradient(circle at 8% 0%, rgba(34, 211, 238, 0.08), transparent 30%),
-            radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.07), transparent 32%),
-            linear-gradient(135deg, rgba(15, 23, 42, 0.90), rgba(7, 10, 24, 0.94));
-        box-shadow:
-            0 20px 50px rgba(0, 0, 0, 0.30),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
 
     .db-shell::before {
@@ -1363,10 +1219,8 @@ body.has-floating-ad .btt-wrapper {
         width: fit-content;
         padding: 0.4rem 0.7rem;
         border: 1px solid rgba(34, 211, 238, 0.26);
-        border-radius: var(--site-radius-pill);
         background: rgba(34, 211, 238, 0.09);
         color: #a5f3fc;
-        font-size: 0.72rem;
         font-weight: 900;
         letter-spacing: 0.1em;
         line-height: 1;
@@ -1479,16 +1333,6 @@ body.has-floating-ad .btt-wrapper {
         user-select: all;
     }
 
-    
-
-    
-
-    
-
-    
-
-    
-
     @media (min-width: 480px) {
         .db-pass-action {
             grid-template-columns: minmax(6rem, max-content) auto;
@@ -1534,7 +1378,6 @@ body.has-floating-ad .btt-wrapper {
     .db-group {
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.10);
-        border-radius: var(--site-radius-lg);
         background: rgba(255, 255, 255, 0.03);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
         animation: dbFadeUp 0.42s ease both;
@@ -1564,10 +1407,8 @@ body.has-floating-ad .btt-wrapper {
         width: fit-content;
         padding: 0.35rem 0.6rem;
         border: 1px solid rgba(255, 255, 255, 0.13);
-        border-radius: var(--site-radius-pill);
         background: rgba(2, 6, 23, 0.32);
         color: #cffafe;
-        font-size: 0.7rem;
         font-weight: 800;
         line-height: 1;
     }
@@ -1603,7 +1444,6 @@ body.has-floating-ad .btt-wrapper {
         min-height: 10.75rem;
         padding: 1rem;
         border: 1px solid rgba(255, 255, 255, 0.10);
-        border-radius: var(--site-radius-md);
         background:
             radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.07), transparent 34%),
             linear-gradient(180deg, rgba(15, 23, 42, 0.64), rgba(7, 10, 24, 0.78));
@@ -1719,10 +1559,9 @@ body.has-floating-ad .btt-wrapper {
         line-height: 1.4;
     }
 
-    /* PERF-04: garis pemisah dipindah dari elemen div ke pseudo-elemen.
-       .db-size dibiarkan membungkus baris supaya garis turun ke baris kedua.
-       Jarak tetap sama: row-gap 0.42rem + margin 0.48rem = 0.9rem di atas,
-       dan 0.9rem di bawah seperti margin aslinya. */
+    /* Garis pemisah memakai pseudo-elemen. .db-size dibiarkan membungkus
+       baris supaya garis turun ke baris kedua. Jarak di atas garis 0.9rem
+       (row-gap 0.42rem + margin 0.48rem), sama dengan jarak di bawahnya. */
     .db-size::after {
         content: "";
         position: relative;
@@ -1733,29 +1572,7 @@ body.has-floating-ad .btt-wrapper {
         background: linear-gradient(90deg, rgba(34, 211, 238, 0), rgba(34, 211, 238, 0.42), rgba(139, 92, 246, 0.35), rgba(34, 211, 238, 0));
     }
 
-    
-
-    
-
-    
-
     .db-open { font-size: 0.72rem; opacity: 0.72; }
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     @media (min-width: 640px) {
         .db-resolution-grid {
@@ -1781,13 +1598,7 @@ body.has-floating-ad .btt-wrapper {
         .db-res-card { min-height: 10rem; padding: 0.9rem; }
     }
 
-    
-
-    
-
-    
-
-/* ===== Source: layouts/partials/footer.html (style block 1) ===== */
+/* ===== Footer (layouts/partials/footer.html) ===== */
 .site-footer,
 .site-footer * {
   box-sizing: border-box;
@@ -1795,7 +1606,6 @@ body.has-floating-ad .btt-wrapper {
 
 .site-footer {
   position: relative;
-  margin-top: 1rem;
   padding: 0 0 1.1rem;
   background:
     radial-gradient(ellipse at 20% 0%, rgba(34, 211, 238, 0.05), transparent 40%),
@@ -1827,13 +1637,6 @@ body.has-floating-ad .btt-wrapper {
 .site-footer-card {
   padding: 1rem;
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 1.2rem;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(34,211,238,.04), transparent 24%),
-    linear-gradient(135deg, rgba(14, 18, 40, 0.94), rgba(7, 10, 24, 0.96));
-  box-shadow:
-    0 16px 34px rgba(0,0,0,0.22),
-    inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 .site-footer-brand-card {
@@ -1851,10 +1654,8 @@ body.has-floating-ad .btt-wrapper {
   padding: 0.4rem 0.72rem;
   margin-bottom: 0.15rem;
   border: 1px solid rgba(125, 211, 252, 0.16);
-  border-radius: var(--site-radius-pill);
   background: rgba(255,255,255,0.025);
   color: #ccefff;
-  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1899,8 +1700,6 @@ body.has-floating-ad .btt-wrapper {
 }
 
 .site-footer-social-link {
-  width: 2.35rem;
-  height: 2.35rem;
   border-radius: 0.9rem;
   border: 1px solid rgba(125, 211, 252, 0.14);
   background: rgba(255,255,255,0.03);
@@ -1918,7 +1717,6 @@ body.has-floating-ad .btt-wrapper {
   padding-top: 0.9rem;
   border-top: 1px solid rgba(255,255,255,0.05);
   text-align: center;
-  font-size: 0.72rem;
   color: #6f819e;
 }
 
@@ -1928,8 +1726,6 @@ body.has-floating-ad .btt-wrapper {
 }
 
 @media (hover: hover) {
-  
-
   .site-footer-social-link:hover {
     transform: translateY(-2px);
     border-color: rgba(125, 211, 252, 0.22);
@@ -1960,9 +1756,7 @@ body.has-floating-ad .btt-wrapper {
   }
 }
 
-    /* Rail: maks 3 item. Mobile-first = 1 kolom (3 card menumpuk), lebar = 3 kolom. */
-
-/* ===== Source: layouts/partials/navbar.html (style block 1) ===== */
+/* ===== Navbar (layouts/partials/navbar.html) ===== */
   /* Add spacing to body so content doesn't hide under the fixed navbar */
   html body {
     padding-top: 72px;
@@ -1987,15 +1781,7 @@ body.has-floating-ad .btt-wrapper {
     z-index: 1000;
     width: 100%;
     border-bottom: 1px solid rgba(125, 211, 252, 0.18);
-    background:
-      radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.1), transparent 32%),
-      radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.08), transparent 28%),
-      linear-gradient(135deg, rgba(7, 10, 24, 0.99), rgba(10, 14, 32, 0.98));
     box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32), 0 0 18px rgba(34, 211, 238, 0.06);
-    /* SCROLL PERF: backdrop-filter:blur(18px) removed — 93→99% opaque + solid gradient
-       gives identical visual without GPU blur cost on every scroll frame. */
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
 
   .site-navbar-brand {
@@ -2003,8 +1789,6 @@ body.has-floating-ad .btt-wrapper {
     flex: 0 1 auto;
     align-items: center;
     gap: 0.65rem;
-    min-width: 0;
-    min-height: 44px;
     color: #c9f7ff;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 900;
@@ -2021,15 +1805,13 @@ body.has-floating-ad .btt-wrapper {
     border: 1px solid rgba(34, 211, 238, 0.36);
   }
 
-  
-
   .site-nav-backdrop {
     position: fixed;
     inset: 0;
     z-index: 2000;
     pointer-events: none;
     opacity: 0;
-    /* SCROLL PERF: backdrop-filter:blur(7px) removed — solid bg, hidden by default. */
+    /* SCROLL PERF: tanpa blur latar; latarnya solid dan tersembunyi secara default. */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     transition: opacity 0.24s ease;
@@ -2084,8 +1866,8 @@ body.has-floating-ad .btt-wrapper {
 
   /* Layar lebar (tablet ke atas): tombol menu (hamburger) tetap ada, tapi
      saat dibuka, panelnya muncul sebagai drawer dari SAMPING KANAN
-     (mengisi tinggi layar), bukan dari bawah. Di layar sempit perilaku
-     tidak berubah: tetap muncul sebagai bottom sheet seperti semula. */
+     (mengisi tinggi layar), bukan dari bawah. Di layar sempit panel tetap
+     muncul sebagai bottom sheet. */
   @media (min-width: 768px) {
     .site-nav-sheet {
       left: auto;
@@ -2108,7 +1890,6 @@ body.has-floating-ad .btt-wrapper {
     .site-nav-handle {
       display: none;
     }
-
   }
 
   .site-nav-sheet-head {
@@ -2129,7 +1910,6 @@ body.has-floating-ad .btt-wrapper {
     border-radius: var(--site-radius-pill);
     background: rgba(34, 211, 238, 0.09);
     color: #a5f3fc;
-    font-size: 0.68rem;
     font-weight: 950;
     letter-spacing: 0.1em;
     line-height: 1;
@@ -2154,15 +1934,10 @@ body.has-floating-ad .btt-wrapper {
     line-height: 1.45;
   }
 
-  
-
-  /* Grid Adaptif untuk jumlah ganjil atau genap */
   .site-random-modal,
   .site-random-modal * {
     box-sizing: border-box;
   }
-
-  
 
   .site-random-modal {
     position: fixed;
@@ -2184,7 +1959,7 @@ body.has-floating-ad .btt-wrapper {
   .site-random-backdrop {
     position: absolute;
     inset: 0;
-    /* SCROLL PERF: backdrop-filter:blur(8px) removed — solid bg. */
+    /* SCROLL PERF: tanpa blur latar karena latarnya solid. */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
@@ -2207,8 +1982,6 @@ body.has-floating-ad .btt-wrapper {
     transform: translateY(0) scale(1);
   }
 
-  
-
   .site-random-head {
     display: grid;
     gap: 0.44rem;
@@ -2227,7 +2000,6 @@ body.has-floating-ad .btt-wrapper {
     border-radius: var(--site-radius-pill);
     background: rgba(34, 211, 238, 0.09);
     color: #bbf7ff;
-    font-size: 0.68rem;
     font-weight: 950;
     letter-spacing: 0.08em;
     line-height: 1;
@@ -2264,8 +2036,6 @@ body.has-floating-ad .btt-wrapper {
     font-weight: 800;
   }
 
-  
-
   .site-random-error {
     border-color: rgba(251, 113, 133, 0.22);
     background: rgba(251, 113, 133, 0.08);
@@ -2291,10 +2061,8 @@ body.has-floating-ad .btt-wrapper {
     overflow: hidden;
     justify-self: center;
     width: min(100%, clamp(15.5rem, 65vw, 20rem));
-    aspect-ratio: 2 / 3;
     min-height: 0;
     border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 1.2rem;
     background:
       radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.16), transparent 30%),
       linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(7, 10, 24, 0.98));
@@ -2315,8 +2083,6 @@ body.has-floating-ad .btt-wrapper {
     width: 100%;
     height: 100%;
     min-height: 0;
-    object-fit: cover;
-    object-position: center top;
   }
 
   .site-random-body {
@@ -2348,7 +2114,6 @@ body.has-floating-ad .btt-wrapper {
     min-height: 1.9rem;
     padding: 0.34rem 0.62rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--site-radius-pill);
     background: rgba(255, 255, 255, 0.045);
     color: #dcecff;
     font-size: 0.74rem;
@@ -2368,10 +2133,6 @@ body.has-floating-ad .btt-wrapper {
     gap: 0.65rem;
     margin-top: 0.2rem;
   }
-
-  
-
-  
 
   @media (min-width: 640px) {
     .site-random-dialog {
@@ -2398,16 +2159,10 @@ body.has-floating-ad .btt-wrapper {
       padding: 0.7rem;
     }
 
-    .site-random-dialog {
-      border-radius: var(--site-radius-lg);
-    }
-
     .site-random-poster {
       width: min(100%, clamp(13.5rem, 70vw, 18rem));
     }
   }
-
-  
 
   /* Unified Navbar: desktop mengikuti tampilan & perilaku navbar mobile */
   .site-navbar-inner {
@@ -2429,8 +2184,6 @@ body.has-floating-ad .btt-wrapper {
     gap: 0.45rem;
     min-width: 0;
   }
-
-  
 
   @media (min-width: 1280px) {
     .site-navbar-inner {
@@ -2481,7 +2234,7 @@ body .post-bookmark-icon {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  /* SCROLL PERF: backdrop-filter:blur(8px) removed — modal hidden by default, solid bg when open. */
+  /* SCROLL PERF: tanpa blur latar; modal tersembunyi secara default dan latarnya solid saat terbuka. */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   opacity: 0;
@@ -2500,10 +2253,7 @@ body .post-bookmark-icon {
   width: 100%;
   max-width: 20rem;
   padding: 1.2rem;
-  border-radius: var(--site-radius-md);
   border: 1px solid rgba(239, 68, 68, 0.3);
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(6, 8, 22, 0.98));
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
@@ -2526,11 +2276,7 @@ body .post-bookmark-icon {
   gap: 0.5rem;
 }
 
-/* ============================
-   RESPONSIVE
-   ============================ */
-
-/* ===== Source: layouts/partials/season.html (style block 1) ===== */
+/* ===== Navigasi season (layouts/partials/season.html) ===== */
 .season-nav-wrap,
 .season-nav-wrap * {
     box-sizing: border-box;
@@ -2627,7 +2373,6 @@ body .post-bookmark-icon {
     min-height: 2.05rem;
     padding: 0.46rem 0.88rem;
     border-radius: 999px;
-    font-size: 0.74rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -2748,7 +2493,7 @@ body .post-bookmark-icon {
     }
 }
 
-/* ===== Source: layouts/partials/share-donghua.html (style block 1) ===== */
+/* ===== Share donghua (layouts/partials/share-donghua.html) ===== */
     .share-premium-card,
     .share-premium-card * {
         box-sizing: border-box;
@@ -2761,18 +2506,6 @@ body .post-bookmark-icon {
         margin-top: 0;
         padding: clamp(1rem, 2.8vw, 1.35rem);
         border: 1px solid rgba(125, 211, 252, 0.24);
-        border-radius: 1.75rem;
-        background:
-            radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
-            radial-gradient(circle at 88% 20%, rgba(168, 85, 247, 0.18), transparent 34%),
-            linear-gradient(135deg, rgba(15, 23, 42, 0.99), rgba(2, 6, 23, 0.98));
-        box-shadow:
-            0 22px 70px rgba(0, 0, 0, 0.34),
-            0 0 34px rgba(34, 211, 238, 0.12),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        /* SCROLL PERF: backdrop-filter:blur(14px) removed — 86→98% opaque. */
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
         isolation: isolate;
     }
 
@@ -2824,10 +2557,8 @@ body .post-bookmark-icon {
         margin-bottom: 0.55rem;
         padding: 0.32rem 0.62rem;
         border: 1px solid rgba(34, 211, 238, 0.26);
-        border-radius: var(--site-radius-pill);
         background: rgba(34, 211, 238, 0.09);
         color: #a5f3fc;
-        font-size: 0.68rem;
         font-weight: 800;
         letter-spacing: 0.12em;
         line-height: 1;
@@ -2870,20 +2601,6 @@ body .post-bookmark-icon {
         width: fit-content;
         max-width: 100%;
     }
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     .share-copy-feedback {
         min-height: 1rem;
@@ -2931,8 +2648,6 @@ body .post-bookmark-icon {
             gap: 0.55rem;
         }
 
-        
-
         .share-copy-feedback {
             text-align: center;
         }
@@ -2940,15 +2655,12 @@ body .post-bookmark-icon {
 
     @media (max-width: 520px) {
         .share-premium-card {
-            border-radius: 1.35rem;
             padding: 0.95rem;
         }
 
         .share-premium-actions {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
-
-        
     }
 
     @media (max-width: 340px) {
@@ -2957,7 +2669,7 @@ body .post-bookmark-icon {
         }
     }
 
-    /* ===== Source: layouts/partials/sidebar.html (style block 1) ===== */
+    /* ===== Sidebar: filter genre (layouts/partials/sidebar.html) ===== */
             .genre-bottom-sheet-filter,
             .genre-bottom-sheet-filter * {
                 box-sizing: border-box;
@@ -2999,9 +2711,6 @@ body .post-bookmark-icon {
                     0 20px 48px rgba(0, 0, 0, 0.28),
                     0 0 18px rgba(34, 211, 238, 0.06),
                     inset 0 1px 0 rgba(255,255,255,0.05);
-                /* SCROLL PERF: backdrop-filter:blur(14px) removed — 94→99% opaque. */
-                backdrop-filter: none;
-                -webkit-backdrop-filter: none;
             }
 
             .genre-filter-card::before {
@@ -3041,7 +2750,6 @@ body .post-bookmark-icon {
                 border-radius: 999px;
                 background: rgba(34, 211, 238, 0.09);
                 color: #a5f3fc;
-                font-size: 0.68rem;
                 font-weight: 900;
                 letter-spacing: 0.1em;
                 line-height: 1;
@@ -3067,19 +2775,13 @@ body .post-bookmark-icon {
                 line-height: 1.55;
             }
 
-            
-
-            
-
-            
-
             .genre-sheet-backdrop {
                 position: fixed;
                 inset: 0;
                 z-index: 1;
                 pointer-events: none;
                 opacity: 0;
-                /* SCROLL PERF: backdrop-filter:blur(7px) removed — solid bg, hidden by default. */
+                /* SCROLL PERF: tanpa blur latar; latarnya solid dan tersembunyi secara default. */
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
                 transition: opacity 0.25s ease;
@@ -3156,8 +2858,6 @@ body .post-bookmark-icon {
                 font-size: 0.82rem;
                 line-height: 1.45;
             }
-
-            
 
             .genre-selected-tray {
                 display: flex;
@@ -3315,8 +3015,6 @@ body .post-bookmark-icon {
                 transform: scale(1);
             }
 
-            
-
             .genre-sheet-actions {
                 display: grid;
                 grid-template-columns: 0.72fr 1.28fr;
@@ -3325,22 +3023,12 @@ body .post-bookmark-icon {
                 padding-top: 0.78rem;
             }
 
-            
-
-            
-
-            
-
             @media (hover: hover) {
-                
-
                 .genre-option-body:hover {
                     border-color: var(--ga-hover-border);
                     transform: translateY(-2px);
                 }
             }
-
-            
 
             @media (min-width: 430px) {
                 .genre-sheet-list {
@@ -3349,8 +3037,6 @@ body .post-bookmark-icon {
             }
 
             @media (min-width: 768px) {
-                
-
                 .genre-filter-shell.is-open {
                     position: relative;
                     inset: auto;
@@ -3420,12 +3106,7 @@ body .post-bookmark-icon {
                 }
             }
 
-            
-
-            
-        
-
-/* ===== Source: layouts/partials/sidebar.html (style block 2) ===== */
+/* ===== Sidebar: tab taksonomi (layouts/partials/sidebar.html) ===== */
             .taxonomy-tabs-widget,
             .taxonomy-tabs-widget * {
                 box-sizing: border-box;
@@ -3447,9 +3128,6 @@ body .post-bookmark-icon {
                     0 22px 56px rgba(0, 0, 0, 0.28),
                     0 0 20px rgba(34, 211, 238, 0.06),
                     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-                /* SCROLL PERF: backdrop-filter:blur(14px) removed — 94→99% opaque. */
-                backdrop-filter: none;
-                -webkit-backdrop-filter: none;
             }
 
             .taxonomy-tabs-widget::before {
@@ -3499,7 +3177,6 @@ body .post-bookmark-icon {
                 border-radius: 999px;
                 background: rgba(34, 211, 238, 0.09);
                 color: #a5f3fc;
-                font-size: 0.68rem;
                 font-weight: 900;
                 letter-spacing: 0.1em;
                 line-height: 1;
@@ -3535,7 +3212,6 @@ body .post-bookmark-icon {
                 border-radius: 999px;
                 background: rgba(34, 211, 238, 0.10);
                 color: #a5f3fc;
-                font-size: 0.72rem;
                 font-weight: 950;
                 line-height: 1;
             }
@@ -3551,10 +3227,6 @@ body .post-bookmark-icon {
                 background: rgba(2, 6, 23, 0.44);
             }
 
-            
-
-            
-
             .taxonomy-tabs-search-aurora {
                 display: flex;
                 align-items: center;
@@ -3562,8 +3234,6 @@ body .post-bookmark-icon {
                 margin-bottom: 0.78rem;
                 padding: 0 0.72rem;
             }
-
-            
 
             .taxonomy-list {
                 display: grid;
@@ -3649,12 +3319,11 @@ body .post-bookmark-icon {
                 display: block;
                 margin-top: 0.18rem;
                 color: #94a3b8;
-                font-size: 0.70rem;
                 font-weight: 750;
                 line-height: 1;
             }
 
-            /* PERF-04: panah ditulis sebagai pseudo-elemen pada tautan chip.
+            /* Panah ditulis sebagai pseudo-elemen pada tautan chip.
                Glyph dan keluarga font disalin dari assets/fa-subset.css
                (.fa-solid dan .fa-arrow-up-right-from-square). Dua deklarasi
                content dipakai supaya teks alternatif kosong dipakai bila
@@ -3699,13 +3368,8 @@ body .post-bookmark-icon {
             }
 
             @media (hover: hover) {
-                
-
-                
-
                 .taxonomy-item:hover {
                     transform: translateX(3px);
-                    border-color: rgba(14,89,100,0.42);
                     border: 1px solid rgba(4,27,31,0.13);
                     background:
                         radial-gradient(circle at 88% 0%, rgba(9,57,64,0.27), transparent 46%),
@@ -3734,11 +3398,6 @@ body .post-bookmark-icon {
                 }
             }
 
-            
-
-            
-        
-
     .ad-neon-shell,
     .ad-neon-shell * {
         box-sizing: border-box;
@@ -3749,7 +3408,6 @@ body .post-bookmark-icon {
         isolation: isolate;
         overflow: hidden;
         width: 100%;
-        max-width: 100%;
         margin-inline: auto;
         border: 1px solid rgba(34, 211, 238, 0.28);
         border-radius: 1.35rem;
@@ -3761,9 +3419,6 @@ body .post-bookmark-icon {
             0 18px 48px rgba(0, 0, 0, 0.28),
             0 0 28px rgba(34, 211, 238, 0.13),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        /* SCROLL PERF: backdrop-filter:blur(14px) removed — 88→98% opaque. */
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
     }
 
     .ad-neon-shell::before {
@@ -3817,7 +3472,6 @@ body .post-bookmark-icon {
         gap: 0.55rem;
         margin-bottom: 0.72rem;
         color: #a5f3fc;
-        font-size: 0.68rem;
         font-weight: 950;
         letter-spacing: 0.12em;
         line-height: 1;
@@ -3841,7 +3495,6 @@ body .post-bookmark-icon {
         align-items: center;
         justify-content: center;
         width: 100%;
-        max-width: 100%;
         min-height: var(--ad-min-height, 6rem);
         overflow: hidden;
         border: 1px solid rgba(125, 211, 252, 0.18);
@@ -3862,7 +3515,6 @@ body .post-bookmark-icon {
         overflow: hidden;
     }
 
-    .ad-neon-body.ad-size-728,
     .ad-neon-body.ad-size-banner {
         --ad-min-height: 50px;
         --ad-creative-width: 320px;
@@ -3934,15 +3586,11 @@ body .post-bookmark-icon {
         min-height: 170px;
     }
 
-    
-
     .ad-neon-fallback {
         width: 100%;
         max-width: 100%;
         min-width: 0;
     }
-
-    
 
     .ad-fallback-card {
         display: flex;
@@ -4008,23 +3656,9 @@ body .post-bookmark-icon {
 
     .ad-fallback-text span {
         color: #94a3b8;
-        font-size: 0.72rem;
         font-weight: 600;
         line-height: 1.4;
     }
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    /* Scale 728 creative agar muat di viewport sempit (mobile-first).
-       Iframe di-absolute supaya box 728px tidak melebarkan layout/halaman. */
 
     /* 300x250: host scale agar tidak overflow di kolom sempit. */
     .ad-neon-body.ad-size-300 .ad-neon-scroll {
@@ -4079,7 +3713,6 @@ body .post-bookmark-icon {
             padding: 0.7rem;
         }
 
-        .ad-neon-body.ad-size-728,
         .ad-neon-body.ad-size-banner {
             --ad-min-height: 50px;
             --ad-creative-width: 320px;
@@ -4105,24 +3738,17 @@ body .post-bookmark-icon {
         .ad-neon-body {
             border-radius: 0.85rem;
         }
-
-        .ad-neon-head {
-            font-size: 0.62rem;
-        }
     }
 
-    
-
-/* ===== End Phase 3 extracted component CSS ===== */
+/* ===== Akhir gaya komponen per template ===== */
 
 /* ==========================================================
-   DONGHUABATCH DESIGN TOKENS & CONSISTENCY SYSTEM — PHASE 1
-   Scope: global tokens + reusable component classes + safe
-   compatibility normalization for main UI components.
+   DESIGN TOKENS DAN SISTEM KONSISTENSI
+   Token global, class komponen yang dipakai ulang, dan normalisasi
+   untuk komponen UI utama.
    ========================================================== */
-/* NOTE: Multiple :root blocks are intentional — each phase adds
-   tokens separately for git-blame traceability. CSS cascade
-   merges them correctly. No runtime cost. */
+/* Token :root sengaja ditulis di beberapa blok sesuai bagiannya.
+   Cascade menggabungkannya dan tidak ada biaya runtime. */
 :root {
   /* Hanya token yang benar-benar di-var() di stylesheet / markup. */
   --site-bg: #060816;
@@ -4151,7 +3777,6 @@ body .post-bookmark-icon {
     radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.12), transparent 32%),
     radial-gradient(circle at 92% 12%, rgba(139, 92, 246, 0.10), transparent 34%),
     linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(6, 8, 22, 0.98));
-  --site-gradient-primary: linear-gradient(135deg, #22d3ee, #38bdf8, #8b5cf6);
   --site-transition-fast: 0.18s ease;
   --site-transition-med: 0.22s ease;
   --site-focus-ring: 3px solid rgba(255, 255, 255, 0.56);
@@ -4179,9 +3804,8 @@ body .post-bookmark-icon {
   }
 }
 
-/* Compatibility normalization for existing main components.
-   Uses because several components still render scoped <style>
-   blocks after the main stylesheet. */
+/* Normalisasi bersama untuk komponen utama. Awalan html body menaikkan
+   spesifisitas supaya aturan ini menang atas gaya dasar tiap komponen. */
 html body .panel-neon,
 html body .site-home-hero,
 html body .alert-stack-shell,
@@ -4222,16 +3846,17 @@ html body .site-random-result {
 }
 
 /* ==========================================================
-   PHASE 4 INLINE STYLE REDUCTION HELPERS
+   AKSEN ALERT
+   Class pengganti style inline di layouts/partials/alert.html.
    ========================================================== */
-.alert-accent-cyan { --alert-accent: #22d3ee; --aa-glow: rgba(4,25,29,0.12); --aa-border: rgba(189,242,250,0.37); --aa-bg: rgba(10,36,52,0.85); --aa-shadow: rgba(5,30,33,0.14); }
-.alert-accent-sky { --alert-accent: #38bdf8; --aa-glow: rgba(7,23,30,0.12); --aa-border: rgba(195,235,253,0.37); --aa-bg: rgba(13,33,54,0.85); --aa-shadow: rgba(8,26,35,0.14); }
-.alert-accent-purple-soft { --alert-accent: #c084fc; --aa-glow: rgba(23,16,30,0.12); --aa-border: rgba(236,218,254,0.37); --aa-bg: rgba(32,25,54,0.85); --aa-shadow: rgba(27,18,35,0.14); }
-.alert-accent-pink { --alert-accent: #ec4899; --aa-glow: rgba(28,9,18,0.12); --aa-border: rgba(249,200,224,0.37); --aa-bg: rgba(38,17,40,0.85); --aa-shadow: rgba(33,10,21,0.14); }
-.alert-accent-amber { --alert-accent: #f59e0b; --aa-glow: rgba(29,19,1,0.12); --aa-border: rgba(252,226,182,0.37); --aa-bg: rgba(39,29,20,0.85); --aa-shadow: rgba(34,22,2,0.14); }
+.alert-accent-cyan { --alert-accent: #22d3ee; --aa-glow: rgba(4,25,29,0.12); --aa-bg: rgba(10,36,52,0.85); --aa-shadow: rgba(5,30,33,0.14); }
+.alert-accent-sky { --alert-accent: #38bdf8; --aa-glow: rgba(7,23,30,0.12); --aa-bg: rgba(13,33,54,0.85); --aa-shadow: rgba(8,26,35,0.14); }
+.alert-accent-purple-soft { --alert-accent: #c084fc; --aa-glow: rgba(23,16,30,0.12); --aa-bg: rgba(32,25,54,0.85); --aa-shadow: rgba(27,18,35,0.14); }
+.alert-accent-pink { --alert-accent: #ec4899; --aa-glow: rgba(28,9,18,0.12); --aa-bg: rgba(38,17,40,0.85); --aa-shadow: rgba(33,10,21,0.14); }
+.alert-accent-amber { --alert-accent: #f59e0b; --aa-glow: rgba(29,19,1,0.12); --aa-bg: rgba(39,29,20,0.85); --aa-shadow: rgba(34,22,2,0.14); }
 
 /* ==========================================================
-   GENRE — PRECOMPUTED COLOR-MIX VALUES
+   GENRE: PRECOMPUTED COLOR-MIX VALUES
    8 color-mix per genre option × banyak genre = mahal.
    Precompute ke rgba statis per variant.
    ========================================================== */
@@ -4318,7 +3943,7 @@ html body .site-random-result {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 0.4rem; /* Dikurangi dari 0.75rem */
+  margin-top: 0.4rem;
 }
 .home-section-divider-dot {
   flex: 0 0 auto;
@@ -4343,7 +3968,6 @@ html body .site-random-result {
   border-radius: var(--site-radius-pill);
   background: rgba(34, 211, 238, 0.08);
   color: #c8f7ff;
-  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.2em;
   line-height: 1;
@@ -4377,9 +4001,9 @@ html body .site-random-result {
 }
 
   /* ============================================================
-     AURORA SEARCH SYSTEM — UNIFIED v2
-     DonghuaBatch - Mobile-first, konsisten di semua device
-     Lokasi: Navbar Desktop, Navbar Mobile, /search, Sidebar Taxonomy
+     AURORA SEARCH SYSTEM
+     Mobile-first, konsisten di semua device.
+     Dipakai di halaman /search dan sidebar taksonomi.
      ============================================================ */
 
   html body .aurora-search-container {
@@ -4435,26 +4059,6 @@ html body .site-random-result {
     color: var(--site-cyan);
   }
 
-  @media (min-width: 640px) {
-    .aurora-search-input {
-      min-height: 2.75rem;
-      padding-right: 1rem;
-      font-size: 0.92rem;
-    }
-  }
-
-  /* Desktop ≥1024px: sedikit lebih lega */
-  @media (min-width: 1024px) {
-    .aurora-search-input {
-      min-height: 2.82rem;
-      padding-left: 2.7rem;
-    }
-    .aurora-search-icon {
-      left: 1.05rem;
-      font-size: 0.95rem;
-    }
-  }
-
   /* Compact variant untuk sidebar / ruang sempit
      Pakai: <div class="aurora-search-container aurora-search-compact"> */
   html body .aurora-search-container.aurora-search-compact .aurora-search-input {
@@ -4475,28 +4079,12 @@ html body .site-random-result {
     font-size: 0.82rem;
   }
 
-  /* Very small screens <360px */
-  @media (max-width: 359px) {
-    .aurora-search-input {
-      min-height: 2.5rem;
-      padding: 0.55rem 1rem 0.55rem 2.25rem;
-      font-size: 0.82rem;
-    }
-    .aurora-search-icon {
-      left: 0.78rem;
-      font-size: 0.84rem;
-    }
-  }
-
-  
-
 /* ==========================================================
-   PHASE 5 — STRUCTURED LAYOUT FIXES
-   Scope: overflow desktop, taxonomy title wrap, mobile tap targets,
-   and small-text readability without breaking site theme.
+   KETERBACAAN TEKS KECIL
+   Ukuran huruf teks UI yang ringkas dan penyesuaian footer di
+   layar sempit, tanpa mengubah tema situs.
    ========================================================== */
 
-/* Safer desktop widths for two-column pages using the right sidebar */
 /* Readability uplift for compact UI text */
 .db-kicker,
 .db-hero-badge,
@@ -4517,28 +4105,8 @@ html body .site-random-result {
 }
 
 @media (max-width: 639px) {
-  
-
-  .aurora-search-input,
-  .aurora-search-container.aurora-search-compact .aurora-search-input {
-    padding-right: 1rem;
-  }
-
-  
-
-  
-
-  
-
   .site-footer-links {
     gap: 0.18rem;
-  }
-
-  
-
-  .site-footer-social-link {
-    width: 2.75rem;
-    height: 2.75rem;
   }
 
   .site-footer-card h2 {
@@ -4549,8 +4117,6 @@ html body .site-random-result {
     font-size: 0.88rem;
     line-height: 1.7;
   }
-
-  
 
   .db-kicker,
   .db-hero-badge,
@@ -4563,23 +4129,13 @@ html body .site-random-result {
   .season-nav-kicker {
     font-size: 0.76rem;
   }
-
 }
 
 /* ==========================================================
-   PHASE 6 — PRIORITY PAGE MICRO POLISH
-   Scope: homepage, post detail, genre, favorit, search.
-   Balanced refinements only.
+   PENYESUAIAN HALAMAN PRIORITAS
+   Beranda, detail post, genre, favorit, dan search.
    ========================================================== */
 @media (max-width: 639px) {
-  
-
-  
-
-  
-
-  
-
   .genre-filter-kicker,
   .genre-sheet-kicker,
   .taxonomy-tabs-kicker,
@@ -4590,13 +4146,11 @@ html body .site-random-result {
   }
 
   .taxonomy-item-text small {
-    font-size: 0.75rem;
     line-height: 1.45;
   }
 }
 
-/* PHASE 7 spacing tokens removed: HTML uses explicit Tailwind gap/padding/margin
-   utilities; --site-space-* was never referenced via var(). */
+/* Jarak gulir ke anchor supaya target tidak tertutup navbar. */
 
 html {
   scroll-padding-top: 5.75rem; /* 4.75rem navbar + 1rem */
@@ -4608,7 +4162,7 @@ html {
   }
 }
 
-/* Mobile border-radius — preserved for consistency */
+/* Mobile border-radius: preserved for consistency */
 @media (max-width: 639px) {
   html body .panel-neon,
   html body .alert-stack-shell,
@@ -4629,9 +4183,9 @@ html {
 }
 
 /* ==========================================================
-   PHASE 8 — MOONLIT POSTER FADE HERO
-   Selected design #17. Balanced dark overlay, left-bottom copy,
-   current content preserved, light animation only.
+   HERO BERANDA: MOONLIT POSTER FADE
+   Overlay gelap yang seimbang, teks di kiri bawah, dan animasi
+   ringan saja.
    ========================================================== */
 .site-home-hero,
 .site-home-hero * {
@@ -4807,52 +4361,17 @@ html body .site-home-hero-actions {
   margin-top: clamp(1rem, 2.2vw, 1.25rem);
 }
 
-@media (min-width: 768px) {
-  .site-home-hero-card {
-    width: min(42rem, 56%);
-    margin: 0 0 clamp(0.45rem, 1.2vw, 0.85rem) clamp(0.25rem, 1vw, 0.65rem);
-  }
-}
-
 @media (max-width: 767px) {
-  .site-home-hero {
-    min-height: clamp(26rem, 100vw, 38rem);
-    padding: clamp(0.9rem, 4vw, 1.15rem);
-  }
-
-  .site-home-hero::before {
-    background:
-      radial-gradient(circle at 72% 16%, rgba(226, 232, 240, 0.10), transparent 24%),
-      linear-gradient(180deg, rgba(2, 6, 23, 0.08) 0%, rgba(2, 6, 23, 0.36) 39%, rgba(2, 6, 23, 0.96) 100%);
-  }
-
-  .site-home-hero-media img {
-    object-position: 58% center;
-    filter: brightness(0.70) saturate(1.00) contrast(1.08);
-  }
-
   .site-home-hero-card {
     width: 100%;
     padding-left: 0.85rem;
   }
-
-  .site-home-hero-card h1 {
-    font-size: clamp(1.85rem, 9.2vw, 2.55rem);
-    line-height: 1;
-  }
-
-  .site-home-hero-actions {
-    gap: 0.65rem;
-  }
-
-  
 }
 
 /* ==========================================================
-   PHASE 9 — UNIFIED NEON BUTTON COLOR SYSTEM
-   Advanced audit implementation. All major buttons/CTAs are
-   normalized to the current DonghuaBatch neon palette.
-   Roles: primary, secondary, danger, success, warning/locked.
+   SISTEM WARNA TOMBOL NEON
+   Semua tombol dan CTA utama memakai palet neon DonghuaBatch.
+   Peran: primary, secondary, danger, success, warning/locked.
    ========================================================== */
 :root {
   --btn-secondary-bg: rgba(255, 255, 255, 0.055);
@@ -4873,10 +4392,10 @@ html body .site-home-hero-actions {
 }
 
 /* ==========================================================
-   PHASE 10 — HYBRID C BUTTON COLOR MODE
-   Final selected mode: hero #17 keeps ivory/elegant primary,
-   while other primary CTAs use calmer soft-neon/dark-elegant
-   colors. Secondary remains dark glass from Phase 9.
+   MODE WARNA TOMBOL HYBRID
+   Tombol primary di hero berwarna gading yang elegan, CTA primary
+   lain memakai soft-neon yang lebih tenang, dan tombol secondary
+   memakai dark glass.
    ========================================================== */
 :root {
   --btn-hybrid-hero-bg: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 48%, #ddd6fe 100%);
@@ -4903,7 +4422,7 @@ html body .site-home-hero-actions {
 }
 
 /* ==========================================================
-   FLOATING BOTTOM AD — PRODUCTION UNIT
+   FLOATING BOTTOM AD: PRODUCTION UNIT
    Global, mobile-first, close state persisted per browser tab.
    ========================================================== */
 .site-floating-ad,
@@ -4938,19 +4457,11 @@ html body .site-home-hero-actions {
   transform: translateY(0);
 }
 
-.site-floating-ad.is-closing {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(calc(100% + 1.5rem));
-}
-
 .site-floating-ad__panel {
   position: relative;
   display: grid;
   gap: 0.42rem;
   width: min(100%, 47.5rem);
-  max-width: 100%;
-  min-width: 0;
   padding: 0.42rem 0.48rem max(0.48rem, env(safe-area-inset-bottom));
   border: 1px solid rgba(125, 211, 252, 0.24);
   border-bottom: 0;
@@ -4963,11 +4474,7 @@ html body .site-home-hero-actions {
     0 -18px 48px rgba(0, 0, 0, 0.4),
     0 0 24px rgba(34, 211, 238, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  /* SCROLL PERF: backdrop-filter:blur(16px) removed — already 98-99% opaque. */
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   pointer-events: auto;
-  overflow: hidden;
 }
 
 .site-floating-ad__panel::before {
@@ -5039,10 +4546,6 @@ html body .site-home-hero-actions {
   font-size: 0.78rem;
 }
 
-.site-floating-ad__slot .ad-fallback-text span {
-  font-size: 0.66rem;
-}
-
 /* Bilah alat dan slot adalah item grid panel; tanpa min-width:0 keduanya
    menolak menyusut di bawah min-content dan panel melebihi lebar layar. */
 .site-floating-ad__panel > * {
@@ -5075,8 +4578,6 @@ html body .site-home-hero-actions {
   position: relative;
   display: block;
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
   min-height: 0;
   height: calc(var(--ad-creative-height) * var(--ad-scale));
   overflow: hidden;
@@ -5085,8 +4586,7 @@ html body .site-home-hero-actions {
 }
 
 @media (min-width: 768px) {
-  .site-floating-ad__unit.is-desktop-unit,
-  .site-floating-ad[data-ad-viewport="desktop"] .site-floating-ad__unit {
+  .site-floating-ad__unit.is-desktop-unit {
     --ad-creative-width: 728px;
     --ad-creative-height: 90px;
   }
@@ -5108,17 +4608,6 @@ html body .site-floating-ad__unit > ins {
   transform-origin: top center;
 }
 
-.site-floating-ad,
-.site-floating-ad__panel,
-.site-floating-ad__slot {
-  max-width: 100%;
-  min-width: 0;
-}
-
-.site-floating-ad[data-ad-status="failed"] {
-  pointer-events: none;
-}
-
 @media (min-width: 640px) {
   .site-floating-ad {
     padding-left: max(0.75rem, env(safe-area-inset-left));
@@ -5135,14 +4624,11 @@ html body .site-floating-ad__unit > ins {
     min-height: 2.15rem;
   }
 
-  
-
   .site-floating-ad__slot {
     min-height: 5.625rem;
     gap: 0.85rem;
     border-radius: 0.82rem;
   }
-
 }
 
 @media (min-width: 768px) {
@@ -5158,7 +4644,7 @@ html body .site-floating-ad__unit > ins {
 }
 
 /* ==========================================================
-   NAVBAR QUICK ACTIONS — ACAK + FAVORIT BEFORE MENU
+   NAVBAR QUICK ACTIONS: ACAK + FAVORIT BEFORE MENU
    Icon-only on every viewport; Support remains in the menu sheet.
    ========================================================== */
 .site-navbar-brand > span {
@@ -5217,12 +4703,8 @@ html body .site-footer {
   display: block;
 }
 
-html body [data-ad-widget][data-ad-status="failed"] {
-  display: none;
-}
-
 /* ==========================================================
-   AD OVERFLOW LOCK — mobile-first
+   AD OVERFLOW LOCK (mobile-first)
    Pastikan creative fixed-size (728/300/native) tidak memicu
    horizontal page scroll di viewport sempit.
    ========================================================== */
@@ -5248,7 +4730,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Close sudah di dalam panel — clip horizontal aman di floating shell. */
+/* Close sudah di dalam panel, jadi clip horizontal aman di floating shell. */
 .site-floating-ad {
   overflow-x: hidden;
   overflow-y: visible;
@@ -5284,7 +4766,7 @@ html body .ad-neon-scroll {
 }
 
 /* ==========================================================
-   SCROLL PERFORMANCE — preserve the neon visual language while
+   SCROLL PERFORMANCE: preserve the neon visual language while
    avoiding expensive backdrop sampling on scrolling surfaces.
    ========================================================== */
 /*
@@ -5327,7 +4809,7 @@ html body .ad-neon-shell {
   backdrop-filter: none;
 }
 
-/* ===== SCROLL PERFORMANCE — Phase 2: Additional backdrop-filter removal =====
+/* ===== SCROLL PERFORMANCE: panel besar tanpa backdrop-filter =====
    Panels besar yang terlihat saat scroll. backdrop-filter: blur() memaksa
    browser re-sample konten di belakang tiap frame scroll → drop frame rate
    di perangkat mid-range/low-end. Gradient solid pengganti mempertahankan
@@ -5352,7 +4834,7 @@ html body .fav-empty-card {
     linear-gradient(135deg, rgb(13,16,36), rgb(7,10,24));
 }
 
-/* Notfound page panels — halaman 404, tapi tetap konsisten */
+/* Notfound page panels: halaman 404, tapi tetap konsisten */
 html body .notfound-dock-shell,
 html body .notfound-dock-panel {
   -webkit-backdrop-filter: none;
@@ -5396,7 +4878,7 @@ html body .site-bg-character {
   background: transparent;
 }
 
-/* Recently viewed — adapt the grid to the number of saved cards.
+/* Recently viewed: adapt the grid to the number of saved cards.
    Compact screens retain a two-column touch-friendly layout; larger screens
    centre up to four fixed-proportion cards instead of leaving a broken row. */
 .recently-viewed-section,
@@ -5405,13 +4887,10 @@ html body .site-bg-character {
 }
 
 @media (max-width: 639px) {
-  /* Semua grid kartu donghua: dua kolom tetap di bawah 640px (pilihan pengguna,
-     12 Oktober 2026). Semula jumlah kolom mengikuti auto-fill, yaitu 1 kolom di
-     bawah 382px, 2 kolom di 382 sampai 547px, dan 3 kolom di 548 sampai 639px.
-     Dua kolom tetap dipilih agar seluruh kartu donghua tampil dengan ukuran yang
-     sama di semua bagian situs, bukan hanya di bagian Terakhir Dilihat. Dengan
-     dua kolom tetap, kartu terakhir pada aturan di bawah selalu selebar satu kolom
-     sehingga ukurannya seragam juga. Aturan di 640px ke atas tidak diubah. */
+  /* Semua grid kartu donghua memakai dua kolom tetap di bawah 640px supaya
+     ukuran kartu sama di semua bagian situs. Kartu terakhir yang ganjil di
+     Terakhir Dilihat dibuat selebar satu kolom dan diletakkan di tengah,
+     jadi ukurannya ikut seragam. */
   .donghua-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -5434,7 +4913,7 @@ html body .site-bg-character {
 }
 
 /* ==========================================================
-   SEARCH FILTER & SORT — mobile-first controls
+   SEARCH FILTER & SORT: mobile-first controls
    Mobile uses a bottom sheet; tablet/desktop uses a centred panel.
    ========================================================== */
 body.search-filter-lock {
@@ -5474,7 +4953,6 @@ body.search-filter-lock {
   border-radius: 999px;
   background: #67e8f9;
   color: #06111f;
-  font-size: 0.66rem;
   font-weight: 950;
 }
 
@@ -5536,7 +5014,6 @@ body.search-filter-lock {
   color: #67e8f9;
   font-size: 0.68rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -5580,8 +5057,6 @@ body.search-filter-lock {
 }
 
 @media (min-width: 640px) {
-  
-
   .search-sort-field {
     flex: 0 1 16rem;
   }
@@ -5627,7 +5102,6 @@ body.search-filter-lock {
   margin: 0 0 1rem;
   padding: 0.86rem;
   border: 1px solid rgba(125, 211, 252, 0.18);
-  border-radius: 1rem;
   background:
     radial-gradient(circle at 8% 0%, rgba(34, 211, 238, 0.08), transparent 34%),
     radial-gradient(circle at 94% 100%, rgba(139, 92, 246, 0.08), transparent 36%),
@@ -5662,7 +5136,6 @@ body.search-filter-lock {
 
 .search-discovery-head small {
   color: #8196ae;
-  font-size: 0.66rem;
   font-weight: 750;
 }
 
@@ -5689,7 +5162,6 @@ body.search-filter-lock {
   margin: 0 0 1rem;
   padding: 0.9rem;
   border: 1px solid rgba(125, 211, 252, 0.18);
-  border-radius: 1rem;
   background:
     radial-gradient(circle at 6% 0%, rgba(34, 211, 238, 0.09), transparent 32%),
     radial-gradient(circle at 96% 100%, rgba(139, 92, 246, 0.08), transparent 36%),
@@ -5711,7 +5183,6 @@ body.search-filter-lock {
   color: #67e8f9;
   font-size: 0.67rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -5782,25 +5253,12 @@ body.search-filter-lock {
   line-height: 1.5;
 }
 
-.fav-watch-card .donghua-card-body {
-  padding-bottom: 2.75rem;
-}
-
 .fav-card-watch-control {
   position: absolute;
-  right: 0.62rem;
-  bottom: 0.62rem;
-  left: 0.62rem;
   z-index: 4;
-  display: flex;
   align-items: center;
-  gap: 0.34rem;
   min-width: 0;
-  min-height: 1.7rem;
-  padding: 0.14rem 0.28rem 0.14rem 0.46rem;
   border: 1px solid rgba(125, 211, 252, 0.22);
-  border-radius: 0.6rem;
-  background: rgba(2, 6, 23, 0.9);
   color: #a9bdd0;
 }
 
@@ -5876,7 +5334,7 @@ body.search-filter-lock {
   }
 }
 
-/* Watch status segmented control — replaces the select menu in favorite cards. */
+/* Watch status segmented control in favorite cards. */
 .fav-watch-card .donghua-card-body {
   padding-bottom: 4.15rem;
 }
@@ -5890,10 +5348,7 @@ body.search-filter-lock {
   gap: 0.16rem;
   min-height: 48px;
   padding: 0.12rem;
-  border-color: rgba(125, 211, 252, 0.3);
   border-radius: 0.7rem;
-  background: rgba(2, 6, 23, 0.94);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 5px 14px rgba(0, 0, 0, 0.18);
 }
 
 .fav-card-watch-option {
@@ -5976,8 +5431,8 @@ body.search-filter-lock {
 }
 
 /* ==========================================================
-   FEATURE THEME SYSTEM — shared visual language for all new UI
-   Cyan–sky–purple accents, compact borders, and subtle one-time motion.
+   FEATURE THEME SYSTEM: shared visual language for feature UI
+   Cyan, sky, and purple accents, compact borders, and subtle one-time motion.
    ========================================================== */
 :root {
   --feature-cyan: #22d3ee;
@@ -6087,8 +5542,7 @@ body.search-filter-lock {
   }
 }
 
-/* Search tool bar: keep desktop controls compact instead of leaving an empty feature surface. */
-/* Tabel scroll indicator — gradient fade hint di kanan saat overflow */
+/* Tabel scroll indicator: gradient fade hint di kanan saat overflow */
 .panel-neon-inset.overflow-x-auto {
   background-image:
     linear-gradient(to right, transparent 85%, rgba(34,211,238,0.12) 100%);
@@ -6121,45 +5575,8 @@ body.search-filter-lock {
   background-color: transparent !important;
 }
 
-/* ===== Source: layouts/partials/widget/social-bar.html ===== */
-/* ============================
-   SOCIAL BAR ADSTERRA — RUANG BAWAH LAYAR
-   Overlay dirender oleh script jaringan iklan, jadi situs hanya menyediakan
-   ruang: Back to Top dan floating ad naik setinggi --social-bar-height.
-   ============================ */
-body.has-social-bar .btt-wrapper {
-  bottom: calc(
-    var(--btt-base-bottom) + var(--btt-ad-height, 0px) +
-    var(--social-bar-height, 0px) + env(safe-area-inset-bottom)
-  );
-}
-
-body.has-social-bar .site-floating-ad {
-  bottom: var(--social-bar-height, 0px);
-  transition:
-    opacity 0.24s ease,
-    visibility 0.24s ease,
-    bottom 0.24s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-body.has-social-bar .site-floating-ad__panel {
-  padding-bottom: 0.48rem;
-}
-
-/* Sisakan ruang agar footer tidak tertutup overlay pada layar sempit. */
-body.has-social-bar .site-footer {
-  padding-bottom: calc(var(--social-bar-height, 0px) + env(safe-area-inset-bottom));
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.has-social-bar .site-floating-ad {
-    transition: none;
-  }
-}
-
 /* ==========================================================
-   HALAMAN KONTAK — Split layout, neon consistency
+   HALAMAN KONTAK: split layout, neon consistency
    Kiri: deskripsi + info singkat. Kanan: form kontak.
    Mobile-first, stack vertikal di bawah lg breakpoint.
    ========================================================== */
@@ -6206,7 +5623,7 @@ body.has-social-bar .site-footer {
 }
 
 /* ==========================================================
-   KONTAK — Validasi email (inline feedback)
+   KONTAK: validasi email (inline feedback)
    State input: is-invalid (merah), is-checking (biru),
    is-valid (cyan). Feedback tampil di bawah kolom email.
    ========================================================== */
@@ -6277,7 +5694,7 @@ body.has-social-bar .site-footer {
 }
 
 /* ==========================================================
-   TAHAP 1 — AKSESIBILITAS INTERAKSI
+   AKSESIBILITAS INTERAKSI
    Target adaptif dan fokus tabel tanpa mengubah bahasa visual.
    ========================================================== */
 .site-navbar-brand {
@@ -6299,7 +5716,7 @@ body.has-social-bar .site-footer {
 }
 
 /* ==========================================================
-   TAHAP 2 — SISTEM SHELL HALAMAN
+   SISTEM SHELL HALAMAN
    Header, empty state, landing taxonomy, dan kolom baca.
    ========================================================== */
 .site-page-header {
@@ -6746,7 +6163,7 @@ body.has-social-bar .site-footer {
 
 /* Honeypot Formspree: tak terlihat pengunjung, tetap terbaca
    bot pengisi form otomatis supaya laporan sampah tersaring. */
-/* SEC-09: dipakai form kontak dan form laporan. */
+/* Dipakai form kontak dan form laporan. */
 .form-honeypot,
 .laporkan-honeypot {
   position: absolute;
@@ -6879,27 +6296,13 @@ body.has-social-bar .site-footer {
   }
 }
 
-/* R-01 (audit responsif 12 Oktober 2026, disempitkan 12 Oktober 2026 malam):
-   tabel di dalam isi halaman statis dibuat dapat digulir mendatar di layar
-   sempit. Sebelum perbaikan, tabel di halaman kebijakan privasi berukuran 315px
-   terpotong 20px pada viewport 320px dan 60px pada 280px, dan karena html serta
-   body memakai overflow-x: clip, bagian yang terpotong tidak bisa dijangkau
-   sama sekali. display: block diperlukan karena overflow-x tidak berlaku pada
-   display: table bawaan.
-
-   Usul menurunkan batas dari 640px ke 400px diuji berpasangan dan DITOLAK
-   dengan bukti: halaman kebijakan privasi ternyata memuat tiga tabel, bukan
-   satu. Tabel pertama 364px (muat di semua lebar uji), tetapi tabel kedua
-   459px dan tabel ketiga 509px. Pada 401px sampai 640px tabel kedua terpotong
-   di bawah 509px dan tabel ketiga di bawah 559px, dan karena html serta body
-   memakai overflow-x: clip, potongannya tidak dapat dijangkau. Batas 640px
-   karena itu dipertahankan supaya ketiga tabel tetap dapat digeser.
-
-   Sisa gulir 5px pada 360px bukan akibat batas itu, melainkan karena isi tabel
-   pertama (315px) sedikit lebih lebar dari wadahnya (310px). Aturan kedua di
-   bawah mengecilkan huruf tabel di 400px ke bawah: pada 360px isi turun ke
-   310px sehingga pas tanpa sisa gulir, pada 320px sisa gulir turun dari 45px
-   ke 27px, dan tinggi tabel justru berkurang. */
+/* Tabel di dalam isi halaman statis dapat digulir mendatar di layar sempit.
+   html dan body memakai overflow-x: clip, jadi tanpa aturan ini bagian tabel
+   yang melebihi layar terpotong dan tidak bisa dijangkau. display: block
+   diperlukan karena overflow-x tidak berlaku pada display: table bawaan.
+   Batas 640px dipakai karena tabel terlebar di halaman kebijakan privasi
+   masih terpotong pada layar di bawah 559px. Aturan kedua mengecilkan huruf
+   tabel di 400px ke bawah supaya tabel pertama pas di layar 360px. */
 @media (max-width: 640px) {
   .prose-neon table {
     display: block;
@@ -6916,20 +6319,10 @@ body.has-social-bar .site-footer {
   }
 }
 
-/* Garis tabel halaman statis (12 Oktober 2026, pilihan pengguna: varian B).
-   Sebelumnya tabel di dalam isi halaman statis sama sekali tidak bergaris: reset
-   bawaan Tailwind memasang border-width 0 pada semua unsur, dan tidak ada satu
-   pun aturan di berkas ini yang memilih th atau td sehingga tidak pernah ada
-   yang memasang garis. Audit R-01 hanya memindahkan tabel keluar layar ke wadah
-   bergulir, jadi tampilan tanpa garis itu bukan akibat audit.
-
-   Lima varian diukur pada tabel ketiga halaman kebijakan privasi di viewport
-   1000px sebelum dipilih: tanpa garis 419px, garis tanpa ubah padding 426px,
-   garis ringan dengan padding 0.42rem 546px, garis dengan padding 0.5rem 568px,
-   dan kotak penuh per sel dengan kepala bertanda 598px. Varian terakhir yang
-   dipilih pengguna, jadi tabel bertambah tinggi sekitar 43 persen di halaman
-   itu. Gulir mendatar dokumen tetap 0px pada 280px sampai 1440px karena tabel
-   lebih lebar dari layar tetap berada di wadah bergulir R-01. */
+/* Garis tabel halaman statis. Reset bawaan Tailwind memasang border-width 0
+   pada semua unsur, jadi th dan td perlu diberi garis secara eksplisit:
+   kotak penuh per sel dengan kepala tabel bertanda cyan. Tabel yang lebih
+   lebar dari layar tetap berada di wadah bergulir di atas. */
 .prose-neon table th,
 .prose-neon table td {
   border: 1px solid rgba(148, 163, 184, 0.22);
@@ -6941,17 +6334,11 @@ body.has-social-bar .site-footer {
   background: rgba(34, 211, 238, 0.06);
 }
 
-/* R-02 (audit responsif 12 Oktober 2026): kolom isian memakai huruf 16px pada
-   peranti sentuh. Ukuran sebelumnya 0.82rem sampai 0.88rem (13,1px sampai 14,1px),
-   dan Safari iOS memperbesar tampilan saat kolom di bawah 16px difokuskan.
-   Syarat pointer: coarse dipakai supaya tampilan desktop tidak ikut berubah. */
-/* R-04 (audit responsif 12 Oktober 2026): bilah navigasi dipadatkan pada layar
-   mendatar pendek. Pada 640x360 bilah setinggi 65px memakan 18,1 persen tinggi
-   layar. Dengan pengaturan di bawah, tinggi turun ke 56px atau 15,6 persen.
-   Sasaran sentuh tombol menu tetap 40px, di atas ambang 24px WCAG 2.5.8.
-   Jarak bilah ke konten justru sesuai niat rancangan: penyangga html body 72px
-   dikurangi bilah 56px menyisakan 16px. Layar tinggi seperti ponsel tegak dan
-   desktop tidak tersentuh karena syaratnya tinggi maksimal 430px. */
+/* Bilah navigasi dipadatkan pada layar mendatar yang pendek (tinggi
+   maksimal 430px), misalnya ponsel yang dimiringkan. Tinggi bilah menjadi
+   56px, sasaran sentuh tombol menu tetap 40px (di atas ambang 24px WCAG
+   2.5.8), dan jarak ke konten tetap 16px karena penyangga html body 72px.
+   Layar yang lebih tinggi tidak terpengaruh. */
 @media (max-height: 430px) {
   .site-navbar-inner {
     padding: 0.34rem 1rem;
@@ -6965,20 +6352,15 @@ body.has-social-bar .site-footer {
     width: 1.9rem;
     height: 1.9rem;
   }
-
-  
 }
 }
 
-/* ================= Aturan tombol di luar layer (kompatibilitas kaskade) =============
-   Pada CSS asli commit d3a628d aturan tombol berada di luar layer sehingga menang
-   atas utility Tailwind. Setelah seluruh gaya situs masuk @layer components pada
-   tahap 2, utility Tailwind yang berada di layer lebih tinggi jadi menang dan
-   tampilan sebagian tombol berubah. Supaya seluruh tombol kembali persis seperti
-   keadaan sebelum naik versi tanpa menyentuh markup, seluruh aturan tombol
-   dikembalikan ke luar layer. Isi aturannya tidak diubah sedikit pun.
-   Dipindahkan otomatis oleh audit/kompatibilitas-tombol.py. */
-
+/* ================= Aturan tombol di luar layer =================
+   Blok ini sengaja tidak dibungkus @layer. Untuk deklarasi biasa (tanpa
+   !important), gaya di luar layer selalu menang atas gaya di dalam layer,
+   termasuk @layer utilities milik Tailwind. Dengan begitu kelas utility di
+   markup tidak mengubah tampilan tombol. Jika blok ini dipindah ke dalam
+   @layer components, periksa ulang tampilan semua tombol. */
 
 .notfound-dock-actions {
         display: grid;
@@ -6993,7 +6375,6 @@ body.has-social-bar .site-footer {
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        min-height: 2.8rem;
         padding: 0.72rem 0.9rem;
         border-radius: 0.95rem;
         text-decoration: none;
@@ -7031,7 +6412,6 @@ body.has-social-bar .site-footer {
 
 @media (hover: hover) {
 .notfound-dock-btn.ghost:hover {
-            border-color: rgba(34, 211, 238, 0.42);
             border: 1px solid rgba(34, 211, 238, 0.13);
         }
 }
@@ -7058,7 +6438,6 @@ body.has-social-bar .site-footer {
 
 @media (max-width: 420px) {
 .notfound-dock-btn {
-            min-height: 2.7rem;
             padding: 0.65rem 0.7rem;
             font-size: 0.82rem;
             border-radius: 0.85rem;
@@ -7066,18 +6445,18 @@ body.has-social-bar .site-footer {
         }
 }
 
-/* ===== Source: layouts/_default/baseof.html (style block 1) ===== */
+/* ===== Pagination (layouts/partials/pagination-option11.html) ===== */
       body .pagination-aurora-dock,
       body .pagination-dock {
         width: fit-content;
         max-width: 100%;
-        margin: 0.5rem auto 0; /* Dikurangi dari 1.25rem agar lebih rapat ke container atas */
+        margin: 0.5rem auto 0;
         padding: 0.5rem;
         border: 1px solid rgba(34, 211, 238, 0.18);
         border-radius: 1.15rem;
         background: linear-gradient(135deg, rgba(14, 20, 38, 0.96), rgba(10, 14, 32, 0.97), rgba(16, 10, 28, 0.96));
         box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22), 0 0 18px rgba(34, 211, 238, 0.08);
-        /* SCROLL PERF: backdrop-filter:blur(10px) removed — solid gradient replacement. */
+        /* SCROLL PERF: tanpa blur latar; latarnya gradien solid. */
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
       }
@@ -7108,7 +6487,6 @@ body .pagination-aurora-button,
         justify-content: center;
         gap: 0.45rem;
         min-width: 42px;
-        min-height: 42px;
         padding: 0 0.95rem;
         font-size: 0.88rem;
         font-weight: 850;
@@ -7144,7 +6522,7 @@ body .pagination-dock-status {
         }
 }
 
-/* ===== Source: layouts/_default/favorit.html (style block 1) ===== */
+/* ===== Halaman favorit (layouts/_default/favorit.html) ===== */
 .fav-clear-btn {
   display: inline-flex;
   align-items: center;
@@ -7211,7 +6589,6 @@ html body .fav-clear-btn.hidden {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 2.7rem;
   padding: 0 1rem;
   border-radius: var(--site-radius-btn);
   font-size: 0.84rem;
@@ -7246,7 +6623,6 @@ html body #search-empty-state[hidden],
         align-items: center;
         padding: 0.08rem 0.45rem;
         border: 1px solid rgba(34,211,238,0.18);
-        border-radius: 0.7rem;
         background: rgba(34,211,238,0.10);
         color: #bbf7ff;
         font: inherit;
@@ -7268,7 +6644,6 @@ html body #search-empty-state[hidden],
 .alert-stack-link:hover {
             transform: translateY(-1px);
             background: rgba(34,211,238,0.16);
-            border-color: rgba(34,211,238,0.28);
             border: 1px solid rgba(34,211,238,0.12);
             color: #e6fbff;
         }
@@ -7433,10 +6808,8 @@ html body #search-empty-state[hidden],
         justify-content: center;
         gap: 0.5rem;
         width: 100%;
-        min-height: 2.75rem;
         margin-top: auto;
         padding: 0.72rem 1rem;
-        border-radius: var(--site-radius-sm);
         background: linear-gradient(135deg, #eef7ff, #cffafe);
         color: var(--site-ink-on-light);
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
@@ -7488,11 +6861,9 @@ html body #search-empty-state[hidden],
         width: fit-content;
         max-width: 100%;
         min-width: min(15rem, 100%);
-        min-height: 3rem;
         margin: 1rem auto 0;
         padding: 0.8rem 1.1rem;
         border: 1px solid rgba(244, 114, 182, 0.36);
-        border-radius: var(--site-radius-md);
         outline: none;
         background: linear-gradient(135deg, rgba(239, 68, 68, 0.88), rgba(219, 39, 119, 0.88), rgba(147, 51, 234, 0.88));
         color: #ffffff;
@@ -7570,7 +6941,7 @@ html body #search-empty-state[hidden],
 .site-nav-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.35rem; /* Jauh lebih rapat dari sebelumnya 0.62rem */
+    gap: 0.35rem;
   }
 
 @media (min-width: 480px) {
@@ -7584,9 +6955,9 @@ html body #search-empty-state[hidden],
   .site-nav-grid button {
     display: grid;
     place-items: center;
-    gap: 0.25rem; /* Jarak antara ikon dan teks lebih rapat */
-    min-height: 3.5rem; /* Lebih tipis dari sebelumnya 4.35rem */
-    padding: 0.5rem 0.5rem; /* Padding lebih sempit agar konten padat */
+    gap: 0.25rem; /* Jarak antara ikon dan teks */
+    min-height: 3.5rem;
+    padding: 0.5rem 0.5rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1.14rem;
     background:
@@ -7595,8 +6966,6 @@ html body #search-empty-state[hidden],
     color: #d9fbff;
     text-align: center;
     text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 900;
     transition: transform var(--site-transition-med), border-color 0.20s ease, box-shadow 0.20s ease, background 0.20s ease;
     cursor: pointer;
     position: relative;
@@ -7713,17 +7082,9 @@ html body .site-random-error[hidden],
     }
 }
 
-/* ===== Source: layouts/partials/save-favorite.html (style block 1) ===== */
-/* ============================
-   BOOKMARK BUTTON (Card)
-   ============================ */
 /* ==========================================================
-   BOOKMARK CARD — BLOK KANONIK
-   Sebelumnya properti tombol ini tersebar di 10 blok dengan
-   spesifisitas bertingkat (.donghua-card-bookmark, body ...,
-   html body ...) sehingga ukuran ditetapkan tiga kali dengan
-   nilai berbeda. Semua digabung di sini.
-
+   BOOKMARK CARD: BLOK KANONIK
+   Semua properti dasar tombol bookmark kartu dikumpulkan di sini.
    Ukuran memakai --bookmark-size (lihat blok state di bawah)
    dan dijaga minimal 44px sesuai WCAG 2.5.5.
    ========================================================== */
@@ -7735,7 +7096,7 @@ body .donghua-card-bookmark {
   padding: 0;
   cursor: pointer;
   font-size: 0.72rem;
-  /* SCROLL PERF: backdrop-filter:blur(8px) dilepas — background solid. */
+  /* SCROLL PERF: tanpa blur latar karena background solid. */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   transition:
@@ -7768,7 +7129,6 @@ body .donghua-card-bookmark:focus-visible {
 /* Saved state */
 body .donghua-card-bookmark.is-saved {
   background: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(139, 92, 246, 0.2));
-  border-color: var(--site-cyan);
   color: var(--site-cyan);
   border: 1px solid rgba(34, 211, 238, 0.35);
 }
@@ -7784,7 +7144,7 @@ body .donghua-card-bookmark svg {
 }
 
 /* ============================
-   BOOKMARK BUTTON (Post Page) — UPGRADED
+   BOOKMARK BUTTON (Post Page)
    Style: Cyber Neon CTA with shimmer & pulse
    ============================ */
 body .post-bookmark-btn {
@@ -7888,7 +7248,7 @@ body .post-bookmark-btn:hover .post-bookmark-icon {
   transform: scale(1.12) rotate(-6deg);
 }
 
-/* ===== SAVED STATE — Solid neon green, with check ===== */
+/* ===== SAVED STATE: solid neon green, with check ===== */
 body .post-bookmark-btn.is-saved {
   background:
     linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(16, 185, 129, 0.18)),
@@ -7931,7 +7291,6 @@ body .post-bookmark-btn.is-saved .fav-chevron {
 }
 
 /* ===== Pulse ring on click ===== */
-
 
 body .post-bookmark-btn.is-pulsing {
   animation: bookmark-pulse 0.6s ease-out;
@@ -8124,15 +7483,12 @@ body .post-bookmark-btn {
                 padding: 0.32rem 0.5rem;
                 border-radius: 999px;
                 background: rgba(6, 17, 31, 0.10);
-                font-size: 0.74rem;
             }
 
 .genre-sheet-close {
                 display: inline-grid;
                 place-items: center;
                 flex: 0 0 auto;
-                width: 2.45rem;
-                height: 2.45rem;
                 border: 1px solid rgba(255,255,255,0.11);
                 border-radius: 0.9rem;
                 outline: none;
@@ -8157,7 +7513,6 @@ body .post-bookmark-btn {
                 align-items: center;
                 justify-content: center;
                 gap: 0.48rem;
-                min-height: 2.9rem;
                 border-radius: 1rem;
                 border: 1px solid rgba(255,255,255,0.10);
                 outline: none;
@@ -8224,7 +7579,7 @@ body .post-bookmark-btn {
                 font-size: 0.82rem;
                 font-weight: 950;
                 transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-                /* SCROLL PERF: backdrop-filter:blur(8px) removed — solid bg. */
+                /* SCROLL PERF: tanpa blur latar karena latarnya solid. */
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
             }
@@ -8252,7 +7607,6 @@ body .post-bookmark-btn {
 @media (hover: hover) {
 .taxonomy-tab-button:not(.is-active):hover {
                     background: rgba(15, 23, 42, 0.85);
-                    border-color: rgba(34, 211, 238, 0.3);
                     color: #e2e8f0;
                     border: 1px solid rgba(34, 211, 238, 0.1);
                 }
@@ -8274,7 +7628,6 @@ body .post-bookmark-btn {
         border-radius: 999px;
         background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.18));
         color: #e0f2fe;
-        font-size: 0.74rem;
         font-weight: 850;
         letter-spacing: 0.01em;
         text-decoration: none;
@@ -8302,8 +7655,8 @@ body .post-bookmark-btn {
         color: #fff7ed;
     }
 
-/* Catatan: fallback kini hanya dipakai floating ad. Gaya kontekstualnya
-       ada di blok .site-floating-ad__slot .ad-fallback-* (lihat di bawah). */
+/* Catatan: fallback hanya dipakai floating ad. Gaya kontekstualnya
+   ada di blok .site-floating-ad__slot .ad-fallback-*. */
 
     .ad-neon-shell[hidden] {
         margin: 0;
@@ -8337,13 +7690,6 @@ body .post-bookmark-btn {
   border-radius: var(--site-radius-md);
 }
 
-@media (min-width: 1024px) {
-.site-footer-link {
-    display: inline-flex;
-    align-items: center;
-  }
-}
-
 /* Global target size tuning */
 body .pagination-aurora-button,
 body .pagination-aurora-page,
@@ -8361,22 +7707,7 @@ body .pagination-dock-status,
 
 @media (max-width: 639px) {
 .post-genre-link {
-    min-height: 44px;
     min-width: 44px;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 639px) {
-.genre-sheet-close {
-    min-height: 44px;
-  }
-}
-
-@media (max-width: 639px) {
-.genre-sheet-close {
-    width: 44px;
-    height: 44px;
   }
 }
 
@@ -8391,9 +7722,6 @@ body .pagination-dock-status,
 
 @media (max-width: 639px) {
 .site-footer-link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 36px;
     padding: 0.2rem 0.1rem;
   }
 }
@@ -8427,15 +7755,7 @@ body .pagination-dock-status,
 }
 
 @media (max-width: 639px) {
-.fav-empty-cta,
-  .fav-empty-ghost {
-    min-height: 44px;
-  }
-}
-
-@media (max-width: 639px) {
-.post-genre-link,
-  a.bg-\[\#060816\].border.border-cyan-500\/40 {
+.post-genre-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -8465,10 +7785,6 @@ html body .site-home-hero-button {
 html body .site-home-hero-button.primary {
   position: relative;
   overflow: hidden;
-  border-color: transparent;
-  background: linear-gradient(135deg, #e0f2fe, #bfdbfe 45%, #ddd6fe);
-  color: #07111f;
-  box-shadow: 0 14px 28px rgba(191, 219, 254, 0.15);
 }
 
 html body .site-home-hero-button.secondary {
@@ -8481,13 +7797,6 @@ html body .site-home-hero-button.secondary {
 @media (hover: hover) {
 .site-home-hero-button:hover {
     transform: translateY(-2px);
-  }
-}
-
-@media (hover: hover) {
-.site-home-hero-button.primary:hover {
-    filter: brightness(1.035);
-    box-shadow: 0 16px 32px rgba(191, 219, 254, 0.20);
   }
 }
 
@@ -8606,7 +7915,7 @@ html body .share-premium-button span {
 /* Brand share buttons are normalized to the neon system while keeping
    subtle per-platform accents through border glow only. */
 /* ==========================================================
-   SHARE — PRECOMPUTED COLOR-MIX VALUES
+   SHARE: PRECOMPUTED COLOR-MIX VALUES
    5 color-mix per share button × 6 buttons = 30 resolve.
    Precompute ke rgba statis per variant.
    ========================================================== */
@@ -8717,8 +8026,8 @@ html body .share-premium-button {
   }
 }
 
-/* Hero #17 primary is intentionally ivory/elegant to match the
-   Moonlit Poster Fade composition. */
+/* Tombol primary di hero sengaja berwarna gading agar serasi dengan
+   komposisi Moonlit Poster Fade. */
 html body .site-home-hero-button.primary {
   border-color: var(--btn-hybrid-hero-border);
   background: var(--btn-hybrid-hero-bg);
@@ -8810,10 +8119,6 @@ html body .site-floating-ad__close {
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  min-height: 44px;
   margin: 0;
   padding: 0;
   border: 1px solid rgba(125, 211, 252, 0.28);
@@ -8854,7 +8159,6 @@ html body .site-floating-ad__close {
 
 .site-floating-ad__slot .ad-fallback-cta {
   padding: 0.42rem 0.7rem;
-  font-size: 0.68rem;
 }
 
 .site-floating-ad__slot .ad-fallback-cta {
@@ -8871,15 +8175,6 @@ html body .site-floating-ad__close {
     background: rgba(34, 211, 238, 0.1);
     color: #67e8f9;
     transform: translateY(-1px);
-  }
-}
-
-@media (min-width: 640px) {
-.site-floating-ad__close {
-    width: 2.15rem;
-    height: 2.15rem;
-    min-width: 2.15rem;
-    min-height: 2.15rem;
   }
 }
 
@@ -8923,13 +8218,12 @@ html body #main-content > :first-child {
   margin-top: 0;
 }
 
-/* Halaman 404 sebelumnya memiliki padding vertikal khusus. */
+/* Halaman 404 tidak memakai padding vertikal sendiri; jaraknya mengikuti
+   gap global. */
 #main-content > .notfound-dock-page {
   padding-top: 0;
   padding-bottom: 0;
 }
-
-/* Final reduced-motion guard — must stay after Button System rules. */
 
 /* ==========================================================
    AD WIDGET FALLBACK SYSTEM
@@ -9050,8 +8344,6 @@ html body [data-ad-widget][hidden] {
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  min-height: 2.8rem;
-  border-radius: 0.82rem;
   font: inherit;
   font-size: 0.84rem;
   font-weight: 900;
@@ -9061,14 +8353,10 @@ html body [data-ad-widget][hidden] {
 
 .search-filter-reset {
   border: 1px solid rgba(125, 211, 252, 0.2);
-  background: rgba(255, 255, 255, 0.04);
-  color: #c9d8e7;
 }
 
 .search-filter-apply {
   border: 1px solid transparent;
-  background: linear-gradient(135deg, #22d3ee, #8b5cf6);
-  color: #06111f;
 }
 
 @media (min-width: 640px) {
@@ -9085,14 +8373,8 @@ html body [data-ad-widget][hidden] {
   }
 }
 
-@media (hover: hover) {
-.search-filter-apply:hover {
-    filter: brightness(1.05);
-  }
-}
-
 /* ==========================================================
-   SEARCH DISCOVERY — local search history + curated popular terms
+   SEARCH DISCOVERY: local search history + curated popular terms
    ========================================================== */
 .search-discovery-panel[hidden],
 .search-history-block[hidden] {
@@ -9109,10 +8391,8 @@ html body [data-ad-widget][hidden] {
   padding: 0.45rem 0.65rem;
   border: 1px solid rgba(125, 211, 252, 0.18);
   border-radius: 0.68rem;
-  background: rgba(2, 6, 23, 0.46);
   color: #cce1f3;
   font: inherit;
-  font-size: 0.74rem;
   font-weight: 780;
   line-height: 1.1;
   text-align: left;
@@ -9132,10 +8412,6 @@ html body [data-ad-widget][hidden] {
   font-size: 0.72rem;
 }
 
-.search-discovery-chip.is-history {
-  border-color: rgba(139, 92, 246, 0.26);
-}
-
 .search-discovery-chip.is-history i {
   color: #c4b5fd;
 }
@@ -9147,14 +8423,13 @@ html body [data-ad-widget][hidden] {
 
 @media (hover: hover) {
 .search-discovery-chip:hover {
-    border-color: rgba(103, 232, 249, 0.45);
     background: rgba(34, 211, 238, 0.08);
     color: #effcff;
   }
 }
 
 /* ==========================================================
-   FAVORITE WATCH STATUS — local watchlist controls
+   FAVORITE WATCH STATUS: local watchlist controls
    ========================================================== */
 .fav-watch-toolbar[hidden],
 .fav-watch-empty[hidden] {
@@ -9170,7 +8445,6 @@ html body [data-ad-widget][hidden] {
   padding: 0.42rem 0.62rem;
   border: 1px solid rgba(125, 211, 252, 0.17);
   border-radius: 0.68rem;
-  background: rgba(2, 6, 23, 0.42);
   color: #b9cee0;
   font: inherit;
   font-size: 0.74rem;
@@ -9193,8 +8467,6 @@ html body [data-ad-widget][hidden] {
 }
 
 .fav-watch-filter.is-active {
-  border-color: rgba(34, 211, 238, 0.5);
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.16));
   color: #edfdff;
 }
 
@@ -9211,7 +8483,6 @@ html body [data-ad-widget][hidden] {
 
 @media (hover: hover) {
 .fav-watch-filter:hover {
-    border-color: rgba(103, 232, 249, 0.4);
     background: rgba(34, 211, 238, 0.08);
     color: #effcff;
   }
@@ -9224,14 +8495,12 @@ html body [data-ad-widget][hidden] {
 }
 
 .fav-card-watch-control.is-sedang .fav-card-watch-option.is-active {
-  border-color: rgba(34, 211, 238, 0.62);
   background: linear-gradient(135deg, rgba(34, 211, 238, 0.22), rgba(56, 189, 248, 0.16));
   color: #cffafe;
   border: 1px solid rgba(34, 211, 238, 0.14);
 }
 
 .fav-card-watch-control.is-selesai .fav-card-watch-option.is-active {
-  border-color: rgba(74, 222, 128, 0.58);
   background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(16, 185, 129, 0.14));
   color: #dcfce7;
   border: 1px solid rgba(74, 222, 128, 0.12);
@@ -9343,12 +8612,6 @@ html body [data-ad-widget][hidden] {
 }
 
 @media (hover: hover) {
-.search-tools .search-control-select:hover {
-    background-color: rgba(34, 211, 238, 0.05);
-  }
-}
-
-@media (hover: hover) {
 .search-tools .search-filter-trigger:hover {
     filter: brightness(1.06);
   }
@@ -9373,8 +8636,6 @@ html body [data-ad-widget][hidden] {
   border-width: 1px;
   border-style: solid;
   border-radius: var(--btn-radius);
-  background-size: auto;
-  background-position: 0 0;
   transition:
     transform var(--site-transition-fast),
     filter var(--site-transition-fast),
@@ -9478,13 +8739,6 @@ html body [data-ad-widget][hidden] {
   box-shadow: none;
 }
 
-@media (hover: hover) {
-.search-tools .search-control-select:hover {
-    border-color: rgba(125, 211, 252, 0.22);
-    background-color: transparent;
-  }
-}
-
 /* Sort selector uses the exact static visual treatment of the filter-field selects. */
 .search-tools .search-control-select,
 .search-tools .search-control-select:hover {
@@ -9497,7 +8751,7 @@ html body [data-ad-widget][hidden] {
 }
 
 /* ==========================================================
-   GENRE FILTER ACTION PAIR — shared primary / secondary system
+   GENRE FILTER ACTION PAIR: shared primary / secondary system
    Scope intentionally limited to the Reset + Terapkan pair.
    ========================================================== */
 html body .genre-sheet-actions > .genre-clear-button,
@@ -9516,7 +8770,6 @@ html body .genre-sheet-actions > .genre-apply-button {
   font-weight: 800;
   letter-spacing: 0.01em;
   line-height: 1.2;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transition:
     transform var(--site-transition-fast),
     filter var(--site-transition-fast),
@@ -9602,8 +8855,7 @@ html body .donghua-card-bookmark.is-saved:hover {
 
 /* Bookmark card: mobile-first, compact neon, consistent touch target. */
 html body .donghua-card-bookmark {
-  /* Target sentuh dijaga minimal 44px (WCAG 2.5.5). Batas bawah clamp
-     sebelumnya 2.25rem (36px) sehingga menyusut di viewport sempit. */
+  /* Target sentuh dijaga minimal 44px (WCAG 2.5.5). */
   --bookmark-size: clamp(2.75rem, 11vw, 2.75rem);
   --bookmark-offset: clamp(0.42rem, 2vw, 0.62rem);
   width: var(--bookmark-size);
@@ -9665,7 +8917,7 @@ html body .donghua-card-bookmark,
 
 /* Unified button system: existing component classes keep their behaviour. */
 /* Icon-only controls: square box, no label. .pagination-dock-button is
-   excluded on purpose — Prev/Next carry an icon plus a text label, so a
+   excluded on purpose: Prev/Next carry an icon plus a text label, so a
    fixed square width clipped that label from 521px upward. Its sizing
    comes from the labelled-control group above. */
 :where(
@@ -9917,8 +9169,9 @@ html body .site-empty-state[hidden] {
 }
 
 /* ==========================================================
-   TAHAP 3 — KONSOLIDASI AMAN
-   Backdrop bersama dan alignment 404 mengikuti shell global.
+   BACKDROP BERSAMA DAN STATE TERSEMBUNYI
+   Latar overlay bersama, aturan [hidden] form laporan, dan ukuran
+   huruf kolom isian di peranti sentuh.
    ========================================================== */
 .site-overlay-backdrop {
   background: var(--site-overlay-backdrop-bg, rgba(2, 6, 23, 0.96));
@@ -9936,6 +9189,9 @@ html body .site-empty-state[hidden] {
   display: none;
 }
 
+/* Kolom isian memakai huruf 16px pada peranti sentuh karena Safari iOS
+   memperbesar tampilan saat kolom dengan huruf di bawah 16px difokuskan.
+   Syarat pointer: coarse membuat aturan ini tidak berlaku di desktop. */
 @media (pointer: coarse) {
 html body .aurora-search-input,
   html body .aurora-search-container.aurora-search-compact .aurora-search-input,
@@ -9945,19 +9201,13 @@ html body .aurora-search-input,
   }
 }
 
-/* R-03 (audit responsif 12 Oktober 2026): lantai ukuran huruf mikro 12px. Audit
-   mencatat 228 unsur berteks di bawah 12px pada tujuh halaman uji, mulai 9,92px
-   (label kartu dan label iklan) sampai 11,84px (saran pencarian, penanda
-   taksonomi, kicker). Semua selektor di bawah ini dipakai apa adanya dan
-   diletakkan di ujung berkas supaya menang urutan sumber atas aturan asal yang
-   berkekhususan sama. Tiga kelas sekeluarga ikut disertakan walau tidak muncul di daftar
-   terukur: .donghua-card-search-meta pada hasil pencarian,
-   .search-filter-active-count pada penanda saringan aktif, dan
-   .home-section-divider-label yang baru ketahuan saat uji ulang karena
-   hanya tampil pada 768px ke atas. Kelas .kicker hanya dipakai halaman
-   luring, dan halaman itu tidak memuat berkas ini sama sekali, jadi perbaikannya
-   ada di static/offline/index.html. Ukuran 0.75rem dipilih tepat di ambang, bukan di atasnya, supaya
-   perubahan tampilan sekecil mungkin. */
+/* Lantai ukuran huruf mikro 12px (0.75rem) untuk label kecil: badge dan
+   chip kartu, label iklan, kicker, penanda taksonomi, dan saran pencarian.
+   Selektor ditulis apa adanya dan diletakkan di ujung berkas supaya menang
+   urutan sumber atas aturan asal yang spesifisitasnya sama. Kelas .kicker
+   milik halaman luring diatur terpisah di static/offline/index.html karena
+   halaman itu tidak memuat berkas ini. Ukuran 0.75rem dipilih tepat di
+   ambang supaya perubahan tampilan sekecil mungkin. */
 .donghua-card-badge,
 .donghua-card-chip,
 .donghua-card-rating,
@@ -10002,7 +9252,6 @@ html body .aurora-search-input,
     height: 40px;
   }
 }
-
 
 @keyframes notfoundPanelIn {
         from { opacity: 0; transform: translateY(14px); }

@@ -39,13 +39,10 @@ let genrePage = 1;
 let genreResults = [];
 let genreResizeTimer = null;
 
-// Jumlah item per halaman adaptif. Nilai cadangan di bawah harus sama persis
-// dengan getSearchPerPage() di site-search.js: kelipatan jumlah kolom grid,
+// Jumlah item per halaman adaptif. Nilainya harus sama persis dengan
+// getSearchPerPage() di site-search.js: kelipatan jumlah kolom grid,
 // yang berganti di 356px, 520px, dan 708px.
 function getGenrePerPage() {
-  if (window.DonghuaSearch && typeof window.DonghuaSearch.getPerPage === "function") {
-    return window.DonghuaSearch.getPerPage();
-  }
   if (window.matchMedia('(min-width: 708px)').matches) return 16; // 4 kolom
   if (window.matchMedia('(min-width: 520px)').matches) return 12; // 3 kolom
   if (window.matchMedia('(min-width: 356px)').matches) return 10; // 2 kolom
@@ -148,9 +145,7 @@ window.addEventListener("DOMContentLoaded", function() {
   }
 
   if (genrePrompt) genrePrompt.classList.add("hidden");
-  const sourcePromise = (window.DonghuaBatchData && window.DonghuaBatchData.getIndexData)
-    ? window.DonghuaBatchData.getIndexData()
-    : fetch('/index.json').then(function(res) { return res.json(); });
+  const sourcePromise = fetch('/index.json').then(function(res) { return res.json(); });
 
   sourcePromise.then(function(data) {
     genreResults = filterByGenres(data, selectedGenres);

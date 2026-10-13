@@ -34,7 +34,7 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
-  // SEC-19: escaping HTML saja tidak menahan skema javascript: pada href/src.
+  // Escaping HTML saja tidak menahan skema javascript: pada href/src.
   // Terima hanya URL http(s) atau jalur dalam situs; selain itu "#".
   function safeUrl(value) {
     var url = asText(value).trim();
@@ -92,7 +92,7 @@
   }
 
   function favoriteButton(item) {
-    var saved = false;
+    var saved;
     try {
       saved = Boolean(window.DonghuaFav && window.DonghuaFav.isSaved && window.DonghuaFav.isSaved(item.id));
     } catch (error) {

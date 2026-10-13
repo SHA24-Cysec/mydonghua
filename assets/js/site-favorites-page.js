@@ -21,14 +21,10 @@
 
   function getIndexData() {
     if (indexPromise) return indexPromise;
-    if (window.DonghuaBatchData && typeof window.DonghuaBatchData.getIndexData === 'function') {
-      indexPromise = window.DonghuaBatchData.getIndexData();
-    } else {
-      indexPromise = fetch('/index.json').then(function (response) {
-        if (!response.ok) throw new Error('Gagal memuat index.json');
-        return response.json();
-      });
-    }
+    indexPromise = fetch('/index.json').then(function (response) {
+      if (!response.ok) throw new Error('Gagal memuat index.json');
+      return response.json();
+    });
     return indexPromise;
   }
 
@@ -62,7 +58,7 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
-  // SEC-19: escaping HTML saja tidak menahan skema javascript: pada href/src.
+  // Escaping HTML saja tidak menahan skema javascript: pada href/src.
   // Terima hanya URL http(s) atau jalur dalam situs; selain itu "#".
   function safeUrl(value) {
     const url = toText(value).trim();
@@ -71,7 +67,7 @@
   }
 
   function itemId(item) {
-    return item.id || item.permalink || item.objectID || '';
+    return item.permalink || '';
   }
 
   function orderItemsByIds(data, ids) {
@@ -320,9 +316,6 @@
     renderFavoritesPage();
     closeConfirm();
   }
-
-  favoriteCore.renderFavorites = renderFavoritesPage;
-  window.renderFavorites = renderFavoritesPage;
 
   document.addEventListener('donghua:favorites-changed', renderFavoritesPage);
   document.addEventListener('donghua:watch-status-changed', renderFavoriteList);
