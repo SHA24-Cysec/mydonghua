@@ -183,4 +183,34 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 6
+  - title: 'Tales of Herding Gods Batch Subtitle Indonesia Episode 51-60'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/kmfpbr9hp16s139/Anichin.best_Tal.Her.God.Ep51-60_480p.zip/file'
+      button: 'Download'
+      size: '2.36 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/3q42gjtkoq41vrq/Anichin.best_Tal.Her.God.Ep51-60_720p.zip/file'
+      button: 'Download'
+      size: '4.36 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/aticbh4jjt4c0wl/Anichin.best_Tal.Her.God.Ep51-60_1080p.zip/file'
+      button: 'Download'
+      size: '7.31 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
