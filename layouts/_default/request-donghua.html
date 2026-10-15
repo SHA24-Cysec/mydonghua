@@ -1,0 +1,301 @@
+{{ define "main" }}
+{{- $endpointDonatur := site.Params.formspreeRequestDonatur | default "https://formspree.io/f/xregejlg" -}}
+{{- $endpointUmum := site.Params.formspreeRequestUmum | default "https://formspree.io/f/xregejlg" -}}
+{{- $subjectDonatur := "[DonghuaBatch] Request Donghua Donatur: {{ judul_donghua }}" -}}
+{{- $subjectUmum := "[DonghuaBatch] Request Donghua Umum: {{ judul_donghua }}" -}}
+<div class="request-page w-full max-w-7xl mx-auto px-3 lg:px-0 mt-4 mb-0">
+
+  <div class="panel-neon p-3 sm:p-5 w-full">
+
+    <div class="mb-5 sm:mb-6">
+      {{ partial "page-header" (dict
+        "context" .
+        "title" .Title
+        "align" "center"
+        "kicker" "Request Donghua"
+        "kickerIcon" "fa-solid fa-bullhorn text-cyan-400"
+        "description" "Belum ketemu judul yang kamu cari? Kirim request lewat form di bawah. Donasi tidak wajib, pilih saja form yang paling sesuai dengan kamu."
+      ) }}
+    </div>
+
+    <div class="request-notice" role="note">
+      <span class="request-notice-icon" aria-hidden="true">
+        <i class="fa-solid fa-clock"></i>
+      </span>
+      <div class="request-notice-body">
+        <strong>Mohon bersabar, admin kami hanya satu orang.</strong>
+        <p>Setiap request dibaca manual satu per satu, jadi belum bisa dibalas seketika. Request dari teman-teman yang pernah berdonasi kami dahulukan sebagai bentuk terima kasih. Di luar itu, semua request masuk antrean yang sama dan tetap kami proses sampai selesai.</p>
+      </div>
+    </div>
+
+    <div class="request-stack">
+
+      <section class="request-card request-card--priority" aria-labelledby="requestHeadDonatur">
+        <div class="request-card-head">
+          <div class="request-card-headline">
+            <span class="request-badge request-badge--priority">
+              <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+              Didahulukan
+            </span>
+            <h2 class="request-card-heading" id="requestHeadDonatur">Pernah Berdonasi</h2>
+          </div>
+          <p class="request-card-desc">
+            Form ini untuk kamu yang pernah menyumbang lewat Saweria. Cukup isi email supaya kami bisa membalas, kolom lain boleh dikosongkan semua. Requestmu kami baca lebih dulu sebagai ucapan terima kasih.
+          </p>
+          <ul class="request-checklist">
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Email wajib, dipakai sebagai kanal balas-balasan admin.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Judul boleh dikosongkan kalau belum tahu persis, jelaskan saja di catatan.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Dibaca lebih dulu sebagai ucapan terima kasih, karena donasimu ikut menutup biaya server.</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="request-form request-form--priority"
+              action="{{ $endpointDonatur }}"
+              method="POST"
+              data-request-form
+              data-request-type="donatur">
+
+          <input type="hidden" name="jenis_permintaan" value="Request Donghua - Donatur (Didahulukan)">
+          <input type="hidden" name="subject" value="{{ $subjectDonatur }}">
+
+          <div class="request-honeypot" aria-hidden="true">
+            <label for="requestGotchaDonatur">Kolom tambahan</label>
+            <input id="requestGotchaDonatur" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="request-field-grid">
+
+            <label class="request-field request-field--full" for="requestEmailDonatur">
+              <span class="request-label request-label--cyan">
+                Email <span class="request-required" aria-hidden="true">*</span>
+              </span>
+              <input id="requestEmailDonatur" name="email" type="email" required class="cyber-input-search"
+                     placeholder="nama@email.com" autocomplete="email" spellcheck="false"
+                     aria-describedby="requestEmailDonaturHint requestEmailDonaturFeedback">
+              <span id="requestEmailDonaturHint" class="request-hint">Wajib diisi. Kalau pakai email yang sama seperti saat berdonasi, requestmu lebih mudah kami cocokkan.</span>
+              <span id="requestEmailDonaturFeedback" class="form-email-feedback" role="status" aria-live="polite" data-email-feedback hidden></span>
+            </label>
+
+            <label class="request-field" for="requestNamaDonatur">
+              <span class="request-label request-label--cyan">Nama atau Username (opsional)</span>
+              <input id="requestNamaDonatur" name="nama" type="text" maxlength="80" class="cyber-input-search"
+                     placeholder="Nama panggilan kamu" autocomplete="nickname" spellcheck="false">
+            </label>
+
+            <label class="request-field" for="requestJudulDonatur">
+              <span class="request-label request-label--purple">Judul Donghua (opsional)</span>
+              <input id="requestJudulDonatur" name="judul_donghua" type="text" maxlength="160" class="cyber-input-search"
+                     placeholder="Contoh: Against the Gods Season 5" autocomplete="off" spellcheck="false"
+                     aria-describedby="requestJudulDonaturHint">
+              <span id="requestJudulDonaturHint" class="request-hint">Kalau belum tahu judulnya, jelaskan di catatan saja.</span>
+            </label>
+
+            <label class="request-field" for="requestSeasonDonatur">
+              <span class="request-label request-label--purple">Season atau Episode (opsional)</span>
+              <input id="requestSeasonDonatur" name="season_episode" type="text" maxlength="120" class="cyber-input-search"
+                     placeholder="Contoh: Season 2 episode 5 sampai 12" autocomplete="off">
+            </label>
+
+            <label class="request-field" for="requestJenisDonatur">
+              <span class="request-label request-label--purple">Jenis Request (opsional)</span>
+              <select id="requestJenisDonatur" name="jenis_request" class="cyber-select">
+                <option value="" selected>Pilih jenis request, boleh dikosongkan</option>
+                <option value="Judul donghua baru">Judul donghua baru</option>
+                <option value="Season baru dari judul yang sudah ada">Season baru dari judul yang sudah ada</option>
+                <option value="Episode lanjutan atau batch berikutnya">Episode lanjutan atau batch berikutnya</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </label>
+
+            <label class="request-field" for="requestResolusiDonatur">
+              <span class="request-label request-label--purple">Resolusi (opsional)</span>
+              <select id="requestResolusiDonatur" name="resolusi" class="cyber-select"
+                      aria-describedby="requestResolusiDonaturHint">
+                <option value="" selected>Pilih resolusi, boleh dikosongkan</option>
+                <option value="360p">360p</option>
+                <option value="480p">480p</option>
+                <option value="720p">720p</option>
+                <option value="1080p">1080p</option>
+                <option value="4K jika tersedia">4K, kalau tersedia</option>
+              </select>
+              <span id="requestResolusiDonaturHint" class="request-hint">4K tidak selalu ada. Kalau memilih 4K dan sumbernya tidak tersedia, kami kirimkan resolusi tertinggi yang ada.</span>
+            </label>
+
+            <label class="request-field request-field--full" for="requestCatatanDonatur">
+              <span class="request-label request-label--purple">Catatan Tambahan (opsional)</span>
+              <textarea id="requestCatatanDonatur" name="catatan" rows="4" maxlength="800"
+                        class="cyber-textarea-message"
+                        placeholder="Contoh: subtitle Mandarin, kualitas 1080p, cover yang dicari warna merahnya."
+                        aria-describedby="requestCatatanDonaturHint requestCatatanDonaturError"></textarea>
+              <span id="requestCatatanDonaturHint" class="request-hint"><span data-request-counter>0</span>/800 karakter terpakai.</span>
+              <span id="requestCatatanDonaturError" class="request-field-error" data-request-error="catatan" hidden></span>
+            </label>
+
+          </div>
+
+          <div class="request-status" role="status" aria-live="polite" tabindex="-1" data-request-status hidden></div>
+
+          <button class="cyber-button cursor-pointer w-full rounded-xl p-3.5 uppercase tracking-wider font-extrabold text-sm"
+                  type="submit" data-request-submit>
+            <i class="fa-solid fa-paper-plane mr-2" aria-hidden="true"></i>
+            <span data-request-submit-label>Kirim Request</span>
+          </button>
+
+          <p class="request-note">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Request dikirim lewat Formspree dan langsung masuk ke inbox admin. Mohon bersabar, admin kami hanya satu orang.</span>
+          </p>
+
+        </form>
+      </section>
+
+      <section class="request-card" aria-labelledby="requestHeadUmum">
+        <div class="request-card-head">
+          <div class="request-card-headline">
+            <span class="request-badge request-badge--umum">
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
+              Umum
+            </span>
+            <h2 class="request-card-heading" id="requestHeadUmum">Semua Pengunjung</h2>
+          </div>
+          <p class="request-card-desc">
+            Form untuk siapa saja, tanpa syarat apa pun. Isi judul donghua yang kamu cari, sisanya boleh dikosongkan. Requestmu tetap kami baca dan tetap kami proses.
+          </p>
+          <ul class="request-checklist">
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Judul donghua wajib diisi supaya requestnya bisa ditindaklanjuti.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Email opsional, isi kalau mau menerima kabar saat request diproses.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Tidak perlu donasi, situs ini gratis dan akan tetap gratis.</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="request-form"
+              action="{{ $endpointUmum }}"
+              method="POST"
+              data-request-form
+              data-request-type="umum">
+
+          <input type="hidden" name="jenis_permintaan" value="Request Donghua - Umum">
+          <input type="hidden" name="subject" value="{{ $subjectUmum }}">
+
+          <div class="request-honeypot" aria-hidden="true">
+            <label for="requestGotchaUmum">Kolom tambahan</label>
+            <input id="requestGotchaUmum" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="request-field-grid">
+
+            <label class="request-field request-field--full" for="requestJudulUmum">
+              <span class="request-label request-label--cyan">
+                Judul Donghua <span class="request-required" aria-hidden="true">*</span>
+              </span>
+              <input id="requestJudulUmum" name="judul_donghua" type="text" required maxlength="160" class="cyber-input-search"
+                     placeholder="Contoh: Battle Through the Heavens Season 5" autocomplete="off" spellcheck="false"
+                     aria-describedby="requestJudulUmumHint requestJudulUmumError">
+              <span id="requestJudulUmumHint" class="request-hint">Tulis judulnya sedetail mungkin, series dan season ikut ditulis.</span>
+              <span id="requestJudulUmumError" class="request-field-error" data-request-error="judul_donghua" hidden></span>
+            </label>
+
+            <label class="request-field" for="requestNamaUmum">
+              <span class="request-label request-label--purple">Nama atau Username (opsional)</span>
+              <input id="requestNamaUmum" name="nama" type="text" maxlength="80" class="cyber-input-search"
+                     placeholder="Nama panggilan kamu" autocomplete="nickname" spellcheck="false">
+            </label>
+
+            <label class="request-field" for="requestEmailUmum">
+              <span class="request-label request-label--purple">Email (opsional)</span>
+              <input id="requestEmailUmum" name="email" type="email" class="cyber-input-search"
+                     placeholder="nama@email.com" autocomplete="email" spellcheck="false"
+                     aria-describedby="requestEmailUmumHint requestEmailUmumFeedback">
+              <span id="requestEmailUmumHint" class="request-hint">Isi kalau kamu ingin diberi tahu saat requestnya diproses.</span>
+              <span id="requestEmailUmumFeedback" class="form-email-feedback" role="status" aria-live="polite" data-email-feedback hidden></span>
+            </label>
+
+            <label class="request-field" for="requestSeasonUmum">
+              <span class="request-label request-label--purple">Season atau Episode (opsional)</span>
+              <input id="requestSeasonUmum" name="season_episode" type="text" maxlength="120" class="cyber-input-search"
+                     placeholder="Contoh: Season 2 episode 5 sampai 12" autocomplete="off">
+            </label>
+
+            <label class="request-field" for="requestJenisUmum">
+              <span class="request-label request-label--purple">Jenis Request (opsional)</span>
+              <select id="requestJenisUmum" name="jenis_request" class="cyber-select">
+                <option value="" selected>Pilih jenis request, boleh dikosongkan</option>
+                <option value="Judul donghua baru">Judul donghua baru</option>
+                <option value="Season baru dari judul yang sudah ada">Season baru dari judul yang sudah ada</option>
+                <option value="Episode lanjutan atau batch berikutnya">Episode lanjutan atau batch berikutnya</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </label>
+
+            <label class="request-field" for="requestResolusiUmum">
+              <span class="request-label request-label--purple">Resolusi (opsional)</span>
+              <select id="requestResolusiUmum" name="resolusi" class="cyber-select"
+                      aria-describedby="requestResolusiUmumHint">
+                <option value="" selected>Pilih resolusi, boleh dikosongkan</option>
+                <option value="360p">360p</option>
+                <option value="480p">480p</option>
+                <option value="720p">720p</option>
+                <option value="1080p">1080p</option>
+                <option value="4K jika tersedia">4K, kalau tersedia</option>
+              </select>
+              <span id="requestResolusiUmumHint" class="request-hint">4K tidak selalu ada. Kalau memilih 4K dan sumbernya tidak tersedia, kami kirimkan resolusi tertinggi yang ada.</span>
+            </label>
+
+            <label class="request-field request-field--full" for="requestCatatanUmum">
+              <span class="request-label request-label--purple">Catatan Tambahan (opsional)</span>
+              <textarea id="requestCatatanUmum" name="catatan" rows="4" maxlength="800"
+                        class="cyber-textarea-message"
+                        placeholder="Contoh: yang dicari subtitle Mandarin, season 2, cover warna biru."
+                        aria-describedby="requestCatatanUmumHint requestCatatanUmumError"></textarea>
+              <span id="requestCatatanUmumHint" class="request-hint"><span data-request-counter>0</span>/800 karakter terpakai.</span>
+              <span id="requestCatatanUmumError" class="request-field-error" data-request-error="catatan" hidden></span>
+            </label>
+
+          </div>
+
+          <div class="request-status" role="status" aria-live="polite" tabindex="-1" data-request-status hidden></div>
+
+          <button class="cyber-button cursor-pointer w-full rounded-xl p-3.5 uppercase tracking-wider font-extrabold text-sm"
+                  type="submit" data-request-submit>
+            <i class="fa-solid fa-paper-plane mr-2" aria-hidden="true"></i>
+            <span data-request-submit-label>Kirim Request</span>
+          </button>
+
+          <p class="request-note">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Request dikirim lewat Formspree dan langsung masuk ke inbox admin. Mohon bersabar, admin kami hanya satu orang.</span>
+          </p>
+
+        </form>
+      </section>
+
+    </div>
+
+    {{ with .Content }}
+    <div class="prose-neon site-prose-shell font-sans mt-5">
+      {{ . }}
+    </div>
+    {{ end }}
+
+  </div>
+
+</div>
+{{ end }}

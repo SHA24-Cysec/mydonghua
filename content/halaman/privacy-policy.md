@@ -30,6 +30,7 @@ Pengendali data untuk situs ini adalah pengelola DonghuaBatch. Saluran resmi unt
 |---|---|---|
 | Alamat email dan isi pesan | Kamu, lewat formulir di halaman Kontak | Menjawab pesanmu |
 | Judul donghua, alamat halaman, bagian tautan, jenis masalah, keterangan, dan email (opsional) | Kamu, lewat formulir di halaman Laporkan Link Mati | Memperbaiki tautan unduhan yang rusak |
+| Email, nama atau username, judul donghua, season atau episode, jenis request, resolusi, dan catatan | Kamu, lewat formulir di halaman Request Donghua | Menambahkan judul donghua yang kamu minta, mendahulukan request dari pengguna yang pernah berdonasi, dan membalas requestmu |
 | Nama domain email saja | Pemeriksaan otomatis saat kolom email kehilangan fokus | Memastikan domain email aktif dan menyarankan koreksi salah tulis |
 | Halaman yang dibuka, jenis peramban dan perangkat, perkiraan lokasi, waktu akses | Google Analytics 4 pada halaman produksi | Statistik kunjungan dan perbaikan situs |
 | Pengenal perangkat dan interaksi dengan iklan | Jaringan iklan Adsterra | Menampilkan dan mengukur iklan |
@@ -51,7 +52,7 @@ Kami memakai pemeriksaan ini untuk mencegah salah tulis domain dan email sekali-
 
 | Penyedia | Peran | Data yang diterima |
 |---|---|---|
-| Formspree (`formspree.io`) | Mengantar kiriman formulir Kontak dan Laporkan Link Mati ke kotak masuk kami | Seluruh isi formulir, ditambah alamat IP dan identitas peramban dari permintaan pengiriman |
+| Formspree (`formspree.io`) | Mengantar kiriman formulir Kontak, Laporkan Link Mati, dan Request Donghua ke kotak masuk kami | Seluruh isi formulir, ditambah alamat IP dan identitas peramban dari permintaan pengiriman |
 | Google Analytics 4 (`G-7B40JB824Z`) | Statistik kunjungan | Data kunjungan dan cookie analitik pihak pertama yang dapat dipakai GA4 untuk membedakan pengguna dan sesi pada halaman produksi |
 | Cloudflare (`cloudflare-dns.com`) | Pemeriksaan keberadaan domain email | Hanya domain email |
 | Google Public DNS (`dns.google`) | Cadangan pemeriksaan yang sama | Hanya domain email |
@@ -75,6 +76,8 @@ Preferensi dan riwayat disimpan di penyimpanan lokal peramban (`localStorage` da
 | `donghuabatch_recently_viewed` | Daftar donghua terakhir dibuka | Rel "terakhir dibuka" di beranda |
 | `donghuabatch_search_history` | Riwayat kata kunci | Saran pencarian berikutnya |
 | `donghuabatch:laporan-link-mati:terakhir` | Waktu kirim laporan terakhir | Membatasi kiriman laporan berulang |
+| `donghuabatch:request-donghua:terakhir:donatur` | Waktu dan sidik isi request terakhir dari form donatur | Membatasi request berulang dengan isi yang sama |
+| `donghuabatch:request-donghua:terakhir:umum` | Waktu dan sidik isi request terakhir dari form pengguna umum | Membatasi request berulang dengan isi yang sama |
 | `site_floating_ad_closed` | Penanda sesi | Menghindari menampilkan kembali iklan mengambang yang sudah kamu tutup |
 
 Versi situs sebelumnya menyimpan pilihan panel Google dengan kunci `donghuabatch_consent`. Versi saat ini tidak lagi membaca kunci itu. Jika nilainya masih ada di perambanmu, kamu bisa menghapusnya bersama data situs.
@@ -95,7 +98,7 @@ Untuk Adsterra, Disqus, dan Safelinku, situs ini menjelaskan data dan pemicu pem
 
 ## 8. Masa simpan
 
-- Kiriman formulir disimpan sampai pesan atau laporan selesai ditindaklanjuti, lalu dihapus berkala.
+- Kiriman formulir disimpan sampai pesan, laporan, atau request selesai ditindaklanjuti, lalu dihapus berkala.
 - Data analitik mengikuti pengaturan retensi properti Google Analytics kami. Google menyediakan pilihan 2 bulan atau 14 bulan untuk data tingkat pengguna pada properti standar.
 - Hasil pemeriksaan domain email tidak disimpan di server kami, hanya dipakai saat itu juga.
 - Log permintaan di hosting disimpan sesuai kebijakan penyedia hosting.

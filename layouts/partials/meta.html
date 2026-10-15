@@ -4,7 +4,7 @@
 <meta name="google-site-verification" content="frhxc_MnIg6D9e_VKvjf8hsIhgQn9ULKrVoTi9HL0_8" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 {{/* SEO guard: archive internal dan page 2+ tidak ditujukan untuk index. */}}
-{{- $seoHalamanIndex := slice "halaman" "kontak" -}}
+{{- $seoHalamanIndex := slice "halaman" "kontak" "request-donghua" -}}
 {{- $pagination := partial "pagination-context" . -}}
 {{- $seoNoindexExact := slice "/post/" "/halaman/" "/genre/" "/studio/" "/season/" "/season/-/" "/studio/-/" "/genre/-/" "/season/2d-animation/" "/season/3d-animation/" -}}
 {{- $seoNoindexPrefix := or (strings.HasPrefix .RelPermalink "/post/page/") (strings.HasPrefix .RelPermalink "/halaman/page/") -}}

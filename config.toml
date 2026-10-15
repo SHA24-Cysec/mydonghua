@@ -19,6 +19,8 @@ defaultContentLanguage = 'id'
     keywords = 'Donghua, Batch, Subtitle Indonesia'
     author = 'Admin'
     img = '/img/DonghuaBatch.webp'
+    formspreeRequestDonatur = 'https://formspree.io/f/xregejlg'
+    formspreeRequestUmum = 'https://formspree.io/f/xregejlg'
 
 [sitemap]
     changeFreq = 'weekly'
