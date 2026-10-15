@@ -320,7 +320,7 @@
         ? 'Terima kasih sudah berdonasi. Requestmu kami dahulukan di antrean.'
         : 'Requestmu sudah masuk antrean dan akan kami baca bergantian.',
       judul ? 'Admin akan menindaklanjuti request "' + judul + '".' : 'Admin akan menindaklanjuti request kamu.',
-      'Mohon bersabar, admin kami hanya satu orang.'
+      'Mohon bersabar ya, setiap request kami baca bergantian.'
     ]);
   }
 
@@ -486,7 +486,6 @@
 
     form.setAttribute('novalidate', '');
 
-    applyPrefill(form);
     bindCounter(form);
     bindFieldBehaviour(form);
 
@@ -518,11 +517,121 @@
     }
   }
 
+  function panelDari(tipe) {
+    return document.querySelector('[data-request-panel="' + tipe + '"]');
+  }
+
+  function kartuDari(tombol) {
+    var node = tombol.parentNode;
+    while (node && node.classList && !node.classList.contains('request-card')) {
+      node = node.parentNode;
+    }
+    return node && node.classList ? node : null;
+  }
+
+  function gulirKe(el) {
+    if (!el || typeof el.scrollIntoView !== 'function') return;
+    try {
+      el.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+    } catch (error) {
+      try {
+        el.scrollIntoView();
+      } catch (error2) {}
+    }
+  }
+
+  function tutupSemua(tombolList, panelList) {
+    Array.prototype.forEach.call(tombolList, function (tombol) {
+      var kartu = kartuDari(tombol);
+      tombol.setAttribute('aria-expanded', 'false');
+      if (kartu) kartu.classList.remove('is-selected', 'is-muted');
+    });
+    Array.prototype.forEach.call(panelList, function (panel) {
+      panel.hidden = true;
+    });
+  }
+
+  function bukaPilihan(tipe, tombolList, panelList, fokus) {
+    var panel = panelDari(tipe);
+    if (!panel) return;
+
+    tutupSemua(tombolList, panelList);
+
+    Array.prototype.forEach.call(tombolList, function (tombol) {
+      var kartu = kartuDari(tombol);
+      var aktif = tombol.getAttribute('data-request-pick') === tipe;
+      tombol.setAttribute('aria-expanded', aktif ? 'true' : 'false');
+      if (kartu) kartu.classList.add(aktif ? 'is-selected' : 'is-muted');
+    });
+
+    panel.hidden = false;
+
+    var form = panel.querySelector(FORM_SELECTOR);
+    if (form && !form.__prefilled) {
+      form.__prefilled = true;
+      applyPrefill(form);
+    }
+
+    if (fokus !== false) {
+      gulirKe(panel);
+      var pertama = panel.querySelector('input:not([type="hidden"]):not([tabindex="-1"]), select, textarea');
+      if (pertama && typeof pertama.focus === 'function') {
+        window.setTimeout(function () {
+          try {
+            pertama.focus({ preventScroll: true });
+          } catch (error) {
+            pertama.focus();
+          }
+        }, prefersReducedMotion() ? 0 : 320);
+      }
+    }
+  }
+
+  function initPemilih() {
+    var tombolList = document.querySelectorAll('[data-request-pick]');
+    var panelList = document.querySelectorAll('[data-request-panel]');
+    if (!tombolList.length || !panelList.length) return;
+
+    tutupSemua(tombolList, panelList);
+
+    Array.prototype.forEach.call(tombolList, function (tombol) {
+      tombol.addEventListener('click', function () {
+        var tipe = tombol.getAttribute('data-request-pick');
+        var panel = panelDari(tipe);
+        if (panel && !panel.hidden) {
+          tutupSemua(tombolList, panelList);
+          gulirKe(tombol);
+          return;
+        }
+        bukaPilihan(tipe, tombolList, panelList, true);
+      });
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll('[data-request-change]'), function (tombol) {
+      tombol.addEventListener('click', function () {
+        tutupSemua(tombolList, panelList);
+        var stack = document.querySelector('.request-stack');
+        gulirKe(stack);
+        var pertama = document.querySelector('[data-request-pick]');
+        if (pertama && typeof pertama.focus === 'function') {
+          window.setTimeout(function () {
+            try {
+              pertama.focus({ preventScroll: true });
+            } catch (error) {
+              pertama.focus();
+            }
+          }, prefersReducedMotion() ? 0 : 320);
+        }
+      });
+    });
+  }
+
   function init() {
     var forms = document.querySelectorAll(FORM_SELECTOR);
     Array.prototype.forEach.call(forms, function (form) {
       initForm(form);
     });
+    initPemilih();
   }
 
   if (document.readyState === 'loading') {

@@ -7,7 +7,7 @@ layout : request-donghua
 url : 'request-donghua'
 ---
 
-Halaman ini buat kamu yang lagi cari judul donghua tapi belum nemu di sini. Ada dua form, pilih yang paling sesuai dengan kamu.
+Halaman ini buat kamu yang lagi cari judul donghua tapi belum nemu di sini. Ada dua form dan hanya satu yang perlu kamu isi. Tekan tombol **Pakai Form Ini** pada kartu yang paling sesuai, formnya akan terbuka di bawah kartu.
 
 ## Form Mana yang Perlu Dipakai
 
@@ -34,11 +34,11 @@ Donasi yang masuk dipakai untuk menutup biaya server dan domain, bukan untuk mem
 
 Kalau kamu tidak pernah menyumbang, requestmu tetap dibaca, tetap masuk antrean yang sama, dan tetap kami kerjakan sampai selesai. Tidak perlu sungkan memakai form kedua.
 
-## Mohon Bersabar, Admin Cuma Satu
+## Mohon Bersabar
 
-Ini hal yang perlu kami sampaikan di awal: admin DonghuaBatch cuma satu orang. Tidak ada tim yang bisa memecah request jadi beberapa. Semua request yang masuk dibaca manual satu per satu, dari yang paling lama sampai yang paling baru.
+Ini hal yang perlu kami sampaikan di awal: semua request yang masuk dibaca manual satu per satu, dari yang paling lama sampai yang paling baru.
 
-Akibatnya waktu balas memang tidak bisa instan. Yang paling cepat ditindaklanjuti adalah request yang jelas isinya, jadi sebisa mungkin tulis judul dan detailnya dengan benar.
+Karena itu waktu balas memang tidak bisa instan. Yang paling cepat ditindaklanjuti adalah request yang jelas isinya, jadi sebisa mungkin tulis judul dan detailnya dengan benar.
 
 Kalau setelah beberapa hari requestmu belum ditindaklanjuti, kirim ulang lewat [halaman Kontak](/kontak/) supaya kami tahu requestnya masih kamu butuhkan. Jangan kirim berkali-kali di form yang sama karena itu malah memperlambat antrean.
 

@@ -6121,10 +6121,16 @@
     box-sizing: border-box;
   }
   .request-stack {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.25rem;
     margin-top: 1rem;
+  }
+  @media (min-width: 860px) {
+    .request-stack {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+    }
   }
   .request-notice {
     display: flex;
@@ -6168,6 +6174,8 @@
     line-height: 1.55;
   }
   .request-card {
+    display: flex;
+    flex-direction: column;
     border: 1px solid rgba(148, 163, 184, 0.16);
     border-radius: var(--site-radius-lg);
     background: linear-gradient(160deg, rgba(15, 23, 42, 0.86), rgba(2, 6, 23, 0.92));
@@ -6417,9 +6425,122 @@
       padding: 0.85rem;
     }
   }
+  .request-card-head {
+    flex: 1 1 auto;
+  }
+  .request-card.is-selected {
+    border-color: rgba(34, 211, 238, 0.55);
+    box-shadow: 0 0 26px rgba(34, 211, 238, 0.14);
+  }
+  .request-card.is-muted {
+    opacity: 0.55;
+  }
+  .request-card.is-muted:hover, .request-card.is-muted:focus-within {
+    opacity: 1;
+  }
+  .request-pick {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--site-cyan);
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    border-radius: var(--site-radius-md, 0.75rem);
+    transition: background var(--site-transition-med), color var(--site-transition-med), box-shadow var(--site-transition-med);
+  }
+  .request-pick:hover {
+    color: #06121a;
+    background: var(--site-cyan);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  }
+  .request-card--priority .request-pick {
+    color: var(--site-amber);
+    background: rgba(251, 191, 36, 0.09);
+    border-color: rgba(251, 191, 36, 0.42);
+  }
+  .request-card--priority .request-pick:hover {
+    color: #1a1203;
+    background: var(--site-amber);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  }
+  .request-card.is-selected .request-pick {
+    color: #06121a;
+    background: var(--site-cyan);
+  }
+  .request-card--priority.is-selected .request-pick {
+    color: #1a1203;
+    background: var(--site-amber);
+  }
+  .request-panels {
+    margin-top: 1.25rem;
+  }
+  .request-panel {
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    border-radius: var(--site-radius-lg);
+    background: linear-gradient(160deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.95));
+    padding: 1rem;
+    animation: kontakFadeUp 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .request-panel--priority {
+    border-color: rgba(251, 191, 36, 0.34);
+    box-shadow: 0 0 26px rgba(251, 191, 36, 0.06);
+  }
+  .request-panel-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-bottom: 0.85rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  }
+  .request-panel-headline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .request-panel-heading {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #e2e8f0;
+  }
+  .request-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #cbd5e1;
+    background: rgba(148, 163, 184, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 999px;
+    transition: color var(--site-transition-med), background var(--site-transition-med), border-color var(--site-transition-med);
+  }
+  .request-change:hover {
+    color: #e2e8f0;
+    background: rgba(148, 163, 184, 0.2);
+    border-color: rgba(148, 163, 184, 0.45);
+  }
   @media (prefers-reduced-motion: reduce) {
-    .request-notice, .request-card, .request-status, .request-form .cyber-input-search.is-prefilled {
+    .request-notice, .request-card, .request-panel, .request-status, .request-form .cyber-input-search.is-prefilled {
       animation: none;
+    }
+    .request-pick, .request-change {
+      transition: none;
     }
   }
 }

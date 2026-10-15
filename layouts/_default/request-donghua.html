@@ -14,7 +14,7 @@
         "align" "center"
         "kicker" "Request Donghua"
         "kickerIcon" "fa-solid fa-bullhorn text-cyan-400"
-        "description" "Belum ketemu judul yang kamu cari? Kirim request lewat form di bawah. Donasi tidak wajib, pilih saja form yang paling sesuai dengan kamu."
+        "description" "Belum ketemu judul yang kamu cari? Pilih salah satu dari dua form di bawah, formnya akan terbuka setelah dipilih. Donasi tidak wajib."
       ) }}
     </div>
 
@@ -23,7 +23,7 @@
         <i class="fa-solid fa-clock"></i>
       </span>
       <div class="request-notice-body">
-        <strong>Mohon bersabar, admin kami hanya satu orang.</strong>
+        <strong>Mohon bersabar ya.</strong>
         <p>Setiap request dibaca manual satu per satu, jadi belum bisa dibalas seketika. Request dari teman-teman yang pernah berdonasi kami dahulukan sebagai bentuk terima kasih. Di luar itu, semua request masuk antrean yang sama dan tetap kami proses sampai selesai.</p>
       </div>
     </div>
@@ -56,6 +56,69 @@
               <span>Dibaca lebih dulu sebagai ucapan terima kasih, karena donasimu ikut menutup biaya server.</span>
             </li>
           </ul>
+        </div>
+      
+        <button type="button" class="request-pick" data-request-pick="donatur"
+                aria-expanded="false" aria-controls="requestPanelDonatur">
+          <span>Pakai Form Ini</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </section>
+
+      <section class="request-card" aria-labelledby="requestHeadUmum">
+        <div class="request-card-head">
+          <div class="request-card-headline">
+            <span class="request-badge request-badge--umum">
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
+              Umum
+            </span>
+            <h2 class="request-card-heading" id="requestHeadUmum">Semua Pengunjung</h2>
+          </div>
+          <p class="request-card-desc">
+            Form untuk siapa saja, tanpa syarat apa pun. Isi judul donghua yang kamu cari, sisanya boleh dikosongkan. Requestmu tetap kami baca dan tetap kami proses.
+          </p>
+          <ul class="request-checklist">
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Judul donghua wajib diisi supaya requestnya bisa ditindaklanjuti.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Email opsional, isi kalau mau menerima kabar saat request diproses.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <span>Tidak perlu donasi, situs ini gratis dan akan tetap gratis.</span>
+            </li>
+          </ul>
+        </div>
+      
+        <button type="button" class="request-pick" data-request-pick="umum"
+                aria-expanded="false" aria-controls="requestPanelUmum">
+          <span>Pakai Form Ini</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </section>
+
+    </div>
+
+    {{ with .Content }}
+    <div class="request-panels">
+
+      <section class="request-panel request-panel--priority" id="requestPanelDonatur"
+               data-request-panel="donatur" aria-labelledby="requestPanelHeadDonatur" hidden>
+        <div class="request-panel-head">
+          <div class="request-panel-headline">
+            <span class="request-badge request-badge--priority">
+              <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+              Didahulukan
+            </span>
+            <h2 class="request-panel-heading" id="requestPanelHeadDonatur">Form Pernah Berdonasi</h2>
+          </div>
+          <button type="button" class="request-change" data-request-change>
+            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+            <span>Ganti Pilihan</span>
+          </button>
         </div>
 
         <form class="request-form request-form--priority"
@@ -152,38 +215,27 @@
 
           <p class="request-note">
             <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-            <span>Request dikirim lewat Formspree dan langsung masuk ke inbox admin. Mohon bersabar, admin kami hanya satu orang.</span>
+            <span>Request dikirim lewat Formspree dan langsung masuk ke inbox admin. Mohon bersabar, setiap request kami baca bergantian.</span>
           </p>
 
         </form>
+
       </section>
 
-      <section class="request-card" aria-labelledby="requestHeadUmum">
-        <div class="request-card-head">
-          <div class="request-card-headline">
+      <section class="request-panel" id="requestPanelUmum"
+               data-request-panel="umum" aria-labelledby="requestPanelHeadUmum" hidden>
+        <div class="request-panel-head">
+          <div class="request-panel-headline">
             <span class="request-badge request-badge--umum">
               <i class="fa-solid fa-user" aria-hidden="true"></i>
               Umum
             </span>
-            <h2 class="request-card-heading" id="requestHeadUmum">Semua Pengunjung</h2>
+            <h2 class="request-panel-heading" id="requestPanelHeadUmum">Form Semua Pengunjung</h2>
           </div>
-          <p class="request-card-desc">
-            Form untuk siapa saja, tanpa syarat apa pun. Isi judul donghua yang kamu cari, sisanya boleh dikosongkan. Requestmu tetap kami baca dan tetap kami proses.
-          </p>
-          <ul class="request-checklist">
-            <li>
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-              <span>Judul donghua wajib diisi supaya requestnya bisa ditindaklanjuti.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-              <span>Email opsional, isi kalau mau menerima kabar saat request diproses.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-              <span>Tidak perlu donasi, situs ini gratis dan akan tetap gratis.</span>
-            </li>
-          </ul>
+          <button type="button" class="request-change" data-request-change>
+            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+            <span>Ganti Pilihan</span>
+          </button>
         </div>
 
         <form class="request-form"
@@ -281,15 +333,23 @@
 
           <p class="request-note">
             <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-            <span>Request dikirim lewat Formspree dan langsung masuk ke inbox admin. Mohon bersabar, admin kami hanya satu orang.</span>
+            <span>Request dikirim lewat Formspree dan langsung masuk ke inbox admin. Mohon bersabar, setiap request kami baca bergantian.</span>
           </p>
 
         </form>
+
       </section>
 
     </div>
 
-    {{ with .Content }}
+    <noscript>
+      <style>
+        .request-panel[hidden] { display: block !important; }
+        .request-pick { display: none !important; }
+        .request-change { display: none !important; }
+      </style>
+    </noscript>
+
     <div class="prose-neon site-prose-shell font-sans mt-5">
       {{ . }}
     </div>
