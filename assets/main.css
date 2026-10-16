@@ -309,14 +309,14 @@
   .inline-flex {
     display: inline-flex;
   }
-  .aspect-\[2\/3\] {
+  .aspect-2\/3 {
     aspect-ratio: 2/3;
+  }
+  .h-0\.75 {
+    height: calc(var(--spacing) * 0.75);
   }
   .h-14 {
     height: calc(var(--spacing) * 14);
-  }
-  .h-\[3px\] {
-    height: 3px;
   }
   .h-full {
     height: 100%;
@@ -324,8 +324,8 @@
   .max-h-max {
     max-height: max-content;
   }
-  .min-h-\[2\.75rem\] {
-    min-height: 2.75rem;
+  .min-h-11 {
+    min-height: calc(var(--spacing) * 11);
   }
   .min-h-screen {
     min-height: 100vh;
@@ -354,8 +354,8 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
-  .max-w-\[900px\] {
-    max-width: 900px;
+  .max-w-225 {
+    max-width: calc(var(--spacing) * 225);
   }
   .max-w-full {
     max-width: 100%;
@@ -363,8 +363,8 @@
   .min-w-0 {
     min-width: 0px;
   }
-  .min-w-\[4\.5rem\] {
-    min-width: 4.5rem;
+  .min-w-18 {
+    min-width: calc(var(--spacing) * 18);
   }
   .flex-1 {
     flex: 1;
@@ -698,7 +698,7 @@
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
-  .p-\[1px\] {
+  .p-px {
     padding: 1px;
   }
   .px-1\.5 {
@@ -906,8 +906,8 @@
   .opacity-40 {
     opacity: 40%;
   }
-  .opacity-\[0\.95\] {
-    opacity: 0.95;
+  .opacity-95 {
+    opacity: 95%;
   }
   .shadow-\[0_0_18px_rgba\(34\,211\,238\,0\.08\)\] {
     --tw-shadow: 0 0 18px var(--tw-shadow-color, rgba(34,211,238,0.08));
@@ -1114,8 +1114,8 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:w-\[220px\] {
-      width: 220px;
+    .md\:w-55 {
+      width: calc(var(--spacing) * 55);
     }
     .md\:flex-row {
       flex-direction: row;
