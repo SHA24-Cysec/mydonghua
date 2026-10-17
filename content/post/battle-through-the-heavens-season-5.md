@@ -15,7 +15,7 @@ type : 'Donghua'
 status : 'Ongoing'
 sub : 'Anichin'
 durasi : '20 Menit'
-episode : '157 Episode'
+episode : '215 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Jul 16, 2023'
 # Rating 1-10
@@ -400,6 +400,36 @@ downloadGroups:
       button: 'Download'
       size: '6.58 GB'
     
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 13
+  - title: 'Battle Through the Heavens Season 5 Batch Subtitle Indonesia Episode 171-180'
+
+    downloads:
+
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/aFqRjmiw'
+      button: 'Download'
+      size: '2.10 GB'
+
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/be7fBaLE'
+      button: 'Download'
+      size: '4.00 GB'
+
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/SvEKmr9R'
+      button: 'Download'
+      size: '6.42 GB'
+
     - quality: '4K'
       link: ''
       button: 'Belum Tersedia'

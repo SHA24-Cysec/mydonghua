@@ -14,7 +14,7 @@ type : 'Donghua'
 status : 'Ongoing'
 sub : 'Anichin'
 durasi : '20 Menit'
-episode : '128 Episode'
+episode : '180 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Sep 25, 2023'
 # Rating 1-10
@@ -367,7 +367,37 @@ downloadGroups:
       link: 'https://pixeldrain.com/u/FwaM8toC'
       button: 'Download'
       size: '7.80 GB'
-    
+
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 12
+  - title: 'Renegade Immortal Batch Subtitle Indonesia Episode 111-120'
+
+    downloads:
+
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '480p'
+      link: 'https://pixeldrain.com/u/v7Zmmo2N'
+      button: 'Download'
+      size: '2.42 GB'
+
+    - quality: '720p'
+      link: 'https://pixeldrain.com/u/HSngH9uX'
+      button: 'Download'
+      size: '4.32 GB'
+
+    - quality: '1080p'
+      link: 'https://pixeldrain.com/u/vUh1YZGG'
+      button: 'Download'
+      size: '7.71 GB'
+
     - quality: '4K'
       link: ''
       button: 'Belum Tersedia'
