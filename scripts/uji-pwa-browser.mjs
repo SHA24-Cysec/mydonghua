@@ -599,19 +599,24 @@ async function utama() {
     },
     {
       nama: 'T9',
-      judul: 'Cache versi lama dibuang saat service worker aktif kembali',
+      judul: 'Cache shell lama dibuang dan cache gambar lama bermigrasi saat aktivasi',
       fn: async () => {
         await nyalakan();
         const namaLama = 'donghuabatch-pwa-shell-1999-01-01-0';
+        const namaGambarLama = 'donghuabatch-pwa-images-1999-01-01-0';
+        const entriMigrasi = '/img/post/uji-migrasi-cache.webp';
         await nilai(
           `(async () => {
             const cache = await caches.open('${namaLama}');
             await cache.put(new Request('/uji-cache-lama/'), new Response('lama', { headers: { 'Content-Type': 'text/plain' } }));
+            const gambar = await caches.open('${namaGambarLama}');
+            await gambar.put(new Request('${entriMigrasi}'), new Response('uji', { headers: { 'Content-Type': 'image/webp' } }));
             return true;
           })()`
         );
         const daftarSebelum = await nilai(`caches.keys()`);
         if (!daftarSebelum.includes(namaLama)) throw new Error('Cache lama gagal disuntikkan');
+        if (!daftarSebelum.includes(namaGambarLama)) throw new Error('Cache gambar lama gagal disuntikkan');
         // Service worker hanya dipasang ulang bila isi skripnya berubah, jadi
         // peladen uji menyajikan /sw.js dengan satu baris komentar tambahan.
         pengganti.set('/sw.js', `${readFileSync(join(AKAR_PUBLIK, 'sw.js'), 'utf8')}\n// penanda uji T9\n`);
@@ -622,10 +627,24 @@ async function utama() {
                .then(() => true)`
           );
           let daftarSesudah = daftarSebelum;
+          let termigrasi = false;
           for (let putaran = 0; putaran < 32; putaran += 1) {
             await jeda(250);
             daftarSesudah = await nilai(`caches.keys()`);
-            if (!daftarSesudah.includes(namaLama)) break;
+            termigrasi = await nilai(
+              `(async () => {
+                const gambar = await caches.open('donghuabatch-pwa-images');
+                const kunci = await gambar.keys();
+                return kunci.some((satu) => satu.url.endsWith('${entriMigrasi}'));
+              })()`
+            );
+            if (!daftarSesudah.includes(namaLama) && !daftarSesudah.includes(namaGambarLama) && termigrasi) break;
+          }
+          if (daftarSesudah.includes(namaGambarLama)) {
+            throw new Error(`Cache ${namaGambarLama} masih ada setelah aktivasi: ${daftarSesudah.join(', ')}`);
+          }
+          if (!termigrasi) {
+            throw new Error(`Entri ${entriMigrasi} tidak bermigrasi ke cache donghuabatch-pwa-images`);
           }
           if (daftarSesudah.includes(namaLama)) {
             throw new Error(`Cache ${namaLama} masih ada setelah aktivasi: ${daftarSesudah.join(', ')}`);
@@ -633,7 +652,7 @@ async function utama() {
           if (!daftarSesudah.some((satu) => satu.includes('-shell-') && satu.includes(versi))) {
             throw new Error(`Cache shell versi ${versi} tidak ada setelah aktivasi: ${daftarSesudah.join(', ')}`);
           }
-          return `cache lama dibuang, cache shell ${versi} ada`;
+          return `cache shell lama dibuang, entri gambar bermigrasi ke donghuabatch-pwa-images`;
         } finally {
           pengganti.delete('/sw.js');
         }

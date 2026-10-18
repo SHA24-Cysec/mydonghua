@@ -179,6 +179,34 @@ if (jalurPrecache.length < 10) {
   errors.push(`Service worker: daftar precache hanya ${jalurPrecache.length} entri, terlalu sedikit.`);
 }
 
+for (const jalur of ['/icons/icon-512.webp', '/icons/apple-touch-icon.png', '/img/DonghuaBatch.webp']) {
+  if (jalurPrecache.includes(jalur)) {
+    errors.push(`Service worker: ${jalur} tidak boleh ikut precache.`);
+  }
+}
+
+if (/cache:\s*['"]reload['"]/.test(serviceWorker)) {
+  errors.push('Service worker: pemasangan masih memakai cache reload.');
+}
+
+for (const [nama, akhiran] of [['PAGE_CACHE', '-pages'], ['ASSET_CACHE', '-assets'], ['IMAGE_CACHE', '-images']]) {
+  const definisi = ((serviceWorker.match(new RegExp(`${nama}\\s*=\\s*([^;]+);`)) || [])[1] || '').trim();
+  if (!definisi) {
+    errors.push(`Service worker: ${nama} tidak ditemukan.`);
+    continue;
+  }
+  if (!new RegExp(`${akhiran}['"\`]\\s*$`).test(definisi)) {
+    errors.push(`Service worker: ${nama} tidak memakai nama stabil berakhiran ${akhiran}.`);
+  }
+  if (definisi.includes('CACHE_VERSION')) {
+    errors.push(`Service worker: ${nama} masih memakai CACHE_VERSION.`);
+  }
+}
+
+if (!serviceWorker.includes('migrateCache')) {
+  errors.push('Service worker: fungsi migrateCache tidak ditemukan.');
+}
+
 if (existsSync(resolve(root, 'public/index.html'))) {
   let totalBita = 0;
   for (const jalur of jalurPrecache) {
@@ -204,7 +232,7 @@ if (!versiCache) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(tanggalCache)) {
     errors.push(`Service worker: CACHE_VERSION tidak memuat tanggal (${versiCache}).`);
   } else {
-    const hasilGit = spawnSync('git', ['log', '-1', '--format=%cs', '--', 'content', 'layouts', 'static', 'assets'], { cwd: root, encoding: 'utf8' });
+    const hasilGit = spawnSync('git', ['log', '-1', '--format=%cs', '--', 'static/sw.js', 'static/manifest.webmanifest', 'static/offline', 'static/icons/icon-192.webp', 'static/img/favicon.webp', 'static/img/Huo-Linger.webp'], { cwd: root, encoding: 'utf8' });
     const tanggalCommit = (hasilGit.stdout || '').trim();
     if (hasilGit.status !== 0 || !tanggalCommit) {
       warnings.push('Pemeriksaan CACHE_VERSION dilewati: metadata git tidak tersedia.');

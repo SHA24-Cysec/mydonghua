@@ -1,11 +1,17 @@
 'use strict';
 
 const CACHE_PREFIX = 'donghuabatch-pwa';
-const CACHE_VERSION = '2026-10-15-10';
+const CACHE_VERSION = '2026-10-19-1';
 const SHELL_CACHE = `${CACHE_PREFIX}-shell-${CACHE_VERSION}`;
-const PAGE_CACHE = `${CACHE_PREFIX}-pages-${CACHE_VERSION}`;
-const ASSET_CACHE = `${CACHE_PREFIX}-assets-${CACHE_VERSION}`;
-const IMAGE_CACHE = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
+const PAGE_CACHE = `${CACHE_PREFIX}-pages`;
+const ASSET_CACHE = `${CACHE_PREFIX}-assets`;
+const IMAGE_CACHE = `${CACHE_PREFIX}-images`;
+
+const LEGACY_RUNTIME_CACHES = {
+  '-pages-': { target: PAGE_CACHE, maximumEntries: 80 },
+  '-assets-': { target: ASSET_CACHE, maximumEntries: 100 },
+  '-images-': { target: IMAGE_CACHE, maximumEntries: 160 }
+};
 
 const CATALOG_DOCUMENTS = [
   '/',
@@ -21,10 +27,7 @@ const APP_SHELL = [
   '/offline/',
   '/manifest.webmanifest',
   '/icons/icon-192.webp',
-  '/icons/icon-512.webp',
-  '/icons/apple-touch-icon.png',
   '/img/favicon.webp',
-  '/img/DonghuaBatch.webp',
   '/img/Huo-Linger.webp'
 ];
 
@@ -55,6 +58,20 @@ async function trimCache(cacheName, maximumEntries) {
   const overflow = keys.length - maximumEntries;
   if (overflow <= 0) return;
   await Promise.all(keys.slice(0, overflow).map((key) => cache.delete(key)));
+}
+
+async function migrateCache(sourceName, targetName, maximumEntries) {
+  const source = await caches.open(sourceName);
+  const target = await caches.open(targetName);
+  const entries = await source.keys();
+  for (const request of entries) {
+    try {
+      if (await target.match(request)) continue;
+      const response = await source.match(request);
+      if (response) await target.put(request, response);
+    } catch {}
+  }
+  await trimCache(targetName, maximumEntries);
 }
 
 async function putResponse(cacheName, request, response, maximumEntries) {
@@ -99,7 +116,7 @@ self.addEventListener('install', (event) => {
     const discoveredAssets = new Set();
 
     await Promise.allSettled(APP_SHELL.map(async (path) => {
-      const request = new Request(path, { cache: 'reload' });
+      const request = new Request(path);
       const response = await fetch(request);
       if (!response.ok) return;
       await shellCache.put(request, response.clone());
@@ -112,7 +129,7 @@ self.addEventListener('install', (event) => {
     }));
 
     await Promise.allSettled(Array.from(discoveredAssets).map(async (url) => {
-      const request = new Request(url, { cache: 'reload' });
+      const request = new Request(url);
       const response = await fetch(request);
       if (response.ok) await shellCache.put(request, response);
     }));
@@ -125,12 +142,15 @@ self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
     const activeCaches = new Set([SHELL_CACHE, PAGE_CACHE, ASSET_CACHE, IMAGE_CACHE]);
     const cacheNames = await caches.keys();
-    await Promise.all(cacheNames.map((cacheName) => {
-      if (cacheName.startsWith(CACHE_PREFIX) && !activeCaches.has(cacheName)) {
-        return caches.delete(cacheName);
+    for (const cacheName of cacheNames) {
+      if (!cacheName.startsWith(CACHE_PREFIX) || activeCaches.has(cacheName)) continue;
+      for (const [prefix, migration] of Object.entries(LEGACY_RUNTIME_CACHES)) {
+        if (!cacheName.includes(prefix)) continue;
+        await migrateCache(cacheName, migration.target, migration.maximumEntries);
+        break;
       }
-      return Promise.resolve(false);
-    }));
+      await caches.delete(cacheName);
+    }
     await self.clients.claim();
   })());
 });
