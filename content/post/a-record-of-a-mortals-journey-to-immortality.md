@@ -367,7 +367,7 @@ downloadGroups:
       size: ''
 
   # Batch 12
-  - title: 'A Record of A Mortal’s Journey to Immortality Batch Subtitle Indonesia Episode 171-176 [END]'
+  - title: 'A Record of A Mortal’s Journey to Immortality Batch Subtitle Indonesia Episode 171-176'
     
     downloads:
     

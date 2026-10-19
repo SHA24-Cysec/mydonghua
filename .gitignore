@@ -10,3 +10,7 @@ resources/
 .vscode/
 .idea/
 .DS_Store
+
+# env
+.env
+venv/

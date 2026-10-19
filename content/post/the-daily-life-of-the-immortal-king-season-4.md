@@ -13,7 +13,7 @@ genre :
     - 'Slice of Life'
 type : 'Donghua'
 status : 'Completed'
-sub : 'Kusonime'
+sub : 'Anichin'
 durasi : '20 Menit'
 episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'

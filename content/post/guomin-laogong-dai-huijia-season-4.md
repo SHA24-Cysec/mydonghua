@@ -10,7 +10,7 @@ genre :
     - Romance
 type : 'Donghua'
 status : 'Completed'
-sub : 'Kusonime'
+sub : 'Anichin'
 durasi : '12 Menit'
 episode : '12 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'

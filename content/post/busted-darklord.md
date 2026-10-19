@@ -10,7 +10,7 @@ genre :
     - 'Fantasy'
 type : 'Donghua'
 status : 'Completed'
-sub : 'Kusonime'
+sub : 'Anichin'
 durasi : '10 Menit'
 
 # Teks jumlah episode yang tampil untuk pengunjung.

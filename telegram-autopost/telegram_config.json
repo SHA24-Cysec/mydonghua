@@ -1,0 +1,18 @@
+{
+  "base_url": "https://donghuabatch.com/",
+  "channel_id": "@donghuabatch",
+  "caption_template": "Tanpa sinopsis + CTA persuasif + footer support",
+  "send_delay_seconds": 2,
+  "caption_max_length_visible": 1024,
+  "parse_mode": "HTML",
+  "state_file": "data/posted.json",
+  "use_animated_emoji": false,
+  "button_text_download": "📥 Download Batch Sekarang",
+  "button_icon_download": "5258336354642697821",
+  "donasi_url": "https://saweria.co/DonghuaBatch",
+  "donasi_text": "💖 Donasi Untuk DonghuaBatch",
+  "donasi_icon": "5807465992363710697",
+  "cta_title": "🎉 Batch Sudah Tersedia!",
+  "cta_desc": "🚀 Silahkan Download Sekarang dan Nikmati Maraton Tanpa Batas!",
+  "require_premium_for_animated": true
+}
