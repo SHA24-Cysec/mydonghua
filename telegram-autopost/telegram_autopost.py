@@ -3,13 +3,14 @@ import re
 import json
 import time
 import argparse
+import hashlib
 import requests
 from pathlib import Path
 from datetime import datetime
 
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 except ImportError:
     pass
 
@@ -19,10 +20,11 @@ try:
 except ImportError:
     HAS_YAML = False
 
-BASE_DIR = Path(__file__).parent
-CONTENT_DIR = BASE_DIR / "content" / "post"
+BASE_DIR = Path(__file__).resolve().parent
+REPO_DIR = BASE_DIR.parent
+CONTENT_DIR = REPO_DIR / "content" / "post"
 STATE_FILE = BASE_DIR / "data" / "posted.json"
-CONFIG_TOML = BASE_DIR / "config.toml"
+CONFIG_TOML = REPO_DIR / "config.toml"
 
 DEFAULT_BASE_URL = "https://donghuabatch.com/"
 
@@ -99,6 +101,22 @@ def load_state():
 def save_state(state):
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     STATE_FILE.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
+
+def get_batch_fingerprint(data):
+    batches = data.get("downloadGroups") or []
+    serialized = json.dumps(batches, ensure_ascii=False, sort_keys=True, separators=(",", ":"), default=str)
+    return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
+
+def get_post_status(post, state):
+    entry = state.get(post["slug"])
+    if not isinstance(entry, dict):
+        return "new"
+    fingerprint = entry.get("batch_fingerprint")
+    if not fingerprint:
+        return "baseline"
+    if fingerprint != get_batch_fingerprint(post["data"]):
+        return "batch_update"
+    return "sent"
 
 def escape_html(text):
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -266,11 +284,15 @@ def main():
         posts = collect_posts(base_url)
         print(f"Total post ditemukan: {len(posts)}")
         state = load_state()
+        statuses = {"new": [], "batch_update": [], "baseline": [], "sent": []}
+        for post in posts:
+            statuses[get_post_status(post, state)].append(post)
         print(f"Sudah terkirim: {len(state)}")
-        pending = [p for p in posts if p['slug'] not in state]
-        print(f"Belum terkirim: {len(pending)}")
-        for p in pending[:5]:
-            print(f" - {p['slug']} | {p['data'].get('title','')}")
+        print(f"Belum terkirim: {len(statuses['new'])}")
+        print(f"Batch berubah: {len(statuses['batch_update'])}")
+        print(f"Perlu baseline state lama: {len(statuses['baseline'])}")
+        for post in (statuses["new"] + statuses["batch_update"])[:5]:
+            print(f" - {post['slug']} | {post['data'].get('title','')}")
         return
 
     if not token or not channel:
@@ -287,10 +309,19 @@ def main():
 
     state = load_state()
     to_send = []
-    for p in posts:
-        if not args.force and p["slug"] in state:
+    baseline_changed = False
+    for post in posts:
+        status = get_post_status(post, state)
+        if not args.force and status == "sent":
             continue
-        to_send.append(p)
+        if not args.force and status == "baseline":
+            state[post["slug"]]["batch_fingerprint"] = get_batch_fingerprint(post["data"])
+            baseline_changed = True
+            continue
+        to_send.append(post)
+
+    if baseline_changed and not args.dry_run:
+        save_state(state)
 
     if args.limit and args.limit > 0:
         to_send = to_send[:args.limit]
@@ -331,7 +362,8 @@ def main():
                     "title": post["data"].get("title", ""),
                     "url": post["post_url"],
                     "sent_at": datetime.now().isoformat(),
-                    "file": post["file"]
+                    "file": post["file"],
+                    "batch_fingerprint": get_batch_fingerprint(post["data"])
                 }
                 save_state(state)
                 success += 1
