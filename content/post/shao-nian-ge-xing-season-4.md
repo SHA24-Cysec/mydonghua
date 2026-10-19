@@ -19,6 +19,13 @@ release : 'Jan 08, 2025'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+# linkSeasonSelanjutnya : ''
+# judulSeasonSelanjutnya : ''
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/shao-nian-ge-xing-season-4.webp
@@ -27,7 +34,7 @@ image : /img/post/shao-nian-ge-xing-season-4.webp
 alt : 'Shao Nian Ge Xing Season 4'
 url: 'shao-nian-ge-xing-season-4'
 layout : postingan-donghua
-sinopsis : 'Lanjutan dari Donghua Shao Nian Ge Xing.'
+sinopsis : 'Musim keempat ini bercerita tentang Xiao Se, pemuda yang lama menyembunyikan jati dirinya sebagai pangeran dan hidup sebagai pemilik penginapan yang nyaris bangkrut. Kini meridiannya pulih dan identitas aslinya diakui kembali, sehingga ia berangkat ke Tianqi, ibu kota kekaisaran, tempat takhta sedang diperebutkan oleh tiga pangeran yang saling mengintai. Cerita dilanjutkan setelah para tokoh berpisah di gunung langit, dengan Lei Wujie dan kawan-kawan yang sudah jauh lebih kuat berkat bekal dari para guru mereka. Nuansanya bergeser dari petualangan dunia persilatan ke intrik istana. Setiap langkah di ibu kota penuh perhitungan politik, dan satu salah langkah bisa berakibat fatal.'
 deskripsi : 'Download Batch Shao Nian Ge Xing Season 4 Subtitle Indonesia'
 keywords : 'Download Batch Shao Nian Ge Xing Season 4 Subtitle Indonesia'
 

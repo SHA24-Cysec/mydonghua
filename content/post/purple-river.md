@@ -19,6 +19,10 @@ release : 'Dec 21, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/purple-river-season-2'
+judulSeasonSelanjutnya : 'Purple River Season 2 Subtitle Indonesia'
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/purple-river.webp
 image : /img/post/purple-river.webp
