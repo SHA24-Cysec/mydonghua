@@ -8,49 +8,61 @@
 
     <div class="db-groups">
     {{ range $gi, $group := .Params.downloadGroups }}
+        {{ $visibleCount := len $group.downloads }}
+        {{ range $group.downloads }}
+            {{ $quality := upper (strings.TrimSpace (printf "%v" (default "" .quality))) }}
+            {{ $link := strings.TrimSpace (printf "%v" (default "" .link)) }}
+            {{ if and (eq $quality "4K") (not $link) }}
+                {{ $visibleCount = sub $visibleCount 1 }}
+            {{ end }}
+        {{ end }}
         <article class="db-group">
             <div class="db-hero">
                 <div class="db-hero-top">
                     <span class="db-hero-badge"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Batch Subtitle Indonesia</span>
-                    <span class="db-hero-count"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> {{ len $group.downloads }} Resolusi</span>
+                    <span class="db-hero-count"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> {{ $visibleCount }} Resolusi</span>
                 </div>
                 <h2>{{ $group.title }}</h2>
             </div>
 
             <div class="db-resolution-grid">
             {{ range $i, $d := $group.downloads }}
-                {{ $buttonLabel := $d.button | default "Belum Tersedia" }}
-                {{ $isUnavailable := or (not $d.link) (in $buttonLabel "Belum") }}
-                <article class="db-res-card{{ if $isUnavailable }} is-unavailable{{ end }}">
-                    <div class="db-res-top">
-                        <span class="db-quality">{{ $d.quality }}</span>
-                        <span class="db-status {{ if $isUnavailable }}pending{{ else }}ready{{ end }}">
-                            {{ if $isUnavailable }}
-                                <i class="fa-solid fa-clock" aria-hidden="true"></i> Pending
-                            {{ else }}
-                                <i class="fa-solid fa-check" aria-hidden="true"></i> Ready
-                            {{ end }}
-                        </span>
-                    </div>
+                {{ $quality := upper (strings.TrimSpace (printf "%v" (default "" $d.quality))) }}
+                {{ $link := strings.TrimSpace (printf "%v" (default "" $d.link)) }}
+                {{ if or (ne $quality "4K") $link }}
+                    {{ $buttonLabel := $d.button | default "Belum Tersedia" }}
+                    {{ $isUnavailable := or (not $d.link) (in $buttonLabel "Belum") }}
+                    <article class="db-res-card{{ if $isUnavailable }} is-unavailable{{ end }}">
+                        <div class="db-res-top">
+                            <span class="db-quality">{{ $d.quality }}</span>
+                            <span class="db-status {{ if $isUnavailable }}pending{{ else }}ready{{ end }}">
+                                {{ if $isUnavailable }}
+                                    <i class="fa-solid fa-clock" aria-hidden="true"></i> Pending
+                                {{ else }}
+                                    <i class="fa-solid fa-check" aria-hidden="true"></i> Ready
+                                {{ end }}
+                            </span>
+                        </div>
 
-                    <div class="db-size">
-                        <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
-                        <span>{{ $d.size }}</span>
-                    </div>
+                        <div class="db-size">
+                            <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
+                            <span>{{ $d.size }}</span>
+                        </div>
 
-                    {{ if $isUnavailable }}
-                        <span class="db-button is-locked" aria-disabled="true">
-                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                            <span>{{ $buttonLabel }}</span>
-                        </span>
-                    {{ else }}
-                        <a class="db-button" target="_blank" rel="nofollow noopener noreferrer" href="{{ $d.link }}">
-                            <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
-                            <span>{{ $buttonLabel }}</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square db-open" aria-hidden="true"></i>
-                        </a>
-                    {{ end }}
-                </article>
+                        {{ if $isUnavailable }}
+                            <span class="db-button is-locked" aria-disabled="true">
+                                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                                <span>{{ $buttonLabel }}</span>
+                            </span>
+                        {{ else }}
+                            <a class="db-button" target="_blank" rel="nofollow noopener noreferrer" href="{{ $d.link }}">
+                                <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
+                                <span>{{ $buttonLabel }}</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square db-open" aria-hidden="true"></i>
+                            </a>
+                        {{ end }}
+                    </article>
+                {{ end }}
             {{ end }}
             </div>
         </article>
