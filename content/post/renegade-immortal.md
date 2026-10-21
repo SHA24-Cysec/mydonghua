@@ -402,4 +402,34 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 13
+  - title: 'Renegade Immortal Batch Subtitle Indonesia Episode 121-130'
+
+    downloads:
+
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=12Tdm8dwMP_C7E_UT-UGEmu4-fWlEMVhm&export=download&authuser=0'
+      button: 'Download'
+      size: '2.60 GB'
+
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
