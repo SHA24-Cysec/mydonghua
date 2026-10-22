@@ -52,9 +52,9 @@ downloadGroups:
       size: '1.17 GB'
     
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1CovRsAK9qzOwqG8hEZVgW9Yexpbs-KUL&export=download&authuser=0'
+      button: 'Download'
+      size: '2.60 GB'
     
     - quality: '720p'
       link: ''
