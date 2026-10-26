@@ -1,7 +1,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'donghuabatch-pwa';
-const CACHE_VERSION = '2026-10-19-1';
+const CACHE_VERSION = '2026-10-26-2';
 const SHELL_CACHE = `${CACHE_PREFIX}-shell-${CACHE_VERSION}`;
 const PAGE_CACHE = `${CACHE_PREFIX}-pages`;
 const ASSET_CACHE = `${CACHE_PREFIX}-assets`;
@@ -31,9 +31,6 @@ const APP_SHELL = [
   '/img/Huo-Linger.webp'
 ];
 
-// Hanya gaya, skrip, dan font yang dipanaskan saat instalasi.
-// Gambar tetap diambil saat diminta lewat strategi cacheFirst supaya
-// instalasi tidak menarik puluhan webp dari halaman katalog.
 const DISCOVERABLE_ASSET = /\.(?:css|js|mjs|woff2?)$/i;
 const CACHEABLE_ASSET = /\.(?:css|js|mjs|woff2?|ico|png|webp|jpe?g|svg)$/i;
 
@@ -41,9 +38,6 @@ function sameOrigin(url) {
   return url.origin === self.location.origin;
 }
 
-// Query string sengaja dibuang dari kunci cache navigasi.
-// Aman selama HTML statis dan parameter hanya diolah di sisi klien.
-// Bila kelak ada halaman yang isinya bergantung query di server, ubah ini.
 function navigationCacheKey(request) {
   const url = new URL(request.url);
   return new Request(`${url.origin}${url.pathname}`, {
@@ -92,8 +86,6 @@ async function fetchWithTimeout(request, timeoutMilliseconds) {
 }
 
 function collectDocumentAssets(documentUrl, html, output) {
-  // Hugo --minify menghapus tanda kutip pada atribut tanpa spasi,
-  // jadi pola ini harus menerima nilai tanpa kutip juga.
   const referencePattern = /(?:src|href)\s*=\s*(?:"([^"#]+)"|'([^'#]+)'|([^\s>]+))/gi;
   let match;
   while ((match = referencePattern.exec(html))) {
@@ -104,9 +96,7 @@ function collectDocumentAssets(documentUrl, html, output) {
       if (sameOrigin(assetUrl) && DISCOVERABLE_ASSET.test(assetUrl.pathname)) {
         output.add(assetUrl.href);
       }
-    } catch {
-      // Abaikan URL yang tidak valid dalam markup pihak ketiga.
-    }
+    } catch {}
   }
 }
 
@@ -142,15 +132,31 @@ self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
     const activeCaches = new Set([SHELL_CACHE, PAGE_CACHE, ASSET_CACHE, IMAGE_CACHE]);
     const cacheNames = await caches.keys();
+    let legacyShellFound = false;
+
     for (const cacheName of cacheNames) {
-      if (!cacheName.startsWith(CACHE_PREFIX) || activeCaches.has(cacheName)) continue;
+      if (!cacheName.startsWith(CACHE_PREFIX)) continue;
+      if (activeCaches.has(cacheName)) continue;
+
+      if (cacheName.includes('-shell-')) {
+        legacyShellFound = true;
+      }
+
       for (const [prefix, migration] of Object.entries(LEGACY_RUNTIME_CACHES)) {
         if (!cacheName.includes(prefix)) continue;
         await migrateCache(cacheName, migration.target, migration.maximumEntries);
         break;
       }
+
       await caches.delete(cacheName);
     }
+
+    if (legacyShellFound) {
+      await caches.delete(PAGE_CACHE);
+      await caches.delete(ASSET_CACHE);
+      await caches.delete(IMAGE_CACHE);
+    }
+
     await self.clients.claim();
   })());
 });
@@ -158,7 +164,7 @@ self.addEventListener('activate', (event) => {
 async function handleNavigation(request) {
   const cacheKey = navigationCacheKey(request);
   try {
-    const response = await fetchWithTimeout(request, 4500);
+    const response = await fetchWithTimeout(request, 8000);
     await putResponse(PAGE_CACHE, cacheKey, response, 80);
     return response;
   } catch {
@@ -207,10 +213,6 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (url.pathname === '/index.json') {
-    // Angka 0 berarti tanpa batas entri, bukan jangan menyimpan.
-    // Hanya dipakai untuk satu URL tunggal, jadi batas entri tidak diperlukan.
-    // Berkas ini tidak ikut precache agar pemasangan PWA tidak mengunduhnya
-    // sebelum pengguna memakai pencarian.
     event.respondWith(staleWhileRevalidate(request, SHELL_CACHE, 0, event));
     return;
   }

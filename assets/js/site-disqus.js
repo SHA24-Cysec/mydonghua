@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function init() {
     var openButton = document.getElementById('buka-komen');
     var closeButton = document.getElementById('tutup-komen');
     var disqusContainer = document.getElementById('disqus_thread');
@@ -15,6 +15,7 @@
     var disqusLoaded = false;
     var disqusFailed = false;
     var loadTimeout = null;
+    var renderTimeout = null;
 
     function showLoading() {
       if (loadingEl) loadingEl.classList.remove('hidden');
@@ -34,6 +35,7 @@
     function loadDisqus() {
       if (disqusLoaded && !disqusFailed) return;
       if (loadTimeout) { clearTimeout(loadTimeout); loadTimeout = null; }
+      if (renderTimeout) { clearTimeout(renderTimeout); renderTimeout = null; }
       disqusFailed = false;
       showLoading();
 
@@ -66,7 +68,17 @@
           disqusFailed = true;
           showError();
         }
-      }, 10000);
+      }, 8000);
+
+      renderTimeout = setTimeout(function () {
+        if (disqusLoaded && !disqusFailed) {
+          var thread = disqusContainer.querySelector('#disqus_thread, .disqus-thread, iframe, .disqus-comments');
+          if (!thread) {
+            disqusFailed = true;
+            showError();
+          }
+        }
+      }, 5000);
     }
 
     function reloadDisqus() {
@@ -146,5 +158,11 @@
         openButton.classList.remove('hidden');
       }, 1000);
     });
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
