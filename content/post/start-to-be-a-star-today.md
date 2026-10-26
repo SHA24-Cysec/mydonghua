@@ -2,7 +2,8 @@
 date : '2025-03-08T22:23:31+07:00'
 draft : false
 title : 'Download Batch Start to Be a Star Today Subtitle Indonesia'
-studio : []
+studio :
+    - 'ASK Animation Studio'
 season : '2019'
 genre :
     - Comedy
@@ -17,6 +18,14 @@ episode : '13 Episode'
 release : '2019'
 # Rating 1-10
 rating : 7
+
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/start-to-be-a-star-today-season-2'
+judulSeasonSelanjutnya : 'Start to Be a Star Today Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/start-to-be-a-star-today.webp

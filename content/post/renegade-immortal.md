@@ -432,4 +432,34 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+  
+  # Batch 14
+  - title: 'Renegade Immortal Batch Subtitle Indonesia Episode 131-140'
+
+    downloads:
+
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1ZnFBl4MfP54z47_O0QEl8psvBTfG4Fz_&export=download&authuser=0'
+      button: 'Download'
+      size: '2.40 GB'
+
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
