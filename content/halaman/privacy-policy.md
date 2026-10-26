@@ -7,7 +7,7 @@ layout : halaman
 url : privacy-policy
 ---
 
-Berlaku sejak 23 Juli 2026. Terakhir diperbarui 13 Oktober 2026.
+Berlaku sejak 23 Juli 2026. Terakhir diperbarui 26 Oktober 2026.
 
 Halaman ini menjelaskan data apa yang kami kumpulkan, siapa yang menerimanya, dan hak apa yang kamu punya. Kami berusaha menuliskannya secara konkret: setiap penyedia pihak ketiga disebut namanya, bukan disamarkan sebagai "pihak ketiga".
 
@@ -34,7 +34,7 @@ Pengendali data untuk situs ini adalah pengelola DonghuaBatch. Saluran resmi unt
 | Nama domain email saja | Pemeriksaan otomatis saat kolom email kehilangan fokus | Memastikan domain email aktif dan menyarankan koreksi salah tulis |
 | Halaman yang dibuka, jenis peramban dan perangkat, perkiraan lokasi, waktu akses | Google Analytics 4 pada halaman produksi | Statistik kunjungan dan perbaikan situs |
 | Pengenal perangkat dan interaksi dengan iklan | Jaringan iklan Adsterra | Menampilkan dan mengukur iklan |
-| Nama, isi komentar, dan waktu kirim | Disqus, hanya kalau kamu menekan tombol untuk membuka kolom komentar | Menampilkan diskusi di halaman donghua |
+| Nama, isi komentar, waktu kirim, dan jumlah komentar | Disqus, hanya setelah kamu membuka panel Ruang Diskusi di halaman donghua | Menampilkan diskusi dan angka jumlah komentar |
 
 ## 4. Pemeriksaan domain email
 
@@ -57,7 +57,7 @@ Kami memakai pemeriksaan ini untuk mencegah salah tulis domain dan email sekali-
 | Cloudflare (`cloudflare-dns.com`) | Pemeriksaan keberadaan domain email | Hanya domain email |
 | Google Public DNS (`dns.google`) | Cadangan pemeriksaan yang sama | Hanya domain email |
 | Adsterra | Jaringan iklan | Data perangkat dan pengenal yang dipasang jaringan itu sendiri. Kami tidak mengatur isi penyimpanannya, dan domain penyaji skripnya bisa berubah |
-| Disqus (`mydonghua.disqus.com`) | Kolom komentar | Data akun dan kunjungan, dipasang hanya setelah kamu menekan tombol buka komentar |
+| Disqus (`mydonghua.disqus.com`) | Kolom komentar dan angka jumlah komentar | Data akun, kunjungan, dan isi komentar. Dua skripnya, `embed.js` dan `count.js`, baru dimuat setelah kamu membuka panel Ruang Diskusi |
 | Safelinku (`sfl.gl`) | Menulis ulang tautan unduhan keluar | Informasi klik pada tautan yang diproses |
 | Vercel | Penyedia hosting | Log permintaan seperti alamat IP, identitas peramban, dan waktu akses untuk penyajian dan keamanan situs |
 
@@ -84,7 +84,7 @@ Versi situs sebelumnya menyimpan pilihan panel Google dengan kunci `donghuabatch
 
 Semua penyimpanan lokal di atas bisa kamu hapus kapan saja lewat pengaturan situs di peramban (biasanya "Hapus data situs" atau "Cookie dan data situs"). Menghapusnya tidak menghilangkan isi laporan yang sudah kamu kirim.
 
-GA4 dapat menggunakan cookie pihak pertama pada halaman produksi. Disqus dimuat setelah kamu membuka kolom komentar, sedangkan skrip Adsterra dimuat untuk menampilkan iklan. Safelinku memproses tautan keluar yang cocok dengan aturannya. Situs ini tidak menyediakan satu panel yang mengatur atau menonaktifkan semua layanan tersebut; pengaturan GA4 tidak menghentikan skrip pihak ketiga.
+GA4 dapat menggunakan cookie pihak pertama pada halaman produksi. Kedua skrip Disqus, `embed.js` dan `count.js`, dimuat setelah kamu membuka panel Ruang Diskusi, sedangkan skrip Adsterra dimuat untuk menampilkan iklan. Safelinku memproses tautan keluar yang cocok dengan aturannya. Situs ini tidak menyediakan satu panel yang mengatur atau menonaktifkan semua layanan tersebut; pengaturan GA4 tidak menghentikan skrip pihak ketiga.
 
 ## 7. Dasar hukum pemrosesan
 
@@ -94,7 +94,7 @@ Kami memproses data dengan dasar berikut, mengacu pada [Undang-Undang Nomor 27 T
 - **Pelaksanaan permintaanmu** untuk data yang kamu kirim lewat formulir, karena kami memerlukannya untuk menjawab pesan atau memperbaiki tautan.
 - **Kepentingan yang sah** untuk keamanan situs, pencegahan spam, dan pemeliharaan tautan unduhan, misalnya memeriksa domain email sekali-pakai.
 
-Untuk Adsterra, Disqus, dan Safelinku, situs ini menjelaskan data dan pemicu pemuatan layanan di bagian 5 dan 6. Situs tidak menyediakan satu panel yang mengatur atau menonaktifkan semua layanan tersebut. Pengelola perlu meninjau ketentuan penyedia serta dasar pemrosesan yang sesuai untuk tiap integrasi pihak ketiga secara terpisah.
+Untuk Adsterra, Disqus, dan Safelinku, situs ini menjelaskan data dan pemicu pemuatan layanan di bagian 5 dan 6. Khusus Disqus, pemicunya adalah tombol Buka diskusi pada panel Ruang Diskusi; tanpa klik itu tidak ada skrip Disqus yang berjalan. Situs tidak menyediakan satu panel yang mengatur atau menonaktifkan semua layanan tersebut. Pengelola perlu meninjau ketentuan penyedia serta dasar pemrosesan yang sesuai untuk tiap integrasi pihak ketiga secara terpisah.
 
 ## 8. Masa simpan
 

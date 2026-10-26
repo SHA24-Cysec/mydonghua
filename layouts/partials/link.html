@@ -21,7 +21,9 @@
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-<link rel="dns-prefetch" href="https://mydonghua.disqus.com">
+{{ if eq .Layout "postingan-donghua" }}
+<link rel="dns-prefetch" href="https://{{ .Site.Params.disqusShortname | default "mydonghua" }}.disqus.com">
+{{ end }}
 
 {{/* Homepage LCP: preload hanya gambar hero utama. */}}
 {{ if .IsHome }}

@@ -1,0 +1,88 @@
+{{ $shortname := .Site.Params.disqusShortname | default "mydonghua" }}
+{{ $forum := printf "https://disqus.com/home/forum/%s/" $shortname }}
+<section class="diskusi-panel" id="ruang-diskusi" data-disqus-shortname="{{ $shortname }}" data-disqus-forum="{{ $forum }}" aria-labelledby="diskusi-judul">
+    <div class="diskusi-head">
+        <span class="diskusi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 20.5l1.5-4.6A8.4 8.4 0 0 1 3.6 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 8.4 8.4z"/></svg>
+        </span>
+        <div class="diskusi-heading">
+            <h2 class="diskusi-title" id="diskusi-judul">Ruang Diskusi</h2>
+            <p class="diskusi-subtitle">Bahas episode, teori, dan rekomendasi donghua di sini.</p>
+        </div>
+        <span class="diskusi-badge" id="diskusi-badge"><span class="diskusi-dot" aria-hidden="true"></span><span id="diskusi-count-text">Lihat komentar</span></span>
+    </div>
+
+    <div class="diskusi-rules" aria-label="Aturan singkat diskusi">
+        <span class="diskusi-rule"><b>01</b> Saling menghargai</span>
+        <span class="diskusi-rule"><b>02</b> Tandai spoiler</span>
+        <span class="diskusi-rule"><b>03</b> Tanpa tautan unduhan</span>
+    </div>
+
+    <div class="diskusi-divider" aria-hidden="true"></div>
+
+    <div class="diskusi-action">
+        <button class="diskusi-toggle" id="diskusi-toggle" type="button" aria-expanded="false" aria-controls="diskusi-pane">
+            <span class="diskusi-toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+            <span class="diskusi-toggle-label" id="diskusi-toggle-label">Buka diskusi</span>
+            <span class="diskusi-chevron" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+        </button>
+    </div>
+
+    <p class="diskusi-privacy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Kolom komentar memakai layanan Disqus. Skrip dan cookie Disqus baru aktif setelah kamu menekan tombol di atas. Kalau kolom tidak muncul, diskusi juga bisa dibaca di <a href="{{ $forum }}" target="_blank" rel="noopener noreferrer">halaman forum Disqus</a>.</span>
+    </p>
+
+    <noscript>
+        <p class="diskusi-noscript">Kolom diskusi membutuhkan JavaScript. Sementara itu, kamu bisa membacanya lewat <a href="{{ $forum }}" target="_blank" rel="noopener noreferrer">halaman forum Disqus</a>.</p>
+    </noscript>
+
+    <div class="diskusi-pane" id="diskusi-pane" hidden>
+        <div class="diskusi-bar">
+            <span class="diskusi-status is-loading" id="diskusi-status" role="status" aria-live="polite"><span class="diskusi-status-dot" aria-hidden="true"></span><span id="diskusi-status-text">Menyiapkan diskusi</span></span>
+            <button class="diskusi-mini" id="diskusi-reload" type="button" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+                Muat ulang
+            </button>
+            <a class="diskusi-mini" id="diskusi-forum-link" href="{{ $forum }}" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                Buka forum Disqus
+            </a>
+        </div>
+
+        <div class="diskusi-body">
+            <div class="diskusi-skeleton" id="diskusi-skeleton" aria-hidden="true">
+                <div class="diskusi-skel-row"><span class="diskusi-skel-avatar"></span><span class="diskusi-skel-lines"><i class="diskusi-skel-line w1"></i><i class="diskusi-skel-line w2"></i><i class="diskusi-skel-line w3"></i></span></div>
+                <div class="diskusi-skel-row"><span class="diskusi-skel-avatar"></span><span class="diskusi-skel-lines"><i class="diskusi-skel-line w1"></i><i class="diskusi-skel-line w2"></i><i class="diskusi-skel-line w3"></i></span></div>
+                <p class="diskusi-loading-note">Sedang menghubungkan ke Disqus, harap tunggu sebentar.</p>
+            </div>
+
+            <div class="diskusi-error" id="diskusi-error" hidden>
+                <span class="diskusi-error-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+                </span>
+                <h3 class="diskusi-error-title">Diskusi belum bisa dimuat</h3>
+                <p class="diskusi-error-text">Koneksi ke Disqus terputus atau diblokir peramban. Komentar kamu belum hilang, coba muat ulang sebentar lagi.</p>
+                <div class="diskusi-error-actions">
+                    <button class="diskusi-btn" id="diskusi-coba-lagi" type="button">Coba lagi</button>
+                    <a class="diskusi-btn diskusi-btn-ghost" href="{{ $forum }}" target="_blank" rel="noopener noreferrer">Buka forum Disqus</a>
+                </div>
+                <p class="diskusi-hint">Kalau memakai pemblokir iklan, izinkan domain disqus.com lalu muat ulang.</p>
+            </div>
+
+            <div id="disqus_thread" class="diskusi-thread"></div>
+            <span class="disqus-comment-count diskusi-comment-count" id="diskusi-count-sumber" data-disqus-identifier="">0</span>
+        </div>
+
+        <div class="diskusi-foot">
+            <span>Diskusi dikelola oleh Disqus.</span>
+            <span>Baca <a href='{{ relURL "privacy-policy/" }}'>Kebijakan Privasi</a> untuk rincian data yang diproses.</span>
+        </div>
+    </div>
+
+    <div class="diskusi-toast" id="diskusi-toast" role="status" aria-live="polite"></div>
+</section>
