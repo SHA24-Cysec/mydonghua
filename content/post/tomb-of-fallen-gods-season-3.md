@@ -171,4 +171,33 @@ downloadGroups:
       button: 'Belum Tersedia'
       size: ''
     
+  # Batch 4
+  - title: 'Tomb of Fallen Gods Season 3 Batch Subtitle Indonesia Episode 41-52 [END]'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1I5QdwsNIHgllxlXdbJr0TmxG_dPo17ct&export=download&authuser=0'
+      button: 'Download'
+      size: '2.81 GB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

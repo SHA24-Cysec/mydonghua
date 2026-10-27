@@ -43,27 +43,27 @@ keywords : 'Download Batch Battle Through the Heavens: Three Year Agreement Subt
 downloadGroups:
   
   # Batch 1
-  - title: 'Battle Through the Heavens: Three Year Agreement Batch Subtitle Indonesia Episode 1-7'
+  - title: 'Battle Through the Heavens: Three Year Agreement Batch Subtitle Indonesia Episode 01-07'
     
     downloads:
     
     - quality: '360p'
-      link: 'https://drive.usercontent.google.com/download?id=1_f07k7juPw1bbvHCqXAMlLZAhocTyn65&export=download&authuser=0'
+      link: 'https://acefile.co/f/65775700'
       button: 'Download'
       size: '849.89 MB'
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=1HcTMMkg4J3axZa61ay3K38hzg2sAOeG1&export=download&authuser=0'
+      link: 'https://acefile.co/f/65775705'
       button: 'Download'
       size: '1.54 GB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=180j9ntYjbVfE5hh3CLVqB8DAUArjgANK&export=download&authuser=0'
+      link: 'https://acefile.co/f/65775707'
       button: 'Download'
       size: '2.59 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1r5QJPCHIwOtmCtIhs3y5j5ba5AbG7ID-&export=download&authuser=0'
+      link: 'https://acefile.co/f/65775712'
       button: 'Download'
       size: '3.76 GB'
     
@@ -73,27 +73,27 @@ downloadGroups:
       size: ''
 
   # Batch 2
-  - title: 'Battle Through the Heavens: Three Year Agreement Batch Subtitle Indonesia Episode 8-13 [END]'
+  - title: 'Battle Through the Heavens: Three Year Agreement Batch Subtitle Indonesia Episode 08-13 [END]'
     
     downloads:
     
     - quality: '360p'
-      link: 'https://drive.usercontent.google.com/download?id=1D3aJ6XUxZqlDO1sdbcWqWj3e8Ctt3_cg&export=download&authuser=0'
+      link: 'https://acefile.co/f/65775716'
       button: 'Download'
       size: '637.26 MB'
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=1qXDq1QZJLjHj4MD4rWmHhHxXBN5bmJaK&export=download&authuser=0'
+      link: 'https://acefile.co/f/65775722'
       button: 'Download'
       size: '1.24 GB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=1UN-yTfl92klNWWippmEq2vDa3tSoWM1E&export=download&authuser=0'
+      link: 'https://acefile.co/f/65775729'
       button: 'Download'
       size: '2.21 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1lpkh9TX3dLtVhP_i4Q1wuD20LJ2HLLqB&export=download&authuser=0'
+      link: 'https://acefile.co/f/65775735'
       button: 'Download'
       size: '3.31 GB'
     

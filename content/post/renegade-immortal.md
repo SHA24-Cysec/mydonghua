@@ -462,4 +462,64 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 15
+  - title: 'Renegade Immortal Batch Subtitle Indonesia Episode 141-150'
+
+    downloads:
+
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1jy0oC09W5vRxRodb9TnidF4bJfmnQf6-&export=download&authuser=0'
+      button: 'Download'
+      size: '2.50 GB'
+
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 16
+  - title: 'Renegade Immortal Batch Subtitle Indonesia Episode 151-160'
+
+    downloads:
+
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=12KYwKXpkukFPoFU5yMVKQ3373o9iFLEx&export=download&authuser=0'
+      button: 'Download'
+      size: '2.45 GB'
+
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
