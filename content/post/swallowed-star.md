@@ -360,9 +360,9 @@ downloadGroups:
       size: '2.50 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/7vTBsbPH'
+      link: 'https://pixeldrain.com/u/NS7TSJGS'
       button: 'Download'
-      size: '2.60 GB'
+      size: '5.55 GB'
     
     - quality: '1080p'
       link: 'https://pixeldrain.com/u/zvofBjUM'

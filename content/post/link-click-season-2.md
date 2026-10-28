@@ -24,8 +24,8 @@ release : 'Jul 14, 2023'
 rating : 9.7
 
 # Jika ada Season selanjutnya, hilangkan komentar
-# linkSeasonSelanjutnya : ''
-# judulSeasonSelanjutnya : ''
+linkSeasonSelanjutnya : '/link-click-bridon-arc'
+judulSeasonSelanjutnya : 'Link Click: Bridon Arc Subtitle Indonesia'
 
 # Jika ada Season sebelumnya, hilangkan komentar
 linkSeasonSebelumnya : '/link-click/'
@@ -67,9 +67,9 @@ downloadGroups:
       size: '2 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=11BZf3jm9AZaOUkin5sD6igzv8sM9hGPa&export=download&authuser=0'
+      button: 'Download'
+      size: '3.70 GB'
     
     - quality: '4K'
       link: ''
