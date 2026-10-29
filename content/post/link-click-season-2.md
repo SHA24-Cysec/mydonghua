@@ -70,6 +70,7 @@ downloadGroups:
       link: 'https://drive.usercontent.google.com/download?id=11BZf3jm9AZaOUkin5sD6igzv8sM9hGPa&export=download&authuser=0'
       button: 'Download'
       size: '3.70 GB'
+      password: 'kazefuri.vip'
     
     - quality: '4K'
       link: ''

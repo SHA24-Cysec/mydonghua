@@ -31,7 +31,7 @@ if (hugo.status !== 0) {
 }
 rmSync(cadangan, { force: true });
 
-for (const langkah of ['audit:pwa', 'audit:build']) {
+for (const langkah of ['audit:pwa', 'audit:build', 'audit:password']) {
   const r = jalankan(langkah);
   if (r.status !== 0) process.exit(r.status ?? 1);
 }

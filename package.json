@@ -12,6 +12,7 @@
     "check:css": "node ./scripts/check-css.mjs",
     "audit:pwa": "node ./scripts/audit-pwa.mjs",
     "audit:build": "node ./scripts/audit-build.mjs",
+    "audit:password": "node ./scripts/audit-password.mjs",
     "uji:pwa": "node ./scripts/uji-pwa-browser.mjs",
     "check": "npm run check:content && npm run check:css && npm run audit:pwa"
   },

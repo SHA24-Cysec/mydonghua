@@ -31,7 +31,7 @@
                 {{ $link := strings.TrimSpace (printf "%v" (default "" $d.link)) }}
                 {{ if or (ne $quality "4K") $link }}
                     {{ $buttonLabel := $d.button | default "Belum Tersedia" }}
-                    {{ $isUnavailable := or (not $d.link) (in $buttonLabel "Belum") }}
+                    {{ $isUnavailable := or (not $link) (in $buttonLabel "Belum") }}
                     <article class="db-res-card{{ if $isUnavailable }} is-unavailable{{ end }}">
                         <div class="db-res-top">
                             <span class="db-quality">{{ $d.quality }}</span>
@@ -48,6 +48,20 @@
                             <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
                             <span>{{ $d.size }}</span>
                         </div>
+
+                        {{ $archivePassword := printf "%v" (default "" $d.password) }}
+                        {{ if and (not $isUnavailable) (ne (strings.TrimSpace $archivePassword) "") }}
+                            <div class="db-res-password">
+                                <span class="db-pass-label"><i class="fa-solid fa-lock" aria-hidden="true"></i> Password arsip {{ $d.quality }}</span>
+                                <div class="db-pass-action">
+                                    <code class="db-pass-value">{{ $archivePassword }}</code>
+                                    <button class="db-pass-copy btn btn--sekunder btn--kecil" type="button" data-pass-copy data-pass-text="{{ $archivePassword }}" aria-label="Salin password {{ $d.quality }} untuk {{ $group.title }}">
+                                        <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                                        <span class="db-pass-copy-text">Salin</span>
+                                    </button>
+                                </div>
+                            </div>
+                        {{ end }}
 
                         {{ if $isUnavailable }}
                             <span class="db-button is-locked" aria-disabled="true">

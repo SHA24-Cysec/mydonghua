@@ -12,6 +12,7 @@ status : 'Completed'
 sub : 'Anichin'
 durasi : '14 Menit'
 episode : '12 Episode'
+password : 'kf'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Dec 8, 2016'
 # Rating 1-10

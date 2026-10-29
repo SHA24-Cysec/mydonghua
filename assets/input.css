@@ -1368,6 +1368,31 @@ body.has-floating-ad .btt-wrapper {
         }
     }
 
+    .db-res-password {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 0.5rem;
+        min-width: 0;
+        margin-bottom: 0.85rem;
+    }
+
+    .db-res-password .db-pass-action {
+        grid-template-columns: minmax(0, 1fr);
+        justify-content: stretch;
+    }
+
+    .db-res-password .db-pass-value {
+        justify-content: flex-start;
+        padding-inline: 0.6rem;
+        font-size: 0.82rem;
+        letter-spacing: 0;
+    }
+
+    .db-res-password .db-pass-copy {
+        padding-inline: 0.65rem;
+    }
+
     .db-groups {
         display: grid;
         grid-template-columns: 1fr;

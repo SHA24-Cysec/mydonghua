@@ -1,7 +1,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'donghuabatch-pwa';
-const CACHE_VERSION = '2026-10-26-2';
+const CACHE_VERSION = '2026-10-29-1';
 const SHELL_CACHE = `${CACHE_PREFIX}-shell-${CACHE_VERSION}`;
 const PAGE_CACHE = `${CACHE_PREFIX}-pages`;
 const ASSET_CACHE = `${CACHE_PREFIX}-assets`;
@@ -132,15 +132,21 @@ self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
     const activeCaches = new Set([SHELL_CACHE, PAGE_CACHE, ASSET_CACHE, IMAGE_CACHE]);
     const cacheNames = await caches.keys();
-    let legacyShellFound = false;
+    const legacyShellFound = cacheNames.some((cacheName) =>
+      cacheName.startsWith(CACHE_PREFIX) &&
+      cacheName.includes('-shell-') &&
+      !activeCaches.has(cacheName)
+    );
+
+    if (legacyShellFound) {
+      await caches.delete(PAGE_CACHE);
+      await caches.delete(ASSET_CACHE);
+      await caches.delete(IMAGE_CACHE);
+    }
 
     for (const cacheName of cacheNames) {
       if (!cacheName.startsWith(CACHE_PREFIX)) continue;
       if (activeCaches.has(cacheName)) continue;
-
-      if (cacheName.includes('-shell-')) {
-        legacyShellFound = true;
-      }
 
       for (const [prefix, migration] of Object.entries(LEGACY_RUNTIME_CACHES)) {
         if (!cacheName.includes(prefix)) continue;
@@ -149,12 +155,6 @@ self.addEventListener('activate', (event) => {
       }
 
       await caches.delete(cacheName);
-    }
-
-    if (legacyShellFound) {
-      await caches.delete(PAGE_CACHE);
-      await caches.delete(ASSET_CACHE);
-      await caches.delete(IMAGE_CACHE);
     }
 
     await self.clients.claim();
