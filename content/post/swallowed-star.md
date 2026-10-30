@@ -549,4 +549,62 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 221-230'
+  
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1pWH5fi7cjWDK3j_niWAOKuPbeRVDV4O5&export=download&authuser=0'
+      button: 'Download'
+      size: '2.54 GB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  - title: 'Swallowed Star Batch Subtitle Indonesia Episode 231-240'
+  
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: 'https://drive.usercontent.google.com/download?id=1LGebZGxMoVq3v9_aZSpRunC4FYO_SaCN&export=download&authuser=0'
+      button: 'Download'
+      size: '2.45 GB'
+    
+    - quality: '720p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---
