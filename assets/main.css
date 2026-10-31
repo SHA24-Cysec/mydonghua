@@ -9232,6 +9232,181 @@ html body .site-empty-state.hidden, html body .site-empty-state[hidden] {
     transition-duration: 0.01ms !important;
   }
 }
+.panduan-figure {
+  margin: 1.15rem 0 1.75rem;
+  border: 1px solid rgba(125, 211, 252, 0.20);
+  border-radius: var(--site-radius-lg);
+  background: linear-gradient(180deg, rgba(10, 15, 34, 0.94), rgba(6, 9, 22, 0.98));
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.30);
+}
+.panduan-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 960 / 560;
+}
+.panduan-figure figcaption {
+  padding: 0.65rem 1rem;
+  border-top: 1px solid rgba(125, 211, 252, 0.12);
+  background: rgba(6, 9, 22, 0.96);
+  color: #9fb1c9;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+.gdrive-tool {
+  margin: 1.25rem 0 1.85rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid rgba(34, 211, 238, 0.26);
+  border-radius: var(--site-radius-lg);
+  background: radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.11), transparent 44%), radial-gradient(circle at 92% 100%, rgba(139, 92, 246, 0.10), transparent 44%), linear-gradient(180deg, rgba(10, 15, 34, 0.95), rgba(6, 9, 22, 0.98));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 14px 32px rgba(0, 0, 0, 0.26);
+}
+.gdrive-tool-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.72rem;
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  border-radius: 9999px;
+  background: rgba(34, 211, 238, 0.10);
+  color: #67e8f9;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.gdrive-tool .gdrive-tool-title {
+  margin: 0.6rem 0 0.35rem;
+  color: #f8fafc;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-shadow: none;
+}
+.gdrive-tool .gdrive-tool-desc {
+  margin: 0 0 0.95rem;
+  color: #9fb1c9;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.gdrive-tool-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.gdrive-tool-label {
+  color: #cbd5e1;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+.gdrive-tool-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+.gdrive-tool-controls .cyber-input-search {
+  flex: 1 1 18rem;
+  min-height: 44px;
+  border-radius: 0.85rem;
+  font-size: 0.86rem;
+}
+.gdrive-tool-btn-primary, .gdrive-tool-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.48rem;
+  min-height: 44px;
+  padding: 0.62rem 1.05rem;
+  border-radius: 0.85rem;
+  font-size: 0.83rem;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+  transition: transform var(--site-transition-fast), border-color var(--site-transition-fast), filter var(--site-transition-fast);
+}
+.gdrive-tool-btn-primary {
+  border: 1px solid rgba(34, 211, 238, 0.42);
+  background: linear-gradient(135deg, var(--site-cyan), var(--site-purple));
+  color: #060816;
+  box-shadow: 0 10px 22px rgba(34, 211, 238, 0.18);
+}
+.gdrive-tool-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+.gdrive-tool-btn-secondary {
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  background: rgba(15, 23, 42, 0.88);
+  color: #e2e8f0;
+}
+.gdrive-tool-btn-secondary:hover {
+  border-color: rgba(103, 232, 249, 0.45);
+  color: #67e8f9;
+}
+.gdrive-tool-btn-primary:focus-visible, .gdrive-tool-btn-secondary:focus-visible {
+  outline: var(--site-focus-ring);
+  outline-offset: var(--site-focus-offset);
+}
+.gdrive-tool-status {
+  margin-top: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.78rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.gdrive-tool-status[hidden], .gdrive-tool-result[hidden] {
+  display: none !important;
+}
+.gdrive-tool-status.is-error {
+  border: 1px solid rgba(251, 113, 133, 0.38);
+  background: rgba(76, 5, 25, 0.42);
+  color: #fecdd3;
+}
+.gdrive-tool-status.is-success {
+  border: 1px solid rgba(52, 211, 153, 0.36);
+  background: rgba(6, 78, 59, 0.36);
+  color: #a7f3d0;
+}
+.gdrive-tool-result {
+  margin-top: 0.85rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  border-radius: 0.85rem;
+  background: rgba(8, 13, 30, 0.88);
+}
+.gdrive-tool-result-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #7dd3fc;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.gdrive-tool-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.65rem;
+}
+.gdrive-tool-privacy {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.8rem 0 0 !important;
+  color: #7c8ea6;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+@media (max-width: 640px) {
+  .gdrive-tool {
+    padding: 0.95rem;
+  }
+  .gdrive-tool-controls .gdrive-tool-btn-primary, .gdrive-tool-controls .gdrive-tool-btn-secondary, .gdrive-tool-result-actions .gdrive-tool-btn-primary, .gdrive-tool-result-actions .gdrive-tool-btn-secondary {
+    flex: 1 1 auto;
+  }
+}
 @property --tw-divide-y-reverse {
   syntax: "*";
   inherits: false;

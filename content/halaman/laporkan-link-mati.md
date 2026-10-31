@@ -27,6 +27,7 @@ Rata-rata laporan ditangani dalam 1 kali 24 jam. Isi kolom email kalau kamu ingi
 Sebagian link sebenarnya masih hidup, hanya butuh langkah ekstra:
 
 - Halaman shortlink yang tidak lanjut ke tujuan biasanya karena ekstensi peramban atau pengaturan privasi yang ketat. Baca panduan di [cara melewati safelinku](/cara-melewati-safelinku/).
+- Link **Google Drive** yang memunculkan pesan kuota terlampaui atau terlalu banyak pengguna tetap bisa langsung diunduh tanpa menunggu 24 jam. Ikuti langkahnya di [cara mengatasi limit Google Drive](/cara-mengatasi-limit-google-drive/).
 - Link dari **acefile.co** kadang perlu refresh beberapa kali atau login akun Google dulu sampai tombol **Fast Download** muncul.
 - Tombol bertanda **Pending** berarti resolusi itu memang belum tersedia, jadi tidak perlu dilaporkan.
 

@@ -96,3 +96,7 @@
 {{ if $isRequest }}
 {{- template "minjs" "js/site-request-donghua.js" -}}
 {{ end }}
+
+{{ if eq .RelPermalink "/cara-mengatasi-limit-google-drive/" }}
+{{- template "minjs" "js/site-gdrive-limit.js" -}}
+{{ end }}
