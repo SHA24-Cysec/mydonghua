@@ -44,7 +44,7 @@ keywords : 'Download Batch Tomb of Fallen Gods Season 2 Subtitle Indonesia'
 
 downloadGroups:
   
-  - title: 'Tomb of Fallen Gods Season 2 Batch Subtitle Indonesia'
+  - title: 'Tomb of Fallen Gods Season 2 Batch Subtitle Indonesia Episode 01-15'
     
     downloads:
     
@@ -54,19 +54,48 @@ downloadGroups:
       size: ''
     
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://www.mediafire.com/file/sjc8kv79cdkj21q/Anichin.best_Tom.Fa.God.S2.Ep1-15_480p.zip/file'
+      button: 'Download'
+      size: '2 GB'
     
     - quality: '720p'
+      link: 'https://www.mediafire.com/file/5hps1mq1wi00l18/Anichin.best_Tom.Fa.God.S2.Ep1-15_720p.zip/file'
+      button: 'Download'
+      size: '5 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/41z0tohggh7pykr/Anichin.best_Tom.Fa.God.S2.Ep1-15_1080p.zip/file'
+      button: 'Download'
+      size: '8 GB'
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  - title: 'Tomb of Fallen Gods Season 2 Batch Subtitle Indonesia Episode 16-27 [END]'
+    
+    downloads:
+    
+    - quality: '360p'
       link: ''
       button: 'Belum Tersedia'
       size: ''
     
-    - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=17nbMVR3XI_i1B2wdtgfSjZ5KF8BhgA4A&export=download&authuser=0'
+    - quality: '480p'
+      link: 'https://www.mediafire.com/file/zte0lh782uf9hm4/Anichin.best_Tom.Fa.God.S2.Ep16-27End_480p.zip/file'
       button: 'Download'
-      size: '15 GB'
+      size: '2 GB'
+    
+    - quality: '720p'
+      link: 'https://www.mediafire.com/file/rgrj2mfa2c52u5q/Anichin.best_Tom.Fa.God.S2.Ep16-27End_720p.zip/file'
+      button: 'Download'
+      size: '4 GB'
+    
+    - quality: '1080p'
+      link: 'https://www.mediafire.com/file/8lnlrq159db1zzm/Anichin.best_Tom.Fa.God.S2.Ep16-27End_1080p.zip/file'
+      button: 'Download'
+      size: '7 GB'
     
     - quality: '4K'
       link: ''
