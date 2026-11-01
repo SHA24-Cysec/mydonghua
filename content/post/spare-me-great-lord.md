@@ -20,6 +20,14 @@ release : 'Dec 03, 2021'
 # Rating 1-10
 rating : 8
 
+# Jika ada Season selanjutnya, hilangkan komentar
+linkSeasonSelanjutnya : '/spare-me-great-lord-season-2'
+judulSeasonSelanjutnya : 'Spare Me, Great Lord! Season 2 Subtitle Indonesia'
+
+# Jika ada Season sebelumnya, hilangkan komentar
+# linkSeasonSebelumnya : ''
+# judulSeasonSebelumnya : ''
+
 # Gambar width: 200, height : 300
 thumbnail : /img/post/spare-me-great-lord.webp
 image : /img/post/spare-me-great-lord.webp
@@ -40,24 +48,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://acefile.co/f/67711441'
+      link: 'https://acefile.co/f/74237269'
       button: 'Download'
-      size: '657.82 MB'
+      size: '646.44 MB'
     
     - quality: '480p'
-      link: 'https://drive.usercontent.google.com/download?id=1R8ciO284Uo__vlc0xMCH5WohJ55Zrjxi&export=download&authuser=0'
+      link: 'https://acefile.co/f/74237272'
       button: 'Download'
-      size: '1.19 GB'
+      size: '1.18 GB'
     
     - quality: '720p'
-      link: 'https://drive.usercontent.google.com/download?id=16mQy0i9PH4bOlubds8EkjFac01tIO-D5&export=download&authuser=0'
+      link: 'https://acefile.co/f/74237274'
       button: 'Download'
       size: '2 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1JQTb3QvvZH8hnV3R5JF73Vj6xWDhTVFA&export=download&authuser=0'
+      link: 'https://acefile.co/f/74237275'
       button: 'Download'
-      size: '3.14 GB'
+      size: '3.13 GB'
     
     - quality: '4K'
       link: ''
