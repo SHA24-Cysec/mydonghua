@@ -463,15 +463,42 @@ async function utama() {
         if (hasil.errorText) throw new Error(`Navigasi gagal: ${hasil.errorText}`);
         const info = await nilai(
           `(async () => {
-            const batas = new Promise((_, tolak) => setTimeout(
-              () => tolak(new Error('tidak ada service worker aktif dalam 20 detik, kemungkinan pendaftaran gagal')),
-              20000
-            ));
-            const reg = await Promise.race([navigator.serviceWorker.ready, batas]);
+            let pewaktu;
+            const batas = new Promise((_, tolak) => {
+              pewaktu = setTimeout(
+                () => tolak(new Error('tidak ada service worker aktif dalam 20 detik, kemungkinan pendaftaran gagal')),
+                20000
+              );
+            });
+            const reg = await Promise.race([navigator.serviceWorker.ready, batas])
+              .finally(() => clearTimeout(pewaktu));
+            const pekerja = reg.active;
+            if (!pekerja) throw new Error('Service worker aktif tidak tersedia.');
+            if (pekerja.state !== 'activated') {
+              await new Promise((selesai, tolak) => {
+                const batasAktivasi = setTimeout(() => {
+                  pekerja.removeEventListener('statechange', periksaKeadaan);
+                  tolak(new Error('Service worker tidak selesai aktivasi dalam 20 detik.'));
+                }, 20000);
+                function periksaKeadaan() {
+                  if (pekerja.state === 'activated') {
+                    clearTimeout(batasAktivasi);
+                    pekerja.removeEventListener('statechange', periksaKeadaan);
+                    selesai();
+                  } else if (pekerja.state === 'redundant') {
+                    clearTimeout(batasAktivasi);
+                    pekerja.removeEventListener('statechange', periksaKeadaan);
+                    tolak(new Error('Service worker menjadi redundant saat aktivasi.'));
+                  }
+                }
+                pekerja.addEventListener('statechange', periksaKeadaan);
+                periksaKeadaan();
+              });
+            }
             return {
               scope: reg.scope,
-              state: reg.active ? reg.active.state : null,
-              jalur: reg.active ? new URL(reg.active.scriptURL).pathname : null
+              state: pekerja.state,
+              jalur: new URL(pekerja.scriptURL).pathname
             };
           })()`
         );
