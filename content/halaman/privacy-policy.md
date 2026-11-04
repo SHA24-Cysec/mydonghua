@@ -7,7 +7,7 @@ layout : halaman
 url : privacy-policy
 ---
 
-Berlaku sejak 23 Juli 2026. Terakhir diperbarui 26 Oktober 2026.
+Berlaku sejak 23 Juli 2026. Terakhir diperbarui 4 November 2026.
 
 Halaman ini menjelaskan data apa yang kami kumpulkan, siapa yang menerimanya, dan hak apa yang kamu punya. Kami berusaha menuliskannya secara konkret: setiap penyedia pihak ketiga disebut namanya, bukan disamarkan sebagai "pihak ketiga".
 
@@ -59,7 +59,7 @@ Kami memakai pemeriksaan ini untuk mencegah salah tulis domain dan email sekali-
 | Adsterra | Jaringan iklan | Data perangkat dan pengenal yang dipasang jaringan itu sendiri. Kami tidak mengatur isi penyimpanannya, dan domain penyaji skripnya bisa berubah |
 | Disqus (`mydonghua.disqus.com`) | Kolom komentar dan angka jumlah komentar | Data akun, kunjungan, dan isi komentar. Dua skripnya, `embed.js` dan `count.js`, baru dimuat setelah kamu membuka panel Ruang Diskusi |
 | Safelinku (`sfl.gl`) | Menulis ulang tautan unduhan keluar | Informasi klik pada tautan yang diproses |
-| Vercel | Penyedia hosting | Log permintaan seperti alamat IP, identitas peramban, dan waktu akses untuk penyajian dan keamanan situs |
+| Cloudflare Workers (`cloudflare.com`) | Hosting dan penyajian aset situs | Data permintaan seperti alamat IP, informasi peramban, dan waktu akses yang diproses saat permintaan melewati jaringan Cloudflare. Ketentuan pemrosesan mengikuti [kebijakan privasi Cloudflare](https://www.cloudflare.com/privacypolicy/) |
 
 Beberapa tautan keluar mengarah ke layanan lain, misalnya Saweria untuk dukungan, Terabox dan Google Drive untuk berkas unduhan, serta Instagram. Layanan itu baru menerima datamu kalau kamu menekan tautannya. Kami tidak menanamkan skrip mereka di situs ini.
 
