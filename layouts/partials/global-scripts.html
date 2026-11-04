@@ -3,6 +3,7 @@
 {{- $isKontak := eq .Layout "kontak" -}}
 {{- $isLaporkan := eq .Layout "laporkan-link-mati" -}}
 {{- $isRequest := eq .Layout "request-donghua" -}}
+{{- $isDmca := eq .Layout "dmca" -}}
 {{- $isSearch := eq .Layout "search" -}}
 {{- $isFilterGenre := eq .Layout "filter-genre" -}}
 {{- $isFavorite := eq .Layout "favorit" -}}
@@ -83,8 +84,12 @@
      halaman Laporkan Link Mati, dan halaman Request Donghua.
      Dimuat lebih dulu supaya halaman yang memakainya bisa memasangnya
      lewat window.SiteEmailGuard.attach(). */}}
-{{ if or $isKontak $isLaporkan $isRequest }}
+{{ if or $isKontak $isLaporkan $isRequest $isDmca }}
 {{- template "minjs" "js/site-kontak-email.js" -}}
+{{ end }}
+
+{{ if $isDmca }}
+{{- template "minjs" "js/site-dmca.js" -}}
 {{ end }}
 
 {{/* Laporan Link Mati-only: validasi kolom, prefill dari tombol halaman

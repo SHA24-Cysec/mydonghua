@@ -9407,6 +9407,148 @@ html body .site-empty-state.hidden, html body .site-empty-state[hidden] {
     flex: 1 1 auto;
   }
 }
+.dmca-page, .dmca-page * {
+  box-sizing: border-box;
+}
+.dmca-policy {
+  margin-bottom: 1.25rem;
+}
+.dmca-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.dmca-field-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.dmca-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #67e8f9;
+}
+.dmca-label--purple {
+  color: #d8b4fe;
+}
+.dmca-required {
+  color: #f472b6;
+}
+.dmca-hint {
+  padding: 0 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #7d8ea8;
+}
+.dmca-field-error {
+  padding: 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fda4af;
+}
+.dmca-form .cyber-input-search.is-invalid, .dmca-form .cyber-textarea-message.is-invalid, .dmca-form .cyber-select.is-invalid {
+  border-color: rgba(244, 63, 94, 0.65);
+  box-shadow: 0 0 14px rgba(244, 63, 94, 0.16);
+}
+.dmca-form .cyber-input-search.is-invalid:focus, .dmca-form .cyber-textarea-message.is-invalid:focus, .dmca-form .cyber-select.is-invalid:focus {
+  border-color: rgba(244, 63, 94, 0.8);
+}
+.dmca-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.dmca-checkbox-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.dmca-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #cbd8ea;
+}
+.dmca-checkbox input {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+  accent-color: #22d3ee;
+}
+.dmca-checkbox input:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 2px;
+}
+.dmca-checkbox input.is-invalid {
+  outline: 2px solid rgba(244, 63, 94, 0.8);
+  outline-offset: 2px;
+}
+.dmca-note {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: #7d8ea8;
+}
+.dmca-note a {
+  color: #67e8f9;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.dmca-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.dmca-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: var(--site-radius-md);
+  background: rgba(15, 23, 42, 0.7);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.dmca-status[hidden] {
+  display: none !important;
+}
+.dmca-status strong {
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+.dmca-status p {
+  margin: 0;
+  color: #a7b6cc;
+}
+.dmca-status--success {
+  border-color: rgba(34, 211, 238, 0.4);
+  background: rgba(8, 30, 38, 0.78);
+  color: #a5f3fc;
+}
+.dmca-status--error {
+  border-color: rgba(244, 63, 94, 0.42);
+  background: rgba(38, 9, 16, 0.78);
+  color: #fecdd3;
+}
+.dmca-status--warning {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: rgba(38, 27, 6, 0.78);
+  color: #fde68a;
+}
+@media (min-width: 640px) {
+  .dmca-field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 @property --tw-divide-y-reverse {
   syntax: "*";
   inherits: false;

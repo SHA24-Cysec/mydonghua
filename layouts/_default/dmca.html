@@ -1,0 +1,139 @@
+{{ define "main" }}
+{{- $endpoint := site.Params.formspreeDmca | default "https://formspree.io/f/xregejlg" -}}
+<div class="dmca-page w-full max-w-7xl mx-auto px-3 lg:px-0 mt-4 mb-0">
+  <div class="panel-neon p-3 sm:p-5 w-full">
+    <div class="mb-5 sm:mb-6">
+      {{ partial "page-header" (dict
+        "context" .
+        "title" .Title
+        "align" "center"
+        "kicker" "Hak Cipta"
+        "kickerIcon" "fa-solid fa-shield-halved text-cyan-400"
+      ) }}
+    </div>
+
+    <div class="prose-neon site-prose-shell font-sans dmca-policy">
+      {{ .Content }}
+    </div>
+
+    <section class="panel-neon-inset p-4 sm:p-5 mt-5" aria-labelledby="dmcaFormTitle">
+      <h2 id="dmcaFormTitle" class="text-white font-extrabold text-lg sm:text-xl mb-2 leading-tight tracking-tight">Kirim laporan DMCA</h2>
+      <p class="text-[#9fb1c9] text-sm leading-relaxed mb-4">
+        Kolom bertanda <span class="dmca-required" aria-hidden="true">*</span> wajib diisi. Jangan mengirim kata sandi, dokumen identitas lengkap, atau berkas video/audio melalui formulir ini.
+      </p>
+
+      <form id="dmcaForm" class="dmca-form flex flex-col gap-4" action="{{ $endpoint }}" method="POST" data-dmca-form>
+        <input type="hidden" name="jenis_laporan" value="Laporan DMCA">
+        <input type="hidden" name="_subject" value="[DonghuaBatch] Laporan DMCA">
+
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="dmcaKolomTambahan">Kolom tambahan</label>
+          <input id="dmcaKolomTambahan" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="dmca-field-grid">
+          <label class="dmca-field" for="dmcaNama">
+            <span class="dmca-label">Nama lengkap <span class="dmca-required" aria-hidden="true">*</span></span>
+            <input id="dmcaNama" name="nama_lengkap" type="text" required maxlength="120" class="cyber-input-search" autocomplete="name" aria-describedby="dmcaNamaError">
+            <span id="dmcaNamaError" class="dmca-field-error" data-dmca-error="nama_lengkap" hidden></span>
+          </label>
+
+          <label class="dmca-field" for="dmcaEmail">
+            <span class="dmca-label">Email aktif <span class="dmca-required" aria-hidden="true">*</span></span>
+            <input id="dmcaEmail" name="email" type="email" required maxlength="254" class="cyber-input-search" autocomplete="email" spellcheck="false" aria-describedby="dmcaEmailFeedback dmcaEmailError">
+            <span id="dmcaEmailFeedback" class="form-email-feedback" role="status" aria-live="polite" data-email-feedback hidden></span>
+            <span id="dmcaEmailError" class="dmca-field-error" data-dmca-error="email" hidden></span>
+          </label>
+        </div>
+
+        <div class="dmca-field-grid">
+          <label class="dmca-field" for="dmcaKapasitas">
+            <span class="dmca-label">Kapasitas pelapor <span class="dmca-required" aria-hidden="true">*</span></span>
+            <select id="dmcaKapasitas" name="kapasitas" required class="cyber-select" aria-describedby="dmcaKapasitasError">
+              <option value="">Pilih kapasitas</option>
+              <option value="pemegang_hak">Pemegang hak cipta</option>
+              <option value="perwakilan_berwenang">Perwakilan berwenang</option>
+            </select>
+            <span id="dmcaKapasitasError" class="dmca-field-error" data-dmca-error="kapasitas" hidden></span>
+          </label>
+
+          <label class="dmca-field" for="dmcaKontakTambahan">
+            <span class="dmca-label dmca-label--purple">Alamat surat atau telepon</span>
+            <input id="dmcaKontakTambahan" name="kontak_tambahan" type="text" maxlength="300" class="cyber-input-search" autocomplete="street-address" aria-describedby="dmcaKontakTambahanHint dmcaKontakTambahanError">
+            <span id="dmcaKontakTambahanHint" class="dmca-hint">Opsional. Isi hanya jika diperlukan untuk korespondensi resmi.</span>
+            <span id="dmcaKontakTambahanError" class="dmca-field-error" data-dmca-error="kontak_tambahan" hidden></span>
+          </label>
+        </div>
+
+        <label class="dmca-field" for="dmcaKarya">
+          <span class="dmca-label">Karya yang diduga dilanggar <span class="dmca-required" aria-hidden="true">*</span></span>
+          <textarea id="dmcaKarya" name="karya_dilindungi" required rows="3" maxlength="1000" class="cyber-textarea-message" placeholder="Contoh: Link Click Season 2, episode 1 sampai 12" aria-describedby="dmcaKaryaHint dmcaKaryaError"></textarea>
+          <span id="dmcaKaryaHint" class="dmca-hint">Sebutkan judul atau daftar karya yang cukup jelas untuk identifikasi.</span>
+          <span id="dmcaKaryaError" class="dmca-field-error" data-dmca-error="karya_dilindungi" hidden></span>
+        </label>
+
+        <label class="dmca-field" for="dmcaUrlHalaman">
+          <span class="dmca-label">URL halaman DonghuaBatch <span class="dmca-required" aria-hidden="true">*</span></span>
+          <textarea id="dmcaUrlHalaman" name="url_halaman" required rows="3" maxlength="3000" class="cyber-textarea-message" placeholder="https://donghuabatch.com/nama-donghua/" aria-describedby="dmcaUrlHalamanHint dmcaUrlHalamanError"></textarea>
+          <span id="dmcaUrlHalamanHint" class="dmca-hint">Satu URL per baris, maksimal 20 URL. Gunakan alamat halaman di donghuabatch.com.</span>
+          <span id="dmcaUrlHalamanError" class="dmca-field-error" data-dmca-error="url_halaman" hidden></span>
+        </label>
+
+        <label class="dmca-field" for="dmcaMateri">
+          <span class="dmca-label">Bagian materi yang dilaporkan <span class="dmca-required" aria-hidden="true">*</span></span>
+          <textarea id="dmcaMateri" name="materi_dilaporkan" required rows="3" maxlength="1500" class="cyber-textarea-message" placeholder="Contoh: tautan unduhan 1080p episode 1 sampai 12, gambar sampul, atau teks sinopsis" aria-describedby="dmcaMateriHint dmcaMateriError"></textarea>
+          <span id="dmcaMateriHint" class="dmca-hint">Jelaskan bagian yang ingin ditinjau agar kami dapat menemukannya dengan tepat.</span>
+          <span id="dmcaMateriError" class="dmca-field-error" data-dmca-error="materi_dilaporkan" hidden></span>
+        </label>
+
+        <label class="dmca-field" for="dmcaUrlReferensi">
+          <span class="dmca-label dmca-label--purple">Tautan referensi atau bukti pendukung</span>
+          <textarea id="dmcaUrlReferensi" name="url_referensi" rows="2" maxlength="2000" class="cyber-textarea-message" placeholder="https://situs-resmi.example/karya" aria-describedby="dmcaUrlReferensiHint dmcaUrlReferensiError"></textarea>
+          <span id="dmcaUrlReferensiHint" class="dmca-hint">Opsional, maksimal 10 URL. Jangan kirim berkas atau dokumen identitas lengkap.</span>
+          <span id="dmcaUrlReferensiError" class="dmca-field-error" data-dmca-error="url_referensi" hidden></span>
+        </label>
+
+        <label class="dmca-field" for="dmcaTandaTangan">
+          <span class="dmca-label">Tanda tangan elektronik <span class="dmca-required" aria-hidden="true">*</span></span>
+          <input id="dmcaTandaTangan" name="tanda_tangan" type="text" required maxlength="120" class="cyber-input-search" placeholder="Ketik nama lengkap" autocomplete="name" aria-describedby="dmcaTandaTanganHint dmcaTandaTanganError">
+          <span id="dmcaTandaTanganHint" class="dmca-hint">Ketikan nama lengkap berfungsi sebagai tanda tangan elektronik untuk laporan ini.</span>
+          <span id="dmcaTandaTanganError" class="dmca-field-error" data-dmca-error="tanda_tangan" hidden></span>
+        </label>
+
+        <div class="dmca-checkbox-group">
+          <div class="dmca-checkbox-item">
+            <label class="dmca-checkbox" for="dmcaItikBaik">
+              <input id="dmcaItikBaik" type="checkbox" name="pernyataan_itik_baik" value="ya" required aria-describedby="dmcaItikBaikError">
+              <span>Saya yakin dengan itikad baik bahwa penggunaan materi yang dilaporkan tidak diizinkan oleh pemegang hak cipta, kuasanya, atau hukum.</span>
+            </label>
+            <span id="dmcaItikBaikError" class="dmca-field-error" data-dmca-error="pernyataan_itik_baik" hidden></span>
+          </div>
+
+          <div class="dmca-checkbox-item">
+            <label class="dmca-checkbox" for="dmcaAkurasi">
+              <input id="dmcaAkurasi" type="checkbox" name="pernyataan_akurasi" value="ya" required aria-describedby="dmcaAkurasiError">
+              <span>Saya menyatakan informasi dalam laporan ini akurat dan, di bawah ancaman sanksi hukum atas keterangan palsu atau <em>penalty of perjury</em>, saya berwenang bertindak atas nama pemegang hak eksklusif yang diduga dilanggar.</span>
+            </label>
+            <span id="dmcaAkurasiError" class="dmca-field-error" data-dmca-error="pernyataan_akurasi" hidden></span>
+          </div>
+        </div>
+
+        <p class="dmca-note">
+          Dengan mengirim laporan, kamu menyetujui pemrosesan data laporan sesuai <a href="{{ relURL "privacy-policy/" }}">Kebijakan Privasi</a>. Laporan dikirim melalui Formspree.
+        </p>
+
+        <div class="dmca-actions">
+          <button class="cyber-button w-full rounded-xl p-3.5 uppercase tracking-wider font-extrabold text-sm" type="submit" data-dmca-submit>
+            <span data-dmca-submit-label>Kirim Laporan DMCA</span>
+          </button>
+          <div id="dmcaStatus" class="dmca-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        </div>
+
+        <noscript>
+          <p class="dmca-note">JavaScript tidak aktif. Formulir tetap dapat dikirim, tetapi pemeriksaan tambahan dan status langsung tidak tersedia.</p>
+        </noscript>
+      </form>
+    </section>
+  </div>
+</div>
+{{ end }}

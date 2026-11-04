@@ -25,7 +25,7 @@ Kami tidak menanggung pelanggaran hukum yang kamu lakukan di wilayahmu.
 
 ## 3. Hak Cipta
 
-DonghuaBatch mengumpulkan dan menyediakan file batch. Subtitle Indonesia berasal dari Anichin dan penerjemah lainnya. Kami tidak menerjemahkan sendiri. Hak cipta donghua tetap milik pembuat dan pemegang lisensi resmi. Hubungi kami lewat halaman Kontak kalau merasa hak ciptamu dilanggar.
+DonghuaBatch menampilkan informasi donghua dan tautan unduhan yang mengarah ke layanan pihak ketiga. Subtitle Indonesia berasal dari Anichin dan penerjemah lainnya. Kami tidak menerjemahkan sendiri. Hak cipta donghua tetap milik pembuat dan pemegang lisensi resmi. Jika kamu pemegang hak atau perwakilan berwenang dan menemukan materi atau tautan yang diduga melanggar, kirim laporan melalui halaman [DMCA](/dmca/).
 
 ## 4. Tanggung Jawab Pengguna
 

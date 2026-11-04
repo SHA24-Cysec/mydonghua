@@ -22,6 +22,7 @@ defaultContentLanguage = 'id'
     disqusShortname = 'mydonghua'
     formspreeRequestDonatur = 'https://formspree.io/f/xregejlg'
     formspreeRequestUmum = 'https://formspree.io/f/xregejlg'
+    formspreeDmca = 'https://formspree.io/f/xregejlg'
 
 [sitemap]
     changeFreq = 'weekly'

@@ -52,7 +52,7 @@ Kami memakai pemeriksaan ini untuk mencegah salah tulis domain dan email sekali-
 
 | Penyedia | Peran | Data yang diterima |
 |---|---|---|
-| Formspree (`formspree.io`) | Mengantar kiriman formulir Kontak, Laporkan Link Mati, dan Request Donghua ke kotak masuk kami | Seluruh isi formulir, ditambah alamat IP dan identitas peramban dari permintaan pengiriman |
+| Formspree (`formspree.io`) | Mengantar kiriman formulir Kontak, Laporkan Link Mati, Request Donghua, dan DMCA ke kotak masuk kami | Seluruh isi formulir, ditambah alamat IP dan identitas peramban dari permintaan pengiriman |
 | Google Analytics 4 (`G-7B40JB824Z`) | Statistik kunjungan | Data kunjungan dan cookie analitik pihak pertama yang dapat dipakai GA4 untuk membedakan pengguna dan sesi pada halaman produksi |
 | Cloudflare (`cloudflare-dns.com`) | Pemeriksaan keberadaan domain email | Hanya domain email |
 | Google Public DNS (`dns.google`) | Cadangan pemeriksaan yang sama | Hanya domain email |
@@ -91,7 +91,7 @@ GA4 dapat menggunakan cookie pihak pertama pada halaman produksi. Kedua skrip Di
 Kami memproses data dengan dasar berikut, mengacu pada [Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi](https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang+nomor+27+tahun+2022):
 
 - **Kepentingan sah lainnya** untuk statistik kunjungan Google Analytics 4, yaitu memahami halaman yang dibuka dan meningkatkan layanan. Dasar yang dipilih pengelola adalah Pasal 20 ayat (2) huruf f UU PDP, dengan mempertimbangkan tujuan, kebutuhan, keseimbangan kepentingan pengelola, dan hak Subjek Data Pribadi. Untuk menyampaikan pertanyaan atau keberatan atas pemrosesan, hubungi kami lewat halaman Kontak.
-- **Pelaksanaan permintaanmu** untuk data yang kamu kirim lewat formulir, karena kami memerlukannya untuk menjawab pesan atau memperbaiki tautan.
+- **Pelaksanaan permintaanmu** untuk data yang kamu kirim lewat formulir, karena kami memerlukannya untuk menjawab pesan, memperbaiki tautan, atau meninjau laporan hak cipta.
 - **Kepentingan yang sah** untuk keamanan situs, pencegahan spam, dan pemeliharaan tautan unduhan, misalnya memeriksa domain email sekali-pakai.
 
 Untuk Adsterra, Disqus, dan Safelinku, situs ini menjelaskan data dan pemicu pemuatan layanan di bagian 5 dan 6. Khusus Disqus, pemicunya adalah tombol Buka diskusi pada panel Ruang Diskusi; tanpa klik itu tidak ada skrip Disqus yang berjalan. Situs tidak menyediakan satu panel yang mengatur atau menonaktifkan semua layanan tersebut. Pengelola perlu meninjau ketentuan penyedia serta dasar pemrosesan yang sesuai untuk tiap integrasi pihak ketiga secara terpisah.
