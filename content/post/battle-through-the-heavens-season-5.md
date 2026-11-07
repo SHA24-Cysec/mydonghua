@@ -446,9 +446,9 @@ downloadGroups:
       size: ''
 
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.google.com/file/d/1c4Uz_depPjjSENtMjQk6R7D1UEcNGGgQ/view?usp=sharing'
+      button: ' Download'
+      size: '2.04 GB'
 
     - quality: '720p'
       link: 'https://drive.usercontent.google.com/download?id=1a7BaDvq8lwtj4bu0GxIDjWtvXGW6Gy25&export=download&authuser=0'
@@ -476,9 +476,9 @@ downloadGroups:
       size: ''
 
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.google.com/file/d/1jUuINbe1fSnSu37IqA4F-MpHlU1Tqtx7/view?usp=sharing'
+      button: 'Download'
+      size: '1.96 GB'
 
     - quality: '720p'
       link: 'https://drive.usercontent.google.com/download?id=16hWR-PZfb8B0779DX6bc6ednmetst-un&export=download&authuser=0'
@@ -506,9 +506,9 @@ downloadGroups:
       size: ''
 
     - quality: '480p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.google.com/file/d/1akh4JVOAiOmFuyYYBMbphR1n3vubTBNx/view?usp=sharing'
+      button: 'Download'
+      size: '2.04 GB'
 
     - quality: '720p'
       link: 'https://drive.usercontent.google.com/download?id=1kaPCluyoNis4orhE6hy1aVgiOLMNvs_J&export=download&authuser=0'
