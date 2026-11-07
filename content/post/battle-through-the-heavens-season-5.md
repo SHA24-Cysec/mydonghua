@@ -446,7 +446,7 @@ downloadGroups:
       size: ''
 
     - quality: '480p'
-      link: 'https://drive.google.com/file/d/1c4Uz_depPjjSENtMjQk6R7D1UEcNGGgQ/view?usp=sharing'
+      link: 'https://drive.usercontent.google.com/download?id=1c4Uz_depPjjSENtMjQk6R7D1UEcNGGgQ&export=download&authuser=0'
       button: ' Download'
       size: '2.04 GB'
 
@@ -476,7 +476,7 @@ downloadGroups:
       size: ''
 
     - quality: '480p'
-      link: 'https://drive.google.com/file/d/1jUuINbe1fSnSu37IqA4F-MpHlU1Tqtx7/view?usp=sharing'
+      link: 'https://drive.usercontent.google.com/download?id=1jUuINbe1fSnSu37IqA4F-MpHlU1Tqtx7&export=download&authuser=0'
       button: 'Download'
       size: '1.96 GB'
 
@@ -506,7 +506,7 @@ downloadGroups:
       size: ''
 
     - quality: '480p'
-      link: 'https://drive.google.com/file/d/1akh4JVOAiOmFuyYYBMbphR1n3vubTBNx/view?usp=sharing'
+      link: 'https://drive.usercontent.google.com/download?id=1akh4JVOAiOmFuyYYBMbphR1n3vubTBNx&export=download&authuser=0'
       button: 'Download'
       size: '2.04 GB'
 
