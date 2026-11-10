@@ -57,9 +57,9 @@ downloadGroups:
       size: '2.60 GB'
     
     - quality: '720p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://drive.usercontent.google.com/download?id=1Yx5An9JO_o9bl1zBy_t9nu-2uk6A9Qvf&export=download&authuser=0'
+      button: 'Download'
+      size: '5.31 GB'
     
     - quality: '1080p'
       link: ''
