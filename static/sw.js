@@ -1,7 +1,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'donghuabatch-pwa';
-const CACHE_VERSION = '2026-11-04-2';
+const CACHE_VERSION = '2026-11-10-1';
 const SHELL_CACHE = `${CACHE_PREFIX}-shell-${CACHE_VERSION}`;
 const PAGE_CACHE = `${CACHE_PREFIX}-pages`;
 const ASSET_CACHE = `${CACHE_PREFIX}-assets`;

@@ -19,9 +19,8 @@
       place-items: center;
       padding: 1rem;
       background:
-        radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.14), transparent 32%),
-        radial-gradient(circle at 92% 100%, rgba(139, 92, 246, 0.14), transparent 36%),
-        #060816;
+        radial-gradient(ellipse at 100% 100%, rgba(76, 29, 149, 0.11), transparent 38%),
+        #070713;
       color: #eef7ff;
     }
     main {
@@ -34,13 +33,16 @@
       text-align: center;
     }
     .brand {
+      display: block;
       width: 5rem;
       height: 5rem;
       margin: 0 auto 1rem;
-      border: 1px solid rgba(34, 211, 238, 0.34);
-      border-radius: 999px;
+      object-fit: contain;
+      border: 0;
+      border-radius: 0;
       background: transparent;
-      box-shadow: 0 0 24px rgba(34, 211, 238, 0.12);
+      box-shadow: none;
+      filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.28));
     }
     .kicker {
       display: inline-flex;
@@ -51,8 +53,6 @@
       border-radius: 999px;
       background: rgba(34, 211, 238, 0.08);
       color: #a5f3fc;
-      /* Ukuran 0.75rem menjaga semua teks minimal 12px. Halaman ini berdiri
-         sendiri dan tidak memuat assets/main.css, jadi aturannya ditulis di sini. */
       font-size: 0.75rem;
       font-weight: 850;
       letter-spacing: 0.08em;
