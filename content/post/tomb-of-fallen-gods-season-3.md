@@ -3,7 +3,7 @@ date : '2026-08-06T04:16:17+07:00'
 draft : false
 title : 'Download Batch Tomb of Fallen Gods Season 3 Subtitle Indonesia'
 studio :
-    - ''
+    - 'Wonder Cat Animation'
 season : 'Summer 2025'
 genre :
     - 'Action'
@@ -12,7 +12,7 @@ genre :
     - 'Historical'
     - 'Martial Arts'
 type : 'Donghua'
-status : 'Ongoing'
+status : 'Completed'
 sub : 'Anichin'
 durasi : '20 Menit'
 episode : '52 Episode'

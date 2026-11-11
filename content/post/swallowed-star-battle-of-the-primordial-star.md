@@ -24,8 +24,8 @@ rating : 8
 # judulSeasonSelanjutnya : ''
 
 # Jika ada Season sebelumnya, hilangkan komentar
-linkSeasonSebelumnya : '/swallowed-star'
-judulSeasonSebelumnya : 'Swallowed Star Subtitle Indonesia'
+linkSeasonSebelumnya : '/swallowed-star-movie-blood-river-continent'
+judulSeasonSebelumnya : 'Swallowed Star Movie: Blood River Continent Subtitle Indonesia'
 
 # Gambar width: 200, height : 300
 thumbnail : /img/post/swallowed-star-battle-of-the-primordial-star.webp

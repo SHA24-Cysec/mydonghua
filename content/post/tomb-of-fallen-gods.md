@@ -49,24 +49,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://www.linkbox.to/a/f/Cszu5U6'
+      link: 'https://pixeldrain.com/u/TkVm8yeC'
       button: 'Download'
-      size: '547.44 MB'
+      size: '567 MB'
     
     - quality: '480p'
-      link: 'https://www.linkbox.to/a/f/wLRDUmX'
+      link: 'https://pixeldrain.com/u/Bsx4tChB'
       button: 'Download'
-      size: '1.03 GB'
+      size: '1.10 GB'
     
     - quality: '720p'
-      link: 'https://www.linkbox.to/a/f/vay5ArU'
+      link: 'https://pixeldrain.com/u/JWzviSj8'
       button: 'Download'
-      size: '1.84 GB'
+      size: '1.90 GB'
     
     - quality: '1080p'
-      link: 'https://www.linkbox.to/a/f/YErUxLr'
+      link: 'https://pixeldrain.com/u/HVDTfQd5'
       button: 'Download'
-      size: '2.81 GB'
+      size: '3.01 GB'
     
     - quality: '4K'
       link: ''
@@ -79,24 +79,24 @@ downloadGroups:
     downloads:
     
     - quality: '360p'
-      link: 'https://lbx.to/f/spvXQ9C'
+      link: 'https://pixeldrain.com/u/u2TYjMg5'
       button: 'Download'
-      size: '454.39 MB'
+      size: '472 MB'
     
     - quality: '480p'
-      link: 'https://www.linkbox.to/a/f/ZNLJwYG'
+      link: 'https://pixeldrain.com/u/vUtCVDPn'
       button: 'Download'
-      size: '861.79 MB'
+      size: '899.70 MB'
     
     - quality: '720p'
-      link: 'https://www.linkbox.to/a/f/WtBAkzl'
+      link: 'https://pixeldrain.com/u/wVBXgTq4'
       button: 'Download'
-      size: '1.66 GB'
+      size: '1.77 GB'
     
     - quality: '1080p'
-      link: 'https://www.linkbox.to/a/f/KlIm86g'
+      link: 'https://pixeldrain.com/u/PkMgKNhA'
       button: 'Download'
-      size: '2.38 GB'
+      size: '2.55 GB'
     
     - quality: '4K'
       link: ''
