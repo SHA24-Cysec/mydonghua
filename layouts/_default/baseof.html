@@ -1,6 +1,6 @@
 {{- if .IsHome -}}
     {{- $pages := where .Site.RegularPages "Layout" "postingan-donghua" -}}
-    {{- $paginator := .Paginate $pages.ByDate.Reverse 16 -}}
+    {{- $paginator := .Paginate (partialCached "urutan-terbaru" $pages "beranda") 16 -}}
 {{- else if and (in (slice "section" "taxonomy" "term") .Kind) (ne .Layout "filter-genre") -}}
     {{- $paginator := .Paginate .RegularPages.ByTitle 16 -}}
 {{- end -}}

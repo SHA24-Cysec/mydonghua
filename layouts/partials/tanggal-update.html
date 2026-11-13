@@ -1,0 +1,10 @@
+{{- $selisih := time.ParseDuration "7h" -}}
+{{- $terbit := .PublishDate.UTC.Add $selisih -}}
+{{- $update := .Lastmod.UTC.Add $selisih -}}
+{{- if and (not .Lastmod.IsZero) (not .PublishDate.IsZero) (gt ($update.Format "2006-01-02") ($terbit.Format "2006-01-02")) -}}
+{{- $bulan := dict "Jan" "Jan" "Feb" "Feb" "Mar" "Mar" "Apr" "Apr" "May" "Mei" "Jun" "Jun" "Jul" "Jul" "Aug" "Agu" "Sep" "Sep" "Oct" "Okt" "Nov" "Nov" "Dec" "Des" -}}
+<span class="badge-neon w-fit" title="Terakhir diperbarui {{ $update.Format "02 January 2006" }} pukul {{ $update.Format "15:04" }} WIB">
+    <i class="fa-solid fa-clock-rotate-left text-amber-400" aria-hidden="true"></i>
+    Diperbarui <strong class="text-amber-300">{{ $update.Format "2" }} {{ index $bulan ($update.Format "Jan") }} {{ $update.Format "2006" }}</strong>
+</span>
+{{- end -}}

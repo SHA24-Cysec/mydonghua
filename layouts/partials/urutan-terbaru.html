@@ -1,0 +1,12 @@
+{{- $halaman := . -}}
+{{- $kunci := slice -}}
+{{- range $halaman -}}
+    {{- $lastmod := .Lastmod.Unix -}}
+    {{- $terbit := .PublishDate.Unix -}}
+    {{- $kunci = $kunci | append (dict "halaman" . "kunci" (printf "%012d-%012d" (sub 9999999999 $lastmod) (sub 9999999999 $terbit))) -}}
+{{- end -}}
+{{- $hasil := slice -}}
+{{- range sort $kunci "kunci" "asc" -}}
+    {{- $hasil = $hasil | append .halaman -}}
+{{- end -}}
+{{- return $hasil -}}

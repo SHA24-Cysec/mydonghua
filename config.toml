@@ -1,6 +1,15 @@
 baseURL = 'https://donghuabatch.com/'
 title = 'DonghuaBatch - Tempatnya Download Batch Donghua Subtitle Indonesia'
 defaultContentLanguage = 'id'
+timeZone = 'Asia/Jakarta'
+
+# Tanggal update otomatis mengikuti commit git terakhir tiap berkas konten.
+enableGitInfo = true
+
+# Urutan pencarian lastmod: field `updated` (kalau diisi manual), lalu
+# `lastmod` di front matter, lalu commit git, lalu tanggal terbit.
+[frontmatter]
+    lastmod = ['updated', 'lastmod', ':git', 'date', 'publishDate']
 
 [services]
     [services.googleAnalytics]

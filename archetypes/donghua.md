@@ -1,5 +1,9 @@
 ---
 date : '{{ .Date }}'
+
+# Tanggal update terisi otomatis dari commit git terakhir berkas ini.
+# Isi baris di bawah hanya bila ingin menimpanya secara manual.
+# updated : '2026-11-12T09:00:00+07:00'
 draft : false
 title : 'Download Batch {{ replace .File.ContentBaseName "-" " " | title }} Subtitle Indonesia'
 studio :
