@@ -1,0 +1,33 @@
+{{- $waktu := .Lastmod -}}
+{{- if .IsHome -}}
+    {{- $daftar := partialCached "urutan-terbaru" (where .Site.RegularPages "Layout" "postingan-donghua") "beranda" -}}
+    {{- with index $daftar 0 -}}
+        {{- $waktu = partial "waktu-update" . -}}
+    {{- end -}}
+{{- else if .IsPage -}}
+    {{- with .File -}}
+        {{- $jalur := replace .Path "\\" "/" -}}
+        {{- $waktu = partialCached "waktu-update-berkas" $ $jalur -}}
+    {{- end -}}
+{{- else if gt (len .RegularPages) 0 -}}
+    {{- $maks := time.AsTime "1970-01-01T00:00:00Z" -}}
+    {{- $ada := false -}}
+    {{- range .RegularPages -}}
+        {{- $kandidat := partial "waktu-update" . -}}
+        {{- if not $kandidat.IsZero -}}
+            {{- if or (not $ada) ($kandidat.After $maks) -}}
+                {{- $maks = $kandidat -}}
+                {{- $ada = true -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $ada -}}
+        {{- $waktu = $maks -}}
+    {{- end -}}
+{{- else -}}
+    {{- with .File -}}
+        {{- $jalur := replace .Path "\\" "/" -}}
+        {{- $waktu = partialCached "waktu-update-berkas" $ $jalur -}}
+    {{- end -}}
+{{- end -}}
+{{- return $waktu -}}

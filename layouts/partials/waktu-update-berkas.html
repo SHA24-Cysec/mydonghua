@@ -1,0 +1,13 @@
+{{- $waktu := .Lastmod -}}
+{{- with .Params.updated -}}
+    {{- $waktu = time.AsTime . -}}
+{{- else -}}
+    {{- with .File -}}
+        {{- $peta := partialCached "peta-tanggal-update" $ "global" -}}
+        {{- $jalur := replace .Path "\\" "/" -}}
+        {{- with index $peta $jalur -}}
+            {{- $waktu = time.AsTime . -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- return $waktu -}}

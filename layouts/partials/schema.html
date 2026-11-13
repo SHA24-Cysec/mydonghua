@@ -12,8 +12,9 @@
         <meta itemprop="datePublished" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
     {{- end }}
 
-    {{- with .Lastmod }}
-        <meta itemprop="dateModified" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
+    {{- $waktuUpdate := partial "waktu-update" . -}}
+    {{- if not $waktuUpdate.IsZero }}
+        <meta itemprop="dateModified" {{ $waktuUpdate.Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
     {{- end }}
 {{ end }}
 

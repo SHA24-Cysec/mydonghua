@@ -1,9 +1,10 @@
 {{- $halaman := . -}}
 {{- $kunci := slice -}}
 {{- range $halaman -}}
-    {{- $lastmod := .Lastmod.Unix -}}
-    {{- $terbit := .PublishDate.Unix -}}
-    {{- $kunci = $kunci | append (dict "halaman" . "kunci" (printf "%012d-%012d" (sub 9999999999 $lastmod) (sub 9999999999 $terbit))) -}}
+    {{- $waktuUpdate := partial "waktu-update" . -}}
+    {{- $lastmod := cond (lt $waktuUpdate.Unix 0) 0 (cond (gt $waktuUpdate.Unix 9999999999) 9999999999 $waktuUpdate.Unix) -}}
+    {{- $terbit := cond (lt .PublishDate.Unix 0) 0 (cond (gt .PublishDate.Unix 9999999999) 9999999999 .PublishDate.Unix) -}}
+    {{- $kunci = $kunci | append (dict "halaman" . "kunci" (printf "%012d-%012d-%s" (sub 9999999999 $lastmod) (sub 9999999999 $terbit) .RelPermalink)) -}}
 {{- end -}}
 {{- $hasil := slice -}}
 {{- range sort $kunci "kunci" "asc" -}}

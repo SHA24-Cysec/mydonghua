@@ -32,8 +32,9 @@
     {{- with .PublishDate }}
         <meta property="article:published_time" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
     {{- end }}
-    {{- with .Lastmod }}
-        <meta property="article:modified_time" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
+    {{- $waktuUpdate := partial "waktu-update" . -}}
+    {{- if not $waktuUpdate.IsZero }}
+        <meta property="article:modified_time" {{ $waktuUpdate.Format $ISO8601 | printf "content=%q" | safeHTMLAttr }}>
     {{- end }}
     {{- range .GetTerms "genre" | first 10 }}
         <meta property="article:tag" content="{{ .Page.Title | plainify }}">

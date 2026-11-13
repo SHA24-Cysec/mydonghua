@@ -58,7 +58,8 @@
       "genre": {{ $genres | jsonify | safeJS }},
       {{ with .Params.studio }}"productionCompany": {"@type": "Organization", "name": {{ delimit . ", " | jsonify | safeJS }} },{{ end }}
       {{ if gt $episodeCount 0 }}"numberOfEpisodes": {{ $episodeCount }},{{ end }}
-      "datePublished": "{{ .Date.Format "2006-01-02" }}",
+      "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | jsonify | safeJS }},
+      "dateModified": {{ (partial "waktu-update" .).Format "2006-01-02T15:04:05-07:00" | jsonify | safeJS }},
       "author": {
         "@type": "Person",
         "name": {{ .Site.Params.author | jsonify | safeJS }}

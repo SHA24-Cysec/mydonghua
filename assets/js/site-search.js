@@ -484,6 +484,9 @@ const searchInput = document.getElementById("search-input");
 
       return results.slice().sort(function (a, b) {
         if (activeSort === "newest") {
+          const aMod = Date.parse(a.item.lastmod || a.item.date || "") || 0;
+          const bMod = Date.parse(b.item.lastmod || b.item.date || "") || 0;
+          if (bMod !== aMod) return bMod - aMod;
           const aDate = Date.parse(a.item.date || "") || 0;
           const bDate = Date.parse(b.item.date || "") || 0;
           if (bDate !== aDate) return bDate - aDate;

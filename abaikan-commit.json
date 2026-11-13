@@ -1,0 +1,96 @@
+{
+  "abaikanCommitAwal": true,
+  "penandaPesanCommit": [
+    "[abaikan-update]",
+    "[skip-update]"
+  ],
+  "ambangOtomatis": 25,
+  "kataKunciOtomatis": [],
+  "abaikanCommit": [
+    {
+      "sha": "8ccb5cc297b6e6efcdc23c4a246a9772250448be",
+      "tanggal": "2026-07-31",
+      "alasan": "Edit stop slop: perapian teks sinopsis massal pada 293 berkas"
+    },
+    {
+      "sha": "f680724bae2e4f0139a78000b9a3180e02565df5",
+      "tanggal": "2026-10-19",
+      "alasan": "Perapian metadata sub dan judul pada 5 berkas saat menambah fitur autopost"
+    },
+    {
+      "sha": "823b6f533ef6391bef7da737b540f13f5aedb42d",
+      "tanggal": "2026-10-13",
+      "alasan": "Perbaikan salah ketik nama berkas chinese-mystery-man.md"
+    },
+    {
+      "sha": "60097ed412b0f98755ffe8c623663434f2b9bfd2",
+      "tanggal": "2026-10-06",
+      "alasan": "Audit link download mati: penggantian tautan rusak pada 34 berkas"
+    },
+    {
+      "sha": "24b7831c89907c4088ab6873e26e20961f196319",
+      "tanggal": "2026-07-23",
+      "alasan": "Normalisasi penulisan genre dan studio pada 53 berkas"
+    },
+    {
+      "sha": "b08cd10fb772cf8c30ca893a212705b0100aa0b9",
+      "tanggal": "2026-07-14",
+      "alasan": "Perbaikan tautan rusak massal pada 10 berkas"
+    },
+    {
+      "sha": "3afefb7b054e27ae54a589bd99f6a9fbe7ad77c5",
+      "tanggal": "2026-05-08",
+      "alasan": "Perbaikan tautan rusak massal pada 5 berkas"
+    },
+    {
+      "sha": "7b4865a9865492a6eaa308f559845e819fe686f4",
+      "tanggal": "2026-04-07",
+      "alasan": "Perbaikan tautan rusak massal pada 7 berkas"
+    },
+    {
+      "sha": "a69c5100a449285f00f4bfd976e5aa14b31030f2",
+      "tanggal": "2026-03-15",
+      "alasan": "Perbaikan tautan rusak massal pada 5 berkas"
+    },
+    {
+      "sha": "4dd428b1e7851715ef7b48542bb727d7908d8ee9",
+      "tanggal": "2026-02-19",
+      "alasan": "Perbaikan tautan rusak pada 3 berkas"
+    },
+    {
+      "sha": "b550b7fbdd8a19365c2b876363f1fde9efb964e2",
+      "tanggal": "2026-02-07",
+      "alasan": "Perapian layout, tautan season, dan front matter massal pada 182 berkas"
+    },
+    {
+      "sha": "7194734981e4fdd0c9f478a2234d5c433c643b31",
+      "tanggal": "2026-01-25",
+      "alasan": "Perbaikan tautan rusak pada 4 berkas"
+    },
+    {
+      "sha": "2cf4cd1dbfe12d04ad7677b6471ceb1145b853b1",
+      "tanggal": "2025-11-13",
+      "alasan": "Penghapusan field streaming usang pada 219 berkas"
+    },
+    {
+      "sha": "bcb1f77739688f5e9c1192bcd605ccb733f82468",
+      "tanggal": "2025-11-10",
+      "alasan": "Perbaikan tautan rusak pada 3 berkas"
+    },
+    {
+      "sha": "23a49afbca53068493fdc784fe30694578438658",
+      "tanggal": "2025-07-20",
+      "alasan": "Migrasi struktur front matter downloadGroups pada 175 berkas"
+    },
+    {
+      "sha": "799302cc3c7c23305ee0ae3af24768f735ac4001",
+      "tanggal": "2025-03-20",
+      "alasan": "Penambahan field streaming massal pada 128 berkas"
+    },
+    {
+      "sha": "a5f3d173894cc5e605287924993e522e2f806e03",
+      "tanggal": "2025-03-06",
+      "alasan": "Penambahan field rating massal pada berkas lama"
+    }
+  ]
+}

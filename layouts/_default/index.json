@@ -1,6 +1,8 @@
 {{- $index := slice -}}
+{{- $halaman := partialCached "urutan-terbaru" (where .Site.RegularPages "Layout" "postingan-donghua") "beranda" -}}
 
-{{- range where .Site.RegularPages "Layout" "postingan-donghua" -}}
+{{- range $halaman -}}
+  {{- $waktuUpdate := partial "waktu-update" . -}}
   {{- $thumb := .Params.thumbnail | default "" -}}
   {{- $item := dict
       "title" .Title
@@ -13,7 +15,8 @@
       "episode" (.Params.episode | default "")
       "status" (.Params.status | default "")
       "rating" (.Params.rating | default "")
-      "date" (.Date.Format "2006-01-02T15:04:05Z07:00")
+      "date" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")
+      "lastmod" ($waktuUpdate.Format "2006-01-02T15:04:05Z07:00")
   -}}
   {{- $index = $index | append $item -}}
 {{- end -}}

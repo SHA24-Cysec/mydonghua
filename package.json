@@ -8,6 +8,7 @@
     "build:css": "tailwindcss -i ./assets/input.css -o ./assets/main.css",
     "build:hugo": "hugo --gc --minify",
     "build": "node ./scripts/build-aman.mjs",
+    "sync:tanggal": "node ./scripts/sinkron-tanggal-update.mjs",
     "check:content": "node ./scripts/validate-content.mjs",
     "check:css": "node ./scripts/check-css.mjs",
     "audit:pwa": "node ./scripts/audit-pwa.mjs",

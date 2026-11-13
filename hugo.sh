@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
-# Ikat ke localhost secara default. Untuk menguji dari perangkat
-# lain di jaringan yang sama: HUGO_BIND=0.0.0.0 ./hugo.sh
-BIND="${HUGO_BIND:-127.0.0.1}"
-
-hugo server -D --ignoreCache --disableFastRender --navigateToChanged --noHTTPCache --bind "$BIND"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT_DIR"
+node ./scripts/sinkron-tanggal-update.mjs
+BIND="${HUGO_BIND:-0.0.0.0}"
+PORT="${HUGO_PORT:-1313}"
+hugo server -D --ignoreCache --disableFastRender --navigateToChanged --noHTTPCache --bind "$BIND" --port "$PORT" --baseURL / --appendPort=false --disableLiveReload=false

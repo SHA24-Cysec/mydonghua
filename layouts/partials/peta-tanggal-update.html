@@ -1,0 +1,8 @@
+{{- $peta := dict -}}
+{{- with resources.Get "data/tanggal-update.json" -}}
+    {{- $isi := .Content | strings.TrimSpace -}}
+    {{- if ne $isi "" -}}
+        {{- $peta = $isi | transform.Unmarshal -}}
+    {{- end -}}
+{{- end -}}
+{{- return $peta -}}
