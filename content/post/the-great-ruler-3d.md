@@ -169,5 +169,65 @@ downloadGroups:
       link: ''
       button: 'Belum Tersedia'
       size: ''
+
+  # Batch 5
+  - title: 'The Great Ruler 3D Batch Subtitle Indonesia Episode 71-80 [Season 2]'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1YGPI8NhwBgKwrrg5NQUWhrVNpbUCYvq3&export=download&authuser=0'
+      button: 'Download'
+      size: '2.79 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+
+  # Batch 6
+  - title: 'The Great Ruler 3D Batch Subtitle Indonesia Episode 81-90 [Season 2]'
+    
+    downloads:
+    
+    - quality: '360p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '480p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '720p'
+      link: 'https://drive.usercontent.google.com/download?id=1pbUEZ2bPS6BAGW7PMnueyG0H2U-ddKZ7&export=download&authuser=0'
+      button: 'Download'
+      size: '2 GB'
+    
+    - quality: '1080p'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
+    
+    - quality: '4K'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
 ---

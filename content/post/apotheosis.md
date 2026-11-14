@@ -12,10 +12,10 @@ genre :
     - 'Historical'
     - 'Martial Arts'
 type : 'Donghua'
-status : 'Ongoing'
+status : 'Completed'
 sub : 'Anichin'
 durasi : '20 Menit'
-episode : '104 Episode'
+episode : '130 Episode'
 # Penulisan tanggal 'bulan tanggal, tahun'
 release : 'Nov 04, 2022'
 # Rating 1-10
