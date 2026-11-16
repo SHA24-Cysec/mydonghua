@@ -12,7 +12,7 @@ genre :
     - 'Martial Arts'
     - 'Supernatural'
 type : 'Donghua'
-status : 'Ongoing'
+status : 'Completed'
 sub : 'Anichin'
 durasi : '20 Menit'
 episode : '42 Episode'
@@ -64,9 +64,9 @@ downloadGroups:
       size: ''
     
     - quality: '720p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/pr5TPuNk'
+      button: 'Download'
+      size: '2.79 GB'
     
     - quality: '1080p'
       link: ''
@@ -94,9 +94,9 @@ downloadGroups:
       size: ''
     
     - quality: '720p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/DcuevHUL'
+      button: 'Download'
+      size: '2.70 GB'
     
     - quality: '1080p'
       link: ''
