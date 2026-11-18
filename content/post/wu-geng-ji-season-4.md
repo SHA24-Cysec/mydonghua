@@ -64,9 +64,9 @@ downloadGroups:
       size: ''
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/pr5TPuNk'
+      link: 'https://drive.usercontent.google.com/download?id=1auaGL1KWCW-WaLkyhyZ7o2Mg4faIbycU&export=download&authuser=0'
       button: 'Download'
-      size: '2.79 GB'
+      size: '3.30 GB'
     
     - quality: '1080p'
       link: ''
@@ -94,9 +94,9 @@ downloadGroups:
       size: ''
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/DcuevHUL'
+      link: 'https://drive.usercontent.google.com/download?id=1By2eGABpEEkXhx7AEGxVuwCyNzbFVGyJ&export=download&authuser=0'
       button: 'Download'
-      size: '2.70 GB'
+      size: '3.30 GB'
     
     - quality: '1080p'
       link: ''
