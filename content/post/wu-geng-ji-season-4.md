@@ -69,9 +69,9 @@ downloadGroups:
       size: '3.30 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/egwcn8QH'
+      button: 'Download'
+      size: '6.69 GB'
     
     - quality: '4K'
       link: ''
@@ -99,9 +99,9 @@ downloadGroups:
       size: '3.30 GB'
     
     - quality: '1080p'
-      link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      link: 'https://pixeldrain.com/u/QWJAN3nf'
+      button: 'Download'
+      size: '6.35 GB'
     
     - quality: '4K'
       link: ''
