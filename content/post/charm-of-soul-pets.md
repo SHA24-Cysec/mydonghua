@@ -56,9 +56,9 @@ downloadGroups:
       size: '4.21 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/6dT6PR35'
+      link: 'https://www.mediafire.com/file/1nqddjhdnrn3100/Anichin.best_Cha.ofSo.Pets.Ep1-16_1080p.zip/file'
       button: 'Download'
-      size: '10 GB'
+      size: '9.32 GB'
     
     - quality: '4K'
       link: ''

@@ -58,9 +58,9 @@ downloadGroups:
       size: '439 MB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/V4sdHZtQ'
+      link: 'https://acefile.co/f/30902349'
       button: 'Download'
-      size: '662 MB'
+      size: '631.97 MB'
     
     - quality: '1080p'
       link: 'https://acefile.co/f/103893565'

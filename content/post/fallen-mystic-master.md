@@ -45,18 +45,18 @@ downloadGroups:
     
     - quality: '480p'
       link: ''
-      button: 'Belum Tersedia'
-      size: ''
+      button: 'https://teraboxapp.com/s/1qedMSGxiMye_r0IlJOTcgg'
+      size: '1.30 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/8wLrZddL'
+      link: 'https://teraboxapp.com/s/1qedMSGxiMye_r0IlJOTcgg'
       button: 'Download'
       size: '3.23 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/LYsSuUSf'
-      button: 'Download'
-      size: '5.41 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '4K'
       link: ''

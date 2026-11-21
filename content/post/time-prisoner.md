@@ -47,14 +47,14 @@ downloadGroups:
       size: '983 MB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/RWJJmQsS'
-      button: 'Download'
-      size: '1.43 GB'
+      link: ''
+      button: '[Belum Tersedia](https://teraboxapp.com/s/1bNyQOfdNOz-LIEsbLXmX9A)'
+      size: '1.30 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/izEY3Ecf'
+      link: 'https://teraboxapp.com/s/1bNyQOfdNOz-LIEsbLXmX9A'
       button: 'Download'
-      size: '2.05 GB'
+      size: '1.90 GB'
     
     - quality: '4K'
       link: ''

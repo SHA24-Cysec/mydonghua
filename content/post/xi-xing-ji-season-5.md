@@ -63,9 +63,9 @@ downloadGroups:
       size: '6.29 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/5XbwSWUp'
+      link: 'https://1024terabox.com/s/1B4DVDvdQzpVAj59Y1DmLCQ'
       button: 'Download'
-      size: '9.80 GB'
+      size: '9.13 GB'
     
     - quality: '4K'
       link: ''

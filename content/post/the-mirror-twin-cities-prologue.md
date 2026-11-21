@@ -52,9 +52,9 @@ downloadGroups:
       size: '353 MB'
     
     - quality: '480p'
-      link: 'https://pixeldrain.com/u/oM4pcGrQ'
+      link: 'https://drive.usercontent.google.com/download?id=1Wo5Y4M4cmS91t-Q_S-_uKBCtoGej4auT&export=download&authuser=0'
       button: 'Download'
-      size: '683 MB'
+      size: '609.4o MB'
     
     - quality: '720p'
       link: 'https://www.mediafire.com/file/pn123x6u4xhqspg/%255BAnichinAsia%255D%255BThe_Mirror%25EF%25BC%259ATwin_Cities_Prologue%255D%255B01-04%255D%255B720p%255D.zip/file'

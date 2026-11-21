@@ -63,9 +63,9 @@ downloadGroups:
       size: '4.95 GB'
     
     - quality: '1080p'
-      link: 'https://pixeldrain.com/u/tUPF7Sds'
+      link: 'https://www.mediafire.com/file/znuwgf741xt9brd/Anichin.best_M.Con.the.Co.Ep1-40_1080p.zip/file'
       button: 'Download'
-      size: '8.2 GB'
+      size: '7.64 GB'
     
     - quality: '4K'
       link: ''

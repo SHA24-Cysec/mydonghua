@@ -60,17 +60,17 @@ downloadGroups:
       size: '537.03 MB'
     
     - quality: '720p'
-      link: 'https://send.now/elpd2oybwexc'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=mNJgaUpYLTRR2hht9h59mw'
       button: 'Download'
       size: '1 GB'
     
     - quality: '1080p'
-      link: 'https://send.now/i8h5ghcxgb8l'
+      link: 'https://www.1024tera.com/indonesian/sharing/link?surl=mNJgaUpYLTRR2hht9h59mw'
       button: 'Download'
       size: '1.6 GB'
     
     - quality: '4K'
-      link: 'https://send.now/v3su72vc6jry'
-      button: 'Download'
-      size: '2.3 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
 ---

@@ -111,9 +111,9 @@ downloadGroups:
       size: '2.28 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/7MgrYNmo'
-      button: 'Download'
-      size: '5.94 GB'
+      link: ''
+      button: 'Belum Tersedia'
+      size: ''
     
     - quality: '1080p'
       link: 'https://pixeldrain.com/u/NPJg3Jo4'

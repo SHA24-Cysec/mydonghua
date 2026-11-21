@@ -126,7 +126,7 @@ downloadGroups:
       size: '1.68 GB'
     
     - quality: '1080p'
-      link: 'https://drive.usercontent.google.com/download?id=1TuVg4GN4waM28z1zoKQVJ4Qzh-JWBfi0&export=download&authuser=0'
+      link: 'https://acefile.co/f/36937540'
       button: 'Download'
       size: '2.24 GB'
     
@@ -511,12 +511,12 @@ downloadGroups:
       size: '1.40 GB'
     
     - quality: '720p'
-      link: 'https://mega.nz/file/8DM3WIIJ#78w7Huw4Rqg-rb7bJwurNBZdZOby7Uw_woPKkDAhQz8'
+      link: 'https://lbx.to/f/XaPNXrU'
       button: 'Download'
       size: '3.13 GB'
     
     - quality: '1080p'
-      link: 'https://mega.nz/file/dH0RkD7R#bbx7oXmKHi6AgjBYY3JmpvPMtj3nGJu4f74dBxtydpk'
+      link: 'https://lbx.to/f/DOVGDSM'
       button: 'Download'
       size: '4.62 GB'
     
