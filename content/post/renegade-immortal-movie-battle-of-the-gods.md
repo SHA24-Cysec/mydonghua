@@ -23,7 +23,7 @@ release : 'May 30, 2025'
 rating : 9.8
 
 # Jika ada Season selanjutnya, hilangkan komentar
-linkSeasonSelanjutnya : '/renegade-immortal-movie-battle-against-the-immortals'
+linkSeasonSelanjutnya : '/renegade-immortal-movie-slaying-the-blood-progenitor'
 judulSeasonSelanjutnya : 'Renegade Immortal Movie: Slaying The Blood Progenitor Subtitle Indonesia'
 
 # Jika ada Season sebelumnya, hilangkan komentar

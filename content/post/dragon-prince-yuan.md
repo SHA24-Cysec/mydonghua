@@ -52,9 +52,9 @@ downloadGroups:
       size: '2.30 GB'
     
     - quality: '720p'
-      link: 'https://pixeldrain.com/u/bV7rHGrW'
+      link: 'https://www.mediafire.com/file/sr04a3w10khrdir/Anichin.best_Dra.Prin.an.Ep1-15_720p.zip/file'
       button: 'Download'
-      size: '5.06 GB'
+      size: '4.72 GB'
     
     - quality: '1080p'
       link: 'https://pixeldrain.com/u/tuM4L6pz'
